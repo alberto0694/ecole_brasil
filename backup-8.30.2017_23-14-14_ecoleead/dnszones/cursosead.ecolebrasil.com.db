@@ -1,0 +1,44 @@
+; cPanel first:11.56.0.46 (update_time):1491099774 11.56.0.46: Cpanel::ZoneFile::VERSION:1.3 hostname:srv208.prodns.com.br latest:11.56.0.46
+; Zone file for cursosead.ecolebrasil.com
+$TTL 14400
+@      86400	IN      SOA     ns1.foxwebmarketing.com.br. daniel.longani.gmail.com. (
+		2017040203	; serial, todays date+todays
+		86400		; refresh, seconds
+		7200		; retry, seconds
+		3600000		; expire, seconds
+		86400 )		; minimum, seconds
+
+cursosead.ecolebrasil.com. 86400 IN NS ns1.foxwebmarketing.com.br.
+cursosead.ecolebrasil.com. 86400 IN NS ns2.foxwebmarketing.com.br.
+
+
+cursosead.ecolebrasil.com. IN A 50.116.87.84
+
+localhost.cursosead.ecolebrasil.com. IN A 127.0.0.1
+
+cursosead.ecolebrasil.com. IN MX 0 mail.cursosead.ecolebrasil.com.
+
+mail IN A 50.116.87.84
+www IN CNAME cursosead.ecolebrasil.com.
+ftp IN CNAME cursosead.ecolebrasil.com.
+
+cpanel IN CNAME cursosead.ecolebrasil.com.
+webmail IN CNAME cursosead.ecolebrasil.com.
+
+cursosead.ecolebrasil.com. IN TXT "v=spf1 a mx include:websitewelcome.com ~all"
+webdisk IN A 50.116.87.84
+cpcalendars IN A 50.116.87.84
+cpcontacts IN A 50.116.87.84
+whm IN A 50.116.87.84
+autoconfig IN A 50.116.87.84
+autodiscover IN A 50.116.87.84
+_autodiscover._tcp IN SRV 0 0 443 cpanelemaildiscovery.cpanel.net.
+_caldav._tcp IN SRV 0 0 2079 srv208.prodns.com.br.
+_caldavs._tcp IN SRV 0 0 2080 srv208.prodns.com.br.
+_carddav._tcp IN SRV 0 0 2079 srv208.prodns.com.br.
+_carddavs._tcp IN SRV 0 0 2080 srv208.prodns.com.br.
+_caldav._tcp IN TXT path=/
+_caldavs._tcp IN TXT path=/
+_carddav._tcp IN TXT path=/
+_carddavs._tcp IN TXT path=/
+default._domainkey IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5pwuftWDWFigN5XAvAlXO+5n03dzZYb6K7yyxr6IOnAaDtG0Lx9XSPERPEfX/dV3t/l5YXIjQZXVjjPSdt3JygCBlC2MPd1YF0k0UeH7nxNYczXMcaBZ3d10wWHyXLRqRDt+z0IZBjgrkBYV+5mSWsw5GSkaPG5M9Vd0P98edgscuIMNkwyVKnAjD/zYeJKsx" nuBg4f7kLO/q9P47OqH7TgCYzmULYBON9FcKTV3I8TFUfdbGwHuk2Tol1Wohz1wkHWCwqt7348nMFEVZuFwg4xAesZA0UJ5oMOLvem6LTll+TFfyeFP+87npXn37cFydcXLZwBL4UJPkBj8m8K6zwIDAQAB\;

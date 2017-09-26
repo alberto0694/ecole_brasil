@@ -1,0 +1,1561 @@
+# Webalizer V2.23-05 Incremental Data - 08/30/2017 00:29:38
+2017 8 30 0 29 38
+41294 36994 133 340 109 72 524562196 1894 373 0
+2 15 2233 1 30
+3067 2624 15563762 21 123 25
+3423 3349 5972499 9 46 13
+4121 4115 8472957 14 58 13
+5515 5503 9285688 13 35 13
+3343 3306 2043078 6 18 5
+134 104 2794180 6 20 8
+1686 1447 177154079 11 235 21
+7779 6510 59749754 17 279 27
+499 446 1397157 6 32 6
+1118 1077 8073053 11 67 11
+97 83 1714906 7 20 7
+20 11 286591 3 3 2
+85 54 1414798 3 5 2
+120 76 2168988 6 19 6
+1653 1127 17013135 14 130 22
+1196 1104 14976310 17 107 19
+721 620 125668969 8 131 16
+99 66 1657321 4 21 5
+407 348 4315409 6 62 7
+853 797 2894749 6 19 10
+960 822 9010687 18 86 26
+2499 2118 10356691 19 116 30
+477 412 3647160 14 51 12
+156 60 1483878 7 28 11
+141 122 3111625 6 24 7
+203 185 11477115 10 29 7
+212 147 11104796 10 34 10
+285 188 4817730 7 44 15
+410 166 6741626 9 50 16
+15 7 193505 2 2 1
+0 0 0 0 0 0
+2055 2000 4135832 26
+1482 1453 9494266 22
+1261 1232 3838072 15
+1163 1138 9461445 15
+1134 1115 25501071 24
+1011 1011 36546 3
+601 601 47020 2
+422 421 1240988 6
+465 449 4583923 27
+336 265 8272701 69
+488 389 10030682 69
+541 460 9775907 74
+346 253 5303656 60
+1600 1490 82726186 139
+1026 841 10304992 112
+933 776 84489061 196
+1534 1382 30127860 133
+2024 1858 29143593 115
+2940 2567 42733567 154
+5860 5090 27970401 229
+6138 4590 72153707 183
+3256 3157 8731357 83
+2464 2349 37420219 64
+2214 2107 7039144 74
+0
+0
+0
+36994
+0
+0
+0
+0
+0
+46
+0
+17
+373
+0
+2641
+0
+0
+0
+0
+0
+39
+1169
+0
+14
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+# -urls- 
+/desenvolvimento-da-autoimagem/
+0 34 3833738906561230647 1112176 4 0
+/wp-content/themes/vogue/includes/font-awesome/fonts/fontawesome-webfont.ttf
+0 1 13186876379384133176 152796 0 0
+/wp-content/plugins/siteorigin-panels/js/styling-25.min.js
+0 39 3543830666971971584 21996 0 0
+/material-complementar-modulo-1/
+0 7 25222935874712629 221203 0 0
+/wp-content/themes/vogue/includes/font-awesome/fonts/fontawesome-webfont.eot
+0 1 7310519138456448566 76518 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/codemirror.min.js
+0 1 3833181406804390446 110497 0 0
+/wp-includes/js/tinymce/plugins/wptextpattern/plugin.min.js
+0 2 3615601258430018613 6324 0 0
+/search/upload.php
+0 1 19107120 19167 0 0
+/exercicios-modulo-1-t2/
+0 3 18761344 157194 0 0
+/modulo-4-t2-corpo-e-bem-estar/
+0 40 0 1298485 4 6
+/wp-content/uploads/2017/04/Exercicio-2-Visão-de-si-mesmo.pdf
+0 4 0 361432 0 0
+/wp-content/uploads/siteorigin-widgets/sow-image-default-eef982a7180b.css
+0 101 0 21500 0 0
+/o-que-e-psicologia-da-autoimagem/
+0 34 0 1115961 3 2
+/wp-content/plugins/ninja-forms/assets/css/codemirror.css
+0 2 0 12396 0 0
+/modulo-5-estagio-estetico/
+0 8 0 263154 2 2
+/wp-admin/themes.php
+0 2 0 157197 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/colorpicker/js/jqColorPicker.min.js
+0 4 0 24116 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/moment-with-locales.min.js
+0 1 0 170649 0 0
+/modulo-1-t2-o-que-e-psicologia-da-autoimagem/
+0 15 0 480782 1 0
+/wp-includes/js/tinymce/langs/wp-langs-en.js
+0 2 0 31198 0 0
+/estagio-do-espelho/
+0 13 0 428980 0 0
+/wp-content/plugins/indeed-membership-pro/assets/js/select2.min.js
+0 140 0 8674857 0 0
+/wp-includes/js/tinymce/plugins/paste/plugin.min.js
+0 2 0 40028 0 0
+/material-complementar-modulo-4/
+0 11 0 337668 0 2
+/wp-content/plugins/indeed-membership-pro/assets/js/printThis.js
+0 139 0 810000 0 0
+/exercicios-modulo-5-t2/
+0 12 0 623246 1 2
+/wp-content/plugins/so-widgets-bundle/icons/fontawesome/font/fontawesome-webfont.woff2
+0 107 0 4938240 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/colorpicker/css/compatibility.css
+0 4 0 29392 0 0
+/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.woff
+0 2 0 34968 0 0
+/textos-para-download-modulo-3/
+0 6 0 190477 0 1
+/wp-content/plugins/ninja-forms/assets/js/min/front-end-deps.js
+0 32 0 1681596 0 0
+/wp-content/plugins/indeed-membership-pro/assets/css/templates.css
+0 152 0 16436544 0 0
+/wp-content/plugins/indeed-membership-pro/assets/js/jquery.uploadfile.min.js
+0 141 0 1211304 0 0
+/wp-content/plugins/siteorigin-panels/css/images/wpspin_light.gif
+0 2 0 4134 0 0
+/wp-content/plugins/so-widgets-bundle/widgets/video/js/so-video-widget.min.js
+0 21 0 4720 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/colorpicker/js/colors.js
+0 4 0 52544 0 0
+/wp-content/plugins/so-widgets-bundle/widgets/button/css/style.css
+0 79 0 48216 0 0
+/wp-content/uploads/2017/03/download-pdf_1.png
+0 5 0 77140 0 0
+/wp-content/themes/twentyfifteen/screenshot.png
+0 1 0 576231 0 0
+/exercicios-modulo-2/
+0 5 0 265690 0 0
+/exercicios-modulo-2-t2/
+0 8 0 426282 1 1
+/wp-includes/js/thickbox/thickbox.js
+0 4 0 52652 0 0
+/wp-content/uploads/2017/03/Auto-Imagem-Maxwell-Maltz.pdf
+0 6 0 42268772 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/date-range-field.min.js
+0 2 0 2976 0 0
+/modulo-4-videoconferencia-turma-2/
+0 9 0 638984 2 5
+/wp-content/plugins/indeed-membership-pro/admin/assets/js/jquery.flot.pie.js
+0 1 18766880 23404 0 0
+/wp-content/themes/vogue/style-theme-editor.css
+0 2 0 3804 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/css/bootstrap-responsive.min.css
+0 1 0 16849 0 0
+/wp-admin/js/editor.min.js
+0 2 0 16498 0 0
+/wp-includes/js/jquery/ui/slider.min.js
+0 2 0 21974 0 0
+/modulo-1-videoconferencia-turma-2/
+0 1 0 47070 0 0
+/wp-includes/js/thickbox/thickbox.css
+0 4 0 10620 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/codemirror-xml.min.js
+0 1 0 5280 0 0
+/wp-content/uploads/2017/03/Psicologia-da-Autoimagem.pdf
+0 9 0 1135376 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+0 1 0 5815 0 0
+/bloqueio/
+0 75 0 1633842 21 21
+/modulo-8-videoconferencia/
+0 1 0 69121 0 0
+/wp-admin/load-scripts.php
+0 26 0 9609587 0 0
+/wp-content/uploads/2017/04/Texto-2-Auto-Imagem-Tereza-Erthal.pdf
+0 25 0 4768086 0 0
+/wp-admin/images/spinner.gif
+0 2 0 8324 0 0
+/wp-admin/js/accordion.min.js
+0 2 0 1670 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jquery.mobile-events.min.js
+0 1 0 14199 0 0
+/wp-content/uploads/siteorigin-widgets/sow-image-default-813df796d9b1.css
+0 10 0 1232 0 0
+/modulo-2-videoconferencia-turma-2/
+0 1 0 71854 0 0
+/wp-content/plugins/indeed-membership-pro/assets/js/functions.js
+0 140 0 1772199 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/css/media-field.css
+0 2 0 17682 0 0
+/wp-admin/plugins.php
+0 2 0 269698 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/wpdcookiejs/customcookie.js
+0 76 0 82912 0 0
+/wp-content/themes/twentyfourteen/screenshot.png
+0 1 0 933301 0 0
+/modulo-8-projeto-original-de-imagem-t2/
+0 26 0 852334 5 3
+/modulo-5-videoconferencia-t2/
+0 24 0 1345107 8 11
+/wp-content/themes/vogue/upgrade/css/admin-css.css
+0 4 0 2396 0 0
+/modulo-8-videoconferencia-t2/
+0 19 0 1036535 6 5
+/wp-content/plugins/ninja-forms/assets/img/nf-logo-dashboard.png
+0 1 0 7848 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/css/bootstrap.css
+0 1 0 147442 0 0
+/wp-admin/post.php
+0 39 0 10959202 0 0
+/wp-content/themes/vogue/includes/font-awesome/fonts/fontawesome-webfont.woff
+0 7 0 452060 0 0
+/wp-admin/js/widgets/media-audio-widget.min.js
+0 2 0 2880 0 0
+/wp-includes/js/underscore.min.js
+0 32 0 475890 0 0
+/wp-content/plugins/ninja-forms/assets/js/min/front-end.js
+0 32 0 2054273 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/css/date-range-field.css
+0 2 0 1494 0 0
+/wp-content/uploads/2017/03/Módulo-1-Avaliação-de-Satisfação-com-a-Imagem.pdf
+0 6 0 538989 0 0
+/wp-content/themes/vogue/upgrade/css/upgrade-admin.css
+0 1 0 5408 0 0
+/wp-admin/js/widgets/media-image-widget.min.js
+0 2 0 3232 0 0
+/wp-includes/js/jquery/ui/effect-bounce.min.js
+0 1 0 1247 0 0
+/corpo-e-bem-estar/
+0 7 0 234260 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/easy-responsive-tabs/js/easy-responsive-tabs.js
+0 4 0 47676 0 0
+/textos-para-download-modulo-5/
+0 9 0 284046 0 1
+/wp-content/plugins/contact-form-7/admin/js/tag-generator.js
+0 1 0 5832 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/perfect-scrollbar.jquery.min.js
+0 1 0 25117 0 0
+/wp-content/plugins/so-widgets-bundle/widgets/video/css/html-player-responsive.css
+0 22 0 2960 0 0
+/wp-content/themes/vogue/includes/font-awesome/css/font-awesome.css
+0 147 0 3021008 0 0
+/wp-content/plugins/wpdiscuz/assets/css/options-css.min.css
+0 4 0 13988 0 0
+/wp-includes/js/tinymce/skins/wordpress/wp-content.css
+0 2 0 17836 0 0
+/wp-includes/css/editor.min.css
+0 2 0 56204 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/js/back_end.js
+0 3 0 123966 0 0
+/wp-content/plugins/contact-form-7/admin/css/styles.css
+0 1 0 6695 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/images/dashboard-logo.jpg
+0 1 0 41034 0 0
+/search/temp/error.php
+0 1 19107232 19315 0 0
+/wp-content/themes/vogue/upgrade/js/upgrade-custom.js
+0 1 0 1463 0 0
+/material-complementar-modulo-2/
+0 11 0 323870 0 0
+/wp-content/plugins/ninja-forms/assets/js/min/front-end--datepicker.min.js
+0 32 0 5247284 0 0
+/wp-admin/
+0 4 0 542824 0 0
+/wp-includes/js/tinymce/plugins/fullscreen/plugin.min.js
+0 2 0 5220 0 0
+/wp-content/plugins/so-widgets-bundle/base/js/admin.min.js
+0 2 0 38032 0 0
+/wp-admin/load-styles.php
+0 13 0 2953690 0 0
+/modulo-1-videoconferencia/
+0 4 0 328302 1 1
+/wp-content/plugins/wpdiscuz/assets/third-party/easy-responsive-tabs/css/easy-responsive-tabs.min.css
+0 4 0 10644 0 0
+/wp-includes/js/jquery/ui/button.min.js
+0 2 0 14472 0 0
+/wp-content/plugins/ninja-forms/assets/js/min/dashboard.min.js
+0 1 0 15751 0 0
+/exercicios-modulo-7/
+0 1 0 51707 0 0
+/wp-content/plugins/siteorigin-panels/css/images/dropdown-pointer.png
+0 2 0 296 0 0
+/wp-admin/users.php
+0 4 0 472950 0 0
+/wp-content/plugins/ninja-forms/assets/css/builder.css
+0 1 0 65166 0 0
+/wp-content/uploads/siteorigin-widgets/sow-features-default-3ee2f9014fae.css
+0 188 0 364121 0 0
+/wp-includes/js/mediaelement/mediaelement-and-player.min.js
+0 21 0 1652500 0 0
+/wp-content/uploads/2017/04/Texto-2-Como-se-desenvolve-a-autoimagem.pdf
+0 9 0 2195941 0 0
+/wp-includes/js/zxcvbn.min.js
+0 1 0 822202 0 0
+/wp-content/uploads/2017/03/Módulo-1-Primeiras-Entrevistas-Emilio-Romero.pdf
+0 8 0 84820974 0 0
+/home/
+0 103 0 3254509 65 7
+/wp-content/plugins/so-widgets-bundle/icons/fontawesome/font/fontawesome-webfont.woff
+0 7 0 294072 0 0
+/wp-content/plugins/so-widgets-bundle/base/css/admin.css
+0 2 0 43816 0 0
+/favicon.ico
+0 1454 0 0 0 0
+/textos-para-download-modulo-7/
+0 9 0 286096 0 1
+/wp-includes/js/imgareaselect/imgareaselect.css
+0 4 0 3160 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jquery.ui.touch-punch.min.js
+0 1 0 2607 0 0
+/wp-includes/js/tinymce/plugins/hr/plugin.min.js
+0 2 0 2394 0 0
+/wp-content/plugins/siteorigin-panels/css/icons/panels-icons.woff
+0 2 0 5360 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/css/bootstrap-slider.css
+0 4 0 32988 0 0
+/wp-content/plugins/siteorigin-panels/learn/img/play.svg
+0 2 0 1690 0 0
+/wp-content/themes/rocked/screenshot.png
+0 1 0 323756 0 0
+/wp-content/plugins/so-widgets-bundle/widgets/features/css/style.css
+0 114 0 84720 0 0
+/textos-modulo-1/
+0 9 5836154 288152 0 1
+/wp-admin/admin.php
+0 14 0 2356238 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jquery.caret.min.js
+0 2 72057594037928050 2226 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/backbone.marionette3.min.js
+0 1 3904953166590967808 37647 0 0
+/wp-includes/js/tinymce/skins/lightgray/skin.min.css
+0 2 3688780384477184000 78808 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/media-field.min.js
+0 2 1836016430 12540 0 0
+/wp-content/themes/vogue/templates/css/footer-social.css
+0 145 4049068363189466421 131920 0 0
+/wp-includes/js/jquery/ui/droppable.min.js
+0 1 0 6267 0 0
+/wp-includes/js/tinymce/plugins/lists/plugin.min.js
+0 2 0 29998 0 0
+/exercicios-modulo-8/
+0 4 0 81491 0 0
+/wp-content/plugins/indeed-membership-pro/assets/js/jquery.form.js
+0 141 0 3703694 0 0
+/wp-content/plugins/siteorigin-panels/css/front-flex.css
+0 164 0 89420 0 0
+/wp-content/plugins/siteorigin-panels/css/admin.css
+0 10 0 226516 0 0
+/wp-content/themes/vogue/images/logoead.png
+0 5 0 74240 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/js/jquery.flot.js
+0 1 0 119010 0 0
+/textos-para-download-modulo-6/
+0 10 0 328246 0 0
+/wp-admin/edit.php
+0 74 0 14662644 0 0
+/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz.js
+0 76 0 1635744 0 0
+/wp-includes/js/jquery/ui/draggable.min.js
+0 2 0 37810 0 0
+/exercicios-modulo-4/
+0 1 0 53055 0 0
+/wp-content/plugins/so-widgets-bundle/widgets/features/css/fonts/feature-background.woff
+0 102 0 94016 0 0
+/modulo-7-a-questao-da-felicidade-t2/
+0 33 0 1091278 3 2
+/wp-content/plugins/indeed-membership-pro/assets/css/font-awesome.css
+0 153 0 644832 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/images/dashboard-underline.jpg
+0 1 0 11602 0 0
+/modulo-3-t2-o-estagio-do-espelho/
+0 26 0 845287 2 2
+/wp-includes/css/dashicons.min.css
+0 37 0 1622740 0 0
+/wp-includes/js/mediaelement/wp-mediaelement.min.css
+0 26 0 104572 0 0
+/textos-para-download-modulo-8/
+0 10 0 324196 0 2
+/wp-includes/js/tinymce/tinymce.min.js
+0 2 0 922038 0 0
+/wp-content/plugins/so-widgets-bundle/icons/fontawesome/style.css
+0 124 0 55835 0 0
+/exercicios-modulo-5/
+0 2 0 103769 0 0
+/wp-content/plugins/ninja-forms/assets/css/font-awesome.min.css
+0 1 0 27466 0 0
+/wp-includes/js/comment-reply.min.js
+0 76 0 35574 0 0
+/wp-includes/js/jquery/jquery-migrate.min.js
+0 142 0 834648 0 0
+/wp-includes/js/tinymce/plugins/compat3x/plugin.min.js
+0 2 0 8350 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jquery.maskedinput.min.js
+0 1 0 4151 0 0
+/wp-content/plugins/wpdiscuz/assets/img/loading.gif
+0 77 0 108120 0 0
+/wp-content/plugins/ninja-forms/assets/js/min/builder.js
+0 1 0 192092 0 0
+/textos-para-download-modulo-2/
+0 11 0 351817 0 2
+/material-complementar-modulo-5/
+0 11 0 323165 1 0
+/wp-content/plugins/ninja-forms/assets/js/lib/slugify.min.js
+0 2 0 1510 0 0
+/material-complementar-modulo-3/
+0 8 0 235474 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/tinymce-field.min.js
+0 2 0 5252 0 0
+/wp-admin/upgrade.php
+0 1 0 1 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/images/ui-bg_glass_100_fdf5ce_1x400.png
+0 1 0 348 0 0
+/wp-includes/js/jquery/ui/core.min.js
+0 142 0 332000 0 0
+/wp-content/plugins/ninja-forms/assets/css/combobox.css
+0 2 0 3680 0 0
+/wp-content/plugins/so-widgets-bundle/widgets/social-media-buttons/js/social-media-buttons-admin.min.js
+0 2 0 1494 0 0
+/wp-includes/js/jquery/ui/resizable.min.js
+0 2 0 36852 0 0
+/wp-content/plugins/indeed-membership-pro/assets/css/style.css
+0 152 0 3627648 0 0
+/wp-content/plugins/contact-form-7/admin/js/scripts.js
+0 1 0 7400 0 0
+/wp-content/uploads/siteorigin-widgets/sow-button-atom-48cd06765fc9.css
+0 50 0 97515 0 0
+/wp-content/uploads/2017/04/Módulo-2-Desenvolvimento-e-transformacao.pdf
+0 10 0 110807147 0 0
+/wp-content/plugins/contact-form-7/images/ajax-loader.gif
+0 6 0 5082 0 0
+/wp-content/plugins/contact-form-7/includes/css/styles.css
+0 149 0 138116 0 0
+/wp-includes/js/tinymce/plugins/media/plugin.min.js
+0 2 0 33626 0 0
+/material-complementar-modulo-8/
+0 6 0 183663 0 0
+/wp-content/uploads/2017/03/Referências-Bibliográficas.pdf
+0 3 0 354804 0 0
+/exercicios-modulo-6/
+0 3 0 163623 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/autocomplete-field.min.js
+0 2 0 3300 0 0
+/wp-includes/js/backbone.min.js
+0 31 0 652904 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jquery.autoNumeric.min.js
+0 1 0 20227 0 0
+/wp-admin/js/widgets/media-widgets.min.js
+0 2 0 26448 0 0
+/wp-content/plugins/ninja-forms/assets/css/pikaday-package.css
+0 37 0 181203 0 0
+/wp-includes/js/tinymce/plugins/wordpress/plugin.min.js
+0 2 0 30196 0 0
+/modulo-2-t2-o-desenvolvimento-da-autoimagem/
+0 24 0 784487 0 1
+/wp-includes/js/jquery/jquery.js
+0 140 0 7871904 0 0
+/textos-para-download-modulo-4/
+0 14 0 438745 1 2
+/wp-includes/js/tinymce/plugins/wpdialogs/plugin.min.js
+0 2 0 2690 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/images/ui-bg_glass_100_f6f6f6_1x400.png
+0 1 0 262 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/css/icon-field.css
+0 2 0 9166 0 0
+/wp-includes/js/wp-embed.min.js
+0 147 0 130014 0 0
+/wp-includes/js/tinymce/plugins/colorpicker/plugin.min.js
+0 2 0 4286 0 0
+/wp-includes/js/tinymce/plugins/wpeditimage/plugin.min.js
+0 2 0 30200 0 0
+/wp-content/plugins/contact-form-7/includes/js/scripts.js
+0 144 0 1148784 0 0
+/wp-content/plugins/siteorigin-panels/js/siteorigin-panels-25.min.js
+0 1 0 101225 0 0
+/wp-content/uploads/2017/03/17670993_10213285879685723_1241364846_n.jpg
+0 73 0 2848505 0 0
+/wp-includes/js/wp-emoji-release.min.js
+0 161 0 1089740 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/images/ui-bg_glass_65_ffffff_1x400.png
+0 1 0 207 0 0
+/exercicios-modulo-1/
+0 6 0 317485 0 1
+/wp-includes/js/jquery/ui/datepicker.min.js
+0 141 0 2993656 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/pikaday.min.js
+0 1 0 13559 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/css/tinymce-field.css
+0 2 0 260 0 0
+/wp-includes/js/tinymce/skins/lightgray/content.min.css
+0 2 0 6994 0 0
+/wp-content/uploads/siteorigin-widgets/sow-button-atom-6281de6a0ae5.css
+0 103 0 169026 0 0
+/exercicios-modulo-4-t2/
+0 16 0 850210 3 7
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/lib/pikaday/pikaday.css
+0 2 0 8520 0 0
+/material-complementar-modulo-7/
+0 6 0 180990 1 0
+/exercicios-modulo-3-t2/
+0 9 0 469941 1 2
+/wp-content/plugins/ninja-forms/assets/js/lib/combobox.min.js
+0 2 0 6332 0 0
+/eadecoleadmin/
+0 5 0 14696 1 2
+/wp-content/plugins/wpdiscuz/assets/css/wpdiscuz.css
+0 79 0 1480752 0 0
+/recuperar-senha/
+0 6 0 119770 3 3
+/wp-content/plugins/indeed-membership-pro/assets/fonts/fontawesome-webfont.ttf
+0 1 0 152796 0 0
+/wp-admin/js/color-picker.min.js
+0 2 0 6208 0 0
+/wp-includes/js/thickbox/loadingAnimation.gif
+0 4 0 60952 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/backbone.marionette.min.js
+0 1 0 43799 0 0
+/wp-content/themes/vogue/js/skip-link-focus-fix.js
+0 156 0 74349 0 0
+/wp-content/uploads/2017/04/Exercicio-modulo-2-Escala-de-Autoestima.pdf
+0 10 0 29862221 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+0 3 0 834 0 0
+/wp-content/plugins/ninja-forms/assets/css/dashboard.min.css
+0 1 0 9034 0 0
+/wp-content/plugins/indeed-membership-pro/assets/fonts/fontawesome-webfont.woff2
+0 93 0 6111160 0 0
+/wp-content/themes/vogue/screenshot.png
+0 1 0 382859 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/autogrow/jquery.autogrowtextarea.min.js
+0 77 0 62436 0 0
+/wp-content/uploads/2017/03/unnamed.jpg
+0 72 0 227584 0 0
+/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz-options.js
+0 4 0 4068 0 0
+/wp-includes/js/jquery/jquery.ui.touch-punch.js
+0 2 0 2358 0 0
+/wp-content/plugins/indeed-membership-pro/assets/fonts/fontawesome-webfont.eot
+0 1 0 76518 0 0
+/wp-content/plugins/ninja-forms/assets/css/monokai-theme.css
+0 2 0 2486 0 0
+/modulo-3-videoconferencia-turma-2/
+0 4 0 388753 2 1
+/material-complementar-modulo-6/
+0 7 0 220556 0 0
+/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js
+0 143 0 1265584 0 0
+/wp-admin/js/media-upload.min.js
+0 2 0 2306 0 0
+/wp-admin/js/widgets/text-widgets.min.js
+0 2 0 11394 0 0
+/wp-includes/js/tinymce/plugins/textcolor/plugin.min.js
+0 2 0 10336 0 0
+/wp-includes/js/wplink.min.js
+0 4 0 44288 0 0
+/exercicios-modulo-7-t2/
+0 7 0 366445 0 1
+/wp-includes/js/tinymce/plugins/wplink/plugin.min.js
+0 2 0 17822 0 0
+/modulo-6-videoconferenciat2/
+0 64 0 3806036 2 6
+/wp-content/plugins/indeed-membership-pro/admin/assets/css/jquery-ui.min.css
+0 4 0 120860 0 0
+/exercicios-modulo-6-t2/
+0 9 0 474584 1 2
+/
+0 496 0 10670029 204 135
+/wp-content/plugins/ninja-forms/assets/js/lib/codemirror-formatting.min.js
+0 1 0 3282 0 0
+/wp-includes/js/tinymce/plugins/wpautoresize/plugin.min.js
+0 2 0 4798 0 0
+/wp-admin/nav-menus.php
+0 8 0 3644364 0 0
+/modulo-6-sentir-se-bem-na-propria-pele-t22/
+0 16 0 535377 3 3
+/wp-content/uploads/2017/03/download-pdf_1-300x82.png
+0 35 0 403093 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/backbone.radio.min.js
+0 1 0 3365 0 0
+/wp-admin/js/iris.min.js
+0 2 0 47216 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/posts-field.min.js
+0 2 0 1080 0 0
+/wp-includes/js/tinymce/plugins/charmap/plugin.min.js
+0 2 0 18326 0 0
+/wp-content/themes/vogue/style.css
+0 146 0 4021962 0 0
+/wp-content/plugins/so-widgets-bundle/base/css/img/wpspin_light.gif
+0 2 0 4386 0 0
+/modulo-8-projeto-original-imagem/
+0 15 0 506211 0 0
+/wp-content/themes/vogue/includes/font-awesome/fonts/fontawesome-webfont.svg
+0 1 0 391622 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/speakingurl.js
+0 1 0 39456 0 0
+/wp-admin/images/spinner-2x.gif
+0 2 0 17072 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/css/measurement-field.css
+0 2 0 398 0 0
+/wp-content/plugins/siteorigin-panels/learn/js/learn.min.js
+0 2 0 4230 0 0
+/wp-admin/js/widgets/media-video-widget.min.js
+0 2 0 5190 0 0
+/wp-content/plugins/ninja-forms/assets/css/jBox.css
+0 2 0 21802 0 0
+/comments/feed/
+0 2 0 12204 2 1
+/wp-content/plugins/indeed-membership-pro/admin/assets/css/style.css
+0 4 0 247944 0 0
+/wp-content/plugins/ninja-forms/assets/css/display-structure.css
+0 36 0 671429 0 0
+/exercicios-modulo-3/
+0 1 0 52142 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jquery.classywiggle.min.js
+0 1 0 1673 0 0
+/modulo-4-videoconferencia/
+0 1 0 80958 0 0
+/modulo-6-videoconferencia/
+0 5 0 343182 0 0
+/modulo-5-videoconferencia/
+0 1 0 66659 0 0
+/wp-content/plugins/siteorigin-panels/js/siteorigin-panels-2510.min.js
+0 9 0 201264 0 0
+/wp-content/uploads/2017/03/LOGO-1.png
+0 151 0 1042178 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/summernote.min.js
+0 1 0 86532 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/icon-field.min.js
+0 2 0 5054 0 0
+/wp-content/plugins/siteorigin-panels/js/styling-2510.min.js
+0 125 0 41454 0 0
+/wp-includes/js/tinymce/plugins/wpview/plugin.min.js
+0 2 0 5254 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/colorpicker/js/
+0 4 0 71416 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jBox.min.js
+0 2 0 76750 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/contenthover/jquery.contenthover.min.js
+0 4 0 15476 0 0
+/wp-content/plugins/ninja-forms/assets/fonts/fontawesome-webfont.woff2
+0 1 0 66624 0 0
+/modulo-5-estagio-estetico-t2/
+0 62 0 2011435 5 5
+/wp-content/plugins/siteorigin-panels/posters/page-builder-tips.svg
+0 1 0 10071 0 0
+/wp-content/plugins/indeed-membership-pro/assets/css/select2.min.css
+0 154 0 1474012 0 0
+/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz-notes.js
+0 4 0 1576 0 0
+/wp-content/plugins/indeed-membership-pro/assets/js/jquery-ui.min.js
+0 140 0 1822368 0 0
+/wp-includes/js/mediaelement/mediaelementplayer.min.css
+0 24 0 469913 0 0
+/wp-includes/js/jquery/ui/autocomplete.min.js
+0 4 0 33132 0 0
+/modulo-7-a-questao-da-felicidade/
+0 7 0 227395 0 0
+/robots.txt
+0 21 0 1407 0 0
+/wp-admin/profile.php
+0 1 0 108675 0 0
+/wp-content/themes/vogue/includes/font-awesome/fonts/fontawesome-webfont.woff2
+0 131 0 6398744 0 0
+/feed/
+0 2 0 1660 2 2
+/wp-content/plugins/wpdiscuz/assets/third-party/colorpicker/css/
+0 4 0 668 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-4.6.3/fonts/fontawesome-webfont.woff
+0 4 0 271236 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2
+0 65 0 2228776 0 0
+/modulo-7-videoconferencia-t2/
+0 18 0 1094202 1 4
+/exercicios-modulo-8-t2/
+0 8 0 160101 0 0
+/wp-content/plugins/ninja-forms/assets/css/summernote.css
+0 2 0 21224 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/bootstrap.min.js
+0 1 0 36691 0 0
+/wp-content/plugins/ninja-forms/assets/js/lib/jquery.hotkeys.min.js
+0 1 0 2192 0 0
+/wp-cron.php
+0 925 0 0 0 0
+/wp-includes/js/tinymce/plugins/wpgallery/plugin.min.js
+0 2 0 3322 0 0
+/wp-admin/images/resize.gif
+0 2 0 140 0 0
+/wp-content/plugins/indeed-membership-pro/assets/fonts/fontawesome-webfont.woff
+0 6 0 361648 0 0
+/wp-includes/js/jquery/ui/menu.min.js
+0 4 0 38400 0 0
+/wp-includes/js/tinymce/plugins/wpemoji/plugin.min.js
+0 2 0 3128 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/js/bootstrap-slider.js
+0 4 0 204140 0 0
+/wp-includes/js/tinymce/plugins/tabfocus/plugin.min.js
+0 2 0 4734 0 0
+/modulo-3-videoconferencia/
+0 2 0 184193 0 0
+/wp-content/plugins/ninja-forms/assets/img/ninja-forms-app-header-logo@2x.png
+0 2 0 7982 0 0
+/wp-includes/js/wp-a11y.min.js
+0 1 0 653 0 0
+/wp-content/themes/twentysixteen/screenshot.png
+0 1 0 463555 0 0
+/wp-content/plugins/so-widgets-bundle/base/inc/fields/js/lib/pikaday/pikaday.min.js
+0 2 0 29952 0 0
+/wp-admin/admin-ajax.php
+0 28388 0 5551765 0 0
+/modulo-6-sentir-se-bem-na-propria-pele-t2/
+0 49 0 1616940 2 1
+/wp-content/themes/vogue/js/custom.js
+0 141 0 269206 0 0
+/wp-content/plugins/indeed-membership-pro/admin/assets/js/ihc_buttons.js
+0 2 0 6110 0 0
+/wp-content/uploads/siteorigin-widgets/sow-button-atom-254037642586.css
+0 86 0 173360 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-4.6.3/css/font-awesome.min.css
+0 82 0 1133613 0 0
+/wp-content/themes/vogue/templates/css/header-one.css
+0 146 0 669510 0 0
+/wp-includes/js/jquery/ui/effect.min.js
+0 1 0 13420 0 0
+/modulo-2-videoconferencia/
+0 6 0 511846 1 1
+/sentir-se-bem-propria-pele/
+0 11 0 379022 0 0
+/wp-content/plugins/siteorigin-panels/learn/css/learn.css
+0 2 0 6260 0 0
+/wp-includes/js/tinymce/themes/modern/theme.min.js
+0 2 0 28720 0 0
+/modulo-7-videoconferencia/
+0 1 0 66787 0 0
+/wp-includes/js/jquery/ui/position.min.js
+0 4 0 26108 0 0
+/wp-content/themes/nikkon/screenshot.png
+0 1 0 426979 0 0
+/wp-content/themes/vogue/js/jquery.carouFredSel-6.2.1-packed.js
+0 144 0 4656300 0 0
+# End Of Table - urls
+# -sites- (monthly)
+bb240307.virtua.com.br
+0 73 72 2100742 2 1502982539
+/home/
+191.32.125.157.dynamic.adsl.gvt.net.br
+0 31 31 988411 1 1502235967
+/
+200-140-4-171.bsace703.dsl.brasiltelecom.net.br
+0 44 42 1130792 1 1501674515
+/home/
+186.213.48.141.static.host.gvt.net.br
+0 741 736 3488799 5 1503428323
+/modulo-8-videoconferencia-t2/
+187-032-022-146.static.ctbctelecom.com.br
+0 23 6 176868 1 1502128566
+/
+189.27.142.232.dynamic.adsl.gvt.net.br
+0 6787 6786 3579068 3 1501766129
+/modulo-5-videoconferencia-t2/
+201.86.227.216.dynamic.adsl.gvt.net.br
+0 440 439 973928 1 1502062160
+/
+c9068f2a.virtua.com.br
+0 1 1 19570 1 1502984883
+/bloqueio/
+201.86.230.189.static.host.gvt.net.br
+0 8022 8022 80220 0 0
+-
+189.115.123.49.static.host.gvt.net.br
+0 5 3 111982 2 1502668984
+/modulo-6-sentir-se-bem-na-propria-pele-t22/
+187-27-14-34.3g.claro.net.br
+0 728 454 1264682 2 1503432782
+/modulo-8-videoconferencia-t2/
+c9068593.virtua.com.br
+0 110 102 2272070 2 1502120947
+/material-complementar-modulo-1/
+201-93-55-170.dial-up.telesp.net.br
+0 71 67 1697558 2 1503652606
+/
+google-proxy-66-249-88-22.google.com
+0 145 144 3456180 7 1503428495
+/modulo-8-projeto-original-de-imagem-t2/
+143.202.218.244
+0 313 311 2325815 1 1502372960
+/modulo-2-videoconferencia/
+bd3d0a0d.virtua.com.br
+0 50 48 1173441 2 1503946724
+/desenvolvimento-da-autoimagem/
+crawl-66-249-73-86.googlebot.com
+0 2 2 21928 2 1502456211
+/
+crawl-66-249-73-219.googlebot.com
+0 20 20 519262 3 1501816589
+/
+192.187.108.186
+0 1 1 21241 1 1503410607
+/
+177-68-180-211.dsl.telesp.net.br
+0 312 303 8471735 4 1502797813
+/
+187-27-238-208.3g.claro.net.br
+0 1026 616 3255508 3 1502905042
+/modulo-7-videoconferencia-t2/
+200.140.0.84
+0 46 43 1162168 2 1502798459
+/home/
+28.48.169.200.univali.br
+0 54 49 1160967 2 1503002853
+/
+bd3f7d0a.virtua.com.br
+0 942 675 7069473 31 1504050845
+/bloqueio/
+b3eb2497.virtua.com.br
+0 61 58 1298737 1 1502191777
+/estagio-do-espelho/
+b5dd8343.virtua.com.br
+0 48 45 1119127 1 1502924506
+/
+basis.yournetmarket.com
+0 2 0 268 0 0
+-
+google-proxy-66-249-85-29.google.com
+0 11 11 258700 2 1503437186
+/
+msnbot-157-55-39-13.search.msn.com
+0 1 1 67 0 0
+-
+b140a12d.virtua.com.br
+0 31 31 969851 1 1501582780
+/
+crawl-66-249-73-88.googlebot.com
+0 3 2 41049 3 1502456205
+/modulo-6-videoconferenciat2/
+201-2-4-14.bsaco701.dsl.brasiltelecom.net.br
+0 6 6 42069 1 1501679583
+/o-que-e-psicologia-da-autoimagem/
+191.221.230.134
+0 2 1 21268 1 1501850678
+/
+189.6.235.49
+0 116 111 5900589 2 1501869292
+/
+b1b69e64.virtua.com.br
+0 49 21 591855 1 1501624789
+/
+c906e612.virtua.com.br
+0 29 18 361086 2 1503418811
+/modulo-8-projeto-original-de-imagem-t2/
+142.54.161.10
+0 5 0 79125 0 0
+-
+msnbot-157-55-39-1.search.msn.com
+0 1 1 67 0 0
+-
+36.126.193.35.bc.googleusercontent.com
+0 7 0 938 1 1502877573
+-
+b3d13596.virtua.com.br
+0 70 69 1843062 1 1504016240
+/corpo-e-bem-estar/
+google-proxy-66-249-85-27.google.com
+0 14 12 375576 2 1503437240
+/modulo-6-sentir-se-bem-na-propria-pele-t2/
+179-165-251-38.user.vivozap.com.br
+0 304 304 3040 0 0
+-
+177-56-226-195.3g.claro.net.br
+0 1 0 0 0 0
+-
+191.219.240.134
+0 2 1 12523 1 1503437199
+/
+ip-177-79-6-16.user.vivozap.com.br
+0 8 7 100815 1 1502217338
+/home/
+179-241-203-105.3g.claro.net.br
+0 52 21 444948 1 1502655483
+/o-que-e-psicologia-da-autoimagem/
+b3ddc03a.virtua.com.br
+0 51 50 1205384 1 1502192147
+/desenvolvimento-da-autoimagem/
+191.7.170-48.viafibra.com.br
+0 76 68 1791591 1 1503933442
+/estagio-do-espelho/
+b3dbebe3.virtua.com.br
+0 744 737 99362 6 1503427338
+/
+ip-177-79-18-140.user.vivozap.com.br
+0 3 1 21325 1 1501617734
+/
+191.221.6.210
+0 8 8 80 0 0
+-
+209.10.120.126
+0 2 2 0 0 0
+-
+bb25760a.virtua.com.br
+0 39 30 905301 2 1502818328
+/exercicios-modulo-7-t2/
+bd648884.virtua.com.br
+0 16 14 334930 2 1503772024
+/home/
+187-27-206-125.3g.claro.net.br
+0 43 42 1130828 1 1503404408
+/home/
+msnbot-157-55-39-186.search.msn.com
+0 14 14 441358 0 0
+-
+179-97-171-178.dsl.telesp.net.br
+0 32 12 387140 2 1502370447
+/
+msnbot-207-46-13-91.search.msn.com
+0 6 6 124112 0 0
+-
+189-83-109-33.user.veloxzone.com.br
+0 716 696 575810 1 1503252049
+/exercicios-modulo-4-t2/
+msnbot-40-77-167-35.search.msn.com
+0 6 6 95570 0 0
+-
+crawl-66-249-73-90.googlebot.com
+0 3 3 6816 2 1502428904
+/comments/feed/
+179.187.74.182.dynamic.adsl.gvt.net.br
+0 35 35 1012252 2 1503667848
+/
+bfb86971.virtua.com.br
+0 1578 1472 42135815 2 1502399848
+/
+179-111-118-80.dsl.telesp.net.br
+0 60 54 1332999 1 1501585195
+/modulo-5-estagio-estetico-t2/
+177-57-224-118.3g.claro.net.br
+0 29 0 0 0 0
+-
+bd3e0591.virtua.com.br
+0 50 22 475030 1 1502911038
+/
+186-193-224-98.backbone.cti.com.br
+0 33 33 991077 1 1501582149
+/
+bfbf28f5.virtua.com.br
+0 130 123 2781368 4 1503329206
+/modulo-7-a-questao-da-felicidade/
+bbb5b930.virtua.com.br
+0 160 153 4470316 3 1503065900
+/
+b110.crawl.yahoo.net
+0 2 2 21178 1 1503036023
+/
+bd06eb31.virtua.com.br
+0 54 53 1259125 1 1503737517
+/modulo-2-t2-o-desenvolvimento-da-autoimagem/
+189-111-11-29.dsl.telesp.net.br
+0 32 12 387107 1 1502703349
+/
+186-210-039-52.xd-dynamic.algarnetsuper.com.br
+0 1490 957 24794462 8 1502830765
+/textos-para-download-modulo-7/
+msnbot-157-55-39-98.search.msn.com
+0 9 9 394085 2 1503571893
+/
+endower.site
+0 18 2 2236 3 1503807058
+/
+bd649a34.virtua.com.br
+0 1677 1472 6971540 9 1503486809
+/
+179.185.250.225.dynamic.adsl.gvt.net.br
+0 7 6 176872 1 1504044556
+/
+ns3600.hostgator.com
+0 926 926 1 0 0
+-
+crawl-66-249-73-221.googlebot.com
+0 4 3 18511 1 1501816730
+/modulo-4-videoconferencia-turma-2/
+b1b6919d.virtua.com.br
+0 160 146 3243221 3 1503235532
+/
+bb147d2c.virtua.com.br
+0 1 0 0 1 1502037057
+/home/
+177.156.219.138.dynamic.adsl.gvt.net.br
+0 48 47 1172883 1 1502463167
+/o-que-e-psicologia-da-autoimagem/
+191-255-225-177.dsl.telesp.net.br
+0 161 60 1935408 10 1503576581
+/
+201.159.85.2.rgol.com.br
+0 79 75 8877476 1 1503711821
+/exercicios-modulo-2/
+201-24-15-135.bsace703.dsl.brasiltelecom.net.br
+0 63 62 1859293 2 1502882751
+/textos-para-download-modulo-2/
+10.136.184.35.bc.googleusercontent.com
+0 3 1 293 1 1503737372
+/
+177.87.114.92
+0 733 710 4015201 7 1502448610
+/exercicios-modulo-6-t2/
+191.34.237.134.dynamic.adsl.gvt.net.br
+0 434 429 1382556 1 1502220496
+/modulo-6-videoconferenciat2/
+glossbreath.com
+0 138 2 2382111 1 1504033075
+/
+msnbot-40-77-167-34.search.msn.com
+0 7 7 248366 0 0
+-
+141-8-144-131.spider.yandex.com
+0 1 1 67 0 0
+-
+msnbot-207-46-13-37.search.msn.com
+0 1 1 19975 1 1503988136
+/recuperar-senha/
+177.18.139.168.static.host.gvt.net.br
+0 16 16 521837 1 1502333591
+/
+93-158-161-165.spider.yandex.com
+0 1 1 67 0 0
+-
+b157.crawl.yahoo.net
+0 2 2 21154 1 1503354040
+/
+177.18.111.254.static.host.gvt.net.br
+0 96 94 9759635 2 1503861248
+/textos-para-download-modulo-2/
+201-24-47-128.bsace703.dsl.brasiltelecom.net.br
+0 25 16 295847 1 1503480980
+/desenvolvimento-da-autoimagem/
+c9505945.virtua.com.br
+0 2768 2714 4956769 12 1503522815
+/home/
+msnbot-65-55-210-189.search.msn.com
+0 1 1 21244 1 1503533055
+/
+badc1ed7.virtua.com.br
+0 1553 1532 80239633 4 1502231233
+/modulo-3-videoconferencia/
+189.27.135.177.dynamic.adsl.gvt.net.br
+0 46 46 1470461 2 1503257314
+/
+google-proxy-66-249-85-28.google.com
+0 22 22 539691 3 1503692114
+/
+187-27-91-151.3g.claro.net.br
+0 1206 490 3887129 5 1502227715
+/modulo-6-videoconferenciat2/
+200-153-194-44.dsl.telesp.net.br
+0 112 42 1354778 7 1502214347
+/
+msnbot-207-46-13-199.search.msn.com
+0 1 1 67 0 0
+-
+msnbot-40-77-167-63.search.msn.com
+0 10 10 917448 1 1503350549
+/
+crawl-66-249-73-220.googlebot.com
+0 16 15 568709 2 1501816588
+/modulo-5-videoconferencia-t2/
+187-34-240-198.dsl.telesp.net.br
+0 96 36 1160556 6 1501716084
+/
+200-207-68-6.dsl.telesp.net.br
+0 128 48 1548368 8 1504050268
+/
+google-proxy-66-249-88-26.google.com
+0 123 119 2790304 9 1503482238
+/bloqueio/
+207.214.178.107.bc.googleusercontent.com
+0 7 0 938 1 1503923998
+-
+bb7bbb3c.virtua.com.br
+0 472 446 22822655 3 1502988463
+/modulo-7-a-questao-da-felicidade-t2/
+191.251.121.178.dynamic.adsl.gvt.net.br
+0 108 102 2731627 1 1502889416
+/
+201-68-54-254.dsl.telesp.net.br
+0 48 18 580724 3 1502974995
+/
+6235484000.e.brasiltelecom.net.br
+0 10 6 208099 1 1502117605
+/
+crawl-66-249-73-152.googlebot.com
+0 2 2 42206 2 1503837755
+/
+187.58.26.5.static.host.gvt.net.br
+0 182 179 74804648 1 1502119505
+/exercicios-modulo-5-t2/
+ec2-13-56-178-143.us-west-1.compute.amazonaws.com
+0 10 2 1876 0 0
+-
+177.18.191.213.static.host.gvt.net.br
+0 46 46 1470485 2 1502746487
+/
+badcf246.virtua.com.br
+0 1831 1430 114194857 56 1504052973
+/
+bb15317c.virtua.com.br
+0 85 84 2071746 1 1501796553
+/modulo-8-projeto-original-imagem/
+189.122.207.11
+0 45 44 1153800 1 1503507631
+/
+177.207.147.229.dynamic.adsl.gvt.net.br
+0 93 41 700177 2 1501615449
+/material-complementar-modulo-4/
+google-proxy-66-249-88-24.google.com
+0 134 131 2287696 10 1503482236
+/modulo-8-projeto-original-de-imagem-t2/
+189.26.155.9.dynamic.adsl.gvt.net.br
+0 31 31 969868 1 1502826780
+/
+74.208.217.254
+0 1 1 67 0 0
+-
+103.204.244.6
+0 4 2 360 1 1503273288
+/
+msnbot-40-77-167-26.search.msn.com
+0 6 6 124112 0 0
+-
+152-254-149-174.user.vivozap.com.br
+0 354 151 4915172 21 1503618980
+/
+crawl-66-249-73-154.googlebot.com
+0 2 2 134 0 0
+-
+rp-200-233-80-204.redepop.com.br
+0 867 822 4972266 8 1503432775
+/
+201-95-182-68.dsl.telesp.net.br
+0 16 6 193641 1 1502787571
+/
+crawl-66-249-73-150.googlebot.com
+0 26 26 793746 0 0
+-
+# End Of Table - sites (monthly)
+# -sites- (daily)
+ns3600.hostgator.com
+0 1 1 0 0 0
+-
+badcf246.virtua.com.br
+0 14 6 193505 1 1504052973
+/
+# End Of Table - sites (daily)
+# -referrers- 
+http://cursosead.ecolebrasil.com/exercicios-modulo-1-t2/
+0 27
+http://cursosead.ecolebrasil.com/textos-para-download-modulo-8/
+0 10
+http://cursosead.ecolebrasil.com/wp-admin/post.php
+0 509
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/04/Texto-2-Auto-Imagem-Tereza-Erthal.pdf
+0 26
+http://cursosead.ecolebrasil.com/wp-content/plugins/siteorigin-panels/css/admin.css
+0 6
+http://cursosead.ecolebrasil.com/modulo-5-estagio-estetico-t2/
+0 228
+http://cursosead.ecolebrasil.com/exercicios-modulo-6/
+0 15
+http://cursosead.ecolebrasil.com/exercicios-modulo-8-t2/
+0 16
+http://cursosead.ecolebrasil.com/wp-content/themes/vogue/includes/font-awesome/css/font-awesome.css
+0 79
+http://cursosead.ecolebrasil.com/textos-para-download-modulo-2/
+0 38
+http://cursosead.ecolebrasil.com/exercicios-modulo-5-t2/
+0 81
+http://cursosead.ecolebrasil.com/modulo-5-videoconferencia-t2/
+0 17151
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/04/Texto-2-Como-se-desenvolve-a-autoimagem.pdf
+0 10
+http://cursosead.ecolebrasil.com/wp-cron.php
+0 925
+http://cursosead.ecolebrasil.com/modulo-4-videoconferencia-turma-2/
+0 3523
+http://srv208.teste.website/~ecolebrasil/eu-sou-ecole/
+0 2
+http://cursosead.ecolebrasil.com/material-complementar-modulo-1/
+0 42
+http://cursosead.ecolebrasil.com/wp-content/plugins/so-widgets-bundle/icons/fontawesome/style.css
+0 56
+http://cursosead.ecolebrasil.com/wp-content/plugins/so-widgets-bundle/base/css/admin.css
+0 2
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/04/Módulo-2-Desenvolvimento-e-transformacao.pdf
+0 4
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/04/Exercicio-modulo-2-Escala-de-Autoestima.pdf
+0 8
+http://cursosead.ecolebrasil.com/exercicios-modulo-3-t2/
+0 58
+http://cursosead.ecolebrasil.com/wp-admin/load-styles.php
+0 4
+http://cursosead.ecolebrasil.com/exercicios-modulo-2/
+0 31
+http://cursosead.ecolebrasil.com/textos-modulo-1/
+0 25
+http://cursosead.ecolebrasil.com/o-que-e-psicologia-da-autoimagem/
+0 95
+http://cursosead.ecolebrasil.com/modulo-6-videoconferencia/
+0 12
+http://cursosead.ecolebrasil.com/wp-admin/edit.php
+0 268
+http://cursosead.ecolebrasil.com/modulo-8-videoconferencia/
+0 1
+http://cursosead.ecolebrasil.com/modulo-6-sentir-se-bem-na-propria-pele-t2/
+0 220
+http://cursosead.ecolebrasil.com/modulo-1-videoconferencia-turma-2/
+0 9
+http://cursosead.ecolebrasil.com/modulo-3-t2-o-estagio-do-espelho/
+0 73
+http://cursosead.ecolebrasil.com/wp-admin/profile.php
+0 4
+http://cursosead.ecolebrasil.com/modulo-8-videoconferencia-t2/
+0 1662
+http://cursosead.ecolebrasil.com/exercicios-modulo-4-t2/
+0 98
+http://cursosead.ecolebrasil.com/modulo-2-t2-o-desenvolvimento-da-autoimagem/
+0 59
+http://cursosead.ecolebrasil.com/
+0 2901
+http://cursosead.ecolebrasil.com/modulo-5-estagio-estetico/
+0 9
+http://cursosead.ecolebrasil.com/modulo-3-videoconferencia/
+0 441
+http://cursosead.ecolebrasil.com/wp-admin/plugins.php
+0 7
+http://cursosead.ecolebrasil.com/wp-content/plugins/contact-form-7/includes/css/styles.css
+0 3
+http://cursosead.ecolebrasil.com/wp-admin/nav-menus.php
+0 76
+http://cursosead.ecolebrasil.com/estagio-do-espelho/
+0 31
+http://cursosead.ecolebrasil.com/modulo-1-videoconferencia/
+0 612
+http://cursosead.ecolebrasil.com/material-complementar-modulo-8/
+0 9
+http://cursosead.ecolebrasil.com/wp-content/plugins/ninja-forms/assets/css/builder.css
+0 2
+http://cursosead.ecolebrasil.com/modulo-8-projeto-original-imagem/
+0 24
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/03/Auto-Imagem-Maxwell-Maltz.pdf
+0 4
+http://cursosead.ecolebrasil.com/material-complementar-modulo-2/
+0 36
+http://cursosead.ecolebrasil.com/material-complementar-modulo-6/
+0 15
+- (Direct Request)
+0 2420
+http://cursosead.ecolebrasil.com/modulo-7-videoconferencia/
+0 1
+http://cursosead.ecolebrasil.com/wp-content/plugins/ninja-forms/assets/css/dashboard.min.css
+0 1
+http://cursosead.ecolebrasil.com/wp-admin/
+0 160
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/03/Referências-Bibliográficas.pdf
+0 2
+http://cursosead.ecolebrasil.com/textos-para-download-modulo-3/
+0 8
+http://cursosead.ecolebrasil.com/bloqueio/
+0 142
+http://cursosead.ecolebrasil.com/wp-content/plugins/so-widgets-bundle/widgets/features/css/style.css
+0 44
+http://cursosead.ecolebrasil.com/exercicios-modulo-1/
+0 40
+http://cursosead.ecolebrasil.com/wp-admin/upgrade.php
+0 1
+http://cursosead.ecolebrasil.com/material-complementar-modulo-3/
+0 17
+http://cursosead.ecolebrasil.com/modulo-5-videoconferencia/
+0 2
+http://cursosead.ecolebrasil.com/modulo-7-a-questao-da-felicidade-t2/
+0 88
+http://cursosead.ecolebrasil.com/exercicios-modulo-4/
+0 1
+http://cursosead.ecolebrasil.com/modulo-6-videoconferenciat2/
+0 3823
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/04/Exercicio-2-Visão-de-si-mesmo.pdf
+0 3
+http://cursosead.ecolebrasil.com/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-4.6.3/css/font-awesome.min.css
+0 26
+http://cursosead.ecolebrasil.com/modulo-7-videoconferencia-t2/
+0 1428
+http://cursosead.ecolebrasil.com/exercicios-modulo-3/
+0 1
+http://cursosead.ecolebrasil.com/recuperar-senha/
+0 10
+http://cursosead.ecolebrasil.com/modulo-4-t2-corpo-e-bem-estar/
+0 120
+http://cursosead.ecolebrasil.com/modulo-8-projeto-original-de-imagem-t2/
+0 77
+http://cursosead.ecolebrasil.com/wp-admin/admin.php
+0 124
+http://cursosead.ecolebrasil.com/exercicios-modulo-2-t2/
+0 50
+http://cursosead.ecolebrasil.com/material-complementar-modulo-4/
+0 34
+http://cursosead.ecolebrasil.com/modulo-3-videoconferencia-turma-2/
+0 1033
+http://cursosead.ecolebrasil.com/corpo-e-bem-estar/
+0 7
+http://cursosead.ecolebrasil.com/modulo-4-videoconferencia/
+0 4
+http://cursosead.ecolebrasil.com/material-complementar-modulo-5/
+0 38
+http://cursosead.ecolebrasil.com/wp-content/plugins/ninja-forms/assets/css/font-awesome.min.css
+0 1
+http://cursosead.ecolebrasil.com/exercicios-modulo-6-t2/
+0 42
+http://srv208.teste.website/~ecolebrasil/certificacao-internacional/
+0 1
+http://cursosead.ecolebrasil.com/wp-admin/users.php
+0 11
+http://cursosead.ecolebrasil.com/wp-content/plugins/indeed-membership-pro/admin/assets/css/style.css
+0 1
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/03/Psicologia-da-Autoimagem.pdf
+0 6
+http://cursosead.ecolebrasil.com/exercicios-modulo-7-t2/
+0 45
+http://cursosead.ecolebrasil.com/exercicios-modulo-7/
+0 1
+http://cursosead.ecolebrasil.com/wp-content/plugins/indeed-membership-pro/assets/css/font-awesome.css
+0 76
+http://cursosead.ecolebrasil.com/wp-admin/themes.php
+0 13
+http://cursosead.ecolebrasil.com/modulo-2-videoconferencia/
+0 530
+http://cursosead.ecolebrasil.com/modulo-1-t2-o-que-e-psicologia-da-autoimagem/
+0 31
+http://cursosead.ecolebrasil.com/exercicios-modulo-5/
+0 1
+http://cursosead.ecolebrasil.com/home/
+0 860
+http://cursosead.ecolebrasil.com/wp-content/plugins/indeed-membership-pro/admin/assets/css/jquery-ui.min.css
+0 7
+http://cursosead.ecolebrasil.com/modulo-7-a-questao-da-felicidade/
+0 7
+http://cursosead.ecolebrasil.com/textos-para-download-modulo-7/
+0 12
+http://cursosead.ecolebrasil.com/textos-para-download-modulo-4/
+0 21
+http://cursosead.ecolebrasil.com/desenvolvimento-da-autoimagem/
+0 75
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/03/Módulo-1-Primeiras-Entrevistas-Emilio-Romero.pdf
+0 4
+http://cursosead.ecolebrasil.com/material-complementar-modulo-7/
+0 22
+http://cursosead.ecolebrasil.com/exercicios-modulo-8/
+0 6
+http://cursosead.ecolebrasil.com/modulo-2-videoconferencia-turma-2/
+0 17
+http://cursosead.ecolebrasil.com/modulo-6-sentir-se-bem-na-propria-pele-t22/
+0 154
+http://cursosead.ecolebrasil.com/textos-para-download-modulo-6/
+0 18
+http://cursosead.ecolebrasil.com/wp-content/uploads/2017/03/Módulo-1-Avaliação-de-Satisfação-com-a-Imagem.pdf
+0 4
+http://cursosead.ecolebrasil.com/textos-para-download-modulo-5/
+0 28
+http://cursosead.ecolebrasil.com/wp-includes/js/tinymce/skins/lightgray/skin.min.css
+0 2
+http://cursosead.ecolebrasil.com/eadecoleadmin/
+0 23
+http://cursosead.ecolebrasil.com/sentir-se-bem-propria-pele/
+0 23
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+0 872
+Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+0 29
+Mozilla/5.0 (iPad; CPU OS 9_3_5 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13G36 Safari/601.1
+0 484
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; Trident/7.0; rv:11.0) like Gecko
+0 2
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 2318
+Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.3
+0 13
+Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+0 434
+Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko
+0 6
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4
+0 841
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:48.0) Gecko/20100101 Firefox/48.0
+0 34
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14
+0 708
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:50.0) Gecko/20100101 Firefox/50.0
+0 4
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+0 1578
+WhatsApp/2.17.41 i
+0 1
+WordPress/4.8; http://cursosead.ecolebrasil.com
+0 130
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/603.3.8 (KHTML, like Gecko)
+0 120
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.1
+0 70
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+0 232
+Mozilla/5.0 (Windows NT 6.2; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0
+0 168
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8
+0 2751
+Mozilla/5.0 (iPhone; CPU iPhone OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A300 Sa
+0 183
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+0 77
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+0 7
+Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 93
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+0 562
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8
+0 296
+Mozilla/5.0 (Windows NT 6.2; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0
+0 68
+Mozilla/5.0 (Windows; Windows NT 5.1; en-US) Firefox/3.5.0
+0 4
+Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0
+0 313
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+0 124
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko)
+0 47
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 46
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko)
+0 5
+Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Sa
+0 20
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
+0 2
+Safari/12603.3.8 CFNetwork/811.5.4 Darwin/16.7.0 (x86_64)
+0 550
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+0 46
+WordPress/4.8.1; http://cursosead.ecolebrasil.com
+0 796
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+0 50
+}__test|O:21:\"JDatabaseDriverMysqli\":3:{s:2:\"fc\";O:17:\"JSimplepieFactory\":0:{}s:21:\"\\0\\0\\0disconnectHandlers\";a:1:
+0 3
+Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+0 144
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14
+0 167
+Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)
+0 4
+Mozilla/5.0 (iPad; CPU OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.
+0 1841
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 OPR/36.0.2130.3
+0 12
+Mozilla/5.0 (Linux; Android 7.0; SAMSUNG SM-G920I Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/5.4 Chr
+0 1264
+Mozilla/5.0 (Linux; Android 7.0; Moto G (4) Build/NPJS25.93-14-8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.107
+0 1
+Safari/10603.3.8 CFNetwork/720.5.7 Darwin/14.5.0 (x86_64)
+0 710
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/602.2.14 (KHTML, like Gecko)
+0 22
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
+0 130
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 85
+Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile S
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.1
+0 1669
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+0 2
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 15663
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+0 1584
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+0 349
+Safari/12603.2.4 CFNetwork/811.5.4 Darwin/16.6.0 (x86_64)
+0 64
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 40
+Mozilla/5.0 (Linux; Android 6.0.1; Lenovo K33b36 Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mo
+0 1169
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 77
+Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+0 741
+Mozilla/5.0 (Linux; Android 7.0; Moto G (4) Build/NPJS25.93-14-8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125
+0 38
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+0 107
+Mozilla/5.0 (iPad; CPU OS 10_3_2 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) CriOS/59.0.3071.102 Mobile/14F89 Saf
+0 10
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+0 212
+Safari/10602.2.14.0.7 CFNetwork/720.5.7 Darwin/14.5.0 (x86_64)
+0 206
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+0 663
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+0 131
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36
+0 33
+Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safa
+0 56
+Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36
+0 10
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

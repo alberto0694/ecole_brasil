@@ -1,0 +1,75 @@
+Return-Path: <>
+Delivered-To: ecoleead@srv208.prodns.com.br
+Received: from srv208.prodns.com.br
+	by srv208.prodns.com.br (Dovecot) with LMTP id SfJ2CNiTgllOTAUAO6qYBg
+	for <ecoleead@srv208.prodns.com.br>; Thu, 03 Aug 2017 00:09:12 -0300
+Return-path: <>
+Envelope-to: ecoleead@srv208.prodns.com.br
+Delivery-date: Thu, 03 Aug 2017 00:09:12 -0300
+Received: from mailnull by srv208.prodns.com.br with local (Exim 4.87)
+	id 1dd6Vc-001TDH-2g
+	for ecoleead@srv208.prodns.com.br; Thu, 03 Aug 2017 00:09:12 -0300
+X-Failed-Recipients: ead@ecolebrasil.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@srv208.prodns.com.br>
+To: ecoleead@srv208.prodns.com.br
+Content-Type: multipart/report; report-type=delivery-status; boundary=1501729752-eximdsn-1630810321
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1dd6Vc-001TDH-2g@srv208.prodns.com.br>
+Date: Thu, 03 Aug 2017 00:09:12 -0300
+
+--1501729752-eximdsn-1630810321
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  ead@ecolebrasil.com
+    No Such User Here
+
+--1501729752-eximdsn-1630810321
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; srv208.prodns.com.br
+
+Action: failed
+Final-Recipient: rfc822;ead@ecolebrasil.com
+Status: 5.0.0
+
+--1501729752-eximdsn-1630810321
+Content-type: message/rfc822
+
+Return-path: <ecoleead@srv208.prodns.com.br>
+Received: from ecoleead by srv208.prodns.com.br with local (Exim 4.87)
+	(envelope-from <ecoleead@srv208.prodns.com.br>)
+	id 1dd6Vb-001TDB-TM
+	for ead@ecolebrasil.com; Thu, 03 Aug 2017 00:09:11 -0300
+To: ead@ecolebrasil.com
+Subject: [Cursos EAD] Seu site foi atualizado para o WordPress 4.8.1
+X-PHP-Script: cursosead.ecolebrasil.com/wp-cron.php for 50.116.87.84
+Date: Thu, 3 Aug 2017 03:09:11 +0000
+From: WordPress <wordpress@cursosead.ecolebrasil.com>
+Message-ID: <c0e6174b9ba4db93e06b8f60c8f6bff0@cursosead.ecolebrasil.com>
+X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Olá! Seu site em http://cursosead.ecolebrasil.com foi atualizado automaticamente para o WordPress 4.8.1.
+
+Você não precisa fazer nada. Para saber mais sobre a versão 4.8.1, veja a tela Sobre o WordPress:
+http://cursosead.ecolebrasil.com/wp-admin/about.php
+
+Se você passar por qualquer problema ou precisar de suporte, os voluntários nos fóruns de suporte do WordPress.org podem ajudá-lo.
+http://br.forums.wordpress.org
+
+Você também possui alguns plugins e temas com atualizações disponíveis. Atualize-os agora:
+http://cursosead.ecolebrasil.com/wp-admin/
+
+A equipe do WordPress
+
+
+--1501729752-eximdsn-1630810321--

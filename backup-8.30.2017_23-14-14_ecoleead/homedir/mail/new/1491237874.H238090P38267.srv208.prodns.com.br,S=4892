@@ -1,0 +1,114 @@
+Return-path: <>
+Envelope-to: ecoleead@srv208.prodns.com.br
+Delivery-date: Mon, 03 Apr 2017 13:44:34 -0300
+Received: from gateway23.websitewelcome.com ([192.185.49.219]:33708)
+	by srv208.prodns.com.br with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(Exim 4.87)
+	id 1cv55m-0009sg-4u
+	for ecoleead@srv208.prodns.com.br; Mon, 03 Apr 2017 13:44:34 -0300
+Received: by gateway23.websitewelcome.com (Postfix)
+	id 03D5254471; Mon,  3 Apr 2017 11:44:24 -0500 (CDT)
+Date: Mon,  3 Apr 2017 11:44:24 -0500 (CDT)
+From: MAILER-DAEMON@gateway23.websitewelcome.com (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: ecoleead@srv208.prodns.com.br
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="D276B5445D.1491237864/gateway23.websitewelcome.com"
+Message-Id: <20170403164424.03D5254471@gateway23.websitewelcome.com>
+
+This is a MIME-encapsulated message.
+
+--D276B5445D.1491237864/gateway23.websitewelcome.com
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host gateway23.websitewelcome.com.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<bgellerribeiro@gmail.com>: host gmail-smtp-in.l.google.com[108.177.9.26] said:
+    550-5.1.1 The email account that you tried to reach does not exist. Please
+    try 550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. Learn more at 550 5.1.1
+    https://support.google.com/mail/?p=NoSuchUser 59si6768665otb.117 - gsmtp
+    (in reply to RCPT TO command)
+
+--D276B5445D.1491237864/gateway23.websitewelcome.com
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; gateway23.websitewelcome.com
+X-Postfix-Queue-ID: D276B5445D
+X-Postfix-Sender: rfc822; ecoleead@srv208.prodns.com.br
+Arrival-Date: Mon,  3 Apr 2017 11:44:23 -0500 (CDT)
+
+Final-Recipient: rfc822; bgellerribeiro@gmail.com
+Original-Recipient: rfc822;bgellerribeiro@gmail.com
+Action: failed
+Status: 5.1.1
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does
+    not exist. Please try 550-5.1.1 double-checking the recipient's email
+    address for typos or 550-5.1.1 unnecessary spaces. Learn more at 550 5.1.1
+    https://support.google.com/mail/?p=NoSuchUser 59si6768665otb.117 - gsmtp
+
+--D276B5445D.1491237864/gateway23.websitewelcome.com
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Return-Path: <ecoleead@srv208.prodns.com.br>
+Received: from cm13.websitewelcome.com (cm13.websitewelcome.com [100.42.49.6])
+	by gateway23.websitewelcome.com (Postfix) with ESMTP id D276B5445D
+	for <bgellerribeiro@gmail.com>; Mon,  3 Apr 2017 11:44:23 -0500 (CDT)
+Received: from srv208.prodns.com.br ([50.116.87.80])
+	by cmsmtp with SMTP
+	id v63hc4P8sxqIuv63hc5ZEM; Mon, 03 Apr 2017 12:46:29 -0500
+Received: from ecoleead by srv208.prodns.com.br with local (Exim 4.87)
+	(envelope-from <ecoleead@srv208.prodns.com.br>)
+	id 1cv55b-0009sE-Ah
+	for bgellerribeiro@gmail.com; Mon, 03 Apr 2017 13:44:23 -0300
+To: bgellerribeiro@gmail.com
+Subject: Cursos EAD: Your Password has been changed
+X-PHP-Script: cursosead.ecolebrasil.com/wp-admin/admin.php for 187.33.36.10
+Date: Mon, 3 Apr 2017 16:44:23 +0000
+From: Cursos EAD <ead@ecolebrasil.com>
+Message-ID: <6a1af4454cee376b23212d11c9c9d040@cursosead.ecolebrasil.com>
+X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - srv208.prodns.com.br
+X-AntiAbuse: Original Domain - gmail.com
+X-AntiAbuse: Originator/Caller UID/GID - [1767 499] / [47 12]
+X-AntiAbuse: Sender Address Domain - srv208.prodns.com.br
+X-BWhitelist: no
+X-Source-IP: 
+X-Exim-ID: 1cv55b-0009sE-Ah
+X-Source: 
+X-Source-Args: /opt/php55/bin/php-cgi /home/ecoleead/public_html/wp-admin/admin.php 
+X-Source-Dir: cursosead.ecolebrasil.com:/public_html/wp-admin
+X-Source-Sender: 
+X-Source-Auth: ecoleead
+X-Email-Count: 2
+X-Source-Cap: ZWNvbGVlYWQ7Zm94d2U3OTg7c3J2MjA4LnByb2Rucy5jb20uYnI=
+
+<html><head></head><body><p><p>Hi Bruna Ribeiro,</p><br/></p>
+<p><p>Your Password has been changed.</p><br/></p>
+<p><p>To login please fill out your credentials on:<br/>
+<a href="http://cursosead.ecolebrasil.com/">http://cursosead.ecolebrasil.com/</a></p><br/></p>
+<p><p>Your Username: Bruna Ribeiro</p><br/></p>
+<p><p>Have a nice day!</p></p>
+</body></html>
+
+
+--D276B5445D.1491237864/gateway23.websitewelcome.com--

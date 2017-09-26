@@ -1,0 +1,419 @@
+AWSTATS DATA FILE 7.4 (build 20140726)
+# If you remove this file, all statistics for date 201706 will be lost/reset.
+# Last config file used to build this data file was /home/ecoleead/tmp/awstats/awstats.cursosead.ecolebrasil.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2022                
+POS_TIME 2695                
+POS_VISITOR 7948                
+POS_DAY 9872                
+POS_DOMAIN 3500                
+POS_LOGIN 3765                
+POS_ROBOT 3920                
+POS_WORMS 4101                
+POS_EMAILSENDER 4232                
+POS_EMAILRECEIVER 4375                
+POS_SESSION 10614               
+POS_SIDER 10823               
+POS_FILETYPES 4510                
+POS_DOWNLOADS 4771                
+POS_OS 5589                
+POS_BROWSER 5812                
+POS_SCREENSIZE 6224                
+POS_UNKNOWNREFERER 6298                
+POS_UNKNOWNREFERERBROWSER 6450                
+POS_ORIGIN 6597                
+POS_SEREFERRALS 6737                
+POS_PAGEREFS 6890                
+POS_SEARCHWORDS 7038                
+POS_KEYWORDS 7190                
+POS_MISC 2357                
+POS_ERRORS 7249                
+POS_CLUSTER 3621                
+POS_SIDER_404 7381                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20170701203823 1 0 9366625388218
+FirstTime 20170601000001
+LastTime 20170630174318
+LastUpdate 20170702090120 1 0 0 0 0
+TotalVisits 263                 
+TotalUnique 44                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 44                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavascriptDisabled 0 0 0
+FlashSupport 0 0 0
+JavaEnabled 0 0 0
+DirectorSupport 0 0 0
+AddToFavourites 0 722 0
+RealPlayerSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+PDFSupport 0 0 0
+TotalMisc 0 0 0
+QuickTimeSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 179 247 3264595 3 142 1996853
+1 361 425 901148 5 85 1626072
+2 446 469 844147 1 32 298843
+3 35 48 858435 1 70 597720
+4 7 7 84121 8 33 299974
+5 0 0 0 0 0 0
+6 2 2 0 5 5 93379
+7 2 2 21035 18 18 2412
+8 12 76 2147082 2 6 0
+9 307 416 4006587 2 59 0
+10 603 618 653437 5 44 298958
+11 425 431 788351 4 70 672317
+12 405 507 3532167 14 97 897511
+13 685 863 4987385 9 81 785428
+14 582 688 3612075 11 229 2465116
+15 607 727 3991214 7 116 1045975
+16 407 545 7570130 9 100 933816
+17 72 107 3043959 12 98 896634
+18 46 90 1836068 4 44 298937
+19 100 161 2547738 7 71 747112
+20 22 22 358116 3 69 784489
+21 256 373 25289698 9 55 150264
+22 242 280 16871784 3 69 448329
+23 60 75 1672633 6 65 299701
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 3
+br 5542 6778 86074928
+us 320 400 2733149
+fr 1 1 21035
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 1
+bot[\s_+:,\.\;\/\\-] 38 1531337 20170626130803 8
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+jpg 38 737136 0 0
+pdf 14 36568529 0 0
+woff 30 754032 0 0
+php 5152 3979887 0 0
+woff2 86 4888928 0 0
+js 588 14238050 0 0
+png 51 475526 0 0
+html 595 18264948 0 0
+css 607 8872154 0 0
+gif 18 49922 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 9
+/wp-content/uploads/2017/03/M%C3%B3dulo-1-Avaliac%CC%A7a%CC%83o-de-Satisfac%CC%A7a%CC%83o-com-a-Imagem.pdf 3 0 301062
+/wp-content/uploads/2017/03/Refere%CC%82ncias-Bibliogra%CC%81ficas.pdf 3 1 407597
+/wp-content/uploads/2017/03/Psicologia-da-Autoimagem.pdf 1 0 174587
+/wp-content/uploads/2017/04/Texto-2-Como-se-desenvolve-a-autoimagem.pdf 1 0 273274
+/wp-content/uploads/2017/04/Texto-2-Auto-Imagem-Tereza-Erthal.pdf 1 0 427534
+/wp-content/uploads/2017/04/Mo%CC%81dulo-2-Desenvolvimento-e-transformacao.pdf 1 0 11090196
+/wp-content/uploads/2017/03/Mo%CC%81dulo-1-Primeiras-Entrevistas-Emilio-Romero.pdf 1 0 12117210
+/wp-content/uploads/2017/03/Auto-Imagem-Maxwell-Maltz.pdf 1 0 8453594
+/wp-content/uploads/2017/04/Exercicio-modulo-2-Escala-de-Autoestima.pdf 1 0 3323475
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 10
+winnt 3224 2726
+ios_iphone 92 92
+linux 225 179
+macosx 1444 1176
+win7 794 639
+linuxandroid 106 26
+Unknown 292 292
+win8 393 337
+macosx9 29 15
+ios_ipad 581 381
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 17
+safari10.1.1 1058 932
+chrome49.0.2623.75 3 3
+chrome59.0.3071.104 74 20
+chrome59.0.3071.86 513 450
+chrome51.0.2704.79 191 67
+safari10.0 239 122
+safari 434 351
+safari9.1.1 29 15
+Unknown 292 292
+safari10.1 187 126
+chrome58.0.3029.110 3414 2950
+chrome57.0.2987.110 222 176
+msie9.0 1 1
+chrome58.0.3029.83 106 26
+mozilla 95 95
+msie7.0 1 0
+chrome59.0.3071.115 321 237
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 1
+WordPress/4.7.5;_http://cursosead.ecolebrasil.com 20170630174310
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+WordPress/4.7.5;_http://cursosead.ecolebrasil.com 20170630174310
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 222 223
+From1 2 2
+From2 2 2
+From3 0 0
+From4 5637 6953
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+live 2 2
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+302 85 0
+404 755 14101435
+301 8 0
+403 46 6164
+406 4 904
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 7
+/apple-touch-icon-precomposed.png 375 -
+/news/wp-admin/setup-config.php 1 -
+/blog/wordpress/wp-admin/setup-config.php 1 -
+/new/wp-admin/setup-config.php 1 -
+/blogs/wp-admin/setup-config.php 1 -
+/beta/wp-admin/setup-config.php 1 -
+/apple-touch-icon.png 375 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 44
+189.60.211.50 1344 1414 2952983 20170615112315
+177.139.49.221 936 1005 2536503 20170629104627
+200.140.0.45 592 605 501875 20170614163432
+186.207.227.52 513 615 5026478 20170602214750
+177.193.15.67 452 518 2816776 20170628223419
+201.159.85.2 351 434 862052 20170622031431
+50.116.87.84 292 292 0 20170630174310
+187.107.57.19 235 316 40576985 20170630031819
+177.133.212.25 219 219 2190 20170604132325
+187.58.247.199 176 176 1760 20170606121501
+186.220.242.70 165 222 5190742 20170630174318
+177.132.9.122 155 155 1550 20170602230556
+179.247.149.165 110 110 1100 20170601001956
+177.64.160.120 54 100 4660912 20170602172133
+179.209.63.215 37 86 3130284 20170614172452
+189.8.89.38 30 105 2448390 20170606131950
+186.206.255.59 28 90 2410202 20170626093824
+201.6.133.72 23 104 2355580 20170626152131
+186.230.24.244 20 90 1248958 20170629135547
+152.254.223.97 18 79 2368939 20170613200646
+191.254.185.74 14 14 294673 20170621100659
+187.101.161.178 13 27 309206 20170601141344
+177.81.133.37 11 30 288692 20170601172908
+200.163.4.40 8 47 1210892 20170613112902
+179.219.68.238 7 45 1167271 20170616123349
+200.175.192.237 3 30 969242 20170616220125
+66.249.83.132 1 1 21044 20170608190514
+189.6.243.77 3 30 969255 20170614172751
+177.79.28.29 2 2 42051 20170619153253
+201.88.28.224 3 30 969234 20170607083818
+191.184.116.208 1 1 101 20170601183250
+66.249.85.29 4 15 259648 20170601183122
+66.249.88.24 1 13 204255 20170602155014
+195.154.217.116 1 1 21035 20170611070016
+187.10.82.93 2 2 42107 20170615231134
+66.249.88.26 7 21 531529 20170602203720
+66.249.85.27 4 18 536284 20170601183117
+66.249.85.28 4 20 513017 20170601194010
+66.249.83.130 2 2 42072 20170606164339
+201.40.24.33 7 21 430084 20170614142116
+201.21.115.36 2 8 62958 20170613212601
+66.249.88.22 5 18 625300 20170602203715
+179.241.198.28 2 5 27590 20170625184304
+179.241.204.54 6 44 197313 20170613141640
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 27
+20170601 508 638 4856361 13
+20170602 411 542 8101711 13
+20170603 10 10 126237 7
+20170604 228 228 23199 3
+20170605 10 10 126131 4
+20170606 232 307 2681667 14
+20170607 27 81 1242760 15
+20170608 7 7 105201 5
+20170609 12 12 168259 8
+20170611 2 2 21035 2
+20170612 3 3 42063 2
+20170613 55 199 4008484 17
+20170614 1489 1658 7280818 8
+20170615 569 573 914059 15
+20170616 25 117 2984261 9
+20170619 8 21 424204 5
+20170620 22 28 608990 14
+20170621 24 24 336540 16
+20170622 925 1108 4408406 16
+20170623 3 3 42070 2
+20170624 878 944 3068376 8
+20170625 15 18 195953 10
+20170626 62 143 3830431 13
+20170627 18 29 679958 10
+20170628 31 34 442092 18
+20170629 268 413 41568190 12
+20170630 21 27 594449 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+30mn-1h 18
+15mn-30mn 7
+2mn-5mn 5
+1h+ 26
+30s-2mn 6
+5mn-15mn 5
+0s-30s 196
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 59
+/wp-admin/admin-ajax.php 4841 142845 6 9
+/wp-cron.php 292 0 115 115
+/ 234 4925427 126 101
+/wp-content/themes/vogue/includes/font-awesome/fonts/fontawesome-webfont.woff2 37 2156880 2 0
+/modulo-8-projeto-original-imagem/ 28 891803 0 1
+/home/ 28 873648 3 2
+/o-que-e-psicologia-da-autoimagem/ 26 826310 0 2
+/modulo-7-a-questao-da-felicidade/ 24 774920 1 2
+/wp-content/plugins/indeed-membership-pro/assets/fonts/fontawesome-webfont.woff2 22 1222232 2 6
+/sentir-se-bem-propria-pele/ 22 710265 0 0
+/wp-content/plugins/so-widgets-bundle/widgets/features/css/fonts/feature-background.woff 21 30736 1 5
+/wp-content/plugins/so-widgets-bundle/icons/fontawesome/font/fontawesome-webfont.woff2 19 1078440 0 2
+/estagio-do-espelho/ 18 580166 2 0
+/desenvolvimento-da-autoimagem/ 18 581398 0 0
+/exercicios-modulo-8/ 18 309980 1 7
+/modulo-5-estagio-estetico/ 17 547792 1 1
+/corpo-e-bem-estar/ 13 418580 0 0
+/wp-admin/edit.php 10 1305773 0 0
+/exercicios-modulo-1/ 9 471108 0 0
+/exercicios-modulo-2/ 8 425436 1 2
+/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2 8 431376 0 0
+/textos-para-download-modulo-6/ 7 225084 0 0
+/material-complementar-modulo-8/ 7 207994 0 0
+/material-complementar-modulo-1/ 7 212329 0 1
+/exercicios-modulo-4/ 7 371753 0 1
+/textos-modulo-1/ 3 92985 0 0
+/material-complementar-modulo-3/ 4 116779 0 0
+/modulo-1-videoconferencia/ 6 442576 0 0
+/textos-para-download-modulo-8/ 6 184137 0 0
+/material-complementar-modulo-6/ 4 124957 0 0
+/modulo-2-videoconferencia/ 5 402728 1 0
+/textos-para-download-modulo-7/ 4 124297 0 0
+/modulo-4-videoconferencia/ 2 161512 0 0
+/exercicios-modulo-5/ 5 259639 0 0
+/exercicios-modulo-6/ 6 313305 0 1
+/material-complementar-modulo-5/ 2 58415 0 0
+/modulo-6-videoconferencia/ 1 64229 0 0
+/wp-admin/load-scripts.php 5 1773436 0 0
+/textos-para-download-modulo-3/ 4 123711 0 1
+/material-complementar-modulo-4/ 3 87617 0 0
+/wp-content/plugins/so-widgets-bundle/icons/fontawesome/font/fontawesome-webfont.woff 3 180824 0 0
+/eadecoleadmin/ 2 5679 1 1
+/wp-admin/load-styles.php 2 497194 0 0
+/wp-admin/ 1 131437 0 0
+/exercicios-modulo-3/ 5 260924 0 1
+/material-complementar-modulo-2/ 5 146027 0 0
+/wp-content/themes/vogue/includes/font-awesome/fonts/fontawesome-webfont.woff 2 180824 0 0
+/modulo-7-videoconferencia/ 3 199802 0 0
+/textos-para-download-modulo-5/ 6 185690 0 1
+/wp-content/plugins/indeed-membership-pro/assets/fonts/fontawesome-webfont.woff 2 180824 0 0
+/modulo-8-videoconferencia/ 4 275683 0 0
+/exercicios-modulo-7/ 6 310530 0 1
+/material-complementar-modulo-7/ 3 89653 0 0
+/textos-para-download-modulo-2/ 5 155396 0 0
+/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-4.6.3/fonts/fontawesome-webfont.woff 2 180824 0 0
+/wp-admin/admin.php 2 260639 0 0
+/modulo-3-videoconferencia/ 4 367591 0 0
+/textos-para-download-modulo-4/ 3 92736 0 0
+/modulo-5-videoconferencia/ 2 132920 0 0
+END_SIDER
