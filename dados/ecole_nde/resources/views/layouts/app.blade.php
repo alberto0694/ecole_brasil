@@ -111,7 +111,7 @@
         <div class="row" style="margin-bottom:10px">
             <img src="{{ asset('images/logo-ead.png') }}" style="width:30%; margin-left:35%"/>
         </div>
-        @yield('content')
+			@yield('content');
         <footer>
         <div class="row" style="margin-bottom:10px">
             {{--  <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -127,3 +127,4 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+
