@@ -136,15 +136,13 @@
                         <div id="home" class="tab-pane fade in active">
                             <div class="col-md-7" style="text-align:justify">
                                     <h3 align="center">PSICOLOGIA DA AUTO IMAGEM</h3>
-<p>O curso de Psicologia da Autoimagem tem como objetivo fornecer ferramentas para uma investigação aprofundada em relação a imagem do indivíduo, ensinando a trabalhar a imagem não apenas como aparência, mas em suas diversas vertentes: autoimagem, relação com o corpo, imagem real x imagem ideal, entre outros.</p>
-<p>Unindo conceitos da psicologia, coaching e consultoria de imagem, são apresentadas técnicas de diagnóstico e fortalecimento da autoimagem, além de recursos para a assertividade do projeto de imagem através de uma abordagem completa e ferramentas específicas.</p>
-<p>Os exercícios e as teorias oferecidos no curso também ampliam a consciência do aluno para um olhar mais profundo sobre si mesmo, possibilitando uma imagem consciente e psiquicamente coerente.</p>
-<p>Através de um diagnóstico para direcionamento do foco de trabalho, o aluno saberá aplicar as ferramentas de forma pontual para que os objetivos do indivíduo sejam atingidos.</p>
-<p>Cada módulo será trabalhado durante uma semana, possibilitando um aprendizado aprofundado sobre os temas. As vídeo aulas e atividades estarão disponíveis na plataforma e, todas as terças-feiras, às 19h, acontece uma videoconferência para debates, dúvidas e detalhamento das atividades.</p>
- 
-<p>Qualquer dúvida, entre em contato pelo email <a href="mailto:contato@ecolebrasil.com">contato@ecolebrasil.com</a> !</p>
-                                    
-
+                                    <p>O curso de Psicologia da Autoimagem tem como objetivo fornecer ferramentas para uma investigação aprofundada em relação a imagem do indivíduo, ensinando a trabalhar a imagem não apenas como aparência, mas em suas diversas vertentes: autoimagem, relação com o corpo, imagem real x imagem ideal, entre outros.</p>
+                                    <p>Unindo conceitos da psicologia, coaching e consultoria de imagem, são apresentadas técnicas de diagnóstico e fortalecimento da autoimagem, além de recursos para a assertividade do projeto de imagem através de uma abordagem completa e ferramentas específicas.</p>
+                                    <p>Os exercícios e as teorias oferecidos no curso também ampliam a consciência do aluno para um olhar mais profundo sobre si mesmo, possibilitando uma imagem consciente e psiquicamente coerente.</p>
+                                    <p>Através de um diagnóstico para direcionamento do foco de trabalho, o aluno saberá aplicar as ferramentas de forma pontual para que os objetivos do indivíduo sejam atingidos.</p>
+                                    <p>Cada módulo será trabalhado durante uma semana, possibilitando um aprendizado aprofundado sobre os temas. As vídeo aulas e atividades estarão disponíveis na plataforma e, todas as terças-feiras, às 19h, acontece uma videoconferência para debates, dúvidas e detalhamento das atividades.</p>
+                                     
+                                    <p>Qualquer dúvida, entre em contato pelo email <a href="mailto:contato@ecolebrasil.com">contato@ecolebrasil.com</a> !</p>
                             </div>
                             <div class="col-md-4">
                                 <img src="{{asset('images/nde-banner.png')}}" style="width:100%"/>
@@ -201,29 +199,66 @@
                                     <hr>
                                     <div id="texto" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 1</h3>
-                                      <!--   <div class="col-md-12">
-                                            <div class="col-md-3">
-                                                <label align="center" style="display: block;">
-                                                    <a href="{{ asset('files/nde_apostila.pdf') }}" target="_blank">
-                                                        APOSTILA - MÓDULO 01                                            
-                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
-                                                    </a>
-                                                </label>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label align="center" style="display: block;">
+                                                            <a href="{{ asset('files/Psicologia_Autoimagem_MOD1.pdf') }}" target="_blank">
+                                                                APOSTILA - MÓDULO 01                                            
+                                                            <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                            </a>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label align="center" style="display: block;">
+                                                            <a href="{{ asset('files/MOD1-Psicologia-da-Autoimagem.pdf') }}" target="_blank">
+                                                                PSICOLOGIA DA AUTOIMAGEM - MÓDULO 01                                            
+                                                            <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                            </a>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label align="center" style="display: block;">
+                                                            <a href="{{ asset('files/Modulo-1-Primeiras-Entrevistas-Emilio-Romero.pdf') }}" target="_blank">
+                                                                Primeiras entrevistas Emilio Romeo - MÓDULO 01                                            
+                                                            <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                            </a>
+                                                        </label>
+                                                    </div>                                                
                                             </div>
-                                        </div> -->
+                                            <div class="row" style="margin-top:50px">
+                                                <div class="col-md-4">
+                                                    <label align="center" style="display: block;">
+                                                        <a href="{{ asset('files/MOD-1Auto-Imagem-Maxwell-Maltz.pdf') }}" target="_blank">
+                                                            Auto Imagem Maxwell Maltz - MÓDULO 01                                           
+                                                        <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                        </a>
+                                                    </label>
+                                                </div>                                                
+                                            </div>
+
+                                        </div>
                                     </div>       
                                     <div id="exercicios" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 1</h3>
-                                        <!-- <div class="col-md-12">
+                                        <div class="col-md-12">
                                             <div class="col-md-4">
                                                 <label align="center" style="display: block;">
-                                                    <a href="{{ asset('files/exe_canvas.pdf') }}" target="_blank">
-                                                        EXERCÍCIO CANVAS - MÓDULO 01                                            
+                                                    <a href="{{ asset('files/Atividade1_MOD1.pdf') }}" target="_blank">
+                                                        ATIVIDADE 1 - MÓDULO 01                                            
                                                     <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
                                                     </a>
                                                 </label>
                                             </div>
                                             <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/Módulo-1-Avaliação-de-Satisfação-com-a-Imagem.pdf') }}" target="_blank">
+                                                        Avaliação de Satisfação com a Imagem - MÓDULO 01                                            
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>                                            
+                                           {{--  <div class="col-md-4">
                                                 <label align="center" style="display: block;">
                                                     <a href="{{ asset('files/exe_marketing.pdf') }}"  target="_blank">
                                                         EXERCÍCIO MARKETING - MÓDULO 01                                            
@@ -238,41 +273,41 @@
                                                     <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
                                                     </a>
                                                 </label>
-                                            </div>
-                                        </div> -->
+                                            </div> --}}
+                                        </div>
                                     </div>                                              
                                     <div id="video" class="tab-pane fade in active">
                                         <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/genero_mod_1.mp4') }}" type="video/mp4">
+                                            <source src="{{ asset('videos/imagem_mod_1.mp4') }}" type="video/mp4">
                                         </video>   
                                     </div>  
                                     <div id="material" class="tab-pane fade">
                                         <div class="row">
-                                            <div class="col-md-3">
-                                                    <label align="center" style="display: block;">
-                                                        <a href="http://www.cinevitor.com.br/tomboy/" target="_blank">
-                                                            SUGESTÕES DE FILME                                       
-                                                        <img style="margin: 0 auto; display: block;" src="{{ asset('images/tomboy1.jpg') }}"/>                                        
-                                                        </a>
-                                                    </label>
-                                            </div>  
-                                            <div class="col-md-3">
-                                                    <label align="center" style="display: block;">
-                                                        <a href="http://bit.ly/2tFcG2G" target="_blank">
-                                                            SUGESTÕES DE LEITURA - Vamos falar sobre gênero?                                                                                               
-                                                        </a>
-                                                    </label>
-                                            </div>           
-                                            <div class="col-md-3">
-                                                    <label align="center" style="display: block;">
-                                                        <a href="http://bit.ly/2xsLFlN" target="_blank">
-                                                            SUGESTÕES DE LEITURA - O conceito de gênero por seis autoras feministas
-                                                        </a>
-                                                    </label>
-                                            </div>                     
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/Psicologia_Autoimagem_MOD1.pdf') }}" target="_blank">
+                                                        CASO ILUSTRATIVO - MÓDULO 1                                        
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/Psicologia_Autoimagem_MOD1.pdf') }}" target="_blank">
+                                                        AULA 1 - Identificação da Autoimagem
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>                                            
+                                        <div class="row" style="margin-top: 50px; margin-left: 15px">
+                                            <div class="col-md-12 ">
+                                                    {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/wV1FrqwZyKw" frameborder="0" allowfullscreen></iframe> --}}
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Il0nz0LHbcM" frameborder="0" allowfullscreen></iframe>
+                                            </div>                                
+                                        </div>                  
                                                                          
                                         </div>
-                                        
+                                   {{--      
                                         <div class="row">
                                             <div class="col-md-12 ">
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/LV7l13SZcw8" frameborder="0" allowfullscreen></iframe>                                        
@@ -280,7 +315,7 @@
                                             <div class="col-md-12 ">
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/eYqYLfm1rWA" frameborder="0" allowfullscreen></iframe>
                                             </div>                                
-                                        </div>                                
+                                        </div>  --}}                               
                                     </div>   
                                     <div id="conferencia" class="tab-pane fade">
                                         <div class="row">
@@ -297,8 +332,8 @@
                                         </div>
                                         <div class="row">
                                                 <div class="col-md-12">
-                                                        <iframe width="530" height="400" src="http://www.youtube.com/embed/z5hh_aJcnKo" frameborder="0" allowfullscreen></iframe>
-                                                        <iframe width="400" height="500" src="https://www.youtube.com/live_chat?v=z5hh_aJcnKo&embed_domain=genero.ecolebrasil.com" frameborder="0" allowfullscreen></iframe>
+                                                        <iframe width="530" height="400" src="http://www.youtube.com/embed/UrtTuNglzuo" frameborder="0" allowfullscreen></iframe>
+                                                        <iframe width="400" height="500" src="https://www.youtube.com/live_chat?v=UrtTuNglzuo&embed_domain=cursosead.ecolebrasil.com" frameborder="0" allowfullscreen></iframe>
                                                         
                                                 </div>                                
                                         </div>
@@ -357,83 +392,79 @@
                                     <hr>
                                     <div id="texto_mod_2" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 2</h3>
-                                      <!--   <div class="col-md-12">
-                                            <div class="col-md-3">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
                                                 <label align="center" style="display: block;">
-                                                    <a href="{{ asset('files/nde_apostila.pdf') }}" target="_blank">
-                                                        APOSTILA - MÓDULO 01                                            
+                                                    <a href="{{ asset('files/Psicologia_Autoimagem_MOD2.pdf') }}" target="_blank">
+                                                        APOSTILA - MÓDULO 02                                            
                                                     <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
                                                     </a>
                                                 </label>
                                             </div>
-                                        </div> -->
+                                            
+                                        </div>
                                     </div>       
                                     <div id="exercicios_mod_2" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 2</h3>
-                                        <!-- <div class="col-md-12">
+                                        <div class="col-md-12">
                                             <div class="col-md-4">
                                                 <label align="center" style="display: block;">
-                                                    <a href="{{ asset('files/exe_canvas.pdf') }}" target="_blank">
-                                                        EXERCÍCIO CANVAS - MÓDULO 01                                            
+                                                    <a href="{{ asset('files/Atividade2_MOD2.pdf') }}" target="_blank">
+                                                        ATIVIDADE 2.1 - MÓDULO 02                                            
                                                     <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
                                                     </a>
                                                 </label>
                                             </div>
                                             <div class="col-md-4">
                                                 <label align="center" style="display: block;">
-                                                    <a href="{{ asset('files/exe_marketing.pdf') }}"  target="_blank">
-                                                        EXERCÍCIO MARKETING - MÓDULO 01                                            
+                                                    <a href="{{ asset('files/Atividade2_2_MOD2.pdf') }}"  target="_blank">
+                                                        ATIVIDADE 2.2 - MÓDULO 02                                            
                                                     <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
                                                     </a>
                                                 </label>
                                             </div>
-                                            <div class="col-md-4">
+{{--                                             <div class="col-md-4">
                                                 <label align="center" style="display: block;">
                                                     <a href="{{ asset('files/exe_impressao_a4_mod1.pdf') }}"  target="_blank">
                                                         EXERCÍCIO POWER POINT- MÓDULO 01                                            
                                                     <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
                                                     </a>
                                                 </label>
-                                            </div>
-                                        </div> -->
+                                            </div> --}}
+                                        </div>
                                     </div>                                              
                                     <div id="video_mod_2" class="tab-pane fade in active">
                                         <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/genero_mod_2.mp4') }}" type="video/mp4">
+                                            <source src="{{ asset('videos/imagem_mod_2.mp4') }}" type="video/mp4">
                                         </video>   
                                     </div>  
                                     <div id="material_mod_2" class="tab-pane fade">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                    <!--<label align="center" style="display: block;">
-                                                        <a href="http://www.cinevitor.com.br/tomboy/" target="_blank">
-                                                            SUGESTÕES DE FILME                                       
-                                                        <img style="margin: 0 auto; display: block;" src="{{ asset('images/tomboy1.jpg') }}"/>
-                                                        </a>
-                                                    </label>-->
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/Caso_Ilustrativo1_MOD2.pdf') }}" target="_blank">
+                                                        CASO ILUSTRATIVO - MÓDULO 02                                            
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>      
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/Aula2_MOD2.pdf') }}" target="_blank">
+                                                        AULA 2 - Equilibrio entre o Eu Real x Eu Ideal
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
                                             </div>  
-                                            <div class="col-md-4">
-                                                    <label align="center" style="display: block;">
-                                                        <a href="http://bit.ly/2vC8dyZ" target="_blank">
-                                                            SUGESTÕES DE LEITURA - O conceito de gênero por Gayle Rubin: o sistema sexo/gênero
-                                                        </a>
-                                                    </label>
-                                            </div>           
-                                            <div class="col-md-4">
-                                                    <label align="center" style="display: block;">
-                                                        <a href="http://bit.ly/2xth8Eq" target="_blank">
-                                                            SUGESTÕES DE LEITURA - Maternidade é pauta central do feminismo
-                                                        </a>
-                                                    </label>
-                                            </div>                     
                                                                          
                                         </div>
                                         
-                                        <div class="row" style="margin-top: 10px">
+{{--                                         <div class="row" style="margin-top: 10px">
                                             <div class="col-md-12 ">
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/wV1FrqwZyKw" frameborder="0" allowfullscreen></iframe>
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Il0nz0LHbcM" frameborder="0" allowfullscreen></iframe>
                                             </div>                                
-                                        </div>                                
+                                        </div> --}}                                
                                     </div>   
                                     <div id="conferencia_mod_2" class="tab-pane fade">
                                         <div class="row">
@@ -450,8 +481,8 @@
                                         </div>
                                         <div class="row">
                                                 <div class="col-md-12">
-                                                        <iframe width="530" height="400" src="http://www.youtube.com/embed/z5hh_aJcnKo" frameborder="0" allowfullscreen></iframe>
-                                                        <iframe width="400" height="500" src="https://www.youtube.com/live_chat?v=z5hh_aJcnKo&embed_domain=genero.ecolebrasil.com" frameborder="0" allowfullscreen></iframe>
+                                                        <iframe width="530" height="400" src="http://www.youtube.com/embed/7GJDHYYQEFU" frameborder="0" allowfullscreen></iframe>
+                                                        <iframe width="400" height="500" src="https://www.youtube.com/live_chat?v=7GJDHYYQEFU&embed_domain=cursosead.ecolebrasil.com" frameborder="0" allowfullscreen></iframe>
                                                         
                                                 </div>                                
                                         </div>
