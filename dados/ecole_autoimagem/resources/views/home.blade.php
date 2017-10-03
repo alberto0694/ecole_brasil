@@ -277,9 +277,9 @@
                                         </div>
                                     </div>                                              
                                     <div id="video" class="tab-pane fade in active">
-                                        <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/imagem_mod_1.mp4') }}" type="video/mp4">
-                                        </video>   
+                                            <div class="col-md-12 ">
+                                                    <iframe width="560" height="315" src="https://player.vimeo.com/video/210973472" frameborder="0" allowfullscreen></iframe>
+                                            </div>                                         
                                     </div>  
                                     <div id="material" class="tab-pane fade">
                                         <div class="row">
