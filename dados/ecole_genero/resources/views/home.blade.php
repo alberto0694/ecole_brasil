@@ -123,8 +123,8 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="pill" href="#home">&nbsp;Introdução</a></li>
                     <li><a data-toggle="pill" href="#menu1">Módulo 1</a></li>
-<!--                     <li><a data-toggle="pill" href="#menu2">Módulo 2</a></li>
-                    <li><a data-toggle="pill" href="#menu3">Módulo 3</a></li>
+                    <li><a data-toggle="pill" href="#menu2">Módulo 2</a></li>
+                    <!-- <li><a data-toggle="pill" href="#menu3">Módulo 3</a></li>
                     <li><a data-toggle="pill" href="#menu4">Módulo 4</a></li>
                     <li><a data-toggle="pill" href="#menu5">Módulo 5</a></li>
                     <li><a data-toggle="pill" href="#menu6">Módulo 6</a></li>
@@ -308,6 +308,159 @@
                                 </div>                 
                             </div>
                         </div>
+                        <div id="menu2" class="tab-pane fade in">
+                            <h3 align="center">Módulo 2</h3>
+                            <div class="col-md-12">
+                                <ul class="nav nav-tabs col-md-12" style="margin-bottom:10px">
+                                    <li class="col-md-2 col-md-offset-1">
+                                        <a data-toggle="pill" href="#texto_mod_2">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/books.gif') }}"/>
+                                                <label align="center" style="display: block;">Textos para downloads</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" col-md-2 active">
+                                        <a data-toggle="pill" href="#video_mod_2">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/eye.gif') }}"/>
+                                                <label align="center" style="display: block;">Vídeo Aula</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" col-md-2">
+                                        <a data-toggle="pill" href="#exercicios_mod_2">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/eye.gif') }}"/>
+                                                <label align="center" style="display: block;">Exercícios</label>
+                                            </div>
+                                        </a>
+                                    </li>                            
+                                    <li class=" col-md-2">
+                                        <a data-toggle="pill" href="#material_mod_2">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/paper.gif') }}"/>
+                                                <label align="center" style="display: block;">Materiais complementares</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" col-md-2">
+                                        <a data-toggle="pill" href="#conferencia_mod_2">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/player.gif') }}"/>
+                                                <label align="center" style="display: block;">Videoconferência</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>   
+                                <div class="tab-content" style="margin-top:10px; padding-top:10px">
+                                    <hr>
+                                    <div id="texto_mod_2" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
+                                        <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 2</h3>
+                                      <!--   <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/nde_apostila.pdf') }}" target="_blank">
+                                                        APOSTILA - MÓDULO 01                                            
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>
+                                        </div> -->
+                                    </div>       
+                                    <div id="exercicios_mod_2" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
+                                        <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 2</h3>
+                                        <!-- <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/exe_canvas.pdf') }}" target="_blank">
+                                                        EXERCÍCIO CANVAS - MÓDULO 01                                            
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/exe_marketing.pdf') }}"  target="_blank">
+                                                        EXERCÍCIO MARKETING - MÓDULO 01                                            
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/exe_impressao_a4_mod1.pdf') }}"  target="_blank">
+                                                        EXERCÍCIO POWER POINT- MÓDULO 01                                            
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>
+                                        </div> -->
+                                    </div>                                              
+                                    <div id="video_mod_2" class="tab-pane fade in active">
+                                        <video width="400" controls style="display:block; margin:0 auto">
+                                            <source src="{{ asset('videos/genero_mod_2.mp4') }}" type="video/mp4">
+                                        </video>   
+                                    </div>  
+                                    <div id="material_mod_2" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                    <!--<label align="center" style="display: block;">
+                                                        <a href="http://www.cinevitor.com.br/tomboy/" target="_blank">
+                                                            SUGESTÕES DE FILME                                       
+                                                        <img style="margin: 0 auto; display: block;" src="{{ asset('images/tomboy1.jpg') }}"/>
+                                                        </a>
+                                                    </label>-->
+                                            </div>  
+                                            <div class="col-md-4">
+                                                    <label align="center" style="display: block;">
+                                                        <a href="http://bit.ly/2vC8dyZ" target="_blank">
+                                                            SUGESTÕES DE LEITURA - O conceito de gênero por Gayle Rubin: o sistema sexo/gênero
+                                                        </a>
+                                                    </label>
+                                            </div>           
+                                            <div class="col-md-4">
+                                                    <label align="center" style="display: block;">
+                                                        <a href="http://bit.ly/2xth8Eq" target="_blank">
+                                                            SUGESTÕES DE LEITURA - Maternidade é pauta central do feminismo
+                                                        </a>
+                                                    </label>
+                                            </div>                     
+                                                                         
+                                        </div>
+                                        
+                                        <div class="row" style="margin-top: 10px">
+                                            <div class="col-md-12 ">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wV1FrqwZyKw" frameborder="0" allowfullscreen></iframe>
+                                            </div>                                
+                                        </div>                                
+                                    </div>   
+                                    <div id="conferencia_mod_2" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-xs-3 col-md-1 col-md-offset-3">
+                                                <a href="https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B17477593-E51E-1029-F03B-CB5C0CBF555F%7D%26lang%3Dpt-BR%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1/update2/installers/ChromeSetup.exe" class="thumbnail">
+                                                    <img src="{{ asset('images/chrome.png')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-5">
+                                                <a href="https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B17477593-E51E-1029-F03B-CB5C0CBF555F%7D%26lang%3Dpt-BR%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1/update2/installers/ChromeSetup.exe" class="">
+                                                    <h5>Caso esteja usando outro navegador faça download do google chrome.</h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <iframe width="530" height="400" src="http://www.youtube.com/embed/z5hh_aJcnKo" frameborder="0" allowfullscreen></iframe>
+                                                        <iframe width="400" height="500" src="https://www.youtube.com/live_chat?v=z5hh_aJcnKo&embed_domain=genero.ecolebrasil.com" frameborder="0" allowfullscreen></iframe>
+                                                        
+                                                </div>                                
+                                        </div>
+                                       
+                                    </div>                             
+                                </div>                 
+                            </div>
+                        </div>                        
 
 
                 </div>
