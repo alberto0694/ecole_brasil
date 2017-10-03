@@ -276,9 +276,9 @@
                                             </div> --}}
                                         </div>
                                     </div>                                              
-                                    <div id="video" class="tab-pane fade in active">
-                                            <div class="col-md-12 ">
-                                                    <iframe width="560" height="315" src="https://player.vimeo.com/video/210973472" frameborder="0" allowfullscreen></iframe>
+                                    <div id="video" class="tab-pane fade in active">                                        
+                                            <div class="col-md-8 col-md-offset-2 ">
+                                                    <iframe width="660" height="515" src="https://player.vimeo.com/video/210973472" frameborder="0" allowfullscreen></iframe>
                                             </div>                                         
                                     </div>  
                                     <div id="material" class="tab-pane fade">
@@ -434,9 +434,9 @@
                                         </div>
                                     </div>                                              
                                     <div id="video_mod_2" class="tab-pane fade in active">
-                                        <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/imagem_mod_2.mp4') }}" type="video/mp4">
-                                        </video>   
+                                            <div class="col-md-8 col-md-offset-2 ">
+                                                    <iframe width="660" height="515" src="https://player.vimeo.com/video/211048055" frameborder="0" allowfullscreen></iframe>
+                                            </div>                                          
                                     </div>  
                                     <div id="material_mod_2" class="tab-pane fade">
                                         <div class="row">
