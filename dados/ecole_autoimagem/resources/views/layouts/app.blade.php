@@ -117,7 +117,7 @@
             {{--  <i class="fa fa-envelope-o" aria-hidden="true"></i>
             &nbsp;
             <i class="fa fa-facebook" aria-hidden="true"></i>  --}}
-            <label align="center" style="    display: block;">Todos os direitos reservados Ecole Brasil</label>            
+            <label align="center" style=" display: block;">Todos os direitos reservados Ecole Brasil</label>            
         </div>
             
         </footer>
