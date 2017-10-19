@@ -124,8 +124,8 @@
                     <li><a data-toggle="pill" href="#menu3">Módulo 3</a></li>
                     <li><a data-toggle="pill" href="#menu4">Módulo 4</a></li>
                     <li><a data-toggle="pill" href="#menu5">Módulo 5</a></li>
-                    {{-- <li><a data-toggle="pill" href="#menu6">Módulo 6</a></li>
-                    <li><a data-toggle="pill" href="#menu7">Módulo 7</a></li>
+                     <li><a data-toggle="pill" href="#menu6">Módulo 6</a></li>
+                    {{--<li><a data-toggle="pill" href="#menu7">Módulo 7</a></li>
                     <li><a data-toggle="pill" href="#menu8">Módulo 8</a></li> --}}
                 </ul>
 
@@ -503,9 +503,9 @@
                                         </div>                                      
                                     </div>                                              
                                     <div id="video_mod3" class="tab-pane fade in active">
-                                        <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/nde_video_aula_mod_3.mp4') }}" type="video/mp4">
-                                        </video>   
+                                                <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/237892224" width="640" height="360" 
+                                                        frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                                                </iframe>    
                                     </div>  
                                     <div id="material_mod3" class="tab-pane fade">
                                                                     
@@ -701,16 +701,47 @@
                                     <hr>
                                     <div id="texto_mod5" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 5</h3>
-                                        
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/apostila_mod5.pdf') }}" target="_blank">
+                                                    APOSTILA - MÓDULO 05                                           
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
+                                        {{-- <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/slides_mod5.pdf') }}" target="_blank">
+                                                    SLIDE - MÓDULO 05                                           
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div> --}}
                                     </div>       
                                     <div id="exercicios_mod5" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 5</h3>                                        
+
                                     </div>                                              
                                     <div id="video_mod5" class="tab-pane fade in active">
                                             <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/237639197" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                     </div>  
                                     <div id="material_mod5" class="tab-pane fade">
-                                                                    
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/planilha_pj.xlsx') }}" target="_blank">
+                                                    Planilha PJ                                          
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/xlsx.png') }}"/>
+                                                </a>
+                                            </label>
+                                        </div>    
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/planilha_orcamento.xlsx') }}" target="_blank">
+                                                    Planilha Orçamento familiar - Modelo 1
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/xlsx.png') }}"/>
+                                                </a>
+                                            </label>
+                                        </div>                         
                                     </div>   
 
 
@@ -789,18 +820,30 @@
                                     <hr>
                                     <div id="texto_mod6" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 6</h3>
-                                        
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/apostila_mod6.pdf') }}" target="_blank">
+                                                    APOSTILA DE PREÇOS - MÓDULO 06
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>                                        
                                     </div>       
                                     <div id="exercicios_mod6" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 6</h3>                                        
                                     </div>                                              
                                     <div id="video_mod6" class="tab-pane fade in active">
-                                        <!-- <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/mod_1_patricia.mp4') }}" type="video/mp4">
-                                        </video>    -->
+                                        <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/238892445" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                     </div>  
                                     <div id="material_mod6" class="tab-pane fade">
-                                                                    
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/planilha_precos.xlsx') }}" target="_blank">
+                                                    Planilha de Preços
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/xlsx.png') }}"/>
+                                                </a>
+                                            </label>
+                                        </div>                         
                                     </div>   
 
 
