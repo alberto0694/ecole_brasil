@@ -19,8 +19,6 @@
         min-height:800px;
     }
 
-    
-
     body, div, nav, .navbar-default,
     .panel-default>.panel-heading{
         background-color:#f9f9f9;
@@ -125,8 +123,8 @@
                     <li><a data-toggle="pill" href="#menu4">Módulo 4</a></li>
                     <li><a data-toggle="pill" href="#menu5">Módulo 5</a></li>
                      <li><a data-toggle="pill" href="#menu6">Módulo 6</a></li>
-                    {{--<li><a data-toggle="pill" href="#menu7">Módulo 7</a></li>
-                    <li><a data-toggle="pill" href="#menu8">Módulo 8</a></li> --}}
+                    <li><a data-toggle="pill" href="#menu7">Módulo 7</a></li>
+                    {{--<li><a data-toggle="pill" href="#menu8">Módulo 8</a></li> --}}
                 </ul>
 
                 <div class="tab-content" style="margin-top:10px">
@@ -928,12 +926,12 @@
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 7</h3>                                        
                                     </div>                                              
                                     <div id="video_mod7" class="tab-pane fade in active">
-                                        <!-- <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/mod_1_patricia.mp4') }}" type="video/mp4">
-                                        </video>    -->
+                                                <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/239548156" width="640" height="360" 
+                                                        frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                                                </iframe>  
                                     </div>  
                                     <div id="material_mod7" class="tab-pane fade">
-                                                                    
+                     
                                     </div>   
 
 
