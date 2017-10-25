@@ -34,12 +34,14 @@
  <div class="row">
  		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
  			<div class="row">
- 				<h2 style="float: left">Agenda &nbsp;&nbsp;</h2>
- 				<h4 style="float: left; margin-top: 30px"><i>Cursos e Workshops</i></h4>
- 				<hr>
+ 				<h2 style="float: left; font-style: normal" class="title-pink-begin-text">Agenda &nbsp;&nbsp;</h2>
+ 				<h4 style="float: left; margin-top: 32px; font-weight: normal" class="title-pink-begin-text"><i>Cursos e Workshops</i></h4>
  			</div>
  			<div class="row">
- 				<h2>JULHO</h2>
+ 				<hr>
+ 			</div> 			
+ 			<div class="row">
+ 				<h2 class="title-pink-begin-text"><i>JULHO</i></h2>
  			</div>
  			<div class="row">
  				<div class="col-md-6">
@@ -50,9 +52,9 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div>
@@ -64,9 +66,9 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div> 								
@@ -80,9 +82,9 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div>
@@ -94,16 +96,16 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div> 								
  			</div> 	
  			<hr>
  			<div class="row">
- 				<h2>AGOSTO</h2>
+ 				<h2 class="title-pink-begin-text"><i>AGOSTO</i></h2>
  			</div>
  			<div class="row">
  				<div class="col-md-6">
@@ -114,9 +116,9 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div>
@@ -128,9 +130,9 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div> 								
@@ -144,9 +146,9 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div>
@@ -158,16 +160,18 @@
 					    </a>
 					  </div>
 					  <div class="media-body">
-					    <h4 class="media-heading">05 e 06</h4>
-					    <h5 class="media-heading">PORTO ALEGRE/RS</h5>
-					    Tecidos: Diferentes tipos e aplicações
+					    <h4 class="media-heading days-agenda">05 e 06</h4>
+					    <h5 class="media-heading gray-text-bold">PORTO ALEGRE/RS</h5>
+					    <span class="descricao-day-agenda">Tecidos: Diferentes tipos e aplicações</span>
 					  </div>
 					</div>	 					
  				</div> 								
  			</div> 
  			<div class="row">
- 				<hr>
- 				<h3 style="text-align: center"><a href="{{route('index')}}">Agenda Completa</a></h3>
+ 				<hr style="margin-top: 70px">
+ 				<h3 style="text-align: center; margin-top: -50px"><a href="{{route('index')}}">
+ 					<img src="{{asset('images/agenda-button.png')}}">
+ 				</a></h3>
  			</div>
  		</div>
  </div>

@@ -920,10 +920,65 @@
                                     <hr>
                                     <div id="texto_mod7" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 7</h3>
-                                        
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/apostila_aspectos_societarios_tributarios.pdf') }}" target="_blank">
+                                                    APOSTILA EM PDF
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/apostila_aspectos_societarios_tributarios.docx') }}" target="_blank">
+                                                    APOSTILA EM DOCX
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/docx.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>  
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/aspectos_sociais_tributarios.pdf') }}" target="_blank">
+                                                    ASPECTOS SOCIETÁRIOS E TRIBUTÁRIOS
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/TELA01.pdf') }}" target="_blank">
+                                                    TELA 01
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/TELA02.pdf') }}" target="_blank">
+                                                    TELA 02
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
                                     </div>       
-                                    <div id="exercicios_mod6" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
+                                    <div id="exercicios_mod7" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 7</h3>                                        
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/questoes_revisao.pdf') }}" target="_blank">
+                                                    QUESTÕES DE REVISÃO EM PDF
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/questoes_revisao.docx') }}" target="_blank">
+                                                    QUESTÕES DE REVISÃO EM DOCX
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/docx.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
                                     </div>                                              
                                     <div id="video_mod7" class="tab-pane fade in active">
                                                 <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/239548156" width="640" height="360" 
@@ -931,7 +986,38 @@
                                                 </iframe>  
                                     </div>  
                                     <div id="material_mod7" class="tab-pane fade">
-                     
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/aliquotas_simples_nacional.pdf') }}" target="_blank">
+                                                    ALÍQUOTAS DO SIMPLES NACIONAL
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>  
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/anexos_simples_nacional.pdf') }}" target="_blank">
+                                                    ANEXOS DO SIMPLES NACIONAL
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/atividades_permitas_mei.pdf') }}" target="_blank">
+                                                    ATIVIDADES PERMITIDAS AO MEI
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/mod_7/modelo_contrato_social.doc') }}" target="_blank">
+                                                    MODELO DO CONTRATO SOCIAL
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/docx.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div>
                                     </div>   
 
 

@@ -126,8 +126,8 @@
                     <li><a data-toggle="pill" href="#menu2">Módulo 2</a></li>
                     <li><a data-toggle="pill" href="#menu3">Módulo 3</a></li>
                     <li><a data-toggle="pill" href="#menu4">Módulo 4</a></li>
-                    <!-- <li><a data-toggle="pill" href="#menu3">Módulo 3</a></li>
-                    <li><a data-toggle="pill" href="#menu4">Módulo 4</a></li>
+                    <li><a data-toggle="pill" href="#menu5">Módulo 5</a></li>
+                    <!--<li><a data-toggle="pill" href="#menu4">Módulo 4</a></li>
                     <li><a data-toggle="pill" href="#menu5">Módulo 5</a></li>
                     <li><a data-toggle="pill" href="#menu6">Módulo 6</a></li>
                     <li><a data-toggle="pill" href="#menu7">Módulo 7</a></li>
@@ -854,7 +854,210 @@
 
                                 </div>                 
                             </div>                            
-                        </div>                          
+                        </div> 
+
+                        <div id="menu5" class="tab-pane fade in">
+                            <h3 align="center">Módulo 5</h3>
+                            <div class="col-md-12">
+                                <ul class="nav nav-tabs col-md-12" style="margin-bottom:10px">
+                                    <li class="col-md-2 col-md-offset-1">
+                                        <a data-toggle="pill" href="#texto_mod5">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/books.gif') }}"/>
+                                                <label align="center" style="display: block;">Textos para downloads</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" col-md-2 active">
+                                        <a data-toggle="pill" href="#video_mod5">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/eye.gif') }}"/>
+                                                <label align="center" style="display: block;">Vídeo Aula</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" col-md-2">
+                                        <a data-toggle="pill" href="#exercicios_mod5">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/eye.gif') }}"/>
+                                                <label align="center" style="display: block;">Exercícios</label>
+                                            </div>
+                                        </a>
+                                    </li>                            
+                                    <li class=" col-md-2">
+                                        <a data-toggle="pill" href="#material_mod5">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/paper.gif') }}"/>
+                                                <label align="center" style="display: block;">Materiais complementares</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" col-md-2">
+                                        <a data-toggle="pill" href="#conferencia_mod5">
+                                            <div class="">4
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/player.gif') }}"/>
+                                                <label align="center" style="display: block;">Videoconferência</label>
+                                            </div>
+                                        </a>
+                                    </li>
+                         {{--            <li class=" col-md-2">
+                                        <a data-toggle="pill" href="#conferencia_extra">
+                                            <div class="">
+                                                <img style="margin: 0 auto; display: block;" src="{{ asset('images/player.gif') }}"/>
+                                                <label align="center" style="display: block;">Videoconferência AULA EXTRA</label>
+                                            </div>
+                                        </a>
+                                    </li> --}}
+                                    
+                                </ul>   
+                                <div class="tab-content" style="margin-top:10px; padding-top:10px">
+                                    <hr>
+                                    <div id="texto_mod5" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
+                                        <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 1</h3>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label align="center" style="display: block;">
+                                                            <a href="{{ asset('files/mod5/a_roupa_como_linguagem.pdf') }}" target="_blank">
+                                                                A ROUPA COMO LINGUAGEM                                            
+                                                            <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                            </a>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label align="center" style="display: block;">
+                                                            <a href="{{ asset('files/mod5/roupas_e_marcas.pdf') }}" target="_blank">
+                                                                ROUPAS E MARCAS                                          
+                                                            <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                            </a>
+                                                        </label>
+                                                    </div>                                             
+                                            </div>
+                                            <div class="row" style="margin-top:50px">
+                                                <div class="col-md-4">
+                                                    <label align="center" style="display: block;">
+                                                        <a href="{{ asset('files/mod5/moda_inconsciente.pdf') }}" target="_blank">
+                                                            Moda e Inconsciente Pascale Navarri                                          
+                                                        <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                        </a>
+                                                    </label>
+                                                </div>                                                
+                                            </div>
+
+                                        </div>
+                                    </div>       
+                                    <div id="exercicios_mod5" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
+                                        <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 1</h3>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/mod5/exercicio_desapego.pdf') }}" target="_blank">
+                                                        EXERCÍCIO DO DESAPEGO                                         
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>
+                                            {{-- <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/Caso_Ilustrativo1_MOD1.pdf') }}" target="_blank">
+                                                        CASO ILUSTRATIVO - MÓDULO 1                                        
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label align="center" style="display: block;">
+                                                    <a href="{{ asset('files/Psicologia_Autoimagem_MOD1.pdf') }}" target="_blank">
+                                                        AULA 1 - Identificação da Autoimagem
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                    </a>
+                                                </label>
+                                            </div>  --}}
+                                        </div>
+                                    </div>                                              
+                                    <div id="video_mod5" class="tab-pane fade in active">                                        
+                                            <div class="col-md-8 col-md-offset-2 ">
+                                                {{-- https://player.vimeo.com/video/21104874 --}}
+                                                    <iframe width="660" height="515" src="https://player.vimeo.com/video/211040340" frameborder="0" allowfullscreen></iframe>
+                                            </div>                                         
+                                    </div>  
+                                    <div id="material_mod5" class="tab-pane fade">
+                                        <div class="row">                                         
+                                            <div class="row" style="margin-top: 50px; margin-left: 15px">
+                                                <div class="col-md-12 ">
+                                                        {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/wV1FrqwZyKw" frameborder="0" allowfullscreen></iframe> --}}
+                                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z-A2NE6mA64" frameborder="0" allowfullscreen></iframe>
+                                                </div>                                
+                                            </div>                  
+                                                                         
+                                        </div>
+                                    </div>   
+                                    <div id="conferencia_mod5" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-xs-3 col-md-1 col-md-offset-3">
+                                                <a href="https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B17477593-E51E-1029-F03B-CB5C0CBF555F%7D%26lang%3Dpt-BR%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1/update2/installers/ChromeSetup.exe" class="thumbnail">
+                                                    <img src="{{ asset('images/chrome.png')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-5">
+                                                <a href="https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B17477593-E51E-1029-F03B-CB5C0CBF555F%7D%26lang%3Dpt-BR%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1/update2/installers/ChromeSetup.exe" class="">
+                                                    <h5>Caso esteja usando outro navegador faça download do google chrome.</h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <iframe width="530" height="400" src="http://www.youtube.com/embed/TGVV24zz59c" frameborder="0" allowfullscreen></iframe>
+                                                        <iframe width="400" height="500" src="https://www.youtube.com/live_chat?v=TGVV24zz59c&embed_domain=psicologia.ecolebrasil.com" frameborder="0" allowfullscreen></iframe>
+                                                        
+                                                </div>                                
+                                        </div>
+                                       
+                                    </div>  
+                                    {{-- <div id="conferencia_extra" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-xs-3 col-md-1">
+                                                <a href="https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B17477593-E51E-1029-F03B-CB5C0CBF555F%7D%26lang%3Dpt-BR%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1/update2/installers/ChromeSetup.exe" class="thumbnail">
+                                                    <img src="{{ asset('images/chrome.png')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-5">
+                                                <a href="https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B17477593-E51E-1029-F03B-CB5C0CBF555F%7D%26lang%3Dpt-BR%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1/update2/installers/ChromeSetup.exe" class="">
+                                                    <h5>Caso esteja usando outro navegador faça download do google chrome.</h5>
+                                                </a>                                                
+                                            </div>
+                                            <div class="col-xs-6 col-md-5">
+                                                <a href="https://drive.google.com/open?id=0Bzj0AjNInJAlc21YdjdPMTlmNEE" target="_blank" class="">
+                                                    <h5>Como criar um canal no youtube.</h5>
+                                                </a>                                                
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-3 col-md-1">
+                                                <a href="https://drive.google.com/open?id=0Bzj0AjNInJAlMDI3ZElXdDRndWs" class="thumbnail" target="_blank">
+                                                    <img src="{{ asset('images/chrome.png')}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6 col-md-5">
+                                                <a href="https://drive.google.com/open?id=0Bzj0AjNInJAlMDI3ZElXdDRndWs" class="" target="_blank">
+                                                    <h5>Como acessar o chat.</h5>
+                                                </a>                                               
+                                            </div>
+                                        </div>                                        
+                                        
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <iframe width="530" height="400" src="http://www.youtube.com/embed/--JYnW6cTww" frameborder="0" allowfullscreen></iframe>
+                                                        <iframe width="400" height="500" src="https://www.youtube.com/live_chat?v=--JYnW6cTww&embed_domain=psicologia.ecolebrasil.com" frameborder="0" allowfullscreen></iframe>
+                                                </div>                                
+                                        </div>
+                                       
+                                    </div> --}}  
+                                </div>                 
+                            </div>
+                        </div>
 
 
                 </div>

@@ -14,6 +14,57 @@
     </head>
     <style type="text/css">
       
+      body, html{
+        overflow-x: hidden;
+      }
+
+      .title-pink-begin-text, .days-agenda, .descricao-day-agenda{
+          color:#ef4060;
+          font-weight: bold;
+          font-style: italic;
+      }
+
+      .days-agenda, .descricao-day-agenda{
+          text-decoration: underline;
+          font-style: normal;
+          font-size: 18pt;
+      }
+
+      .descricao-day-agenda{
+        text-decoration: none;
+        font-size: 12pt;
+      }
+
+      .upper-case{
+        text-transform: uppercase;
+      }
+
+      .gray-text{
+        color: gray;
+      }
+
+      .gray-text-bold{
+        color: gray;
+        font-weight: bold;
+      }      
+
+      .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+          background-color: #ef4060;
+      }
+
+      .navbar-default .navbar-toggle {
+          border-color: #ef4060;
+      }
+
+      .navbar-default .navbar-toggle .icon-bar {
+          background-color: white;
+          font-weight: bold;
+      }
+
+      .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+          color: white;
+          background-color: #ef4060;
+      }
       .navbar .navbar-nav {
           display: inline-block;
           float: none;
@@ -22,6 +73,17 @@
 
       .navbar .navbar-collapse {
           text-align: center;
+      }
+
+      .dropdown-menu {
+          background-color: #ef4060;
+          color: white;
+      }      
+
+      .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a {
+          color: white;
+          text-decoration: none;
+          background-color: #ef4060;
       }
 
       .navbar-default {
@@ -247,28 +309,21 @@
               <ul class="nav navbar-nav">
                 {{-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> --}}
                 <li class="hidden-xs hidden-sm"><a href="{{route('index')}}"><img src="{{asset('images/ecole_menu.png')}}"></a></li>
-                <li><a href="{{route('escola')}}">ESCOLA</a></li>
-                <li><a href="{{route('index')}}">CURSOS</a></li>
-                <li><a href="{{route('index')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
-                <li><a href="{{route('index')}}">DEPOIMENTOS</a></li>
-                <li><a href="{{route('index')}}">BLOG</a></li>
-                <li><a href="{{route('index')}}">EU SOU ECOLE</a></li>
-                <li><a href="{{route('index')}}">EAD</a></li>
-                <li><a href="{{route('index')}}">ACESSO RESTRITO</a></li>
-                <li><a href="{{route('index')}}">CONTATO</a></li>
-                <li><a href="{{route('index')}}">PARIS</a></li>
-               {{--  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <li><a href="{{route('escola')}}">EU SOU ECOLE</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CURSOS <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><a href="{{route('cursos')}}">Cursos</a></li>
                   </ul>
-                </li> --}}
+                </li>
+                {{-- <li><a href="{{route('cursos')}}">CURSOS</a></li> --}}
+                <li><a href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
+                <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
+                <li><a href="{{route('blog')}}"  target="_blank">BLOG</a></li>
+                <li><a href="{{route('index')}}"  target="_blank">EAD</a></li>
+                <li><a href="{{route('restrito')}}">ACESSO RESTRITO</a></li>
+                <li><a href="{{route('contato')}}">CONTATO</a></li>
+                <li><a href="https://ecolesuperieurerelooking.com/" target="_blank">PARIS</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
