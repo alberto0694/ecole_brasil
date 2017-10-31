@@ -6,8 +6,10 @@
 			<div class="col-md-6">
 	                <h3 class="title-pink-begin-text">ENTRE EM CONTATO</h3>          
 	                <p class="gray-text">
-						Phasellus congue nisl est, ut lacinia nisi vehicula vel. Sed luctus in enim non egestas. Ut sit amet tincidunt sem. Aliquam ultrices rutrum eros, non tincidunt nunc congue a. Fusce eu imperdiet leo.	                	
-	                </p>			
+						Você pode entrar em contato conosco preenchendo o formulário ou através de e-mail ou telefone:						
+	                </p>		
+	                <p class="gray-text"><b>contato@ecolebrasil.com</b></p>	
+	                <p class="gray-text"><b>+55 51 3237.2800</b></p>	
 			</div>
 			<div class="col-md-6">
 	                <h3></h3>          

@@ -124,7 +124,7 @@
                     <li><a data-toggle="pill" href="#menu5">Módulo 5</a></li>
                      <li><a data-toggle="pill" href="#menu6">Módulo 6</a></li>
                     <li><a data-toggle="pill" href="#menu7">Módulo 7</a></li>
-                    {{--<li><a data-toggle="pill" href="#menu8">Módulo 8</a></li> --}}
+                    <li><a data-toggle="pill" href="#menu8">Módulo 8</a></li> 
                 </ul>
 
                 <div class="tab-content" style="margin-top:10px">
@@ -981,7 +981,7 @@
                                         </div>
                                     </div>                                              
                                     <div id="video_mod7" class="tab-pane fade in active">
-                                                <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/239548156" width="640" height="360" 
+                                                <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/240596453" width="640" height="360" 
                                                         frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                                                 </iframe>  
                                     </div>  
@@ -1064,6 +1064,7 @@
                                                 <img style="margin: 0 auto; display: block;" src="{{ asset('images/eye.gif') }}"/>
                                                 <label align="center" style="display: block;">Vídeo Aula</label>
                                             </div>
+
                                         </a>
                                     </li>
                                     <li class=" col-md-2">
@@ -1096,15 +1097,30 @@
                                     <hr>
                                     <div id="texto_mod8" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Textos para Download Módulo 8</h3>
-                                        
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/Psicologia_Autoimagem_MOD8_como escutar.pdf') }}" target="_blank">
+                                                    Psicologia Autoimagem Módulo 8 - Como Escutar
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div> 
+                                        <div class="col-md-4">
+                                            <label align="center" style="display: block;">
+                                                <a href="{{ asset('files/Psicologia_Autoimagem_MOD8_dicas_atendimento.pdf') }}" target="_blank">
+                                                    Psicologia Autoimagem Módulo 8 - Dicas de Atendimento
+                                                    <img style="margin: 0 auto; display: block;" src="{{ asset('images/pdf.png') }}"/>                                        
+                                                </a>
+                                            </label>
+                                        </div> 
                                     </div>       
                                     <div id="exercicios_mod8" class="tab-pane fade" style="margin-top:10px; padding-top:10px">
                                         <h3 align="center" style="margin-top:10px; padding-top:10px" >Exercícios Módulo 8</h3>                                        
                                     </div>                                              
                                     <div id="video_mod8" class="tab-pane fade in active">
-                                        <!-- <video width="400" controls style="display:block; margin:0 auto">
-                                            <source src="{{ asset('videos/mod_1_patricia.mp4') }}" type="video/mp4">
-                                        </video>    -->
+                                        <iframe style="display:block; margin:0 auto; width: 640px" src="https://player.vimeo.com/video/240601851" width="640" height="360" 
+                                                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                                        </iframe>                                                  
                                     </div>  
                                     <div id="material_mod8" class="tab-pane fade">
                                                                     
