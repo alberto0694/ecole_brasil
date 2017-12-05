@@ -1,0 +1,4 @@
+compra de cursos e ebooks (nao necessita fazer login)
+todos dos cursos comprados pelo site: (presencial ou distancia)
+aluno nao receberá login na hora, somente após fechar turma.
+curso fica disponivel por um ano
