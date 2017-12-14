@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.aluno')
 
 @section('content')
 <div class="container">
@@ -60,6 +60,14 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        <div class="form-group">
+                          <label for="permission">Tipo de Usuário:</label>
+                          <select class="form-control" id="permission" name="permission">
+                            <option value="AD" selected>Administrador</option>
+                            <option value="PF" selected>Professor</option>
+                            <option value="AL" selected>Aluno</option>
+                          </select>
+                        </div>                        
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

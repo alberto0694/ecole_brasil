@@ -1,0 +1,5 @@
+https://github.com/UniSharp/laravel-ckeditor
+https://craftpip.github.io/jquery-confirm/#buttontext
+http://flaviosilveira.com/Jquery-Price-Format/
+
+ MYSQL > max_allowed_packet=16M 

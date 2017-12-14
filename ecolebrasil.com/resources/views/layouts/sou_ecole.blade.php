@@ -1,1 +1,0 @@
-sou_ecole.blade.php
