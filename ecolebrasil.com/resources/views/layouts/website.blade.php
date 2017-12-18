@@ -44,6 +44,7 @@
 
       .gray-text{
         color: gray;
+        font-size: 12pt; 
       }
 
       .gray-text-bold{
@@ -120,7 +121,7 @@
           min-height: 65px;
           vertical-align: middle;
           display: table-cell;
-          font-size:11pt; 
+          font-size:10pt; 
       }  
 
       .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
@@ -352,7 +353,7 @@
               <ul class="nav navbar-nav">
                 {{-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> --}}
                 <li class="hidden-xs hidden-sm"><a href="{{route('index')}}"><img src="{{asset('images/ecole_menu.png')}}"></a></li>
-                <li><a href="{{route('escola')}}">EU SOU ECOLE</a></li>
+                <li><a href="{{route('escola')}}">ESCOLA</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FORMAÇÕES E CURSOS <span class="caret"></span></a>
                   <ul class="dropdown-menu">
@@ -374,13 +375,26 @@
                   </ul>
                 </li>
 
-            
-                {{-- <li><a href="{{route('cursos')}}">CURSOS</a></li> --}}
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NOTÍCIAS <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="{{route('blog')}}"  target="_blank">BLOG</a></li>
+                      <li><a href="{{route('imprensa')}}"  target="_blank">IMPRENSA</a></li>
+                  </ul>
+                </li>
+                <li><a href="{{route('blog')}}">EU SOU ECOLE</a></li>
                 <li><a href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
                 <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
-                <li><a href="{{route('blog')}}"  target="_blank">BLOG</a></li>
-                <li><a href="{{route('ead.login')}}"  target="_blank">EAD</a></li>
-                <li><a href="{{route('restrito')}}">ACESSO RESTRITO</a></li>
+                <li><a href="{{route('agenda')}}">AGENDA</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACESSOS CURSOS <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{route('ead.login')}}"  target="_blank">EAD</a></li>
+                    <li><a href="{{route('restrito')}}"  target="_blank">ACESSO RESTRITO</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="{{route('faq')}}">FAQ</a></li>
                 <li><a href="{{route('contato')}}">CONTATO</a></li>
                 <li><a href="https://ecolesuperieurerelooking.com/" target="_blank">PARIS</a></li>
               </ul>
@@ -393,46 +407,96 @@
 
         <footer>
             <div class="footer" id="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-offset-1 col-lg-11 col-md-4 col-md-offset-1 col-md-11">
-                            <h3> ENTRE EM CONTATO</h3>
-                        </div>                      
-                        <div class="col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1 col-sm-6 col-xs-12 ">
-                            <ul>
-                                <li>
-                                    <div class="input-append newsletter-box ">
-                                        <input type="text" class="full " placeholder="Seu nome">
-                                        <input type="text" class="full " placeholder="Telefone">
-                                        <input type="text" class="full " placeholder="E-mail">
-                                        <input type="text" class="full " placeholder="Cidade/Estado">
-                                        <button class="btn  bg-gray" type="button"> Enviar </button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>                      
-                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-6">
-                            <ul>
-                                <li class="title-footer">  ECOLE SUPÉRIEURE DE RELLOKING  </li>
-                                <li style="margin-top:10px" class="title-footer">  BRASIL  </li>
-                                <li class="body-footer-li">  contato@ecolebrasil.com  </li>
-                                <li class="body-footer-li">  Fones:  </li>
-                                <li class="body-footer-li">  +55 51 3237.2800  </li>
-                                <li class="body-footer-li">  +55 51 99749.0990 </li>
+                @if ( !(\Route::current()->getName() == 'contato') )
+                    <div class="container">
+                        <div class="row">
 
-                                <li style="margin-top:10px" class="title-footer">  FRANCE  </li>
-                                <li class="body-footer-li">  131 Boulevard  </li>
-                                <li class="body-footer-li">  Sébastopol 75002 Paris  </li>
-                                <li class="body-footer-li">  contact@esrelooking.com  </li>
-                                <li class="body-footer-li">  Tél: 01.47.90.60.01</li>
-                            </ul>
+
+                            <div class="col-lg-offset-1 col-lg-11 col-md-4 col-md-offset-1 col-md-11">
+                                <h3> ENTRE EM CONTATO</h3>
+                            </div>                      
+                            <div class="col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1 col-sm-6 col-xs-12 ">
+                                <ul>
+                                    <li>
+                                        <div class="input-append newsletter-box ">
+                                          <form class="form-horizontal" role="form" method="POST" action="{{ route('email.contato') }}">
+                                            {{ csrf_field() }}
+                                              <div class="input-append newsletter-box ">
+                                                  <input name="contato" type="text" class="full " placeholder="Seu nome">
+                                                  <input name="telefone" type="text" class="full " placeholder="Telefone">
+                                                  <input name="email" type="text" class="full " placeholder="E-mail">
+                                                  <input name="cidade" type="text" class="full " placeholder="Cidade/Estado">
+                                                  <input name="cidade_curso" type="text" class="full " placeholder="Cidades de interese para fazer o curso (separe por ;)">
+                                                  <input name="ecole" type="text" class="full " placeholder="Como conheceu a ecole">
+                                                  <textarea style="color:black" name="mensagem" placeholder="Mensagem" class="full"  rows="3">
+                                                  </textarea>
+                                                  <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+                                                    <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">                                            
+                                                  </button>                                          
+                                            </form>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                     
+     
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-6">
+                                <ul>
+                                    <li class="title-footer">  ECOLE SUPÉRIEURE DE RELLOKING  </li>
+                                    <li style="margin-top:10px" class="title-footer">  BRASIL  </li>
+                                    <li class="body-footer-li">  contato@ecolebrasil.com  </li>
+                                    <li class="body-footer-li">  Fones:  </li>
+                                    <li class="body-footer-li">  +55 51 3237.2800  </li>
+                                    <li class="body-footer-li">  +55 51 99749.0990 </li>
+
+                                    <li style="margin-top:10px" class="title-footer">  FRANCE  </li>
+                                    <li class="body-footer-li">  131 Boulevard  </li>
+                                    <li class="body-footer-li">  Sébastopol 75002 Paris  </li>
+                                    <li class="body-footer-li">  contact@esrelooking.com  </li>
+                                    <li class="body-footer-li">  Tél: 01.47.90.60.01</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+                                <img src="{{asset('images/logo-ecole-paris.jpg')}}">
+                            </div>
                         </div>
-                        <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
-                            <img src="{{asset('images/logo-ecole-paris.jpg')}}">
-                        </div>
+                        <!--/.row--> 
                     </div>
-                    <!--/.row--> 
-                </div>
+                    @else
+                    <div class="container">
+                        <div class="row">
+
+
+                            <div class="col-lg-offset-1 col-lg-11 col-md-4 col-md-offset-1 col-md-11">
+                                <h3> ECOLE BRASIL</h3>
+                            </div>                      
+                     
+     
+                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-6">
+                                <ul>
+                                    <li class="title-footer">  ECOLE SUPÉRIEURE DE RELLOKING  </li>
+                                    <li style="margin-top:10px" class="title-footer">  BRASIL  </li>
+                                    <li class="body-footer-li">  contato@ecolebrasil.com  </li>
+                                    <li class="body-footer-li">  Fones:  </li>
+                                    <li class="body-footer-li">  +55 51 3237.2800  </li>
+                                    <li class="body-footer-li">  +55 51 99749.0990 </li>
+
+                                    <li style="margin-top:10px" class="title-footer">  FRANCE  </li>
+                                    <li class="body-footer-li">  131 Boulevard  </li>
+                                    <li class="body-footer-li">  Sébastopol 75002 Paris  </li>
+                                    <li class="body-footer-li">  contact@esrelooking.com  </li>
+                                    <li class="body-footer-li">  Tél: 01.47.90.60.01</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+                                <img src="{{asset('images/logo-ecole-paris.jpg')}}">
+                            </div>
+                        </div>
+                        <!--/.row--> 
+                    </div>                    
+                    @endif
                 <!--/.container--> 
             </div>
             <!--/.footer-->
@@ -444,7 +508,7 @@
                         <ul class="nav nav-pills payments">
                             <li><i class="fa fa-cc-visa"></i></li>
                             <li><i class="fa fa-cc-mastercard"></i></li>
-                            <li><i class="fa fa-barcode"></i></li>
+                            {{-- <li><i class="fa fa-barcode"></i></li> --}}
                             {{-- <li><i class="fa fa-cc-paypal"></i></li> --}}
                         </ul> 
                     </div>
@@ -453,15 +517,9 @@
             <!--/.footer-bottom--> 
         </footer>
         <script type="text/javascript">
-          // $(document).ready(function(){
-          //   $("p").each( function () {
-          //       debugger;
-          //       var $this = $(this);
-          //       if (parseInt($this.css("fontSize")) < 12) {
-          //           $this.css({ "font-size": "12px" });   
-          //       }
-          //   });          
-          // });
+          $(document).ready(function(){
+              $('textarea').val('');
+          });
         </script>
     </body>
 </html>

@@ -11,17 +11,16 @@ class Curso extends Model
 
 	protected $fillable = [	'nome', 
 							'formacao_id',
-							'carga_horaria', 
 							'link_video',
-							'data_inicio',
 							'background_img',
 							'card',
-							'investimento',
-							'modelo',
+							'ementa',
 							'ministrantes',
 							'conteudo',
 							'apresentacao',
 							'objetivos',
+							'informacoes',
+							'pagina_inicial',
 							'material'];
 
 
@@ -44,5 +43,10 @@ class Curso extends Model
 	public function getFormatedDateAttribute()
 	{
 		return Carbon::parse($this->data_inicio)->format('d/m/Y');
+	}
+
+	public function agendas()
+	{
+		return $this->hasMany('App\Agenda', 'curso_id', 'id');
 	}
 }

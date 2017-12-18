@@ -14,11 +14,14 @@ use App\Aula;
 use App\Exercicio;
 use App\Depoimento;
 use App\Consultora;
+use App\Banner;
 use App\Contato;
 use App\Video;
 use Auth;
+use App\Imprensa;
 use \Session;
 use App\User;
+
 
 
 class AdministradorController extends Controller
@@ -80,7 +83,7 @@ class AdministradorController extends Controller
     }
 
     
-    //depimentos
+    //depoimentos
     public function depoimento_index()
     {
         $depoimentos = Depoimento::all();
@@ -242,9 +245,95 @@ class AdministradorController extends Controller
         return view('administrador.aluno.novo');
     }
 
+    //agenda
+    public function agenda_editar(Request $request, $id)
+    {
+        $agenda = Agenda::find( $id );
+        $cursos = Curso::all();
+        return view('administrador.website.agenda.editar', compact('agenda', 'cursos'));
+    }
+
+    public function agenda_index()
+    {
+        $agendas = Agenda::all();
+        return view('administrador.website.agenda.index', compact('agendas'));
+    }
+
+    public function agenda_visualizar(Request $request, $id)
+    {
+        $agenda = Agenda::find( $id );
+        return view('administrador.website.agenda.visualizar', compact('agenda'));
+    }
+
+    public function agenda_novo()
+    {
+        $count = Curso::count();        
+        if($count > 0){
+            $cursos = Curso::all();
+            return view('administrador.website.agenda.novo', compact('cursos'));
+        }else{
+            Session::flash('message' , 'Necessário inserir "Cursos" para poder cadastrar uma Agenda!'); //<--FLASH MESSAGE
+            Session::flash('alert-class', 'alert-danger');
+            return redirect(route('administrador.agenda.index'));
+        }        
+
+    }
 
 
+    //banners
+    public function banner_editar(Request $request, $id)
+    {
+        $banner = Banner::find( $id );
+        return view('administrador.website.banner.editar', compact('banner'));
+    }
+
+    public function banner_index()
+    {
+        $banners = Banner::all();
+        return view('administrador.website.banner.index', compact('banners'));
+    }
+
+    public function banner_visualizar(Request $request, $id)
+    {
+        $banner = Banner::find( $id );
+        return view('administrador.website.banner.visualizar', compact('banner'));
+    }
+
+    public function banner_novo()
+    {
+        return view('administrador.website.banner.novo');
+    }
+
+    //imprensa
+    public function imprensa_editar(Request $request, $id)
+    {
+        $imprensa = Imprensa::find( $id );
+        return view('administrador.website.imprensa.editar', compact('imprensa'));
+    }
+
+    public function imprensa_index()
+    {
+        $imprensas = Imprensa::all();
+        return view('administrador.website.imprensa.index', compact('imprensas'));
+    }
 
 
+    public function imprensa_novo()
+    {
+        return view('administrador.website.imprensa.novo');
+    }    
+
+
+    public function contato_index()
+    {
+        $contatos = Contato::all();
+        return view('administrador.website.contatos.index', compact('contatos'));
+    }
+
+    public function contato_visualizar($id)
+    {
+        $contato = Contato::find($id);
+        return view('administrador.website.contatos.visualizar', compact('contato'));
+    }    
 
 }

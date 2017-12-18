@@ -15,6 +15,9 @@ class CreateImprensasTable extends Migration
     {
         Schema::create('imprensas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('titulo');
+            $table->longText('descricao');
+            $table->longText('descricao_html');
             $table->timestamps();
         });
     }

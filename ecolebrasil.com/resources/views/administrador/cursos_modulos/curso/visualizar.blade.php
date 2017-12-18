@@ -23,13 +23,13 @@
                         </div>
                         <iframe src="{{ $curso->link_video }}"></iframe>
                     </div>
-                    <div class="form-group">
+{{--                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1"> Data de Início </label>
 
                         <div class="col-sm-8">
                             <h5><b>{{ $curso->formatedDate }}</b></h5>
                         </div>
-                    </div>
+                    </div> --}}
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="form-field-1"> Imagem de Background </label>
 						<div class="col-sm-8">
@@ -50,20 +50,20 @@
 							<img src="{{ $curso->card }}" height="150">
 						</div>
 					</div>					
-					<div class="form-group">
+{{-- 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="form-field-1"> Investimento (Descrição do Valor) </label>
 
 						<div class="col-sm-8">
 							<h5><b>{{ $curso->investimento }}</b></h5>
 						</div>
-					</div>
+					</div> --}}
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1"> Formação</label>
                         <div class="col-sm-8">
                             <h5><b>{{ $curso->formacao->nome }}</b></h5>
                         </div>
                     </div>
-                    <div class="form-group">
+{{--                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="form-field-1"> Modelo do Curso</label>
                         <div class="col-sm-8">
                         	@if($curso->modelo == "P")
@@ -73,8 +73,8 @@
                         	@endif
                             
                         </div>
-                    </div>	
-					<hr>
+                    </div> --}}	
+{{-- 					<hr>
 					<div class="form-group" >
                         <div class="col-sm-9">
                                 <h4 class="header clearfix">
@@ -83,7 +83,7 @@
 
                                 {!! $curso->ministrantes !!}                          
                         </div>
-					</div>
+					</div> --}}
 					<hr>
 					<div class="form-group" >
                         <div class="col-sm-9">

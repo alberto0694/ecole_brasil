@@ -18,7 +18,10 @@ Este espaço foi criado para que a gente possa contribuir ainda mais com a sua q
 	                        <div class="input-append newsletter-box ">
 	                            <input type="text" class="full " placeholder="Login">
 	                            <input type="text" class="full " placeholder="Senha">
-	                            <button class="btn  bg-gray" type="button"> Entrar </button>
+	                              <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+	                                <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/entrar.png') }}">                                            
+	                              </button>                                          
+	                            </form>
 	                        </div>
 	                    </li>
 	                </ul>				

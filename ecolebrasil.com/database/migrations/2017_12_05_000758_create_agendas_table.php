@@ -15,7 +15,18 @@ class CreateAgendasTable extends Migration
     {
         Schema::create('agendas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
+            $table->string('carga_horaria');
+            $table->string('datas');
+            $table->string('modelo');
+            $table->string('ministrantes');
+            $table->timestamp('data_inicio');
+            $table->integer('curso_id')->unsigned();
+            $table->longText('avatar');
+            $table->string('cidade');
             $table->timestamps();
+
+            $table->foreign('curso_id')->references('id')->on('cursos'); 
         });
     }
 

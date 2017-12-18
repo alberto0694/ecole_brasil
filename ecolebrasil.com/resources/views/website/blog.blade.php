@@ -16,6 +16,7 @@
 	<div class="row" style="margin: 0; padding: 0">
 		  <div class="col-md-12" style="margin: 0; padding: 0">
 		    <a href="#" class="video-index thumbnail ">
+		    	<div style="position: absolute; background-color: rgba(255, 255, 255, 0.5); width: 100%; height: 100%" ></div>
 		      <img src="{{ asset('images/banner-blog.png') }}" alt="...">
 		    </a>
 		  </div>

@@ -18,14 +18,13 @@ class CursoController extends Controller
 
     public function create(Request $request)
     {
-        $request = Controller::formatDate( $request, 'data_inicio' );
-        $curso = Curso::create( $request->all() );        
+        $curso = Curso::create( $request->all() );
         return;
     }
 
     public function update(Request $request, $id)
     {
-        $request = Controller::formatDate( $request, 'data_inicio' );
+        // $request = Controller::formatDate( $request, 'data_inicio' );
         $curso = Curso::find( $id );
         $curso->update( $request->all() );
         return;

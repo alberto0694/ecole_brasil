@@ -25,46 +25,26 @@
 						</div>
 					</div>	
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Data de Início </label>
-						<div class="col-sm-6">
-							<input id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />							
-						</div>
-					</div>
-					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Imagem de Background </label>
 						@component('components.upfile', ['nameId' => 'background_img', 'src' => ''])
 						@endcomponent											
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Carga Horária </label>
-
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Página Inicial</label>
 						<div class="col-sm-6">
-							<input id="carga_horaria" name="carga_horaria" type="text" class="col-xs-12 col-sm-6" />
+							<select id="pagina_inicial" name="pagina_inicial" class="col-xs-12 col-sm-6" id="form-field-select-3">
+								<option value="1">Sim</option>
+								<option value="0">Não</option>
+							</select>
 						</div>
-					</div>
+					</div>						
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card do Curso </label>
 
 						@component('components.upfile', ['nameId' => 'card', 'src' => ''])
 						    ...
 						@endcomponent
-					</div>					
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Investimento (Descrição do Valor) </label>
-
-						<div class="col-sm-6">
-							<input id="investimento" name="investimento" type="text" class="col-xs-12 col-sm-6" />
-						</div>
-					</div>					
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Modelo do Curso</label>
-						<div class="col-sm-6">
-							<select id="modelo" name="modelo" class="col-xs-12 col-sm-6" id="form-field-select-3">
-								<option value="P">Presencial</option>
-								<option value="D">À Distância</option>
-							</select>
-						</div>
-					</div>	
+					</div>						
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Formação</label>
 						<div class="col-sm-6">
@@ -76,14 +56,21 @@
 						</div>
 					</div>						
 					<hr>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo do Curso (PDF) </label>
+						@component('components.upfile', ['nameId' => 'ementa', 'src' => ''])
+						    ...
+						@endcomponent										
+					</div>
 					<div class="form-group" >
 						<div class="col-sm-9">
 								<h4 class="header clearfix">
-									Ministrantes								
+									Maiores Informações					
 								</h4>
-								<textarea id="ministrantes" name="ministrantes" class="col-xs-12 col-sm-6"></textarea>							
-						</div>	
-					</div>
+
+								<textarea id="informacoes" name="informacoes" class="col-xs-12 col-sm-6"></textarea>							
+						</div>
+					</div>					
 					<hr>
 					<div class="form-group" >
 						<div class="col-sm-9">

@@ -26,53 +26,39 @@
 							<input value="{{ $curso->link_video }}" id="link_video" name="link_video" type="text" class="col-xs-12 col-sm-6" />
 						</div>
 					</div>	
-					<div class="form-group">
+{{-- 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Data de Início </label>
 						<div class="col-sm-6">
 							<input value="{{ $curso->formatedDate }}"  id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />							
 						</div>
-					</div>
+					</div> --}}
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Imagem de Background </label>
 						@component('components.upfile',  ['nameId' => 'background_img', 
 															'src' => $curso->background_img])
 						@endcomponent											
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Carga Horária </label>
 
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Página Inicial</label>
 						<div class="col-sm-6">
-							<input value="{{ $curso->carga_horaria }}"  id="carga_horaria" name="carga_horaria" type="text" class="col-xs-12 col-sm-6" />
+							<select id="modelo" name="modelo" class="col-xs-12 col-sm-6" id="form-field-select-3">
+								@if($curso->pagina_inicial == 0)
+									<option value="1">Sim</option>
+									<option selected value="0">Não</option>
+								@else
+									<option selected value="1">Sim</option>
+									<option value="0">Não</option>
+								@endif
+							</select>
 						</div>
-					</div>
+					</div>											
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card do Curso </label>
-
 						@component('components.upfile', [	'nameId' => 'card',
 															'src' => $curso->card])
 						@endcomponent
-					</div>					
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Investimento (Descrição do Valor) </label>
-
-						<div class="col-sm-6">
-							<input value="{{ $curso->investimento }}"  id="investimento" name="investimento" type="text" class="col-xs-12 col-sm-6" />
-						</div>
-					</div>					
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Modelo do Curso</label>
-						<div class="col-sm-6">
-							<select id="modelo" name="modelo" class="col-xs-12 col-sm-6" id="form-field-select-3">
-								@if($curso->modelo == "P")
-									<option selected="" value="P">Presencial</option>
-									<option value="D">À Distância</option>
-								@else
-									<option value="P">Presencial</option>
-									<option selected value="D">À Distância</option>
-								@endif									
-							</select>
-						</div>
-					</div>	
+					</div>						
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Formação</label>
 						<div class="col-sm-6">
@@ -86,18 +72,26 @@
 								@endforeach								
 							</select>
 						</div>
-					</div>						
+					</div>	
 					<hr>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo/Ementa do Curso (PDF) </label>
+						@component('components.upfile', ['nameId' => 'ementa', 'src' => ''])
+							<a id='dwnldLnk' href="{{ $curso->ementa }}" download='ementa.pdf' style="display:none;" /> 					    
+						    <a href="#" onclick="downloadPDF();" title='ementa.pdf'>Baixar Ementa</a>							
+						@endcomponent										
+					</div>					
 					<div class="form-group" >
 						<div class="col-sm-9">
 								<h4 class="header clearfix">
-									Ministrantes								
+									Maiores Informações					
 								</h4>
-								<textarea id="ministrantes" name="ministrantes" class="col-xs-12 col-sm-6">
-									{!! $curso->ministrantes !!}
+
+								<textarea id="informacoes" name="informacoes" class="col-xs-12 col-sm-6">
+									{!! $curso->informacoes !!}
 								</textarea>							
-						</div>	
-					</div>
+						</div>
+					</div>						
 					<hr>
 					<div class="form-group" >
 						<div class="col-sm-9">
@@ -166,6 +160,18 @@
     <script src="{{asset('js/ckeditor/adapters/jquery.js') }}"></script>
     <script type="text/javascript">
         jQuery(function($){
+			
+			window.downloadPDF = function downloadPDF() {
+
+			    var dlnk = document.getElementById('dwnldLnk');
+			    // dlnk.href = $("#ementa").val();
+
+			    dlnk.click();
+
+
+			    // alert('toma');
+			}
+
 			$('input[name=investimento]').priceFormat({
 			    prefix: 'R$ ',
 			    centsSeparator: ',',

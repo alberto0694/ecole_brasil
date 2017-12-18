@@ -9,9 +9,9 @@ use App\User;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function admin()
     {
-        return view('auth.login');
+        return view('auth.admin');
     }
 
     public function ead()

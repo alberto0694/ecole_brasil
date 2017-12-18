@@ -12,9 +12,10 @@
 		margin: 0;	
 	}*/
 </style>
-<div class="row" style="margin: 0; padding: 0">
+<div class="row" style="margin: 0; padding: 0; ">
 	  <div class="col-md-12" style="margin: 0; padding: 0">
 	    <a href="#" class="video-index thumbnail ">
+	    	{{-- <div style="position: absolute; background-color: rgba(255, 255, 255, 0.5); width: 100%; height: 100%" ></div> --}}
 	      <img src="{{ asset('images/banner-depoimentos.png') }}" alt="...">
 	    </a>
 	  </div>
@@ -30,11 +31,11 @@
 									<div class="col-md-12" style="margin-top: 15px">
 											<div class="media-left">								  
 												  <div class="media-left">
-													      <img style="width: 250px" class="media-object" src="{{$depoimento->avatar}}" alt="{{ $depoimento->autor }}">
+													      <img style="width: 350px" class="media-object" src="{{$depoimento->avatar}}" alt="{{ $depoimento->autor }}">
 												  </div>
 												  <div class="media-body"> 
-													    <h5 class="media-heading hidden-xs hidden-sm" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{!! $depoimento->descricao_html !!}
-													    </h5>
+													    <h4 class="media-heading hidden-xs hidden-sm" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{!! $depoimento->descricao_html !!}
+													    </h4>
 													    <i class="hidden-xs hidden-sm">{{$depoimento->autor}}</i>
 													    <hr>
 												  </div>

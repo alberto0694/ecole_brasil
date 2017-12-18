@@ -58,9 +58,9 @@
 
 										<td>
 											<div class="hidden-sm hidden-xs action-buttons">
-												<a class="blue" href="{{ route('administrador.curso.visualizar', $curso->id) }}">
+{{-- 												<a class="blue" href="{{ route('administrador.curso.visualizar', $curso->id) }}">
 													<i class="ace-icon fa fa-search-plus bigger-130"></i>
-												</a>
+												</a> --}}
 
 												<a class="green" href="{{ route('administrador.curso.editar', $curso->id) }}">
 													<i class="ace-icon fa fa-pencil bigger-130"></i>
