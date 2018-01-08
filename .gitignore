@@ -8,7 +8,4 @@ Homestead.yaml
 *.env
 *.pdf
 *.mp4
-*.png
-*.jpg
-*.bmp
-*.jpeg
+
