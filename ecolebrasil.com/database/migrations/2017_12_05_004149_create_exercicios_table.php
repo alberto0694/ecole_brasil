@@ -17,6 +17,7 @@ class CreateExerciciosTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->string('link');
+            $table->longText('arquivo');
             $table->longText('descricao_html');
             $table->integer('modulo_id')->unsigned();
             $table->timestamps();

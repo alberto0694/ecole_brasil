@@ -1,4 +1,4 @@
 @extends('layouts.professor')
 @section('content')
-	taooooo
+	Acesso Professor
 @endsection

@@ -2,12 +2,12 @@
 @section('content')
 				@component('components.tutorial')
 					teste
-				@endcomponent				
+				@endcomponent
 
 				<div class="row">
 					<h2 style="margin-left: 20px">Alterando de {{ $depoimento->autor }}</h2>
 				</div>
-										
+
 				<form id="editar-depoimento" class="form-horizontal" role="form" style="margin-left: 20px">
 					{{ csrf_field() }}
 					<input name="_method" type="hidden" value="PUT">
@@ -17,26 +17,43 @@
 						<div class="col-sm-6">
 							<input value="{{ $depoimento->autor }}" id="autor" name="autor" type="text" class="col-xs-12 col-sm-6" />
 						</div>
-					</div>					
-					
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1">  </label>
+
+						<div class="col-sm-6">
+							@if($depoimento->apenas_video == 'on')
+								<input checked id="apenas_video" name="apenas_video" type="checkbox" />Apenas Vídeo
+							@else
+								<input id="apenas_video" name="apenas_video" type="checkbox" />Apenas Vídeo
+							@endif
+						</div>
+					</div>
+
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Foto</label>
 						@component('components.upfile', ['nameId' => 'avatar', 'src' => $depoimento->avatar])
-						@endcomponent											
-					</div>		
-										
-					<hr>
+						@endcomponent
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Link de Vídeo (Opcional) </label>
+
+						<div class="col-sm-6">
+							<input value="{{ $depoimento->video }}" id="video" name="video" type="text" class="col-xs-12 col-sm-6" />
+						</div>
+					</div>
 					<div class="form-group" >
 						<div class="col-sm-9">
 								<h4 class="header clearfix">
-									Depoimento								
+									Depoimento
 								</h4>
 								<textarea id="descricao_html" name="descricao_html" class="col-xs-12 col-sm-6">
 									{{ $depoimento->descricao_html }}
-								</textarea>							
-						</div>	
+								</textarea>
+						</div>
 					</div>
-					<hr>	
+					<hr>
 					<div class="clearfix form-actions">
 						<div class="col-md-offset-3 col-md-9">
 							<button id="confirm-form" class="btn btn-info" type="submit">
@@ -51,7 +68,7 @@
 							</button>
 						</div>
 					</div>
-				</form>							
+				</form>
 @endsection
 @section('last-body')
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
@@ -76,8 +93,8 @@
 						},
 						submitHandler: function(form) {
 
-							// normalizeVideo("input[name=apresentacao_video]");
-							
+							normalizeVideo("input[name=video]");
+
 							$.confirm({
 							    content: function(){
 							        var self = this;
@@ -95,15 +112,15 @@
 													    	}
 													    }
 													});
-											  }									  
+											  }
 											});
 							    },
 								contentLoaded: function(data, status, xhr){
 								    this.close();
 								}
-							});							    
+							});
 						}
-			});   
+			});
 
         	$("#cancel-form").click(function(){
 					$.confirm({
@@ -117,7 +134,7 @@
 					        	text:"Não"
 					        }
 					    }
-					});                		
+					});
         	});
 
 
@@ -129,19 +146,19 @@
 			for (var i = 0; i < x.length; i++) {
 			    x[i].addEventListener("change", readFile);
 			}
-			
-			//DATA-PICKER            
+
+			//DATA-PICKER
 			$('.date-picker').datepicker({
 				autoclose: true,
 				todayHighlight: true,
 		    	format: 'dd/mm/yyyy',
 		    	language: 'pt-BR',
-		    	weekStart: 0				
+		    	weekStart: 0
 			}).next().on(ace.click_event, function(){
 				$(this).prev().focus();
 			});
 
-        });                      
+        });
 
     </script>
 @endsection

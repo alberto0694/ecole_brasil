@@ -22,24 +22,144 @@
         <link rel="stylesheet" href="{{ asset('assets/css/ace-skins.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/ace-rtl.min.css') }}" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-        <script src="{{ asset('assets/js/ace-extra.min.js') }}"></script>        
+        <script src="{{ asset('assets/js/ace-extra.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-duallistbox.min.css') }}" />
     </head>
     <style type="text/css">
+
+        .navbar {
+            background: rgba(239, 64, 96, 1);
+        }
+
+        .table-header {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+            font-size: 14px;
+            line-height: 38px;
+            padding-left: 12px;
+            margin-bottom: 1px;
+        }
+
+        .ace-nav>li.light-blue>a:focus, .ace-nav>li.light-blue>a:hover, .ace-nav>li.open.light-blue>a {
+            background-color: rgba(239, 64, 96, 1);
+        }
+
+        .ace-nav>li.light-blue>a {
+            background-color: rgba(239, 64, 96, 1);
+        }
+
+        .badge-info, .badge.badge-info, .label-info, .label.label-info {
+            background-color: rgba(239, 64, 96, 1);
+        }
+
+        .badge-info, .badge.badge-info, .label-info, .label.label-info {
+            background-color: rgba(239, 64, 96, 1);
+        }
+
+        .label-info.arrowed-in:before {
+            border-color: rgba(239, 64, 96, 1) rgba(239, 64, 96, 1) rgba(239, 64, 96, 1) transparent;
+        }
+
+        .label-info.arrowed-in-right:after {
+            border-color: rgba(239, 64, 96, 1) transparent rgba(239, 64, 96, 1) rgba(239, 64, 96, 1);
+        }
+
+        .badge-info, .badge.badge-info, .label-info, .label.label-info {
+            background-color: rgba(239, 64, 96, 1);
+        }
+
+        .ace-nav>li.open>a, .ace-nav>li>a:focus, .ace-nav>li>a:hover {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+        }
+
+        .no-skin .nav-list>li:hover>a {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+        }
+
+        .nav>li>a:focus, .nav>li>a:hover {
+            text-decoration: none;
+            background-color: rgba(239, 64, 96, 1);
+        }
+
+        .no-skin .nav-list>li.open>a {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+        }
+
+        .no-skin .nav-list>li:hover>a {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+        }
+
+        .no-skin .nav-list .open>a, .no-skin .nav-list .open>a:focus, .no-skin .nav-list .open>a:hover {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+        }
+
+        .no-skin .nav-list>li>a {
+            background-color: #F8F8F8;
+            color: #585858;
+        }
+
+        .no-skin .nav-list>li>.submenu li>.submenu>li a:hover {
+            color: rgba(239, 64, 96, 1);
+            background-color: #F1F5F9;
+        }
+
+        .no-skin .nav-list>li .submenu>li>a:hover {
+            color: rgba(239, 64, 96, 1);
+            background-color: #F1F5F9;
+        }
+
+        .no-skin .nav-list>li>.submenu li.open>a, .no-skin .nav-list>li>.submenu li>.submenu li.active>a, .no-skin .nav-list>li>.submenu li>.submenu li.open>a {
+            color: rgba(239, 64, 96, 1);
+            background: #fff;
+        }
+
+        .no-skin .nav-list>li .submenu>li>a:hover {
+            color: rgba(239, 64, 96, 1);
+            background-color: #F1F5F9;
+        }
+
+        .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+        }
+
+        .no-skin .nav-list>li .submenu>li>a:hover {
+            color: rgba(239, 64, 96, 1);
+            background-color: #F1F5F9;
+        }
+
+        .ace-nav>li>a {
+            background-color: rgba(239, 64, 96, 1);
+            color: #FFF;
+            display: block;
+            line-height: inherit;
+            text-align: center;
+            height: 100%;
+            width: auto;
+            min-width: 50px;
+            padding: 0 8px;
+            position: relative;
+        }
         #loading-admin-application-only {
             border: 16px solid #f3f3f3; /* Light grey */
-            border-top: 16px solid #3498db; /* Blue */
+            border-top: 16px solid rgba(239, 64, 96, 1);; /* Blue */
             border-radius: 50%;
             width: 120px;
             height: 120px;
             animation: spin 2s linear infinite;
             margin-left: 45%;
-            margin-top: 50px; 
+            margin-top: 50px;
         }
 
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
-        }        
+        }
 
     </style>
     <body class="no-skin">
@@ -66,21 +186,13 @@
 
                 <div class="navbar-buttons navbar-header pull-right" role="navigation">
                     <ul class="nav ace-nav">
-                  {{--       <li class="purple dropdown-modal">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-                                <span class="badge badge-important">8</span>
-                            </a>
-                        </li>
- --}}
-                        <li class="light-blue dropdown-modal">
-                            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                {{-- <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" /> --}}
-                                <span class="user-info">
-                                    <small>Bem Vindo</small>
-                                </span>
+                         <li class="light-blue dropdown-modal">
+                            <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                Sair
 
-                                <i class="ace-icon fa fa-caret-down"></i>
+                                {{-- <i class="ace-icon fa fa-caret-down"></i> --}}
                             </a>
 
                             <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
@@ -145,40 +257,25 @@
                             <li class="">
                                 <a href="{{route('administrador.formacao.index')}}">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    Formações
+                                    Tipos de Curso
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="{{ route('administrador.curso.novo') }}">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Cursos
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="{{ route('administrador.agenda.index') }}">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Agenda
                                 </a>
                                 <b class="arrow"></b>
                             </li>                            
-                            <li class="">
-
-                                <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Cursos
-                                    <b class="arrow fa fa-angle-down"></b>
-                                </a>
-
-                                <b class="arrow"></b>
-
-                                <ul class="submenu">
-                                    <li class="">
-                                        <a href="{{ route('administrador.curso.novo') }}">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Novo Curso
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="{{ route('administrador.curso.index') }}">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Quadro de Cursos
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
                         <ul class="submenu">
                             <li class="">
@@ -211,7 +308,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>   
+                    </li>
                     <li class="">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-desktop"></i>
@@ -231,37 +328,37 @@
                                     Quadro de Professores
                                 </a>
                                 <b class="arrow"></b>
-                            </li> 
+                            </li>
                             <li class="">
                                 <a href="{{ route('administrador.aula.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Aulas
                                 </a>
                                 <b class="arrow"></b>
-                            </li> 
+                            </li>
                             <li class="">
                                 <a href="{{ route('administrador.exercicio.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Exercícios
                                 </a>
                                 <b class="arrow"></b>
-                            </li> 
+                            </li>
                             <li class="">
                                 <a href="{{ route('administrador.material.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Materiais
                                 </a>
                                 <b class="arrow"></b>
-                            </li> 
+                            </li>
                             <li class="">
                                 <a href="{{ route('administrador.videoconferencia.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Videoconferências
                                 </a>
                                 <b class="arrow"></b>
-                            </li> 
+                            </li>
                         </ul>
-                    </li> 
+                    </li>
                     <li>
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-users"></i>
@@ -315,7 +412,7 @@
                                 <b class="arrow"></b>
                             </li>
                         </ul>
-                    </li>   
+                    </li>
                     <li>
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-folder-open"></i>
@@ -359,36 +456,36 @@
                                 <b class="arrow"></b>
                             </li>
                             <li class="">
-                                <a href="{{ route('administrador.agenda.index') }}">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Agenda
-                                </a>
-                                <b class="arrow"></b>
-                            </li>  
-                            <li class="">
                                 <a href="{{ route('administrador.banner.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Banner
                                 </a>
                                 <b class="arrow"></b>
-                            </li> 
+                            </li>
                             <li class="">
-                                <a href="{{ route('administrador.aluno.novo') }}">
+                                <a href="{{ route('administrador.acesso_restrito.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Acesso Restrito
                                 </a>
                                 <b class="arrow"></b>
-                            </li> 
+                            </li>
+                            <li class="">
+                                <a href="{{ route('administrador.ebook.index') }}">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Ebooks
+                                </a>
+                                <b class="arrow"></b>
+                            </li>
                             {{-- <li class="">
                                 <a href="{{ route('administrador.aluno.novo') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Certificação Profissional
                                 </a>
                                 <b class="arrow"></b>
-                            </li> --}}                             
+                            </li> --}}
 
                         </ul>
-                    </li>   
+                    </li>
                 </ul><!-- /.nav-list -->
 
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -409,7 +506,7 @@
                                 <a href="#">Other Pages</a>
                             </li>
                             <li class="active">Blank Page</li>
-                        </ul><!-- /.breadcrumb --> 
+                        </ul><!-- /.breadcrumb -->
 
                         <div class="nav-search" id="nav-search">
                             <form class="form-search">
@@ -449,11 +546,11 @@
                                 <div class="row">
                                         @if(Session::has('message'))
                                             <div class="alert {{Session::get('alert-class')}}">
-                                            <strong>Aviso!</strong> 
+                                            <strong>Aviso!</strong>
                                                 {{ Session::get('message') }}
-                                            </div>                                         
-                                        @endif                                    
-                                </div>       
+                                            </div>
+                                        @endif
+                                </div>
                                 <!-- PAGE CONTENT BEGINS -->
                                     @yield('content')
                                 <!-- PAGE CONTENT ENDS -->
@@ -467,24 +564,8 @@
                 <div class="footer-inner">
                     <div class="footer-content">
                         <span class="bigger-120">
-                            {{-- <span class="blue bolder">Ace</span> --}}
                             Ecole Brasil
                         </span>
-
-                        &nbsp; &nbsp;
-{{--                         <span class="action-buttons">
-                            <a href="#">
-                                <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                            </a>
-
-                            <a href="#">
-                                <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-                            </a>
-
-                            <a href="#">
-                                <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-                            </a>
-                        </span> --}}
                     </div>
                 </div>
             </div>
@@ -500,16 +581,17 @@
         </script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>
-        <script src="{{ asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>        
+        <script src="{{ asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>
         <script src="{{ asset('assets/js/ace-elements.min.js') }}"></script>
         <script src="{{ asset('assets/js/ace.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap-wysiwyg.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootbox.js')}}"></script>
         <script src="{{ asset('assets/js/jquery.hotkeys.index.min.js')}}"></script>
         <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
-        <script src="{{ asset('js/jquery-validator/jquery.validate.js') }}"></script>
-        <script src="{{ asset('js/helpers.js') }}"></script>       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>        
+        <script src="{{ asset('js/jquery-validator/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('js/jquery-validator/additional-methods.min.js') }}"></script>
+        <script src="{{ asset('js/helpers.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
         @yield('last-body')
 

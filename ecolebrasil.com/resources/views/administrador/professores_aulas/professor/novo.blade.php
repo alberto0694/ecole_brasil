@@ -10,6 +10,7 @@
 										
 				<form id="novo-professor" class="form-horizontal" role="form" style="margin-left: 20px">
 					{{ csrf_field() }}
+					<input type="hidden" name="user_id" value="1">
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Nome </label>
 
@@ -23,7 +24,21 @@
 						<div class="col-sm-6">
 							<input id="sobrenome" name="sobrenome" type="text" class="col-xs-12 col-sm-6" />
 						</div>
-					</div>					
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Email </label>
+
+						<div class="col-sm-6">
+							<input id="email" name="email" type="text" class="col-xs-12 col-sm-6" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Senha </label>
+
+						<div class="col-sm-6">
+							<input id="password" name="password" type="text" class="col-xs-12 col-sm-6" />
+						</div>
+					</div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Apresentação em Vídeo <small>(Opcional)</small></label>
 

@@ -8,7 +8,18 @@ class Depoimento extends Model
 {
     protected $fillable = ['descricao_html',
 							'avatar',
-							'autor'	
+							'autor',
+							'video',
+                            'apenas_video'
 							];
-            
+
+    public function getAvatarBase64Attribute()
+    {
+    	return file_get_contents(public_path().'/'.$this->avatar);
+    }
+    
+    // public function getVideoBase64Attribute()
+    // {
+    // 	return file_get_contents(public_path().'/'.$this->video);
+    // }
 }

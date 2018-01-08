@@ -4,17 +4,17 @@ function readFile() {
   var targetb64 = this.parentElement.getElementsByClassName("b64_result")[0];
 
   if (this.files && this.files[0]) {
-    
+
     var FR= new FileReader();
-    
+
     FR.addEventListener("load", function(e) {
 	    targetImg.src       = e.target.result;
 	   	targetb64.value = e.target.result;
-    }); 
-    
+    });
+
     FR.readAsDataURL( this.files[0] );
   }
-  
+
 }
 
 function getIdYoutube(url)
@@ -27,7 +27,7 @@ function getIdYoutube(url)
     var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
     if(videoid != null) {
        return 'https://www.youtube.com/embed/' + videoid[1];
-    } else { 
+    } else {
         return "0";
     }
 }
@@ -62,13 +62,13 @@ function normalizeVideo(element)
 {
 
       var urlVideo = $(element).val();
-      var url = getUrlFixed( urlVideo ); 
+      var url = getUrlFixed( urlVideo );
       $(element).val( url );
 }
 
 function showContent()
 {
-    
+
     $("#admin-application-only").show();
     $("#loading-admin-application-only").hide();
 

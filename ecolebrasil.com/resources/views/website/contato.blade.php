@@ -18,26 +18,25 @@
 	                </p>		
 	                <p class="gray-text">Você também pode enviar um email para <b>contato@ecolebrasil.com</b></p>	
 	                <p class="gray-text">Entrar em contato pelo telefone <b>+55 51 3237.2800</b></p>
-	                <p class="gray-text">Ou entrar em contato pelo whatsapp <b>+55 51 99749.0990</b></p>
+	                <p class="gray-text">Ou entrar em contato pelo whatsapp <b>+55 51 99166.0914</b></p>
 			</div>
-			<div class="col-md-6">
-	                <h3></h3>          
-	                <ul style="padding-left: 0px;">
+			<div class="col-md-6">          
+	                <ul style="padding-left:0px; ">
 	                    <li>
-	                    	<form class="form-horizontal" role="form" method="POST" action="{{ route('email.contato') }}">
+	                    	<form style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato') }}">
 	                    		{{ csrf_field() }}
 		                        <div class="input-append newsletter-box ">
-		                            <input name="contato" type="text" class="full " placeholder="Seu nome">
-		                            <input name="telefone" type="text" class="full " placeholder="Telefone">
-		                            <input name="email" type="text" class="full " placeholder="E-mail">
-		                            <input name="cidade" type="text" class="full " placeholder="Cidade/Estado">
-		                            <input name="cidade_curso" type="text" class="full " placeholder="Cidades de interese para fazer o curso (separe por ;)">
-		                            <input name="ecole" type="text" class="full " placeholder="Como conheceu a ecole">
-		                            <textarea style="color:black"  name="mensagem" class="full " rows="4" placeholder="Mensagem">
+		                            <input required name="contato" type="text" class="full form-control " placeholder="Seu nome">
+		                            <input required name="telefone" type="text" class="full form-control " placeholder="Telefone">
+		                            <input required name="email" type="text" class="full form-control " placeholder="E-mail">
+		                            <input required name="cidade" type="text" class="full form-control " placeholder="Cidade/Estado">
+		                            <input required name="cidade_curso" type="text" class="full form-control " placeholder="Cidades de interese para fazer o curso (separe por ;)">
+		                            <input required name="ecole" type="text" class="full form-control " placeholder="Como conheceu a ecole">
+		                            <textarea style="color:black"  name="mensagem" class="full form-control " rows="4" placeholder="Mensagem">
 
 		                            </textarea>
 		                              <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
-		                                <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">                                            
+		                                <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">                                            
 		                              </button> 
 		                        </div>
 		                    </form>

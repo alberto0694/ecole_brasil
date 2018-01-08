@@ -17,8 +17,10 @@ class CreateAulasTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->string('url_video');
+            $table->longText('descricao_html');
 
-            $table->integer('modulo_id');
+            $table->integer('modulo_id')->unsigned();
+            $table->foreign('modulo_id')->references('id')->on('modulos');
             $table->timestamps();
         });
     }

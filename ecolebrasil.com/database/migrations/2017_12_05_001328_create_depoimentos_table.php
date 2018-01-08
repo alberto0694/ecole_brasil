@@ -15,8 +15,10 @@ class CreateDepoimentosTable extends Migration
     {
         Schema::create('depoimentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('descricao_html');
-            $table->longText('avatar');
+            $table->longText('descricao_html')->nullable();
+            $table->longText('avatar')->nullable();
+            $table->longText('video')->nullable();
+            $table->string('apenas_video')->nullable();
             $table->string('autor');
             $table->timestamps();
         });

@@ -6,17 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 use App\Curso;
 use App\Material;
 use App\Exercicio;
+use App\Agenda;
 use App\Professor;
 use Carbon\Carbon;
 
 class Modulo extends Model
 {
-    protected $fillable = ['titulo', 'data_inicio', 'curso_id', 'titulo', 'descricao_html', 'card'];
+    protected $fillable = ['titulo', 'data_inicio', 'agenda_id', 'titulo', 'descricao_html', 'card'];
 
-	public function curso()
+	public function agenda()
 	{
-		return $this->belongsTo('App\Curso', 'curso_id', 'id');
+		return $this->belongsTo('App\Agenda', 'agenda_id', 'id');
 	}  
+
+	public function getCursoAttribute()
+	{
+		return $this->agenda->curso;
+	}  
+
 
 	public function getFormatedDateAttribute()
 	{

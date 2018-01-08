@@ -7,78 +7,22 @@ use Illuminate\Http\Request;
 
 class ExercicioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+     public function create(Request $request)
     {
-        //
+        $request = Controller::saveBase64($request, 'arquivo', 'exercicios');
+        $exercicio = Exercicio::create( $request->all() );
+        return;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function update(Request $request, $id)
     {
-        //
+        $request = Controller::saveBase64($request, 'arquivo', 'exercicios');
+        $exercicio = Exercicio::find( $id );
+        $exercicio->update( $request->all() );
+        return;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Exercicio  $exercicio
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Exercicio $exercicio)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Exercicio  $exercicio
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Exercicio $exercicio)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Exercicio  $exercicio
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Exercicio $exercicio)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Exercicio  $exercicio
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Exercicio $exercicio)
+    public function delete(Request $request, $id)
     {
         //
     }

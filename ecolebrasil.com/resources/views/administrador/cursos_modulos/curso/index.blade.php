@@ -26,8 +26,8 @@
 									</label>
 								</th>
 								<th>Curso</th>
-								<th class="hidden-480">Carga Horária</th>
-								<th class="hidden-480">Investimento/Valor</th>
+								<th class="hidden-480">Apresentação</th>
+								<th class="hidden-480"></th>
 								<th>Status</th>
 								<th></th>
 							</tr>
@@ -46,8 +46,7 @@
 										<td>
 											<a href="#">{{ $curso->nome }}</a>
 										</td>
-										<td class="hidden-480">{{ $curso->carga_horaria }}</td>
-										<td class="hidden-480">{{ $curso->investimento }}</td>
+										<td class="hidden-480"><a target="_blank" href="{{ $curso->link_video }}">{{ $curso->link_video }}</a></td>
 										<td>
 											@if($curso->openned)
 												<span class="label label-sm label-success">Aberto</span>
@@ -78,13 +77,13 @@
 													</button>
 
 													<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-														<li>
+														{{-- <li>
 															<a href="{{ route('administrador.curso.visualizar', $curso->id) }}" class="tooltip-info" data-rel="tooltip" title="View">
 																<span class="blue">
 																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
 																</span>
 															</a>
-														</li>
+														</li> --}}
 
 														<li>
 															<a href="{{ route('administrador.curso.editar', $curso->id) }}" class="tooltip-success" data-rel="tooltip" title="Edit">

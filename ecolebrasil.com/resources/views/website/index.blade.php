@@ -2,32 +2,39 @@
 
 @section('content')
 <style type="text/css">
-	.video-index{
-		margin: 0; padding: 0; border: none; margin-top: -1px; border-radius: 0px;
-	}
+		@media screen and (max-width: 768px) {
+				.video-index{
+					margin: 0;
+					padding: 0;
+					border: none;
+					margin-top: -1px;
+					border-radius: 0px;
+					width: 100%;
+					height: auto;
+				}
+		}
 </style>
 <div class="row" style="margin: 0; padding: 0">
 	  <div class="col-md-12" style="margin: 0; padding: 0">
-			<div id="carousel-index-ecole" class="carousel slide" data-ride="carousel">
+			<div style="background-color:rgba(239, 64, 96, 1);" id="carousel-index-ecole" class="carousel slide" data-ride="carousel">
 				<?php 	$i = 0;
 						$class = "active";
 				?>
-
-				  <div class="carousel-inner">
-				  	@foreach($banners as $banner)
-					    @if($i > 0)
-					    	<?php $class = ""; ?>
+			  <div class="carousel-inner">
+			  	@foreach($banners as $banner)
+				    @if($i > 0)
+				    	<?php $class = ""; ?>
+				    @endif
+				    <?php $i++; ?>
+				    <div class="item <?php echo $class; ?>">
+					    @if($banner->ativo == 1)
+					    	{!!$banner->item!!}
 					    @endif
-					    <?php $i++; ?>
-					    <div class="item <?php echo $class; ?>">
-						    @if($banner->ativo == 1)
-						    	<a href="{{ $banner->link_url }}"><img src="{{ $banner->imagem }}" alt="" style="width: 100%; display: block;"></a>
-						    @endif
-					    </div>
-					  @endforeach
-				  </div>
+				    </div>
+				  @endforeach
+			  </div>
 
-				  <!-- Left and right controls -->
+			  @if($i > 1)
 				  <a class="left carousel-control" href="#carousel-index-ecole" data-slide="prev">
 				    <span class="glyphicon glyphicon-chevron-left"></span>
 				    <span class="sr-only">Previous</span>
@@ -36,34 +43,49 @@
 				    <span class="glyphicon glyphicon-chevron-right"></span>
 				    <span class="sr-only">Next</span>
 				  </a>
-			</div>		    
+				@endif
+			</div>
 	  </div>
 
 
-  
+
  </div>
  <div class="row" style="margin: 0; padding: 0">
-	  <div class="col-md-12" style="margin: 0; padding: 0">
-	    
-	    <a href="#" class="video-index thumbnail ">
-	      	<img src="{{ asset('images/manifesto.png') }}" alt="...">	    
+	  <div class="col-md-12 hidden-xs hidden-sm" style="margin: 0; padding: 0">
+	    <a class="video-index thumbnail ">
+	    	 {{-- background: rgba(239, 64, 96, .1); --}}
+	    	<p class="manifesto" >
+	    		<label>MANIFESTO</label><br>
+	    		Não é a roupa, é a pessoa. Não é sobre saber o que vestir, é sobre sentir. Ser. Não é só a cor, é o que ela representa para a alma. Não existe certo ou errado, existe o que te faz feliz. Você está satisfeito com o que vê no espelho? Essa imagem te traduz? Se cada pessoa tem uma identidade não faz sentido padronizar. Rótulos não cabem mais. Faz sentido ajudar as pessoas a expressarem quem são, se conhecerem, aceitarem, o diferente é o que nos encanta, vamos além do estilo e é essa a nossa missão com cada consultora que formamos. A gente quer que a nova regra seja ser livre, usar o que te faz bem não o que está na moda. A Ecole pensa no estilo e a moda como uma representação autêntica de autoconhecimento e personalidade. A gente quer que "ser você" seja a regra. Que cada uma das consultoras que a gente forma utilize as técnicas e a nossa metodologia para ajudar as pessoas a se permitirem ser para vestir com liberdade e respeito a si mesmo. Menos rótulos, menos feminino e masculino, menos pode e não pode, menos sim e não. Queremos ajudar as pessoas a encontrarem a sua essência pela vestimenta. A respeitarem a moda que faz sentido, que gera identidade. Porque no fundo, é isso: ser mais a gente meso para vestir o que nos representa.
+		    </p>
+	      	<img style="width: 100%" src="{{ asset('images/manifesto_screen.png') }}" alt="...">
 	    </a>
+	  </div>
 
+	  <div class="col-md-12 hidden-md hidden-lg" style="margin: 0; padding: 0" >
+	    <a class="video-index thumbnail ">
+	    	 {{-- background: rgba(239, 64, 96, .1); --}}
+	    	<p class="manifesto_mobile" >
+	    		<label style="">MANIFESTO</label><br>
+	    		Não é a roupa, é a pessoa. Não é sobre saber o que vestir, é sobre sentir. Ser. Não é só a cor, é o que ela representa para a alma. Não existe certo ou errado, existe o que te faz feliz. Você está satisfeito com o que vê no espelho? Essa imagem te traduz? Se cada pessoa tem uma identidade não faz sentido padronizar. Rótulos não cabem mais. Faz sentido ajudar as pessoas a expressarem quem são, se conhecerem, aceitarem, o diferente é o que nos encanta, vamos além do estilo e é essa a nossa missão com cada consultora que formamos. A gente quer que a nova regra seja ser livre, usar o que te faz bem não o que está na moda. A Ecole pensa no estilo e a moda como uma representação autêntica de autoconhecimento e personalidade. A gente quer que "ser você" seja a regra. Que cada uma das consultoras que a gente forma utilize as técnicas e a nossa metodologia para ajudar as pessoas a se permitirem ser para vestir com liberdade e respeito a si mesmo. Menos rótulos, menos feminino e masculino, menos pode e não pode, menos sim e não. Queremos ajudar as pessoas a encontrarem a sua essência pela vestimenta. A respeitarem a moda que faz sentido, que gera identidade. Porque no fundo, é isso: ser mais a gente meso para vestir o que nos representa.
+		    </p>
+	      	<img style="width: 100%" src="{{ asset('images/manifesto_mobile.png') }}" alt="...">
+	    </a>
 	  </div>
  </div>
  <div class="row">
  		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
  			<div class="row">
- 				<h2 style="float: left; font-style: normal" class="title-pink-begin-text">Cursos e Workshops</h2>
+ 				<h2 style="text-align: center; font-style: normal" class="title-pink-begin-text">Cursos</h2>
  				{{-- <h4 style="float: left; margin-top: 32px; font-weight: normal" class="title-pink-begin-text"><i>Cursos e Workshops</i></h4> --}}
  			</div>
  			<div class="row">
  				<hr>
- 			</div> 			
- 			<div class="row">
- 				
  			</div>
- 			
+ 			<div class="row">
+
+ 			</div>
+
  			<div class="row">
  				{{-- <h2 class="title-pink-begin-text"><i>JULHO</i></h2> --}}
  			</div>
@@ -71,25 +93,16 @@
  				@foreach($cursos as $curso)
 	 				<div class="col-md-6 col-xs-12">
 	 					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ $curso->card }}"></a>
+						<div class="row">
+							<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
+								<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
+									<a style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ route('pagamento', ['curso_id', $curso->id]) }}">Inscrever-se</a>
+								</h3>
+							</div>
+						</div>
 	 				</div>
 	 			@endforeach
-	 			{{-- @foreach($agendas as $agenda)
-			 				<div class="col-md-6" style="margin-top: 10px">
-								<div class="media">
-								  <div class="media-left">								  	
-								    <a href="{{ route('cursos', $agenda->curso->id) }}">
-								      <img style="max-width: 122px" class="media-object" src="{{$agenda->avatar}}" alt="{{ $agenda->descricao }}">
-								    </a>
-								  </div>
-								  <div class="media-body">
-								    <h4 class="media-heading days-agenda">{{ $agenda->datas }}</h4>
-								    <h5 class="media-heading gray-text-bold">{{$agenda->cidade}}</h5>
-								    <span class="descricao-day-agenda">{{ $agenda->descricao }}</span>
-								  </div>
-								</div>	 					
-			 				</div>		
-	 			@endforeach --}}
-	 		</div>		
+	 		</div>
  			<div class="row">
  				<hr style="margin-top: 50px">
  				<h3 style="text-align: center; margin-top: -50px"><a href="{{route('agenda')}}">

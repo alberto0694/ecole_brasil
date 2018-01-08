@@ -9,7 +9,7 @@ class BannerController extends Controller
 {
     public function create(Request $request)
     {
-        // dd($request->all());
+        $request = Controller::saveBase64($request, 'midia', 'banners');
         $banner = Banner::create( $request->all() );
         return;
     }
@@ -17,6 +17,7 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         $banner = Banner::find( $id );
+        $request = Controller::saveBase64($request, 'midia', 'banners', $banner->midia);
         $banner->update( $request->all() );
         return;
     }

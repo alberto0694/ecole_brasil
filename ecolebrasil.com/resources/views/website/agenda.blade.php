@@ -9,7 +9,7 @@
 /*	.ser-para-vestir{
 		position: absolute;
 		bottom: 50px;
-		margin: 0;	
+		margin: 0;
 	}*/
 </style>
 {{-- <div class="row" style="margin: 0; padding: 0">
@@ -22,19 +22,26 @@
  <div class="row">
  	<div class="col-md-10 col-md-offset-1">
  		<h3 style="margin-left: 10px">Agenda</h3>
- 		<hr> 			
+ 		<hr>
 	</div>
  </div>
  <div class="row">
  	<div class="col-md-10 col-md-offset-1 col-xs-12">
  		@foreach($agendas as $agenda)
-	 		<div class="col-md-3">
+	 		<div class="col-md-3 col-xs-10 col-xs-offset-1" style=" border: 2px solid;padding: 15px;border-radius: 5px;border-color: #ef3e61;">
 	 			<a href="{{ route('cursos', $agenda->curso->id) }}" target="_blank">
-	 				<img style="display: block; margin: 0 auto;" src="{{ $agenda->logo }}">
-	 			</a>	 			
+	 				<img style="display: block; margin: 0 auto;" src="{{ asset($agenda->logo) }}">
+	 			</a>
 	 			<h4 align="center">	{{ $agenda->datas }} - {{ $agenda->cidade }}</h4>
 	 			<h4 align="center"><b>{{ $agenda->ministrantes }}</b></h4>
-	 			<a href="{{ route('cursos', $agenda->curso->id) }}" target="_blank"><h3 align="center"><b>{{ $agenda->curso->nome }}</b></h3></a>
+	 			<a style="color:rgba(239, 64, 96, 1); " href="{{ route('cursos', $agenda->curso->id) }}" target="_blank"><h3 align="center"><b>{{ $agenda->curso->nome }}</b></h3></a>
+				<div class="row">
+					<div class="col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1">
+						<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
+							<a style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ route('pagamento', ['agenda_id' => $agenda->id]) }}">Inscrever-se</a>
+						</h3>
+					</div>
+				</div>
 	 		</div>
  		@endforeach
  	</div>

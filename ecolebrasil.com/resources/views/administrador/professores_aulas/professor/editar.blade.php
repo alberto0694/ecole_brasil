@@ -10,6 +10,7 @@
 										
 				<form id="editar-professor" class="form-horizontal" role="form" style="margin-left: 20px">
 					<input name="_method" type="hidden" value="PUT">
+					<input type="hidden" name="user_id" value="{{ $professor->user_id }}">
 					{{ csrf_field() }}
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Nome </label>
@@ -24,7 +25,21 @@
 						<div class="col-sm-6">
 							<input value="{{ $professor->sobrenome }}" id="sobrenome" name="sobrenome" type="text" class="col-xs-12 col-sm-6" />
 						</div>
-					</div>					
+					</div>	
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Email </label>
+
+						<div class="col-sm-6">
+							<input value="{{ $professor->user->email }}" id="email" name="email" type="text" class="col-xs-12 col-sm-6" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Senha </label>
+
+						<div class="col-sm-6">
+							<input id="password" name="password" type="text" class="col-xs-12 col-sm-6" />
+						</div>
+					</div>				
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Apresentação em Vídeo <small>(Opcional)</small></label>
 
@@ -32,7 +47,7 @@
 							<input value="{{ $professor->apresentacao_video }}" id="apresentacao_video" name="apresentacao_video" type="text" class="col-xs-12 col-sm-6" />
 						</div>
 						<br><br>
-						@if(($professor->apresentacao_video != '') && ($professor->apresentacao_video != ''))
+						@if(($professor->apresentacao_video != '') && ($professor->apresentacao_video != '0'))
 							<div class="row">
 								<div class="col-md-4">
 									<iframe src="{{ $professor->apresentacao_video }}"></iframe>

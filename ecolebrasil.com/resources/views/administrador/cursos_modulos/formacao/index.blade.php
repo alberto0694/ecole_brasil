@@ -2,19 +2,19 @@
 @section('content')
 	<div class="row">
 		<a href="{{ route('administrador.formacao.novo') }}">
-			<button class="btn btn-lg btn-success" style="margin-left: 30px">Nova Formação</button>	
+			<button class="btn btn-lg btn-success" style="margin-left: 30px">Novo Tipo de curso</button>	
 		</a>		
 	</div>
 
 			<div class="row">
 					<div class="col-xs-12">
-						<h3 class="header smaller lighter blue">Ecole Formacões</h3>
+						<h3 class="header smaller lighter blue">Ecole</h3>
 
 						<div class="clearfix">
 							<div class="pull-right tableTools-container"></div>
 						</div>
 						<div class="table-header">
-							Quadro de Formações de cursos
+							Quadro de Tipos de cursos (formações)
 						</div>
 						<div>
 							<table id="dynamic-table" class="table table-striped table-bordered table-hover">
@@ -46,6 +46,7 @@
 										<td>
 											<a href="#">{{ $formacao->nome }}</a>
 										</td>
+										<td>{{ $formacao->qtdCursos }}</td>
 										{{-- {{ $formacao->cursos()->count }} --}}
 										<td></td>
 

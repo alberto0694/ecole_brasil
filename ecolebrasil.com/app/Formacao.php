@@ -19,4 +19,9 @@ class Formacao extends Model
     	$this->cursos()->add( $curso );
     	return;
     }
+
+    public function getQtdCursosAttribute()
+    {
+        return $this->cursos()->count();
+    }
 }

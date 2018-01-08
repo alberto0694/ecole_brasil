@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Aluno;
 use Carbon\Carbon;
+use App\Modulo;
 
 class Curso extends Model
 {
@@ -16,18 +17,39 @@ class Curso extends Model
 							'card',
 							'ementa',
 							'ministrantes',
+							'modelo',
 							'conteudo',
+							'carga_horaria',
 							'apresentacao',
 							'objetivos',
 							'informacoes',
 							'pagina_inicial',
 							'material'];
 
+    public function getCardBase64Attribute()
+    {
+    	return file_get_contents(public_path().'/'.$this->card);
+    }
+
+    public function getBackgroundBase64Attribute()
+    {
+    	return file_get_contents(public_path().'/'.$this->background_img);
+    }
+
+    public function getEmentaBase64Attribute()
+    {
+    	return file_get_contents(public_path().'/'.$this->ementa);
+    }
 
     public function alunos()
     {
     	return $this->belongsToMany('App\Aluno');
     }
+
+    // public function modulos()
+    // {
+    // 	return $this->hasMany('App\Modulo');
+    // }
 
     public function formacao()
     {

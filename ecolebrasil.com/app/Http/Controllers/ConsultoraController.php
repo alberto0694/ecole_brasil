@@ -9,12 +9,14 @@ class ConsultoraController extends Controller
 {
      public function create(Request $request)
     {
+        $request = Controller::saveBase64($request, 'avatar', 'consultoras');
         $consultora = Consultora::create( $request->all() );
         return;
     }
 
     public function update(Request $request, $id)
     {
+        $request = Controller::saveBase64($request, 'avatar', 'consultoras');
         $consultora = Consultora::find( $id );
         $consultora->update( $request->all() );
         return;

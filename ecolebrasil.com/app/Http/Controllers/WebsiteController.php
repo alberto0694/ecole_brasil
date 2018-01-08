@@ -11,9 +11,13 @@ use App\Contato;
 use App\Agenda;
 use App\Imprensa;
 use App\Banner;
+use App\Aluno;
+use App\User;
 use \DB;
 use \Mail;
 use \Session;
+use \Auth;
+use App\Consultora;
 
 class WebsiteController extends Controller
 {
@@ -31,7 +35,7 @@ class WebsiteController extends Controller
         Contato::create( $request->all() );
 
         Mail::send('emails.contato', $data, function ($message) {
-            $message->from('alberto@metrocoletivo.com.br', 'Teste');
+            $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
             $message->to('alberto@metrocoletivo.com.br');
         });        
 
@@ -43,88 +47,190 @@ class WebsiteController extends Controller
     public function home()
     {
         $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
         $agendas = Agenda::orderBy('data_inicio', 'asc')->get(); //Agenda::all();
-        $banners = Banner::all();
+        $banners = Banner::where('ativo', '=', 1)->get();
         $cursos = Curso::where('pagina_inicial', '=', '1')->get();
         // $agendas = Agenda::all();
-    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos'));
+    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu'));
     }
 
     public function escola()
     {
         $formacoes = Formacao::all();
-    	return view('website.escola', compact('formacoes'));
+        $cursos_menu = Curso::all();
+    	return view('website.escola', compact('cursos_menu','formacoes'));
     }    
 
     public function restrito()
     {
         $formacoes = Formacao::all();
-    	return view('website.restrito', compact('formacoes'));
+        $cursos_menu = Curso::all();
+    	return view('website.restrito', compact('cursos_menu','formacoes'));
     }    
 
     public function blog()
     {
         $formacoes = Formacao::all();
-    	return view('website.blog', compact('formacoes'));
+        $cursos_menu = Curso::all();
+    	return view('website.blog', compact('cursos_menu','formacoes'));
     }    
 
     public function certificacao()
     {
         $formacoes = Formacao::all();
-    	return view('website.certificacao', compact('formacoes'));
+        $cursos_menu = Curso::all();
+    	return view('website.certificacao', compact('cursos_menu','formacoes'));
     }    
 
     public function sou_ecole()
     {
         $formacoes = Formacao::all();
-    	return view('website.sou_ecole', compact('formacoes'));
+        $cursos_menu = Curso::all();
+    	return view('website.sou_ecole', compact('cursos_menu','formacoes'));
     }   
 
     public function contato()
     {
         $formacoes = Formacao::all();
-    	return view('website.contato', compact('formacoes'));
+        $cursos_menu = Curso::all();
+    	return view('website.contato', compact('cursos_menu','formacoes'));
     }   
 
     public function cursos(Request $request, $id)
     {
         $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
         $curso = Curso::find( $id );
-    	return view('website.cursos', compact('formacoes', 'curso'));
+    	return view('website.cursos', compact('cursos_menu','formacoes', 'curso'));
     }    
 
     public function depoimentos()
     {
         $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
         $depoimentos = Depoimento::all();
-    	return view('website.depoimentos', compact('formacoes', 'depoimentos'));
+        $depoimentosVideo = Depoimento::where('video', '<>', '""')->get();
+
+    	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo'));
     }
 
     public function agenda()
     {
         // $agendas = DB::table('agendas')->orderBy('mes', 'asc')->get();
-        $agendas = Agenda::orderBy('data_inicio', 'asc')->get();
+        $agendas = Agenda::where('data_inicio', '>=', date('Y-m-d').' 00:00:00')->orderBy('data_inicio', 'asc')->get();
         $formacoes = Formacao::all();
-        return view('website.agenda', compact('agendas', 'formacoes'));
+        $cursos_menu = Curso::all();
+        return view('website.agenda', compact('cursos_menu','agendas', 'formacoes'));
     }
 
     public function faq()
     {
         $formacoes = Formacao::all();
-        return view('website.faq', compact('formacoes'));
+        $cursos_menu = Curso::all();
+        return view('website.faq', compact('cursos_menu','formacoes'));
     }
 
     public function imprensa()
     {
         $imprensas = Imprensa::all();
         $formacoes = Formacao::all();
-        return view('website.imprensa', compact('formacoes', 'imprensas'));
+        $cursos_menu = Curso::all();
+        return view('website.imprensa', compact('cursos_menu','formacoes', 'imprensas'));
     }
 
     public function materia($id)
     {
         $imprensa = Imprensa::find($id);
         $formacoes = Formacao::all();
-        return view('website.materia', compact('formacoes', 'imprensa'));
+        $cursos_menu = Curso::all();
+        return view('website.materia', compact('cursos_menu','formacoes', 'imprensa'));
     }
+
+    public function pagamento(Request $request)
+    {
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+
+        $agenda_id = $request->query('agenda_id');
+        $curso_id = $request->query('curso_id');
+        $agendas = null;
+        if($agenda_id){
+            $agendas = Agenda::where('id', '=', $agenda_id)->get();
+            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));
+        }
+        if($curso_id){
+            $agendas = Curso::find($curso_id)->agendas;
+            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));            
+        }
+        // dd($agendas);
+        
+    }
+
+    public function crudAlunoAfterPayment(Request $request)
+    {
+        // dd($request);
+        $user = User::where('email', '=', $request['email'])->first();
+        $permission = '';
+        
+        if($request['modelo'] == 'D'){
+            $permission = 'AL';
+        }
+
+        if($request['modelo'] == 'P'){
+            $permission = 'AR';
+        }
+
+        if($user == null){
+            $user = User::create([
+                'name' => $request['nome_aluno'],
+                'email' => $request['email'],
+                'permission' => $permission,
+                'password' => bcrypt($request['password']),
+            ]); 
+        }else{
+            //retorna que ja tem esse usuário
+        }
+        $request = Controller::formatDate( $request, 'nascimento' );
+        $aluno = Aluno::create([
+                'nome' => $request['nome_aluno'],
+                'sobrenome' => $request['sobrenome_aluno'],
+                'nascimento' => $request['nascimento'],
+                'user_id' => $user->id
+            ]);
+        $agenda = Agenda::find( $request['agenda_id'] );
+        $aluno->addAgenda( $agenda );
+        
+        $data = [   "nome" => $request->nome,
+                    "login" => $request->email,
+                    "password" => $request->password,
+                    "nome_curso" => $agenda->curso->nome
+                ];
+
+
+        // Mail::send('emails.aluno', $data, function ($message) {
+        //     $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
+        //     $message->to($request['email']);
+        // });         
+        return response()->json(['status' => 'success'], 200);    
+    }
+
+    public function consultoras()
+    {
+        $consultoras = Consultora::orderBy('created_at', 'asc')->get();
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();        
+        return view('website.consultoras', compact('consultoras', 'formacoes', 'cursos_menu'));
+    }
+
+    public function ead(Request $request)
+    {
+        Auth::guard()->logout();
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();        
+        return view('website.ead', compact('formacoes', 'cursos_menu'));
+    }    
+
+
+
 }

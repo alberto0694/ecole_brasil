@@ -1,4 +1,4 @@
 @extends('layouts.aluno')
 @section('content')
-	taooooo
+	Acesso Aluno
 @endsection

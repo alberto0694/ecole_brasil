@@ -19,9 +19,12 @@ class CreateProfessorsTable extends Migration
             $table->string('sobrenome');
             $table->timestamp('nascimento');
             $table->longText('avatar');
+            $table->integer('user_id')->unsigned();
             $table->string('apresentacao_video')->nullable();
             $table->longText('descricao_html');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users'); 
         });
     }
 

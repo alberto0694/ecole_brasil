@@ -56,17 +56,17 @@
 					</div>	
 					
 					<div class="form-group" id="imagem_container">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Imagem</label>
-						@component('components.upfile', ['nameId' => 'imagem', 'src' => $banner->imagem])
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Midia</label>
+						@component('components.upfile', ['nameId' => 'midia', 'src' => $banner->midia])
 						@endcomponent											
 					</div>	
-					<div class="form-group" id="video_container">
+				{{-- 	<div class="form-group" id="video_container">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Link de Vídeo </label>
 
 						<div class="col-sm-6">
 							<input value="{{ $banner->link_video }}" id="link_video" name="link_video" type="text" class="col-xs-12 col-sm-6" />
 						</div>
-					</div>		
+					</div> --}}		
 										
 					<hr>	
 					<div class="clearfix form-actions">
@@ -122,7 +122,7 @@
 						},
 						submitHandler: function(form) {
 
-							normalizeVideo("input[name=link_video]");
+							// normalizeVideo("input[name=link_video]");
 							
 							$.confirm({
 							    content: function(){

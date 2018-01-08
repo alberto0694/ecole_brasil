@@ -1,18 +1,6 @@
 @extends('layouts.website')
 
 @section('content')
-<style type="text/css">
-	.video-index{
-		margin: 0; padding: 0; border: none; margin-top: -1px; border-radius: 0px;
-	}
-
-/*	.ser-para-vestir{
-		position: absolute;
-		bottom: 50px;
-		margin: 0;	
-	}*/
-</style>
-
 	<div class="row" style="margin: 0; padding: 0">
 		  <div class="col-md-12" style="margin: 0; padding: 0">
 		    <a href="#" class="video-index thumbnail ">

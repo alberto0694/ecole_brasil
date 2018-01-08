@@ -11,9 +11,15 @@ class Professor extends Model
 							'sobrenome',
 							'nascimento',
 							'avatar',
+							'user_id',
 							'descricao_html',
 							'apresentacao_video'
 							];
+
+	public function user()
+	{
+		return $this->belongsTo('App\User');
+	}
 
 	public function getIdadeAttribute()
 	{
@@ -26,4 +32,10 @@ class Professor extends Model
 	{
 		return Carbon::parse($this->nascimento)->format('d/m/Y');
 	}
+
+    public function getAvatarBase64Attribute()
+    {
+    	return file_get_contents(public_path().'/'.$this->avatar);
+    }
+
 }

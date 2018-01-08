@@ -9,7 +9,7 @@
 					{{ csrf_field() }}
 					<input name="_method" type="hidden" value="PUT">
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Formação </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tipo de Curso </label>
 
 						<div class="col-sm-6">
 							<input id="nome" name="nome" type="text" class="col-xs-12 col-sm-6" value="{{ $formacao->nome }}"/>
@@ -76,7 +76,7 @@
 													  success: function(){
 															$.alert({
 															    title: 'Sucesso!',
-															    content: 'Formação de código " {{ $formacao->id }} " atualizada com sucesso!',
+															    content: 'Tipo de Curso de código " {{ $formacao->id }} " atualizada com sucesso!',
 															    buttons:{
 															    	ok:function(){
 															    		window.location.href = "{{ route('administrador.formacao.index') }}";

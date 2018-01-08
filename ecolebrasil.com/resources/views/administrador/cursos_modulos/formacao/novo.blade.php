@@ -8,7 +8,7 @@
 				<form id="novo-formacao" class="form-horizontal" role="form" style="margin-left: 20px" >
 					{{ csrf_field() }}
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Formação </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tipo de Curso </label>
 
 						<div class="col-sm-6">
 							<input id="nome" name="nome" type="text" class="col-xs-12 col-sm-6" />
@@ -74,7 +74,7 @@
 														  success: function(){
 																$.alert({
 																    title: 'Sucesso!',
-																    content: 'Formação cadastrada com sucesso!',
+																    content: 'Tipo de Curso cadastrada com sucesso!',
 																    buttons:{
 																    	ok:function(){
 																    		window.location.href = "{{ route('administrador.formacao.index') }}";

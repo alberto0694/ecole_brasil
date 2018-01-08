@@ -22,18 +22,18 @@
 							<input id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />							
 						</div>
 					</div>				
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card </label>
 						@component('components.upfile', ['nameId' => 'card', 'src' => ''])
 						@endcomponent											
-					</div>		
+					</div>	 --}}	
 					<hr>
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Curso </label>
 						<div class="col-sm-6">
-							<select id="curso_id" name="curso_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
-								@foreach($cursos as $curso)
-									<option value="{{ $curso->id }}">{{ $curso->nome }}</option>
+							<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
+								@foreach($agendas as $agenda)
+									<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
 								@endforeach								
 							</select>
 						</div>

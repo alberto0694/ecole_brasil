@@ -29,6 +29,8 @@
 										<th>Curso</th>
 										<th>Cidade</th>
 										<th>Datas</th>
+										<th>Valor Total</th>
+										<th>Número de Parcelas</th>
 										<th></th>
 									</tr>
 								</thead>
@@ -50,6 +52,8 @@
 										{{-- {{ $agenda->cursos()->count }} --}}
 										<td>{{ $agenda->cidade }}</td>
 										<td>{{ $agenda->datas }}</td>
+										<td>{{ $agenda->valor }}</td>
+										<td>{{ $agenda->max_parcelas }}</td>
 
 										<td>
 											<div class="hidden-sm hidden-xs action-buttons">

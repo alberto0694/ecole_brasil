@@ -34,7 +34,7 @@
 						</div>
 					</div>	
 
-					<div class="form-group" style="display: none">
+{{-- 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tipo de mídia</label>
 						<div class="col-sm-6">
 							<select id="midia" name="midia" class="col-xs-12 col-sm-6" id="form-field-select-3">
@@ -42,11 +42,11 @@
 									<option selected value="imagem" >Imagem</option>
 							</select>
 						</div>
-					</div>	
+					</div>	 --}}
 					
 					<div class="form-group" id="imagem_container">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Imagem</label>
-						@component('components.upfile', ['nameId' => 'imagem', 'src' => ''])
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Mídia</label>
+						@component('components.upfile', ['nameId' => 'midia', 'src' => ''])
 						@endcomponent											
 					</div>	
 					<div class="form-group" id="video_container">
@@ -112,7 +112,7 @@
 						},
 						submitHandler: function(form) {
 
-							normalizeVideo("input[name=link_video]");
+							// normalizeVideo("input[name=link_video]");
 							
 							$.confirm({
 							    content: function(){

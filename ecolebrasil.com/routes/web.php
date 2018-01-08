@@ -14,9 +14,15 @@
 Auth::routes();
 
 
-Route::get('/ead', 'HomeController@ead')->name('ead.login'); //tela de login ead
+Route::get('/ead', 'WebsiteController@ead')->name('ead.login'); //tela de login ead
 Route::get('/admin', 'HomeController@admin')->name('admin.login'); //tela de login admin
+Route::get('/professor', 'HomeController@professor')->name('professor.login'); //tela de login admin
+
+
+
+
 Route::get('/redirect', 'HomeController@redirect')->name('redirect.permission'); //rota de redirecionamento
+// Route::get('/agenda_modulos', 'AgendaController@redirect')->name('agenda.modulos'); //rota de
 
 // ================ CRUDS ==============
 //formacao
@@ -30,10 +36,41 @@ Route::put('/curso/update/{id}', 'CursoController@update')->name('curso.update')
 Route::delete('/curso/delete/{id}', 'CursoController@delete')->name('curso.delete');
 
 
+//aulas
+Route::post('/aula/create', 'AulaController@create')->name('aula.create');
+Route::put('/aula/update/{id}', 'AulaController@update')->name('aula.update');
+Route::delete('/aula/delete/{id}', 'AulaController@delete')->name('aula.delete');
+
+//exercicios
+Route::post('/exercicio/create', 'ExercicioController@create')->name('exercicio.create');
+Route::put('/exercicio/update/{id}', 'ExercicioController@update')->name('exercicio.update');
+Route::delete('/exercicio/delete/{id}', 'ExercicioController@delete')->name('exercicio.delete');
+
+//Ebook
+Route::post('/ebook/create', 'EbookController@create')->name('ebook.create');
+Route::put('/ebook/update/{id}', 'EbookController@update')->name('ebook.update');
+Route::delete('/ebook/delete/{id}', 'EbookController@delete')->name('ebook.delete');
+
+//Material
+Route::post('/material/create', 'MaterialController@create')->name('material.create');
+Route::put('/material/update/{id}', 'MaterialController@update')->name('material.update');
+Route::delete('/material/delete/{id}', 'MaterialController@delete')->name('material.delete');
+
+//video
+Route::post('/videoconferencia/create', 'VideoController@create')->name('videoconferencia.create');
+Route::put('/videoconferencia/update/{id}', 'VideoController@update')->name('videoconferencia.update');
+Route::delete('/videoconferencia/delete/{id}', 'VideoController@delete')->name('videoconferencia.delete');
+
+
 //imprensa
 Route::post('/imprensa/create', 'ImprensaController@create')->name('imprensa.create');
 Route::put('/imprensa/update/{id}', 'ImprensaController@update')->name('imprensa.update');
 Route::delete('/imprensa/delete/{id}', 'ImprensaController@delete')->name('imprensa.delete');
+
+//acesso restrito
+Route::post('/acesso_restrito_create', 'MaterialRestritoController@create')->name('acesso_restrito.create');
+Route::put('/acesso_restrito_update/{id}', 'MaterialRestritoController@update')->name('acesso_restrito.update');
+Route::delete('/acesso_restrito_delete/{id}', 'MaterialRestritoController@delete')->name('acesso_restrito.delete');
 
 //modulos
 Route::post('/modulo/create', 'ModuloController@create')->name('modulo.create');
@@ -54,7 +91,8 @@ Route::delete('/aluno/delete/{id}', 'AlunoController@delete')->name('aluno.delet
 Route::post('/agenda/create', 'AgendaController@create')->name('agenda.create');
 Route::put('/agenda/update/{id}', 'AgendaController@update')->name('agenda.update');
 Route::delete('/agenda/delete/{id}', 'AgendaController@delete')->name('agenda.delete');
-
+Route::get('/agenda_modulos', 'AgendaController@agenda_modulos')->name('agenda.modulos'); //rota de
+Route::get('/agenda_parcelas', 'AgendaController@agenda_parcelas')->name('agenda.parcelas'); //rota de
 
 //depoimentos
 Route::post('/depoimento/create', 'DepoimentoController@create')->name('depoimento.create');
@@ -73,6 +111,20 @@ Route::put('/banner/update/{id}', 'BannerController@update')->name('banner.updat
 Route::delete('/banner/delete/{id}', 'BannerController@delete')->name('banner.delete');
 
 
+//================ ALUNOS VIEWS ======================
+Route::get('/alunos/dashboard', 'AlunoController@dashboard')->name('aluno.dashboard');
+
+
+//================ PROFESSOR VIEWS ======================
+Route::get('/professores/dashboard', 'ProfessorController@dashboard')->name('professor.dashboard');
+
+//================ ALUNOS_RESTRITO VIEWS ======================
+Route::get('/aluno_restrito/dashboard', 'AlunoRestritoController@dashboard')->name('aluno_restrito.dashboard');
+
+//alunos views
+
+//professor views
+
 //================ ADMINISTRADOR VIEWS ======================
 
 //ADMINSITRADOR
@@ -84,10 +136,22 @@ Route::get('/adm/material/index', 'AdministradorController@material_index')->nam
 Route::get('/adm/material/novo', 'AdministradorController@material_novo')->name('administrador.material.novo');
 Route::get('/adm/material/editar/{id}', 'AdministradorController@material_editar')->name('administrador.material.editar');
 
+//material
+Route::get('/adm/acesso_restrito/index', 'AdministradorController@acesso_restrito_index')->name('administrador.acesso_restrito.index');
+Route::get('/adm/acesso_restrito/novo', 'AdministradorController@acesso_restrito_novo')->name('administrador.acesso_restrito.novo');
+Route::get('/adm/acesso_restrito/editar/{id}', 'AdministradorController@acesso_restrito_editar')->name('administrador.acesso_restrito.editar');
+
+
 //exercicios
 Route::get('/adm/exercicio/index', 'AdministradorController@exercicio_index')->name('administrador.exercicio.index');
 Route::get('/adm/exercicio/novo', 'AdministradorController@exercicio_novo')->name('administrador.exercicio.novo');
 Route::get('/adm/exercicio/editar/{id}', 'AdministradorController@exercicio_editar')->name('administrador.exercicio.editar');
+
+
+//ebook
+Route::get('/adm/ebook/index', 'AdministradorController@ebook_index')->name('administrador.ebook.index');
+Route::get('/adm/ebook/novo', 'AdministradorController@ebook_novo')->name('administrador.ebook.novo');
+Route::get('/adm/ebook/editar/{id}', 'AdministradorController@ebook_editar')->name('administrador.ebook.editar');
 
 
 //aula
@@ -96,9 +160,9 @@ Route::get('/adm/aula/novo', 'AdministradorController@aula_novo')->name('adminis
 Route::get('/adm/aula/editar/{id}', 'AdministradorController@aula_editar')->name('administrador.aula.editar');
 
 //videoconferencia
-Route::get('/adm/videoconferencia/index', 'AdministradorController@video_index')->name('administrador.videoconferencia.index');
-Route::get('/adm/videoconferencia/novo', 'AdministradorController@video_novo')->name('administrador.videoconferencia.novo');
-Route::get('/adm/videoconferencia/editar/{id}', 'AdministradorController@video_editar')->name('administrador.videoconferencia.editar');
+Route::get('/adm/videoconferencia/index', 'AdministradorController@videoconferencia_index')->name('administrador.videoconferencia.index');
+Route::get('/adm/videoconferencia/novo', 'AdministradorController@videoconferencia_novo')->name('administrador.videoconferencia.novo');
+Route::get('/adm/videoconferencia/editar/{id}', 'AdministradorController@videoconferencia_editar')->name('administrador.videoconferencia.editar');
 
 //modulo
 Route::get('/adm/modulo/index', 'AdministradorController@modulo_index')->name('administrador.modulo.index');
@@ -115,7 +179,27 @@ Route::get('/adm/banner/index', 'AdministradorController@banner_index')->name('a
 Route::get('/adm/banner/novo', 'AdministradorController@banner_novo')->name('administrador.banner.novo');
 Route::get('/adm/banner/editar/{id}', 'AdministradorController@banner_editar')->name('administrador.banner.editar');
 
-//banner
+//Video
+Route::get('/adm/video/index', 'AdministradorController@video_index')->name('administrador.video.index');
+Route::get('/adm/video/novo', 'AdministradorController@video_novo')->name('administrador.video.novo');
+Route::get('/adm/video/editar/{id}', 'AdministradorController@video_editar')->name('administrador.video.editar');
+
+//material
+Route::get('/adm/material/index', 'AdministradorController@material_index')->name('administrador.material.index');
+Route::get('/adm/material/novo', 'AdministradorController@material_novo')->name('administrador.material.novo');
+Route::get('/adm/material/editar/{id}', 'AdministradorController@material_editar')->name('administrador.material.editar');
+
+//exercicios
+Route::get('/adm/exercicio/index', 'AdministradorController@exercicio_index')->name('administrador.exercicio.index');
+Route::get('/adm/exercicio/novo', 'AdministradorController@exercicio_novo')->name('administrador.exercicio.novo');
+Route::get('/adm/exercicio/editar/{id}', 'AdministradorController@exercicio_editar')->name('administrador.exercicio.editar');
+
+//aula
+Route::get('/adm/aula/index', 'AdministradorController@aula_index')->name('administrador.aula.index');
+Route::get('/adm/aula/novo', 'AdministradorController@aula_novo')->name('administrador.aula.novo');
+Route::get('/adm/aula/editar/{id}', 'AdministradorController@aula_editar')->name('administrador.aula.editar');
+
+//contato
 // Route::get('/adm/banner/index', 'AdministradorController@banner_index')->name('administrador.banner.index');
 // Route::get('/adm/banner/novo', 'AdministradorController@banner_novo')->name('administrador.banner.novo');
 Route::get('/adm/contato/visualizar/{id}', 'AdministradorController@contato_visualizar')->name('administrador.contato.visualizar');
@@ -178,8 +262,13 @@ Route::get('/cursos/{id}', 'WebsiteController@cursos')->name('cursos');
 Route::get('/depoimentos', 'WebsiteController@depoimentos')->name('depoimentos');
 Route::get('/faq', 'WebsiteController@faq')->name('faq');
 Route::get('/imprensa', 'WebsiteController@imprensa')->name('imprensa');
+Route::get('/pagamento', 'WebsiteController@pagamento')->name('pagamento');
 Route::get('/imprensa/materia/{id}', 'WebsiteController@materia')->name('materia');
+Route::get('/consultoras', 'WebsiteController@consultoras')->name('consultoras');
 
 
 //emails
 Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
+
+//email pagamento
+Route::post('/email_aluno', 'WebsiteController@crudAlunoAfterPayment')->name('pagamento.email');
