@@ -17,14 +17,9 @@ Auth::routes();
 Route::get('/ead', 'WebsiteController@ead')->name('ead.login'); //tela de login ead
 Route::get('/admin', 'HomeController@admin')->name('admin.login'); //tela de login admin
 Route::get('/professor', 'HomeController@professor')->name('professor.login'); //tela de login admin
-
-
-
-
 Route::get('/redirect', 'HomeController@redirect')->name('redirect.permission'); //rota de redirecionamento
-// Route::get('/agenda_modulos', 'AgendaController@redirect')->name('agenda.modulos'); //rota de
-
 // ================ CRUDS ==============
+
 //formacao
 Route::post('/formacao/create', 'FormacaoController@create')->name('formacao.create');
 Route::put('/formacao/update/{id}', 'FormacaoController@update')->name('formacao.update');
@@ -113,17 +108,18 @@ Route::delete('/banner/delete/{id}', 'BannerController@delete')->name('banner.de
 
 //================ ALUNOS VIEWS ======================
 Route::get('/alunos/dashboard', 'AlunoController@dashboard')->name('aluno.dashboard');
+Route::get('/alunos/modulos/{id}', 'AlunoController@acesso_modulo')->name('aluno.modulo');
+Route::get('/perfil/aluno/{id}', 'AlunoController@profile')->name('aluno.profile');
+Route::get('/aluno/{id}/aulas', 'AlunoController@aulas')->name('aluno.aulas');
 
 
+Route::post('/aluno/aula/comentario', 'AulaComentarioController@create')->name('comentario.create');
 //================ PROFESSOR VIEWS ======================
 Route::get('/professores/dashboard', 'ProfessorController@dashboard')->name('professor.dashboard');
 
+
 //================ ALUNOS_RESTRITO VIEWS ======================
 Route::get('/aluno_restrito/dashboard', 'AlunoRestritoController@dashboard')->name('aluno_restrito.dashboard');
-
-//alunos views
-
-//professor views
 
 //================ ADMINISTRADOR VIEWS ======================
 

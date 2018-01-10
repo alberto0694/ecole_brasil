@@ -236,79 +236,38 @@
                 {{--  MENU DA ESQUERDA --}}
                 <ul class="nav nav-list">
                     <li class="">
-                        <a href="#">
+                        <a href="{{ route('aluno.profile', $aluno->id) }}">
                             <i class="menu-icon fa fa-tachometer"></i>
                             <span class="menu-text"> Meu Perfil </span>
                         </a>
                         <b class="arrow"></b>
                     </li>
-                    {{-- <li class="">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-book"></i>
-                            <span class="menu-text">
-                                Cursos e Módulos
-                            </span>
-                            <b class="arrow fa fa-angle-down"></b>
-                        </a>
 
-                        <b class="arrow"></b>
+                    @foreach($aluno->agendas as $agenda)
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-book"></i>
+                                <span class="menu-text">
+                                    {{ $agenda->curso->nome }}
+                                </span>
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
 
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="{{route('administrador.formacao.index')}}">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Tipos de Curso
-                                </a>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="">
-                                <a href="{{ route('administrador.curso.novo') }}">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Cursos
-                                </a>
+                            <b class="arrow"></b>
 
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="">
-                                <a href="{{ route('administrador.agenda.index') }}">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Agenda
-                                </a>
-                                <b class="arrow"></b>
-                            </li>                            
-                        </ul>
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Módulos
-                                    <b class="arrow fa fa-angle-down"></b>
-                                </a>
-
-                                <b class="arrow"></b>
-
-                                <ul class="submenu">
+                            <ul class="submenu">
+                                @foreach($agenda->modulos as $modulo)
                                     <li class="">
-                                        <a href="{{ route('administrador.modulo.novo') }}">
+                                        <a href="{{route('aluno.modulo', $modulo->id)}}">
                                             <i class="menu-icon fa fa-caret-right"></i>
-                                            Novo Módulo
+                                            {{ $modulo->titulo }}
                                         </a>
-
                                         <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="{{ route('administrador.modulo.index') }}">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Listagem de Módulos
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li> --}}
+                                    </li>                            
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endforeach
                 </ul><!-- /.nav-list -->
 
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

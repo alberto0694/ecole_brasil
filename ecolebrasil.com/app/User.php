@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Aluno;
+use App\Professor;
+use App\Administrador;
+
 
 class User extends Authenticatable
 {
@@ -40,6 +44,17 @@ class User extends Authenticatable
     public function administradores()
     {
         return $this->hasMany('App\Administrador');
+    }
+
+    public function getAvatarAttribute()
+    {
+        if($this->permission == 'PF'){
+            return Professor::where('user_id', '=', $this->id)->get()->first()->avatar;
+        }else if($this->permission == 'AL'){
+            return Aluno::where('user_id', '=', $this->id)->get()->first()->avatar;
+        }else{
+            return Administrador::where('user_id', '=', $this->id)->get()->first()->avatar;
+        }
     }
 
 

@@ -26,4 +26,5 @@ class ModuloController extends Controller
     {
         //
     }
+   
 }

@@ -6,19 +6,45 @@ use App\Aluno;
 use App\Curso;
 use App\User;
 use App\Agenda;
+use App\Modulo;
+use Auth;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
 
+    public function getAluno()
+    {
+        $userId = Auth::user()->id;
+        return Aluno::where('user_id', '=', $userId)->get()->first();
+
+    }
+
     public function dashboard()
     {
-        return view('aluno.dashboard');
+        $aluno = $this->getAluno();
+        return view('aluno.dashboard', compact('aluno'));
     }
 
     public function profile()
     {
-        return view('aluno.perfil.index');
+        $aluno = $this->getAluno();
+        return view('aluno.profile', compact('aluno'));
+    }
+
+    public function acesso_modulo(Request $request, $id)
+    {
+        $modulo = Modulo::find( $id );
+        $aluno = $this->getAluno();
+        return view('aluno.modulos.index', compact('modulo', 'aluno'));
+    }     
+
+    public function aulas(Request $request, $id)
+    {
+        $aluno = $this->getAluno();
+        $modulo = Modulo::find($id);
+        $aulas = $modulo->aulas;
+        return view('aluno.modulos.aulas.index', compact('aulas', 'aluno'));
     }
 
 

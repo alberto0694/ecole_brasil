@@ -15,4 +15,9 @@ class Aula extends Model
 	{
 		return $this->belongsTo('App\Modulo');
 	}	
+
+	public function comentarios()
+	{
+		return $this->hasMany('App\AulaComentario', 'aula_id')->orderBy('created_at', 'asc');
+	}
 }

@@ -94,37 +94,37 @@
               <div class="row" style="padding-left: 15px; ">
                 <div class="form-group">
                   <label class="control-label">Nome</label>
-                  <input  maxlength="100" name="nome_aluno" id="nome_aluno" type="text"  class="form-control" placeholder="Informe o nome do aluno"  />
+                  <input required  maxlength="100" name="nome_aluno" id="nome_aluno" type="text"  class="form-control" placeholder="Informe o nome do aluno"  />
                 </div>                
               </div>      
               <div class="row" style="padding-left: 15px; ">
                 <div class="form-group">
                   <label class="control-label">Sobrenome</label>
-                  <input  maxlength="100" name="sobrenome_aluno" id="sobrenome_aluno" type="text"  class="form-control" placeholder="Informe o sobrenome aluno"  />
+                  <input required  maxlength="100" name="sobrenome_aluno" id="sobrenome_aluno" type="text"  class="form-control" placeholder="Informe o sobrenome aluno"  />
                 </div>                
               </div>              
               <div class="row" style="padding-left: 15px; ">
                 <div class="form-group">
                   <label class="control-label" for="form-field-1"> Data de Nascimento </label>
-                    <input id="nascimento" name="nascimento" type="text" class="form-control date-picker"  />             
+                    <input required id="nascimento" name="nascimento" type="text" class="form-control date-picker"  />             
                 </div>
               </div>
               <div class="row" style="padding-left: 15px; ">
                 <div class="form-group">
                   <label class="control-label">Email</label>
-                  <input maxlength="100" name="email" id="email" type="text"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
+                  <input required maxlength="100" name="email" id="email" type="text"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
                 </div>
               </div>
               <div class="row" style="padding-left: 15px; ">
                 <div class="form-group">
                   <label class="control-label">Senha</label>
-                  <input  name="password" id="password" class="form-control" placeholder="Informe uma senha" type="password">
+                  <input required name="password" id="password" class="form-control" placeholder="Informe uma senha" type="password">
                 </div>
               </div>
               <div class="row" style="padding-left: 15px; ">
                 <div class="form-group">
                   <label class="control-label">Confirmar Senha</label>
-                  <input name="repeat_password" id="repeat_password" class="form-control" placeholder="Repita a senha" type="password">
+                  <input required name="repeat_password" id="repeat_password" class="form-control" placeholder="Repita a senha" type="password">
                 </div>              
               </div>
               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Próximo</button>
@@ -143,7 +143,7 @@
                       </div>
                     
                       <div class="col-md-12" style="padding: 0">
-                          <input name="valor_curso" id="valor_curso" type="text" class="form-control" disabled="" name="" value="">
+                          <input required name="valor_curso" id="valor_curso" type="text" class="form-control" disabled="" name="" value="">
                       </div>
                   </div>                 
               </div>
@@ -163,19 +163,19 @@
               <div class="row" style="padding-left: 15px; margin-top: 10px">
                 <div class="form-group">
                   <label class="control-label">Nome Completo</label>
-                  <input name="nome_cartao" id="nome_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o nome completo do titular do cartão"  />
+                  <input required name="nome_cartao" id="nome_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o nome completo do titular do cartão"  />
                 </div>
               </div>
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                 <div class="form-group">
                   <label class="control-label">Número do Cartão</label>
-                  <input name="numero_cartao" id="numero_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o número do cartão"  />
+                  <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o número do cartão"  />
                 </div>  
               </div>
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                 <div class="col-md-4 form-group" style="padding: 0">
                   <label class="control-label">Códido de segurança do Cartão</label>
-                  <input name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="text"  class="form-control" placeholder="CVV"  />
+                  <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="text"  class="form-control" placeholder="CVV"  />
                 </div> 
               </div>
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
@@ -230,8 +230,8 @@
                       </div>
                   </div>                
               </div>
-              <input type="hidden" name="transacao" id="transacao" value="00">
-              <input type="hidden" name="modelo" id="modelo" value="D">
+              <input required type="hidden" name="transacao" id="transacao" value="00">
+              <input required type="hidden" name="modelo" id="modelo" value="D">
               {{ csrf_field() }}
               <button class="btn btn-success btn-lg pull-right" type="button" id="comprar_curso">Comprar o Curso</button>
             </div>
@@ -337,6 +337,8 @@ $(document).ready(function () {
                                           // debugger;
                                           if(request.responseJSON.status == 'success'){
                                               self.setContent('<div class="col-md-10 col-md-offset-1"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Bem vindo à Ecole!</label><br><label style="text-align: center; width: 100%">Enviamos às informações no seguinte endereço de email:</label><br><label style="text-align: center; width: 100%">'+ $("#email").val() +'</label><br></div>');
+                                          }else if(request.responseJSON.status == 'user_exists'){
+                                                self.setContent('este usuário já existe! Se já for aluno, compre ');
                                           }
                                       }                   
                                     }); 

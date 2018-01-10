@@ -71,7 +71,7 @@
 						@endcomponent
 					</div>						
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Formação</label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tipo de Curso</label>
 						<div class="col-sm-6">
 							<select id="formacao_id" name="formacao_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 								@foreach($formacoes as $formacao)

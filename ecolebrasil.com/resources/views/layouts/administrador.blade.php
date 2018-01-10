@@ -262,7 +262,7 @@
                                 <b class="arrow"></b>
                             </li>
                             <li class="">
-                                <a href="{{ route('administrador.curso.novo') }}">
+                                <a href="{{ route('administrador.curso.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     Cursos
                                 </a>

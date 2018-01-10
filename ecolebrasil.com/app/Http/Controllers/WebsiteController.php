@@ -189,8 +189,9 @@ class WebsiteController extends Controller
                 'password' => bcrypt($request['password']),
             ]); 
         }else{
-            //retorna que ja tem esse usuário
+            return response()->json(['status' => 'user_exists'], 200);
         }
+
         $request = Controller::formatDate( $request, 'nascimento' );
         $aluno = Aluno::create([
                 'nome' => $request['nome_aluno'],
@@ -208,10 +209,10 @@ class WebsiteController extends Controller
                 ];
 
 
-        // Mail::send('emails.aluno', $data, function ($message) {
-        //     $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
-        //     $message->to($request['email']);
-        // });         
+        Mail::send('emails.aluno', $data, function ($message) {
+            $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
+            $message->to($request['email']);
+        });         
         return response()->json(['status' => 'success'], 200);    
     }
 

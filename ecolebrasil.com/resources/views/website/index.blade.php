@@ -96,7 +96,7 @@
 						<div class="row">
 							<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
 								<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
-									<a style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ route('pagamento', ['curso_id', $curso->id]) }}">Inscrever-se</a>
+									<a style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ route('pagamento', ['curso_id' => $curso->id]) }}">Inscrever-se</a>
 								</h3>
 							</div>
 						</div>

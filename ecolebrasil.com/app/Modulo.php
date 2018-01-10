@@ -19,6 +19,11 @@ class Modulo extends Model
 		return $this->belongsTo('App\Agenda', 'agenda_id', 'id');
 	}  
 
+	public function aulas()
+	{
+		return $this->hasMany('App\Aula', 'modulo_id', 'id');
+	}
+
 	public function getCursoAttribute()
 	{
 		return $this->agenda->curso;

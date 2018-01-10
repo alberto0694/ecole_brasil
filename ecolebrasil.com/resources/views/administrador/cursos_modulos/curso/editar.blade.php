@@ -57,7 +57,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Página Inicial</label>
 						<div class="col-sm-6">
-							<select id="modelo" name="modelo" class="col-xs-12 col-sm-6" id="form-field-select-3">
+							<select id="pagina_inicial" name="pagina_inicial" class="col-xs-12 col-sm-6" id="form-field-select-3">
 								@if($curso->pagina_inicial == 0)
 									<option value="1">Sim</option>
 									<option selected value="0">Não</option>
@@ -71,9 +71,15 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Modelo (Apenas Ilustrativo)</label>
 						<div class="col-sm-6">
-							<select id="pagina_inicial" name="pagina_inicial" class="col-xs-12 col-sm-6" id="form-field-select-3">
-								<option value="Presencial">Presencial</option>
-								<option value="À Distância">À Distância</option>
+							<select id="modelo" name="modelo" class="col-xs-12 col-sm-6" id="form-field-select-3">
+								@if($curso->modelo == 'Presencial')
+									<option selected value="Presencial">Presencial</option>
+									<option value="À Distância">À Distância</option>
+								@else
+									<option value="Presencial">Presencial</option>
+									<option selected value="À Distância">À Distância</option>
+								@endif								
+
 							</select>
 						</div>
 					</div>					
