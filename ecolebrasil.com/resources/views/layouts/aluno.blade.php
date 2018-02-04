@@ -47,7 +47,7 @@
         .no-skin .navbar .navbar-toggle {
             background-color: #cb3652;
         }
-        
+
         .ace-nav>li.light-blue>a {
             background-color: rgba(239, 64, 96, 1);
         }
@@ -258,8 +258,8 @@
 
                     @foreach($aluno->agendas as $agenda)
                         @if($agenda->modelo == 'D')
-                            <li class="">
-                                <a href="#" class="dropdown-toggle">
+                            <li style="height: 70px">
+                                <a href="#" class="dropdown-toggle" style="height: 70px">
                                     <i class="menu-icon fa fa-book"></i>
                                     <span class="menu-text">
                                         {{ $agenda->curso->nome }}
@@ -277,7 +277,7 @@
                                                 {{ $modulo->titulo }}
                                             </a>
                                             <b class="arrow"></b>
-                                        </li>                            
+                                        </li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -289,7 +289,7 @@
                             <span class="menu-text">Acesso Restrito</span>
                         </a>
                         <b class="arrow"></b>
-                    </li>                    
+                    </li>
                 </ul><!-- /.nav-list -->
 
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

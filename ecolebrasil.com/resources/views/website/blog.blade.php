@@ -10,6 +10,9 @@
 		  </div>
 	 </div>
 	<div class="row" style="margin-top: 30px; margin-bottom: 30px">
+		<div class="row">
+			<h3 align="center" class="title-pink-begin-text">BLOG ECOLE BRASIL</h3>
+		</div>
 		@foreach($blogs as $blog)
 					<div class="row" style="margin-top: 30px; margin-bottom: 30px">
 						<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
@@ -17,12 +20,12 @@
 								<h3 class="title-pink-begin-text">{{ $blog->titulo }}</h3>
 								{{-- <i><label>POR ANDREA FUCHTER</label></i> --}}
 				                <p class="gray-text">
-									{{ $blog->descricao }}                	
+									{{ $blog->descricao }}
 				                </p>
 				                <a  class="title-pink-begin-text" target="_blank" href="{{ route('post_blog', $blog->id) }}"><i>Matéria Completa...</i></a>
-				                <hr>					
-							</div>	
-										
+				                <hr>
+							</div>
+
 
 						</div>
 					</div>

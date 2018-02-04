@@ -9,7 +9,7 @@
 /*	.ser-para-vestir{
 		position: absolute;
 		bottom: 50px;
-		margin: 0;	
+		margin: 0;
 	}*/
 </style>
 
@@ -20,7 +20,10 @@
 		      <img src="{{ asset('images/banner-blog.png') }}" alt="...">
 		    </a>
 		  </div>
-	 </div>
+	</div>
+	<div class="row">
+		<h3 align="center" class="title-pink-begin-text">IMPRENSA</h3>
+	</div>
 	 @foreach($imprensas as $imprensa)
 			<div class="row" style="margin-top: 30px; margin-bottom: 30px">
 				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
@@ -28,12 +31,12 @@
 						<h3 class="title-pink-begin-text">{{ $imprensa->titulo }}</h3>
 						{{-- <i><label>POR ANDREA FUCHTER</label></i> --}}
 		                <p class="gray-text">
-							{{ $imprensa->descricao }}                	
+							{{ $imprensa->descricao }}
 		                </p>
 		                <a  class="title-pink-begin-text" target="_blank" href="{{ route('materia', $imprensa->id) }}"><i>Matéria Completa...</i></a>
-		                <hr>					
-					</div>	
-								
+		                <hr>
+					</div>
+
 
 				</div>
 			</div>

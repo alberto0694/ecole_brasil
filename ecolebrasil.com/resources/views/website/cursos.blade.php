@@ -5,14 +5,15 @@
 		margin: 0; padding: 0; border: none; margin-top: -1px; border-radius: 0px;
 	}
 	.titulo-curso{
- 			color: white;  
- 			font-weight:bold; 
- 			font-size: 14pt; 
- 			position: absolute; 
- 			margin-top: 10px; 
- 			margin-left:15px; 
+ 			color: white;
+ 			font-weight:bold;
+ 			font-size: 18pt;
+ 			position: absolute;
+ 			margin-top: 10px;
+ 			/*margin-left:15px; */
+ 			left: 50%;
  			padding: 2px;
- 			background-color: rgba(239, 64, 96, 1);		
+ 			background-color: rgba(239, 64, 96, 1);
 	}
 
 	@media screen and (min-width: 768px) {
@@ -75,7 +76,7 @@
 			<div class="row" style="padding-top: 20px">
 					<div class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1">
 						<h4 class="title-pink-begin-text">MAIS INFORMAÇÕES</h4>
-						<h4><a download href="{{ asset($curso->ementa) }}" title='{{  $curso->nome }}'>Clique aqui para saber mais</a></h4>
+						<h4><a download="{{ $curso->nome }}" href="{{ asset($curso->ementa) }}" title='{{  $curso->nome }}'>Clique aqui para saber mais</a></h4>
 					</div>
 					<div class="col-md-3 col-md-offset-0 col-xs-10 col-xs-offset-1">
 						<h4 class="title-pink-begin-text">MODELO DO CURSO</h4>

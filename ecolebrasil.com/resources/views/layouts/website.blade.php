@@ -29,14 +29,14 @@
           color: #fff;
           background-color: #ef4060;
           border-color: #ef4060;
-      }  
+      }
 
       .nav-tabs.background-blue {
           padding-top: 6px;
           background-color: #f3869a;
           border: 1px solid #cb3652;
       }
-       
+
       .title-pink-begin-text, .days-agenda, .descricao-day-agenda{
           color:rgba(239, 64, 96, 1);
           font-weight: bold;
@@ -419,14 +419,14 @@
       }
 
       @media screen and (min-width: 768px) {
-        .dropdown-menu,  
+        .dropdown-menu,
         .dropdown-menu>li>a {
             background-color: #f4f4f4;
             border-radius: 0;
             color: black;
             border: none;
             box-shadow: none;
-        }       
+        }
 
         .link-cursos-menu {
           color: #58585b;
@@ -438,7 +438,7 @@
         }
 
         .link-cursos-menu:hover,
-        .dropdown-menu>li>a:focus, 
+        .dropdown-menu>li>a:focus,
         .dropdown-menu>li>a:hover,{
            color:#ed3656;
           text-decoration: none;
@@ -449,7 +449,7 @@
             color: #ed3656;
             text-decoration: none;
             background-color: #f4f4f4;
-        }        
+        }
       }
 
       @media screen and (max-width: 768px) {
@@ -507,18 +507,18 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">                
+              <ul class="nav navbar-nav">
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ECOLE BRASIL <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                      <li><a class="link-cursos-menu" href="{{route('escola')}}">ECOLE SUÉRIEURE DE RELOOKING</a></li>
-                      <li><a class="link-cursos-menu" href="{{route('faq')}}"  target="_blank">FAQ</a></li>                      
-                      <li><a class="link-cursos-menu" href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li>
-                      <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
-                      <li><a class="link-cursos-menu" href="{{route('equipe')}}">NOSSA EQUIPE</a></li>
-                      <li><a class="link-cursos-menu" href="{{route('manifesto')}}">MANIFESTO</a></li>
-                      <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
-                      <li><a class="link-cursos-menu" href="https://ecolesuperieurerelooking.com/" target="_blank">PARIS</a></li>
+                  <ul class="dropdown-menu" style="padding-top:10px">
+                      <li><a class="link-cursos-menu" href="{{route('escola')}}">ECOLE SUÉRIEURE DE RELOOKING</a></li><br>
+                      <li><a class="link-cursos-menu" href="{{route('faq')}}">FAQ</a></li><br>
+                      <li><a class="link-cursos-menu" href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li><br>
+                      <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li><br>
+                      <li><a class="link-cursos-menu" href="{{route('equipe')}}">NOSSA EQUIPE</a></li><br>
+                      <li><a class="link-cursos-menu" href="{{route('manifesto')}}">MANIFESTO</a></li><br>
+                      <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li><br>
+                      <li><a class="link-cursos-menu" href="https://ecolesuperieurerelooking.com/" target="_blank">PARIS</a></li><br>
                   </ul>
                 </li>
 
@@ -526,28 +526,29 @@
 
                 <li class="dropdown hidden-sm hidden-xs" >
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">FORMAÇÕES E CURSOS <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu" style="max-width: 800px; padding-top:10px">
                   <li class="menu-item dropdown dropdown-submenu ">
-                    <div class="container" style="width: 600px;">
+                    <div class="container">
                       @foreach($formacoes as $formacao)
-                            <div class="col-md-4">
+                            <div class="col-md-2" style="min-height: 160px;">
                               <h6>{{ $formacao->nome }}</h6>
                               <ul style=" padding: 0; margin-top: 10px">
                                   @foreach($formacao->cursos as $curso)
-                                    <a class="link-cursos-menu" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a>
+                                    <a class="link-cursos-menu" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
+                                    <br>
                                   @endforeach
                               </ul>
                             </div>
-                      @endforeach                      
+                      @endforeach
                     </div>
                   </li>
 
                   </ul>
                 </li>
 
-                <li class="dropdown hidden-md hidden-lg">
+                <li class="dropdown hidden-md hidden-lg" >
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FORMAÇÕES E CURSOS <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu" style="margin-top: 10px">
                       @foreach($cursos_menu as $curso)
                         <li>
                             <a href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a>
@@ -559,31 +560,22 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NOTÍCIAS <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                      <li><a href="{{route('blog')}}"  target="_blank">BLOG</a></li>
+                      <li style="margin-top: 10px"><a href="{{route('blog')}}"  target="_blank">BLOG</a></li>
                       <li><a href="{{route('imprensa')}}"  target="_blank">IMPRENSA</a></li>
                   </ul>
                 </li>
-{{-- background-color: #f4f4f4; --}}
-                <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>                
+                <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>
                 <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
                 <li><a href="{{route('ebook')}}"  target="_blank">EBOOKS</a></li>
                 <li><a href="{{route('agenda')}}">AGENDA</a></li>
                 <li><a href="{{route('ead.login')}}"  target="_blank">EAD</a></li>
                 <li><a href="{{route('restrito')}}"  target="_blank">ACESSO RESTRITO</a></li>
-                {{-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACESSOS CURSOS <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="{{route('ead.login')}}"  target="_blank">EAD</a></li>
-                    <li><a href="{{route('restrito')}}"  target="_blank">ACESSO RESTRITO</a></li>
-                  </ul>
-                </li> --}}
-
-                {{-- <li><a href="{{route('faq')}}">FAQ</a></li> --}}
-                <li><a href="{{route('contato')}}">CONTATO</a></li>                
+                <li><a href="{{route('contato')}}">CONTATO</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
+
 
         @yield('content')
 
@@ -602,21 +594,41 @@
                                 <ul>
                                     <li>
                                         <div class="input-append newsletter-box ">
-                                          <form class="form-horizontal" role="form" method="POST" action="{{ route('email.contato') }}">
-                                            {{ csrf_field() }}
-                                              <div class="input-append newsletter-box ">
-                                                  <input required name="contato" type="text" class="full form-control " placeholder="Seu nome">
-                                                  <input required name="telefone" type="text" class="full form-control " placeholder="Telefone">
-                                                  <input required name="email" type="text" class="full form-control " placeholder="E-mail">
-                                                  <input required name="cidade" type="text" class="full form-control " placeholder="Cidade/Estado">
-                                                  <input required name="cidade_curso" type="text" class="full form-control " placeholder="Cidades de interese para fazer o curso">
-                                                  <input required name="ecole" type="text" class="full form-control " placeholder="Como conheceu a ecole">
-                                                  <textarea required style="color:black" name="mensagem" placeholder="Mensagem" class="full form-control"  rows="3">
-                                                  </textarea>
-                                                  <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
-                                                    <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">
-                                                  </button>
-                                            </form>
+                                              <form style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato') }}">
+                                                {{ csrf_field() }}
+                                                      <div class="form-group">
+                                                        {{-- <label class="control-label">Contato</label> --}}
+                                                        <input required name="contato" type="text" class="full form-control " placeholder="Seu nome">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        {{-- <label class="control-label">Telefone ou Celular</label> --}}
+                                                        <input required name="telefone" type="text" class="full form-control " placeholder="Telefone">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        {{-- <label class="control-label">E-mail</label> --}}
+                                                        <input required name="email" type="text" class="full form-control " placeholder="E-mail">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        {{-- <label class="control-label">Cidade e Estado</label> --}}
+                                                        <input required name="cidade" type="text" class="full form-control " placeholder="Cidade/Estado">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        {{-- <label class="control-label">Cidade que desejaria fazer um curso (separe-as por vírgula) </label> --}}
+                                                        <input required name="cidade_curso" type="text" class="full form-control " placeholder="Cidade que desejaria fazer um curso">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        {{-- <label class="control-label">Como nos conhece</label> --}}
+                                                        <input required name="ecole" type="text" class="full form-control " placeholder="Como conheceu a ecole">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        {{-- <label class="control-label">Contato</label> --}}
+                                                        <textarea style="color:black"  name="mensagem" class="full form-control " rows="4" placeholder="Mensagem">
+                                                        </textarea>
+                                                      </div>
+                                                      <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+                                                        <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">
+                                                      </button>
+                                              </form>
 
                                         </div>
                                     </li>

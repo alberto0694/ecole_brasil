@@ -1,7 +1,9 @@
 @extends('layouts.website')
 @section('content')
-<h3 align="center">Ebooks Ecole Brasil</h3>
-<div class="row">		
+<div class="row">
+	<h3 align="center" class="title-pink-begin-text">EBOOKS</h3>
+</div>
+<div class="row">
 	@foreach($ebooks as $ebook)
 		<div class="col-md-4 col-xs-12">
 			<a href="{{ route('ebook_pagamento', $ebook->id) }}">
@@ -16,6 +18,6 @@
 				</div>
 			</div>
 		</div>
-	@endforeach				
+	@endforeach
 </div>
 @endsection

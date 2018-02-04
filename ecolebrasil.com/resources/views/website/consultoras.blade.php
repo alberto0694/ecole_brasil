@@ -11,9 +11,9 @@
 	    top: 0;
 	    left: 0;
 	    padding-top: 10px;
-	}	
+	}
 
-	.item-inside{		
+	.item-inside{
 		    height: 130px;
 		    width: 130px;
 		    margin-top: 10px;
@@ -21,9 +21,14 @@
 		    background-repeat: no-repeat;
 		    background-clip: border-box;
 		    background-size: 100%;
+		    border: 3px solid;
+		    border-radius: 2px;
 	}
 </style>
 <div class="row" style="padding: 15px; text-align: center">
+	<div class="row">
+		<h3 align="center" class="title-pink-begin-text">CONSULTORAS</h3>
+	</div>
 	<div class="col-md-10 col-md-offset-1" >
 		@foreach($consultoras as $consultora)
 			<div class="col-md-3" >
@@ -40,7 +45,7 @@
 							<a target="_blank" style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ $consultora->site }}">Site</a>
 						</h4>
 					</div>
-				</div>				
+				</div>
 			</div>
 		@endforeach
 	</div>

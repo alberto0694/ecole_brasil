@@ -25,9 +25,6 @@ class UsersTableSeeder extends Seeder
             'permission' => 'PF',
             'password' => bcrypt('professor@ecole.com'),
         ]);
-        
-
-
 
         User::create([
             'name' => 'Aluno Ecole',
@@ -41,6 +38,6 @@ class UsersTableSeeder extends Seeder
             'email' => 'aluno_restrito@ecole.com',
             'permission' => 'AR',
             'password' => bcrypt('aluno_restrito@ecole.com'),
-        ]);        
+        ]);
     }
 }

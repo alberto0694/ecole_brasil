@@ -53,195 +53,213 @@
 
   <div class="row" style="margin: 5px; margin-top: 20px">
     <div class="container">
-      <div class="stepwizard col-md-offset-3">
-          <div class="stepwizard-row setup-panel">
-            <div class="stepwizard-step">
-              <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-              <p>Dados do Aluno</p>
-            </div>
-            <div class="stepwizard-step">
-              <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-              <p>Dados de Compra</p>
-            </div>
-{{--             <div class="stepwizard-step">
-              <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-              <p>Pagamento</p>
-            </div> --}}
+      @if($agendas->count() > 0)
+          <div class="stepwizard col-md-offset-3">
+              <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step">
+                  <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                  <p>Dados do Aluno</p>
+                </div>
+                <div class="stepwizard-step">
+                  <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                  <p>Dados de Compra</p>
+                </div>
+    {{--             <div class="stepwizard-step">
+                  <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                  <p>Pagamento</p>
+                </div> --}}
+              </div>
           </div>
-      </div>
+          <form id="pagamento-aluno" role="form" action="" method="post">
+            <div class="row setup-content" id="step-1">
+              <div class="col-md-6 col-xs-12 col-md-offset-3">
+                <div class="col-md-12">
+                  <h3> Dados do Aluno</h3>
+                  <div class="row" style="padding-left: 15px; margin-bottom: 10px">
+                      <div class="form-group">
+                          <div class="row" style="padding-left: 15px">
+                            <label class="control-label">Curso</label>
+                          </div>
 
-      <form id="pagamento-aluno" role="form" action="" method="post">
-        <div class="row setup-content" id="step-1">
-          <div class="col-md-6 col-xs-12 col-md-offset-3">
-            <div class="col-md-12">
-              <h3> Dados do Aluno</h3>
-              <div class="row" style="padding-left: 15px; margin-bottom: 10px">
-                  <div class="form-group">
-                      <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Curso</label>    
+                          <div class="col-md-12" style="padding: 0">
+                              <select class="col-md-3 form-control" name="agenda_id" id="agenda_id">
+                                  @foreach($agendas as $agenda)
+                                    <option value="{{$agenda->id}}">{{$agenda->curso->nome}} - {{ $agenda->cidade }}</option>
+                                  @endforeach
+                              </select>
+
+                          </div>
                       </div>
-                    
-                      <div class="col-md-12" style="padding: 0">
-                          <select class="col-md-3 form-control" name="agenda_id" id="agenda_id">
-                              @foreach($agendas as $agenda)
-                                <option value="{{$agenda->id}}">{{$agenda->curso->nome}} - {{ $agenda->cidade }}</option>
-                              @endforeach
-                          </select>                
-                        
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Nome</label>
+                      <input required  maxlength="100" name="nome_aluno" id="nome_aluno" type="text"  class="form-control" placeholder="Informe o nome do aluno"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Sobrenome</label>
+                      <input required  maxlength="100" name="sobrenome_aluno" id="sobrenome_aluno" type="text"  class="form-control" placeholder="Informe o sobrenome aluno"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label" for="form-field-1"> Data de Nascimento </label>
+                        <input required id="nascimento" name="nascimento" type="text" class="form-control date-picker"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Email</label>
+                      <input required maxlength="100" name="email" id="email" type="text"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Senha</label>
+                      <input required name="password" id="password" class="form-control" placeholder="Informe uma senha" type="password">
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Confirmar Senha</label>
+                      <input required name="repeat_password" id="repeat_password" class="form-control" placeholder="Repita a senha" type="password">
+                    </div>
+                  </div>
+                  <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Próximo</button>
+                </div>
+              </div>
+            </div>
+            <div class="row setup-content" id="step-2">
+              <div class="col-md-6 col-xs-12 col-md-offset-3">
+                <div class="col-md-12">
+                  <h3> Compra</h3>
+
+                  <div class="row" style="padding-left: 15px">
+                      <div class="form-group">
+                          <div class="row" style="padding-left: 15px">
+                            <label class="control-label">Valor do Curso</label>
+                          </div>
+
+                          <div class="col-md-12" style="padding: 0">
+                              <input required name="valor_curso" id="valor_curso" type="text" class="form-control" disabled="" name="" value="">
+                          </div>
                       </div>
-                  </div>                 
-              </div>        
-              <div class="row" style="padding-left: 15px; ">
-                <div class="form-group">
-                  <label class="control-label">Nome</label>
-                  <input required  maxlength="100" name="nome_aluno" id="nome_aluno" type="text"  class="form-control" placeholder="Informe o nome do aluno"  />
-                </div>                
-              </div>      
-              <div class="row" style="padding-left: 15px; ">
-                <div class="form-group">
-                  <label class="control-label">Sobrenome</label>
-                  <input required  maxlength="100" name="sobrenome_aluno" id="sobrenome_aluno" type="text"  class="form-control" placeholder="Informe o sobrenome aluno"  />
-                </div>                
-              </div>              
-              <div class="row" style="padding-left: 15px; ">
-                <div class="form-group">
-                  <label class="control-label" for="form-field-1"> Data de Nascimento </label>
-                    <input required id="nascimento" name="nascimento" type="text" class="form-control date-picker"  />             
+                  </div>
+                  <div class="row parcelas-class" style="padding-left: 15px">
+                      <div class="form-group">
+                          <div class="row" style="padding-left: 15px; margin-top: 10px">
+                            <label class="control-label">Parcelar em:</label>
+                          </div>
+
+                          <div class="col-md-12" style="padding: 0">
+                              <select class="col-md-3 form-control" name="num_parcelas" id="num_parcelas">
+                              </select>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; margin-top: 10px">
+                    <div class="form-group">
+                      <label class="control-label">Nome Completo</label>
+                      <input required name="nome_cartao" id="nome_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o nome completo do titular do cartão"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; margin-bottom: 10px">
+                    <div class="form-group">
+                      <label class="control-label">Número do Cartão</label>
+                      <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o número do cartão"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; margin-bottom: 10px">
+                    <div class="col-md-4 form-group" style="padding: 0">
+                      <label class="control-label">Códido de segurança do Cartão</label>
+                      <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="text"  class="form-control" placeholder="CVV"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; margin-bottom: 10px">
+                      <div class="form-group">
+                          <div class="row" style="padding-left: 15px">
+                            <label class="control-label">Mês</label>
+                          </div>
+
+                          <div class="col-md-4" style="padding: 0">
+                              <select class="col-md-3 form-control" name="mes_cartao" id="mes_cartao">
+                                <option value="01">Janeiro (01)</option>
+                                <option value="02">Feveveiro (02)</option>
+                                <option value="03">Março (03)</option>
+                                <option value="04">Abril (04)</option>
+                                <option value="05">Maio (05)</option>
+                                <option value="06">Junho (06)</option>
+                                <option value="07">Julho (07)</option>
+                                <option value="08">Agosto (08)</option>
+                                <option value="09">Setembro (09)</option>
+                                <option value="10">Outubro (10)</option>
+                                <option value="11">Novembro (11)</option>
+                                <option value="12">Dezembro (12)</option>
+                              </select>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px">
+                      <div class="form-group">
+                          <div class="row" style="padding-left: 15px">
+                            <label class="control-label">Ano</label>
+                          </div>
+
+                          <div class="col-md-4" style="padding: 0">
+                              <select class="col-md-3 form-control" name="ano_cartao" id="ano_cartao">
+                                <option value="18">2018</option>
+                                <option value="19">2019</option>
+                                <option value="20">2020</option>
+                                <option value="21">2021</option>
+                                <option value="22">2022</option>
+                                <option value="23">2023</option>
+                                <option value="24">2024</option>
+                                <option value="25">2025</option>
+                                <option value="26">2026</option>
+                                <option value="27">2027</option>
+                                <option value="28">2028</option>
+                                <option value="29">2029</option>
+                                <option value="30">2030</option>
+                                <option value="31">2031</option>
+                              </select>
+
+                          </div>
+                      </div>
+                  </div>
+                  <input required type="hidden" name="transacao" id="transacao" value="00">
+                  <input required type="hidden" name="modelo" id="modelo" value="D">
+                  {{ csrf_field() }}
+                  <button class="btn btn-success btn-lg pull-right" type="button" id="comprar_curso">Comprar o Curso</button>
                 </div>
               </div>
-              <div class="row" style="padding-left: 15px; ">
-                <div class="form-group">
-                  <label class="control-label">Email</label>
-                  <input required maxlength="100" name="email" id="email" type="text"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
-                </div>
-              </div>
-              <div class="row" style="padding-left: 15px; ">
-                <div class="form-group">
-                  <label class="control-label">Senha</label>
-                  <input required name="password" id="password" class="form-control" placeholder="Informe uma senha" type="password">
-                </div>
-              </div>
-              <div class="row" style="padding-left: 15px; ">
-                <div class="form-group">
-                  <label class="control-label">Confirmar Senha</label>
-                  <input required name="repeat_password" id="repeat_password" class="form-control" placeholder="Repita a senha" type="password">
-                </div>              
-              </div>
-              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Próximo</button>
+            </div>
+          </form>
+      @else
+          <div class="row">
+            <h3 align="center">Desculpe, mas não temos turma para este curso ainda, <a href="{{ route('contato') }}">entre em contato</a> conosco ou confira nossa <a href="{{ route('agenda') }}">agenda completa!</a></h3>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
+              <h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
+                <a style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ route('contato') }}">Entre em contato</a>
+              </h3>
             </div>
           </div>
-        </div>
-        <div class="row setup-content" id="step-2">
-          <div class="col-md-6 col-xs-12 col-md-offset-3">
-            <div class="col-md-12">
-              <h3> Compra</h3>
-     
-              <div class="row" style="padding-left: 15px">
-                  <div class="form-group">
-                      <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Valor do Curso</label>    
-                      </div>
-                    
-                      <div class="col-md-12" style="padding: 0">
-                          <input required name="valor_curso" id="valor_curso" type="text" class="form-control" disabled="" name="" value="">
-                      </div>
-                  </div>                 
-              </div>
-              <div class="row parcelas-class" style="padding-left: 15px">
-                  <div class="form-group">
-                      <div class="row" style="padding-left: 15px; margin-top: 10px">
-                        <label class="control-label">Parcelar em:</label>    
-                      </div>
-                    
-                      <div class="col-md-12" style="padding: 0">
-                          <select class="col-md-3 form-control" name="num_parcelas" id="num_parcelas">
-                          </select>                
-                        
-                      </div>
-                  </div>                 
-              </div>              
-              <div class="row" style="padding-left: 15px; margin-top: 10px">
-                <div class="form-group">
-                  <label class="control-label">Nome Completo</label>
-                  <input required name="nome_cartao" id="nome_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o nome completo do titular do cartão"  />
-                </div>
-              </div>
-              <div class="row" style="padding-left: 15px; margin-bottom: 10px">
-                <div class="form-group">
-                  <label class="control-label">Número do Cartão</label>
-                  <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o número do cartão"  />
-                </div>  
-              </div>
-              <div class="row" style="padding-left: 15px; margin-bottom: 10px">
-                <div class="col-md-4 form-group" style="padding: 0">
-                  <label class="control-label">Códido de segurança do Cartão</label>
-                  <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="text"  class="form-control" placeholder="CVV"  />
-                </div> 
-              </div>
-              <div class="row" style="padding-left: 15px; margin-bottom: 10px">
-                  <div class="form-group">
-                      <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Mês</label>    
-                      </div>
-                    
-                      <div class="col-md-4" style="padding: 0">
-                          <select class="col-md-3 form-control" name="mes_cartao" id="mes_cartao">
-                            <option value="01">Janeiro (01)</option>
-                            <option value="02">Feveveiro (02)</option>
-                            <option value="03">Março (03)</option>
-                            <option value="04">Abril (04)</option>
-                            <option value="05">Maio (05)</option>
-                            <option value="06">Junho (06)</option>
-                            <option value="07">Julho (07)</option>
-                            <option value="08">Agosto (08)</option>
-                            <option value="09">Setembro (09)</option>
-                            <option value="10">Outubro (10)</option>
-                            <option value="11">Novembro (11)</option>
-                            <option value="12">Dezembro (12)</option>
-                          </select>                
-                        
-                      </div>
-                  </div>                 
-              </div>  
-              <div class="row" style="padding-left: 15px">
-                  <div class="form-group">
-                      <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Ano</label>    
-                      </div>
-                    
-                      <div class="col-md-4" style="padding: 0">
-                          <select class="col-md-3 form-control" name="ano_cartao" id="ano_cartao">
-                            <option value="18">2018</option>
-                            <option value="19">2019</option>
-                            <option value="20">2020</option>
-                            <option value="21">2021</option>
-                            <option value="22">2022</option>
-                            <option value="23">2023</option>
-                            <option value="24">2024</option>
-                            <option value="25">2025</option>
-                            <option value="26">2026</option>
-                            <option value="27">2027</option>
-                            <option value="28">2028</option>
-                            <option value="29">2029</option>
-                            <option value="30">2030</option>
-                            <option value="31">2031</option>
-                          </select>                
-                        
-                      </div>
-                  </div>                
-              </div>
-              <input required type="hidden" name="transacao" id="transacao" value="00">
-              <input required type="hidden" name="modelo" id="modelo" value="D">
-              {{ csrf_field() }}
-              <button class="btn btn-success btn-lg pull-right" type="button" id="comprar_curso">Comprar o Curso</button>
-            </div>
+          <div class="row">
+            <hr style="margin-top: 50px">
+            <h3 style="text-align: center; margin-top: -50px"><a href="{{route('agenda')}}">
+              <img src="{{asset('images/agenda-button.png')}}">
+            </a></h3>
           </div>
-        </div>
-      </form>
+      @endif
     </div>
-  </div>  
+  </div>
 <script src="{{ asset('assets/js/ace-elements.min.js') }}"></script>
-<script src="{{ asset('assets/js/ace.min.js') }}"></script>  
+<script src="{{ asset('assets/js/ace.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
@@ -260,30 +278,30 @@ function  getAgenda(){
                 $('#num_parcelas').find('option').remove();
                 let max = parseInt(jsonArr[0].max_parcelas);
                 if(max > 1){
-                  $(".parcelas-class").show();                
+                  $(".parcelas-class").show();
                   $('#num_parcelas').append('<option value="0">1 (Á vista) </option>')
                   for(var i = 2; i <= max; i++){
                       $('#num_parcelas').append('<option value="'+ i +'">'+ i +' </option>');
                   }
-                  $('#num_parcelas').val("0");                            
+                  $('#num_parcelas').val("0");
                 }else{
                   $('#num_parcelas').append('<option selected value="0">0</option>');
                   $(".parcelas-class").hide();
                 }
-            }   
-          });             
+            }
+          });
 }
 $(window).on('load',function(){
     getAgenda();
 });
 
-$(document).ready(function () {    
+$(document).ready(function () {
     $("#agenda_id").change(function(){
           getAgenda();
     });
 
     $("#comprar_curso").click(function(){
-          
+
           $.dialog({
               title: '',
               columnClass: 'col-md-6 col-md-offset-3',
@@ -300,12 +318,12 @@ $(document).ready(function () {
                           'Access-Control-Allow-Origin': '*',
                           'Access-Control-Allow-Headers': '*',
                           'Access-Control-Allow-Credentials': 'true'
-                      },                      
+                      },
                       crossDomain: true,
                       contentType: "application/json",
                       url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
                       data: JSON.stringify({
-                            
+
                             ano:parseInt($("#ano_cartao").val()),
                             conftxn:"S",
                             cvc2:parseInt($("#seguranca_cartao").val()),
@@ -317,7 +335,7 @@ $(document).ready(function () {
                             portador:$("#nome_cartao").val(),
                             total:parseFloat($("#valor_curso").val()),
                             transacao:parseInt($("#transacao").val())
-                      })                      
+                      })
                   }).done(function (response) {
                       // self.setContentAppend('<div>Pagamento confirmado!</div>');
                       // self.setContentAppend('<div>Gerando Acessos...</div>');
@@ -340,11 +358,11 @@ $(document).ready(function () {
                                           }else if(request.responseJSON.status == 'user_exists'){
                                                 self.setContent('este usuário já existe! Se já for aluno, compre ');
                                           }
-                                      }                   
-                                    }); 
+                                      }
+                                    });
                               }
                           }
-                      }                  
+                      }
                   }
               },
               onContentReady: function(){
@@ -356,7 +374,7 @@ $(document).ready(function () {
                       window.location.href = '{{ route('ead.login') }}';
                   }else{
                       window.location.href = '{{ route('restrito') }}';
-                  }                  
+                  }
               }
           });
 
@@ -367,7 +385,7 @@ $(document).ready(function () {
           //   contentType: "application/json",
           //   url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
           //   data: JSON.stringify({
-                  
+
           //         ano:parseInt($("#ano_cartao").val()),
           //         conftxn:"S",
           //         cvc2:parseInt($("#seguranca_cartao").val()),
@@ -380,7 +398,7 @@ $(document).ready(function () {
           //         total:parseFloat($("#valor_curso").val()),
           //         transacao:parseInt($("#transacao").val())
           //   }),
-          //   success: function(data, status, request){                  
+          //   success: function(data, status, request){
           //       if(request != null){
           //           if(request.responseJSON != null){ //SUCESSO
           //               if(request.responseJSON.codret != null){ //SUCESSO
@@ -394,11 +412,11 @@ $(document).ready(function () {
           //                               if(request.responseJSON.status == 'success'){
 
           //                               }
-          //                           }                   
-          //                         }); 
+          //                           }
+          //                         });
           //                   }
           //               }
-          //           }                  
+          //           }
           //       }
 
           //   //retorno de sucesso
@@ -414,16 +432,16 @@ $(document).ready(function () {
           //   //     "numcv": 5010978,
           //   //     "numpedido": 1
           //   // }
-          //   }                   
-          // }); 
+          //   }
+          // });
     });
-    
+
     $('.date-picker').datepicker({
       autoclose: true,
       todayHighlight: true,
         format: 'dd/mm/yyyy',
         language: 'pt-BR',
-        weekStart: 0        
+        weekStart: 0
     }).next().on(ace.click_event, function(){
       $(this).prev().focus();
     });
