@@ -9,17 +9,28 @@ use Carbon\Carbon;
 class Aluno extends Model
 {
   protected $fillable = [	'nome',
-						'sobrenome',
-						'nascimento',
-						'avatar',
-						'user_id',
-						'descricao_html',
-						'profissao'
+							'sobrenome',
+							'nascimento',
+							'avatar',
+							'user_id',
+							'descricao_html',
+							'profissao'
 						];
 
   public function agendas()
   {
-  	return $this->belongsToMany('App\Agenda', 'aluno_agendas');
+  		return $this->belongsToMany('App\Agenda', 'aluno_agendas');
+  }
+
+  public function getHasRestritoAttribute()
+  {
+  		$agendas = $this->agendas();
+  		foreach ($agendas as $value) {
+  			if($value->modelo == 'P'){
+  				return true;
+  			}
+  		}
+  		return false;
   }
 
   public function removeAllAgendas()

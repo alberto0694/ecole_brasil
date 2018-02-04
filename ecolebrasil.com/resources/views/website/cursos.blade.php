@@ -74,7 +74,7 @@
 			</div>
 			<div class="row" style="padding-top: 20px">
 					<div class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1">
-						<h4 class="title-pink-begin-text">INFORMAÇÕES COMPLETAS</h4>
+						<h4 class="title-pink-begin-text">MAIS INFORMAÇÕES</h4>
 						<h4><a download href="{{ asset($curso->ementa) }}" title='{{  $curso->nome }}'>Clique aqui para saber mais</a></h4>
 					</div>
 					<div class="col-md-3 col-md-offset-0 col-xs-10 col-xs-offset-1">

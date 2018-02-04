@@ -319,8 +319,8 @@ $(document).ready(function () {
                             transacao:parseInt($("#transacao").val())
                       })                      
                   }).done(function (response) {
-                      self.setContentAppend('<div>Pagamento confirmado!</div>');
-                      self.setContentAppend('<div>Gerando Acessos...</div>');
+                      // self.setContentAppend('<div>Pagamento confirmado!</div>');
+                      // self.setContentAppend('<div>Gerando Acessos...</div>');
                   });
               },
               contentLoaded: function(data, status, request){

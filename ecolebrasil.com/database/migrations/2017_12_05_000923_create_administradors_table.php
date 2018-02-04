@@ -17,7 +17,9 @@ class CreateAdministradorsTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('sobrenome');
+            $table->longText('avatar');
             $table->integer('user_id')->unsigned();
+            $table->timestamp('nascimento');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users'); 

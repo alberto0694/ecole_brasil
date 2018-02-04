@@ -10,18 +10,27 @@
 	    z-index: 999;
 	    top: 0;
 	    left: 0;
+	    padding-top: 10px;
 	}	
 
+	.item-inside{		
+		    height: 130px;
+		    width: 130px;
+		    margin-top: 10px;
+		    margin-left: 20px;
+		    background-repeat: no-repeat;
+		    background-clip: border-box;
+		    background-size: 100%;
+	}
 </style>
 <div class="row" style="padding: 15px; text-align: center">
 	<div class="col-md-10 col-md-offset-1" >
 		@foreach($consultoras as $consultora)
 			<div class="col-md-3" >
 				<a target="_blank"  href="{{ $consultora->site }}">
-					<div class="cs-item-frame">
-						<img style="width: 100%;" src="{{ $consultora->avatar }}">
-				</div>
-					
+					<div class="cs-item-frame"">
+						<div class="item-inside" style="background-image: url({{ asset($consultora->avatar) }})"></div>
+					</div>
 				</a>
 				<h3 style="color: rgba(239, 64, 96, 1);"> {{ $consultora->nome }} </b3><br>
 				<h4 > {{ $consultora->cidade }} </h4>

@@ -9,19 +9,19 @@
 		</a>
 	</div>
 	<div class="col-md-6" style="text-align:center; margin-top: 10px;">
-		<a href="#">
+		<a href="{{ route('aluno.exercicios', $modulo->id) }}">
 			<i style="font-size: 40pt" class="menu-icon fa fa-tachometer"></i>
 			<h3>EXERCÍCIOS</h3>
 		</a>
 	</div>
 	<div class="col-md-6" style="text-align:center; margin-top: 10px;">
-		<a href="#">
+		<a href="{{ route('aluno.materiais', $modulo->id) }}">
 			<i style="font-size: 40pt" class="menu-icon fa fa-tachometer"></i>
 			<h3>MATERIAIS DE APOIO</h3>
 		</a>
 	</div>	
 	<div class="col-md-6" style="text-align:center; margin-top: 10px;">
-		<a href="#">
+		<a href="{{ route('aluno.videos', $modulo->id) }}">
 			<i style="font-size: 40pt" class="menu-icon fa fa-tachometer"></i>
 			<h3>VIDEOCONFERÊNCIAS</h3>
 		</a>

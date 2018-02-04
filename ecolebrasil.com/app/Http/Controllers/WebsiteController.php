@@ -10,7 +10,9 @@ use App\Depoimento;
 use App\Contato;
 use App\Agenda;
 use App\Imprensa;
+use App\Blog;
 use App\Banner;
+use App\Ebook;
 use App\Aluno;
 use App\User;
 use \DB;
@@ -36,7 +38,7 @@ class WebsiteController extends Controller
 
         Mail::send('emails.contato', $data, function ($message) {
             $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
-            $message->to('alberto@metrocoletivo.com.br');
+            $message->to('contato@ecolebrasil.com');
         });        
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -59,21 +61,28 @@ class WebsiteController extends Controller
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
-    	return view('website.escola', compact('cursos_menu','formacoes'));
-    }    
+        return view('website.escola', compact('cursos_menu','formacoes'));
+    }   
+
+    public function manifesto()
+    {
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        return view('website.manifesto', compact('cursos_menu','formacoes'));
+    }   
+
+    public function equipe()
+    {
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        return view('website.equipe', compact('cursos_menu','formacoes'));
+    }       
 
     public function restrito()
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
     	return view('website.restrito', compact('cursos_menu','formacoes'));
-    }    
-
-    public function blog()
-    {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
-    	return view('website.blog', compact('cursos_menu','formacoes'));
     }    
 
     public function certificacao()
@@ -110,7 +119,7 @@ class WebsiteController extends Controller
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         $depoimentos = Depoimento::all();
-        $depoimentosVideo = Depoimento::where('video', '<>', '""')->get();
+        $depoimentosVideo = Depoimento::where('video', '<>', '""')->where('video', '<>', '0')->get();
 
     	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo'));
     }
@@ -138,6 +147,22 @@ class WebsiteController extends Controller
         $cursos_menu = Curso::all();
         return view('website.imprensa', compact('cursos_menu','formacoes', 'imprensas'));
     }
+
+    public function blog()
+    {
+        $blogs = Blog::all();
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        return view('website.blog', compact('cursos_menu','formacoes', 'blogs'));
+    }    
+
+    public function blog_post($id)
+    {
+        $blog = Blog::find($id);
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        return view('website.blog_post', compact('cursos_menu','formacoes', 'blog'));
+    }    
 
     public function materia($id)
     {
@@ -213,6 +238,7 @@ class WebsiteController extends Controller
             $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
             $message->to($request['email']);
         });         
+
         return response()->json(['status' => 'success'], 200);    
     }
 
@@ -232,6 +258,35 @@ class WebsiteController extends Controller
         return view('website.ead', compact('formacoes', 'cursos_menu'));
     }    
 
+    public function ebook(Request $request)
+    {
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();        
+        $ebooks = Ebook::all();
+        return view('website.ebook', compact('formacoes', 'cursos_menu', 'ebooks'));
+    }        
+
+    public function ebook_pagamento(Request $request, $id)
+    {
+          $ebook = Ebook::find( $id );
+          $formacoes = Formacao::all();
+          $cursos_menu = Curso::all(); 
+          return view('website.pagamento_ebook', compact('formacoes', 'cursos_menu', 'ebook'));
+    }
+
+    public function ebook_email(Request $request, $id)
+    { 
+        $ebook = Ebook::find( $id );
+        $data = ["ebook" => asset($ebook->file)];
+
+        Contato::create( $request->all() );
+
+        Mail::send('emails.ebook', $data, function ($message) {
+            $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
+            $message->to($request['email']);
+        });         
+          return view('website.pagamento_ebook', compact('formacoes', 'cursos_menu', 'ebook'));
+    }    
 
 
 }

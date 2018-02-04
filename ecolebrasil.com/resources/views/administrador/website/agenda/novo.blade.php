@@ -11,6 +11,30 @@
 				<form id="nova-agenda" class="form-horizontal" role="form" style="margin-left: 20px">
 					{{ csrf_field() }}
 					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Datas </label>
+
+						<div class="col-sm-6">
+							<input id="datas" name="datas" type="text" class="col-xs-12 col-sm-6" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Cidade </label>
+
+						<div class="col-sm-6">
+							<input id="cidade" name="cidade" type="text" class="col-xs-12 col-sm-6" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Curso</label>
+						<div class="col-sm-6">
+							<select id="curso_id" name="curso_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
+									@foreach($cursos as $curso)
+										<option value="{{ $curso->id }}">{{$curso->nome}}</option>
+									@endforeach
+							</select>
+						</div>
+					</div>					
+					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Descricão </label>
 
 						<div class="col-sm-6">
@@ -62,6 +86,7 @@
 
 						<div class="col-sm-6">
 							<select id="max_parcelas" name="max_parcelas" class="col-xs-12 col-sm-6" id="form-field-select-3">
+								<option value="0" style="display: none"></option>
 								<option value="2">2x</option>
 								<option value="3">3x</option>
 								<option value="4">4x</option>
@@ -85,30 +110,7 @@
 						@endcomponent
 					</div>
 					<hr> --}}
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Datas </label>
 
-						<div class="col-sm-6">
-							<input id="datas" name="datas" type="text" class="col-xs-12 col-sm-6" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Cidade </label>
-
-						<div class="col-sm-6">
-							<input id="cidade" name="cidade" type="text" class="col-xs-12 col-sm-6" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Curso</label>
-						<div class="col-sm-6">
-							<select id="curso_id" name="curso_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
-									@foreach($cursos as $curso)
-										<option value="{{ $curso->id }}">{{$curso->nome}}</option>
-									@endforeach
-							</select>
-						</div>
-					</div>
 					<div class="clearfix form-actions">
 						<div class="col-md-offset-3 col-md-9">
 							<button id="confirm-form" class="btn btn-info" type="submit">

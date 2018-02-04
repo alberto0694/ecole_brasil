@@ -83,7 +83,7 @@
 						},
 						submitHandler: function(form) {
 
-							// normalizeVideo("input[name=apresentacao_video]");
+							normalizeVideo("input[name=link]");
 
 							$.confirm({
 							    content: function(){

@@ -44,10 +44,23 @@
             background-color: rgba(239, 64, 96, 1);
         }
 
+        .no-skin .navbar .navbar-toggle {
+            background-color: #cb3652;
+        }
+
         .ace-nav>li.light-blue>a {
             background-color: rgba(239, 64, 96, 1);
         }
 
+          .nav-tabs.background-blue {
+              padding-top: 6px;
+              background-color: #f3869a;
+              border: 1px solid #cb3652;
+          }
+
+        .nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus {
+            background-color: #cb3652;
+        }
         .badge-info, .badge.badge-info, .label-info, .label.label-info {
             background-color: rgba(239, 64, 96, 1);
         }
@@ -388,6 +401,14 @@
 
                                 <b class="arrow"></b>
                             </li>
+                            <li class="">
+                                <a href="{{ route('administrador.aluno.visao') }}">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Visão Aluno
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -455,6 +476,13 @@
                                 </a>
                                 <b class="arrow"></b>
                             </li>
+                            <li class="">
+                                <a href="{{ route('administrador.blog.index') }}">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    Blog
+                                </a>
+                                <b class="arrow"></b>
+                            </li>                            
                             <li class="">
                                 <a href="{{ route('administrador.banner.index') }}">
                                     <i class="menu-icon fa fa-caret-right"></i>

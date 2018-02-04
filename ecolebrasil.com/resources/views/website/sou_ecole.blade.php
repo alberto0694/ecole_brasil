@@ -18,10 +18,10 @@
  <br><br><br>
  <div class="row">
  	<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-	 	<h3 align="center" class="title-pink-begin-text">EU SOU ECOLE</h3>
-	 	<h3 align="center" class="gray-text">Queremos ver nossos alunos irem cada vez mais longe. Queremos que sejam cada vez mais felizes e realizados em suas atuações. Que tenham todas as ferramentas para aplicar o melhor de si. </h3>
-		<h3 align="center" class="gray-text" style="margin-top: 0;">Para isso, criamos o projeto <b style="color: rgba(239, 64, 96, 1);" >EU SOU ECOLE</b>. Para conectar, para divulgar, para trocar! Você já faz parte da Ecole. </h3>
-		<h3 align="center" class="gray-text" style="margin-top: 0;">Venha crescer conosco!</h3>
+	 	<h2 align="center" class="title-pink-begin-text">EU SOU ECOLE</h2>
+	 	<h2 style="text-align: justify;" class="gray-text">Queremos ver nossos alunos irem cada vez mais longe. Queremos que sejam cada vez mais felizes e realizados em suas atuações. Que tenham todas as ferramentas para aplicar o melhor de si. </h2>
+		<h2 style="text-align: justify;" class="gray-text" style="margin-top: 0;">Para isso, criamos o projeto <b style="color: rgba(239, 64, 96, 1);" >EU SOU ECOLE</b>. Para conectar, para divulgar, para trocar! Você já faz parte da Ecole. </h2>
+		<h2 align="center" class="gray-text" style="margin-top: 0;">Venha crescer conosco!</h2>
  	</div>
  </div> 
  <div class="row"></div>

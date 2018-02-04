@@ -10,7 +10,7 @@
         <title>Ecole Supérieure de Relooking</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
@@ -18,7 +18,7 @@
 
       body, html{
         overflow-x: hidden;
-        /*font-family: 'PT Sans Narrow', sans-serif;*/
+        font-family: 'Montserrat', sans-serif;
       }
       .btn-primary {
           color: #fff;
@@ -29,7 +29,14 @@
           color: #fff;
           background-color: #ef4060;
           border-color: #ef4060;
-      }   
+      }  
+
+      .nav-tabs.background-blue {
+          padding-top: 6px;
+          background-color: #f3869a;
+          border: 1px solid #cb3652;
+      }
+       
       .title-pink-begin-text, .days-agenda, .descricao-day-agenda{
           color:rgba(239, 64, 96, 1);
           font-weight: bold;
@@ -53,7 +60,7 @@
 
       .gray-text{
         color: gray;
-        font-size: 10pt;
+        font-size: 12pt;
       }
 
       .carousel-control.left ,.carousel-control.right {
@@ -102,11 +109,13 @@
           background-color: rgba(239, 64, 96, 1);
           color: white;
           margin-left: 20px;
+          font-weight: bold;
       }
 
-      .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a {
+      .dropdown-menu>li>a {
           color: white;
           text-decoration: none;
+          font-weight: bold;
           background-color: rgba(239, 64, 96, 1);
       }
 
@@ -114,7 +123,8 @@
           background-color: rgba(239, 64, 96, 1);
           border-color: rgba(239, 64, 96, 1);
           color: white;
-          padding-top: 17px;
+          font-weight: bold;
+          padding-top: 2px;
           margin-bottom: 0px;
       }
 
@@ -130,25 +140,26 @@
 
       .navbar-default .navbar-nav>li>a {
           color: #fff;
+          font-weight: bold;
       }
 
 
       .navbar-nav>li {
           min-height: 65px;
           vertical-align: middle;
-          /*display: table;*/
+          font-weight: bold;
       }
 
       .navbar-default .navbar-nav>li>a {
           max-height: 45px;
           vertical-align: middle;
-          /*display: table-cell;*/
+          font-weight: bold;
           font-size:7pt;
       }
 
       .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
           color: white;
-          font-weight: normal;
+          font-weight: bold;
           border-bottom: 2px solid white;
           background-color: transparent;
       }
@@ -407,6 +418,40 @@
           display: inherit;
       }
 
+      @media screen and (min-width: 768px) {
+        .dropdown-menu,  
+        .dropdown-menu>li>a {
+            background-color: #f4f4f4;
+            border-radius: 0;
+            color: black;
+            border: none;
+            box-shadow: none;
+        }       
+
+        .link-cursos-menu {
+          color: #58585b;
+        }
+
+        .navbar a:hover{
+          text-decoration: none;
+          color:#ed3656;
+        }
+
+        .link-cursos-menu:hover,
+        .dropdown-menu>li>a:focus, 
+        .dropdown-menu>li>a:hover,{
+           color:#ed3656;
+          text-decoration: none;
+          background-color: #f4f4f4;
+        }
+
+        .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+            color: #ed3656;
+            text-decoration: none;
+            background-color: #f4f4f4;
+        }        
+      }
+
       @media screen and (max-width: 768px) {
         .navbar-brand {
           margin-bottom: 15px;
@@ -457,18 +502,23 @@
                   <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand hidden-md hidden-lg" href="{{route('index')}}" >
-                  <img alt="Ecole Brasil" src="{{asset('images/ecole_menu.png')}}">
+                  <img alt="Ecole Brasil" src="{{asset('images/ecole_menu_mobile.png')}}">
               </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li><a href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li>
+              <ul class="nav navbar-nav">                
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ESCOLA <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ECOLE BRASIL <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                      <li><a href="{{route('escola')}}">A ESCOLA</a></li>
-                      <li><a href="{{route('faq')}}"  target="_blank">FAQ</a></li>
+                      <li><a class="link-cursos-menu" href="{{route('escola')}}">ECOLE SUÉRIEURE DE RELOOKING</a></li>
+                      <li><a class="link-cursos-menu" href="{{route('faq')}}"  target="_blank">FAQ</a></li>                      
+                      <li><a class="link-cursos-menu" href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li>
+                      <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
+                      <li><a class="link-cursos-menu" href="{{route('equipe')}}">NOSSA EQUIPE</a></li>
+                      <li><a class="link-cursos-menu" href="{{route('manifesto')}}">MANIFESTO</a></li>
+                      <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
+                      <li><a class="link-cursos-menu" href="https://ecolesuperieurerelooking.com/" target="_blank">PARIS</a></li>
                   </ul>
                 </li>
 
@@ -477,21 +527,20 @@
                 <li class="dropdown hidden-sm hidden-xs" >
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">FORMAÇÕES E CURSOS <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-
-                    @foreach($formacoes as $formacao)
-                        <li class="menu-item dropdown dropdown-submenu ">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $formacao->nome }}</a>
-                            <ul class="dropdown-menu">
-                                @foreach($formacao->cursos as $curso)
-                                  <li>
-                                      <a href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a>
-                                  </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                    @endforeach
-
-
+                  <li class="menu-item dropdown dropdown-submenu ">
+                    <div class="container" style="width: 600px;">
+                      @foreach($formacoes as $formacao)
+                            <div class="col-md-4">
+                              <h6>{{ $formacao->nome }}</h6>
+                              <ul style=" padding: 0; margin-top: 10px">
+                                  @foreach($formacao->cursos as $curso)
+                                    <a class="link-cursos-menu" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a>
+                                  @endforeach
+                              </ul>
+                            </div>
+                      @endforeach                      
+                    </div>
+                  </li>
 
                   </ul>
                 </li>
@@ -514,10 +563,10 @@
                       <li><a href="{{route('imprensa')}}"  target="_blank">IMPRENSA</a></li>
                   </ul>
                 </li>
-
-                <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>
-                <li><a href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
+{{-- background-color: #f4f4f4; --}}
+                <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>                
                 <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
+                <li><a href="{{route('ebook')}}"  target="_blank">EBOOKS</a></li>
                 <li><a href="{{route('agenda')}}">AGENDA</a></li>
                 <li><a href="{{route('ead.login')}}"  target="_blank">EAD</a></li>
                 <li><a href="{{route('restrito')}}"  target="_blank">ACESSO RESTRITO</a></li>
@@ -530,8 +579,7 @@
                 </li> --}}
 
                 {{-- <li><a href="{{route('faq')}}">FAQ</a></li> --}}
-                <li><a href="{{route('contato')}}">CONTATO</a></li>
-                <li><a href="https://ecolesuperieurerelooking.com/" target="_blank">PARIS</a></li>
+                <li><a href="{{route('contato')}}">CONTATO</a></li>                
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

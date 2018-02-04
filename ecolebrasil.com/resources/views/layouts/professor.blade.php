@@ -56,6 +56,18 @@
             background-color: rgba(239, 64, 96, 1);
         }
 
+        .no-skin .navbar .navbar-toggle {
+            background-color: #cb3652;
+        }
+
+      .nav-tabs.background-blue {
+          padding-top: 6px;
+          background-color: #f3869a;
+          border: 1px solid #cb3652;
+      }
+.nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus {
+    background-color: #cb3652;
+}
         .label-info.arrowed-in:before {
             border-color: rgba(239, 64, 96, 1) rgba(239, 64, 96, 1) rgba(239, 64, 96, 1) transparent;
         }

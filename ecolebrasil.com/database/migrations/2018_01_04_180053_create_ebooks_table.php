@@ -13,6 +13,8 @@ class CreateEbooksTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->string('valor');
+            $table->longText('card');
+            $table->integer('transacao');
             $table->integer('max_parcelas');
             $table->string('link')->nullable();
             $table->longText('file')->nullable();

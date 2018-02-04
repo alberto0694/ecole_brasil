@@ -2,18 +2,90 @@
 
 @section('content')
 <style type="text/css">
-		@media screen and (max-width: 768px) {
-				.video-index{
-					margin: 0;
-					padding: 0;
-					border: none;
-					margin-top: -1px;
-					border-radius: 0px;
-					width: 100%;
-					height: auto;
-				}
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.carousel-inner .item{
+	height: 750px;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: absolute;
+    bottom: 0;
+    /*background: rgba(0, 0, 0, 0.5);*/
+    color: #f1f1f1;
+    width: 100%;
+    padding: 2px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 70px;
+    font-size: 12pt;
+    padding: 3px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+@media screen and (max-width: 768px) {
+		.video-index{
+			margin: 0;
+			padding: 0;
+			border: none;
+			margin-top: -1px;
+			border-radius: 0px;
+			width: 100%;
+			height: auto;
 		}
+		
+		video{
+			width: 100%;
+		}
+
+		.content {
+		    bottom: 300px;
+		    background: rgba(0, 0, 0, 0.5);
+		}
+
+		.carousel-inner .item{
+			height: 300px;
+		}
+
+}
 </style>
+<script>
+$(window).on('load', function(){
+	$("video").prop('muted', false);
+});
+// Pause and play the video, and change the button text
+function myFunction() {
+	var btn = document.getElementById("myBtn");	
+	if($("video").attr("muted") == undefined){
+		$("video").attr("muted", false);
+	}
+	// debugger;
+    if (!$("video").prop("muted")) {
+        $("video").prop('muted', true);
+        btn.innerHTML = "Com áudio";
+    } else {
+    	$("video").prop('muted', false);
+        btn.innerHTML = "Sem áudio";
+    }
+}
+</script>
 <div class="row" style="margin: 0; padding: 0">
 	  <div class="col-md-12" style="margin: 0; padding: 0">
 			<div style="background-color:rgba(239, 64, 96, 1);" id="carousel-index-ecole" class="carousel slide" data-ride="carousel">
@@ -30,8 +102,11 @@
 					    @if($banner->ativo == 1)
 					    	{!!$banner->item!!}
 					    @endif
-				    </div>
-				  @endforeach
+				    </div>			    
+				  @endforeach				  
+					<div class="content">
+					  <button id="myBtn" onclick="myFunction()">Sem áudio</button>
+					</div>				  
 			  </div>
 
 			  @if($i > 1)
@@ -92,7 +167,7 @@
  			<div class="row">
  				@foreach($cursos as $curso)
 	 				<div class="col-md-6 col-xs-12">
-	 					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ $curso->card }}"></a>
+	 					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($curso->card) }}"></a>
 						<div class="row">
 							<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
 								<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">

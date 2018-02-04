@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Auth::routes();
 
 
@@ -18,6 +7,7 @@ Route::get('/ead', 'WebsiteController@ead')->name('ead.login'); //tela de login 
 Route::get('/admin', 'HomeController@admin')->name('admin.login'); //tela de login admin
 Route::get('/professor', 'HomeController@professor')->name('professor.login'); //tela de login admin
 Route::get('/redirect', 'HomeController@redirect')->name('redirect.permission'); //rota de redirecionamento
+
 // ================ CRUDS ==============
 
 //formacao
@@ -61,6 +51,11 @@ Route::delete('/videoconferencia/delete/{id}', 'VideoController@delete')->name('
 Route::post('/imprensa/create', 'ImprensaController@create')->name('imprensa.create');
 Route::put('/imprensa/update/{id}', 'ImprensaController@update')->name('imprensa.update');
 Route::delete('/imprensa/delete/{id}', 'ImprensaController@delete')->name('imprensa.delete');
+
+//imprensa
+Route::post('/blog/create', 'BlogController@create')->name('blog.create');
+Route::put('/blog/update/{id}', 'BlogController@update')->name('blog.update');
+Route::delete('/blog/delete/{id}', 'BlogController@delete')->name('blog.delete');
 
 //acesso restrito
 Route::post('/acesso_restrito_create', 'MaterialRestritoController@create')->name('acesso_restrito.create');
@@ -108,12 +103,25 @@ Route::delete('/banner/delete/{id}', 'BannerController@delete')->name('banner.de
 
 //================ ALUNOS VIEWS ======================
 Route::get('/alunos/dashboard', 'AlunoController@dashboard')->name('aluno.dashboard');
+Route::get('/alunos/acesso_restrito', 'AlunoController@acesso_restrito')->name('aluno.acesso_restrito');
 Route::get('/alunos/modulos/{id}', 'AlunoController@acesso_modulo')->name('aluno.modulo');
 Route::get('/perfil/aluno/{id}', 'AlunoController@profile')->name('aluno.profile');
 Route::get('/aluno/{id}/aulas', 'AlunoController@aulas')->name('aluno.aulas');
+Route::get('/aluno/{id}/exercicios', 'AlunoController@exercicios')->name('aluno.exercicios');
+Route::get('/aluno/{id}/materiais', 'AlunoController@materiais')->name('aluno.materiais');
+Route::get('/aluno/{id}/videos', 'AlunoController@videos')->name('aluno.videos');
+
+Route::post('/aluno/aula/comentario', 'AulaComentarioController@create')->name('AulaComentario.create');
+Route::post('/aluno/exercicio/comentario', 'ExercicioComentarioController@create')->name('ExercicioComentario.create');
+Route::post('/aluno/material/comentario', 'MaterialComentarioController@create')->name('MaterialComentario.create');
+Route::post('/aluno/video/comentario', 'VideoComentarioController@create')->name('VideoComentario.create');
+
+Route::get('/aula_comentario/list', 'AulaComentarioController@get_comentario')->name("aula.get.comentario");
+Route::get('/exercicio_comentario/list', 'ExercicioComentarioController@get_comentario')->name("exercicio.get.comentario");
+Route::get('/material_comentario/list', 'MaterialComentarioController@get_comentario')->name("material.get.comentario");
+Route::get('/video_comentario/list', 'VideoComentarioController@get_comentario')->name("video.get.comentario");
 
 
-Route::post('/aluno/aula/comentario', 'AulaComentarioController@create')->name('comentario.create');
 //================ PROFESSOR VIEWS ======================
 Route::get('/professores/dashboard', 'ProfessorController@dashboard')->name('professor.dashboard');
 
@@ -122,10 +130,28 @@ Route::get('/professores/dashboard', 'ProfessorController@dashboard')->name('pro
 Route::get('/aluno_restrito/dashboard', 'AlunoRestritoController@dashboard')->name('aluno_restrito.dashboard');
 
 //================ ADMINISTRADOR VIEWS ======================
+//professores
+Route::post('/administrador/create', 'AdministradorController@create')->name('administrador.create');
+Route::put('/administrador/update/{id}', 'AdministradorController@update')->name('administrador.update');
+Route::delete('/administrador/delete/{id}', 'AdministradorController@delete')->name('administrador.delete');
 
-//ADMINSITRADOR
 Route::get('/adm/dashboard', 'AdministradorController@dashboard')->name('administrador.dashboard');
 Route::get('/adm/view/profile', 'AdministradorController@profile')->name('administrador.profile.visualizar');
+Route::get('/adm/editar/formacao/{id}', 'AdministradorController@formacao_editar')->name('administrador.formacao.editar');
+Route::get('/adm/formacao', 'AdministradorController@formacao_index')->name('administrador.formacao.index');
+Route::get('/adm/novo/formacao', 'AdministradorController@formacao_novo')->name('administrador.formacao.novo');
+Route::get('/adm/novo/curso', 'AdministradorController@curso_novo')->name('administrador.curso.novo');
+Route::get('/adm/quadro/curso', 'AdministradorController@curso_index')->name('administrador.curso.index');
+Route::get('/adm/visualizar/curso/{id}', 'AdministradorController@curso_visualizar')->name('administrador.curso.visualizar');
+Route::get('/adm/editar/curso/{id}', 'AdministradorController@curso_editar')->name('administrador.curso.editar');
+Route::get('/adm/aluno/visao', 'AdministradorController@visao_aluno')->name('administrador.aluno.visao');
+Route::get('/adm/aluno/visao/modulos', 'AdministradorController@get_visao_aluno')->name('administrador.aluno.get.visao');
+
+Route::get('/adm/{id}/aulas', 'AdministradorController@aulas')->name('administrador.aluno.aulas');
+Route::get('/adm/{id}/exercicios', 'AdministradorController@exercicios')->name('administrador.aluno.exercicios');
+Route::get('/adm/{id}/materiais', 'AdministradorController@materiais')->name('administrador.aluno.materiais');
+Route::get('/adm/{id}/videos', 'AdministradorController@videos')->name('administrador.aluno.videos');
+
 
 //material
 Route::get('/adm/material/index', 'AdministradorController@material_index')->name('administrador.material.index');
@@ -143,12 +169,10 @@ Route::get('/adm/exercicio/index', 'AdministradorController@exercicio_index')->n
 Route::get('/adm/exercicio/novo', 'AdministradorController@exercicio_novo')->name('administrador.exercicio.novo');
 Route::get('/adm/exercicio/editar/{id}', 'AdministradorController@exercicio_editar')->name('administrador.exercicio.editar');
 
-
 //ebook
 Route::get('/adm/ebook/index', 'AdministradorController@ebook_index')->name('administrador.ebook.index');
 Route::get('/adm/ebook/novo', 'AdministradorController@ebook_novo')->name('administrador.ebook.novo');
 Route::get('/adm/ebook/editar/{id}', 'AdministradorController@ebook_editar')->name('administrador.ebook.editar');
-
 
 //aula
 Route::get('/adm/aula/index', 'AdministradorController@aula_index')->name('administrador.aula.index');
@@ -169,6 +193,11 @@ Route::get('/adm/modulo/editar/{id}', 'AdministradorController@modulo_editar')->
 Route::get('/adm/imprensa/index', 'AdministradorController@imprensa_index')->name('administrador.imprensa.index');
 Route::get('/adm/imprensa/novo', 'AdministradorController@imprensa_novo')->name('administrador.imprensa.novo');
 Route::get('/adm/imprensa/editar/{id}', 'AdministradorController@imprensa_editar')->name('administrador.imprensa.editar');
+
+//blog
+Route::get('/adm/blog/index', 'AdministradorController@blog_index')->name('administrador.blog.index');
+Route::get('/adm/blog/novo', 'AdministradorController@blog_novo')->name('administrador.blog.novo');
+Route::get('/adm/blog/editar/{id}', 'AdministradorController@blog_editar')->name('administrador.blog.editar');
 
 //banner
 Route::get('/adm/banner/index', 'AdministradorController@banner_index')->name('administrador.banner.index');
@@ -196,8 +225,6 @@ Route::get('/adm/aula/novo', 'AdministradorController@aula_novo')->name('adminis
 Route::get('/adm/aula/editar/{id}', 'AdministradorController@aula_editar')->name('administrador.aula.editar');
 
 //contato
-// Route::get('/adm/banner/index', 'AdministradorController@banner_index')->name('administrador.banner.index');
-// Route::get('/adm/banner/novo', 'AdministradorController@banner_novo')->name('administrador.banner.novo');
 Route::get('/adm/contato/visualizar/{id}', 'AdministradorController@contato_visualizar')->name('administrador.contato.visualizar');
 Route::get('/adm/contato/index', 'AdministradorController@contato_index')->name('administrador.contato.index');
 
@@ -232,39 +259,28 @@ Route::get('/adm/agenda/visualizar/{id}', 'AdministradorController@agenda_visual
 Route::get('/adm/agenda/editar/{id}', 'AdministradorController@agenda_editar')->name('administrador.agenda.editar');
 
 
-
-//ADMINSITRADOR - CURSOS E MODULOS
-Route::get('/adm/editar/formacao/{id}', 'AdministradorController@formacao_editar')->name('administrador.formacao.editar');
-Route::get('/adm/formacao', 'AdministradorController@formacao_index')->name('administrador.formacao.index');
-Route::get('/adm/novo/formacao', 'AdministradorController@formacao_novo')->name('administrador.formacao.novo');
-
-Route::get('/adm/novo/curso', 'AdministradorController@curso_novo')->name('administrador.curso.novo');
-Route::get('/adm/quadro/curso', 'AdministradorController@curso_index')->name('administrador.curso.index');
-Route::get('/adm/visualizar/curso/{id}', 'AdministradorController@curso_visualizar')->name('administrador.curso.visualizar');
-Route::get('/adm/editar/curso/{id}', 'AdministradorController@curso_editar')->name('administrador.curso.editar');
-
-
-
 // =================== WEB SITE ================================
 Route::get('/', 'WebsiteController@home')->name('index');
-Route::get('/escola', 'WebsiteController@escola')->name('escola');
+Route::get('/br/school/see/a-escola/16', 'WebsiteController@escola')->name('escola');
 Route::get('/br/access', 'WebsiteController@restrito')->name('restrito');
 Route::get('/blog', 'WebsiteController@blog')->name('blog');
-Route::get('/certificacao', 'WebsiteController@certificacao')->name('certificacao');
+Route::get('/br/certification/see/cnpc/14', 'WebsiteController@certificacao')->name('certificacao');
 Route::get('/sou_ecole', 'WebsiteController@sou_ecole')->name('sou_ecole');
 Route::get('/contato', 'WebsiteController@contato')->name('contato');
 Route::get('/agenda', 'WebsiteController@agenda')->name('agenda');
 Route::get('/cursos/{id}', 'WebsiteController@cursos')->name('cursos');
-Route::get('/depoimentos', 'WebsiteController@depoimentos')->name('depoimentos');
-Route::get('/faq', 'WebsiteController@faq')->name('faq');
-Route::get('/imprensa', 'WebsiteController@imprensa')->name('imprensa');
+Route::get('/br/deposing', 'WebsiteController@depoimentos')->name('depoimentos');
+Route::get('/br/school/see/faq/20', 'WebsiteController@faq')->name('faq');
+Route::get('/br/press', 'WebsiteController@imprensa')->name('imprensa');
 Route::get('/pagamento', 'WebsiteController@pagamento')->name('pagamento');
 Route::get('/imprensa/materia/{id}', 'WebsiteController@materia')->name('materia');
-Route::get('/consultoras', 'WebsiteController@consultoras')->name('consultoras');
-
-
-//emails
+Route::get('/blog/post/{id}', 'WebsiteController@blog_post')->name('post_blog');
+Route::get('/br/consultants', 'WebsiteController@consultoras')->name('consultoras');
+Route::get('/ebooks', 'WebsiteController@ebook')->name('ebook');
+Route::get('/ebook_pagamento/{id}', 'WebsiteController@ebook_pagamento')->name('ebook_pagamento');
 Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
-
-//email pagamento
 Route::post('/email_aluno', 'WebsiteController@crudAlunoAfterPayment')->name('pagamento.email');
+Route::post('/ebook_email', 'WebsiteController@ebook_email')->name('ebook.email');
+
+Route::get('/manifesto', 'WebsiteController@manifesto')->name('manifesto');
+Route::get('/equipe', 'WebsiteController@equipe')->name('equipe');

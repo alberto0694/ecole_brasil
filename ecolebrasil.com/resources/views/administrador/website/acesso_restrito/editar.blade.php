@@ -44,7 +44,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo</label>
 						@component('components.upfile', ['nameId' => 'file', 'src' => $acesso->file])
-							<a id='dwnldLnk' href="{{ $acesso->base64 }}" download='{{$acesso->titulo}}' style="display:none;" />
+							<a id='dwnldLnk' href="{{ $acesso->file }}" download='{{$acesso->titulo}}' style="display:none;" />
 						    <a href="#" onclick="downloadPDF();" title='{{$acesso->titulo}}'>Baixar Arquivo</a>						
 						@endcomponent											
 					</div>		
@@ -100,7 +100,7 @@
 						},
 						submitHandler: function(form) {
 
-							// normalizeVideo("input[name=apresentacao_video]");
+							normalizeVideo("input[name=link]");
 							
 							$.confirm({
 							    content: function(){

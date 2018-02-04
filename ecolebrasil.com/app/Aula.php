@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\AulaComentario;
 
 class Aula extends Model
 {
@@ -20,4 +21,14 @@ class Aula extends Model
 	{
 		return $this->hasMany('App\AulaComentario', 'aula_id')->orderBy('created_at', 'asc');
 	}
+
+
+    public function getLastTimeAttribute()
+    {
+    	$aula_comentario = AulaComentario::where('aula_id', '=', $this->id)->orderBy('created_at', 'asc')->get()->last();
+    	if($aula_comentario != null){
+    		return $aula_comentario->created_at;
+    	}
+    	return null;    	
+    }	
 }

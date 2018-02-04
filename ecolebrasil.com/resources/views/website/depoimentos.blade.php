@@ -81,7 +81,7 @@
 						<div class="col-md-12" style="margin-top: 15px">
 								<div class="media-left">								  
 									  <div class="media-left">
-										      <img style="width: 350px" class="media-object" src="{{$depoimento->avatar}}" alt="{{ $depoimento->autor }}">
+										      <img style="width: 350px" class="media-object" src="{{asset($depoimento->avatar)}}" alt="{{ $depoimento->autor }}">
 									  </div>
 									  <div class="media-body"> 
 										    <h4 class="media-heading hidden-xs hidden-sm" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{!! $depoimento->descricao_html !!}</h4>

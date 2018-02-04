@@ -22,6 +22,7 @@ use App\Video;
 use App\Material;
 use Auth;
 use App\Imprensa;
+use App\Blog;
 use \Session;
 use App\User;
 
@@ -37,10 +38,105 @@ class AdministradorController extends Controller
 
     public function profile()
     {
-        return view('administrador.perfil.index');
+        $administrador = $this->getAdministrador();   
+        return view('administrador.perfil.index', compact('administrador'));
     }
 
+    public function create(Request $request)
+    {
+        $user = User::where('email', '=', $request['email'])->first();
+        if($user == null){
+            $user = User::create([
+                'name' => $request['nome'],
+                'email' => $request['email'],
+                'permission' => 'PF',
+                'password' => bcrypt($request['password']),
+            ]); 
+        }      
+        $request = Controller::saveBase64($request, 'avatar', 'administradors');
+        $request = Controller::formatDate( $request, 'nascimento' );
+        $request['user_id'] = $user->id;
+        $administrador = Administrador::create( $request->all() );
+        return;
+    }
+
+    public function update(Request $request, $id)
+    {
+        $administrador = Administrador::find( $id );
+        $user = User::find( $administrador->user_id );
+        $data['email'] = $request->email;
+
+        if($request->password != ''){
+            $data['password'] = bcrypt($request->password);
+        }
+        $user->update($data);
+
+        $request = Controller::saveBase64($request, 'avatar', 'administradors', $administrador->avatar);
+        $request = Controller::formatDate($request, 'nascimento');        
+        $administrador->update( $request->all() );
+        return;
+    }
+
+    public function delete(Request $request, $id)
+    {
+        //
+    }
+    
     //PROFESSORES E AULAS
+    public function getAdministrador()
+    {
+        $userId = Auth::user()->id;
+        return Administrador::where('user_id', '=', $userId)->get()->first();
+
+    }
+
+    public function visao_aluno()
+    {
+        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        return view('administrador.aluno.visao.index', compact('agendas'));
+    }
+
+    public function get_visao_aluno(Request $request)
+    {
+        $querys = $request->query();
+        $modulo = Modulo::find( $querys['modulo_id'] );
+        $administrador = $this->getAdministrador();
+        return view('administrador.aluno.visao.modulos.index', compact('modulo', 'administrador'));
+    }
+
+    public function aulas(Request $request, $id)
+    {
+        $administrador = $this->getAdministrador();
+        $modulo = Modulo::find($id);
+        $aulas = $modulo->aulas;
+        return view('administrador.aluno.visao.modulos.aulas.index', compact('aulas', 'administrador'));
+    }
+
+    public function exercicios(Request $request, $id)
+    {
+        $administrador = $this->getAdministrador();
+        $modulo = Modulo::find($id);
+        $exercicios = $modulo->exercicios;
+        return view('administrador.aluno.visao.modulos.exercicios.index', compact('exercicios', 'administrador'));
+    }
+
+    public function materiais(Request $request, $id)
+    {
+        $administrador = $this->getAdministrador();
+        $modulo = Modulo::find($id);
+        $materiais = $modulo->materiais;
+        return view('administrador.aluno.visao.modulos.materiais.index', compact('materiais', 'administrador'));
+    }
+
+    public function videos(Request $request, $id)
+    {
+        $administrador = $this->getAdministrador();
+        $modulo = Modulo::find($id);
+        $videos = $modulo->videos;
+        return view('administrador.aluno.visao.modulos.videos.index', compact('videos', 'administrador'));
+    }
+
+
     public function material_index()
     {
         $materiais = Material::all();
@@ -402,10 +498,29 @@ class AdministradorController extends Controller
         return view('administrador.website.imprensa.index', compact('imprensas'));
     }
 
-
     public function imprensa_novo()
     {
         return view('administrador.website.imprensa.novo');
+    }
+
+
+    //blog
+    public function blog_editar(Request $request, $id)
+    {
+        $blog = Blog::find( $id );
+        return view('administrador.website.blog.editar', compact('blog'));
+    }
+
+    public function blog_index()
+    {
+        $blogs = Blog::all();
+        return view('administrador.website.blog.index', compact('blogs'));
+    }    
+
+
+    public function blog_novo()
+    {
+        return view('administrador.website.blog.novo');
     }
 
 

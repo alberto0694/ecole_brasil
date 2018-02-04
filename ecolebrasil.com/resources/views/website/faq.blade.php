@@ -19,8 +19,8 @@
 	    </a>
 	  </div>
  </div>
-<div class="row" style="background: #e6e7e9; margin: 0; padding: 0; padding-bottom: 30px">
-		<div class="col-md-12 col-xs-10 col-xs-offset-1">
+<div class="row" style="text-align: justify; background: #fff; margin: 0; padding: 0; padding-bottom: 30px">
+		<div class="col-md-12 col-md-offset-0 col-xs-10 col-xs-offset-1">
 			<div class="row" style="padding-top: 20px">
 				<div class="col-md-8 col-md-offset-2">
 					<h2 class="title-pink-begin-text">FAQ</h2>

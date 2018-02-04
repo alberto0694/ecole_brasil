@@ -24,6 +24,21 @@ class Modulo extends Model
 		return $this->hasMany('App\Aula', 'modulo_id', 'id');
 	}
 
+	public function videos()
+	{
+		return $this->hasMany('App\Video', 'modulo_id', 'id');
+	}
+
+	public function materiais()
+	{
+		return $this->hasMany('App\Material', 'modulo_id', 'id');
+	}
+
+	public function exercicios()
+	{
+		return $this->hasMany('App\Exercicio', 'modulo_id', 'id');
+	}
+
 	public function getCursoAttribute()
 	{
 		return $this->agenda->curso;

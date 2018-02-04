@@ -6,7 +6,7 @@
 			<div class="col-md-6">
 	                <h3 class="title-pink-begin-text"> ACESSO RESTRITO</h3>          
 	                <p class="gray-text" style="text-align: justify;">
-Este espaço foi criado para que a gente possa contribuir ainda mais com a sua qualificação através de conteúdos exclusivos, informações e novidades atualizadas, dicas, além de disponibilizar materiais utilizados em aula.</p>
+Este espaço foi criado para que a gente possa contribuir ainda mais com a qualificação dos alunos formados pela Ecole através de conteúdos exclusivos, informações e novidades atualizadas, dicas, além de disponibilizar materiais utilizados em aula.</p>
 
 <p class="gray-text" style="text-align: justify;">Para ter acesso a área restrita é necessário que você nos envie um e-mail solicitando um login e senha. Ele dará acesso aos conteúdos exclusivos para quem é ex-aluno da Ecole.                	
 	                </p>			

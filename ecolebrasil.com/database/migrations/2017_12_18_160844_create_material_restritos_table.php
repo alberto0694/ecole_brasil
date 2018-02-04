@@ -18,7 +18,6 @@ class CreateMaterialRestritosTable extends Migration
             $table->string('titulo');
             $table->string('link')->nullable();
             $table->longText('file')->nullable();
-            $table->integer('curso_id')->unsigned();
             $table->timestamps();
         });
     }

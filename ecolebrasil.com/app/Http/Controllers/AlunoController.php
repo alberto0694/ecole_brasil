@@ -7,6 +7,7 @@ use App\Curso;
 use App\User;
 use App\Agenda;
 use App\Modulo;
+use App\MaterialRestrito;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -17,12 +18,18 @@ class AlunoController extends Controller
     {
         $userId = Auth::user()->id;
         return Aluno::where('user_id', '=', $userId)->get()->first();
+    }
 
+    public function acesso_restrito()
+    {
+        $aluno = $this->getAluno(); 
+        $acessos_restritos = MaterialRestrito::all(); 
+        return view('aluno.acesso_restrito', compact('aluno', 'acessos_restritos'));
     }
 
     public function dashboard()
     {
-        $aluno = $this->getAluno();
+        $aluno = $this->getAluno();        
         return view('aluno.dashboard', compact('aluno'));
     }
 
@@ -47,6 +54,29 @@ class AlunoController extends Controller
         return view('aluno.modulos.aulas.index', compact('aulas', 'aluno'));
     }
 
+    public function exercicios(Request $request, $id)
+    {
+        $aluno = $this->getAluno();
+        $modulo = Modulo::find($id);
+        $exercicios = $modulo->exercicios;
+        return view('aluno.modulos.exercicios.index', compact('exercicios', 'aluno'));
+    }
+
+    public function materiais(Request $request, $id)
+    {
+        $aluno = $this->getAluno();
+        $modulo = Modulo::find($id);
+        $materiais = $modulo->materiais;
+        return view('aluno.modulos.materiais.index', compact('materiais', 'aluno'));
+    }
+
+    public function videos(Request $request, $id)
+    {
+        $aluno = $this->getAluno();
+        $modulo = Modulo::find($id);
+        $videos = $modulo->videos;
+        return view('aluno.modulos.videos.index', compact('videos', 'aluno'));
+    }
 
     public function create(Request $request)
     {

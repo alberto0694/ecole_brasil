@@ -18,7 +18,11 @@
               <input value="{{ $ebook->titulo }}" id="titulo" name="titulo" type="text" class="col-xs-12 col-sm-6" />
             </div>
           </div>
-          <hr>
+          <div class="form-group">
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card </label>
+            @component('components.upfile', ['nameId' => 'card', 'src' => $ebook->card])
+            @endcomponent                     
+          </div>    
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Valor </label>
 
@@ -27,12 +31,82 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Número Máximo de Parcelas </label>
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tipo de Transanção </label>
 
             <div class="col-sm-6">
-              <input value="{{ $ebook->max_parcelas }}" id="max_parcelas" name="max_parcelas" type="text" class="col-xs-12 col-sm-6" />
+              <select id="transacao" name="transacao" class="col-xs-12 col-sm-6" id="form-field-select-3">
+                @if($ebook->transacao == 4)
+                  <option selected value="04">À Vista</option>
+                  <option value="06">Parcelado Emissor</option>
+                  <option value="08">Parcelado Estabelecimento</option>
+                  <option value="39">IATA à vista</option>
+                  <option value="40">IATA parcelado</option>
+                @endif
+                @if($ebook->transacao == 6)
+                  <option  value="04">À Vista</option>
+                  <option selected value="06">Parcelado Emissor</option>
+                  <option value="08">Parcelado Estabelecimento</option>
+                  <option value="39">IATA à vista</option>
+                  <option value="40">IATA parcelado</option>
+                @endif
+                @if($ebook->transacao == 8)
+                  <option  value="04">À Vista</option>
+                  <option value="06">Parcelado Emissor</option>
+                  <option selected value="08">Parcelado Estabelecimento</option>
+                  <option value="39">IATA à vista</option>
+                  <option value="40">IATA parcelado</option>
+                @endif
+                @if($ebook->transacao == 39)
+                  <option  value="04">À Vista</option>
+                  <option value="06">Parcelado Emissor</option>
+                  <option value="08">Parcelado Estabelecimento</option>
+                  <option selected value="39">IATA à vista</option>
+                  <option value="40">IATA parcelado</option>
+                @endif
+                @if($ebook->transacao == 40)
+                  <option value="04">À Vista</option>
+                  <option value="06">Parcelado Emissor</option>
+                  <option value="08">Parcelado Estabelecimento</option>
+                  <option value="39">IATA à vista</option>
+                  <option selected value="40">IATA parcelado</option>
+                @endif
+              </select>
+            </div>          
+          </div>  
+          @if($ebook->transacao != 4 && $ebook->transacao != 39)        
+            <div class="form-group parcelas-class">
+              <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Número de Parcelas </label>
+
+              <div class="col-sm-6">
+                <select id="max_parcelas" name="max_parcelas" class="col-xs-12 col-sm-6" id="form-field-select-3">
+                  <option value="0" style="display: none"></option>
+                  <?php $array = array(2=>2, 3=>3, 4=>4, 5=>5, 6=>6); ?>
+                  @foreach($array as $num)
+                    @if($num == $ebook->max_parcelas)
+                      <option selected value="{{$num}}">{{ $num }}x</option>
+                    @else
+                      <option value="{{$num}}">{{ $num }}x</option>
+                    @endif
+                  @endforeach
+                </select>
+              </div>
             </div>
-          </div>
+          @else
+            <div class="form-group parcelas-class" style="display: none">
+              <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Número de Parcelas </label>
+
+              <div class="col-sm-6">
+                <select id="max_parcelas" name="max_parcelas" class="col-xs-12 col-sm-6" id="form-field-select-3">
+                  <option value="0" style="display: none"></option>
+                  <option value="2">2x</option>
+                  <option value="3">3x</option>
+                  <option value="4">4x</option>
+                  <option value="5">5x</option>
+                  <option value="6">6x</option>
+                </select>
+              </div>
+            </div>
+          @endif
 
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo</label>
@@ -62,7 +136,14 @@
     <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
     <script type="text/javascript">
         jQuery(function($){
-
+          $("#transacao").change(function(){
+            if( ($(this).val() != '04') && ($(this).val() != '39')){
+              $(".parcelas-class").show();
+            }else{
+              $(".parcelas-class").hide();
+              $("#max_parcelas").val("0");
+            }
+          });
           //VALIDATOR JQUERY
           $("#novo-ebook").validate({
             rules: {

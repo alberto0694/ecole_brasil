@@ -44,10 +44,23 @@
             background-color: rgba(239, 64, 96, 1);
         }
 
+        .no-skin .navbar .navbar-toggle {
+            background-color: #cb3652;
+        }
+        
         .ace-nav>li.light-blue>a {
             background-color: rgba(239, 64, 96, 1);
         }
 
+          .nav-tabs.background-blue {
+              padding-top: 6px;
+              background-color: #f3869a;
+              border: 1px solid #cb3652;
+          }
+
+        .nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus {
+            background-color: #cb3652;
+        }
         .badge-info, .badge.badge-info, .label-info, .label.label-info {
             background-color: rgba(239, 64, 96, 1);
         }
@@ -244,30 +257,39 @@
                     </li>
 
                     @foreach($aluno->agendas as $agenda)
-                        <li class="">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="menu-icon fa fa-book"></i>
-                                <span class="menu-text">
-                                    {{ $agenda->curso->nome }}
-                                </span>
-                                <b class="arrow fa fa-angle-down"></b>
-                            </a>
+                        @if($agenda->modelo == 'D')
+                            <li class="">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-book"></i>
+                                    <span class="menu-text">
+                                        {{ $agenda->curso->nome }}
+                                    </span>
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
 
-                            <b class="arrow"></b>
+                                <b class="arrow"></b>
 
-                            <ul class="submenu">
-                                @foreach($agenda->modulos as $modulo)
-                                    <li class="">
-                                        <a href="{{route('aluno.modulo', $modulo->id)}}">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            {{ $modulo->titulo }}
-                                        </a>
-                                        <b class="arrow"></b>
-                                    </li>                            
-                                @endforeach
-                            </ul>
-                        </li>
+                                <ul class="submenu">
+                                    @foreach($agenda->modulos as $modulo)
+                                        <li class="">
+                                            <a href="{{route('aluno.modulo', $modulo->id)}}">
+                                                <i class="menu-icon fa fa-caret-right"></i>
+                                                {{ $modulo->titulo }}
+                                            </a>
+                                            <b class="arrow"></b>
+                                        </li>                            
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endif
                     @endforeach
+                    <li class="">
+                        <a href="{{ route('aluno.acesso_restrito') }}">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text">Acesso Restrito</span>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>                    
                 </ul><!-- /.nav-list -->
 
                 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ImprensaController extends Controller
 {
-     public function create(Request $request)
+    public function create(Request $request)
     {
         $imprensa = Imprensa::create( $request->all() );
         return;

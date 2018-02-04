@@ -35,7 +35,7 @@ class Banner extends Model
 			return '<a target="_blank" href="'.$this->link_url.'"><img src="'.asset($this->midia).'" alt="" style="width: 100%; display: block;"></a>';
 		}else{
 			return
-			'<video class="video-index" style="background-color:rgba(239, 64, 96, 1); display:block; margin: 0 auto;" width="720" height="404" autoplay>
+			'<video style="background-color:rgba(239, 64, 96, 1); display:block; margin: 0 auto;" autoplay loop muted="false" id="myVideo">
 				<source src="'.asset($this->midia).'">
 			</video>';
 		}

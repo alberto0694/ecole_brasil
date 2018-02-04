@@ -17,7 +17,11 @@
               <input id="titulo" name="titulo" type="text" class="col-xs-12 col-sm-6" />
             </div>
           </div>
-          <hr>
+          <div class="form-group">
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card </label>
+            @component('components.upfile', ['nameId' => 'card', 'src' => ''])
+            @endcomponent                     
+          </div>          
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Valor </label>
 
@@ -26,20 +30,38 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Número Máximo de Parcelas </label>
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tipo de Transanção </label>
 
             <div class="col-sm-6">
-              <input id="max_parcelas" name="max_parcelas" type="text" class="col-xs-12 col-sm-6" />
+              <select id="transacao" name="transacao" class="col-xs-12 col-sm-6" id="form-field-select-3">
+                <option selected value="04">À Vista</option>
+                <option value="06">Parcelado Emissor</option>
+                <option value="08">Parcelado Estabelecimento</option>
+                <option value="39">IATA à vista</option>
+                <option value="40">IATA parcelado</option>
+              </select>
+            </div>          
+          </div>          
+          <div class="form-group parcelas-class" style="display: none">
+            <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Número de Parcelas </label>
+
+            <div class="col-sm-6">
+              <select id="max_parcelas" name="max_parcelas" class="col-xs-12 col-sm-6" id="form-field-select-3">
+                <option value="0" style="display: none"></option>
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+                <option value="4">4x</option>
+                <option value="5">5x</option>
+                <option value="6">6x</option>
+              </select>
             </div>
           </div>
-
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo</label>
             @component('components.upfile', ['nameId' => 'file', 'src' => ''])
             @endcomponent
           </div>
 
-          <hr>
           <div class="clearfix form-actions">
             <div class="col-md-offset-3 col-md-9">
               <button id="confirm-form" class="btn btn-info" type="submit">
@@ -61,7 +83,15 @@
     <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
     <script type="text/javascript">
         jQuery(function($){
-
+          $("#max_parcelas").val("0");
+          $("#transacao").change(function(){
+            if( ($(this).val() != '04') && ($(this).val() != '39')){
+              $(".parcelas-class").show();
+            }else{
+              $(".parcelas-class").hide();
+              $("#max_parcelas").val("0");
+            }
+          });
           //VALIDATOR JQUERY
           $("#novo-ebook").validate({
             rules: {

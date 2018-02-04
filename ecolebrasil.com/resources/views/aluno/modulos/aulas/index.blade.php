@@ -88,11 +88,13 @@
 						</div>
 
 					</div>
+					<input id="last_time_{{$aula->id}}" type="hidden" name="last_time_{{$aula->id}}" value="{{ $aula->lastTime }}">
 				@endforeach				
 			</div>
 		</div>
 	</div>
 
+	
 @endsection
 @section('last-body')
 	<script type="text/javascript">
@@ -103,19 +105,47 @@
 						<?php $class = "false"; ?>
 					@endif
 					<?php $i++; ?>
+
 	            		$("#enviar_{{ $i }}").click(function(){
+	            				$("#enviar_{{ $i }}").prop("disabled",true);
 					            $.ajax({
 					              type: "POST",
-					              url: '{{ route('comentario.create') }}',
+					              url: '{{ route('AulaComentario.create') }}',
 					              data: $("#comentario-form_{{ $i }}").serialize(),
 					              success: function(data, status, request){
-					              		$("#box-comment_{{ $i }}").append('<div class="timeline-item clearfix"><div class="timeline-info"><img alt="Susant Avatar" src="{{ asset($aluno->avatar) }}"></div><div class="widget-box transparent"><div class="widget-header widget-header-small"><h5 class="widget-title smaller"><a href="#" class="blue">{{ $aluno->nome }}</a><span class="grey"> comentou...</span></h5></div><div class="widget-body"><div class="widget-main">'+$("#comentario_{{ $i }}").val()+'</div></div></div></div>"');
+					              		$("#box-comment_{{ $i }}").append('<div class="timeline-item clearfix"><div class="timeline-info"><img alt="Susant Avatar" src="{{ asset($aluno->avatar) }}"></div><div class="widget-box transparent"><div class="widget-header widget-header-small"><h5 class="widget-title smaller"><a href="#" class="blue">{{ $aluno->nome }}</a><span class="grey"> comentou agora</span></h5></div><div class="widget-body"><div class="widget-main">'+$("#comentario_{{ $i }}").val()+'</div></div></div></div>"');
 					              		$("#comentario_{{ $i }}").val("");
 										var objDiv = document.getElementById("box-comment_{{ $i }}");
-										objDiv.scrollTop = objDiv.scrollHeight;				              		
+										objDiv.scrollTop = objDiv.scrollHeight;
+										$("#enviar_{{ $i }}").prop("disabled",false);				              		
 					              }                   
 					            });		            			
 	            		});
+		            	
+		            	setInterval(function(){
+					            $.ajax({
+					              type: "GET",                     		              
+					              url: '{{ route('aula.get.comentario') }}',
+					              data: { 
+					              		last:$("input[name=last_time_{{$aula->id}}]").val(), 
+					              		user_id:{{ $aluno->user_id }}, 
+					              		aula_id:{{ $aula->id }}
+					              },
+					              success: function(data, status, request){
+					              		console.log(request.responseJSON);
+					              		if(request.responseJSON.items.length > 0){
+							              		request.responseJSON.items.forEach(function(item, index){
+							              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0)
+							              			{
+								              			$("#box-comment_{{ $i }}").append(item.toString());
+								              			$("input[name=last_time_{{$aula->id}}").val(request.responseJSON.last_time);
+								              		}
+							              		});					              							              			
+					              		}
+
+					              }                   
+					            });
+					    }, 2500);	            		
 	            @endforeach
             });
 
