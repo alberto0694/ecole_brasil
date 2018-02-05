@@ -38,7 +38,7 @@
 									@endforeach
 							</select>
 						</div>
-					</div>					
+					</div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Descricão </label>
 
@@ -114,9 +114,9 @@
 									<option selected value="40">IATA parcelado</option>
 								@endif
 							</select>
-						</div>					
-					</div>	
-					@if($agenda->transacao != 4 && $agenda->transacao != 39)				
+						</div>
+					</div>
+					@if($agenda->transacao != 4 && $agenda->transacao != 39)
 						<div class="form-group parcelas-class">
 							<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Número de Parcelas </label>
 
@@ -193,6 +193,7 @@
 @section('last-body')
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
     <script type="text/javascript">
         jQuery(function($){
         	$("#transacao").change(function(){
@@ -203,6 +204,12 @@
         			$("#max_parcelas").val("0");
         		}
         	});
+
+			$('#valor').priceFormat({
+			    prefix: '',
+			    thousandsSeparator: '',
+			    clearOnEmpty: true
+			});
         	//VALIDATOR JQUERY
         	$("#editar-agenda").validate({
 						rules: {

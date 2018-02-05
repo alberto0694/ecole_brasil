@@ -51,47 +51,47 @@
 }
 </style>
 	<div class="row" style="margin-top: 10px">
-		<div class="col-md-2 col-md-offset-5 col-xs-12">
+		<div class="col-md-2 col-md-offset-5 col-xs-12" align="center" style="text-align:center">
 			<a href="{{ route('ebook_pagamento', $ebook->id) }}">
 				<img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($ebook->card) }}">
 				<label align="center"> {{ $ebook->titulo }} </label>
 			</a>
-		</div>		
+		</div>
 	</div>
   <div class="row" style="margin: 5px; margin-top: 20px">
-      <form id="pagamento-aluno" role="form" action="" method="post">        
+      <form id="pagamento-aluno" role="form" action="" method="post">
         <div class="row " id="step-1">
           <div class="col-md-6 col-xs-12 col-md-offset-3">
             <div class="col-md-12">
               <h3> Comprar ebook {{ $ebook->titulo }} </h3>
-     
+
               <div class="row" style="padding-left: 15px">
                   <div class="form-group">
                       <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Ebook</label>    
+                        <label class="control-label">Ebook</label>
                       </div>
-                    
+
                       <div class="col-md-12" style="padding: 0">
                           <input required name="ebook_nome" id="ebook_nome" type="text" class="form-control" disabled="" name="" value="{{ $ebook->titulo }}">
                       </div>
-                  </div>    
+                  </div>
                   <div class="form-group">
                       <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Valor do Ebook</label>    
+                        <label class="control-label">Valor do Ebook</label>
                       </div>
-                    
+
                       <div class="col-md-12" style="padding: 0">
                           <input required name="valor_curso" id="valor_curso" type="text" class="form-control" disabled="" name="" value="{{ $ebook->valor }}">
                       </div>
-                  </div>                 
+                  </div>
               </div>
               @if($ebook->max_parcelas > 0)
 	              <div class="row parcelas-class" style="padding-left: 15px">
 	                  <div class="form-group">
 	                      <div class="row" style="padding-left: 15px; margin-top: 10px">
-	                        <label class="control-label">Parcelar em:</label>    
+	                        <label class="control-label">Parcelar em:</label>
 	                      </div>
-	                    
+
 	                      <div class="col-md-12" style="padding: 0">
 	                          <select class="col-md-3 form-control" name="num_parcelas" id="num_parcelas">
 	                          	<?php $array = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6); ?>
@@ -100,11 +100,11 @@
 	                          			<option value="{{ $item }}" > {{ $item }}x </option>
 	                          		@endif
 	                          	@endforeach
-	                          </select>                
-	                        
+	                          </select>
+
 	                      </div>
-	                  </div>                 
-	              </div>  
+	                  </div>
+	              </div>
 	          @else
 	          	<input type="hidden" name="num_parcelas" id="num_parcelas" value="00">
 	          @endif
@@ -124,20 +124,20 @@
                 <div class="form-group">
                   <label class="control-label">Número do Cartão</label>
                   <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o número do cartão"  />
-                </div>  
+                </div>
               </div>
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                 <div class="col-md-4 form-group" style="padding: 0">
                   <label class="control-label">Códido de segurança do Cartão</label>
                   <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="text"  class="form-control" placeholder="CVV"  />
-                </div> 
+                </div>
               </div>
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                   <div class="form-group">
                       <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Mês</label>    
+                        <label class="control-label">Mês</label>
                       </div>
-                    
+
                       <div class="col-md-4" style="padding: 0">
                           <select class="col-md-3 form-control" name="mes_cartao" id="mes_cartao">
                             <option value="01">Janeiro (01)</option>
@@ -152,17 +152,17 @@
                             <option value="10">Outubro (10)</option>
                             <option value="11">Novembro (11)</option>
                             <option value="12">Dezembro (12)</option>
-                          </select>                
-                        
+                          </select>
+
                       </div>
-                  </div>                 
-              </div>  
+                  </div>
+              </div>
               <div class="row" style="padding-left: 15px">
                   <div class="form-group">
                       <div class="row" style="padding-left: 15px">
-                        <label class="control-label">Ano</label>    
+                        <label class="control-label">Ano</label>
                       </div>
-                    
+
                       <div class="col-md-4" style="padding: 0">
                           <select class="col-md-3 form-control" name="ano_cartao" id="ano_cartao">
                             <option value="18">2018</option>
@@ -179,10 +179,10 @@
                             <option value="29">2029</option>
                             <option value="30">2030</option>
                             <option value="31">2031</option>
-                          </select>                
-                        
+                          </select>
+
                       </div>
-                  </div>                
+                  </div>
               </div>
               <input required type="hidden" name="transacao" id="transacao" value="00">
               <input required type="hidden" name="modelo" id="modelo" value="D">
@@ -193,16 +193,16 @@
         </div>
       </form>
     </div>
-  </div>  
+  </div>
 <script src="{{ asset('assets/js/ace-elements.min.js') }}"></script>
-<script src="{{ asset('assets/js/ace.min.js') }}"></script>  
+<script src="{{ asset('assets/js/ace.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 <script type="text/javascript" charset="utf-8">
-$(document).ready(function () {    
+$(document).ready(function () {
     $("#comprar_curso").click(function(){
-          
+
           $.dialog({
               title: '',
               columnClass: 'col-md-6 col-md-offset-3',
@@ -219,12 +219,12 @@ $(document).ready(function () {
                           'Access-Control-Allow-Origin': '*',
                           'Access-Control-Allow-Headers': '*',
                           'Access-Control-Allow-Credentials': 'true'
-                      },                      
+                      },
                       crossDomain: true,
                       contentType: "application/json",
                       url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
                       data: JSON.stringify({
-                            
+
                             ano:parseInt($("#ano_cartao").val()),
                             conftxn:"S",
                             cvc2:parseInt($("#seguranca_cartao").val()),
@@ -236,7 +236,7 @@ $(document).ready(function () {
                             portador:$("#nome_cartao").val(),
                             total:parseFloat($("#valor_curso").val()),
                             transacao:parseInt($("#transacao").val())
-                      })                      
+                      })
                   }).done(function (response) {
                       // self.setContentAppend('<div>Pagamento confirmado!</div>');
                       // self.setContentAppend('<div>Gerando Acessos...</div>');
@@ -257,12 +257,12 @@ $(document).ready(function () {
                                           if(request.responseJSON.status == 'success'){
                                               self.setContent('<div class="col-md-10 col-md-offset-1"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Ebook enviado para seu e-mail com sucesso!</label><br><label style="text-align: center; width: 100%"></label><br><label style="text-align: center; width: 100%">'+ $("#email").val() +'</label><br></div>');
                                           }
-                                      }                   
-                                    }); 
+                                      }
+                                    });
                               }
                           }
-                      }                  
-                  }                    
+                      }
+                  }
               },
               onContentReady: function(){
                   // this.setContentAppend('<div>Content ready!</div>');
@@ -279,7 +279,7 @@ $(document).ready(function () {
           //   contentType: "application/json",
           //   url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
           //   data: JSON.stringify({
-                  
+
           //         ano:parseInt($("#ano_cartao").val()),
           //         conftxn:"S",
           //         cvc2:parseInt($("#seguranca_cartao").val()),
@@ -292,7 +292,7 @@ $(document).ready(function () {
           //         total:parseFloat($("#valor_curso").val()),
           //         transacao:parseInt($("#transacao").val())
           //   }),
-          //   success: function(data, status, request){                  
+          //   success: function(data, status, request){
           //       if(request != null){
           //           if(request.responseJSON != null){ //SUCESSO
           //               if(request.responseJSON.codret != null){ //SUCESSO
@@ -306,11 +306,11 @@ $(document).ready(function () {
           //                               if(request.responseJSON.status == 'success'){
 
           //                               }
-          //                           }                   
-          //                         }); 
+          //                           }
+          //                         });
           //                   }
           //               }
-          //           }                  
+          //           }
           //       }
 
           //   //retorno de sucesso
@@ -326,16 +326,16 @@ $(document).ready(function () {
           //   //     "numcv": 5010978,
           //   //     "numpedido": 1
           //   // }
-          //   }                   
-          // }); 
+          //   }
+          // });
     });
-    
+
     $('.date-picker').datepicker({
       autoclose: true,
       todayHighlight: true,
         format: 'dd/mm/yyyy',
         language: 'pt-BR',
-        weekStart: 0        
+        weekStart: 0
     }).next().on(ace.click_event, function(){
       $(this).prev().focus();
     });

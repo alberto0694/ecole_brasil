@@ -418,6 +418,37 @@
           display: inherit;
       }
 
+      @keyframes flickerAnimation {
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-o-keyframes flickerAnimation{
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-moz-keyframes flickerAnimation{
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-webkit-keyframes flickerAnimation{
+        0%   { opacity:1; }
+        50%  { opacity:0; }
+        100% { opacity:1; }
+      }
+      #loading-background{
+          background-color: rgba(239, 64, 96, 1);
+          padding-bottom: 150px;
+          padding-top: 150px;
+      }
+      #loading-admin-application-only {
+         -webkit-animation: flickerAnimation 1.5s infinite;
+         -moz-animation: flickerAnimation 1.5s infinite;
+         -o-animation: flickerAnimation 1.5s infinite;
+          animation: flickerAnimation 1.5s infinite;
+      }
       @media screen and (min-width: 768px) {
         .dropdown-menu,
         .dropdown-menu>li>a {
@@ -576,10 +607,20 @@
           </div><!-- /.container-fluid -->
         </nav>
 
-
-        @yield('content')
-
-
+        <div class="content-web-site" style="display:none">
+            @yield('content')
+        </div>
+        <div id="loading-background">
+          <div id="loading-admin-application-only">
+            <div class="row">
+                  <li class="hidden-xs hidden-sm">
+                      <a style="display: block; margin: 0 auto;" href="{{route('index')}}">
+                          <img src="{{asset('images/logo-ecole-load.png')}}" style="display: block; margin: 0 auto;">
+                      </a>
+                  </li>
+            </div>
+          </div>
+        </div>
         <footer>
             <div class="footer" id="footer">
                 @if ( !(\Route::current()->getName() == 'contato') )
@@ -714,6 +755,10 @@
         <script type="text/javascript">
           $(document).ready(function(){
               $('textarea').val('');
+          });
+          $(window).on('load', function(){
+              $(".content-web-site").fadeIn(1000);
+              $("#loading-admin-application-only").hide();
           });
         </script>
     </body>

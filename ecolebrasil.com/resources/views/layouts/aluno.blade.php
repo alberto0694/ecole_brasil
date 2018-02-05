@@ -101,6 +101,10 @@
             color: #FFF;
         }
 
+        .sidebar+.main-content {
+            margin-left: 300px;
+        }
+
         .no-skin .nav-list>li:hover>a {
             background-color: rgba(239, 64, 96, 1);
             color: #FFF;
@@ -241,7 +245,7 @@
                 try{ace.settings.loadState('main-container')}catch(e){}
             </script>
 
-            <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+            <div id="sidebar" style="width: 300px" class="sidebar responsive ace-save-state">
                 <script type="text/javascript">
                     try{ace.settings.loadState('sidebar')}catch(e){}
                 </script>
@@ -258,8 +262,8 @@
 
                     @foreach($aluno->agendas as $agenda)
                         @if($agenda->modelo == 'D')
-                            <li style="height: 70px">
-                                <a href="#" class="dropdown-toggle" style="height: 70px">
+                            <li>
+                                <a href="#" class="dropdown-toggle">
                                     <i class="menu-icon fa fa-book"></i>
                                     <span class="menu-text">
                                         {{ $agenda->curso->nome }}

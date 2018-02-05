@@ -24,15 +24,15 @@
 								@if($acesso->link != '0')
 									<iframe width="100%" allowfullscreen  style="min-height: 300px" src="{{ $acesso->link }}"></iframe>
 								@endif
-								<a style="color:white" download="" href="{{ asset($acesso->file) }}">
+								<a style="color:white" download="{{$acesso->titulo}}" href="{{ asset($acesso->file) }}">
 									<button id="" class="btn btn-pink">
 											Download Arquivo
-									</button>							
-								</a>	
+									</button>
+								</a>
 							</div>
 						</div>
 					</div>
 			@endforeach
 		</div>
-	</div>			
+	</div>
 @endsection
