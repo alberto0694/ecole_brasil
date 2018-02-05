@@ -67,7 +67,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Valor (Se for gratuito informe 0,00) </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Valor </label>
 
 						<div class="col-sm-6">
 							<input value="{{ $agenda->valor }}" id="valor" name="valor" type="text" class="col-xs-12 col-sm-6" />
@@ -165,22 +165,12 @@
 							</select>
 						</div>
 					</div>
-
-
-{{-- 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card</label>
-						@component('components.upfile', ['nameId' => 'avatar', 'src' => $agenda->avatar])
-						@endcomponent
-					</div>
-					<hr> --}}
-
 					<div class="clearfix form-actions">
 						<div class="col-md-offset-3 col-md-9">
 							<button id="confirm-form" class="btn btn-info" type="submit">
 								<i class="ace-icon fa fa-check bigger-110"></i>
 								Cadastrar
 							</button>
-
 							&nbsp; &nbsp; &nbsp;
 							<button id="cancel-form" class="btn" type="reset">
 								<i class="ace-icon fa fa-undo bigger-110"></i>
@@ -205,30 +195,16 @@
         		}
         	});
 
-			$('#valor').priceFormat({
-			    prefix: '',
-			    thousandsSeparator: '',
-			    clearOnEmpty: true
-			});
+					$('#valor').priceFormat({
+					    prefix: '',
+					    thousandsSeparator: '',
+					    clearOnEmpty: false
+					});
         	//VALIDATOR JQUERY
         	$("#editar-agenda").validate({
-						rules: {
-							// nome: {
-							// 	required: true,
-							// 	minlength: 2
-							// },
-							// modo: {
-							// 	required: true
-							// }
-						},
-						messages: {
-							//nome: "Por Favor, informe o nome do curso",
-							//modo: "Por Favor, informe o modo do curso"
-						},
+						rules: {},
+						messages: {},
 						submitHandler: function(form) {
-
-							// normalizeVideo("input[name=apresentacao_video]");
-
 							$.confirm({
 							    content: function(){
 							        var self = this;
@@ -254,43 +230,42 @@
 								}
 							});
 						}
-			});
+					});
 
         	$("#cancel-form").click(function(){
-					$.confirm({
-						title: 'Atenção!',
-						content: 'Deseja Cancelar? (Voce poderá perder dados)',
-					    buttons: {
-					        Sim: function(helloButton){
-					            document.location.href = "{{ route('administrador.agenda.index') }}"
-					        },
-					        Nao:{
-					        	text:"Não"
-					        }
-					    }
-					});
+						$.confirm({
+							title: 'Atenção!',
+							content: 'Deseja Cancelar? (Voce poderá perder dados)',
+						    buttons: {
+						        Sim: function(helloButton){
+						            document.location.href = "{{ route('administrador.agenda.index') }}"
+						        },
+						        Nao:{
+						        	text:"Não"
+						        }
+						    }
+						});
         	});
-
 
         	//ckeditor
         	$('textarea').ckeditor();
 
         	//EVENTOS ONCHANGE FILES
-			var x = document.getElementsByClassName("readFileBase64");
-			for (var i = 0; i < x.length; i++) {
-			    x[i].addEventListener("change", readFile);
-			}
+					var x = document.getElementsByClassName("readFileBase64");
+					for (var i = 0; i < x.length; i++) {
+					    x[i].addEventListener("change", readFile);
+					}
 
-			//DATA-PICKER
-			$('.date-picker').datepicker({
-				autoclose: true,
-				todayHighlight: true,
-		    	format: 'dd/mm/yyyy',
-		    	language: 'pt-BR',
-		    	weekStart: 0
-			}).next().on(ace.click_event, function(){
-				$(this).prev().focus();
-			});
+					//DATA-PICKER
+					$('.date-picker').datepicker({
+						autoclose: true,
+						todayHighlight: true,
+				    	format: 'dd/mm/yyyy',
+				    	language: 'pt-BR',
+				    	weekStart: 0
+					}).next().on(ace.click_event, function(){
+						$(this).prev().focus();
+					});
 
         });
 

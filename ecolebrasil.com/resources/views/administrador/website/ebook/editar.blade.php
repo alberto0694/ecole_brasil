@@ -21,8 +21,8 @@
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card </label>
             @component('components.upfile', ['nameId' => 'card', 'src' => $ebook->card])
-            @endcomponent                     
-          </div>    
+            @endcomponent
+          </div>
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Valor </label>
 
@@ -71,9 +71,9 @@
                   <option selected value="40">IATA parcelado</option>
                 @endif
               </select>
-            </div>          
-          </div>  
-          @if($ebook->transacao != 4 && $ebook->transacao != 39)        
+            </div>
+          </div>
+          @if($ebook->transacao != 4 && $ebook->transacao != 39)
             <div class="form-group parcelas-class">
               <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Número de Parcelas </label>
 
@@ -134,6 +134,7 @@
 @section('last-body')
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
     <script type="text/javascript">
         jQuery(function($){
           $("#transacao").change(function(){
@@ -144,25 +145,16 @@
               $("#max_parcelas").val("0");
             }
           });
+          $('#valor').priceFormat({
+              prefix: '',
+              thousandsSeparator: '',
+              clearOnEmpty: false
+          });
           //VALIDATOR JQUERY
           $("#novo-ebook").validate({
-            rules: {
-              // nome: {
-              //  required: true,
-              //  minlength: 2
-              // },
-              // modo: {
-              //  required: true
-              // }
-            },
-            messages: {
-              //nome: "Por Favor, informe o nome do curso",
-              //modo: "Por Favor, informe o modo do curso"
-            },
+            rules: {},
+            messages: {},
             submitHandler: function(form) {
-
-              // normalizeVideo("input[name=apresentacao_video]");
-
               $.confirm({
                   content: function(){
                       var self = this;
@@ -188,38 +180,38 @@
                 }
               });
             }
-      });
+          });
 
           $("#cancel-form").click(function(){
-          $.confirm({
-            title: 'Atenção!',
-            content: 'Deseja Cancelar? (Voce poderá perder dados)',
-              buttons: {
-                  Sim: function(helloButton){
-                      document.location.href = "{{ route('administrador.ebook.index') }}"
-                  },
-                  Nao:{
-                    text:"Não"
-                  }
-              }
-          });
+            $.confirm({
+              title: 'Atenção!',
+              content: 'Deseja Cancelar? (Voce poderá perder dados)',
+                buttons: {
+                    Sim: function(helloButton){
+                        document.location.href = "{{ route('administrador.ebook.index') }}"
+                    },
+                    Nao:{
+                      text:"Não"
+                    }
+                }
+            });
           });
           //EVENTOS ONCHANGE FILES
-      var x = document.getElementsByClassName("readFileBase64");
-      for (var i = 0; i < x.length; i++) {
-          x[i].addEventListener("change", readFile);
-      }
+          var x = document.getElementsByClassName("readFileBase64");
+          for (var i = 0; i < x.length; i++) {
+              x[i].addEventListener("change", readFile);
+          }
 
-      //DATA-PICKER
-      $('.date-picker').datepicker({
-        autoclose: true,
-        todayHighlight: true,
-          format: 'dd/mm/yyyy',
-          language: 'pt-BR',
-          weekStart: 0
-      }).next().on(ace.click_event, function(){
-        $(this).prev().focus();
-      });
+          //DATA-PICKER
+          $('.date-picker').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+              format: 'dd/mm/yyyy',
+              language: 'pt-BR',
+              weekStart: 0
+          }).next().on(ace.click_event, function(){
+            $(this).prev().focus();
+          });
 
         });
 

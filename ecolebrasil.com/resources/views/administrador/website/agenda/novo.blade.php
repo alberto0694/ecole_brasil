@@ -62,7 +62,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Valor (Se for gratuito informe 0,00) </label>
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Valor </label>
 
 						<div class="col-sm-6">
 							<input id="valor" name="valor" type="text" class="col-xs-12 col-sm-6" />
@@ -134,6 +134,7 @@
     <script type="text/javascript">
         jQuery(function($){
         	$("#max_parcelas").val("0");
+
         	$("#transacao").change(function(){
         		if( ($(this).val() != '04') && ($(this).val() != '39')){
         			$(".parcelas-class").show();
@@ -143,92 +144,78 @@
         		}
         	});
 
-			$('#valor').priceFormat({
-			    prefix: '',
-			    thousandsSeparator: '',
-			    clearOnEmpty: true
-			});
-        	//VALIDATOR JQUERY
-        	$("#nova-agenda").validate({
-						rules: {
-							// nome: {
-							// 	required: true,
-							// 	minlength: 2
-							// },
-							// modo: {
-							// 	required: true
-							// }
-						},
-						messages: {
-							//nome: "Por Favor, informe o nome do curso",
-							//modo: "Por Favor, informe o modo do curso"
-						},
+					$('#valor').priceFormat({
+					    prefix: '',
+					    thousandsSeparator: '',
+					    clearOnEmpty: false
+					});
+
+		    	//VALIDATOR JQUERY
+		    	$("#nova-agenda").validate({
+						rules: {},
+						messages: {},
 						submitHandler: function(form) {
-
-							// normalizeVideo("input[name=apresentacao_video]");
-
 							$.confirm({
-							    content: function(){
-							        var self = this;
-							        return $.ajax({
-											  type: "POST",
-											  url: '{{ route('agenda.create') }}',
-											  data: $("#nova-agenda").serialize(),
-											  success: function(){
-													$.alert({
-													    title: 'Sucesso!',
-													    content: 'Agenda cadastrada com sucesso!',
-													    buttons:{
-													    	ok:function(){
-													    		window.location.href = "{{ route('administrador.agenda.index') }}";
-													    	}
-													    }
-													});
-											  }
+						    content: function(){
+					        var self = this;
+					        return $.ajax({
+									  type: "POST",
+									  url: '{{ route('agenda.create') }}',
+									  data: $("#nova-agenda").serialize(),
+									  success: function(){
+											$.alert({
+											    title: 'Sucesso!',
+											    content: 'Agenda cadastrada com sucesso!',
+											    buttons:{
+											    	ok:function(){
+											    		window.location.href = "{{ route('administrador.agenda.index') }}";
+											    	}
+											    }
 											});
-							    },
+									  }
+									});
+						    },
 								contentLoaded: function(data, status, xhr){
 								    this.close();
 								}
 							});
 						}
-			});
-
-        	$("#cancel-form").click(function(){
-					$.confirm({
-						title: 'Atenção!',
-						content: 'Deseja Cancelar? (Voce poderá perder dados)',
-					    buttons: {
-					        Sim: function(helloButton){
-					            document.location.href = "{{ route('administrador.agenda.index') }}"
-					        },
-					        Nao:{
-					        	text:"Não"
-					        }
-					    }
 					});
-        	});
 
+		    	$("#cancel-form").click(function(){
+						$.confirm({
+							title: 'Atenção!',
+							content: 'Deseja Cancelar? (Voce poderá perder dados)',
+						    buttons: {
+						        Sim: function(helloButton){
+						            document.location.href = "{{ route('administrador.agenda.index') }}"
+						        },
+						        Nao:{
+						        	text:"Não"
+						        }
+						    }
+						});
+		    	});
 
-        	//ckeditor
-        	$('textarea').ckeditor();
+		    	//ckeditor
+		    	$('textarea').ckeditor();
 
-        	//EVENTOS ONCHANGE FILES
-			var x = document.getElementsByClassName("readFileBase64");
-			for (var i = 0; i < x.length; i++) {
-			    x[i].addEventListener("change", readFile);
-			}
+		      //EVENTOS ONCHANGE FILES
+					var x = document.getElementsByClassName("readFileBase64");
+					for (var i = 0; i < x.length; i++) {
+					    x[i].addEventListener("change", readFile);
+					}
 
-			//DATA-PICKER
-			$('.date-picker').datepicker({
-				autoclose: true,
-				todayHighlight: true,
-		    	format: 'dd/mm/yyyy',
-		    	language: 'pt-BR',
-		    	weekStart: 0
-			}).next().on(ace.click_event, function(){
-				$(this).prev().focus();
-			});
+					//DATA-PICKER
+					$('.date-picker').datepicker({
+						autoclose: true,
+						todayHighlight: true,
+				    	format: 'dd/mm/yyyy',
+				    	language: 'pt-BR',
+				    	weekStart: 0
+					}).next().on(ace.click_event, function(){
+						$(this).prev().focus();
+					});
 
         });
 

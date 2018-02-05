@@ -11,11 +11,11 @@ class Aula extends Model
 							'modulo_id',
 							'url_video',
 							'descricao_html'];
-							
+
 	public function modulo()
 	{
 		return $this->belongsTo('App\Modulo');
-	}	
+	}
 
 	public function comentarios()
 	{
@@ -29,6 +29,6 @@ class Aula extends Model
     	if($aula_comentario != null){
     		return $aula_comentario->created_at;
     	}
-    	return null;    	
-    }	
+    	return null;
+    }
 }
