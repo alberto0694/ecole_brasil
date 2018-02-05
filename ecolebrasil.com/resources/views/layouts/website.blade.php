@@ -758,7 +758,7 @@
           });
           $(window).on('load', function(){
               $(".content-web-site").fadeIn(1000);
-              $("#loading-admin-application-only").hide();
+              $("#loading-background").hide();
           });
         </script>
     </body>
