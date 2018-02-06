@@ -50,6 +50,26 @@ function getIdVimeo(url)
 }
 
 
+function validateFields(arr){
+  arr.forEach(function(item, index){
+
+    switch(item.type) {
+        case 'text':
+            if(item.element.val() === ''){
+              return
+            }
+            break;
+        case n:
+            code block
+            break;
+        default:
+            code block
+    }
+  });
+//   return true;
+}
+
+
 function getUrlFixed(url_param){
   var url = getIdYoutube( url_param );
   if(url == "0"){

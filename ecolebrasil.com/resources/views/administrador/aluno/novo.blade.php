@@ -116,94 +116,83 @@
     <script src="{{ asset('js/multiselect.js') }}"></script>
 
     <script type="text/javascript">
-    	$(window).load(function(){
-			$('.multiselect').multiselect();
-    	});
-        jQuery(function($){
-
-
-
-        	//VALIDATOR JQUERY
-        	$("#novo-aluno").validate({
-						rules: {
-							// nome: {
-							// 	required: true,
-							// 	minlength: 2
-							// },
-							// modo: {
-							// 	required: true
-							// }
-						},
-						messages: {
-							//nome: "Por Favor, informe o nome do curso",
-							//modo: "Por Favor, informe o modo do curso"
-						},
-						submitHandler: function(form) {
-
-							// normalizeVideo("input[name=apresentacao_video]");
-
-							$.confirm({
-							    content: function(){
-							        var self = this;
-							        return $.ajax({
-											  type: "POST",
-											  url: '{{ route('aluno.create') }}',
-											  data: $("#novo-aluno").serialize(),
-											  success: function(){
-													$.alert({
-													    title: 'Sucesso!',
-													    content: 'Aluno cadastrado com sucesso!',
-													    buttons:{
-													    	ok:function(){
-													    		window.location.href = "{{ route('administrador.aluno.index') }}";
-													    	}
-													    }
+		    	$(window).load(function(){
+							$('.multiselect').multiselect();
+		    	});
+	        jQuery(function($){
+	        	//VALIDATOR JQUERY
+	        	$("#novo-aluno").validate({
+							rules: {},
+							messages: {},
+							submitHandler: function(form) {
+								let arr = [
+									{ element:$("input[name=nome]"), type:'text' },
+									{ element:$("input[name=sobrenome]"), type:'text' }
+								];
+								if(validateFields(arr)){
+										$.confirm({
+									    content: function(){
+									        var self = this;
+									        return $.ajax({
+													  type: "POST",
+													  url: '{{ route('aluno.create') }}',
+													  data: $("#novo-aluno").serialize(),
+													  success: function(){
+															$.alert({
+															    title: 'Sucesso!',
+															    content: 'Aluno cadastrado com sucesso!',
+															    buttons:{
+															    	ok:function(){
+															    		window.location.href = "{{ route('administrador.aluno.index') }}";
+															    	}
+															    }
+															});
+													  }
 													});
-											  }
-											});
-							    },
-								contentLoaded: function(data, status, xhr){
-								    this.close();
+									    },
+											contentLoaded: function(data, status, xhr){
+											    this.close();
+											}
+										});
 								}
-							});
-						}
-			});
-
-        	$("#cancel-form").click(function(){
-					$.confirm({
-						title: 'Atenção!',
-						content: 'Deseja Cancelar? (Voce poderá perder dados)',
-					    buttons: {
-					        Sim: function(helloButton){
-					            document.location.href = "{{ route('administrador.aluno.index') }}"
-					        },
-					        Nao:{
-					        	text:"Não"
-					        }
-					    }
+							}
 					});
-        	});
+
+	      	$("#cancel-form").click(function(){
+						$.confirm({
+							title: 'Atenção!',
+							content: 'Deseja Cancelar? (Voce poderá perder dados)',
+						    buttons: {
+						        Sim: function(helloButton){
+						            document.location.href = "{{ route('administrador.aluno.index') }}"
+						        },
+						        Nao:{
+						        	text:"Não"
+						        }
+						    }
+						});
+	      	});
 
 
-        	//ckeditor
-        	$('textarea').ckeditor();
+	        //ckeditor
+	        $('textarea').ckeditor();
 
         	//EVENTOS ONCHANGE FILES
-			var x = document.getElementsByClassName("readFileBase64");
-			for (var i = 0; i < x.length; i++) {
-			    x[i].addEventListener("change", readFile);
-			}
+					var x = document.getElementsByClassName("readFileBase64");
+					for (var i = 0; i < x.length; i++) {
+					    x[i].addEventListener("change", readFile);
+					}
 
-			//DATA-PICKER
-			$('.date-picker').datepicker({
-				autoclose: true,
-				todayHighlight: true,
-		    	format: 'dd/mm/yyyy',
-		    	language: 'pt-BR',
-		    	weekStart: 0
-			}).next().on(ace.click_event, function(){
-				$(this).prev().focus();
-			});
+					//DATA-PICKER
+					$('.date-picker').datepicker({
+						autoclose: true,
+						todayHighlight: true,
+				    	format: 'dd/mm/yyyy',
+				    	language: 'pt-BR',
+				    	weekStart: 0
+					}).next().on(ace.click_event, function(){
+						$(this).prev().focus();
+					});
 
         });
 
