@@ -13,7 +13,6 @@
 					<input type="hidden" name="user_id" value="1">
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Nome </label>
-
 						<div class="col-sm-6">
 							<input id="nome" name="nome" type="text" class="col-xs-12 col-sm-6" />
 						</div>
@@ -129,6 +128,7 @@
 									{ element:$("input[name=nome]"), type:'text' },
 									{ element:$("input[name=sobrenome]"), type:'text' }
 								];
+								debugger;
 								if(validateFields(arr)){
 										$.confirm({
 									    content: function(){
@@ -154,6 +154,8 @@
 											    this.close();
 											}
 										});
+								}else{
+									alert('asmkdnasmkdnsmk');
 								}
 							}
 					});

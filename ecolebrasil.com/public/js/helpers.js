@@ -51,22 +51,26 @@ function getIdVimeo(url)
 
 
 function validateFields(arr){
+  debugger;
+  let result = true;
   arr.forEach(function(item, index){
 
     switch(item.type) {
         case 'text':
             if(item.element.val() === ''){
-              return
+              item.element.parent().parent().addClass('has-errors');
+              result = false;
+              return;
             }
             break;
-        case n:
-            code block
-            break;
-        default:
-            code block
+        // case n:
+        //     code block
+        //     break;
+        // default:
+        //     code block
     }
   });
-//   return true;
+  return result;
 }
 
 
