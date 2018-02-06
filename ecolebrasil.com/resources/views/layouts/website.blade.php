@@ -281,7 +281,6 @@
           border: none;
           margin-top: -1px;
           border-radius: 0px;
-
       }
 
       .newsletter-box {

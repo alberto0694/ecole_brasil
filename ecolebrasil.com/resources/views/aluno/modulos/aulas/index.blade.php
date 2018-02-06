@@ -1,17 +1,5 @@
 @extends('layouts.aluno')
 @section('content')
-	<style type="text/css">
-		.box-comment{
-				max-height: 400px;
-				overflow-x: hidden;
-				border: 1px solid;
-				border-radius: 3px;
-				color:rgba(239, 64, 96, 1);
-				padding: 3px;
-				width: 100%;
-				height: auto;
-		}
-	</style>
 	<div class="col-sm-12">
 		<div class="tabbable">
 			<ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">

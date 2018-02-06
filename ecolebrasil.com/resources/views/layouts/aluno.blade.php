@@ -26,6 +26,16 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap-duallistbox.min.css') }}" />
     </head>
     <style type="text/css">
+        .box-comment{
+                max-height: 400px;
+                overflow-x: hidden;
+                border: 1px solid;
+                border-radius: 3px;
+                color:rgba(239, 64, 96, 1);
+                padding: 3px;
+                width: 100%;
+                height: auto;
+        }
 
         .navbar {
             background: rgba(239, 64, 96, 1);

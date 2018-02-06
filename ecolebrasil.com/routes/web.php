@@ -272,7 +272,7 @@ Route::get('/cursos/{id}', 'WebsiteController@cursos')->name('cursos');
 Route::get('/br/deposing', 'WebsiteController@depoimentos')->name('depoimentos');
 Route::get('/br/school/see/faq/20', 'WebsiteController@faq')->name('faq');
 Route::get('/br/press', 'WebsiteController@imprensa')->name('imprensa');
-Route::get('/pagamento', 'WebsiteController@pagamento')->name('pagamento');
+Route::get('/pagamento', 'WebsiteController@pagamento')->name('pagamento'); //Agenda
 Route::get('/imprensa/materia/{id}', 'WebsiteController@materia')->name('materia');
 Route::get('/blog/post/{id}', 'WebsiteController@blog_post')->name('post_blog');
 Route::get('/br/consultants', 'WebsiteController@consultoras')->name('consultoras');
