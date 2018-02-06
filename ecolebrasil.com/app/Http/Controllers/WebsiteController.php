@@ -25,7 +25,7 @@ class WebsiteController extends Controller
 {
 
     public function sendContato(Request $request)
-    {        
+    {
         $data = [   "contato" => $request->contato,
                     "telefone" => $request->telefone,
                     "cidade" => $request->cidade,
@@ -38,12 +38,12 @@ class WebsiteController extends Controller
 
         Mail::send('emails.contato', $data, function ($message) {
             $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
-            $message->to('contato@ecolebrasil.com');
-        });        
+            $message->to('contato@ecolebrasil.com')->cc('admin@ecolebrasil.com');
+        });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
         Session::flash('alert-class', 'alert-success');
-        return redirect(route('contato'));        
+        return redirect(route('contato'));
     }
 
     public function home()
@@ -62,49 +62,49 @@ class WebsiteController extends Controller
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.escola', compact('cursos_menu','formacoes'));
-    }   
+    }
 
     public function manifesto()
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.manifesto', compact('cursos_menu','formacoes'));
-    }   
+    }
 
     public function equipe()
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.equipe', compact('cursos_menu','formacoes'));
-    }       
+    }
 
     public function restrito()
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
     	return view('website.restrito', compact('cursos_menu','formacoes'));
-    }    
+    }
 
     public function certificacao()
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
     	return view('website.certificacao', compact('cursos_menu','formacoes'));
-    }    
+    }
 
     public function sou_ecole()
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
     	return view('website.sou_ecole', compact('cursos_menu','formacoes'));
-    }   
+    }
 
     public function contato()
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
     	return view('website.contato', compact('cursos_menu','formacoes'));
-    }   
+    }
 
     public function cursos(Request $request, $id)
     {
@@ -112,7 +112,7 @@ class WebsiteController extends Controller
         $cursos_menu = Curso::all();
         $curso = Curso::find( $id );
     	return view('website.cursos', compact('cursos_menu','formacoes', 'curso'));
-    }    
+    }
 
     public function depoimentos()
     {
@@ -154,7 +154,7 @@ class WebsiteController extends Controller
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.blog', compact('cursos_menu','formacoes', 'blogs'));
-    }    
+    }
 
     public function blog_post($id)
     {
@@ -162,7 +162,7 @@ class WebsiteController extends Controller
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.blog_post', compact('cursos_menu','formacoes', 'blog'));
-    }    
+    }
 
     public function materia($id)
     {
@@ -186,10 +186,10 @@ class WebsiteController extends Controller
         }
         if($curso_id){
             $agendas = Curso::find($curso_id)->agendas;
-            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));            
+            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));
         }
         // dd($agendas);
-        
+
     }
 
     public function crudAlunoAfterPayment(Request $request)
@@ -197,7 +197,7 @@ class WebsiteController extends Controller
         // dd($request);
         $user = User::where('email', '=', $request['email'])->first();
         $permission = '';
-        
+
         if($request['modelo'] == 'D'){
             $permission = 'AL';
         }
@@ -212,7 +212,7 @@ class WebsiteController extends Controller
                 'email' => $request['email'],
                 'permission' => $permission,
                 'password' => bcrypt($request['password']),
-            ]); 
+            ]);
         }else{
             return response()->json(['status' => 'user_exists'], 200);
         }
@@ -226,7 +226,7 @@ class WebsiteController extends Controller
             ]);
         $agenda = Agenda::find( $request['agenda_id'] );
         $aluno->addAgenda( $agenda );
-        
+
         $data = [   "nome" => $request->nome,
                     "login" => $request->email,
                     "password" => $request->password,
@@ -237,16 +237,16 @@ class WebsiteController extends Controller
         Mail::send('emails.aluno', $data, function ($message) {
             $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
             $message->to($request['email']);
-        });         
+        });
 
-        return response()->json(['status' => 'success'], 200);    
+        return response()->json(['status' => 'success'], 200);
     }
 
     public function consultoras()
     {
         $consultoras = Consultora::orderBy('created_at', 'asc')->get();
         $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();        
+        $cursos_menu = Curso::all();
         return view('website.consultoras', compact('consultoras', 'formacoes', 'cursos_menu'));
     }
 
@@ -254,28 +254,28 @@ class WebsiteController extends Controller
     {
         Auth::guard()->logout();
         $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();        
+        $cursos_menu = Curso::all();
         return view('website.ead', compact('formacoes', 'cursos_menu'));
-    }    
+    }
 
     public function ebook(Request $request)
     {
         $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();        
+        $cursos_menu = Curso::all();
         $ebooks = Ebook::all();
         return view('website.ebook', compact('formacoes', 'cursos_menu', 'ebooks'));
-    }        
+    }
 
     public function ebook_pagamento(Request $request, $id)
     {
           $ebook = Ebook::find( $id );
           $formacoes = Formacao::all();
-          $cursos_menu = Curso::all(); 
+          $cursos_menu = Curso::all();
           return view('website.pagamento_ebook', compact('formacoes', 'cursos_menu', 'ebook'));
     }
 
     public function ebook_email(Request $request, $id)
-    { 
+    {
         $ebook = Ebook::find( $id );
         $data = ["ebook" => asset($ebook->file)];
 
@@ -284,9 +284,9 @@ class WebsiteController extends Controller
         Mail::send('emails.ebook', $data, function ($message) {
             $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
             $message->to($request['email']);
-        });         
+        });
           return view('website.pagamento_ebook', compact('formacoes', 'cursos_menu', 'ebook'));
-    }    
+    }
 
 
 }
