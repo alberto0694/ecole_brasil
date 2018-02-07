@@ -234,9 +234,9 @@ class WebsiteController extends Controller
                 ];
 
 
-        Mail::send('emails.aluno', $data, function ($message) {
+        Mail::send('emails.aluno', $data, function ($message) use ($request)  {
             $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
-            $message->to($data['login']);
+            $message->to($request['email']);
         });
 
         return response()->json(['status' => 'success'], 200);
@@ -281,7 +281,7 @@ class WebsiteController extends Controller
 
         Contato::create( $request->all() );
 
-        Mail::send('emails.ebook', $data, function ($message) {
+        Mail::send('emails.ebook', $data, function ($message) use ($request) {
             $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
             $message->to($request['email']);
         });

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ebook;
+use App\Ebook;
 use Illuminate\Http\Request;
 
 class EbookController extends Controller
