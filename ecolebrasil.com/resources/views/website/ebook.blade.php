@@ -7,7 +7,7 @@
 	@foreach($ebooks as $ebook)
 		<div class="col-md-4 col-xs-12" align="center" style="text-align:center">
 			<a href="{{ route('ebook_pagamento', $ebook->id) }}">
-				<img style=" margin: 0 auto; display: block; width: 65%; " src="{{ $ebook->card }}">
+				<img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($ebook->card) }}">
 				<label> {{ $ebook->titulo }} </label>
 			</a>
 			<div class="row">

@@ -221,7 +221,6 @@ $(document).ready(function () {
                   return $.ajax({
                       type: "POST",
                       dataType: 'json',
-                      // jsonp: true,
                       headers: {
                           'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
                           'Access-Control-Allow-Origin': '*',
@@ -232,26 +231,26 @@ $(document).ready(function () {
                       contentType: "application/json",
                       url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
                       data: JSON.stringify({
-
-                            ano:parseInt($("#ano_cartao").val()),
-                            conftxn:"S",
-                            cvc2:parseInt($("#seguranca_cartao").val()),
-                            filiacao:74450930,
-                            mes:parseInt($("#mes_cartao").val()),
-                            nrcartao:$("#numero_cartao").val(),
-                            numpedido:1,
-                            parcelas:parseInt($("#num_parcelas").val()),
-                            portador:$("#nome_cartao").val(),
-                            total:parseFloat($("#valor_curso").val()),
-                            transacao:parseInt($("#transacao").val())
+                          ano:parseInt($("#ano_cartao").val()),
+                          conftxn:"S",
+                          cvc2:parseInt($("#seguranca_cartao").val()),
+                          filiacao:74450930,
+                          mes:parseInt($("#mes_cartao").val()),
+                          nrcartao:$("#numero_cartao").val(),
+                          numpedido:1,
+                          parcelas:parseInt($("#num_parcelas").val()),
+                          portador:$("#nome_cartao").val(),
+                          total:parseFloat($("#valor_curso").val()),
+                          transacao:parseInt($("#transacao").val())
                       })
                   }).done(function (response) {
-                      // self.setContentAppend('<div>Pagamento confirmado!</div>');
+                      // self.setContentAppend('<div>Efetuando pagamento...</div>');
                       // self.setContentAppend('<div>Gerando Acessos...</div>');
                   });
               },
               contentLoaded: function(data, status, request){
                   var self = this;
+                  debugger;
                   if(request != null){
                       if(request.responseJSON != null){ //SUCESSO
                           if(request.responseJSON.codret != null){ //SUCESSO
