@@ -31,7 +31,7 @@
                 overflow-x: hidden;
                 border: 1px solid;
                 border-radius: 3px;
-                color:rgba(239, 64, 96, 1);
+                color:rgb(193, 193, 193);
                 padding: 3px;
                 width: 100%;
                 height: auto;

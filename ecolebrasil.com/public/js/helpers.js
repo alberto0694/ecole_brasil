@@ -1,5 +1,4 @@
 function readFile() {
-  // debugger;
   var targetImg = this.parentElement.getElementsByClassName("img_result")[0];
   var targetb64 = this.parentElement.getElementsByClassName("b64_result")[0];
 
@@ -15,6 +14,14 @@ function readFile() {
     FR.readAsDataURL( this.files[0] );
   }
 
+}
+
+function validateEmail(email) {
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+  {
+    return (true);
+  }
+  return (false);
 }
 
 function getIdYoutube(url)
@@ -49,27 +56,73 @@ function getIdVimeo(url)
     }
 }
 
+function isBase64(str) {
+    try {
+        return btoa(atob(str)) == str;
+    } catch (err) {
+        return false;
+    }
+}
 
 function validateFields(arr){
-  debugger;
-  let result = true;
+  let result = {status: true, element:null};
   arr.forEach(function(item, index){
-
     switch(item.type) {
         case 'text':
             if(item.element.val() === ''){
-              item.element.parent().parent().addClass('has-errors');
-              result = false;
-              return;
+              result.status = false;
+              result.element = item.element;
+              result.element.parent().parent().addClass('has-errors');
+            }else{
+              item.element.parent().parent().removeClass('has-errors');
             }
             break;
-        // case n:
-        //     code block
-        //     break;
-        // default:
-        //     code block
+        case 'textarea':
+            if(item.element.val() === ''){
+              result.status = false;
+              result.element = item.element;
+              result.element.parent().parent().addClass('has-errors-textarea');
+            }else{
+              item.element.parent().parent().removeClass('has-errors-textarea');
+            }
+            break;
+        case 'email':
+            if(!validateEmail(item.element.val())){
+              result.status = false;
+              result.element = item.element;
+              result.element.parent().parent().addClass('has-errors');
+            }else{
+              item.element.parent().parent().removeClass('has-errors');
+            }
+            break;
+        case 'file':
+            if(item.element[0].defaultValue.indexOf('data:') != 0){
+              result.status = false;
+              result.element = item.element;
+              result.element.parent().parent().addClass('has-errors');
+            }else{
+              item.element.parent().parent().removeClass('has-errors');
+            }
+            break;
+        case 'select':
+
+            if(item.element[0].length == 0){
+              result.status = false;
+              result.element = item.element;
+              result.element.parent().parent().addClass('has-errors');
+            }else{
+              item.element.parent().parent().removeClass('has-errors');
+            }
+            break;
     }
   });
+
+  if(result.element){
+    result.element.parent().parent().addClass('has-errors');
+  }
+  if(!result.status){
+    $(document).scrollTop( 0 );
+  }
   return result;
 }
 

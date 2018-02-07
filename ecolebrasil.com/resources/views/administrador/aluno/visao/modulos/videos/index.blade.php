@@ -1,21 +1,9 @@
 @extends('layouts.administrador')
 @section('content')
-	<style type="text/css">
-		.box-comment{
-				max-height: 400px; 
-				overflow-x: hidden; 
-				border: 1px solid; 
-				border-radius: 3px; 
-				color:rgba(239, 64, 96, 1);
-				padding: 3px;
-				width: 100%;
-				height: auto;
-		}		
-	</style>
 	<div class="col-sm-12">
 		<div class="tabbable">
 			<ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">
-				<?php 	$i = 0; 
+				<?php 	$i = 0;
 						$class = "true";
 						$active = "active";
 				?>
@@ -32,7 +20,7 @@
 			</ul>
 
 			<div class="tab-content">
-				<?php 	$i = 0; 
+				<?php 	$i = 0;
 						$class = "active";
 				?>
 				@foreach($videos as $video)
@@ -52,10 +40,10 @@
 										@if($video->comentarios->count() > 0)
 												@foreach($video->comentarios as $comentario)
 													{!! $comentario->item !!}
-												@endforeach		
+												@endforeach
 										@else
 											<h5>Sem comentários. Seja o primeiro!</h5>
-										@endif			
+										@endif
 								</div>
 								<hr>
 								<form id="comentario-form_{{ $i }}">
@@ -75,7 +63,7 @@
 													<div class="widget-main">
 														<textarea rows="3" id="comentario_{{ $i }}" type="text" name="comentario" style="width: 100%; height: 100%">
 														</textarea>
-														<button type="button" id="enviar_{{ $i }}" class="btn btn-info"><i class="ace-icon fa fa-reply icon-only bigger-150"></i></button>	
+														<button type="button" id="enviar_{{ $i }}" class="btn btn-info"><i class="ace-icon fa fa-reply icon-only bigger-150"></i></button>
 
 														<input type="hidden" name="user_id" value="{{ $administrador->user_id }}">
 														{{ csrf_field() }}
@@ -89,12 +77,12 @@
 
 					</div>
 					<input id="last_time_{{$video->id}}" type="hidden" name="last_time_{{$video->id}}" value="{{ $video->lastTime }}">
-				@endforeach				
+				@endforeach
 			</div>
 		</div>
 	</div>
 
-	
+
 @endsection
 @section('last-body')
 	<script type="text/javascript">
@@ -117,18 +105,18 @@
 					              		$("#comentario_{{ $i }}").val("");
 										var objDiv = document.getElementById("box-comment_{{ $i }}");
 										objDiv.scrollTop = objDiv.scrollHeight;
-										$("#enviar_{{ $i }}").prop("disabled",false);				              		
-					              }                   
-					            });		            			
+										$("#enviar_{{ $i }}").prop("disabled",false);
+					              }
+					            });
 	            		});
-		            	
+
 		            	setInterval(function(){
 					            $.ajax({
-					              type: "GET",                     		              
+					              type: "GET",
 					              url: '{{ route('video.get.comentario') }}',
-					              data: { 
-					              		last:$("input[name=last_time_{{$video->id}}]").val(), 
-					              		user_id:{{ $administrador->user_id }}, 
+					              data: {
+					              		last:$("input[name=last_time_{{$video->id}}]").val(),
+					              		user_id:{{ $administrador->user_id }},
 					              		video_id:{{ $video->id }}
 					              },
 					              success: function(data, status, request){
@@ -140,12 +128,12 @@
 								              			$("#box-comment_{{ $i }}").append(item.toString());
 								              			$("input[name=last_time_{{$video->id}}").val(request.responseJSON.last_time);
 								              		}
-							              		});					              							              			
+							              		});
 					              		}
 
-					              }                   
+					              }
 					            });
-					    }, 2500);	            		
+					    }, 2500);
 	            @endforeach
             });
 

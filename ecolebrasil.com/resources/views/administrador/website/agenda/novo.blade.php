@@ -144,11 +144,11 @@
         		}
         	});
 
-					$('#valor').priceFormat({
-					    prefix: '',
-					    thousandsSeparator: '',
-					    clearOnEmpty: false
-					});
+				$('#valor').priceFormat({
+				    prefix: '',
+				    thousandsSeparator: '',
+				    clearOnEmpty: false
+				});
 
 		    	//VALIDATOR JQUERY
 		    	$("#nova-agenda").validate({

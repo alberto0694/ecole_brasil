@@ -31,7 +31,7 @@ class HomeController extends Controller
         Auth::guard()->logout();
         // $request->session()->invalidate();
         return view('auth.professor');
-    }    
+    }
 
     public function redirect()
     {
@@ -41,10 +41,8 @@ class HomeController extends Controller
     		return redirect( route( 'administrador.dashboard' ) );
     	}else if($user->permission == 'PF'){
     		return redirect( route( 'professor.dashboard' ) );
-    	}else if($user->permission == 'AL'){
+    	}else if($user->permission == 'AL' || $user->permission == 'AR'){
     		return redirect( route( 'aluno.dashboard' ) );
-    	}else{
-            return redirect( route( 'aluno_restrito.dashboard' ) );
         }
     }
 }

@@ -115,9 +115,9 @@
     <script src="{{ asset('js/multiselect.js') }}"></script>
 
     <script type="text/javascript">
-		    	$(window).load(function(){
-							$('.multiselect').multiselect();
-		    	});
+	    	$(window).load(function(){
+				$('.multiselect').multiselect();
+	    	});
 	        jQuery(function($){
 	        	//VALIDATOR JQUERY
 	        	$("#novo-aluno").validate({
@@ -126,36 +126,41 @@
 							submitHandler: function(form) {
 								let arr = [
 									{ element:$("input[name=nome]"), type:'text' },
-									{ element:$("input[name=sobrenome]"), type:'text' }
+									{ element:$("input[name=sobrenome]"), type:'text' },
+									{ element:$("input[name=password]"), type:'text' },
+									{ element:$("input[name=email]"), type:'email' },
+									{ element:$("input[name=profissao]"), type:'text' },
+									{ element:$("input[name=nascimento]"), type:'text' },
+									{ element:$("input[name=avatar]"), type:'file' },
+									{ element:$("#multiselect_to_1"), type:'select' },
+									{ element:$("#descricao_html"), type:'textarea' },
 								];
-								debugger;
-								if(validateFields(arr)){
+								let response = validateFields(arr);
+								if(response.status){
 										$.confirm({
-									    content: function(){
-									        var self = this;
-									        return $.ajax({
-													  type: "POST",
-													  url: '{{ route('aluno.create') }}',
-													  data: $("#novo-aluno").serialize(),
-													  success: function(){
-															$.alert({
-															    title: 'Sucesso!',
-															    content: 'Aluno cadastrado com sucesso!',
-															    buttons:{
-															    	ok:function(){
-															    		window.location.href = "{{ route('administrador.aluno.index') }}";
-															    	}
-															    }
-															});
-													  }
-													});
-									    },
+										    content: function(){
+										        var self = this;
+										        return $.ajax({
+														  type: "POST",
+														  url: '{{ route('aluno.create') }}',
+														  data: $("#novo-aluno").serialize(),
+														  success: function(){
+																$.alert({
+																    title: 'Sucesso!',
+																    content: 'Aluno cadastrado com sucesso!',
+																    buttons:{
+																    	ok:function(){
+																    		window.location.href = "{{ route('administrador.aluno.index') }}";
+																    	}
+																    }
+																});
+														  }
+														});
+										    },
 											contentLoaded: function(data, status, xhr){
 											    this.close();
 											}
 										});
-								}else{
-									alert('asmkdnasmkdnsmk');
 								}
 							}
 					});

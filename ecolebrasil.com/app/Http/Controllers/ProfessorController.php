@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+    }
+
     public function dashboard()
     {
         return view('professor.dashboard');
@@ -21,14 +28,16 @@ class ProfessorController extends Controller
     public function create(Request $request)
     {
         $user = User::where('email', '=', $request['email'])->first();
+
         if($user == null){
             $user = User::create([
                 'name' => $request['nome'],
                 'email' => $request['email'],
                 'permission' => 'PF',
                 'password' => bcrypt($request['password']),
-            ]); 
-        }      
+            ]);
+        }
+
         $request = Controller::saveBase64($request, 'avatar', 'professores');
         $request = Controller::formatDate( $request, 'nascimento' );
         $request['user_id'] = $user->id;
@@ -45,10 +54,10 @@ class ProfessorController extends Controller
         if($request->password != ''){
             $data['password'] = bcrypt($request->password);
         }
-        $user->update($data);
 
+        $user->update($data);
         $request = Controller::saveBase64($request, 'avatar', 'professores', $professor->avatar);
-        $request = Controller::formatDate($request, 'nascimento');        
+        $request = Controller::formatDate($request, 'nascimento');
         $professor->update( $request->all() );
         return;
     }

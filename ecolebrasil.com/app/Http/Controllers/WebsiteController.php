@@ -7,6 +7,7 @@ use App\Curso;
 use App\Formacao;
 use App\Modulo;
 use App\Depoimento;
+use Carbon\Carbon;
 use App\Contato;
 use App\Agenda;
 use App\Imprensa;
@@ -177,12 +178,11 @@ class WebsiteController extends Controller
     {
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
-
         $agenda_id = $request->query('agenda_id');
         $curso_id = $request->query('curso_id');
         $agendas = null;
         if($agenda_id){
-            $agendas = Agenda::where('id', '=', $agenda_id)->get();
+            $agendas = Agenda::where('id', '=', $agenda_id)->where('data_inicio', '>', Carbon::today()->toDateString())->get();
             return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));
         }
         if($curso_id){
@@ -195,7 +195,6 @@ class WebsiteController extends Controller
 
     public function crudAlunoAfterPayment(Request $request)
     {
-        // dd($request);
         $user = User::where('email', '=', $request['email'])->first();
         $permission = '';
 
@@ -237,7 +236,7 @@ class WebsiteController extends Controller
 
         Mail::send('emails.aluno', $data, function ($message) {
             $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
-            $message->to($request['email']);
+            $message->to($data['login']);
         });
 
         return response()->json(['status' => 'success'], 200);

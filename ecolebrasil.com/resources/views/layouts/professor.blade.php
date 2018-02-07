@@ -287,7 +287,7 @@
                                     Agenda
                                 </a>
                                 <b class="arrow"></b>
-                            </li>                            
+                            </li>
                         </ul>
                         <ul class="submenu">
                             <li class="">

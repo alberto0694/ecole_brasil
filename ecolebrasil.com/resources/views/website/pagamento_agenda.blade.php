@@ -64,10 +64,6 @@
                   <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
                   <p>Dados de Compra</p>
                 </div>
-    {{--             <div class="stepwizard-step">
-                  <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                  <p>Pagamento</p>
-                </div> --}}
               </div>
           </div>
           <form id="pagamento-aluno" role="form" action="" method="post">
@@ -84,7 +80,7 @@
                           <div class="col-md-12" style="padding: 0">
                               <select class="col-md-3 form-control" name="agenda_id" id="agenda_id">
                                   @foreach($agendas as $agenda)
-                                    <option value="{{$agenda->id}}">{{$agenda->curso->nome}} - {{ $agenda->cidade }}</option>
+                                    <option value="{{$agenda->id}}">{{$agenda->curso->nome}} - {{ $agenda->cidade }} - {{ $agenda->formatedDate }}</option>
                                   @endforeach
                               </select>
 
@@ -112,7 +108,7 @@
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
                       <label class="control-label">Email</label>
-                      <input required maxlength="100" name="email" id="email" type="text"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
+                      <input required maxlength="100" name="email" id="email" type="email"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
                     </div>
                   </div>
                   <div class="row" style="padding-left: 15px; ">
@@ -169,13 +165,13 @@
                   <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                     <div class="form-group">
                       <label class="control-label">Número do Cartão</label>
-                      <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o número do cartão"  />
+                      <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="number"  class="form-control" placeholder="Informe o número do cartão"  />
                     </div>
                   </div>
                   <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                     <div class="col-md-4 form-group" style="padding: 0">
                       <label class="control-label">Códido de segurança do Cartão</label>
-                      <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="text"  class="form-control" placeholder="CVV"  />
+                      <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="number"  class="form-control" placeholder="CVV"  />
                     </div>
                   </div>
                   <div class="row" style="padding-left: 15px; margin-bottom: 10px">
@@ -263,6 +259,7 @@
 <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
 <script type="text/javascript" charset="utf-8">
 function  getAgenda(){
           $.ajax({
@@ -272,6 +269,11 @@ function  getAgenda(){
             success: function(data){
                 var jsonArr = JSON.parse( data );
                 $("#valor_curso").val(jsonArr[0].valor);
+                $('#valor_curso').priceFormat({
+                    prefix: '',
+                    thousandsSeparator: '',
+                    clearOnEmpty: false
+                });
                 $("#transacao").val(jsonArr[0].transacao);
                 $("#modelo").val(jsonArr[0].modelo);
 
@@ -301,18 +303,15 @@ $(document).ready(function () {
     });
 
     $("#comprar_curso").click(function(){
-
+          var status_pay = false;
           $.dialog({
               title: '',
               columnClass: 'col-md-6 col-md-offset-3',
               content: function(){
                   var self = this;
-
-                  // self.setContent('Checking callback flow');
                   return $.ajax({
                       type: "POST",
                       dataType: 'json',
-                      // jsonp: true,
                       headers: {
                           'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
                           'Access-Control-Allow-Origin': '*',
@@ -323,21 +322,20 @@ $(document).ready(function () {
                       contentType: "application/json",
                       url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
                       data: JSON.stringify({
-
-                            ano:parseInt($("#ano_cartao").val()),
-                            conftxn:"S",
-                            cvc2:parseInt($("#seguranca_cartao").val()),
-                            filiacao:74450930,
-                            mes:parseInt($("#mes_cartao").val()),
-                            nrcartao:$("#numero_cartao").val(),
-                            numpedido:1,
-                            parcelas:parseInt($("#num_parcelas").val()),
-                            portador:$("#nome_cartao").val(),
-                            total:parseFloat($("#valor_curso").val()),
-                            transacao:parseInt($("#transacao").val())
+                          ano:parseInt($("#ano_cartao").val()),
+                          conftxn:"S",
+                          cvc2:parseInt($("#seguranca_cartao").val()),
+                          filiacao:74450930,
+                          mes:parseInt($("#mes_cartao").val()),
+                          nrcartao:$("#numero_cartao").val(),
+                          numpedido:1,
+                          parcelas:parseInt($("#num_parcelas").val()),
+                          portador:$("#nome_cartao").val(),
+                          total:parseFloat($("#valor_curso").val()),
+                          transacao:parseInt($("#transacao").val())
                       })
                   }).done(function (response) {
-                      // self.setContentAppend('<div>Pagamento confirmado!</div>');
+                      // self.setContentAppend('<div>Efetuando pagamento...</div>');
                       // self.setContentAppend('<div>Gerando Acessos...</div>');
                   });
               },
@@ -352,17 +350,26 @@ $(document).ready(function () {
                                       url: '{{ route('pagamento.email') }}',
                                       data: $("#pagamento-aluno").serialize(),
                                       success: function(data, status, request){
-                                          // debugger;
                                           if(request.responseJSON.status == 'success'){
-                                              self.setContent('<div class="col-md-10 col-md-offset-1"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Bem vindo à Ecole!</label><br><label style="text-align: center; width: 100%">Enviamos às informações no seguinte endereço de email:</label><br><label style="text-align: center; width: 100%">'+ $("#email").val() +'</label><br></div>');
-                                          }else if(request.responseJSON.status == 'user_exists'){
-                                                self.setContent('este usuário já existe! Se já for aluno, compre ');
+                                              status_pay = true;
+                                              self.setContent('<div class="col-md-10 col-md-offset-1" style="color:#ed3656;"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Bem vindo à Ecole!</label><br><label style="text-align: center; width: 100%">Enviamos às informações para o seguinte endereço de email:</label><br><label style="text-align: center; font-size:15pt; width: 100%"><b>'+$("#email").val()+'</b></label><br></div>');
+                                          }else{
+                                              //FAZER REQUISIÇÃO DE EXTORNO
+                                              self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                                           }
                                       }
                                     });
+                              }else{
+                                self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                               }
+                          }else{
+                            self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                           }
+                      }else{
+                        self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                       }
+                  }else{
+                    self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                   }
               },
               onContentReady: function(){
@@ -370,10 +377,14 @@ $(document).ready(function () {
               },
               onClose: function () {
                   // before the modal is hidden.
-                  if($("#modelo").val() == 'D'){
-                      window.location.href = '{{ route('ead.login') }}';
+                  if(status_pay){
+                    if($("#modelo").val() == 'D'){
+                        window.location.href = '{{ route('ead.login') }}';
+                    }else{
+                        window.location.href = '{{ route('restrito') }}';
+                    }
                   }else{
-                      window.location.href = '{{ route('restrito') }}';
+                    location.reload();
                   }
               }
           });
@@ -408,7 +419,6 @@ $(document).ready(function () {
           //                           url: '{{ route('pagamento.email') }}',
           //                           data: $("#pagamento-aluno").serialize(),
           //                           success: function(data, status, request){
-          //                               debugger;
           //                               if(request.responseJSON.status == 'success'){
 
           //                               }
@@ -458,7 +468,6 @@ $(document).ready(function () {
               $item = $(this);
 
       if (!$item.attr('disabled')) {
-          // debugger;
           navListItems.removeClass('btn-primary').addClass('btn-default');
           $item.addClass('btn-primary');
           allWells.hide();
@@ -471,7 +480,7 @@ $(document).ready(function () {
       var curStep = $(this).closest(".setup-content"),
           curStepBtn = curStep.attr("id"),
           nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-          curInputs = curStep.find("input[type='text'],input[type='url']"),
+          curInputs = curStep.find("input[type='text'],input[type='password'], input[type='number'],input[type='email'],input[type='url']"),
           isValid = true;
 
       $(".form-group").removeClass("has-error");
@@ -481,7 +490,27 @@ $(document).ready(function () {
               $(curInputs[i]).closest(".form-group").addClass("has-error");
           }
       }
-
+      curInputs = curStep.find("input[type='email']");
+      for(var i=0; i<curInputs.length; i++){
+          if (!curInputs[i].validity.valid || !validateEmail(curInputs[i].value)){
+              isValid = false;
+              $(curInputs[i]).closest(".form-group").addClass("has-error");
+          }
+      }
+      if(isValid){
+        curInputs = curStep.find("input[type='password']");
+        let value;
+        for(var i=0; i<curInputs.length; i++){
+          if(i == 0){
+            value = curInputs[i].value;
+          }else{
+            isValid = (value == curInputs[i].value) && isValid;
+            if(!isValid){
+              alert('As senhas precisam ser iguais');
+            }
+          }
+        }
+      }
       if (isValid)
           nextStepWizard.removeAttr('disabled').trigger('click');
   });

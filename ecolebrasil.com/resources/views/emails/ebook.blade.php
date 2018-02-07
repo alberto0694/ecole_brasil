@@ -1,1 +1,1 @@
-ebook.blade.php
+EBOOK TEMPLATE

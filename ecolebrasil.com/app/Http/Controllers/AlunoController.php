@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+    }
 
     public function getAluno()
     {
@@ -22,14 +27,14 @@ class AlunoController extends Controller
 
     public function acesso_restrito()
     {
-        $aluno = $this->getAluno(); 
-        $acessos_restritos = MaterialRestrito::all(); 
+        $aluno = $this->getAluno();
+        $acessos_restritos = MaterialRestrito::all();
         return view('aluno.acesso_restrito', compact('aluno', 'acessos_restritos'));
     }
 
     public function dashboard()
     {
-        $aluno = $this->getAluno();        
+        $aluno = $this->getAluno();
         return view('aluno.dashboard', compact('aluno'));
     }
 
@@ -44,7 +49,7 @@ class AlunoController extends Controller
         $modulo = Modulo::find( $id );
         $aluno = $this->getAluno();
         return view('aluno.modulos.index', compact('modulo', 'aluno'));
-    }     
+    }
 
     public function aulas(Request $request, $id)
     {
@@ -80,7 +85,7 @@ class AlunoController extends Controller
 
     public function create(Request $request)
     {
-        
+
         $user = User::where('email', '=', $request['email'])->first();
         if($user == null){
             $user = User::create([
@@ -88,13 +93,13 @@ class AlunoController extends Controller
                 'email' => $request['email'],
                 'permission' => 'AL',
                 'password' => bcrypt($request['password']),
-            ]); 
+            ]);
         }
 
-            
+
         $request = Controller::saveBase64($request, 'avatar', 'alunos');
         $request = Controller::formatDate( $request, 'nascimento' );
-        $request['user_id'] = $user->id;            
+        $request['user_id'] = $user->id;
         $aluno = Aluno::create( $request->all() );
         if($request->agendas_alunos){
             foreach ($request->agendas_alunos as $id) {
@@ -116,7 +121,7 @@ class AlunoController extends Controller
         }
         $user->update($data);
         $request = Controller::saveBase64($request, 'avatar', 'alunos', $aluno->avatar);
-        $request = Controller::formatDate( $request, 'nascimento' );        
+        $request = Controller::formatDate( $request, 'nascimento' );
         $aluno->update( $request->all() );
 
         if($request->agendas_alunos){
@@ -124,7 +129,7 @@ class AlunoController extends Controller
             foreach ($request->agendas_alunos as $id) {
                 $agenda = Agenda::find( $id );
                 $aluno->addAgenda( $agenda );
-            }       
+            }
 
         }
         return;

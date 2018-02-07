@@ -75,6 +75,9 @@
                           <input required name="ebook_nome" id="ebook_nome" type="text" class="form-control" disabled="" name="" value="{{ $ebook->titulo }}">
                       </div>
                   </div>
+              </div>
+              <br>
+              <div class="row"  style="padding-left: 15px; ">
                   <div class="form-group">
                       <div class="row" style="padding-left: 15px">
                         <label class="control-label">Valor do Ebook</label>
@@ -108,10 +111,11 @@
 	          @else
 	          	<input type="hidden" name="num_parcelas" id="num_parcelas" value="00">
 	          @endif
+              <br>
               <div class="row" style="padding-left: 15px; ">
                 <div class="form-group">
                   <label class="control-label">Email</label>
-                  <input required maxlength="100" name="email" id="email" type="text"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
+                  <input required maxlength="100" name="email" id="email" type="email"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
                 </div>
               </div>
               <div class="row" style="padding-left: 15px; margin-top: 10px">
@@ -123,13 +127,13 @@
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                 <div class="form-group">
                   <label class="control-label">Número do Cartão</label>
-                  <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o número do cartão"  />
+                  <input required name="numero_cartao" id="numero_cartao" maxlength="100" type="number"  class="form-control" placeholder="Informe o número do cartão"  />
                 </div>
               </div>
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
                 <div class="col-md-4 form-group" style="padding: 0">
                   <label class="control-label">Códido de segurança do Cartão</label>
-                  <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="text"  class="form-control" placeholder="CVV"  />
+                  <input required name="seguranca_cartao" id="seguranca_cartao" maxlength="100" type="number"  class="form-control" placeholder="CVV"  />
                 </div>
               </div>
               <div class="row" style="padding-left: 15px; margin-bottom: 10px">
@@ -199,8 +203,14 @@
 <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function () {
+    $('#valor_curso').priceFormat({
+        prefix: '',
+        thousandsSeparator: '',
+        clearOnEmpty: false
+    });
     $("#comprar_curso").click(function(){
 
           $.dialog({
@@ -208,8 +218,6 @@ $(document).ready(function () {
               columnClass: 'col-md-6 col-md-offset-3',
               content: function(){
                   var self = this;
-
-                  // self.setContent('Checking callback flow');
                   return $.ajax({
                       type: "POST",
                       dataType: 'json',
@@ -253,22 +261,29 @@ $(document).ready(function () {
                                       url: '{{ route('ebook.email', $ebook->id) }}',
                                       data: $("#pagamento-aluno").serialize(),
                                       success: function(data, status, request){
-                                          // debugger;
                                           if(request.responseJSON.status == 'success'){
-                                              self.setContent('<div class="col-md-10 col-md-offset-1"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Ebook enviado para seu e-mail com sucesso!</label><br><label style="text-align: center; width: 100%"></label><br><label style="text-align: center; width: 100%">'+ $("#email").val() +'</label><br></div>');
+                                              self.setContent('<div class="col-md-10 col-md-offset-1" style="color:#ed3656;"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Bem vindo à Ecole!</label><br><label style="text-align: center; width: 100%">Enviamos às informações para o seguinte endereço de email:</label><br><label style="text-align: center; font-size:15pt; width: 100%"><b>'+$("#email").val()+'</b></label><br></div>');
+                                          }else{
+                                              self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                                           }
                                       }
                                     });
+                              }else{
+                                self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                               }
+                          }else{
+                            self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                           }
+                      }else{
+                        self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                       }
+                  }else{
+                    self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                   }
               },
-              onContentReady: function(){
-                  // this.setContentAppend('<div>Content ready!</div>');
-              },
+              onContentReady: function(){},
               onClose: function () {
-                  // window.location.href = '{{ route('ead.login') }}';
+                  window.location.href = '{{ route('index') }}';
               }
           });
 
@@ -365,7 +380,7 @@ $(document).ready(function () {
       var curStep = $(this).closest(".setup-content"),
           curStepBtn = curStep.attr("id"),
           nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-          curInputs = curStep.find("input[type='text'],input[type='url']"),
+          curInputs = curStep.find("input[type='text'],input[type='password'], input[type='number'],input[type='email'],input[type='url']"),
           isValid = true;
 
       $(".form-group").removeClass("has-error");
@@ -375,7 +390,13 @@ $(document).ready(function () {
               $(curInputs[i]).closest(".form-group").addClass("has-error");
           }
       }
-
+      curInputs = curStep.find("input[type='email']");
+      for(var i=0; i<curInputs.length; i++){
+          if (!curInputs[i].validity.valid || !validateEmail(curInputs[i].value)){
+              isValid = false;
+              $(curInputs[i]).closest(".form-group").addClass("has-error");
+          }
+      }
       if (isValid)
           nextStepWizard.removeAttr('disabled').trigger('click');
   });

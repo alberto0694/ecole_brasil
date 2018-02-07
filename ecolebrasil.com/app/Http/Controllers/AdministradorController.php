@@ -31,6 +31,12 @@ use App\User;
 class AdministradorController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+    }
+
     public function dashboard()
     {
         return view('administrador.dashboard');
@@ -38,7 +44,7 @@ class AdministradorController extends Controller
 
     public function profile()
     {
-        $administrador = $this->getAdministrador();   
+        $administrador = $this->getAdministrador();
         return view('administrador.perfil.index', compact('administrador'));
     }
 
@@ -51,8 +57,8 @@ class AdministradorController extends Controller
                 'email' => $request['email'],
                 'permission' => 'PF',
                 'password' => bcrypt($request['password']),
-            ]); 
-        }      
+            ]);
+        }
         $request = Controller::saveBase64($request, 'avatar', 'administradors');
         $request = Controller::formatDate( $request, 'nascimento' );
         $request['user_id'] = $user->id;
@@ -72,7 +78,7 @@ class AdministradorController extends Controller
         $user->update($data);
 
         $request = Controller::saveBase64($request, 'avatar', 'administradors', $administrador->avatar);
-        $request = Controller::formatDate($request, 'nascimento');        
+        $request = Controller::formatDate($request, 'nascimento');
         $administrador->update( $request->all() );
         return;
     }
@@ -81,7 +87,7 @@ class AdministradorController extends Controller
     {
         //
     }
-    
+
     //PROFESSORES E AULAS
     public function getAdministrador()
     {
@@ -515,7 +521,7 @@ class AdministradorController extends Controller
     {
         $blogs = Blog::all();
         return view('administrador.website.blog.index', compact('blogs'));
-    }    
+    }
 
 
     public function blog_novo()

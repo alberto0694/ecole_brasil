@@ -1,1 +1,1 @@
-aluno.blade.php
+ALUNO TEMPLATE
