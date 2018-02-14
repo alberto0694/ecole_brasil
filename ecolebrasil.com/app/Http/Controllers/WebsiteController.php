@@ -39,6 +39,8 @@ class WebsiteController extends Controller
 
         Mail::send('emails.contato', $data, function ($message) {
             $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
+            $message->cc('alberto.pimentel.94@gmail.com');
+            // $message->cc('alberto_bc_sc@hotmail.com');
             $message->to('contato@ecolebrasil.com');
             $message->cc('admin@ecolebrasil.com');
         });

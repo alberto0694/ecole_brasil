@@ -61,7 +61,9 @@
           border: 1px solid #cb3652;
       }
 
-      .title-pink-begin-text, .days-agenda, .descricao-day-agenda{
+      .title-pink-begin-text,
+      .days-agenda,
+      .descricao-day-agenda{
           color:rgba(239, 64, 96, 1);
           font-weight: bold;
           font-style: italic;
@@ -94,6 +96,7 @@
 
       .navbar {
           border-radius: 0px;
+          padding-top: 45px;
       }
 
       .gray-text-bold{
@@ -101,7 +104,8 @@
         font-weight: bold;
       }
 
-      .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+      .navbar-default .navbar-toggle:focus,
+      .navbar-default .navbar-toggle:hover {
           background-color: rgba(239, 64, 96, 1);
       }
 
@@ -114,7 +118,9 @@
           font-weight: bold;
       }
 
-      .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+      .navbar-default .navbar-nav>.open>a,
+      .navbar-default .navbar-nav>.open>a:focus,
+      .navbar-default .navbar-nav>.open>a:hover {
           color: white;
           background-color: rgba(239, 64, 96, 1);
       }
@@ -148,7 +154,6 @@
           border-color: rgba(239, 64, 96, 1);
           color: white;
           font-weight: bold;
-          padding-top: 2px;
           margin-bottom: 0px;
       }
 
@@ -537,16 +542,8 @@
         }
       }
     </style>
-
     <body>
         <nav class="navbar navbar-default">
-        <div class="row">
-              <li class="hidden-xs hidden-sm">
-                  <a style="display: block; margin: 0 auto;" href="{{route('index')}}">
-                      <img src="{{asset('images/ecole_menu.png')}}" style="display: block; margin: 0 auto;">
-                  </a>
-              </li>
-        </div>
           <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -555,6 +552,9 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
+              <a style="padding: 0; margin: 0; margin-top: -20px;" class="navbar-brand hidden-xs hidden-sm" href="{{route('index')}}" >
+                  <img alt="Ecole Brasil" src="{{asset('images/logo_ecole_brasil.png')}}">
+              </a>
               <a class="navbar-brand hidden-md hidden-lg" href="{{route('index')}}" >
                   <img alt="Ecole Brasil" src="{{asset('images/ecole_menu_mobile.png')}}">
               </a>
@@ -567,41 +567,36 @@
                   <ul class="dropdown-menu" style="padding-top:10px">
                       <li><a class="link-cursos-menu" href="{{route('escola')}}">ECOLE SUÉRIEURE DE RELOOKING</a></li><br>
                       <li><a class="link-cursos-menu" href="{{route('faq')}}">FAQ</a></li><br>
-                      <li><a class="link-cursos-menu" href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li><br>
-                      <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li><br>
+                      {{-- <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li><br> --}}
                       <li><a class="link-cursos-menu" href="{{route('equipe')}}">NOSSA EQUIPE</a></li><br>
                       <li><a class="link-cursos-menu" href="{{route('manifesto')}}">MANIFESTO</a></li><br>
                       <li><a class="link-cursos-menu" href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li><br>
                       <li><a class="link-cursos-menu" href="https://ecolesuperieurerelooking.com/" target="_blank">PARIS</a></li><br>
                   </ul>
                 </li>
-
-
-
                 <li class="dropdown hidden-sm hidden-xs" >
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">FORMAÇÕES E CURSOS <span class="caret"></span></a>
                   <ul class="dropdown-menu" style="max-width: 800px; padding-top:10px">
-                  <li class="menu-item dropdown dropdown-submenu ">
-                    <div class="container">
-                      @foreach($formacoes as $formacao)
-                            <div class="col-md-2" style="min-height: 160px;">
-                              <h6>{{ $formacao->nome }}</h6>
-                              <ul style=" padding: 0; margin-top: 10px">
-                                  @foreach($formacao->cursos as $curso)
-                                    <a class="link-cursos-menu" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
-                                    <br>
-                                  @endforeach
-                              </ul>
-                            </div>
-                      @endforeach
-                    </div>
-                  </li>
-
+                    <li class="menu-item dropdown dropdown-submenu ">
+                      <div class="container">
+                        @foreach($formacoes as $formacao)
+                              <div class="col-md-2" style="min-height: 160px;">
+                                <h6>{{ $formacao->nome }}</h6>
+                                <ul style=" padding: 0; margin-top: 10px">
+                                    @foreach($formacao->cursos as $curso)
+                                      <a class="link-cursos-menu" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
+                                      <br>
+                                    @endforeach
+                                </ul>
+                              </div>
+                        @endforeach
+                      </div>
+                    </li>
                   </ul>
                 </li>
-
+                <li><a href="{{route('certificacao')}}">CERTIFICAÇÃO INTERNACIONAL</a></li>
                 <li class="dropdown hidden-md hidden-lg" >
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FORMAÇÕES E CURSOS <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CURSOS <span class="caret"></span></a>
                   <ul class="dropdown-menu" style="margin-top: 10px">
                       @foreach($cursos_menu as $curso)
                         <li>
@@ -610,20 +605,21 @@
                       @endforeach
                   </ul>
                 </li>
-
-                <li class="dropdown">
+                <li><a href="{{route('blog')}}">BLOG</a></li>
+                {{-- <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NOTÍCIAS <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                       <li style="margin-top: 10px"><a href="{{route('blog')}}"  target="_blank">BLOG</a></li>
                       <li><a href="{{route('imprensa')}}"  target="_blank">IMPRENSA</a></li>
                   </ul>
-                </li>
-                <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>
+                </li> --}}
+                <li><a href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li>
+                {{-- <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li> --}}
                 <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
-                <li><a href="{{route('ebook')}}"  target="_blank">EBOOKS</a></li>
+                <li><a href="{{route('ebook')}}"  target="_blank">E-SHOP</a></li>
                 <li><a href="{{route('agenda')}}">AGENDA</a></li>
-                <li><a href="{{route('ead.login')}}"  target="_blank">EAD</a></li>
-                <li><a href="{{route('restrito')}}"  target="_blank">ACESSO RESTRITO</a></li>
+                {{-- <li><a href="{{route('ead.login')}}"  target="_blank">EAD</a></li> --}}
+                <li><a href="{{route('restrito')}}"  target="_blank">EX-ALUNAS</a></li>
                 <li><a href="{{route('contato')}}">CONTATO</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->

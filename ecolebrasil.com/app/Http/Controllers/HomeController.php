@@ -7,9 +7,6 @@ use View;
 use Auth;
 use App\User;
 use \Session;
-// use App\Aluno;
-// use App\Professor;
-// use App\Administrador;
 
 class HomeController extends Controller
 {
