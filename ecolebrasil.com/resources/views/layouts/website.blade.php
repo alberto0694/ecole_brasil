@@ -46,6 +46,9 @@
 
     .header-page-content{
         background-image: url(' {{asset('images/ecole-header-page.png')}} ');
+        background-repeat: no-repeat;
+        /*background-attachment: fixed;*/
+        background-position: center;
     }
 
     </style>

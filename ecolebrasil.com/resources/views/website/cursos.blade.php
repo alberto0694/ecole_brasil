@@ -36,7 +36,7 @@
 	}
 }
 </style>
-<div class="row" style="margin: 0; padding: 0">
+{{-- <div class="row" style="margin: 0; padding: 0">
   <div class="col-md-12 col-xs-12" style="margin: 0; padding: 0">
     <a href="#" class="video-index thumbnail ">
       <div style="position: absolute; background-color: rgba(255, 255, 255, 0.1); width: 100%; height: 100%" ></div>
@@ -44,7 +44,14 @@
       <img src="{{ asset($curso->background_img) }}">
     </a>
   </div>
-</div>
+</div> --}}
+ <div class="row" style="margin: 0; padding: 0">
+	<div class="col-md-12 header-page-content" style="background-image: url(' {{ asset($curso->background_img) }} ')"></div>
+	<div class="col-md-12 header-page">
+		<p>{{ $curso->nome }}</p>
+	</div>
+ </div>
+
 <div class="row">
 <div class="col-md-5 col-md-offset-1 col-xs-10 col-xs-offset-1">
 	<h2 class="gray-text-bold">&nbsp;&nbsp;SOBRE O CURSO</h2>
