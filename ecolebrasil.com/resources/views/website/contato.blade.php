@@ -1,12 +1,27 @@
 @extends('layouts.website')
-
+<style type="text/css">
+	.img-contato{
+		display: block;
+		margin: 0 auto;
+		width: 20%;
+	    background: #ef4060;
+	    margin-top: 10px;
+	}
+</style>
 @section('content')
 	<div class="row">
 	        @if(Session::has('message'))
-	            <div class="alert {{Session::get('alert-class')}}">
-	            <strong>Aviso!</strong>
-	                {{ Session::get('message') }}
-	            </div>
+		          <div class="row">
+		          	<img class="img-contato" src="{{asset('images/logo-ecole-load.png')}}">
+		            <h3 align="center">Obrigado por entrar em contato conosco.</h3>
+		            <h4 align="center">Ecole Brasil</h4>
+		          </div>
+		          <div class="row">
+		            <hr style="margin-top: 50px">
+		            <h3 style="text-align: center; margin-top: -50px"><a href="{{route('agenda')}}">
+		              <img src="{{asset('images/agenda-button.png')}}">
+		            </a></h3>
+		          </div>
 	        @endif
 	</div>
 	<div class="row" style="margin-top: 30px; margin-bottom: 30px">

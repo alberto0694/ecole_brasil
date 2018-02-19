@@ -38,10 +38,11 @@ class WebsiteController extends Controller
         Contato::create( $request->all() );
 
         Mail::send('emails.contato', $data, function ($message) {
-            $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
-            $message->cc('alberto.pimentel.94@gmail.com');
-            $message->to('contato@ecolebrasil.com');
-            $message->cc('admin@ecolebrasil.com');
+            $message->from('alberto@metrocoletivo.com.br', 'Contato Site');
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Contato Site');
+            $message->to('contato@ecolebrasil.com')->subject('Contato Site');
+            $message->cc('admin@ecolebrasil.com')->subject('Contato Site');
+            $message->cc('vandressa@esrelooking.com ')->subject('Contato Site');
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
