@@ -1,39 +1,44 @@
-@extends('layouts.administrador')
+@extends('layouts.professor')
 @section('content')
 @component('components.tutorial')
 	teste
 @endcomponent
 
 <div class="row">
-	<h2 style="margin-left: 20px">Cadastro de Módulo</h2>
+	<h2 style="margin-left: 20px">Edição de Módulo</h2>
 </div>
 
-<form id="novo-modulo" class="form-horizontal" role="form" style="margin-left: 20px">
+<form id="editar-modulo" class="form-horizontal" role="form" style="margin-left: 20px">
 	{{ csrf_field() }}
+	<input name="_method" type="hidden" value="PUT">
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Titulo </label>
 		<div class="col-sm-6">
-			<input id="titulo" name="titulo" type="text" class="col-xs-12 col-sm-6" />
+			<input value="{{ $modulo->titulo }}" id="titulo" name="titulo" type="text" class="col-xs-12 col-sm-6" />
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Liberar em: </label>
 		<div class="col-sm-6">
-			<input id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />
+			<input value="{{ $modulo->formatedDate }}" id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />
 		</div>
 	</div>
-	{{-- <div class="form-group">
+{{-- 					<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card </label>
-		@component('components.upfile', ['nameId' => 'card', 'src' => ''])
+		@component('components.upfile', ['nameId' => 'card', 'src' => $modulo->card])
 		@endcomponent
-	</div>	 --}}
+	</div> --}}
 	<hr>
 	<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Turma do Curso (Agenda)</label>
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Curso </label>
 		<div class="col-sm-6">
-			<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
+			<select id="curso_id" name="curso_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 				@foreach($agendas as $agenda)
-					<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }} - {{ $agenda->datas }} / {{ $agenda->monthRes }}</option>
+					@if($modulo->agenda_id == $agenda->id)
+						<option selected value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }} - {{ $agenda->datas }} / {{ $agenda->monthRes }}</option>
+					@else
+						<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }} - {{ $agenda->datas }} / {{ $agenda->monthRes }}</option>
+					@endif
 				@endforeach
 			</select>
 		</div>
@@ -41,10 +46,12 @@
 	<hr>
 	<div class="form-group" >
 		<div class="col-sm-9">
-			<h4 class="header clearfix">
-				Descrição
-			</h4>
-			<textarea id="descricao_html" name="descricao_html" class="col-xs-12 col-sm-6"></textarea>
+				<h4 class="header clearfix">
+					Descrição
+				</h4>
+				<textarea id="descricao_html" name="descricao_html" class="col-xs-12 col-sm-6">
+					{{ $modulo->descricao_html }}
+				</textarea>
 		</div>
 	</div>
 	<hr>
@@ -71,14 +78,14 @@
 jQuery(function($){
 
 	//VALIDATOR JQUERY
-	$("#novo-modulo").validate({
+	$("#editar-modulo").validate({
 		rules: {},
 		messages: {},
 		submitHandler: function(form) {
 			let arr = [
 				{ element:$("input[name=titulo]"), type:'text' },
 				{ element:$("input[name=data_inicio]"), type:'text' },
-				{ element:$("#agenda_id"), type:'select' },
+				// { element:$("#agenda_id"), type:'select' },
 				{ element:$("#descricao_html"), type:'textarea' }];
 			let response = validateFields(arr);
 			if(response.status){
@@ -87,15 +94,15 @@ jQuery(function($){
 				        var self = this;
 				        return $.ajax({
 								  type: "POST",
-								  url: '{{ route('modulo.create') }}',
-								  data: $("#novo-modulo").serialize(),
+								  url: '{{ route('modulo.update', $modulo->id) }}',
+								  data: $("#editar-modulo").serialize(),
 								  success: function(){
 										$.alert({
 										    title: 'Sucesso!',
 										    content: 'Módulo cadastrado com sucesso!',
 										    buttons:{
 										    	ok:function(){
-										    		window.location.href = "{{ route('administrador.modulo.index') }}";
+										    		window.location.href = "{{ route('professor.modulo.index') }}";
 										    	}
 										    }
 										});
@@ -116,7 +123,7 @@ jQuery(function($){
 			content: 'Deseja Cancelar? (Voce poderá perder dados)',
 		    buttons: {
 		        Sim: function(helloButton){
-		            document.location.href = "{{ route('administrador.modulo.index') }}"
+		            document.location.href = "{{ route('professor.modulo.index') }}"
 		        },
 		        Nao:{
 		        	text:"Não"

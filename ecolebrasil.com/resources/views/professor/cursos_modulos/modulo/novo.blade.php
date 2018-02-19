@@ -1,4 +1,4 @@
-@extends('layouts.administrador')
+@extends('layouts.professor')
 @section('content')
 @component('components.tutorial')
 	teste
@@ -95,7 +95,7 @@ jQuery(function($){
 										    content: 'Módulo cadastrado com sucesso!',
 										    buttons:{
 										    	ok:function(){
-										    		window.location.href = "{{ route('administrador.modulo.index') }}";
+										    		window.location.href = "{{ route('professor.modulo.index') }}";
 										    	}
 										    }
 										});
@@ -116,7 +116,7 @@ jQuery(function($){
 			content: 'Deseja Cancelar? (Voce poderá perder dados)',
 		    buttons: {
 		        Sim: function(helloButton){
-		            document.location.href = "{{ route('administrador.modulo.index') }}"
+		            document.location.href = "{{ route('professor.modulo.index') }}"
 		        },
 		        Nao:{
 		        	text:"Não"

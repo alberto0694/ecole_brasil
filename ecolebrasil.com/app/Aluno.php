@@ -53,14 +53,21 @@ class Aluno extends Model
 
 	public function getIdadeAttribute()
 	{
-
-		$birth = Carbon::parse($this->nascimento);
-	    return Carbon::now()->diffInYears( $birth );
+		if(($this->nascimento != '0000-00-00 00:00:00')  && ($this->nascimento != null)){
+      $birth = Carbon::parse($this->nascimento);
+  	  return Carbon::now()->diffInYears( $birth );
+    }else{
+      return '-';
+    }
 	}
 
 	public function getFnascimentoAttribute()
 	{
-		return Carbon::parse($this->nascimento)->format('d/m/Y');
+    // dd($this->nascimento);
+		if(($this->nascimento != '0000-00-00 00:00:00') && ($this->nascimento != null)){
+      return Carbon::parse($this->nascimento)->format('d/m/Y');
+    }
+    return '';
 	}
 
     // public function getAvatarBase64Attribute()

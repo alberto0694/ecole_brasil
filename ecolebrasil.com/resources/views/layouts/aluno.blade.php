@@ -281,6 +281,7 @@
                         <b class="arrow"></b>
                     </li>
 
+                    {{-- {{dd($aluno->agendas)}} --}}
                     @foreach($aluno->agendas as $agenda)
                         @if($agenda->modelo == 'D')
                             <li>

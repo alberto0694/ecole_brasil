@@ -124,7 +124,61 @@ Route::get('/video_comentario/list', 'VideoComentarioController@get_comentario')
 
 //================ PROFESSOR VIEWS ======================
 Route::get('/professores/dashboard', 'ProfessorController@dashboard')->name('professor.dashboard');
+Route::get('/professores/profile', 'ProfessorController@profile')->name('professor.profile.visualizar');
+Route::get('/professores/aluno/visao', 'ProfessorController@visao_aluno')->name('professor.aluno.visao');
+Route::get('/professores/aluno/visao/modulos', 'ProfessorController@get_visao_aluno')->name('professor.aluno.get.visao');
 
+Route::get('/professores/{id}/aulas', 'ProfessorController@aulas')->name('professor.aluno.aulas');
+Route::get('/professores/{id}/exercicios', 'ProfessorController@exercicios')->name('professor.aluno.exercicios');
+Route::get('/professores/{id}/materiais', 'ProfessorController@materiais')->name('professor.aluno.materiais');
+Route::get('/professores/{id}/videos', 'ProfessorController@videos')->name('professor.aluno.videos');
+
+//material
+Route::get('/professores/material/index', 'ProfessorController@material_index')->name('professor.material.index');
+Route::get('/professores/material/novo', 'ProfessorController@material_novo')->name('professor.material.novo');
+Route::get('/professores/material/editar/{id}', 'ProfessorController@material_editar')->name('professor.material.editar');
+
+//exercicios
+Route::get('/professores/exercicio/index', 'ProfessorController@exercicio_index')->name('professor.exercicio.index');
+Route::get('/professores/exercicio/novo', 'ProfessorController@exercicio_novo')->name('professor.exercicio.novo');
+Route::get('/professores/exercicio/editar/{id}', 'ProfessorController@exercicio_editar')->name('professor.exercicio.editar');
+
+//aula
+Route::get('/professores/aula/index', 'ProfessorController@aula_index')->name('professor.aula.index');
+Route::get('/professores/aula/novo', 'ProfessorController@aula_novo')->name('professor.aula.novo');
+Route::get('/professores/aula/editar/{id}', 'ProfessorController@aula_editar')->name('professor.aula.editar');
+
+//videoconferencia
+Route::get('/professores/videoconferencia/index', 'ProfessorController@videoconferencia_index')->name('professor.videoconferencia.index');
+Route::get('/professores/videoconferencia/novo', 'ProfessorController@videoconferencia_novo')->name('professor.videoconferencia.novo');
+Route::get('/professores/videoconferencia/editar/{id}', 'ProfessorController@videoconferencia_editar')->name('professor.videoconferencia.editar');
+
+//modulo
+Route::get('/professores/modulo/index', 'ProfessorController@modulo_index')->name('professor.modulo.index');
+Route::get('/professores/modulo/novo', 'ProfessorController@modulo_novo')->name('professor.modulo.novo');
+Route::get('/professores/modulo/editar/{id}', 'ProfessorController@modulo_editar')->name('professor.modulo.editar');
+
+//Video
+Route::get('/professores/video/index', 'ProfessorController@video_index')->name('professor.video.index');
+Route::get('/professores/video/novo', 'ProfessorController@video_novo')->name('professor.video.novo');
+Route::get('/professores/video/editar/{id}', 'ProfessorController@video_editar')->name('professor.video.editar');
+
+//material
+Route::get('/professores/material/index', 'ProfessorController@material_index')->name('professor.material.index');
+Route::get('/professores/material/novo', 'ProfessorController@material_novo')->name('professor.material.novo');
+Route::get('/professores/material/editar/{id}', 'ProfessorController@material_editar')->name('professor.material.editar');
+
+//exercicios
+Route::get('/professores/exercicio/index', 'ProfessorController@exercicio_index')->name('professor.exercicio.index');
+Route::get('/professores/exercicio/novo', 'ProfessorController@exercicio_novo')->name('professor.exercicio.novo');
+Route::get('/professores/exercicio/editar/{id}', 'ProfessorController@exercicio_editar')->name('professor.exercicio.editar');
+
+//aula
+Route::get('/professores/aula/index', 'ProfessorController@aula_index')->name('professor.aula.index');
+Route::get('/professores/aula/novo', 'ProfessorController@aula_novo')->name('professor.aula.novo');
+Route::get('/professores/aula/editar/{id}', 'ProfessorController@aula_editar')->name('professor.aula.editar');
+
+Route::get('/professores/aluno/index', 'ProfessorController@aluno_index')->name('professor.aluno.index');
 
 //================ ALUNOS_RESTRITO VIEWS ======================
 Route::get('/aluno_restrito/dashboard', 'AlunoRestritoController@dashboard')->name('aluno_restrito.dashboard');

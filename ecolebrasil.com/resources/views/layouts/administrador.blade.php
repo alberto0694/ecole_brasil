@@ -35,13 +35,11 @@
 <style type="text/css">
 
 .navbar {
-    background: rgba(239, 64, 96, 1);
-}
+    background: rgb(212, 101, 147);}
 
 
 .table-header {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
     font-size: 14px;
     line-height: 38px;
     padding-left: 12px;
@@ -49,16 +47,14 @@
 }
 
 .ace-nav>li.light-blue>a:focus, .ace-nav>li.light-blue>a:hover, .ace-nav>li.open.light-blue>a {
-    background-color: rgba(239, 64, 96, 1);
-}
+    background-color: rgb(212, 101, 147);}
 
 .no-skin .navbar .navbar-toggle {
     background-color: #cb3652;
 }
 
 .ace-nav>li.light-blue>a {
-    background-color: rgba(239, 64, 96, 1);
-}
+    background-color: rgb(212, 101, 147);}
 
 .nav-tabs.background-blue {
   padding-top: 6px;
@@ -70,53 +66,43 @@
     background-color: #cb3652;
 }
 .badge-info, .badge.badge-info, .label-info, .label.label-info {
-    background-color: rgba(239, 64, 96, 1);
-}
+    background-color: rgb(212, 101, 147);}
 
 .badge-info, .badge.badge-info, .label-info, .label.label-info {
-    background-color: rgba(239, 64, 96, 1);
-}
+    background-color: rgb(212, 101, 147);}
 
 .label-info.arrowed-in:before {
-    border-color: rgba(239, 64, 96, 1) rgba(239, 64, 96, 1) rgba(239, 64, 96, 1) transparent;
+    border-color: rgb(212, 101, 147);ransparent;
 }
 
 .label-info.arrowed-in-right:after {
-    border-color: rgba(239, 64, 96, 1) transparent rgba(239, 64, 96, 1) rgba(239, 64, 96, 1);
-}
+    border-color: rgb(212, 101, 147);ransparent rgb(212, 101, 147);}
 
 .badge-info, .badge.badge-info, .label-info, .label.label-info {
-    background-color: rgba(239, 64, 96, 1);
-}
+    background-color: rgb(212, 101, 147);}
 
 .ace-nav>li.open>a, .ace-nav>li>a:focus, .ace-nav>li>a:hover {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
 }
 
 .no-skin .nav-list>li:hover>a {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
-    background-color: rgba(239, 64, 96, 1);
-}
+    background-color: rgb(212, 101, 147);}
 
 .no-skin .nav-list>li.open>a {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
 }
 
 .no-skin .nav-list>li:hover>a {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
 }
 
 .no-skin .nav-list .open>a, .no-skin .nav-list .open>a:focus, .no-skin .nav-list .open>a:hover {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
 }
 
 .no-skin .nav-list>li>a {
@@ -125,8 +111,7 @@
 }
 
 .no-skin .nav-list>li>.submenu li>.submenu>li a:hover {
-    color: rgba(239, 64, 96, 1);
-    background-color: #F1F5F9;
+    color: rgb(212, 101, 147);    background-color: #F1F5F9;
 }
 
 .has-errors input, .has-errors textarea{
@@ -152,33 +137,27 @@
 
 
 .no-skin .nav-list>li .submenu>li>a:hover {
-    color: rgba(239, 64, 96, 1);
-    background-color: #F1F5F9;
+    color: rgb(212, 101, 147);    background-color: #F1F5F9;
 }
 
 .no-skin .nav-list>li>.submenu li.open>a, .no-skin .nav-list>li>.submenu li>.submenu li.active>a, .no-skin .nav-list>li>.submenu li>.submenu li.open>a {
-    color: rgba(239, 64, 96, 1);
-    background: #fff;
+    color: rgb(212, 101, 147);    background: #fff;
 }
 
 .no-skin .nav-list>li .submenu>li>a:hover {
-    color: rgba(239, 64, 96, 1);
-    background-color: #F1F5F9;
+    color: rgb(212, 101, 147);    background-color: #F1F5F9;
 }
 
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
 }
 
 .no-skin .nav-list>li .submenu>li>a:hover {
-    color: rgba(239, 64, 96, 1);
-    background-color: #F1F5F9;
+    color: rgb(212, 101, 147);    background-color: #F1F5F9;
 }
 
 .ace-nav>li>a {
-    background-color: rgba(239, 64, 96, 1);
-    color: #FFF;
+    background-color: rgb(212, 101, 147);    color: #FFF;
     display: block;
     line-height: inherit;
     text-align: center;
@@ -190,7 +169,7 @@
 }
 #loading-admin-application-only {
     border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid rgba(239, 64, 96, 1);; /* Blue */
+    border-top: 16px solid rgb(212, 101, 147); /* Blue */
     border-radius: 50%;
     width: 120px;
     height: 120px;

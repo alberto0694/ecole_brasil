@@ -105,7 +105,6 @@ function validateFields(arr){
             }
             break;
         case 'select':
-
             if(item.element[0].length == 0){
               result.status = false;
               result.element = item.element;

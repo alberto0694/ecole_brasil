@@ -98,7 +98,9 @@ class AlunoController extends Controller
 
 
         $request = Controller::saveBase64($request, 'avatar', 'alunos');
-        $request = Controller::formatDate( $request, 'nascimento' );
+        if(($request['nascimento'] != null) && ($request['nascimento'] != '0')){
+            $request = Controller::formatDate( $request, 'nascimento' );
+        }
         $request['user_id'] = $user->id;
         $aluno = Aluno::create( $request->all() );
         if($request->agendas_alunos){
@@ -121,7 +123,9 @@ class AlunoController extends Controller
         }
         $user->update($data);
         $request = Controller::saveBase64($request, 'avatar', 'alunos', $aluno->avatar);
-        $request = Controller::formatDate( $request, 'nascimento' );
+        if(($request['nascimento'] != null) && ($request['nascimento'] != '0')){
+            $request = Controller::formatDate( $request, 'nascimento' );
+        }
         $aluno->update( $request->all() );
 
         if($request->agendas_alunos){
