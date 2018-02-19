@@ -48,4 +48,9 @@ class Agenda extends Model
     {
         return \Config::get('constants.meses_logo')[$this->indexMonth - 1];
     }
+
+    public function getMonthResAttribute()
+    {
+        return \Config::get('constants.meses_res')[$this->indexMonth - 1];
+    }
 }

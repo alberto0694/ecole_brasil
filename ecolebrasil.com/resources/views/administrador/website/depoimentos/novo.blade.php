@@ -44,7 +44,7 @@
 								<h4 class="header clearfix">
 									Depoimento (Opcional)
 								</h4>
-								<textarea id="descricao_html" name="descricao_html" class="col-xs-12 col-sm-6"></textarea>
+								<textarea rows="7" id="descricao_html" name="descricao_html" class="col-xs-12 col-sm-6"></textarea>
 						</div>
 					</div>
 					<hr>
@@ -133,7 +133,7 @@
 
 
         	//ckeditor
-        	$('textarea').ckeditor();
+        	// $('textarea').ckeditor();
 
         	//EVENTOS ONCHANGE FILES
 			var x = document.getElementsByClassName("readFileBase64");

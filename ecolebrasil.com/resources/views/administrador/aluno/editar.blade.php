@@ -130,7 +130,6 @@
 					{ element:$("input[name=sobrenome]"), type:'text' },
 					{ element:$("input[name=email]"), type:'email' },
 					{ element:$("input[name=profissao]"), type:'text' },
-					{ element:$("input[name=nascimento]"), type:'text' },
 					{ element:$("#multiselect_to_1"), type:'select' },
 					{ element:$("#descricao_html"), type:'textarea' }];
 				let response = validateFields(arr);

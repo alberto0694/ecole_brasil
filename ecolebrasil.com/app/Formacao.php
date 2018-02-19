@@ -24,4 +24,9 @@ class Formacao extends Model
     {
         return $this->cursos()->count();
     }
+
+    public function getNomeCapitalizedAttribute()
+    {
+        return ucfirst(strtolower($this->nome));
+    }
 }

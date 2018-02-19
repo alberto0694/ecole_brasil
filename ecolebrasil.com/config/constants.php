@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 return [
-    'meses' => [	'Janeiro', 
-    				'Fevereiro', 
+    'meses' => [	'Janeiro',
+    				'Fevereiro',
     				'Março',
     				'Abril',
     				'Maio',
@@ -13,6 +13,19 @@ return [
     				'Outubro',
     				'Novembro',
     				'Dezembro'],
+
+    'meses_res' => ['JAN',
+                    'FEV',
+                    'MAR',
+                    'ABR',
+                    'MAI',
+                    'JUN',
+                    'JUL',
+                    'AGO',
+                    'SET',
+                    'OUT',
+                    'NOV',
+                    'DEZ'],
 
     'meses_logo' => [   'images/meses/jan.png',
                         'images/meses/fev.png',

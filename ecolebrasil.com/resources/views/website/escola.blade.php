@@ -1,5 +1,4 @@
 @extends('layouts.website')
-
 @section('content')
 <style type="text/css">
 	.video-index{
@@ -10,13 +9,12 @@
 		text-align: justify;
 	}
 </style>
- <div class="row" style="margin: 0; padding: 0">
-	  <div class="col-md-12" style="margin: 0; padding: 0">
-	    <a href="#" class="video-index thumbnail ">
-	      	<img  src="{{ asset('images/header-escola.png') }}" alt="...">	    
-	    </a>
-	  </div>
- </div>
+<div class="row" style="margin: 0; padding: 0">
+	<div class="col-md-12 header-page-content" style=""></div>
+	<div class="col-md-12 header-page">
+		<p>ECOLE SUPÉRIEURE DE RELOOKING</p>
+	</div>
+</div>
 <div class="row" style="margin-top: 30px">
 	  <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
 	    <p style="text-align: justify;" class="gray-text">A Ecole Supérieure de Relooking foi fundada em Paris, berço mundial das artes, da cultura, cidade que abraça estilos diversos. A Ecole carrega a autenticidade e a paixão pelas pessoas na essência. Especialista em cursos e formações relacionados a imagem pessoal, psicologia e empreendedorismo, reúne expertise, técnicas e metodologias diferenciadas, multiplicando em cada aluno o que carrega como maior crença: olhar as pessoas pela sua essência e traduzir pela imagem um reflexo genuíno do que são.</p>
@@ -26,7 +24,7 @@
  <div class="row">
  	<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
 	 	<h3 align="center" class="title-pink-begin-text">MISSÃO</h3>
-	 	<h4 align="center" class="gray-text">Nossa missão ganha vida em três bandeiras que carregamos em todas as formações que desenvolvemos</h4> 		
+	 	<h4 align="center" class="gray-text">Nossa missão ganha vida em três bandeiras que carregamos em todas as formações que desenvolvemos</h4>
  	</div>
  </div>
  <div class="row">
@@ -50,9 +48,9 @@
  </div>
 
 
- <div class="row" style="margin: 0; margin-top: 30px; margin-bottom: 30px; padding: 0; text-align: justify;" >
+ <div class="row" style="margin: 0; margin-top: 30px; margin-bottom: 30px; padding: 0; text-align: justify; background: #e5e5e5;" >
  	<div class="col-md-8 col-md-offset-2" style="text-align: center">
- 		<h3 align="center" class="title-pink-begin-text">Ecole Súpérieure de Relooking é: </h3>
+ 		<h3 align="left" class="title-pink-begin-text">Ecole Súpérieure de Relooking é: </h3>
  		<p class="gray-text">
 			<p class="gray-text">A primeira Escola de formação França a ter certificação profissionalizante na área de Imagem. </p>
 
@@ -60,8 +58,13 @@
 			Em 7 anos, a Escola se instalou e desenvolveu com sucesso no Canada e  Brasil.  Em 2017, está em processo de desenvolvimento na Italia, Bolivia e China.</p>
 
 			<p class="gray-text">A ESR  certifica    experts em consultoria de imagem de maneira  inovadora, oferecendo ferramentas de desenvolvimento pessoal. Acreditamos que a melhor imagem, é que traduz de maneira personalizada, a verdade essência do ser humano.</p>
-
-			<h3 align="center" class="title-pink-begin-text">NOSSAS PREMISSAS </h3>
+ 		</p>
+ 	</div>
+ </div>
+ <div class="row" style="margin: 0; margin-top: 30px; margin-bottom: 30px; padding: 0; text-align: justify;" >
+ 	<div class="col-md-8 col-md-offset-2" style="text-align: center">
+ 		<p class="gray-text">
+			<h3 align="left" class="title-pink-begin-text">Nosssas Premissas </h3>
 
 			<p class="gray-text">Renovação de dentro para fora. É Genuíno, tem relação direta com as diretoras!</p>
 			<p class="gray-text">Percepção de que o mercado trata a moda como algo raso e superficial. E certeza de que não somos assim.</p>
@@ -69,7 +72,7 @@
 			<p class="gray-text">Escola com um posicionamento voltado ao SER como uma etapa anterior ao VESTIR, que se afirma cada vez mais nos movimentos de mudança de comportamento das pessoas.
 			Respeito a Individualidade e fuga dos padrões e rótulos.</p>
 			<p class="gray-text">Perspectiva do mercado de Consultoria de Imagem e moda perder espaço se continuar nos padrões e moldes praticados com base em rótulos. Fazemos para o futuro. </p>
-			<p class="gray-text">A Escola está à frente dos concorrentes, faz rupturas no mercado, muda padrões, conceitos e ganhar repercussão de vanguarda dentro do segmento, além de posicionar-se como “especialista” e fonte de informação diante de um cenário de transição como o que vivemos.  </p>		
+			<p class="gray-text">A Escola está à frente dos concorrentes, faz rupturas no mercado, muda padrões, conceitos e ganhar repercussão de vanguarda dentro do segmento, além de posicionar-se como “especialista” e fonte de informação diante de um cenário de transição como o que vivemos.  </p>
  		</p>
  	</div>
  </div>

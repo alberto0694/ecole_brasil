@@ -42,7 +42,7 @@
 				<div class="row">
 					<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
 						<h4 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
-							<a target="_blank" style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ $consultora->site }}">Site</a>
+{{-- 							<a target="_blank" style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ $consultora->site }}">Site</a> --}}
 						</h4>
 					</div>
 				</div>

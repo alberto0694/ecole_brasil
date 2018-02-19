@@ -40,7 +40,6 @@ class WebsiteController extends Controller
         Mail::send('emails.contato', $data, function ($message) {
             $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
             $message->cc('alberto.pimentel.94@gmail.com');
-            // $message->cc('alberto_bc_sc@hotmail.com');
             $message->to('contato@ecolebrasil.com');
             $message->cc('admin@ecolebrasil.com');
         });
@@ -57,8 +56,9 @@ class WebsiteController extends Controller
         $agendas = Agenda::orderBy('data_inicio', 'asc')->get(); //Agenda::all();
         $banners = Banner::where('ativo', '=', 1)->get();
         $cursos = Curso::where('pagina_inicial', '=', '1')->get();
+        $depoimentos = Depoimento::orderBy('created_at', 'asc')->take(3)->get();
         // $agendas = Agenda::all();
-    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu'));
+    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu', 'depoimentos'));
     }
 
     public function escola()
@@ -66,6 +66,13 @@ class WebsiteController extends Controller
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.escola', compact('cursos_menu','formacoes'));
+    }
+
+    public function eshop()
+    {
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        return view('website.eshop', compact('cursos_menu','formacoes'));
     }
 
     public function manifesto()
@@ -94,6 +101,18 @@ class WebsiteController extends Controller
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
     	return view('website.certificacao', compact('cursos_menu','formacoes'));
+    }
+
+    function cursos_lista(Request $request)
+    {
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        $formacao_id = $request->query('formacao_id');
+        $cursos = Curso::all();
+        if($formacao_id != null){
+            $cursos = Curso::where('formacao_id', '=', $formacao_id)->get();
+        }
+        return view('website.cursos_lista', compact('cursos_menu','formacoes', 'cursos'));
     }
 
     public function sou_ecole()
