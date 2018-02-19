@@ -1,0 +1,70 @@
+img{
+  display: block;
+  width: 100%;
+}
+
+body{
+  font-size: 14pt;
+  background: green;
+}
+
+.container-style ul{
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  animation: infiniteWords 4s ease infinite;
+}
+
+.container-style h1{
+  font-size: 14pt;
+  float: left;
+  margin:0;
+}
+
+.container-style ul li{
+  height: 30px;
+}
+
+.container-style .animation{
+  overflow:hidden;
+  height: 30px;
+}
+
+.dropdown .dropdown-menu{
+  transition: opacity 3s ease;
+  opacity: 0;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    opacity: 1;
+ }
+
+@keyframes infiniteWords{
+  from{
+    transform: translate(0,0px);
+  }
+
+  30%{
+    transform: translate(0,-30px);
+  }
+
+  60%{
+    transform: translate(0,-60px);
+  }
+
+  85%{
+    transform: translate(0,-90px);
+  }
+
+  to{
+    transform: translate(0,-90px);
+  }
+}
+
+.container-style{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

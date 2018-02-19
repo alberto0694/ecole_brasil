@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="jquery.lazy.min.js"></script>
+  <script type="text/javascript" src="jquery.lazy.plugins.min.js"></script>
+
+
+  <meta charset="UTF-8">
+  <title>Animação em CSS</title>
+</head>
+<style>
+img {
+        width: 700px;
+        height: 467px;
+        display: block;
+    }
+</style>
+<body>
+  <div class="container-style">
+    <div class="row">
+      <h1>Teste de animação</h1>
+      <div class="animation">
+        <ul>
+          <li>Palavra 1</li>
+          <li>Palavra 2</li>
+          <li>Palavra 3</li>
+          <li>Palavra 1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="lazy-container">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu dolor arcu. Nam luctus tempus dolor eu luctus. Integer feugiat turpis ac convallis accumsan. Donec ornare neque vitae augue congue, a pulvinar turpis mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur purus eu augue lacinia pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque malesuada venenatis aliquet. Praesent placerat elit sit amet ipsum ultrices, sit amet fermentum felis imperdiet. Phasellus sollicitudin tortor orci, ut mollis lacus semper ac. Aliquam accumsan varius urna, ut facilisis velit scelerisque non.
+          Vestibulum leo metus, pretium sagittis imperdiet et, convallis nec risus. Ut bibendum lacus et metus placerat consectetur. Donec dolor eros, lobortis et tristique ac, blandit sed elit. Fusce non dolor eu eros hendrerit pretium eu eget eros. Nullam sed suscipit nunc. Vestibulum consequat posuere lobortis. Sed vestibulum, justo ut feugiat dignissim, ligula dui tempus nunc, non finibus erat tellus et libero. Cras viverra, tellus a accumsan varius, dolor orci commodo lacus, quis pellentesque turpis nibh pellentesque ipsum.
+          Donec at risus at erat mattis malesuada. Sed in dolor maximus, mollis leo sit amet, tempor libero. In vulputate dui venenatis tellus rhoncus, vitae pellentesque justo posuere. Donec dapibus ullamcorper ipsum, lacinia aliquam urna malesuada ac. Integer commodo augue nec tempus sagittis. Pellentesque vehicula bibendum volutpat. Suspendisse efficitur ante ac diam accumsan, vitae ultricies massa accumsan. Pellentesque eget vestibulum urna. Sed vitae ultrices enim. Curabitur elementum aliquam leo at molestie. Nullam vestibulum malesuada arcu, id ultricies lectus ornare sed. Donec orci sem, interdum id tincidunt vitae, mollis vitae dolor. Sed pretium semper dapibus. Proin porttitor, metus sed hendrerit faucibus, orci risus commodo metus, sit amet suscipit elit ipsum quis diam.
+          Curabitur et sollicitudin dolor. Sed sapien lectus, mattis at metus eget, porttitor consequat ante. Curabitur bibendum finibus justo a fermentum. Praesent varius enim sit amet egestas pretium. Suspendisse sed sapien a quam ullamcorper aliquet. Proin aliquet ligula ac diam egestas blandit. Nulla et lorem volutpat, tincidunt sapien cursus, egestas nisl. Etiam semper felis diam, et interdum felis convallis sit amet.
+          In vitae aliquet lorem. Donec in nisi molestie, aliquam elit ut, laoreet lacus. Praesent congue magna non quam vehicula, vel tempus tellus luctus. Praesent ac ex mattis, volutpat sapien pharetra, sodales dui. Etiam eleifend tincidunt nunc vitae fringilla. Donec quis mauris eu magna condimentum ultricies quis sit amet lacus. Nunc molestie lorem sed libero finibus pretium. Nunc id lacinia nunc. In sed odio auctor, blandit magna in, dictum libero. Donec tempus urna blandit sem ultricies, in dapibus nisi auctor. Pellentesque eget hendrerit libero. Nullam mauris nisl, scelerisque viverra blandit eget, vulputate sed lorem. Sed fringilla justo diam, eu iaculis velit faucibus non.
+        </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <img id="image-1" src="" data-src="images/IMG_0024.PNG" alt="">
+      </div>
+      <div class="row">
+        <img id="image-2" data-src="images/IMG_0025.PNG" alt="">
+      </div>
+      <div class="row">
+        <img id="image-3" data-src="images/IMG_0026.PNG" alt="">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <img id="image-4" data-src="images/IMG_0027.PNG" alt="">
+      </div>
+      <div class="row">
+        <img id="image-5" data-src="images/IMG_0028.PNG" alt="">
+      </div>
+      <div class="row">
+        <img id="image-6" data-src="images/IMG_0029.PNG" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function() {
+        $(".lazy-container").Lazy();
+
+
+        $('img').Lazy({
+            scrollDirection: 'vertical',
+            effect: 'fadeIn',
+            threshold:0,
+            effectTime:300,
+            visibleOnly: true,
+            onError: function(element) {
+              console.log('error loading ' + element.data('src'));
+            }
+        });
+    });
+  </script>
+</body>
+</html>
