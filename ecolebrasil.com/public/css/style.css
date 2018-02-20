@@ -478,7 +478,7 @@ a:hover {
 
 .manifesto_mobile{
     position: absolute;
-    font-size: 12pt;
+    font-size: 11pt;
     margin:0;
     padding: 15px;
     color: white;
@@ -564,6 +564,7 @@ a:hover {
 
   .header-page{
     margin-top: -390px;
+    width: 100%;
   }
   .navbar-default .navbar-nav .open .dropdown-menu>li>a {
       color: white;

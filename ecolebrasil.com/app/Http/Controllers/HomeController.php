@@ -12,21 +12,22 @@ class HomeController extends Controller
 {
     public function admin()
     {
-        Auth::guard()->logout();
+        Auth::logout();
+        // Session::regenerate();
         return view('auth.admin');
     }
 
     public function ead(Request $request)
     {
-        Auth::guard()->logout();
-        // $request->session()->invalidate();
+        Auth::logout();
+        // Session::regenerate();
         return view('auth.ead');
     }
 
     public function professor(Request $request)
     {
-        Auth::guard()->logout();
-        // $request->session()->invalidate();
+        Auth::logout();
+        // Session::regenerate();
         return view('auth.professor');
     }
 

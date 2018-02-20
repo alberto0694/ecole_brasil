@@ -17,7 +17,7 @@ class Modulo extends Model
 	public function agenda()
 	{
 		return $this->belongsTo('App\Agenda', 'agenda_id', 'id');
-	}  
+	}
 
 	public function aulas()
 	{
@@ -42,17 +42,22 @@ class Modulo extends Model
 	public function getCursoAttribute()
 	{
 		return $this->agenda->curso;
-	}  
+	}
 
+	// public function getIsAllowAttribute()
+	// {
+	// 	$days = Carbon::parse($this->data_inicio);
+ //  	  	return Carbon::now()->diffInYears( $days ) > 0;
+	// }
 
 	public function getFormatedDateAttribute()
 	{
 		return Carbon::parse($this->data_inicio)->format('d/m/Y');
-	}	
+	}
 
 	public function getOpennedAttribute()
 	{
 	    $date = Carbon::parse($this->data_inicio);
 	    return $date <= Carbon::now();
-	}	
+	}
 }

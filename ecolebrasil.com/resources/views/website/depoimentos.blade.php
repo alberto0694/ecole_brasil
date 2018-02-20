@@ -84,7 +84,7 @@
 										    <i class="hidden-xs hidden-sm">{{$depoimento->autor}}</i>
 										    <hr style=" border: .1pt solid; ">
 									  </div>
-									  <h5 class="media-heading hidden-md hidden-lg" style=" word-spacing: 8px; line-height: 20px; text-align: justify; margin-right: 50px">{!! $depoimento->descricao_html !!}</h5>
+									  <h5 class="media-heading hidden-md hidden-lg" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{!! $depoimento->descricao_html !!}</h5>
 									  <i class="hidden-md hidden-lg" style="margin-right: 60px">{{$depoimento->autor}}</i>
 								</div>
 								<hr style="border-top: 1px solid #ef3e61;">

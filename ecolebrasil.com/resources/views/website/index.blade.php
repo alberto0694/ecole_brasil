@@ -131,17 +131,17 @@ function myFunction() {
 <div class="row">
 	<div class="col-md-8 col-md-offset-2" style="text-align: center">
 		<div class="col-md-4">
-			<img src="{{ asset('images/excelencia-conhecimento.png') }}" style="width: 100%; display: block">
+			<img data-src="{{ asset('images/excelencia-conhecimento.png') }}" style="width: 100%; display: block">
 			<label class="title-pink-begin-text" >Excelência no conhecimento</label>
 			<p class="gray-text" style="text-align: justify;">Nosso papel é formar pessoas com qualidade técnica, métodos atualizados e conhecimentos capazes de torná-las aptas a colocar em prática o que aprenderam e serem capazes de usarem os ensinamentos para ajudar pessoas na busca por sua imagem pessoal.</p>
 		</div>
 		<div class="col-md-4">
-			<img src="{{ asset('images/respeito-individualidade.png') }}" style="width: 100%; display: block">
+			<img data-src="{{ asset('images/respeito-individualidade.png') }}" style="width: 100%; display: block">
 			<label class="title-pink-begin-text" >Respeito à individualidade</label>
 			<p class="gray-text" style="text-align: justify;">Cada pessoa tem a sua forma de ser e isso que a torna única. Pensar a imagem é um processo de aprendizagem, descoberta e autoconhecimento. É nisso que acreditamos, é isso que multiplicamos em nossas formações.</p>
 		</div>
 		<div class="col-md-4">
-			<img src="{{ asset('images/respeito-paixao.png') }}" style="width: 100%; display: block">
+			<img data-src="{{ asset('images/respeito-paixao.png') }}" style="width: 100%; display: block">
 			<label class="title-pink-begin-text" >Renovar com paixão</label>
 			<p class="gray-text" style="text-align: justify;">Estamos sempre em constante atualização. O que torna isso parte natural do nosso trabalho é a paixão que temos pelo que fazemos, por estar com pessoas, por possibilitar que elas saiam melhores, mais confiantes e preparadas de cada curso que se encerra. </p>
 		</div>
@@ -152,7 +152,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('cursos.lista') }}">
 				<div class="box-ecole">
-					<img src="{{asset('images/logo-ecole-load.png')}}">
+					<img data-src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('cursos.lista')}}">Cursos Ecole</a></label>
 				</div>
 			</a>
@@ -160,7 +160,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('cursos.lista', ['formacao_id' => 1]) }}">
 				<div class="box-ecole">
-					<img src="{{asset('images/logo-ecole-load.png')}}">
+					<img data-src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('cursos.lista', ['formacao_id' => 1])}}">Formações</a></label>
 				</div>
 			</a>
@@ -168,7 +168,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('cursos.lista', ['formacao_id' => 3]) }}">
 				<div class="box-ecole">
-					<img src="{{asset('images/logo-ecole-load.png')}}">
+					<img data-src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('cursos.lista', ['formacao_id' => 3])}}">Cursos Online</a></label>
 				</div>
 			</a>
@@ -176,7 +176,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('agenda') }}">
 				<div class="box-ecole">
-					<img src="{{asset('images/logo-ecole-load.png')}}">
+					<img data-src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('agenda')}}">Agenda Ecole Brasil</a></label>
 				</div>
 			</a>
@@ -193,7 +193,7 @@ function myFunction() {
 					</div>
 					<div class="row">
 						<label>{{$depoimento->autor}}</label>
-						<img src="{{ asset('images/ecole-logo-depoimento.png') }}">
+						<img data-src="{{ asset('images/ecole-logo-depoimento.png') }}">
 					</div>
 				</div>
 			</div>
@@ -203,7 +203,7 @@ function myFunction() {
 <div class="row" style="background-color:#e5e5e5; padding: 15px">
 	<h5 class="descricao-day-agenda" style="text-align:center">NOSSA FORMAÇÃO É CERTIFICADA EM ALTO NÍVEL</h5>
 	<div class="col-md-3">
-		<img style="display: block; margin: 0 auto" src="{{asset('images/logo-ecole-paris.jpg')}}">
+		<img style="display: block; margin: 0 auto" data-src="{{asset('images/logo-ecole-paris.jpg')}}">
 	</div>
 	<div class="col-md-8">
 		<p style="text-align:justify">
@@ -215,14 +215,14 @@ function myFunction() {
 		<p style="text-align:justify">
 		Cada certificação é descrita em termos de atividades propostas e competências avaliadas, em um processo extenso de avaliação da instituição, da qualidade do ensino oferecido e do reconhecimento oficial da sustentabilidade do negócio e da empresa.
 		</p>
-		<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; width: 20%">
+		<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; width: 30%">
 			<a style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ route('certificacao') }}">Confira!</a>
 		</h3>
 	</div>
 </div>
 <div class="row" style="padding: 15px; background-color: rgba(239, 64, 96, 1);">
 	<div class="col-md-3">
-		<img style="width: 80%; display: block; margin: 0 auto" src="{{asset('images/logo-ecole-load.png')}}">
+		<img style="width: 80%; display: block; margin: 0 auto" data-src="{{asset('images/logo-ecole-load.png')}}">
 	</div>
 	<div class="col-md-3" style="margin-top: 20px;">
 		<h3 style="text-align: center; background: white; color: black; padding: 2px;">
@@ -248,7 +248,7 @@ function myFunction() {
 	  <div class="col-md-12 hidden-md hidden-lg" style="margin: 0; padding: 0" >
 	    <a class="video-index thumbnail ">
 	    	 {{-- background: rgba(239, 64, 96, .1); --}}
-	    	<p class="manifesto_mobile" >
+	    	<p class="manifesto_mobile">
 	    		<label style="">MANIFESTO</label><br>
 	    		Não é a roupa, é a pessoa. Não é sobre saber o que vestir, é sobre sentir. Ser. Não é só a cor, é o que ela representa para a alma. Não existe certo ou errado, existe o que te faz feliz. Você está satisfeito com o que vê no espelho? Essa imagem te traduz? Se cada pessoa tem uma identidade não faz sentido padronizar. Rótulos não cabem mais. Faz sentido ajudar as pessoas a expressarem quem são, se conhecerem, aceitarem, o diferente é o que nos encanta, vamos além do estilo e é essa a nossa missão com cada consultora que formamos. A gente quer que a nova regra seja ser livre, usar o que te faz bem não o que está na moda. A Ecole pensa no estilo e a moda como uma representação autêntica de autoconhecimento e personalidade. A gente quer que "ser você" seja a regra. Que cada uma das consultoras que a gente forma utilize as técnicas e a nossa metodologia para ajudar as pessoas a se permitirem ser para vestir com liberdade e respeito a si mesmo. Menos rótulos, menos feminino e masculino, menos pode e não pode, menos sim e não. Queremos ajudar as pessoas a encontrarem a sua essência pela vestimenta. A respeitarem a moda que faz sentido, que gera identidade. Porque no fundo, é isso: ser mais a gente meso para vestir o que nos representa.
 		    </p>
@@ -260,7 +260,6 @@ function myFunction() {
  		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
  			<div class="row">
  				<h2 style="text-align: center; font-style: normal" class="title-pink-begin-text">Cursos</h2>
- 				{{-- <h4 style="float: left; margin-top: 32px; font-weight: normal" class="title-pink-begin-text"><i>Cursos e Workshops</i></h4> --}}
  			</div>
  			<div class="row">
  				<hr>
@@ -275,7 +274,7 @@ function myFunction() {
  			<div class="row">
  				@foreach($cursos as $curso)
 	 				<div class="col-md-6 col-xs-12">
-	 					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($curso->card) }}"></a>
+	 					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " data-src="{{ asset($curso->card) }}"></a>
 						<div class="row">
 							<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
 								<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">

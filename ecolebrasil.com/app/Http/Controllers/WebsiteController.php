@@ -144,13 +144,11 @@ class WebsiteController extends Controller
         $cursos_menu = Curso::all();
         $depoimentos = Depoimento::all();
         $depoimentosVideo = Depoimento::where('video', '<>', '""')->where('video', '<>', '0')->get();
-
     	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo'));
     }
 
     public function agenda()
     {
-        // $agendas = DB::table('agendas')->orderBy('mes', 'asc')->get();
         $agendas = Agenda::where('data_inicio', '>=', date('Y-m-d').' 00:00:00')->orderBy('data_inicio', 'asc')->get();
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
@@ -211,8 +209,6 @@ class WebsiteController extends Controller
             $agendas = Curso::find($curso_id)->agendas;
             return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));
         }
-        // dd($agendas);
-
     }
 
     public function crudAlunoAfterPayment(Request $request)
@@ -248,17 +244,15 @@ class WebsiteController extends Controller
             ]);
         $agenda = Agenda::find( $request['agenda_id'] );
         $aluno->addAgenda( $agenda );
-
         $data = [   "nome" => $request->nome,
                     "login" => $request->email,
                     "password" => $request->password,
                     "nome_curso" => $agenda->curso->nome
                 ];
 
-
         Mail::send('emails.aluno', $data, function ($message) use ($request)  {
             $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
-            $message->to($request['email']);
+            $message->to($request['email'])->subject('Bem-vindo à Ecole');
         });
 
         return response()->json(['status' => 'success'], 200);
@@ -274,7 +268,8 @@ class WebsiteController extends Controller
 
     public function ead(Request $request)
     {
-        Auth::guard()->logout();
+        $this->middleware('guest')->except('logout');
+        Auth::logout();
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.ead', compact('formacoes', 'cursos_menu'));

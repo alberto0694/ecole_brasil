@@ -217,70 +217,56 @@
 
 </style>
 <body class="no-skin">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQX54FN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="navbar" class="navbar navbar-default ace-save-state">
-        <div class="navbar-container ace-save-state" id="navbar-container">
-            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-                <span class="sr-only">Toggle sidebar</span>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQX54FN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="navbar" class="navbar navbar-default ace-save-state">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+            <span class="sr-only">Toggle sidebar</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-header pull-left">
+            <a href="#" class="navbar-brand">
+                <small>
+                    {{-- <i class="fa fa-leaf"></i> --}}
+                    Ecole Brasil
+                </small>
+            </a>
+        </div>
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                 <li class="light-blue dropdown-modal">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Sair
+                    </a>
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="profile.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                Perfil
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Sair
+                            </a>
 
-                <span class="icon-bar"></span>
-
-                <span class="icon-bar"></span>
-
-                <span class="icon-bar"></span>
-            </button>
-
-            <div class="navbar-header pull-left">
-                <a href="#" class="navbar-brand">
-                    <small>
-                        {{-- <i class="fa fa-leaf"></i> --}}
-                        Ecole Brasil
-                    </small>
-                </a>
-            </div>
-
-            <div class="navbar-buttons navbar-header pull-right" role="navigation">
-                <ul class="nav ace-nav">
-                     <li class="light-blue dropdown-modal">
-                        <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                            Sair
-
-                            {{-- <i class="ace-icon fa fa-caret-down"></i> --}}
-                        </a>
-
-                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                            <li>
-                                <a href="profile.html">
-                                    <i class="ace-icon fa fa-user"></i>
-                                    Perfil
-                                </a>
-                            </li>
-
-                            <li class="divider"></li>
-
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    Sair
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div><!-- /.navbar-container -->
-    </div>
-
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+@if((Auth::user()->permission == 'PF'))
     <div class="main-container ace-save-state" id="main-container">
         <script type="text/javascript">
             try{ace.settings.loadState('main-container')}catch(e){}
@@ -412,51 +398,7 @@
 
         <div class="main-content">
             <div class="main-content-inner">
-              {{--   <div class="breadcrumbs ace-save-state" id="breadcrumbs">
-                    <ul class="breadcrumb">
-                        <li>
-                            <i class="ace-icon fa fa-home home-icon"></i>
-                            <a href="#">Home</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Other Pages</a>
-                        </li>
-                        <li class="active">Blank Page</li>
-                    </ul><!-- /.breadcrumb -->
-
-                    <div class="nav-search" id="nav-search">
-                        <form class="form-search">
-                            <span class="input-icon">
-                                <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-                                <i class="ace-icon fa fa-search nav-search-icon"></i>
-                            </span>
-                        </form>
-                    </div><!-- /.nav-search -->
-                </div> --}}
-
                 <div class="page-content">
-{{--                         <div class="ace-settings-container" id="ace-settings-container">
-                        <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-                            <i class="ace-icon fa fa-cog bigger-130"></i>
-                        </div>
-
-                        <div class="ace-settings-box clearfix" id="ace-settings-box">
-                            <div class="pull-left width-50">
-                                <div class="ace-settings-item">
-                                    <div class="pull-left">
-                                        <select id="skin-colorpicker" class="hide">
-                                            <option data-skin="no-skin" value="#438EB9">#438EB9</option>
-                                            <option data-skin="skin-1" value="#222A2D">#222A2D</option>
-                                            <option data-skin="skin-2" value="#C6487E">#C6487E</option>
-                                            <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br><br>
-                        </div><!-- /.ace-settings-box -->
-                    </div><!-- /.ace-settings-container --> --}}
                     <div id="loading-admin-application-only"></div>
                     <div id="admin-application-only" class="row" style="display: none">
                         <div class="col-xs-12">
@@ -468,15 +410,12 @@
                                         </div>
                                     @endif
                             </div>
-                            <!-- PAGE CONTENT BEGINS -->
-                                @yield('content')
-                            <!-- PAGE CONTENT ENDS -->
+                            @yield('content')
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.page-content -->
             </div>
         </div><!-- /.main-content -->
-
         <div class="footer">
             <div class="footer-inner">
                 <div class="footer-content">
@@ -486,33 +425,39 @@
                 </div>
             </div>
         </div>
-
         <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
             <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
         </a>
     </div><!-- /.main-container -->
-    <script src="{{asset('assets/js/jquery-2.1.4.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}" ></script>
-    <script type="text/javascript">
-        if('ontouchstart' in document.documentElement) document.write("<script src='{{ asset('assets/js/jquery.mobile.custom.min.js') }}'>"+"<"+"/script>");
-    </script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>
-    <script src="{{ asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>
-    <script src="{{ asset('assets/js/ace-elements.min.js') }}"></script>
-    <script src="{{ asset('assets/js/ace.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap-wysiwyg.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootbox.js')}}"></script>
-    <script src="{{ asset('assets/js/jquery.hotkeys.index.min.js')}}"></script>
-    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-validator/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-validator/additional-methods.min.js') }}"></script>
-    <script src="{{ asset('js/helpers.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
-
-    @yield('last-body')
-
-    <!-- inline scripts related to this page -->
+@else
+    <div class="row">
+        <h2 align="center">Você está logado com outro usuário, por favor clique em sair e tente novamente.</h2>
+    </div>
+    <div class="row">
+        <h3 align="center"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            Sair
+        </a></h3>
+    </div>
+@endif
+<script src="{{asset('assets/js/jquery-2.1.4.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}" ></script>
+<script type="text/javascript">
+if('ontouchstart' in document.documentElement) document.write("<script src='{{ asset('assets/js/jquery.mobile.custom.min.js') }}'>"+"<"+"/script>");
+</script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>
+<script src="{{ asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>
+<script src="{{ asset('assets/js/ace-elements.min.js') }}"></script>
+<script src="{{ asset('assets/js/ace.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap-wysiwyg.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootbox.js')}}"></script>
+<script src="{{ asset('assets/js/jquery.hotkeys.index.min.js')}}"></script>
+<script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('js/jquery-validator/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('js/jquery-validator/additional-methods.min.js') }}"></script>
+<script src="{{ asset('js/helpers.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+@yield('last-body')
 </body>
 <script type="text/javascript">
     $(window).load(function(){
