@@ -248,18 +248,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
   $(function() {
       // $(".lazy-container").Lazy();
-
-
-      $('img').Lazy({
-          scrollDirection: 'vertical',
-          effect: 'fadeIn',
-          threshold:-100,
-          effectTime:500,
-          visibleOnly: true,
-          onError: function(element) {
-            console.log('error loading ' + element.data('src'));
-          }
-      });
+      // $('img').Lazy({
+      //     scrollDirection: 'vertical',
+      //     effect: 'fadeIn',
+      //     threshold:-100,
+      //     effectTime:500,
+      //     visibleOnly: true,
+      //     onError: function(element) {
+      //       console.log('error loading ' + element.data('src'));
+      //     }
+      // });
   });
 </script>
 </body>
