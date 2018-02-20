@@ -131,17 +131,17 @@ function myFunction() {
 <div class="row">
 	<div class="col-md-8 col-md-offset-2" style="text-align: center">
 		<div class="col-md-4">
-			<img data-src="{{ asset('images/excelencia-conhecimento.png') }}" style="width: 100%; display: block">
+			<img src="{{ asset('images/excelencia-conhecimento.png') }}" style="width: 100%; display: block">
 			<label class="title-pink-begin-text" >Excelência no conhecimento</label>
 			<p class="gray-text" style="text-align: justify;">Nosso papel é formar pessoas com qualidade técnica, métodos atualizados e conhecimentos capazes de torná-las aptas a colocar em prática o que aprenderam e serem capazes de usarem os ensinamentos para ajudar pessoas na busca por sua imagem pessoal.</p>
 		</div>
 		<div class="col-md-4">
-			<img data-src="{{ asset('images/respeito-individualidade.png') }}" style="width: 100%; display: block">
+			<img src="{{ asset('images/respeito-individualidade.png') }}" style="width: 100%; display: block">
 			<label class="title-pink-begin-text" >Respeito à individualidade</label>
 			<p class="gray-text" style="text-align: justify;">Cada pessoa tem a sua forma de ser e isso que a torna única. Pensar a imagem é um processo de aprendizagem, descoberta e autoconhecimento. É nisso que acreditamos, é isso que multiplicamos em nossas formações.</p>
 		</div>
 		<div class="col-md-4">
-			<img data-src="{{ asset('images/respeito-paixao.png') }}" style="width: 100%; display: block">
+			<img src="{{ asset('images/respeito-paixao.png') }}" style="width: 100%; display: block">
 			<label class="title-pink-begin-text" >Renovar com paixão</label>
 			<p class="gray-text" style="text-align: justify;">Estamos sempre em constante atualização. O que torna isso parte natural do nosso trabalho é a paixão que temos pelo que fazemos, por estar com pessoas, por possibilitar que elas saiam melhores, mais confiantes e preparadas de cada curso que se encerra. </p>
 		</div>
@@ -152,7 +152,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('cursos.lista') }}">
 				<div class="box-ecole">
-					<img data-src="{{asset('images/logo-ecole-load.png')}}">
+					<img src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('cursos.lista')}}">Cursos Ecole</a></label>
 				</div>
 			</a>
@@ -160,7 +160,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('cursos.lista', ['formacao_id' => 1]) }}">
 				<div class="box-ecole">
-					<img data-src="{{asset('images/logo-ecole-load.png')}}">
+					<img src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('cursos.lista', ['formacao_id' => 1])}}">Formações</a></label>
 				</div>
 			</a>
@@ -168,7 +168,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('cursos.lista', ['formacao_id' => 3]) }}">
 				<div class="box-ecole">
-					<img data-src="{{asset('images/logo-ecole-load.png')}}">
+					<img src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('cursos.lista', ['formacao_id' => 3])}}">Cursos Online</a></label>
 				</div>
 			</a>
@@ -176,7 +176,7 @@ function myFunction() {
 		<div class="col-md-3">
 			<a href="{{ route('agenda') }}">
 				<div class="box-ecole">
-					<img data-src="{{asset('images/logo-ecole-load.png')}}">
+					<img src="{{asset('images/logo-ecole-load.png')}}">
 					<label><a href="{{route('agenda')}}">Agenda Ecole Brasil</a></label>
 				</div>
 			</a>
@@ -193,7 +193,7 @@ function myFunction() {
 					</div>
 					<div class="row">
 						<label>{{$depoimento->autor}}</label>
-						<img data-src="{{ asset('images/ecole-logo-depoimento.png') }}">
+						<img src="{{ asset('images/ecole-logo-depoimento.png') }}">
 					</div>
 				</div>
 			</div>
@@ -203,7 +203,7 @@ function myFunction() {
 <div class="row" style="background-color:#e5e5e5; padding: 15px">
 	<h5 class="descricao-day-agenda" style="text-align:center">NOSSA FORMAÇÃO É CERTIFICADA EM ALTO NÍVEL</h5>
 	<div class="col-md-3">
-		<img style="display: block; margin: 0 auto" data-src="{{asset('images/logo-ecole-paris.jpg')}}">
+		<img style="display: block; margin: 0 auto" src="{{asset('images/logo-ecole-paris.jpg')}}">
 	</div>
 	<div class="col-md-8">
 		<p style="text-align:justify">
@@ -222,7 +222,7 @@ function myFunction() {
 </div>
 <div class="row" style="padding: 15px; background-color: rgba(239, 64, 96, 1);">
 	<div class="col-md-3">
-		<img style="width: 80%; display: block; margin: 0 auto" data-src="{{asset('images/logo-ecole-load.png')}}">
+		<img style="width: 80%; display: block; margin: 0 auto" src="{{asset('images/logo-ecole-load.png')}}">
 	</div>
 	<div class="col-md-3" style="margin-top: 20px;">
 		<h3 style="text-align: center; background: white; color: black; padding: 2px;">
@@ -274,7 +274,7 @@ function myFunction() {
  			<div class="row">
  				@foreach($cursos as $curso)
 	 				<div class="col-md-6 col-xs-12">
-	 					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " data-src="{{ asset($curso->card) }}"></a>
+	 					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($curso->card) }}"></a>
 						<div class="row">
 							<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
 								<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
