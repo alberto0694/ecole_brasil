@@ -14,17 +14,13 @@
 	.clickable div, .clickable label, .clickable p{
 		cursor:pointer;
 	}
-
-	.content-web-site{
-		padding: 15px;
-	}
 </style>
 @section('content')
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
 	<h3 align="center" class="title-pink-begin-text">AGENDA</h3>
 </div>
-<div class="row">
+<div class="row padding-bottom">
 	<div class="col-md-10 col-md-offset-1 col-xs-12">
 		<?php $i = 0; ?>
 		@foreach($agendas as $agenda)
@@ -56,13 +52,13 @@
 								<img style="width: 100%" src="{{asset($agenda->curso->card)}}">
 							</div>
 							<div class="col-md-6 hidden-xs hidden-sm" style="padding: 0">
-								<p class="upper-case bold">{{ $agenda->cidade }}</p>
-								<p class="desc-agenda bold">{{ $agenda->curso->nome }}</p>
+								<p class="upper-case bold gray-dark-color">{{ $agenda->cidade }}</p>
+								<p class="desc-agenda bold gray-dark-color">{{ $agenda->curso->nome }}</p>
 								<p class="desc-agenda-prof">{{ $agenda->ministrantes }}</p>
 							</div>
 							<div class="col-xs-12 hidden-md hidden-lg" style="padding: 0; margin-top: 10px; text-align: center">
-								<p class="upper-case bold">{{ $agenda->cidade }}</p>
-								<p class="desc-agenda bold">{{ $agenda->curso->nome }}</p>
+								<p class="upper-case bold gray-dark-color">{{ $agenda->cidade }}</p>
+								<p class="desc-agenda bold gray-dark-color">{{ $agenda->curso->nome }}</p>
 								<p class="desc-agenda-prof">{{ $agenda->ministrantes }}</p>
 							</div>
 						</a>

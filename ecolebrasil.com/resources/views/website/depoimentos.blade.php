@@ -23,15 +23,19 @@
 	    	    margin-left: 5%;
 	    }
 	}
+
+	.header-page-content{
+		background-image:  url('{{ asset('images/depoimentos.png')  }}')
+	}
 </style>
  <div class="row" style="margin: 0; padding: 0">
 	<div class="col-md-12 header-page-content" style=""></div>
 	<div class="col-md-12 header-page">
-		<p>QUEM FEZ APROVA</p>
+		<p class="gray-dark-color">QUEM FEZ APROVA</p>
 	</div>
  </div>
 
- <div class="row">
+ <div class="row margin-top">
 
  	<div class="col-md-10 col-md-offset-1 ">
 		@if($depoimentosVideo->count() > 0)
@@ -84,10 +88,10 @@
 										    <i class="hidden-xs hidden-sm">{{$depoimento->autor}}</i>
 										    <hr style=" border: .1pt solid; ">
 									  </div>
-									  <h5 class="media-heading hidden-md hidden-lg" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{!! $depoimento->descricao_html !!}</h5>
+									  <h5 class="media-heading hidden-md hidden-lg" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{{ $depoimento->descricao_html }}</h5>
 									  <i class="hidden-md hidden-lg" style="margin-right: 60px">{{$depoimento->autor}}</i>
 								</div>
-								<hr style="border-top: 1px solid #ef3e61;">
+								<hr style="border-top: 1px solid gray">
 						</div>
 					@endif
 			@endforeach

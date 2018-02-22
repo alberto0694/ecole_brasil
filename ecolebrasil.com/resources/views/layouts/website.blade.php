@@ -17,8 +17,10 @@
     <title>Ecole Supérieure de Relooking</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Facebook Pixel Code -->
@@ -68,7 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      <a style="padding: 0; margin: 0; margin-top: -20px;" class="navbar-brand hidden-xs hidden-sm" href="{{route('index')}}" >
+      <a style="margin-top: -20px; margin-left: 25px" class=" no-padding-margin navbar-brand hidden-xs hidden-sm" href="{{route('index')}}" >
           <img alt="Ecole Brasil" src="{{asset('images/logo_ecole_brasil.png')}}">
       </a>
       <a class="navbar-brand hidden-md hidden-lg" href="{{route('index')}}" >
@@ -76,16 +78,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
+      <ul class="nav navbar-nav raleway">
+        <li class="dropdown raleway">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ECOLE BRASIL <span class="caret"></span></a>
-          <ul class="dropdown-menu" style="padding-top:10px">
-              <li><a class="link-cursos-menu" href="{{route('escola')}}">Ecole Suérieure de Relooking</a></li><br>
-              <li><a class="link-cursos-menu" href="{{route('faq')}}">Faq</a></li><br>
-              <li><a class="link-cursos-menu" href="{{route('equipe')}}">Nossa Equipe</a></li><br>
-              <li><a class="link-cursos-menu" href="{{route('manifesto')}}">Manifesto</a></li><br>
-              <li><a class="link-cursos-menu" href="{{route('certificacao')}}">Certificação Internacional</a></li><br>
-              <li><a class="link-cursos-menu" href="https://ecolesuperieurerelooking.com/" target="_blank">Paris</a></li><br>
+          <ul class="dropdown-menu raleway" style="padding-top:10px">
+              <li><a class="gray-text-ecole" href="{{route('escola')}}">Ecole Supérieure de Relooking</a></li><br>
+              <li><a class="gray-text-ecole" href="{{route('faq')}}">Dúvidas Frequentes</a></li><br>
+              <li><a class="gray-text-ecole" href="{{route('equipe')}}">Nossa Equipe</a></li><br>
+              <li><a class="gray-text-ecole" href="{{route('manifesto')}}">Manifesto</a></li><br>
+              <li><a class="gray-text-ecole" href="{{route('certificacao')}}">Certificação Internacional</a></li><br>
+              <li><a class="gray-text-ecole" href="https://ecolesuperieurerelooking.com/" target="_blank">Paris</a></li><br>
           </ul>
         </li>
         <li class="dropdown hidden-sm hidden-xs" >
@@ -93,22 +95,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul class="dropdown-menu" style="max-width: 800px; padding-top:10px; margin-left: -160px;">
             <li class="menu-item dropdown dropdown-submenu ">
               <div class="container">
-                <div class="row">
-                  <h6 style="margin-left:15px; width: 16.66666667%; float: left"><a href="{{route('agenda')}}">Agenda</a></h6>
-                  <h6 style="width: 16.66666667%; float: left"><a href="{{route('ead.login')}}">EAD</a></h6>
-                </div>
-                <div class="row">
+                <div class="row raleway">
                   @foreach($formacoes as $formacao)
                         <div class="col-md-2" style="min-height: 160px;">
-                          <h6 class="title-cursos">{{ $formacao->nome }}</h6>
+                          <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
                           <ul style=" padding: 0; margin-top: 10px">
                               @foreach($formacao->cursos as $curso)
-                                <a class="link-cursos-menu" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
+                                <a class="gray-dark-color" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
                                 <br>
                               @endforeach
                           </ul>
                         </div>
                   @endforeach
+                </div>
+                <div class="row">
+                  <h6 style="width: 16.66666667%; float: right; margin-right: 270px; font-weight: bold"><a href="{{route('agenda')}}">Agenda</a></h6>
+                  <h6 style="width: 16.66666667%; float: right; margin-right: 10px; font-weight: bold"><a href="{{route('ead.login')}}">EAD</a></h6>
                 </div>
               </div>
             </li>
@@ -126,9 +128,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </li>
         <li><a href="{{route('blog')}}">BLOG</a></li>
-        <li><a href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li>
+        {{-- <li><a href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li> --}}
         <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
-        <li><a href="{{route('eshop')}}"  target="_blank">E-SHOP</a></li>
+        {{-- <li><a href="{{route('eshop')}}"  target="_blank">E-SHOP</a></li> --}}
         <li><a href="{{route('restrito')}}"  target="_blank">EX-ALUNAS</a></li>
         <li><a href="{{route('contato')}}">CONTATO</a></li>
       </ul>
@@ -230,10 +232,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="footer-bottom">
       <div class="container">
           <div class="pull-right">
-              <ul class="nav nav-pills payments">
+{{--               <ul class="nav nav-pills payments">
                   <li><i class="fa fa-cc-visa"></i></li>
                   <li><i class="fa fa-cc-mastercard"></i></li>
-              </ul>
+              </ul> --}}
           </div>
       </div>
   </div>
@@ -247,6 +249,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $("#loading-background").hide();
   });
   $(function() {
+      $('ul.nav li.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+      }, function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+      });
       // $(".lazy-container").Lazy();
       // $('img').Lazy({
       //     scrollDirection: 'vertical',

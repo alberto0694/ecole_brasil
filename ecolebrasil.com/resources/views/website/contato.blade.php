@@ -9,25 +9,25 @@
 	}
 </style>
 @section('content')
-<div class="row">
+<div class="row paragrafo-padrao">
         @if(Session::has('message'))
 	          <div class="row">
 	          	<img class="img-contato" src="{{asset('images/logo-ecole-load.png')}}">
-	            <h3 align="center">Obrigado por entrar em contato conosco.</h3>
+	            <h4 align="center">Obrigado por entrar em contato conosco.</h4>
 	            <h4 align="center">Ecole Brasil</h4>
 	          </div>
 	          <div class="row">
 	            <hr style="margin-top: 50px">
-	            <h3 style="text-align: center; margin-top: -50px"><a href="{{route('agenda')}}">
+	            <h4 style="text-align: center; margin-top: -50px"><a href="{{route('agenda')}}">
 	              <img src="{{asset('images/agenda-button.png')}}">
 	            </a></h3>
 	          </div>
         @endif
 </div>
-<div class="row" style="margin-top: 30px; margin-bottom: 30px">
+<div class="row margin-top paragrafo-padrao" style="margin-bottom: 30px; text-align: justify;">
 	<div class="col-md-10 col-md-offset-1">
 		<div class="col-md-6">
-                <h3 class="title-pink-begin-text">ENTRE EM CONTATO</h3>
+                <h4 class="title-pink-begin-text">ENTRE EM CONTATO</h4>
                 <p class="gray-text">
 					Tem alguma dúvida ou gostaria de saber mais sobre a escola e os cursos? Entre em contato conosco preenchendo o formulário ao lado!
                 </p>

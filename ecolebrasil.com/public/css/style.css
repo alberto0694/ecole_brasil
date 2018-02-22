@@ -3,6 +3,89 @@ body, html{
   color: black;
   font-family: 'Montserrat', sans-serif;
 }
+/* MUDANÇAS ROBERTA*/
+.paragrafo-padrao{
+  font-size: 10pt;
+}
+
+.icone-missao{
+  width: 75%;
+  margin: 0  auto;
+  display: block
+}
+
+.margin-top{
+  margin-top: 70px;
+}
+
+.gray-background{
+  background: #e5e5e5;
+}
+
+.gray-text-ecole{
+  color: #e8e8e8;
+}
+
+.padding-20{
+  padding: 20px;
+}
+
+.background-ecole-pink{
+  background-color:rgba(239, 64, 96, 1);
+}
+
+.padding-bottom{
+  padding-bottom: 60px;
+}
+
+.raleway{
+  font-family: Raleway;
+}
+
+.no-padding-margin{
+  padding: 0; margin: 0;
+}
+
+.box-ecole{
+  min-height: 170px;
+  background-color: rgba(239, 64, 96, 1);
+  width: 85%;
+  padding-top: 30px;
+  margin: 0  auto;
+}
+
+.box-ecole img{
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.box-ecole label, .box-ecole a, .box-ecole a:hover{
+  text-align: center;
+  color: white;
+  font-size: 14pt;
+  display: block;
+}
+
+.gray-dark-color{
+  color: #5f6061;
+}
+
+.font-size-title{
+  font-size: 11pt;
+}
+
+.gray-dark-background{
+  color: #5f6061;
+}
+
+.no-text-decoration{
+  text-decoration: none;
+}
+
+/* MUDANÇAS ROBERTA*/
+
 .btn-primary {
     color: #fff;
     background-color: #ef4060;
@@ -47,27 +130,6 @@ body, html{
   text-transform: uppercase;
 }
 
-.box-ecole{
-  min-height: 200px;
-  background-color: rgba(239, 64, 96, 1);
-  width: 100%;
-  padding-top: 30px;
-}
-
-.box-ecole img{
-  display: block;
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 15px;
-}
-
-.box-ecole label, .box-ecole a, .box-ecole a:hover{
-  text-align: center;
-  color: white;
-  font-size: 14pt;
-  display: block;
-}
-
 .box-depoimento{
   width: 100%;
   padding: 15px;
@@ -106,7 +168,6 @@ body, html{
 
 .gray-text{
   color: gray;
-  font-size: 12pt;
 }
 
 .carousel-control.left ,.carousel-control.right {
@@ -243,7 +304,7 @@ ul {
   vertical-align: middle;
   display: table-cell;
   font-size: 24pt;
-  color: white;
+  color: #e8e8e8;
   font-weight: bold;
 }
 
@@ -528,13 +589,10 @@ a:hover {
   .dropdown-menu>li>a {
       background-color: #f4f4f4;
       border-radius: 0;
-      color: black;
+      color: #5f6061;
       border: none;
       box-shadow: none;
-  }
-
-  .link-cursos-menu {
-    color: #58585b;
+      opacity: .9;
   }
 
   .navbar a:hover{
