@@ -6,11 +6,6 @@
 		margin: 0; padding: 0; border: none; margin-top: -1px; border-radius: 0px;
 	}
 
-/*	.ser-para-vestir{
-		position: absolute;
-		bottom: 50px;
-		margin: 0;
-	}*/
 </style>
 
 	<div class="row" style="margin: 0; padding: 0">

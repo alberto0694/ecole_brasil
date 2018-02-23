@@ -130,6 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="{{route('blog')}}">BLOG</a></li>
         {{-- <li><a href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li> --}}
         <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
+        <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>
         {{-- <li><a href="{{route('eshop')}}"  target="_blank">E-SHOP</a></li> --}}
         <li><a href="{{route('restrito')}}"  target="_blank">EX-ALUNAS</a></li>
         <li><a href="{{route('contato')}}">CONTATO</a></li>
@@ -228,16 +229,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 @endif
             </div>
         </div>
-  </div>
-  <div class="footer-bottom">
-      <div class="container">
-          <div class="pull-right">
-{{--               <ul class="nav nav-pills payments">
-                  <li><i class="fa fa-cc-visa"></i></li>
-                  <li><i class="fa fa-cc-mastercard"></i></li>
-              </ul> --}}
-          </div>
-      </div>
   </div>
 </footer>
 <script type="text/javascript">

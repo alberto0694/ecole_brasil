@@ -81,17 +81,17 @@
 						<div class="col-md-12" style="margin-top: 15px">
 								<div class="media-left">
 									  <div class="media-left">
-										      <img style="width: 250px" class="media-object" src="{{asset($depoimento->avatar)}}" alt="{{ $depoimento->autor }}">
+										      <img style="width: 250px;" class="media-object" src="{{asset($depoimento->avatar)}}" alt="{{ $depoimento->autor }}">
 									  </div>
 									  <div class="media-body">
-										    <h5 class="media-heading hidden-xs hidden-sm" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{!! $depoimento->descricao_html !!}</h5>
-										    <i class="hidden-xs hidden-sm">{{$depoimento->autor}}</i>
+										    <h5 class="paragrafo-padrao media-heading hidden-xs hidden-sm" style=" word-spacing: 8px; line-height: 20px; text-align: justify; margin-left: 25px">{{ $depoimento->descricao_html }}</h5>
+										    <i class="hidden-xs hidden-sm bold" style="margin-left: 25px; font-weight: bold">{{$depoimento->autor}}</i>
 										    <hr style=" border: .1pt solid; ">
 									  </div>
-									  <h5 class="media-heading hidden-md hidden-lg" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{{ $depoimento->descricao_html }}</h5>
+									  <h5 class="paragrafo-padrao media-heading hidden-md hidden-lg" style=" word-spacing: 8px; line-height: 20px; text-align: justify;">{{ $depoimento->descricao_html }}</h5>
 									  <i class="hidden-md hidden-lg" style="margin-right: 60px">{{$depoimento->autor}}</i>
 								</div>
-								<hr style="border-top: 1px solid gray">
+								<hr style="border-top: 1px solid #c7c7c7">
 						</div>
 					@endif
 			@endforeach

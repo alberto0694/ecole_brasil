@@ -10,7 +10,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="row">
-					<h4 align="center" class="title-pink-begin-text">Entre Agora</h4>
+					<h4 align="center" class="title-pink-begin-text">ENTRE AGORA</h4>
 				</div>
                 <ul style="padding-left: 0px;">
                     <li>

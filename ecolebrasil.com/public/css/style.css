@@ -2,20 +2,39 @@ body, html{
   overflow-x: hidden;
   color: black;
   font-family: 'Montserrat', sans-serif;
+  font-size: 10pt;
+  color: gray;
 }
 /* MUDANÇAS ROBERTA*/
 .paragrafo-padrao{
   font-size: 10pt;
 }
 
+.titulo-padrao, .title-pink-begin-text{
+  font-size: 12pt;
+}
+
+table {
+    font-size: 10pt;
+}
+
+.titulo-14pt{
+  font-size: 14pt;
+}
+
 .icone-missao{
-  width: 75%;
+  width: 65%;
   margin: 0  auto;
-  display: block
+  display: block;
+  margin-bottom: 25px;
 }
 
 .margin-top{
   margin-top: 70px;
+}
+
+.margin-min-top{
+  margin-top: 25px;
 }
 
 .gray-background{
@@ -28,6 +47,10 @@ body, html{
 
 .padding-20{
   padding: 20px;
+}
+
+.padding-50{
+  padding: 50px;
 }
 
 .background-ecole-pink{
@@ -64,7 +87,6 @@ body, html{
 .box-ecole label, .box-ecole a, .box-ecole a:hover{
   text-align: center;
   color: white;
-  font-size: 14pt;
   display: block;
 }
 
@@ -73,7 +95,7 @@ body, html{
 }
 
 .font-size-title{
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 .gray-dark-background{
@@ -83,6 +105,9 @@ body, html{
 .no-text-decoration{
   text-decoration: none;
 }
+
+
+
 
 /* MUDANÇAS ROBERTA*/
 
@@ -592,7 +617,7 @@ a:hover {
       color: #5f6061;
       border: none;
       box-shadow: none;
-      opacity: .9;
+      opacity: .83;
   }
 
   .navbar a:hover{

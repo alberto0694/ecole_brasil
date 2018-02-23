@@ -321,6 +321,7 @@ Route::get('/blog', 'WebsiteController@blog')->name('blog');
 Route::get('/br/certification/see/cnpc/14', 'WebsiteController@certificacao')->name('certificacao');
 Route::get('/sou_ecole', 'WebsiteController@sou_ecole')->name('sou_ecole');
 Route::get('/contato', 'WebsiteController@contato')->name('contato');
+Route::get('/inscrição', 'WebsiteController@inscricao')->name('inscricao');
 Route::get('/agenda', 'WebsiteController@agenda')->name('agenda');
 Route::get('/ecole/cursos/{id}', 'WebsiteController@cursos')->name('cursos');
 Route::get('/br/deposing', 'WebsiteController@depoimentos')->name('depoimentos');
@@ -335,6 +336,7 @@ Route::get('/ebooks', 'WebsiteController@ebook')->name('ebook');
 Route::get('/ebook_pagamento/{id}', 'WebsiteController@ebook_pagamento')->name('ebook_pagamento');
 Route::get('/eshop', 'WebsiteController@eshop')->name('eshop');
 Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
+Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
 Route::post('/email_aluno', 'WebsiteController@crudAlunoAfterPayment')->name('pagamento.email');
 Route::post('/ebook_email', 'WebsiteController@ebook_email')->name('ebook.email');
 

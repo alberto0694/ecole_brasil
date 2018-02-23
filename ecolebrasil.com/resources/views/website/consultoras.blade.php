@@ -24,11 +24,17 @@
 		    border: 3px solid;
 		    border-radius: 2px;
 	}
+    .header-page-content{
+        background-image: url('{{ asset('images/certificacaointernacional.png')  }}')
+    }
 </style>
-<div class="row" style="padding: 15px; text-align: center">
-	<div class="row">
-		<h3 align="center" class="title-pink-begin-text">CONSULTORAS</h3>
-	</div>
+ <div class="row" style="margin: 0; padding: 0">
+    <div class="col-md-12 header-page-content" style=""></div>
+    <div class="col-md-12 header-page">
+        <p class="gray-dark-color bold">CONSULTORAS</p>
+    </div>
+ </div>
+<div class="row padding-20 margin-top" style="text-align: center">
 	<div class="col-md-10 col-md-offset-1" >
 		@foreach($consultoras as $consultora)
 			<div class="col-md-3" >
@@ -37,15 +43,8 @@
 						<div class="item-inside" style="background-image: url({{ asset($consultora->avatar) }})"></div>
 					</div>
 				</a>
-				<h3 style="color: rgba(239, 64, 96, 1);"> {{ $consultora->nome }} </b3><br>
-				<h4 > {{ $consultora->cidade }} </h4>
-				<div class="row">
-					<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
-						<h4 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
-{{-- 							<a target="_blank" style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ $consultora->site }}">Site</a> --}}
-						</h4>
-					</div>
-				</div>
+				<h3 class="titulo-padrao bold" style="color: rgba(239, 64, 96, 1);"> {{ $consultora->nome }} </b3><br>
+				<h4 class="paragrafo-padrao"> {{ $consultora->cidade }} </h4>
 			</div>
 		@endforeach
 	</div>

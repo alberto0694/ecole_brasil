@@ -50,6 +50,35 @@ class WebsiteController extends Controller
         return redirect(route('contato'));
     }
 
+    public function sendInscricao(Request $request)
+    {
+        $data = [   "contato" => $request->contato,
+                    "telefone" => $request->telefone,
+                    "cidade_curso" => $request->cidade_curso,
+                    "email" => $request->email];
+
+        // Contato::create( $request->all() );
+
+        Mail::send('emails.inscricao', $data, function ($message) {
+            $message->from('alberto@metrocoletivo.com.br', 'Inscrição Ecole Brasil');
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil');
+            $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil');
+            $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil');
+            $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil');
+        });
+
+        Session::flash('message' , 'Inscrição realizada. Entraremos em contato o mais breve possível!'); //<--FLASH MESSAGE
+        Session::flash('alert-class', 'alert-success');
+        return redirect(route('inscricao'));
+    }
+
+    public function inscricao()
+    {
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        return view('website.inscricao', compact('cursos_menu','formacoes'));
+    }
+
     public function home()
     {
         $formacoes = Formacao::all();
