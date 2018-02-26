@@ -213,7 +213,12 @@
           </div>
         </form>
       @else
-        <h3 align="center">Pendência se encontra quitada!</h3><br>
+        @if($inadimplencia->pago == 'S')
+          <h3 align="center">Pendência se encontra quitada!</h3><br>
+        @else
+          <h3 align="center">Prazo de pagamento espirado, solicite a geração de uma nova cobrança!</h3><br>
+        @endif
+
       @endif
     </div>
   </div>
