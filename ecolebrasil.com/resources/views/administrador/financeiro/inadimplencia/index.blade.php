@@ -29,6 +29,7 @@
 										<th>Nome</th>
 										<th>Valor</th>
 										<th>Razao Pagamento</th>
+										<th>Link de cobrança</th>
 										<th>Status</th>
 										<th></th>
 										<th></th>
@@ -54,6 +55,9 @@
 										</td>
 										<td>
 											<a href="#">{!! $inadimplencia->razao_pagamento !!}</a>
+										</td>
+										<td>
+											<a href="{{ route('regulariza.inadimplencia', $inadimplencia->id) }}">{{ route('regulariza.inadimplencia', $inadimplencia->id) }}</a>
 										</td>
 										<td>
 											<a href="#">{{ $inadimplencia->pago }}</a>
