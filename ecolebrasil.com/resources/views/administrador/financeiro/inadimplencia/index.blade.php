@@ -57,7 +57,7 @@
 											<a href="#">{!! $inadimplencia->razao_pagamento !!}</a>
 										</td>
 										<td>
-											<a href="{{ route('regulariza.inadimplencia', $inadimplencia->id) }}">{{ route('regulariza.inadimplencia', $inadimplencia->id) }}</a>
+											<a target="_blank" href="{{ route('regulariza.inadimplencia', $inadimplencia->id) }}">{{ route('regulariza.inadimplencia', $inadimplencia->id) }}</a>
 										</td>
 										<td>
 											<a href="#">{{ $inadimplencia->pago }}</a>
