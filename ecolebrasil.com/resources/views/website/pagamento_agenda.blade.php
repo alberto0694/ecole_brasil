@@ -49,8 +49,16 @@
         position: relative;
     }
 }
+  .header-page-content{
+    background-image: url('{{ asset('images/inscricao.png')  }}');
+  }
 </style>
-
+ <div class="row" style="margin: 0; padding: 0">
+  <div class="col-md-12 header-page-content" style=""></div>
+  <div class="col-md-12 header-page">
+    <p class="gray-dark-color">INSCRIÇÃO</p>
+  </div>
+ </div>
   <div class="row" style="margin: 5px; margin-top: 20px">
     <div class="container">
       @if($agendas->count() > 0)
@@ -207,20 +215,20 @@
 
                           <div class="col-md-4" style="padding: 0">
                               <select class="col-md-3 form-control" name="ano_cartao" id="ano_cartao">
-                                <option value="18">2018</option>
-                                <option value="19">2019</option>
-                                <option value="20">2020</option>
-                                <option value="21">2021</option>
-                                <option value="22">2022</option>
-                                <option value="23">2023</option>
-                                <option value="24">2024</option>
-                                <option value="25">2025</option>
-                                <option value="26">2026</option>
-                                <option value="27">2027</option>
-                                <option value="28">2028</option>
-                                <option value="29">2029</option>
-                                <option value="30">2030</option>
-                                <option value="31">2031</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
                               </select>
 
                           </div>
@@ -228,7 +236,6 @@
                   </div>
                   <input required type="hidden" name="transacao" id="transacao" value="00">
                   <input required type="hidden" name="modelo" id="modelo" value="D">
-                  {{ csrf_field() }}
                   <button class="btn btn-success btn-lg pull-right" type="button" id="comprar_curso">Comprar o Curso</button>
                 </div>
               </div>
@@ -311,33 +318,21 @@ $(document).ready(function () {
                   var self = this;
                   return $.ajax({
                       type: "POST",
-                      dataType: 'json',
                       headers: {
-                          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-                          'Access-Control-Allow-Origin': '*',
-                          'Access-Control-Allow-Headers': '*',
-                          'Access-Control-Allow-Credentials': 'true'
+                          'X-CSRF-TOKEN': '{{ csrf_token() }}'
                       },
-                      crossDomain: true,
-                      contentType: "application/json",
-                      url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
-                      data: JSON.stringify({
-                          ano:parseInt($("#ano_cartao").val()),
-                          conftxn:"S",
-                          cvc2:parseInt($("#seguranca_cartao").val()),
-                          filiacao:74450930,
-                          mes:parseInt($("#mes_cartao").val()),
+                      url: '{{ route('pagamento') }}',
+                      data: {
+                          ano:$("#ano_cartao").val(),
+                          cvc2:$("#seguranca_cartao").val(),
+                          mes:$("#mes_cartao").val(),
                           nrcartao:$("#numero_cartao").val(),
-                          numpedido:1,
-                          parcelas:parseInt($("#num_parcelas").val()),
+                          parcelas:$("#num_parcelas").val(),
                           portador:$("#nome_cartao").val(),
-                          total:parseFloat($("#valor_curso").val()),
-                          transacao:parseInt($("#transacao").val())
-                      })
-                  }).done(function (response) {
-                      // self.setContentAppend('<div>Efetuando pagamento...</div>');
-                      // self.setContentAppend('<div>Gerando Acessos...</div>');
-                  });
+                          agenda_id:$("#agenda_id").val(),
+                          transacao:$("#transacao").val()
+                      }
+                  }).done(function (response) {});
               },
               contentLoaded: function(data, status, request){
                   var self = this;
@@ -347,7 +342,10 @@ $(document).ready(function () {
                               if(request.responseJSON.codret == 0){ //SUCESSO
                                     $.ajax({
                                       type: "POST",
-                                      url: '{{ route('pagamento.email') }}',
+                                      headers: {
+                                          'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                      },
+                                      url: '{{ route('pagamento.agenda') }}',
                                       data: $("#pagamento-aluno").serialize(),
                                       success: function(data, status, request){
                                           if(request.responseJSON.status == 'success'){
@@ -355,7 +353,11 @@ $(document).ready(function () {
                                               self.setContent('<div class="col-md-10 col-md-offset-1" style="color:#ed3656;"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Bem vindo à Ecole!</label><br><label style="text-align: center; width: 100%">Enviamos às informações para o seguinte endereço de email:</label><br><label style="text-align: center; font-size:15pt; width: 100%"><b>'+$("#email").val()+'</b></label><br></div>');
                                           }else{
                                               //FAZER REQUISIÇÃO DE EXTORNO
-                                              self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
+                                              if(request.responseJSON.status == 'user_exists'){
+                                                //BOTAR MENSAGEM DE QUE ESTE E-MAIL JÁ ESTÁ SENDO UTILIZADO
+                                              }else{
+                                                self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
+                                              }
                                           }
                                       }
                                     });
@@ -388,46 +390,6 @@ $(document).ready(function () {
                   }
               }
           });
-
-          // $.ajax({
-          //   type: "POST",
-          //   dataType: 'json',
-          //   // crossDomain: true,
-          //   contentType: "application/json",
-          //   url: 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP',
-          //   data: JSON.stringify({
-
-          //         ano:parseInt($("#ano_cartao").val()),
-          //         conftxn:"S",
-          //         cvc2:parseInt($("#seguranca_cartao").val()),
-          //         filiacao:74450930,
-          //         mes:parseInt($("#mes_cartao").val()),
-          //         nrcartao:$("#numero_cartao").val(),
-          //         numpedido:1,
-          //         parcelas:parseInt($("#num_parcelas").val()),
-          //         portador:$("#nome_cartao").val(),
-          //         total:parseFloat($("#valor_curso").val()),
-          //         transacao:parseInt($("#transacao").val())
-          //   }),
-          //   success: function(data, status, request){
-          //       if(request != null){
-          //           if(request.responseJSON != null){ //SUCESSO
-          //               if(request.responseJSON.codret != null){ //SUCESSO
-          //                   if(request.responseJSON.codret == 0){ //SUCESSO
-          //                         $.ajax({
-          //                           type: "POST",
-          //                           url: '{{ route('pagamento.email') }}',
-          //                           data: $("#pagamento-aluno").serialize(),
-          //                           success: function(data, status, request){
-          //                               if(request.responseJSON.status == 'success'){
-
-          //                               }
-          //                           }
-          //                         });
-          //                   }
-          //               }
-          //           }
-          //       }
 
           //   //retorno de sucesso
           //   // {

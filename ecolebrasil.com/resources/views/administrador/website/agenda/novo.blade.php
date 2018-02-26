@@ -148,43 +148,43 @@
         		}
         	});
 
-				$('#valor').priceFormat({
-				    prefix: '',
-				    thousandsSeparator: '',
-				    clearOnEmpty: false
-				});
+			$('#valor').priceFormat({
+			    prefix: '',
+			    thousandsSeparator: '',
+			    clearOnEmpty: false
+			});
 
-		    	//VALIDATOR JQUERY
-		    	$("#nova-agenda").validate({
-						rules: {},
-						messages: {},
-						submitHandler: function(form) {
-							$.confirm({
-						    content: function(){
-					        var self = this;
-					        return $.ajax({
-									  type: "POST",
-									  url: '{{ route('agenda.create') }}',
-									  data: $("#nova-agenda").serialize(),
-									  success: function(){
-											$.alert({
-											    title: 'Sucesso!',
-											    content: 'Agenda cadastrada com sucesso!',
-											    buttons:{
-											    	ok:function(){
-											    		window.location.href = "{{ route('administrador.agenda.index') }}";
-											    	}
-											    }
-											});
-									  }
-									});
-						    },
-								contentLoaded: function(data, status, xhr){
-								    this.close();
-								}
-							});
-						}
-					});
+	    	//VALIDATOR JQUERY
+	    	$("#nova-agenda").validate({
+					rules: {},
+					messages: {},
+					submitHandler: function(form) {
+						$.confirm({
+					    content: function(){
+				        var self = this;
+				        return $.ajax({
+								  type: "POST",
+								  url: '{{ route('agenda.create') }}',
+								  data: $("#nova-agenda").serialize(),
+								  success: function(){
+										$.alert({
+										    title: 'Sucesso!',
+										    content: 'Agenda cadastrada com sucesso!',
+										    buttons:{
+										    	ok:function(){
+										    		window.location.href = "{{ route('administrador.agenda.index') }}";
+										    	}
+										    }
+										});
+								  }
+								});
+					    },
+							contentLoaded: function(data, status, xhr){
+							    this.close();
+							}
+						});
+					}
+				});
 
 		    	$("#cancel-form").click(function(){
 						$.confirm({

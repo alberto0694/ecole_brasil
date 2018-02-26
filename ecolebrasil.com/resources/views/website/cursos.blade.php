@@ -50,7 +50,7 @@
 			</div>
 		</span>
 		<div class="col-md-11 col-md-offset-1 col-xs-10 col-xs-offset-1">
-			<h4 class="title-pink-begin-text upper-case">Base de conteúdos abordados</h4>
+			<h4 class="title-pink-begin-text upper-case">BASE DOS CONTEÚDOS ABORDADOS</h4>
 			<p class="gray-text paragrado-padrao">{!! $curso->conteudo !!}</p>
 		</div>
 	</div>
@@ -60,7 +60,11 @@
 			{!! $curso->objetivos !!}
 		</div>
 		<div class="col-md-11 col-md-offset-0 col-xs-10 col-xs-offset-1">
-			<h4 class="title-pink-begin-text upper-case">Material didático</h4>
+			<h4 class="title-pink-begin-text upper-case">DIFERENCIAIS</h4>
+			{!! $curso->informacoes !!}
+		</div>
+		<div class="col-md-11 col-md-offset-0 col-xs-10 col-xs-offset-1">
+			<h4 class="title-pink-begin-text upper-case">MATERIAL DIDÁTICO</h4>
 			{!! $curso->material !!}
 		</div>
 	</div>

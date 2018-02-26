@@ -22,11 +22,20 @@ table {
   font-size: 14pt;
 }
 
+.titulo-15pt{
+  font-size: 15pt;
+}
+
 .icone-missao{
   width: 65%;
   margin: 0  auto;
   display: block;
   margin-bottom: 25px;
+}
+
+a:focus, a:hover {
+    color: rgba(239, 64, 96, 1);
+    text-decoration: underline;
 }
 
 .margin-top{

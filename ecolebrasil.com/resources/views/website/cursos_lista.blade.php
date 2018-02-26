@@ -1,22 +1,34 @@
 @extends('layouts.website')
 @section('content')
+<style type="text/css">
+	.faca-inscricao{
+		border: 2px solid rgba(239, 64, 96, 1);
+		border-radius: 10px;
+		display: block;
+		text-align: center;
+		background: white;
+		color: white;
+		padding: 2px;
+	}
+</style>
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
-	<h3 align="center" class="title-pink-begin-text">CURSOS ECOLE</h3>
+	<h3 align="center" class="title-pink-begin-text" style="margin-top: 50px">CURSOS ECOLE</h3>
 </div>
 <div class="row">
 	<div style="width: 80%; margin-left: 10%">
 		@if($cursos->count() > 0)
 			@foreach($cursos as $curso)
-				<div class="col-md-6 col-xs-12">
-					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($curso->card) }}"></a>
-				<div class="row">
-					<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
-						<h3 style="text-align: center; background: #ef4060; color: white; padding: 2px; ">
-							<a style="text-decoration: none; color: white; font-style: italic; font-weight: bold" href="{{ route('pagamento', ['curso_id' => $curso->id]) }}">Inscrever-se</a>
-						</h3>
+				<div class="col-md-6 col-xs-12" style="margin-top: 50px">
+					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($curso->card) }}">
+					</a>
+					<div class="row">
+						<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">
+							<h4 class="faca-inscricao">
+								<a style="text-decoration: none; font-weight: bold" href="{{ route('pagamento', ['curso_id' => $curso->id]) }}">Faça sua inscrição</a>
+							</h4>
+						</div>
 					</div>
-				</div>
 				</div>
 			@endforeach
 		@else

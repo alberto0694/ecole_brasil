@@ -77,6 +77,11 @@ Route::post('/aluno/create', 'AlunoController@create')->name('aluno.create');
 Route::put('/aluno/update/{id}', 'AlunoController@update')->name('aluno.update');
 Route::delete('/aluno/delete/{id}', 'AlunoController@delete')->name('aluno.delete');
 
+//inadimplencia
+Route::post('/inadimplencia/create', 'InadimplenciaController@create')->name('inadimplencia.create');
+Route::put('/inadimplencia/update/{id}', 'InadimplenciaController@update')->name('inadimplencia.update');
+Route::delete('/inadimplencia/delete/{id}', 'InadimplenciaController@delete')->name('inadimplencia.delete');
+
 //Agenda
 Route::post('/agenda/create', 'AgendaController@create')->name('agenda.create');
 Route::put('/agenda/update/{id}', 'AgendaController@update')->name('agenda.update');
@@ -218,6 +223,11 @@ Route::get('/adm/acesso_restrito/novo', 'AdministradorController@acesso_restrito
 Route::get('/adm/acesso_restrito/editar/{id}', 'AdministradorController@acesso_restrito_editar')->name('administrador.acesso_restrito.editar');
 
 
+//inadimplencia
+Route::get('/adm/inadimplencia/index', 'AdministradorController@inadimplencia_index')->name('administrador.inadimplencia.index');
+Route::get('/adm/inadimplencia/novo', 'AdministradorController@inadimplencia_novo')->name('administrador.inadimplencia.novo');
+Route::get('/adm/inadimplencia/editar/{id}', 'AdministradorController@inadimplencia_editar')->name('administrador.inadimplencia.editar');
+
 //exercicios
 Route::get('/adm/exercicio/index', 'AdministradorController@exercicio_index')->name('administrador.exercicio.index');
 Route::get('/adm/exercicio/novo', 'AdministradorController@exercicio_novo')->name('administrador.exercicio.novo');
@@ -327,7 +337,7 @@ Route::get('/ecole/cursos/{id}', 'WebsiteController@cursos')->name('cursos');
 Route::get('/br/deposing', 'WebsiteController@depoimentos')->name('depoimentos');
 Route::get('/br/school/see/faq/20', 'WebsiteController@faq')->name('faq');
 Route::get('/br/press', 'WebsiteController@imprensa')->name('imprensa');
-Route::get('/pagamento', 'WebsiteController@pagamento')->name('pagamento'); //Agenda
+Route::get('/agenda/aluno', 'WebsiteController@compra_agenda')->name('compra.agenda'); //Agenda
 Route::get('/cursos/listagem', 'WebsiteController@cursos_lista')->name('cursos.lista'); //Agenda
 Route::get('/imprensa/materia/{id}', 'WebsiteController@materia')->name('materia');
 Route::get('/blog/post/{id}', 'WebsiteController@blog_post')->name('post_blog');
@@ -337,8 +347,13 @@ Route::get('/ebook_pagamento/{id}', 'WebsiteController@ebook_pagamento')->name('
 Route::get('/eshop', 'WebsiteController@eshop')->name('eshop');
 Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
 Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
-Route::post('/email_aluno', 'WebsiteController@crudAlunoAfterPayment')->name('pagamento.email');
+
+//ROTAS DE PAGAMENTOS
+Route::post('/pagamento', 'PagamentoController@doPayment')->name('pagamento');
+Route::post('/pagamento/inadimplencia/{id}', 'InadimplenciaController@update_pagamento')->name('pagamento.inadimplencia');
+Route::post('/compra_agenda', 'AgendaController@buyAgenda')->name('pagamento.agenda');
 Route::post('/ebook_email', 'WebsiteController@ebook_email')->name('ebook.email');
+Route::get('/regularizacao/{id}', 'WebsiteController@regulariza_inadimplencia')->name('regulariza.inadimplencia');
 
 Route::get('/manifesto', 'WebsiteController@manifesto')->name('manifesto');
 Route::get('/equipe', 'WebsiteController@equipe')->name('equipe');

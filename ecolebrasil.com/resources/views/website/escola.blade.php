@@ -12,6 +12,22 @@
 	p{
 		text-align: justify;
 	}
+
+	.superirere-ecole{
+		padding-left: 0;
+		margin-left: 16.1%;
+	}
+
+	@media screen and (max-width: 768px) {
+		.superirere-ecole{
+			padding-left: 0;
+			margin-left: 0;
+		}
+
+/*		.superirere-ecole-mobile{
+			margin-left: 10px;
+		}*/
+	}
 </style>
 <div class="row margin-top" style="margin: 0; padding: 0">
 	<div class="col-md-12 header-page-content" style=""></div>
@@ -21,14 +37,14 @@
 </div>
 <div class="row margin-top">
 	  <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-	    <p style="text-align: justify;" class="gray-text paragrafo-padrao">A Ecole Supérieure de Relooking foi fundada em Paris, berço mundial das artes, da cultura, cidade que abraça estilos diversos. A Ecole carrega a autenticidade e a paixão pelas pessoas na essência. Especialista em cursos e formações relacionados a imagem pessoal, psicologia e empreendedorismo, reúne expertise, técnicas e metodologias diferenciadas, multiplicando em cada aluno o que carrega como maior crença: olhar as pessoas pela sua essência e traduzir pela imagem um reflexo genuíno do que são.</p>
+	    <p style="text-align: justify; font-weight: bold" class="gray-text paragrafo-padrao">A Ecole Supérieure de Relooking foi fundada em Paris, berço mundial das artes, da cultura, cidade que abraça estilos diversos. A Ecole carrega a autenticidade e a paixão pelas pessoas na essência. Especialista em cursos e formações relacionados a imagem pessoal, psicologia e empreendedorismo, reúne expertise, técnicas e metodologias diferenciadas, multiplicando em cada aluno o que carrega como maior crença: olhar as pessoas pela sua essência e traduzir pela imagem um reflexo genuíno do que são.</p>
 </p>
 	  </div>
  </div>
 <div class="row margin-top">
 	<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
- 	<h3 align="center" class="titulo-14pt title-pink-begin-text">MISSÃO</h3>
- 	<h4 align="center" class="gray-text paragrafo-padrao margin-min-top">Nossa missão ganha vida em três bandeiras que carregamos em todas as formações que desenvolvemos</h4>
+ 	<h3 align="center" class="titulo-15pt title-pink-begin-text">MISSÃO</h3>
+ 	<h4 align="center" style="font-weight: bold" class="gray-text titulo-padrao margin-min-top">Nossa missão ganha vida em três bandeiras que carregamos em todas as formações que desenvolvemos</h4>
 	</div>
 </div>
 <div class="row margin-min-top">
@@ -50,9 +66,9 @@
 		</div>
 	</div>
 </div>
- <div class="row margin-min-top padding-50" style="margin-bottom: 30px; text-align: justify; background: #e5e5e5;" >
- 	<div class="col-md-8 col-md-offset-2" style="text-align: center">
- 		<h3 align="left" class="titulo-14pt title-pink-begin-text">Ecole Súpérieure de Relooking é: </h3>
+ <div class="row superirere-ecole-mobile margin-min-top padding-50" style="margin-bottom: 30px; text-align: justify; background: #e5e5e5;" >
+ 	<div class="col-md-8 superirere-ecole col-md-offset-2" style="text-align: center">
+ 		<h3 align="left" class="titulo-14pt title-pink-begin-text">Ecole Supérieure de Relooking é: </h3>
  		<p class="gray-text">
 			<p class="gray-text paragrafo-padrao">A primeira Escola de formação França a ter certificação profissionalizante na área de Imagem. </p>
 

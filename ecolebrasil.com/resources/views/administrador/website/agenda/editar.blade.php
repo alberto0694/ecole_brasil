@@ -185,93 +185,91 @@
 				</form>
 @endsection
 @section('last-body')
-    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
-    <script type="text/javascript">
-        jQuery(function($){
-        	$("#transacao").change(function(){
-        		if( ($(this).val() != '04') && ($(this).val() != '39')){
-        			$(".parcelas-class").show();
-        		}else{
-        			$(".parcelas-class").hide();
-        			$("#max_parcelas").val("0");
-        		}
-        	});
+<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
+<script type="text/javascript">
+jQuery(function($){
+	$("#transacao").change(function(){
+		if( ($(this).val() != '04') && ($(this).val() != '39')){
+			$(".parcelas-class").show();
+		}else{
+			$(".parcelas-class").hide();
+			$("#max_parcelas").val("0");
+		}
+	});
 
-					$('#valor').priceFormat({
-					    prefix: '',
-					    thousandsSeparator: '',
-					    clearOnEmpty: false
-					});
-        	//VALIDATOR JQUERY
-        	$("#editar-agenda").validate({
-						rules: {},
-						messages: {},
-						submitHandler: function(form) {
-							$.confirm({
-							    content: function(){
-							        var self = this;
-							        return $.ajax({
-											  type: "POST",
-											  url: '{{ route('agenda.update', $agenda->id) }}',
-											  data: $("#editar-agenda").serialize(),
-											  success: function(){
-													$.alert({
-													    title: 'Sucesso!',
-													    content: 'Agenda alterada com sucesso!',
-													    buttons:{
-													    	ok:function(){
-													    		window.location.href = "{{ route('administrador.agenda.index') }}";
-													    	}
-													    }
-													});
-											  }
+	$('#valor').priceFormat({
+	    prefix: '',
+	    thousandsSeparator: '',
+	    clearOnEmpty: false
+	});
+	//VALIDATOR JQUERY
+	$("#editar-agenda").validate({
+				rules: {},
+				messages: {},
+				submitHandler: function(form) {
+					$.confirm({
+					    content: function(){
+					        var self = this;
+					        return $.ajax({
+									  type: "POST",
+									  url: '{{ route('agenda.update', $agenda->id) }}',
+									  data: $("#editar-agenda").serialize(),
+									  success: function(){
+											$.alert({
+											    title: 'Sucesso!',
+											    content: 'Agenda alterada com sucesso!',
+											    buttons:{
+											    	ok:function(){
+											    		window.location.href = "{{ route('administrador.agenda.index') }}";
+											    	}
+											    }
 											});
-							    },
-								contentLoaded: function(data, status, xhr){
-								    this.close();
-								}
-							});
+									  }
+									});
+					    },
+						contentLoaded: function(data, status, xhr){
+						    this.close();
 						}
 					});
+				}
+			});
 
-        	$("#cancel-form").click(function(){
-						$.confirm({
-							title: 'Atenção!',
-							content: 'Deseja Cancelar? (Voce poderá perder dados)',
-						    buttons: {
-						        Sim: function(helloButton){
-						            document.location.href = "{{ route('administrador.agenda.index') }}"
-						        },
-						        Nao:{
-						        	text:"Não"
-						        }
-						    }
-						});
-        	});
+	$("#cancel-form").click(function(){
+		$.confirm({
+			title: 'Atenção!',
+			content: 'Deseja Cancelar? (Voce poderá perder dados)',
+		    buttons: {
+		        Sim: function(helloButton){
+		            document.location.href = "{{ route('administrador.agenda.index') }}"
+		        },
+		        Nao:{
+		        	text:"Não"
+		        }
+		    }
+		});
+	});
 
-        	//ckeditor
-        	$('textarea').ckeditor();
+	//ckeditor
+	$('textarea').ckeditor();
 
-        	//EVENTOS ONCHANGE FILES
-					var x = document.getElementsByClassName("readFileBase64");
-					for (var i = 0; i < x.length; i++) {
-					    x[i].addEventListener("change", readFile);
-					}
+	//EVENTOS ONCHANGE FILES
+	var x = document.getElementsByClassName("readFileBase64");
+	for (var i = 0; i < x.length; i++) {
+	    x[i].addEventListener("change", readFile);
+	}
 
-					//DATA-PICKER
-					$('.date-picker').datepicker({
-						autoclose: true,
-						todayHighlight: true,
-				    	format: 'dd/mm/yyyy',
-				    	language: 'pt-BR',
-				    	weekStart: 0
-					}).next().on(ace.click_event, function(){
-						$(this).prev().focus();
-					});
-
-        });
-
-    </script>
+	//DATA-PICKER
+	$('.date-picker').datepicker({
+		autoclose: true,
+		todayHighlight: true,
+    	format: 'dd/mm/yyyy',
+    	language: 'pt-BR',
+    	weekStart: 0
+	}).next().on(ace.click_event, function(){
+		$(this).prev().focus();
+	});
+});
+</script>
 @endsection

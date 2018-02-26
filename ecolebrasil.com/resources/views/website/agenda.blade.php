@@ -17,19 +17,19 @@
 </style>
 @section('content')
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="margin-min-top col-md-10 col-md-offset-1">
 	<h3 align="center" class="title-pink-begin-text">AGENDA</h3>
 </div>
-<div class="row padding-bottom">
+<div class=" row padding-bottom">
 	<div class="col-md-10 col-md-offset-1 col-xs-12">
 		<?php $i = 0; ?>
 		@foreach($agendas as $agenda)
 			@if($i % 3 == 0)
-				<div class="row" style="margin-top: 20px; margin-bottom: 15px">
+				<div class="margin-min-top row" style="margin-bottom: 15px">
 					{{-- <div class="col-md-12"> --}}
 			@endif
 					<div class="col-md-4">
-						<a class="clickable" href="{{ route('pagamento', ['agenda_id' => $agenda->id]) }}">
+						<a class="clickable" href="{{ route('compra.agenda', ['agenda_id' => $agenda->id]) }}">
 							<div class="col-md-2 col-xs-6 hidden-xs hidden-sm">
 								<div class="row" style="text-align:center">
 									<label class="desc-agenda bold" style="font-size: 14pt">{{$agenda->monthRes}}</label>

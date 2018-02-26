@@ -212,7 +212,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="navbar-header pull-left">
             <a href="#" class="navbar-brand">
-                <small> Ecole Brasil, <small style="font-size:11pt">Bem vindo(a) {{ $aluno->nome }}</small> </small>
+                @if($aluno)
+                    <small> Ecole Brasil, <small style="font-size:11pt">Bem vindo(a) {{ $aluno->nome }}</small> </small>
+                @endif
             </a>
         </div>
         <div class="navbar-buttons navbar-header pull-right" role="navigation">

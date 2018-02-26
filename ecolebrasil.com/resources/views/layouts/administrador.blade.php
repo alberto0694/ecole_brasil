@@ -431,6 +431,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <ul class="submenu">
                         <li class="">
+                            <a href="{{ route('administrador.inadimplencia.index') }}">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Inadimplência
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
                             <a href="{{ route('administrador.aluno.novo') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Quadro Financeiro

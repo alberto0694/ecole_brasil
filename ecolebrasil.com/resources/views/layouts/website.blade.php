@@ -80,7 +80,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav raleway">
         <li class="dropdown raleway">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ECOLE BRASIL <span class="caret"></span></a>
+          <a href="#" class="item-menu-font dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ECOLE BRASIL <span class="caret"></span></a>
           <ul class="dropdown-menu raleway" style="padding-top:10px">
               <li><a class="gray-text-ecole" href="{{route('escola')}}">Ecole Supérieure de Relooking</a></li><br>
               <li><a class="gray-text-ecole" href="{{route('faq')}}">Dúvidas Frequentes</a></li><br>
@@ -107,10 +107,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                           </ul>
                         </div>
                   @endforeach
-                </div>
-                <div class="row">
-                  <h6 style="width: 16.66666667%; float: right; margin-right: 270px; font-weight: bold"><a href="{{route('agenda')}}">Agenda</a></h6>
-                  <h6 style="width: 16.66666667%; float: right; margin-right: 10px; font-weight: bold"><a href="{{route('ead.login')}}">EAD</a></h6>
+                        <div class="col-md-2" style="min-height: 160px;">
+                          <h6 class="gray-dark-color title-cursos bold"></h6>
+                          <ul style=" padding: 0; margin-top: 10px">
+                                <a style="margin-bottom: 10px" href="{{route('ead.login')}}">Acesso EAD</a><br>
+                                <a href="{{route('agenda')}}">Agenda</a>
+                          </ul>
+                        </div>
                 </div>
               </div>
             </li>
@@ -170,11 +173,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="title-footer">  ECOLE SUPÉRIEURE DE RELLOKING  </li>
                         <li style="margin-top:10px" class="title-footer">  BRASIL  </li>
                         <li class="body-footer-li">  Rua Xavier Ferreira, 131  </li>
+                        <li class="body-footer-li">  CEP: 90540-160</li>
                         <li class="body-footer-li">  Porto Alegre/RS  </li>
                         <li class="body-footer-li">  contato@ecolebrasil.com  </li>
                         <li class="body-footer-li">  Fones:  </li>
                         <li class="body-footer-li">  +55 51 3237.2800  </li>
-                        <li class="body-footer-li">  +55 51 99749.0990 </li>
+                        <li class="body-footer-li">  +55 51 99166.0914 </li>
 
                         <li style="margin-top:10px" class="title-footer">  FRANCE  </li>
                         <li class="body-footer-li">  131 Boulevard  </li>
@@ -182,6 +186,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="body-footer-li">  contact@esrelooking.com  </li>
                         <li class="body-footer-li">  Tél: 01.47.90.60.01</li>
                     </ul>
+                    <a target="_blank" href="https://www.facebook.com/ecolebrasil/"><i style="font-size: 21pt" class="fab fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/ecolebrasil/"><i style="font-size: 21pt; margin-left: 15px" class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12" style="margin-top: 15px;">
                     <img style="width:60%; display: block; margin: 0 auto; margin-bottom: 10px" src="{{asset('images/logo-ecole-paris.jpg')}}">
@@ -207,7 +213,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             <input required name="cidade" type="text" class="full form-control " placeholder="Cidade/Estado">
                                           </div>
                                           <div class="form-group">
-                                            {{-- <label class="control-label">Cidade que desejaria fazer um curso (separe-as por vírgula) </label> --}}
                                             <input required name="cidade_curso" type="text" class="full form-control " placeholder="Cidade que desejaria fazer um curso">
                                           </div>
                                           <div class="form-group">
@@ -245,17 +250,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }, function() {
         $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
       });
-      // $(".lazy-container").Lazy();
-      // $('img').Lazy({
-      //     scrollDirection: 'vertical',
-      //     effect: 'fadeIn',
-      //     threshold:-100,
-      //     effectTime:500,
-      //     visibleOnly: true,
-      //     onError: function(element) {
-      //       console.log('error loading ' + element.data('src'));
-      //     }
-      // });
   });
 </script>
 </body>

@@ -4,27 +4,83 @@ namespace App\Http\Controllers;
 
 use App\Agenda;
 use App\Modulo;
+use App\Aluno;
+use App\User;
+use \Mail;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
 {
+
+    public function buyAgenda(Request $request)
+    {
+        //CRIAÇÃO DO USUÁRIO
+        $user = User::where('email', '=', $request['email'])->first();
+        $aluno = null;
+        $permission = '';
+
+        if($user == null){
+            if($request['modelo'] == 'D'){
+                $permission = 'AL';
+            }
+
+            if($request['modelo'] == 'P'){
+                $permission = 'AR';
+            }
+            $user = User::create([
+                'name' => $request['nome_aluno'],
+                'email' => $request['email'],
+                'permission' => $permission,
+                'password' => bcrypt($request['password']),
+            ]);
+        }else{
+            $user->update([
+                'name' => $request['nome_aluno'],
+                'password' => bcrypt($request['password'])
+            ]);
+            $aluno = Aluno::where('user_id', '=', $user->id)->first();
+        }
+
+        //INSERÇÃO DO ALUNO E VINCULO COM AGENDA
+        if($aluno == null){
+            $request = Controller::formatDate( $request, 'nascimento' );
+            $aluno = Aluno::create([
+                    'nome' => $request['nome_aluno'],
+                    'sobrenome' => $request['sobrenome_aluno'],
+                    'nascimento' => $request['nascimento'],
+                    'user_id' => $user->id
+                ]);
+        }
+
+        $agenda = Agenda::find( $request['agenda_id'] );
+        $aluno->addAgenda( $agenda );
+        $data = [   "nome" => $request->nome,
+                    "login" => $request->email,
+                    "nome_curso" => $agenda->curso->nome,
+                    "card_curso" => asset($agenda->curso->card)
+                ];
+
+
+        Mail::send('emails.aluno', $data, function ($message) use ($request)  {
+            $message->from('alberto@metrocoletivo.com.br', 'Bem-vindo à Ecole');
+            $message->to($request['email'])->subject('Bem-vindo à Ecole');
+        });
+
+        return response()->json(['status' => 'success'], 200);
+    }
+
     public function agenda_modulos(Request $request)
     {
-        // dd($request);
         $querys = $request->query();
-        // $curso = Curso::find( $querys["curso_id"] );
         $modulos = Modulo::where('agenda_id', '=', $querys["agenda_id"])->get()->toJson();
-
         return response()->json($modulos, 200);
     }
 
     public function agenda_parcelas(Request $request)
     {
         $querys = $request->query();
-        // $curso = Curso::find( $querys["curso_id"] );
         $agenda = Agenda::where('id', '=', $querys["agenda_id"])->get()->toJson();
-
-        return response()->json($agenda, 200);   
+        return response()->json($agenda, 200);
     }
 
     public function create(Request $request)
@@ -39,7 +95,7 @@ class AgendaController extends Controller
     {
         $agenda = Agenda::find( $id );
         $request = Controller::saveBase64($request, 'avatar', 'agendas', $agenda->avatar);
-        $request = Controller::formatDate( $request, 'data_inicio' );        
+        $request = Controller::formatDate( $request, 'data_inicio' );
         $agenda->update( $request->all() );
         return;
     }

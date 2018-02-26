@@ -20,6 +20,7 @@ use App\Contato;
 use App\MaterialRestrito;
 use App\Video;
 use App\Material;
+use App\Inadimplencia;
 use Auth;
 use App\Imprensa;
 use App\Blog;
@@ -86,6 +87,24 @@ class AdministradorController extends Controller
     public function delete(Request $request, $id)
     {
         //
+    }
+
+    //inadimplencia
+    public function inadimplencia_index()
+    {
+        $inadimplencias = Inadimplencia::all();
+        return view('administrador.financeiro.inadimplencia.index', compact('inadimplencias'));
+    }
+
+    public function inadimplencia_novo()
+    {
+        return view('administrador.financeiro.inadimplencia.novo');
+    }
+
+    public function inadimplencia_editar(Request $request, $id)
+    {
+        $inadimplencia = Inadimplencia::find($id);
+        return view('administrador.financeiro.inadimplencia.editar', compact('inadimplencia'));
     }
 
     //PROFESSORES E AULAS

@@ -131,6 +131,17 @@
 		<div class="form-group">
 			<div class="col-sm-9">
 					<h4 class="header clearfix">
+						Diferenciais
+					</h4>
+
+					<textarea id="informacoes" name="informacoes" class="col-xs-12 col-sm-6">
+						{!! $curso->informacoes !!}
+					</textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-9">
+					<h4 class="header clearfix">
 						Objetivos da Formação
 					</h4>
 
@@ -200,6 +211,7 @@
 							{ element:$("#conteudo"), type:'textarea' },
 							{ element:$("#material"), type:'textarea' },
 							{ element:$("#apresentacao"), type:'textarea' },
+							{ element:$("#informacoes"), type:'textarea' },
 							{ element:$("#objetivos"), type:'textarea' },
 							{ element:$("#ementa"), type:'textarea' }];
 						let response = validateFields(arr);
