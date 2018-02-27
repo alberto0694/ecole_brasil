@@ -49,4 +49,11 @@
 	  		</div>
  		</div>
  </div>
+  <div class="row">
+ 	<div class="col-md-6 col-md-offset-3" style="margin-bottom: 40px;">
+		<video style="background-color:rgba(239, 64, 96, 1); display:block; margin: 0 auto; width: 90%" controls >
+			<source src="{{asset('base64/banners/d9bec48a71c769e9a1e840095b05efa6.webm')}}">
+		</video>
+ 	</div>
+ </div>
 @endsection

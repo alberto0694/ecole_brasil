@@ -292,6 +292,9 @@ Route::get('/adm/aula/editar/{id}', 'AdministradorController@aula_editar')->name
 Route::get('/adm/contato/visualizar/{id}', 'AdministradorController@contato_visualizar')->name('administrador.contato.visualizar');
 Route::get('/adm/contato/index', 'AdministradorController@contato_index')->name('administrador.contato.index');
 
+//newsletter
+Route::get('/adm/newsletter/index', 'AdministradorController@newsletter')->name('administrador.newsletter.index');
+
 //professores
 Route::get('/adm/professor/index', 'AdministradorController@professor_index')->name('administrador.professor.index');
 Route::get('/adm/professor/novo', 'AdministradorController@professor_novo')->name('administrador.professor.novo');
@@ -346,6 +349,7 @@ Route::get('/ebooks', 'WebsiteController@ebook')->name('ebook');
 Route::get('/ebook_pagamento/{id}', 'WebsiteController@ebook_pagamento')->name('ebook_pagamento');
 Route::get('/eshop', 'WebsiteController@eshop')->name('eshop');
 Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
+Route::post('/newsletter_post', 'WebsiteController@sendNewsletter')->name('email.newsletter');
 Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
 
 //ROTAS DE PAGAMENTOS

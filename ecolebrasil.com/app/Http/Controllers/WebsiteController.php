@@ -22,6 +22,7 @@ use \Session;
 use App\Inadimplencia;
 use \Auth;
 use App\Consultora;
+use App\NewsLetter;
 
 class WebsiteController extends Controller
 {
@@ -44,6 +45,26 @@ class WebsiteController extends Controller
             $message->to('contato@ecolebrasil.com')->subject('Contato Site');
             $message->cc('admin@ecolebrasil.com')->subject('Contato Site');
             $message->cc('vandressa@esrelooking.com ')->subject('Contato Site');
+        });
+
+        Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
+        Session::flash('alert-class', 'alert-success');
+        return redirect(route('contato'));
+    }
+
+    public function sendNewsletter(Request $request)
+    {
+        $data = [   "contato" => $request->contato,
+                    "email" => $request->email];
+
+        NewsLetter::create( $request->all() );
+
+        Mail::send('emails.newsletter', $data, function ($message) {
+            $message->from('alberto@metrocoletivo.com.br', 'NewsLetter');
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('NewsLetter');
+            $message->to('contato@ecolebrasil.com')->subject('NewsLetter');
+            $message->cc('admin@ecolebrasil.com')->subject('NewsLetter');
+            $message->cc('vandressa@esrelooking.com ')->subject('NewsLetter');
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -189,10 +210,16 @@ class WebsiteController extends Controller
 
     public function agenda()
     {
-        $agendas = Agenda::where('data_inicio', '>=', date('Y-m-d').' 00:00:00')->orderBy('data_inicio', 'asc')->get();
+        $agendasMonths = array();
+        for ($i=1; $i < 13; $i++) {
+            $agendasMonths[$i] = Agenda::whereMonth('data_inicio', '=', $i)
+                                                     ->where('data_inicio', '>=', date('Y-m-d').' 00:00:00')
+                                                     ->orderBy('data_inicio', 'asc')
+                                                     ->get();
+        }
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
-        return view('website.agenda', compact('cursos_menu','agendas', 'formacoes'));
+        return view('website.agenda', compact('cursos_menu','agendasMonths', 'formacoes'));
     }
 
     public function faq()

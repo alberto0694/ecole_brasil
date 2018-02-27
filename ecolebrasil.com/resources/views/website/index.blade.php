@@ -127,9 +127,9 @@ function myFunction() {
 				    	{!!$banner->item!!}
 				    	<div class="overload-video"></div>
 				    	<div class="above-video">
-						 	<div class="inside-above-video col-md-4 col-md-offset-4" style="margin-top: 80px;">
+						 	<div class="inside-above-video col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="margin-top: 80px;">
 								<h3 style="text-align: center; color: white; padding: 2px; width: 100%">
-									<a target="_blank" href="{{ route('cursos', 3) }}"><img src="{{ asset('images/logo-ecole-load.png') }}"></a>
+									<a target="_blank" href="{{ route('cursos', 3) }}"><img style="width: 100%; display: block" src="{{ asset('images/logo-ecole-load.png') }}"></a>
 									<a target="_blank" style="color:white; text-decoration: none; font-weight: bold" href="{{ route('cursos', 3) }}">FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM</a>
 								</h3>
 								<div class="col-md-12" style="margin-top: 20px;">
@@ -187,7 +187,7 @@ function myFunction() {
 </div>
 <div class="row margin-top gray-background padding-50">
 	<div class="col-md-10 col-md-offset-1">
-		<div class="col-md-3">
+		<div class="col-md-3" style="margin-top: 20px">
 			<a href="{{ route('cursos.lista') }}">
 				<div class="box-ecole">
 					<img src="{{asset('images/logo-ecole-load.png')}}">
@@ -195,7 +195,7 @@ function myFunction() {
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3" style="margin-top: 20px">
 			<a href="{{ route('cursos.lista', ['formacao_id' => 1]) }}">
 				<div class="box-ecole">
 					<img src="{{asset('images/logo-ecole-load.png')}}">
@@ -203,7 +203,7 @@ function myFunction() {
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3" style="margin-top: 20px">
 			<a href="{{ route('cursos.lista', ['formacao_id' => 3]) }}">
 				<div class="box-ecole">
 					<img src="{{asset('images/logo-ecole-load.png')}}">
@@ -211,7 +211,7 @@ function myFunction() {
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3" style="margin-top: 20px">
 			<a href="{{ route('agenda') }}">
 				<div class="box-ecole">
 					<img src="{{asset('images/logo-ecole-load.png')}}">
@@ -238,12 +238,12 @@ function myFunction() {
 		@endforeach
 	</div>
 </div>
-<div class="row padding-bottom margin-top padding-20 gray-background">
+<div class=" hidden-xs hidden-sm row padding-bottom margin-top padding-20 gray-background">
 	<div class="col-md-3">
 		<img style="display: block; width: 55%; margin: 0 auto" src="{{asset('images/logo-ecole-paris.jpg')}}">
 	</div>
 	<div class="col-md-8">
-		<h5 class="title-pink-begin-text" style="text-align:left">NOSSA FORMAÇÃO É CERTIFICADA EM ALTO NÍVEL</h5>
+		<h5 class="title-pink-begin-text" style="text-align:left;">NOSSA FORMAÇÃO É CERTIFICADA EM ALTO NÍVEL</h5>
 		<p class="gray-dark-color" style="text-align:justify">
 		A origem da nossa formação e metodologia estão na França, onde a Escola está certificada em alto nível. Lá, o certificado recebido pelos alunos que cursam integralmente as formações assemelha-se a uma formação técnica aqui no Brasil e o aluno recebe o título de Consultor de Comunicação para Valorização da Imagem, registrado no RNCP (Repertório Nacional de Certificações Profissionais), no Nível II.
 		</p>
@@ -258,12 +258,35 @@ function myFunction() {
 		</h3>
 	</div>
 </div>
+<div class="hidden-md hidden-lg row padding-bottom margin-top padding-20 gray-background">
+	<div class="col-md-3">
+		<img style="display: block; width: 45%; margin: 0 auto" src="{{asset('images/logo-ecole-paris.jpg')}}">
+	</div>
+	<div class="col-md-8">
+		<h5 class="title-pink-begin-text" style="text-align:left; margin-top: 30px">NOSSA FORMAÇÃO É CERTIFICADA EM ALTO NÍVEL</h5>
+		<p class="gray-dark-color" style="text-align:justify">
+		A origem da nossa formação e metodologia estão na França, onde a Escola está certificada em alto nível. Lá, o certificado recebido pelos alunos que cursam integralmente as formações assemelha-se a uma formação técnica aqui no Brasil e o aluno recebe o título de Consultor de Comunicação para Valorização da Imagem, registrado no RNCP (Repertório Nacional de Certificações Profissionais), no Nível II.
+		</p>
+		<p class="gray-dark-color" style="text-align:justify">
+		Na França, essa certificação é um critério importante de legitimidade profissional. Ela responde a uma real necessidade de profissionalização e possibilita o reconhecimento de um alto nível de competências e capacidades.
+		</p>
+		<p class="gray-dark-color" style="text-align:justify">
+		Cada certificação é descrita em termos de atividades propostas e competências avaliadas, em um processo extenso de avaliação da instituição, da qualidade do ensino oferecido e do reconhecimento oficial da sustentabilidade do negócio e da empresa.
+		</p>
+		<h3 class="background-ecole-pink titulo-padrao" style="text-align: center; color: white; padding: 2px; width: 20%; padding: 5px; ">
+			<a style="text-decoration: none; color: white; font-weight: bold" href="{{ route('certificacao') }}">Confira</a>
+		</h3>
+	</div>
+</div>
 <div class="row padding-20 background-ecole-pink">
 	<div class="col-md-3">
 		<img style="width: 80%; display: block; margin: 0 auto" src="{{asset('images/logo-ecole-load.png')}}">
 	</div>
 	<div class="col-md-3" style="margin-top: 20px;">
-		<h3 style="text-align: center; background: white; padding: 5px; width: 65%">
+		<h3 class="hidden-xs hidden-sm" style="text-align: center; background: white; padding: 5px; width: 65%">
+			<a class="no-text-decoration gray-dark-color titulo-padrao" style="text-decoration:none; font-weight: bold" href="{{ route('contato') }}">Entre em contato</a>
+		</h3>
+		<h3 class="hidden-lg hidden-md" style="text-align: center; background: white; padding: 5px; width: 100%">
 			<a class="no-text-decoration gray-dark-color titulo-padrao" style="text-decoration:none; font-weight: bold" href="{{ route('contato') }}">Entre em contato</a>
 		</h3>
 	</div>

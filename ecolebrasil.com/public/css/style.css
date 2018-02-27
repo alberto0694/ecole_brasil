@@ -10,6 +10,19 @@ body, html{
   font-size: 10pt;
 }
 
+/* centered columns styles */
+.row-centered {
+text-align:center;
+}
+.col-centered {
+display:inline-block;
+float:none;
+/* reset the text-align */
+text-align:left;
+/* inline-block space fix */
+margin-right:-4px;
+}
+
 .titulo-padrao, .title-pink-begin-text{
   font-size: 12pt;
 }
@@ -302,7 +315,7 @@ ul {
     max-height: 45px;
     vertical-align: middle;
     font-weight: bold;
-    font-size:7pt;
+    font-size:8pt;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {

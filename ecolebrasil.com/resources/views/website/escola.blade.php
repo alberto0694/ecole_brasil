@@ -23,10 +23,6 @@
 			padding-left: 0;
 			margin-left: 0;
 		}
-
-/*		.superirere-ecole-mobile{
-			margin-left: 10px;
-		}*/
 	}
 </style>
 <div class="row margin-top" style="margin: 0; padding: 0">

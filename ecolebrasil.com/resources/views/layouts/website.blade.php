@@ -123,11 +123,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li class="dropdown hidden-md hidden-lg" >
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CURSOS <span class="caret"></span></a>
           <ul class="dropdown-menu" style="margin-top: 10px">
-              @foreach($cursos_menu as $curso)
+                @foreach($formacoes as $formacao)
+                        <div class="row" style="background: #dddcdc; padding: 20px; opacity: .8">
+                          <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
+                          <ul style=" padding: 0; margin-top: 10px">
+                              @foreach($formacao->cursos as $curso)
+                                <a class="gray-dark-color" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
+                                <br>
+                              @endforeach
+                          </ul>
+                        </div>
+                  @endforeach
+{{--               @foreach($cursos_menu as $curso)
                 <li>
                     <a href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a>
                 </li>
-              @endforeach
+              @endforeach --}}
           </ul>
         </li>
         <li><a href="{{route('blog')}}">BLOG</a></li>
@@ -160,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="footer" id="footer" style="padding-top: 40px;">
         <div class="container" style="width: 100%">
             <div class="row">
-                <div class="col-lg-2 col-md-offset-1 col-md-2 col-sm-5 col-xs-5">
+                <div class="col-lg-2 col-md-offset-1 col-md-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                     <ul>
                         <li class="title-footer" style="font-size: 14pt">  ESR NO MUNDO  </li>
                         <li style="margin-top:10px" class="title-footer">  <a target="_blank" href="https://ecolesuperieurerelooking.com/">ESR França</a></li>
@@ -168,7 +179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li style="margin-top:10px" class="title-footer">  <a target="_blank" href="http://www.esrcanada.com/">ESR Canadá</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="col-lg-3 col-md-3 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                     <ul>
                         <li class="title-footer">  ECOLE SUPÉRIEURE DE RELLOKING  </li>
                         <li style="margin-top:10px" class="title-footer">  BRASIL  </li>
@@ -189,38 +200,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a target="_blank" href="https://www.facebook.com/ecolebrasil/"><i style="font-size: 21pt" class="fab fa-facebook"></i></a>
                     <a target="_blank" href="https://www.instagram.com/ecolebrasil/"><i style="font-size: 21pt; margin-left: 15px" class="fab fa-instagram"></i></a>
                 </div>
-                <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12" style="margin-top: 15px;">
+                <div class="col-lg-2 col-md-offset-0 col-md-2 col-sm-10 col-xs-10 col-sm-offset-1 col-xs-offset-1" style="margin-top: 15px;">
                     <img style="width:60%; display: block; margin: 0 auto; margin-bottom: 10px" src="{{asset('images/logo-ecole-paris.jpg')}}">
                 </div>
                 @if ( !(\Route::current()->getName() == 'contato') )
                   <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-                      <h3 style="margin:0"> Receba nossa agenda e novidades dos cursos</h3>
+                      <h3 class="hidden-xs hidden-sm" style="margin:0"> Receba nossa agenda e novidades dos cursos</h3>
+                      <h3 class="hidden-md hidden-lg" style="margin:0; margin-top: 20px"> Receba nossa agenda e novidades dos cursos</h3>
                       <ul>
                           <li>
                               <div class="input-append newsletter-box ">
-                                    <form style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato') }}">
+                                    <form style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.newsletter') }}">
                                       {{ csrf_field() }}
                                           <div class="form-group">
                                             <input required name="contato" type="text" class="full form-control " placeholder="Seu nome">
                                           </div>
                                           <div class="form-group">
-                                            <input required name="telefone" type="text" class="full form-control " placeholder="Telefone">
-                                          </div>
-                                          <div class="form-group">
                                             <input required name="email" type="email" class="full form-control " placeholder="E-mail">
-                                          </div>
-                                          <div class="form-group">
-                                            <input required name="cidade" type="text" class="full form-control " placeholder="Cidade/Estado">
-                                          </div>
-                                          <div class="form-group">
-                                            <input required name="cidade_curso" type="text" class="full form-control " placeholder="Cidade que desejaria fazer um curso">
-                                          </div>
-                                          <div class="form-group">
-                                            <input required name="ecole" type="text" class="full form-control " placeholder="Como conheceu a ecole">
-                                          </div>
-                                          <div class="form-group">
-                                            <textarea style="color:black"  name="mensagem" class="full form-control " rows="4" placeholder="Mensagem">
-                                            </textarea>
                                           </div>
                                           <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
                                             <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">

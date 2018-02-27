@@ -18,7 +18,7 @@
 @section('content')
 <div class="row">
 	<div class="col-md-12 header-page-content" style="background-image: url(' {{ asset($curso->background_img) }} ')"></div>
-		<div class="col-md-12 header-page">
+		<div class="col-md-12 header-page upper-case">
 			<p>{{ $curso->nome }}</p>
 		</div>
 </div>
@@ -30,7 +30,11 @@
 		</p>
 	</div>
 	<div class="col-md-5 col-md-offset-0 col-xs-10 col-xs-offset-1">
-		<iframe style="width: 100%; min-height: 350px" src="{{$curso->link_video }}"></iframe>
+		@if($curso->link_video != '0')
+			<iframe style="width: 100%; min-height: 350px" src="{{$curso->link_video }}"></iframe>
+		@else
+			<img src="{{ asset($curso->card) }}" style="width: 50%; display: block; margin: 0 auto">
+		@endif
 	</div>
 </div>
 <div class="row margin-top padding-20" style="background: #e5e5e5">
@@ -71,7 +75,7 @@
 
 </div>
 <div class="row">
-	<a href="{{ route('pagamento', ['curso_id' => $curso->id]) }}"><img style="display: block; margin-bottom:30px; max-width: 260px; margin-top:30px; margin-left: auto; margin-right: auto" src="{{asset('images/inscricao-button.png')}}">
+	<a href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><img style="display: block; margin-bottom:30px; max-width: 260px; margin-top:30px; margin-left: auto; margin-right: auto" src="{{asset('images/inscricao-button.png')}}">
 	</a>
 </div>
 <div class="row">

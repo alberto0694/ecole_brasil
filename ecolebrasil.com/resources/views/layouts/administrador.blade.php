@@ -475,6 +475,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <b class="arrow"></b>
                         </li>
                         <li class="">
+                            <a href="{{ route('administrador.newsletter.index') }}">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                NewsLetter
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
                             <a href="{{ route('administrador.consultora.index') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Consultoras
@@ -488,13 +495,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </a>
                             <b class="arrow"></b>
                         </li>
-                        <li class="">
+{{--                         <li class="">
                             <a href="{{ route('administrador.blog.index') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Blog
                             </a>
                             <b class="arrow"></b>
-                        </li>
+                        </li> --}}
                         <li class="">
                             <a href="{{ route('administrador.banner.index') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>

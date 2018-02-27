@@ -75,10 +75,14 @@
 			        <button type="button" id="left_Selected_1" class="btn btn-block"><i class="glyphicon glyphicon-chevron-left"></i></button>
 			        <button type="button" id="left_All_1" class="btn btn-block"><i class="glyphicon glyphicon-backward"></i></button>
 			    </div>
-
 			    <div class="col-md-4">
 			    	<label>Agendas/Cursos para este Aluno</label>
-			        <select name="agendas_alunos[]" id="multiselect_to_1" class="form-control" size="8" multiple="multiple"></select>
+			        <select name="agendas_alunos[]" id="multiselect_to_1" class="form-control" size="8" multiple="multiple">
+
+						@foreach($aluno->agendas as $agenda)
+							 <option value="{{ $agenda->id }}">{{ $agenda->descricao.' - '.$agenda->curso->nome }}</option>
+						@endforeach
+			        </select>
 			    </div>
 			</div>
 		</div>

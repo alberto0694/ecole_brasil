@@ -101,39 +101,42 @@
     </div>
   </div>
   <hr>
-
-
   <div class="row" style="margin: 5px; margin-top: 20px">
       @if($inadimplencia->canPay)
-      <h3 align="center">Informações para efetuar o pagamento</h3>
+        @if($inadimplencia->pago == 'S')
+          <h3 align="center">Pendência se encontra quitada!</h3><br>
+        @else
+          <h3 align="center">Prazo de pagamento espirado, solicite a geração de uma nova cobrança!</h3><br>
+        @endif
+      @else
+        <h3 align="center">Informações para efetuar o pagamento</h3>
         <form id="pagamento-aluno" role="form" action="" method="post">
           <div class="row " id="step-1">
             <div class="col-md-6 col-xs-12 col-md-offset-3">
               <div class="col-md-12">
                 @if($inadimplencia->max_parcelas > 0)
-  	              <div class="row parcelas-class" style="padding-left: 15px">
-  	                  <div class="form-group">
-  	                      <div class="row" style="padding-left: 15px; margin-top: 10px">
-  	                        <label class="control-label">Parcelar em:</label>
-  	                      </div>
-
-  	                      <div class="col-md-12" style="padding: 0">
-  	                          <select class="col-md-3 form-control" name="num_parcelas" id="num_parcelas">
-  	                          	<?php $array = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10); ?>
+                  <div class="row parcelas-class" style="padding-left: 15px">
+                      <div class="form-group">
+                          <div class="row" style="padding-left: 15px; margin-top: 10px">
+                            <label class="control-label">Parcelar em:</label>
+                          </div>
+                          <div class="col-md-12" style="padding: 0">
+                              <select class="col-md-3 form-control" name="num_parcelas" id="num_parcelas">
+                                <?php $array = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10); ?>
                                 <option value="00" > Á vista </option>
-  	                          	@foreach($array as $item)
-  	                          		@if($inadimplencia->max_parcelas >= $item)
-  	                          			<option value="{{ $item }}" > {{ $item }}x </option>
-  	                          		@endif
-  	                          	@endforeach
-  	                          </select>
+                                @foreach($array as $item)
+                                  @if($inadimplencia->max_parcelas >= $item)
+                                    <option value="{{ $item }}" > {{ $item }}x </option>
+                                  @endif
+                                @endforeach
+                              </select>
 
-  	                      </div>
-  	                  </div>
-  	              </div>
-  	          @else
-  	          	<input type="hidden" name="num_parcelas" id="num_parcelas" value="00">
-  	          @endif
+                          </div>
+                      </div>
+                  </div>
+              @else
+                <input type="hidden" name="num_parcelas" id="num_parcelas" value="00">
+              @endif
                 <div class="row" style="padding-left: 15px; margin-top: 10px">
                   <div class="form-group">
                     <label class="control-label">Nome Completo</label>
@@ -212,13 +215,6 @@
             </div>
           </div>
         </form>
-      @else
-        @if($inadimplencia->pago == 'S')
-          <h3 align="center">Pendência se encontra quitada!</h3><br>
-        @else
-          <h3 align="center">Prazo de pagamento espirado, solicite a geração de uma nova cobrança!</h3><br>
-        @endif
-
       @endif
     </div>
   </div>

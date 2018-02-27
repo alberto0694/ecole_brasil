@@ -6,6 +6,7 @@ use App\Administrador;
 use Illuminate\Http\Request;
 use App\Formacao;
 use App\Curso;
+use App\NewsLetter;
 use App\Agenda;
 use App\Aluno;
 use App\Modulo;
@@ -548,6 +549,12 @@ class AdministradorController extends Controller
         return view('administrador.website.blog.novo');
     }
 
+
+    public function newsletter()
+    {
+        $newsletters = NewsLetter::all();
+        return view('administrador.website.newsletter', compact('newsletters'));
+    }
 
     public function contato_index()
     {
