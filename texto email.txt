@@ -2,7 +2,7 @@ pedir contrato para o "li e aceito"
 
 na hora do cadastro do video consegues dizer se queres somente o video, o depoimento ou os dois.
 
-sobre inserir agenda total, tens os dados dos cursos? pois as agendas dependem de um cursos
+sobre inserir agenda total, tens os dados dos cursos? pois cada agenda depende de ter um curso
 
 pedir as informações dos alunos que ela ja tem pra eu inserir na plataforma
 
