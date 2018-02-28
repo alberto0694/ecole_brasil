@@ -1,5 +1,10 @@
 @extends('layouts.administrador')
 @section('content')
+<ol class="breadcrumb" style="margin-bottom: 20px ">
+  <li><a href="{{ route('administrador.aluno.visao') }}">Página inicial</a></li>
+  <li><a href="#">{{$modulo->nome}}</a></li>
+  <li class="active">Data</li>
+</ol>
 	<div class="col-sm-12">
 		<div class="tabbable">
 			<ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">

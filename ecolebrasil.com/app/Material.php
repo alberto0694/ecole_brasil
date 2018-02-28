@@ -12,7 +12,7 @@ class Material extends Model
 							'link',
 							'arquivo',
 							'descricao_html'];
-					
+
 
 	public function modulo()
 	{
@@ -31,6 +31,6 @@ class Material extends Model
     	if($material_comentario != null){
     		return $material_comentario->created_at;
     	}
-    	return null;    	
-    }	
+    	return null;
+    }
 }

@@ -135,7 +135,7 @@ class AdministradorController extends Controller
         $administrador = $this->getAdministrador();
         $modulo = Modulo::find($id);
         $aulas = $modulo->aulas;
-        return view('administrador.aluno.visao.modulos.aulas.index', compact('aulas', 'administrador'));
+        return view('administrador.aluno.visao.modulos.aulas.index', compact('aulas', 'administrador', 'modulo'));
     }
 
     public function exercicios(Request $request, $id)

@@ -11,6 +11,7 @@ use App\Aula;
 use App\Aluno;
 use \Auth;
 use App\Exercicio;
+use App\Material;
 use App\Video;
 use App\VideoConferencia;
 use Illuminate\Http\Request;
