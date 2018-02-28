@@ -17,7 +17,7 @@ class CreateConsultorasTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('cidade');
-            $table->string('site');
+            $table->string('site')->nullable();
             $table->longText('avatar');
 
             $table->timestamps();

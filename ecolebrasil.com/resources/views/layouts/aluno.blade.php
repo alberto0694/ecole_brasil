@@ -94,6 +94,27 @@
         border-color: rgba(239, 64, 96, 1) transparent rgba(239, 64, 96, 1) rgba(239, 64, 96, 1);
     }
 
+    .has-errors input, .has-errors textarea{
+        border: 2px solid;
+        color: #a94442;
+    }
+
+    .has-errors-textarea{
+        border: 2px solid;
+        color: #a94442;
+    }
+
+    .has-errors select{
+        border: 2px solid;
+        color: #a94442;
+    }
+
+
+    .has-errors label{
+        /*border: 2px solid;*/
+        color: #a94442;
+    }
+
     .badge-info, .badge.badge-info, .label-info, .label.label-info {
         background-color: rgba(239, 64, 96, 1);
     }

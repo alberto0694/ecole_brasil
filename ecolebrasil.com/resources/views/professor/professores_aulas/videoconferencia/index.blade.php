@@ -1,9 +1,9 @@
-@extends('layouts.administrador')
+@extends('layouts.professor')
 @section('content')
 	<div class="row">
-		<a href="{{ route('administrador.videoconferencia.novo') }}">
-			<button class="btn btn-lg btn-success" style="margin-left: 30px">Nova Vídeconferência</button>	
-		</a>		
+		<a href="{{ route('professor.videoconferencia.novo') }}">
+			<button class="btn btn-lg btn-success" style="margin-left: 30px">Nova Vídeconferência</button>
+		</a>
 	</div>
 
 			<div class="row">
@@ -35,8 +35,8 @@
 								</thead>
 
 								<tbody>
-	
-								@foreach($videos as $video)									
+
+								@foreach($videos as $video)
 									<tr>
 										<td class="center">
 											<label class="pos-rel">
@@ -55,7 +55,7 @@
 
 										<td>
 											<div class="hidden-sm hidden-xs action-buttons">
-												<a class="green" href="{{ route('administrador.videoconferencia.editar', $video->id) }}">
+												<a class="green" href="{{ route('professor.videoconferencia.editar', $video->id) }}">
 													<i class="ace-icon fa fa-pencil bigger-130"></i>
 												</a>
 
@@ -72,7 +72,7 @@
 
 													<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 														<li>
-															<a href="{{ route('administrador.videoconferencia.editar', $video->id) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
+															<a href="{{ route('professor.videoconferencia.editar', $video->id) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
 																<span class="green">
 																	<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																</span>
@@ -110,7 +110,7 @@
 		<script src="{{asset('assets/js/dataTables.select.min.js') }}"></script>
 		<script type="text/javascript">
 			jQuery(function($) {
-				$('#dynamic-table').DataTable();			
+				$('#dynamic-table').DataTable();
 			});
 		</script>
 

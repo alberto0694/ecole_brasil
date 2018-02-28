@@ -110,7 +110,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="col-md-2" style="min-height: 160px;">
                           <h6 class="gray-dark-color title-cursos bold"></h6>
                           <ul style=" padding: 0; margin-top: 10px">
-                                <a style="margin-bottom: 10px" href="{{route('ead.login')}}">Acesso EAD</a><br>
+                                <a target="_blank" style="margin-bottom: 10px" href="{{route('ead.login')}}">Acesso EAD</a><br><br>
                                 <a href="{{route('agenda')}}">Agenda</a>
                           </ul>
                         </div>
@@ -197,11 +197,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="body-footer-li">  contact@esrelooking.com  </li>
                         <li class="body-footer-li">  Tél: 01.47.90.60.01</li>
                     </ul>
-                    <a target="_blank" href="https://www.facebook.com/ecolebrasil/"><i style="font-size: 21pt" class="fab fa-facebook"></i></a>
-                    <a target="_blank" href="https://www.instagram.com/ecolebrasil/"><i style="font-size: 21pt; margin-left: 15px" class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-lg-2 col-md-offset-0 col-md-2 col-sm-10 col-xs-10 col-sm-offset-1 col-xs-offset-1" style="margin-top: 15px;">
-                    <img style="width:60%; display: block; margin: 0 auto; margin-bottom: 10px" src="{{asset('images/logo-ecole-paris.jpg')}}">
+                    <div class="row">
+                      <img style="width:60%; display: block; margin: 0 auto; margin-bottom: 10px" src="{{asset('images/logo-ecole-paris.jpg')}}">
+                    </div>
+                    <div class="row" style="text-align:center">
+                      <h5 style="color:white">Fique por dentro de tudo</h5>
+                      <a target="_blank" href="https://www.facebook.com/ecolebrasil/"><i style="font-size: 21pt" class="fab fa-facebook"></i></a>
+                      <a target="_blank" href="https://www.instagram.com/ecolebrasil/"><i style="font-size: 21pt; margin-left: 15px" class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 @if ( !(\Route::current()->getName() == 'contato') )
                   <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">

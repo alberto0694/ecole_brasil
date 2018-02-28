@@ -22,12 +22,6 @@
 			<input id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />
 		</div>
 	</div>
-	{{-- <div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Card </label>
-		@component('components.upfile', ['nameId' => 'card', 'src' => ''])
-		@endcomponent
-	</div>	 --}}
-	<hr>
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Turma do Curso (Agenda)</label>
 		<div class="col-sm-6">

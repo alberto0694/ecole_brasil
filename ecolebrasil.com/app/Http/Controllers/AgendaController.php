@@ -52,6 +52,9 @@ class AgendaController extends Controller
                 ]);
         }
 
+        $aluno->avatar = asset('images/avatar3.png');
+        $aluno->save();
+
         $agenda = Agenda::find( $request['agenda_id'] );
         $aluno->addAgenda( $agenda );
         $data = [   "nome" => $request->nome,
@@ -88,6 +91,10 @@ class AgendaController extends Controller
         $request = Controller::saveBase64($request, 'avatar', 'agendas');
         $request = Controller::formatDate( $request, 'data_inicio' );
         $agenda = Agenda::create( $request->all() );
+        if($agenda->max_parcelas <= 1){
+            $agenda->transacao = 4;
+            $agenda->save();
+        }
         return;
     }
 

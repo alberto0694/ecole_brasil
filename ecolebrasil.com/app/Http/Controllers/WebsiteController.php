@@ -278,9 +278,39 @@ class WebsiteController extends Controller
         }
     }
 
-    public function consultoras()
+    public function consultoras(Request $request)
     {
-        $consultoras = Consultora::orderBy('created_at', 'asc')->get();
+        $querys = $request->query();
+        $consultoras = null;
+        if(count($querys) > 0){
+            if(!$querys['nome']){
+                $querys['nome'] = '';
+            }
+
+            if(!$querys['cidade']){
+                $querys['cidade'] = '';
+            }
+
+            if(($querys['nome'] != '') || ($querys['cidade'] != '')){
+                if(($querys['nome'] != '') && ($querys['cidade'] != '')){
+                    $consultoras = Consultora::where('nome', 'like', '%'.$querys['nome'].'%')
+                                               ->orWhere('cidade', 'like', '%'.$querys['cidade'].'%')
+                                               ->orderBy('created_at', 'asc')->get();
+                }else{
+                    if(($querys['nome'] != '')){
+                        $consultoras = Consultora::where('nome', 'like', '%'.$querys['nome'].'%')
+                                               ->orderBy('created_at', 'asc')->get();
+                    }else{
+                        $consultoras = Consultora::where('cidade', 'like', '%'.$querys['cidade'].'%')
+                                               ->orderBy('created_at', 'asc')->get();
+                    }
+                }
+            }else{
+                $consultoras = Consultora::orderBy('created_at', 'asc')->get();
+            }
+        }else{
+            $consultoras = Consultora::orderBy('created_at', 'asc')->get();
+        }
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         return view('website.consultoras', compact('consultoras', 'formacoes', 'cursos_menu'));

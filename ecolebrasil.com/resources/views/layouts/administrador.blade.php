@@ -437,13 +437,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </a>
                             <b class="arrow"></b>
                         </li>
-                        <li class="">
-                            <a href="{{ route('administrador.aluno.novo') }}">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                Quadro Financeiro
-                            </a>
-                            <b class="arrow"></b>
-                        </li>
                     </ul>
                 </li>
                 <li>
@@ -488,13 +481,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </a>
                             <b class="arrow"></b>
                         </li>
-                        <li class="">
+{{--                         <li class="">
                             <a href="{{ route('administrador.imprensa.index') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Imprensa
                             </a>
                             <b class="arrow"></b>
-                        </li>
+                        </li> --}}
 {{--                         <li class="">
                             <a href="{{ route('administrador.blog.index') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>

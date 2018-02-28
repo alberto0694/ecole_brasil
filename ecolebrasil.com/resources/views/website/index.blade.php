@@ -134,7 +134,7 @@ function myFunction() {
 								</h3>
 								<div class="col-md-12" style="margin-top: 20px;">
 									<h3 style="text-align: center; background: white; padding: 5px; width: 100%">
-										<a class="no-text-decoration gray-dark-color titulo-padrao" style="text-decoration:none; font-weight: bold" href="{{ route('inscricao') }}">Faça sua inscrição</a>
+										<a target="_blank" class="no-text-decoration gray-dark-color titulo-padrao" style="text-decoration:none; font-weight: bold" href="{{ route('compra.agenda', ['curso_id' => 3]) }}">Faça sua inscrição</a>
 									</h3>
 								</div>
 						 	</div>

@@ -29,18 +29,16 @@
     </div>
 
     <div class="row padding-20" style="background: #58595b">
-        <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
-            <img style="display: block; width: 40%; margin:0 auto;" src="{{asset('images/certifcacao-europeia.jpg')}}">
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-12">
             <h3 align="center" style="color:white; margin-top: 45px">CERTIFICAÇÃO NACIONAL EUROPEIA NO MAIS ALTO NÍVEL</h3>
         </div>
     </div>
     <div class="row margin-top" style="margin-bottom: 40px">
         <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
-            <img style="display: block; width: 60%; margin:0 auto; margin-top: 15px" src="{{asset('images/logo-ecole-paris.jpg')}}">
+            <img style="display: block; width: 50%; margin:0 auto; margin-top: 15px" src="{{asset('images/logo-ecole-paris.jpg')}}">
+            <img style="display: block; width: 50%; margin:0 auto; margin-top: 10px" src="{{asset('images/certifcacao-europeia.jpg')}}">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" style="margin-top: 80px">
             <p style="text-align:justify">
                 O fato de uma formação estar registrada no RNCP significa que ela foi estudada, avaliada, reconhecida e, portanto, certificada pela Comissão Nacional de Certificação Profissional (CNCP). O registro é emitido após avaliação e validação dos seguintes princípios:
             </p>
@@ -81,17 +79,15 @@
 
     <div class="row padding-20" style="background: #58595b">
         <div class="col-xs-12">
-            <img style="display: block; width: 40%; margin:0 auto;" src="{{asset('images/certifcacao-europeia.jpg')}}">
-        </div>
-        <div class="col-xs-12">
             <h3 align="center" style="color:white; margin-top: 45px">CERTIFICAÇÃO NACIONAL EUROPEIA NO MAIS ALTO NÍVEL</h3>
         </div>
     </div>
     <div class="row padding-20" style="margin-bottom: 40px">
         <div class="col-xs-12">
             <img style="display: block; width: 50%; margin:0 auto;" src="{{asset('images/logo-ecole-paris.jpg')}}">
+            <img style="display: block; width: 50%; margin:0 auto; margin-top: 20px" src="{{asset('images/certifcacao-europeia.jpg')}}">
         </div>
-        <div class="col-xs-12 margin-top">
+        <div class="col-xs-12">
             <p style="text-align:justify">
                 O fato de uma formação estar registrada no RNCP significa que ela foi estudada, avaliada, reconhecida e, portanto, certificada pela Comissão Nacional de Certificação Profissional (CNCP). O registro é emitido após avaliação e validação dos seguintes princípios:
             </p>

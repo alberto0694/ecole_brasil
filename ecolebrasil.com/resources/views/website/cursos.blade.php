@@ -49,8 +49,8 @@
 				<p class="gray-text">{{$curso->carga_horaria }}</p>
 			</div>
 			<div class="col-md-11 col-md-offset-1 col-xs-10 col-xs-offset-1">
-				<h4 class="title-pink-begin-text">MAIS INFORMAÇÕES</h4>
-				<h4><a download="{{ $curso->nome }}" href="{{ asset($curso->ementa) }}" title='{{  $curso->nome }}'>Clique aqui para saber mais</a></h4>
+				<h4 class="title-pink-begin-text upper-case">DIFERENCIAIS</h4>
+				{!! $curso->informacoes !!}
 			</div>
 		</span>
 		<div class="col-md-11 col-md-offset-1 col-xs-10 col-xs-offset-1">
@@ -64,12 +64,12 @@
 			{!! $curso->objetivos !!}
 		</div>
 		<div class="col-md-11 col-md-offset-0 col-xs-10 col-xs-offset-1">
-			<h4 class="title-pink-begin-text upper-case">DIFERENCIAIS</h4>
-			{!! $curso->informacoes !!}
-		</div>
-		<div class="col-md-11 col-md-offset-0 col-xs-10 col-xs-offset-1">
 			<h4 class="title-pink-begin-text upper-case">MATERIAL DIDÁTICO</h4>
 			{!! $curso->material !!}
+		</div>
+		<div class="col-md-11 col-md-offset-0 col-xs-10 col-xs-offset-1">
+			<h4 class="title-pink-begin-text">MAIS INFORMAÇÕES</h4>
+			<h4><a target="_blank" href="{{ asset($curso->ementa) }}" title='{{  $curso->nome }}'>Clique aqui para saber mais</a></h4>
 		</div>
 	</div>
 

@@ -25,7 +25,7 @@
 		    border-radius: 2px;
 	}
     .header-page-content{
-        background-image: url('{{ asset('images/certificacaointernacional.png')  }}')
+        background-image: url('{{ asset('images/consultoras.png')  }}')
     }
 </style>
  <div class="row" style="margin: 0; padding: 0">
@@ -34,8 +34,22 @@
         <p class="gray-dark-color bold">CONSULTORAS</p>
     </div>
  </div>
-<div class="row padding-20 margin-top" style="text-align: center">
+<div class="row padding-20" style="text-align: center">
 	<div class="col-md-10 col-md-offset-1" >
+		<div class="row row-centered" style="margin-bottom: 30px">
+			<div class="col-md-8 col-centered" style="background-color: rgba(239, 64, 96, 1);">
+				<form method="GET" action="{{ route('consultoras') }}" class="navbar-form navbar-left" role="search" style="width: 100%">
+				  {{ csrf_field() }}
+				  <div class="form-group col-md-4">
+				    <input name="nome" type="text" class="form-control" placeholder="Nome">
+				  </div>
+				  <div class="form-group col-md-4">
+				    <input name="cidade" type="text" class="form-control" placeholder="Cidade">
+				  </div>
+				  <button type="submit" class="btn btn-default col-md-4">Pesquisar</button>
+				</form>
+			</div>
+		</div>
 		@foreach($consultoras as $consultora)
 			<div class="col-md-3" >
 				<a target="_blank"  href="{{ $consultora->site }}">

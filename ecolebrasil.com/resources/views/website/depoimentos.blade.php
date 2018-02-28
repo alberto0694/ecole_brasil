@@ -36,10 +36,10 @@
  </div>
 
  <div class="row margin-top">
-
  	<div class="col-md-10 col-md-offset-1 ">
 		@if($depoimentosVideo->count() > 0)
-			<div class="row" >
+			<h3 align="center" class="title-pink-begin-text">Depoimentos em vídeo</h3>
+			<div class="row" style="margin-top: 20px" >
 				<div class="container" >
 					<div id="carousel-videos" class="carousel slide" >
 						<div class="carousel-inner" style="min-height: 380px">
@@ -55,7 +55,7 @@
 								    <?php $i++; ?>
 								    <div class="item <?php echo $class; ?>">
 									    @if($depoimento->video != '')
-											<iframe src="{{ $depoimento->video }}" align="center" width="100%" height="450"  frameborder="0" allowfullscreen=""></iframe>
+											<iframe style="margin-left:15%" src="{{ $depoimento->video }}" align="center" width="70%" height="450"  frameborder="0" allowfullscreen=""></iframe>
 									    @endif
 								    </div>
 								@endif
@@ -73,8 +73,8 @@
 				</div>
 			</div>
 		@endif
-
-		<br>
+		<hr style="margin-top: 110px">
+		<h3 align="center" class="title-pink-begin-text">Depoimentos escritos</h3>
  		<div class="container">
  			@foreach($depoimentos as $depoimento)
  					@if($depoimento->apenas_video != 'on')

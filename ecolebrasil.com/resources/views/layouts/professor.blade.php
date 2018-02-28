@@ -244,12 +244,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         Sair
                     </a>
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                        <li>
+{{--                         <li>
                             <a href="profile.html">
                                 <i class="ace-icon fa fa-user"></i>
                                 Perfil
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="divider"></li>
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
