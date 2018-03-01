@@ -26,7 +26,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Curso </label>
 		<div class="col-sm-6">
-			<select id="curso_id" name="curso_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
+			<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 				@foreach($agendas as $agenda)
 					@if($modulo->agenda_id == $agenda->id)
 						<option selected value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }} - {{ $agenda->datas }} / {{ $agenda->monthRes }}</option>

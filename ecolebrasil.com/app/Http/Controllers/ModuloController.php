@@ -17,6 +17,7 @@ class ModuloController extends Controller
     public function update(Request $request, $id)
     {
         $request = Controller::formatDate( $request, 'data_inicio' );
+        // dd($request);
         $modulo = Modulo::find( $id );
         $modulo->update( $request->all() );
         return;
@@ -26,5 +27,5 @@ class ModuloController extends Controller
     {
         //
     }
-   
+
 }
