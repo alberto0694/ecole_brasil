@@ -34,9 +34,9 @@
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
 						@if($aula->modulo->agenda->id == $agenda->id)
-							<option selected value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option selected="" value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->datas }}</option>
 						@else
-							<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->datas }}</option>
 						@endif
 
 					@endforeach

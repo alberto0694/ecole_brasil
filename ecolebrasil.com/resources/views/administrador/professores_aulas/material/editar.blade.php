@@ -5,7 +5,7 @@
 @endcomponent
 
 <div class="row">
-	<h2 style="margin-left: 20px">Cadastro de Material EAD</h2>
+	<h2 style="margin-left: 20px">Cadastro de Conteúdo EAD</h2>
 </div>
 
 <form id="editar-material" class="form-horizontal" role="form" style="margin-left: 20px">

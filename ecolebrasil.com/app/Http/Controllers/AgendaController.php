@@ -75,7 +75,7 @@ class AgendaController extends Controller
     public function agenda_modulos(Request $request)
     {
         $querys = $request->query();
-        $modulos = Modulo::where('agenda_id', '=', $querys["agenda_id"])->get()->toJson();
+        $modulos = Modulo::where('agenda_id', '=', $querys["agenda_id"])->orderBy('data_inicio', 'asc')->get()->toJson();
         return response()->json($modulos, 200);
     }
 

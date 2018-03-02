@@ -110,7 +110,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="col-md-2" style="min-height: 160px;">
                           <h6 class="gray-dark-color title-cursos bold"></h6>
                           <ul style=" padding: 0; margin-top: 10px">
-                                <a target="_blank" style="margin-bottom: 10px" href="{{route('ead.login')}}">Acesso EAD</a><br><br>
+                                <a style="margin-bottom: 10px" href="{{route('ead.login')}}">Acesso EAD</a><br><br>
                                 <a href="{{route('agenda')}}">Agenda</a>
                           </ul>
                         </div>

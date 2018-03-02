@@ -30,7 +30,7 @@ class Agenda extends Model
 
     public function modulos()
     {
-     return $this->hasMany('App\Modulo');
+     return $this->hasMany('App\Modulo')->orderBy('data_inicio', 'asc');
     }
 
 

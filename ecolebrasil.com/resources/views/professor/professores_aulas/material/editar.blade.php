@@ -5,7 +5,7 @@
 @endcomponent
 
 <div class="row">
-	<h2 style="margin-left: 20px">Cadastro de Material EAD</h2>
+	<h2 style="margin-left: 20px">Cadastro de Conteúdo EAD</h2>
 </div>
 
 <form id="editar-material" class="form-horizontal" role="form" style="margin-left: 20px">
@@ -40,9 +40,9 @@
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
 						@if($material->modulo->agenda->id == $agenda->id)
-							<option selected value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option selected value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->datas }}</option>
 						@else
-							<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->datas }}</option>
 						@endif
 
 					@endforeach

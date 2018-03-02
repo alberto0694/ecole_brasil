@@ -32,7 +32,7 @@
 			<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
-						<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+						<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->datas }}</option>
 					@endforeach
 			</select>
 		</div>

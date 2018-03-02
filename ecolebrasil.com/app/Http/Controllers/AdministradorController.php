@@ -127,7 +127,7 @@ class AdministradorController extends Controller
         $querys = $request->query();
         $modulo = Modulo::find( $querys['modulo_id'] );
         $administrador = $this->getAdministrador();
-        return view('administrador.aluno.visao.modulos.index', compact('modulo', 'administrador'));
+        return view('administrador.aluno.visao.modulos.index', compact('modulo', 'administrador', 'modulo'));
     }
 
     public function aulas(Request $request, $id)
@@ -143,7 +143,7 @@ class AdministradorController extends Controller
         $administrador = $this->getAdministrador();
         $modulo = Modulo::find($id);
         $exercicios = $modulo->exercicios;
-        return view('administrador.aluno.visao.modulos.exercicios.index', compact('exercicios', 'administrador'));
+        return view('administrador.aluno.visao.modulos.exercicios.index', compact('exercicios', 'administrador', 'modulo'));
     }
 
     public function materiais(Request $request, $id)
@@ -151,7 +151,7 @@ class AdministradorController extends Controller
         $administrador = $this->getAdministrador();
         $modulo = Modulo::find($id);
         $materiais = $modulo->materiais;
-        return view('administrador.aluno.visao.modulos.materiais.index', compact('materiais', 'administrador'));
+        return view('administrador.aluno.visao.modulos.materiais.index', compact('materiais', 'administrador','modulo'));
     }
 
     public function videos(Request $request, $id)
@@ -159,7 +159,7 @@ class AdministradorController extends Controller
         $administrador = $this->getAdministrador();
         $modulo = Modulo::find($id);
         $videos = $modulo->videos;
-        return view('administrador.aluno.visao.modulos.videos.index', compact('videos', 'administrador'));
+        return view('administrador.aluno.visao.modulos.videos.index', compact('videos', 'administrador', 'modulo'));
     }
 
 

@@ -344,7 +344,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="">
                             <a href="{{ route('professor.material.index') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Materiais
+                                Conteúdos
                             </a>
                             <b class="arrow"></b>
                         </li>

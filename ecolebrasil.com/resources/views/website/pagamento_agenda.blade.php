@@ -121,6 +121,13 @@
                   </div>
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
+                      <a target="_blank" href="{{ asset('files/contrato.pdf') }}">Ler termos do contrato.</a><br>
+                      <input style="width: auto; float: left; margin-top: -8px" name="acordo_contrato" id="acordo_contrato" class="form-control" type="checkbox">
+                      &nbsp;&nbsp;Concordo com os termos apresentados
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
                       <label class="control-label">Senha</label>
                       <input required name="password" id="password" class="form-control" placeholder="Informe uma senha" type="password">
                     </div>
@@ -473,8 +480,15 @@ $(document).ready(function () {
           }
         }
       }
-      if (isValid)
-          nextStepWizard.removeAttr('disabled').trigger('click');
+      if (isValid){
+          isValid = $('input[name="acordo_contrato"]:checked').length > 0;
+          if(!isValid){
+            alert('Você precisa concordar com os termos!');
+          }
+      }
+      if (isValid){
+        nextStepWizard.removeAttr('disabled').trigger('click');
+      }
   });
   $('div.setup-panel div a.btn-primary').trigger('click');
 });

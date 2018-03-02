@@ -68,8 +68,7 @@ jQuery(function($){
 		submitHandler: function(form) {
 			let arr = [
 				{ element:$("input[name=nome]"), type:'text' },
-				{ element:$("input[name=cidade]"), type:'text' },
-				{ element:$("input[name=avatar]"), type:'file' }];
+				{ element:$("input[name=cidade]"), type:'text' }];
 			let response = validateFields(arr);
 			if(response.status){
 				$.confirm({

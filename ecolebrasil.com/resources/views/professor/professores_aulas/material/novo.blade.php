@@ -5,7 +5,7 @@
 @endcomponent
 
 <div class="row">
-	<h2 style="margin-left: 20px">Cadastro de Material EAD</h2>
+	<h2 style="margin-left: 20px">Cadastro de Conteúdo EAD</h2>
 </div>
 
 <form id="novo-material" class="form-horizontal" role="form" style="margin-left: 20px">
@@ -36,7 +36,7 @@
 			<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
-						<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+						<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->datas }}</option>
 					@endforeach
 			</select>
 		</div>

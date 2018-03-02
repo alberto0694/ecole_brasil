@@ -2,19 +2,19 @@
 @section('content')
 	<div class="row">
 		<a href="{{ route('professor.material.novo') }}">
-			<button class="btn btn-lg btn-success" style="margin-left: 30px">Novo Material EAD</button>
+			<button class="btn btn-lg btn-success" style="margin-left: 30px">Novo Conteúdo EAD</button>
 		</a>
 	</div>
 
 			<div class="row">
 					<div class="col-xs-12">
-						<h3 class="header smaller lighter blue">Ecole Materiais EAD</h3>
+						<h3 class="header smaller lighter blue">Ecole Conteúdos EAD</h3>
 
 						<div class="clearfix">
 							<div class="pull-right tableTools-container"></div>
 						</div>
 						<div class="table-header">
-							Lista de Materiais EAD
+							Lista de Conteúdos EAD
 						</div>
 						<div>
 							<table id="dynamic-table" class="table table-striped table-bordered table-hover">
