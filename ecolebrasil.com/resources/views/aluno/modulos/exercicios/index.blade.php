@@ -28,18 +28,17 @@
 						<?php $class = "false"; ?>
 					@endif
 					<?php $i++; ?>
-
 					<div id="aula_{{ $i }}" class="tab-pane {{ $class }}" style="overflow: auto">
 						<h3 align="center">{{ $exercicio->titulo }}</h3>
 						<div class="col-md-6">
 							@if($exercicio->link != '0')
 								<iframe width="100%" allowfullscreen  style="min-height: 300px" src="{{ $exercicio->link }}"></iframe>
 							@endif
-								<a style="color:white" href="{{ asset($exercicio->arquivo) }}" download title="{{ $exercicio->titulo }}">
-								<button class="btn btn-pink">
-									Download Exercício
-								</button>
-								</a>
+							<a style="color:white" href="{{ asset($exercicio->arquivo) }}" download title="{{ $exercicio->titulo }}">
+							<button class="btn btn-pink">
+								Download Exercício
+							</button>
+							</a>
 							<p>{!! $exercicio->descricao_html !!}</p>
 						</div>
 						<div class="col-md-6">
