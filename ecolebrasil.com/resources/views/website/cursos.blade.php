@@ -29,7 +29,7 @@
 			{!! $curso->apresentacao !!}
 		</p>
 	</div>
-	<div class="col-md-5 col-md-offset-0 col-xs-10 col-xs-offset-1">
+	<div class="col-md-5 col-md-offset-1 col-xs-10 col-xs-offset-1">
 		@if($curso->link_video != '0')
 			<iframe style="width: 100%; min-height: 350px" src="{{$curso->link_video }}"></iframe>
 		@else

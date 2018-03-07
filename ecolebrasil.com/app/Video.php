@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Video extends Model
 {
@@ -28,6 +29,6 @@ class Video extends Model
     	if($video_comentario != null){
     		return $video_comentario->created_at;
     	}
-    	return null;    	
-    }	
+    	return Carbon::now();
+    }
 }

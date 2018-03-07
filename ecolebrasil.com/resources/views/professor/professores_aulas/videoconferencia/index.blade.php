@@ -59,7 +59,7 @@
 													<i class="ace-icon fa fa-pencil bigger-130"></i>
 												</a>
 
-												<a class="red" href="#">
+												<a class="red" onclick="return deletar_{{ $video->id }}()">
 													<i class="ace-icon fa fa-trash-o bigger-130"></i>
 												</a>
 											</div>
@@ -80,7 +80,7 @@
 														</li>
 
 														<li>
-															<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+															<a onclick="return deletar_{{ $video->id }}()" class="tooltip-error" data-rel="tooltip" title="Delete">
 																<span class="red">
 																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																</span>
@@ -109,6 +109,32 @@
 		<script src="{{asset('assets/js/buttons.colVis.min.js') }}"></script>
 		<script src="{{asset('assets/js/dataTables.select.min.js') }}"></script>
 		<script type="text/javascript">
+			@foreach($videos as $video)
+				function deletar_{{$video->id}}(){
+					$.confirm({
+						title: 'Atenção!',
+						content: 'Deseja realmente deletar este regisro?',
+					    buttons: {
+					        Sim: (helloButton) => {
+					            $.ajax({
+								  headers: {
+								    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+								  },
+					              type: "DELETE",
+					              url: "{{ route('videoconferencia.delete', $video->id) }}",
+					              data: {},
+					              success: function(data, status, request){
+					              		document.location.reload();
+					              }
+					            });
+					        },
+					        Nao:{
+					        	text:"Não"
+					        }
+					    }
+					});
+				}
+			@endforeach
 			jQuery(function($) {
 				$('#dynamic-table').DataTable();
 			});

@@ -46,7 +46,7 @@
 													{!! $comentario->item !!}
 												@endforeach
 										@else
-											<h5>Sem comentários. Seja o primeiro!</h5>
+											<h5 class="sem-comentario_{{ $i }}">Sem comentários. Seja o primeiro!</h5>
 										@endif
 								</div>
 								<hr>
@@ -65,7 +65,7 @@
 
 												<div class="widget-body">
 													<div class="widget-main">
-														<textarea rows="3" id="comentario_{{ $i }}" type="text" name="comentario" style="width: 100%; height: 100%">
+														<textarea rows="7" id="comentario_{{ $i }}" type="text" name="comentario" style="width: 100%; height: 100%">
 														</textarea>
 														<button type="button" id="enviar_{{ $i }}" class="btn btn-info"><i class="ace-icon fa fa-reply icon-only bigger-150"></i></button>
 
@@ -89,58 +89,56 @@
 
 @endsection
 @section('last-body')
-	<script type="text/javascript">
-            $(window).load(function(){
-            	<?php $i=0; ?>
-				@foreach($videos as $video)
-					@if($i > 0)
-						<?php $class = "false"; ?>
-					@endif
-					<?php $i++; ?>
-						$("#comentario_{{ $i }}").val("");
-	            		$("#enviar_{{ $i }}").click(function(){
-	            				$("#enviar_{{ $i }}").prop("disabled",true);
-					            $.ajax({
-					              type: "POST",
-					              url: '{{ route('VideoComentario.create') }}',
-					              data: $("#comentario-form_{{ $i }}").serialize(),
-					              success: function(data, status, request){
-					              		$("#box-comment_{{ $i }}").append('<div class="timeline-item clearfix"><div class="timeline-info"><img alt="Susant Avatar" src="{{ asset($professor->avatar) }}"></div><div class="widget-box transparent"><div class="widget-header widget-header-small"><h5 class="widget-title smaller"><a href="#" class="blue">{{ $professor->nome }}</a><span class="grey"> comentou agora</span></h5></div><div class="widget-body"><div class="widget-main">'+$("#comentario_{{ $i }}").val()+'</div></div></div></div>"');
-					              		$("#comentario_{{ $i }}").val("");
-										var objDiv = document.getElementById("box-comment_{{ $i }}");
-										objDiv.scrollTop = objDiv.scrollHeight;
-										$("#enviar_{{ $i }}").prop("disabled",false);
-					              }
-					            });
-	            		});
+<script type="text/javascript">
+    $(window).load(function(){
+    	<?php $i=0; ?>
+		@foreach($videos as $video)
+			@if($i > 0)
+				<?php $class = "false"; ?>
+			@endif
+			<?php $i++; ?>
+			$("#comentario_{{ $i }}").val("");
+    		$("#enviar_{{ $i }}").click(function(){
+    				$("#enviar_{{ $i }}").prop("disabled",true);
+		            $.ajax({
+		              type: "POST",
+		              url: '{{ route('VideoComentario.create') }}',
+		              data: $("#comentario-form_{{ $i }}").serialize(),
+		              success: function(data, status, request){
+		              		$("#box-comment_{{ $i }}").append('<div class="timeline-item clearfix"><div class="timeline-info"><img alt="Susant Avatar" src="{{ asset($professor->avatar) }}"></div><div class="widget-box transparent"><div class="widget-header widget-header-small"><h5 class="widget-title smaller"><a href="#" class="blue">{{ $professor->nome }}</a><span class="grey"> comentou agora</span></h5></div><div class="widget-body"><div class="widget-main">'+$("#comentario_{{ $i }}").val()+'</div></div></div></div>"');
+		              		$("#comentario_{{ $i }}").val("");
+							var objDiv = document.getElementById("box-comment_{{ $i }}");
+							objDiv.scrollTop = objDiv.scrollHeight;
+							$("#enviar_{{ $i }}").prop("disabled",false);
+		              }
+		            });
+    		});
 
-		            	setInterval(function(){
-					            $.ajax({
-					              type: "GET",
-					              url: '{{ route('video.get.comentario') }}',
-					              data: {
-					              		last:$("input[name=last_time_{{$video->id}}]").val(),
-					              		user_id:{{ $professor->user_id }},
-					              		video_id:{{ $video->id }}
-					              },
-					              success: function(data, status, request){
-					              		console.log(request.responseJSON);
-					              		if(request.responseJSON.items.length > 0){
-							              		request.responseJSON.items.forEach(function(item, index){
-							              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0)
-							              			{
-								              			$("#box-comment_{{ $i }}").append(item.toString());
-								              			$("input[name=last_time_{{$video->id}}").val(request.responseJSON.last_time);
-								              		}
-							              		});
-					              		}
-
-					              }
-					            });
-					    }, 2500);
-	            @endforeach
-            });
-
-
-	</script>
+        	setInterval(function(){
+	            $.ajax({
+	              type: "GET",
+	              url: '{{ route('video.get.comentario') }}',
+	              data: {
+	              		last:$("input[name=last_time_{{$video->id}}]").val(),
+	              		user_id:{{ $professor->user_id }},
+	              		video_id:{{ $video->id }}
+	              },
+	              success: function(data, status, request){
+              		if(request.responseJSON.items.length > 0){
+	              		request.responseJSON.items.forEach(function(item, index){
+	              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0){
+		              			$("#box-comment_{{ $i }}").append(item.toString());
+		              			$("input[name=last_time_{{$video->id}}").val(request.responseJSON.last_time);
+		              		}
+	              		});
+						var objDiv = document.getElementById("box-comment_{{ $i }}");
+						objDiv.scrollTop = objDiv.scrollHeight;
+						$(".sem-comentario_{{ $i }}").html('');
+              		}
+	              }
+	            });
+		    }, 2500);
+        @endforeach
+    });
+</script>
 @endsection

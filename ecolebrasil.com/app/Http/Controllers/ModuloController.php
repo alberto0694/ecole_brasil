@@ -25,7 +25,37 @@ class ModuloController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+         $modulo = Modulo::find($id);
+
+         $videos = $modulo->videos();
+         $materiais = $modulo->materiais();
+         $exercicios = $modulo->exercicios();
+         $aulas = $modulo->aulas();
+
+         foreach ($videos as $value) {
+             $value->comentarios()->delete();
+         }
+
+         foreach ($materiais as $value) {
+             $value->comentarios()->delete();
+         }
+
+         foreach ($exercicios as $value) {
+             $value->comentarios()->delete();
+         }
+
+         foreach ($aulas as $value) {
+             $value->comentarios()->delete();
+         }
+
+
+         $videos->delete();
+         // $materiais->delete();
+         // $exercicios->delete();
+         // $aulas->delete();
+
+         // $modulo->delete();
+         return;
     }
 
 }

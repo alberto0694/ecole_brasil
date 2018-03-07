@@ -93,14 +93,9 @@
  <div class="row">
  	<div class="col-md-4 col-md-offset-4" style="margin-bottom: 40px;">
 		<h3 style="text-align: center; color: white; padding: 2px; width: 100%">
-			<a href="{{ route('manifesto') }}"><img src="{{ asset('images/logo-ecole-load-pink.png') }}"></a>
+			<a href="{{ route('manifesto') }}"><img src="{{ asset('images/logo-ecole-load-pink.png') }}"></a><br>
 			<a class="gray-dark-text" style="text-decoration: none; font-weight: bold" href="{{ route('manifesto') }}">Conheça nosso manifesto!</a>
 		</h3>
  	</div>
  </div>
-
-
-
-
-
 @endsection

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\AulaComentario;
+use Carbon\Carbon;
 
 class Aula extends Model
 {
@@ -29,6 +30,6 @@ class Aula extends Model
     	if($aula_comentario != null){
     		return $aula_comentario->created_at;
     	}
-    	return null;
+    	return Carbon::now();
     }
 }

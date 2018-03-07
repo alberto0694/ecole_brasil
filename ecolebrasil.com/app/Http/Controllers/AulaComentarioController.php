@@ -20,7 +20,7 @@ class AulaComentarioController extends Controller
     	$querys = $request->query();
     	$comentarios = AulaComentario::where('user_id', '<>', $querys['user_id'])->
     									where('aula_id', '=', $querys['aula_id'])->
-    										where('created_at', '>', $querys['last'])->get();
+    									where('created_at', '>', $querys['last'])->get();
     	$aula = Aula::find($querys['aula_id']);
     	$items = array();
         $ids = array();

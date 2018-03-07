@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\ExercicioComentario;
+use Carbon\Carbon;
 
 class Exercicio extends Model
 {
@@ -12,7 +13,7 @@ class Exercicio extends Model
 							'link',
 							'arquivo',
 							'descricao_html'];
-							
+
 	// public function getUrlExistsAttribute() {
 
 	//     $ch = curl_init( asset($this->arquivo) );
@@ -21,18 +22,26 @@ class Exercicio extends Model
 	//     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	//     curl_close($ch);
 	//     return ($code == 200); // verifica se recebe "status OK"
-	// }	
+	// }
 
 	public function modulo()
 	{
 		return $this->belongsTo('App\Modulo');
-	}	
+	}
 
 	public function comentarios()
 	{
 		return $this->hasMany('App\ExercicioComentario', 'exercicio_id')->orderBy('created_at', 'asc');
 	}
 
+    public function getPaintDownloadAttribute()
+    {
+    	$path_parts = pathinfo(asset($this->arquivo));
+    	if(array_key_exists("extension", $path_parts)){
+    		return '<a style="color:white" href="'.asset($this->arquivo).'" target="_blank"><button class="btn btn-pink">Download Exercício</button></a>';
+    	}
+    	return '';
+    }
 
     public function getLastTimeAttribute()
     {
@@ -40,6 +49,6 @@ class Exercicio extends Model
     	if($exercicio_comentario != null){
     		return $exercicio_comentario->created_at;
     	}
-    	return null;    	
-    }	
+    	return Carbon::now();
+    }
 }

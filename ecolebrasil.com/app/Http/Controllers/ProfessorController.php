@@ -228,7 +228,9 @@ class ProfessorController extends Controller
 
     public function profile()
     {
-        return view('professor.perfil.index');
+        $user = Auth::user();
+        $professor = Professor::where('user_id', '=', $user->id)->get()->first();
+        return view('professor.perfil.index', compact('professor'));
     }
 
     public function create(Request $request)

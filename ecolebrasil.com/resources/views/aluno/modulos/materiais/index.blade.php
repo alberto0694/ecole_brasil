@@ -35,12 +35,7 @@
 							@if($material->link != '0')
 								<iframe width="100%" allowfullscreen  style="min-height: 300px" src="{{ $material->link }}"></iframe>
 							@endif
-
-								<a style="color:white" href="{{ asset($material->arquivo) }}" download title="{{ $material->titulo }}">
-									<button class="btn btn-pink">
-									Download Exercício
-									</button>
-								</a>
+							{!! $material->paintDownload !!}
 							<p>{!! $material->descricao_html !!}</p>
 						</div>
 						<div class="col-md-6">
@@ -50,7 +45,7 @@
 													{!! $comentario->item !!}
 												@endforeach
 										@else
-											<h5>Sem comentários. Seja o primeiro!</h5>
+											<h5 class="sem-comentario_{{ $i }}">Sem comentários. Seja o primeiro!</h5>
 										@endif
 								</div>
 								<hr>
@@ -69,7 +64,7 @@
 
 												<div class="widget-body">
 													<div class="widget-main">
-														<textarea rows="3" id="comentario_{{ $i }}" type="text" name="comentario" style="width: 100%; height: 100%">
+														<textarea rows="7" id="comentario_{{ $i }}" type="text" name="comentario" style="width: 100%; height: 100%">
 														</textarea>
 														<button type="button" id="enviar_{{ $i }}" class="btn btn-info"><i class="ace-icon fa fa-reply icon-only bigger-150"></i></button>
 
@@ -133,12 +128,15 @@
 				              success: function(data, status, request){
 				              		console.log(request.responseJSON);
 				              		if(request.responseJSON.items.length > 0){
-						              		request.responseJSON.items.forEach(function(item, index){
-						              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0){
-							              			$("#box-comment_{{ $i }}").append(item.toString());
-							              			$("input[name=last_time_{{$material->id}}").val(request.responseJSON.last_time);
-							              		}
-						              		});
+					              		request.responseJSON.items.forEach(function(item, index){
+					              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0){
+						              			$("#box-comment_{{ $i }}").append(item.toString());
+						              			$("input[name=last_time_{{$material->id}}").val(request.responseJSON.last_time);
+						              		}
+					              		});
+										var objDiv = document.getElementById("box-comment_{{ $i }}");
+										objDiv.scrollTop = objDiv.scrollHeight;
+										$(".sem-comentario_{{ $i }}").html('');
 				              		}
 
 				              }

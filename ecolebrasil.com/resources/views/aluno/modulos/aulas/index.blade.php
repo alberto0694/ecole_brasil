@@ -42,7 +42,7 @@
 													{!! $comentario->item !!}
 												@endforeach
 										@else
-											<h5>Sem comentários. Seja o primeiro!</h5>
+											<h5 class="sem-comentario_{{ $i }}">Sem comentários. Seja o primeiro!</h5>
 										@endif
 								</div>
 								<hr>
@@ -92,7 +92,7 @@
 			<?php $i++; ?>
 
   		$("#enviar_{{ $i }}").click(function(){
-				$("#enviar_{{ $i }}").prop("disabled",true);
+		$("#enviar_{{ $i }}").prop("disabled",true);
         $.ajax({
           type: "POST",
           url: '{{ route('AulaComentario.create') }}',
@@ -100,40 +100,42 @@
           success: function(data, status, request){
         		$("#box-comment_{{ $i }}").append('<div class="timeline-item clearfix"><div class="timeline-info"><img alt="Susant Avatar" src="{{ asset($aluno->avatar) }}"></div><div class="widget-box transparent"><div class="widget-header widget-header-small"><h5 class="widget-title smaller"><a href="#" class="blue">{{ $aluno->nome }}</a><span class="grey"> comentou agora</span></h5></div><div class="widget-body"><div class="widget-main">'+$("#comentario_{{ $i }}").val()+'</div></div></div></div>');
         		$("#comentario_{{ $i }}").val("");
-						var objDiv = document.getElementById("box-comment_{{ $i }}");
-						objDiv.scrollTop = objDiv.scrollHeight;
-						$("#enviar_{{ $i }}").prop("disabled",false);
+				var objDiv = document.getElementById("box-comment_{{ $i }}");
+				objDiv.scrollTop = objDiv.scrollHeight;
+				$("#enviar_{{ $i }}").prop("disabled",false);
           }
         });
   		});
 
     	setInterval(function(){
   			if($("input[name=last_time_{{$aula->id}}]").val() === ''){
-  					$("input[name=last_time_{{$aula->id}}]").val('2018-01-01 00:00:00');
+  				$("input[name=last_time_{{$aula->id}}]").val('2018-01-01 00:00:00');
   			}
 
-        $.ajax({
-          type: "GET",
-          url: '{{ route('aula.get.comentario') }}',
-          data: {
-          		last:$("input[name=last_time_{{$aula->id}}]").val(),
-          		user_id:{{ $aluno->user_id }},
-          		aula_id:{{ $aula->id }}
-          },
-          success: function(data, status, request){
-          		console.log(request.responseJSON);
-          		if(request.responseJSON.items.length > 0){
-              		request.responseJSON.items.forEach(function(item, index){
-              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0)
-              			{
-	              			$("#box-comment_{{ $i }}").append(item.toString());
-	              			$("input[name=last_time_{{$aula->id}}").val(request.responseJSON.last_time);
-	              		}
-              		});
-          		}
+	        $.ajax({
+	          type: "GET",
+	          url: '{{ route('aula.get.comentario') }}',
+	          data: {
+	          		last:$("input[name=last_time_{{$aula->id}}]").val(),
+	          		user_id:{{ $aluno->user_id }},
+	          		aula_id:{{ $aula->id }}
+	          },
+	          success: function(data, status, request){
+	          		console.log(request.responseJSON);
+	          		if(request.responseJSON.items.length > 0){
+	              		request.responseJSON.items.forEach(function(item, index){
+	              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0){
+		              			$("#box-comment_{{ $i }}").append(item.toString());
+		              			$("input[name=last_time_{{$aula->id}}").val(request.responseJSON.last_time);
+		              		}
+	              		});
+						var objDiv = document.getElementById("box-comment_{{ $i }}");
+						objDiv.scrollTop = objDiv.scrollHeight;
+						$(".sem-comentario_{{ $i }}").html('');
+	          		}
 
-          }
-        });
+	          }
+	        });
   		}, 2500);
     @endforeach
   });

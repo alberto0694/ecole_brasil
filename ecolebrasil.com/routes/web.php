@@ -121,6 +121,7 @@ Route::post('/aluno/exercicio/comentario', 'ExercicioComentarioController@create
 Route::post('/aluno/material/comentario', 'MaterialComentarioController@create')->name('MaterialComentario.create');
 Route::post('/aluno/video/comentario', 'VideoComentarioController@create')->name('VideoComentario.create');
 
+
 Route::get('/aula_comentario/list', 'AulaComentarioController@get_comentario')->name("aula.get.comentario");
 Route::get('/exercicio_comentario/list', 'ExercicioComentarioController@get_comentario')->name("exercicio.get.comentario");
 Route::get('/material_comentario/list', 'MaterialComentarioController@get_comentario')->name("material.get.comentario");

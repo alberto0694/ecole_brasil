@@ -24,6 +24,9 @@ class MaterialController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+         $material = Material::find($id);
+         $material->comentarios()->delete();
+         $material->delete();
+         return;
     }
 }
