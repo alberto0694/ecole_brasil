@@ -23,7 +23,7 @@
  		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
  			{{-- <h3 align="center" class="title-pink-begin-text">MANIFESTO</h3> --}}
  			<div class="row margin-top padding-20">
-	    		<p class="font-gray titulo-padrao" style="text-align: center; font-weight: bold">
+	    		<p class="font-gray titulo-padrao" style="text-align: center; font-weight: bold; line-height: 30px">
 	    			Não é a roupa, é a pessoa.<br>
 	    			<span class="font-pink">Não é sobre saber o que vestir, é sobre sentir. Ser.</span><br>
 	    			Não é só a cor, é o que ela representa para a alma. <br>

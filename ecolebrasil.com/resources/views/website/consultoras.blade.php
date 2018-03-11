@@ -35,9 +35,9 @@
     </div>
  </div>
 <div class="row padding-20" style="text-align: center">
-	<div class="col-md-10 col-md-offset-1" >
-		<div class="row row-centered" style="margin-bottom: 30px">
-			<div class="col-md-8 col-centered" style="background-color: rgba(239, 64, 96, 1);">
+	<div class="col-md-10 col-md-offset-1" style="margin-bottom: 30px">
+		<div class="row row-centered" style="margin-bottom: 50px">
+			<div class="col-md-8 col-centered margin-min-top" style="background-color: rgba(239, 64, 96, 1);">
 				<form method="GET" action="{{ route('consultoras') }}" class="navbar-form navbar-left" role="search" style="width: 100%">
 				  {{ csrf_field() }}
 				  <div class="form-group col-md-4">
@@ -46,12 +46,14 @@
 				  <div class="form-group col-md-4">
 				    <input name="cidade" type="text" class="form-control" placeholder="Cidade">
 				  </div>
-				  <button type="submit" class="btn btn-default col-md-4">Pesquisar</button>
+				  <div class="form-group col-md-4">
+				    <button type="submit" class="btn btn-default col-md-12">Pesquisar</button>
+				  </div>				  
 				</form>
 			</div>
 		</div>
 		@foreach($consultoras as $consultora)
-			<div class="col-md-3" >
+			<div class="col-md-3 margin-top" >
 				<a target="_blank"  href="{{ $consultora->site }}">
 					<div class="cs-item-frame"">
 						<div class="item-inside" style="background-image: url({{ asset($consultora->avatar) }})"></div>
@@ -62,6 +64,5 @@
 			</div>
 		@endforeach
 	</div>
-
 </div>
 @endsection

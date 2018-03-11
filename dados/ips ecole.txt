@@ -19,3 +19,6 @@ Gerenciamento da Hospedagem:
 https://www.ovh.com/managerv3/login.pl
 Voici le login : cj36993-ovh
 et mot de passe : 161101
+
+ftp:
+user: ecole@ecolebrasil.com
