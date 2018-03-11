@@ -18,7 +18,7 @@
 @section('content')
 <div class="row">
 	<div class="margin-min-top col-md-10 col-md-offset-1">
-	<h3 align="center" class="title-pink-begin-text" style="margin-bottom: 45px">AGENDA</h3>
+	<h3 align="center" class="title-pink-begin-text" style="margin-bottom: 45px; margin-right: 42px">AGENDA</h3>
 </div>
 <div class="margin-top row padding-bottom">
 	<div class="container" style="margin: 0; width: 100%; ">
