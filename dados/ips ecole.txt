@@ -20,5 +20,14 @@ https://www.ovh.com/managerv3/login.pl
 Voici le login : cj36993-ovh
 et mot de passe : 161101
 
-ftp:
-user: ecole@ecolebrasil.com
+madimusel
+
+/** Nom de la base de données de WordPress. */
+define('DB_NAME', 'formacao2011');
+
+/** Utilisateur de la base de données MySQL. */
+define('DB_USER', 'formacao2011');
+
+/** Mot de passe de la base de données MySQL. */
+define('DB_PASSWORD', '6S3EMDF4');
+

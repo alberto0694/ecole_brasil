@@ -24,11 +24,7 @@
 								@if($acesso->link != '0')
 									<iframe width="100%" allowfullscreen  style="min-height: 300px" src="{{ $acesso->link }}"></iframe>
 								@endif
-								<a style="color:white" download="{{$acesso->titulo}}" href="{{ asset($acesso->file) }}">
-									<button id="" class="btn btn-pink">
-											Download Arquivo
-									</button>
-								</a>
+								{!! $acesso->paintDownload !!}
 							</div>
 						</div>
 					</div>
