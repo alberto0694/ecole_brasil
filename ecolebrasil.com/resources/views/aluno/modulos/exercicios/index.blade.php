@@ -1,5 +1,17 @@
 @extends('layouts.aluno')
 @section('content')
+	<div class="row android-platform">
+			<div class="col-xs-3 col-md-1 col-md-offset-3">
+					<a target="_blank" href="https://www.google.com.br/chrome" class="thumbnail">
+							<img src="http://psicologia.ecolebrasil.com/images/chrome.png" alt="">
+					</a>
+			</div>
+			<div class="col-xs-6 col-md-5">
+					<a target="_blank" href="https://www.google.com.br/chrome/browser/mobile/index.html">
+						<h5>Caso esteja usando outro navegador faça download do google chrome.</h5>
+					</a>
+			</div>
+	</div>
 	<div class="col-sm-12">
 		<div class="tabbable">
 			<ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">
@@ -66,7 +78,8 @@
 														<textarea rows="7" id="comentario_{{ $i }}" type="text" name="comentario" style="width: 100%; height: 100%">
 														</textarea>
 														<button type="button" id="enviar_{{ $i }}" class="btn btn-info"><i class="ace-icon fa fa-reply icon-only bigger-150"></i></button>
-
+														<br>
+														(Pressione o botão para submeter a mensagem, não utilize a tecla enter)
 														<input type="hidden" name="user_id" value="{{ $aluno->user_id }}">
 														{{ csrf_field() }}
 														<input type="hidden" name="exercicio_id" value="{{ $exercicio->id }}">
