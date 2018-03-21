@@ -338,6 +338,7 @@ ul {
   height: 390px;
   position: absolute;
   display: table;
+  width: 102%;
 }
 
 .header-page-content{

@@ -263,6 +263,22 @@ class WebsiteController extends Controller
 
     public function compra_agenda(Request $request)
     {
+        $querys = $request->query();
+        $curso = null;
+        if(array_key_exists('agenda_id', $querys)){
+            $agenda = Agenda::find($querys['agenda_id']);
+            $curso = $agenda->curso();
+        }
+
+        if(array_key_exists('curso_id', $querys)){
+            $curso = Curso::find($querys['curso_id']);
+        }
+
+        $formacoes = Formacao::all();
+        $cursos_menu = Curso::all();
+        return view('website.inscricao', compact('cursos_menu','formacoes', 'curso'));
+
+        //TA ASSIM PORQUE O E-REDE AINDA NAO TA FUNFANDO
         $formacoes = Formacao::all();
         $cursos_menu = Curso::all();
         $agenda_id = $request->query('agenda_id');
