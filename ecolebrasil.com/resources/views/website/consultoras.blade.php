@@ -48,11 +48,15 @@
 				  </div>
 				  <div class="form-group col-md-4">
 				    <button type="submit" class="btn btn-default col-md-12">Pesquisar</button>
-				  </div>				  
+				  </div>
 				</form>
 			</div>
 		</div>
+		<?php $i = 0;?>
 		@foreach($consultoras as $consultora)
+			@if($i % 4 == 0)
+				<div class="row">
+			@endif
 			<div class="col-md-3 margin-top" >
 				<a target="_blank"  href="{{ $consultora->site }}">
 					<div class="cs-item-frame"">
@@ -62,7 +66,14 @@
 				<h3 class="titulo-padrao bold" style="color: rgba(239, 64, 96, 1);"> {{ $consultora->nome }} </b3><br>
 				<h4 class="paragrafo-padrao"> {{ $consultora->cidade }} </h4>
 			</div>
+			<?php $i++; ?>
+			@if($i % 4 == 0)
+				</div>
+			@endif
 		@endforeach
+		@if($i % 4 != 0)
+			</div>
+		@endif
 	</div>
 </div>
 @endsection

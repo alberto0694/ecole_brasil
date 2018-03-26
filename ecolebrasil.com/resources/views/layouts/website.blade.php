@@ -51,7 +51,6 @@
 .header-page-content{
     background-image: url(' {{asset('images/ecole-header-page.png')}} ');
     background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
     background-position: center;
 }
 
@@ -123,29 +122,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li class="dropdown hidden-md hidden-lg" >
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CURSOS <span class="caret"></span></a>
           <ul class="dropdown-menu" style="margin-top: 10px">
-                @foreach($formacoes as $formacao)
-                        <div class="row" style="background: #dddcdc; padding: 20px; opacity: .8">
-                          <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
-                          <ul style=" padding: 0; margin-top: 10px">
-                              @foreach($formacao->cursos as $curso)
-                                <a class="gray-dark-color" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
-                                <br>
-                              @endforeach
-                          </ul>
-                        </div>
-                  @endforeach
-{{--               @foreach($cursos_menu as $curso)
-                <li>
-                    <a href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a>
-                </li>
-              @endforeach --}}
+            @foreach($formacoes as $formacao)
+                <div class="row" style="background: #dddcdc; padding: 20px; opacity: .8">
+                  <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
+                  <ul style=" padding: 0; margin-top: 10px">
+                      @foreach($formacao->cursos as $curso)
+                        <a class="gray-dark-color" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
+                        <br>
+                      @endforeach
+                  </ul>
+                </div>
+              @endforeach
           </ul>
         </li>
         <li><a href="{{route('blog')}}">BLOG</a></li>
-        {{-- <li><a href="{{route('sou_ecole')}}">EU SOU ECOLE</a></li> --}}
         <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
         <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>
-        {{-- <li><a href="{{route('eshop')}}"  target="_blank">E-SHOP</a></li> --}}
         <li><a href="{{route('restrito')}}"  target="_blank">EX-ALUNAS</a></li>
         <li><a href="{{route('contato')}}">CONTATO</a></li>
       </ul>

@@ -67,6 +67,12 @@
                                                     <div class="space-4"></div>
                                                 </fieldset>
                                             </form>
+                                            @if(Session::has('message'))
+                                                <div style="color:red" class="alert {{Session::get('alert-class')}}">
+                                                <strong>Aviso!</strong>
+                                                    {{ Session::get('message') }}
+                                                </div>
+                                            @endif
                                         </div><!-- /.widget-main -->
 
                                      {{--    <div class="toolbar clearfix">
@@ -173,38 +179,38 @@
                 $(target).addClass('visible');//show target
              });
             });
-            
-            
-            
+
+
+
             //you don't need this, just used for changing background
             jQuery(function($) {
              $('#btn-login-dark').on('click', function(e) {
                 $('body').attr('class', 'login-layout');
                 $('#id-text2').attr('class', 'white');
                 $('#id-company-text').attr('class', 'blue');
-                
+
                 e.preventDefault();
              });
              $('#btn-login-light').on('click', function(e) {
                 $('body').attr('class', 'login-layout light-login');
                 $('#id-text2').attr('class', 'grey');
                 $('#id-company-text').attr('class', 'blue');
-                
+
                 e.preventDefault();
              });
              $('#btn-login-blur').on('click', function(e) {
                 $('body').attr('class', 'login-layout blur-login');
                 $('#id-text2').attr('class', 'white');
                 $('#id-company-text').attr('class', 'light-blue');
-                
+
                 e.preventDefault();
              });
-             
+
             });
         </script>
     </body>
 </html>
-{{-- 
+{{--
 
 
 @extends('layouts.app')

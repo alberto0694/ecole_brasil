@@ -44,12 +44,6 @@ class Modulo extends Model
 		return $this->agenda->curso;
 	}
 
-	// public function getIsAllowAttribute()
-	// {
-	// 	$days = Carbon::parse($this->data_inicio);
- //  	  	return Carbon::now()->diffInYears( $days ) > 0;
-	// }
-
 	public function getFormatedDateAttribute()
 	{
 		return Carbon::parse($this->data_inicio)->format('d/m/Y');

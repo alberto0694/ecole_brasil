@@ -68,7 +68,7 @@
 			                </div>
 			                <div class="form-group">
 			                  {{-- <label class="control-label">Contato</label> --}}
-			                  <textarea style="color:black"  name="mensagem" class="full form-control " rows="4" placeholder="Mensagem">
+			                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4" placeholder="Mensagem">
 			                  </textarea>
 			                </div>
                               <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">

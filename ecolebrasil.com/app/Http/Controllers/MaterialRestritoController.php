@@ -24,6 +24,9 @@ class MaterialRestritoController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $acesso = MaterialRestrito::find($id);
+        $acesso->visible = '0';
+        $acesso->save();
+        return;
     }
 }

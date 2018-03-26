@@ -509,13 +509,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </a>
                             <b class="arrow"></b>
                         </li>
-                        <li class="">
+{{--                         <li class="">
                             <a href="{{ route('administrador.ebook.index') }}">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Ebooks
                             </a>
                             <b class="arrow"></b>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
             </ul><!-- /.nav-list -->

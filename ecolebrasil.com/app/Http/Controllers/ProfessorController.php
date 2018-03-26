@@ -10,6 +10,7 @@ use App\Curso;
 use App\Aula;
 use App\Aluno;
 use \Auth;
+use \Session;
 use App\Exercicio;
 use App\Material;
 use App\Video;
@@ -28,12 +29,16 @@ class ProfessorController extends Controller
     public function getProfessor()
     {
         $userId = Auth::user()->id;
-        return Professor::where('user_id', '=', $userId)->get()->first();
+        return Professor::where('user_id', '=', $userId)
+                          ->where('visible', '=', '1')
+                          ->get()->first();
     }
 
     public function visao_aluno()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.aluno.visao.index', compact('agendas'));
     }
 
@@ -63,7 +68,7 @@ class ProfessorController extends Controller
 
     public function aluno_index()
     {
-        $alunos = Aluno::all();
+        $alunos = Aluno::where('visible', '=', '1')->get();
         return view('professor.aluno.index', compact('alunos'));
     }
 
@@ -86,40 +91,48 @@ class ProfessorController extends Controller
 
     public function material_index()
     {
-        $materiais = Material::all();
+        $materiais = Material::where('visible', '=', '1')->get();
         return view('professor.professores_aulas.material.index', compact('materiais'));
     }
 
     public function material_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.material.novo', compact('agendas'));
     }
 
     public function material_editar($id)
     {
         $material = Material::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.material.editar', compact('agendas', 'material'));
     }
 
     //exercicio
     public function exercicio_index()
     {
-        $exercicios = Exercicio::all();
+        $exercicios = Exercicio::where('visible', '=', '1')->get();
         return view('professor.professores_aulas.exercicio.index', compact('exercicios'));
     }
 
     public function exercicio_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.exercicio.novo', compact('agendas'));
     }
 
     public function exercicio_editar($id)
     {
         $exercicio = Exercicio::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.exercicio.editar', compact('agendas', 'exercicio'));
     }
 
@@ -127,40 +140,48 @@ class ProfessorController extends Controller
     //aula
     public function aula_index()
     {
-        $aulas = Aula::all();
+        $aulas = Aula::where('visible', '=', '1')->get();
         return view('professor.professores_aulas.aula.index', compact('aulas'));
     }
 
     public function aula_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.aula.novo', compact('agendas'));
     }
 
     public function aula_editar($id)
     {
         $aula = Aula::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.aula.editar', compact('agendas', 'aula'));
     }
 
     //video
     public function videoconferencia_index()
     {
-        $videos = Video::all();
+        $videos = Video::where('visible', '=', '1')->get();
         return view('professor.professores_aulas.videoconferencia.index', compact('videos'));
     }
 
     public function videoconferencia_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.videoconferencia.novo', compact('agendas'));
     }
 
     public function videoconferencia_editar($id)
     {
         $video = Video::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('professor.professores_aulas.videoconferencia.editar', compact('agendas', 'video'));
     }
 
@@ -191,14 +212,16 @@ class ProfessorController extends Controller
     //cursos
     public function modulo_editar(Request $request, $id)
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         $modulo = Modulo::find( $id );
         return view('professor.cursos_modulos.modulo.editar', compact('modulo', 'agendas'));
     }
 
     public function modulo_index()
     {
-        $modulos = Modulo::all();
+        $modulos = Modulo::where('visible', '=', '1')->get();
         return view('professor.cursos_modulos.modulo.index', compact('modulos'));
     }
 
@@ -212,7 +235,9 @@ class ProfessorController extends Controller
     {
         $count = Agenda::count();
         if($count > 0){
-            $agendas = Agenda::where('modelo', '=', 'D')->get();
+            $agendas = Agenda::where('modelo', '=', 'D')
+                               ->where('visible', '=', '1')
+                               ->get();
             return view('professor.cursos_modulos.modulo.novo', compact('agendas'));
         }else{
             Session::flash('message' , 'Necessário inserir "Cursos" para poder cadastrar um módulo!'); //<--FLASH MESSAGE
@@ -223,6 +248,12 @@ class ProfessorController extends Controller
 
     public function dashboard()
     {
+        $professor = $this->getProfessor();
+        if($professor == null){
+            Auth::logout();
+            Session::flash('message' , 'Login ou senha incorretos!'); //<--FLASH MESSAGE
+            return redirect(route('professor.login'));
+        }
         return view('professor.dashboard');
     }
 
@@ -272,6 +303,9 @@ class ProfessorController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $professor = Professor::find($id);
+        $professor->visible = '0';
+        $professor->save();
+        return;
     }
 }

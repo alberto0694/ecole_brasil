@@ -9,7 +9,7 @@ class AulaController extends Controller
 {
      public function create(Request $request)
     {
-        
+
         $aula = Aula::create( $request->all() );
         return;
     }
@@ -23,6 +23,8 @@ class AulaController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
-    } 
+        $aula = Aula::find($id);
+        $aula->visible = '0';
+        $aula->save();
+    }
 }

@@ -24,6 +24,9 @@ class ConsultoraController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $consultora = Consultora::find($id);
+        $consultora->visible = '0';
+        $consultora->save();
+        return;
     }
 }

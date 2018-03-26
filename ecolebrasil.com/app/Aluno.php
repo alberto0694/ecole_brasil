@@ -19,7 +19,7 @@ class Aluno extends Model
 
   public function agendas()
   {
-  		return $this->belongsToMany('App\Agenda', 'aluno_agendas');
+  		return $this->belongsToMany('App\Agenda', 'aluno_agendas')->where('visible', '=', '1');
   }
 
   public function getHasRestritoAttribute()

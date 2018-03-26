@@ -118,7 +118,9 @@ class AdministradorController extends Controller
 
     public function visao_aluno()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.aluno.visao.index', compact('agendas'));
     }
 
@@ -165,20 +167,24 @@ class AdministradorController extends Controller
 
     public function material_index()
     {
-        $materiais = Material::all();
+        $materiais = Material::where('visible', '=', '1')->get();
         return view('administrador.professores_aulas.material.index', compact('materiais'));
     }
 
     public function material_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.material.novo', compact('agendas'));
     }
 
     public function material_editar($id)
     {
         $material = Material::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.material.editar', compact('agendas', 'material'));
     }
 
@@ -191,34 +197,36 @@ class AdministradorController extends Controller
 
     public function ebook_novo()
     {
-        // $cursos = Curso::all();
         return view('administrador.website.ebook.novo');
     }
 
     public function ebook_editar($id)
     {
         $ebook = Ebook::find($id);
-        // $cursos = Curso::all();
         return view('administrador.website.ebook.editar', compact('ebook'));
     }
 
     //exercicio
     public function exercicio_index()
     {
-        $exercicios = Exercicio::all();
+        $exercicios = Exercicio::where('visible', '=', '1')->get();
         return view('administrador.professores_aulas.exercicio.index', compact('exercicios'));
     }
 
     public function exercicio_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.exercicio.novo', compact('agendas'));
     }
 
     public function exercicio_editar($id)
     {
         $exercicio = Exercicio::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.exercicio.editar', compact('agendas', 'exercicio'));
     }
 
@@ -226,47 +234,55 @@ class AdministradorController extends Controller
     //aula
     public function aula_index()
     {
-        $aulas = Aula::all();
+        $aulas = Aula::where('visible', '=', '1')->get();
         return view('administrador.professores_aulas.aula.index', compact('aulas'));
     }
 
     public function aula_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.aula.novo', compact('agendas'));
     }
 
     public function aula_editar($id)
     {
         $aula = Aula::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.aula.editar', compact('agendas', 'aula'));
     }
 
     //video
     public function videoconferencia_index()
     {
-        $videos = Video::all();
+        $videos = Video::where('visible', '=', '1')->get();
         return view('administrador.professores_aulas.videoconferencia.index', compact('videos'));
     }
 
     public function videoconferencia_novo()
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.videoconferencia.novo', compact('agendas'));
     }
 
     public function videoconferencia_editar($id)
     {
         $video = Video::find($id);
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         return view('administrador.professores_aulas.videoconferencia.editar', compact('agendas', 'video'));
     }
 
     //professores
     public function professor_index()
     {
-        $professores = Professor::all();
+        $professores = Professor::where('visible', '=', '1')->get();
         return view('administrador.professores_aulas.professor.index', compact('professores'));
     }
 
@@ -291,7 +307,7 @@ class AdministradorController extends Controller
     //depoimentos
     public function depoimento_index()
     {
-        $depoimentos = Depoimento::all();
+        $depoimentos = Depoimento::where('visible', '=', '1')->get();
         return view('administrador.website.depoimentos.index', compact('depoimentos'));
     }
 
@@ -316,7 +332,7 @@ class AdministradorController extends Controller
     //consultoras
         public function consultora_index()
     {
-        $consultoras = Consultora::all();
+        $consultoras = Consultora::where('visible', '=', '1')->get();
         return view('administrador.website.consultoras.index', compact('consultoras'));
     }
 
@@ -343,7 +359,7 @@ class AdministradorController extends Controller
     //CURSOS E MODULOS
     public function formacao_index()
     {
-        $formacoes = Formacao::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
         return view('administrador.cursos_modulos.formacao.index', compact('formacoes'));
     }
 
@@ -362,14 +378,14 @@ class AdministradorController extends Controller
     //cursos
     public function curso_editar(Request $request, $id)
     {
-        $formacoes = Formacao::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
         $curso = Curso::find( $id );
         return view('administrador.cursos_modulos.curso.editar', compact('curso', 'formacoes'));
     }
 
     public function curso_index()
     {
-        $cursos = Curso::all();
+        $cursos = Curso::where('visible', '=', '1')->get();
         return view('administrador.cursos_modulos.curso.index', compact('cursos'));
     }
 
@@ -381,9 +397,9 @@ class AdministradorController extends Controller
 
     public function curso_novo()
     {
-        $count = Formacao::count();
+        $count = Formacao::where('visible', '=', '1')->get()->count();
         if($count > 0){
-            $formacoes = Formacao::all();
+            $formacoes = Formacao::where('visible', '=', '1')->get();
             return view('administrador.cursos_modulos.curso.novo', compact('formacoes'));
         }else{
             Session::flash('message' , 'Necessário inserir "Tipos de Curso" para poder cadastrar um curso!'); //<--FLASH MESSAGE
@@ -395,14 +411,16 @@ class AdministradorController extends Controller
     //cursos
     public function modulo_editar(Request $request, $id)
     {
-        $agendas = Agenda::where('modelo', '=', 'D')->get();
+        $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
         $modulo = Modulo::find( $id );
         return view('administrador.cursos_modulos.modulo.editar', compact('modulo', 'agendas'));
     }
 
     public function modulo_index()
     {
-        $modulos = Modulo::all();
+        $modulos = Modulo::where('visible', '=', '1')->get();
         return view('administrador.cursos_modulos.modulo.index', compact('modulos'));
     }
 
@@ -416,7 +434,9 @@ class AdministradorController extends Controller
     {
         $count = Agenda::count();
         if($count > 0){
-            $agendas = Agenda::where('modelo', '=', 'D')->get();
+            $agendas = Agenda::where('modelo', '=', 'D')
+                          ->where('visible', '=', '1')
+                          ->get();
             return view('administrador.cursos_modulos.modulo.novo', compact('agendas'));
         }else{
             Session::flash('message' , 'Necessário inserir "Cursos" para poder cadastrar um módulo!'); //<--FLASH MESSAGE
@@ -430,13 +450,13 @@ class AdministradorController extends Controller
     public function aluno_editar(Request $request, $id)
     {
         $aluno = Aluno::find( $id );
-        $agendas = Agenda::all();
+        $agendas = Agenda::where('visible', '=', '1')->get();
         return view('administrador.aluno.editar', compact('aluno', 'agendas'));
     }
 
     public function aluno_index()
     {
-        $alunos = Aluno::all();
+        $alunos = Aluno::where('visible', '=', '1')->get();
         return view('administrador.aluno.index', compact('alunos'));
     }
 
@@ -448,7 +468,7 @@ class AdministradorController extends Controller
 
     public function aluno_novo()
     {
-        $agendas = Agenda::all();
+        $agendas = Agenda::where('visible', '=', '1')->get();
         return view('administrador.aluno.novo', compact('agendas'));
     }
 
@@ -456,13 +476,13 @@ class AdministradorController extends Controller
     public function agenda_editar(Request $request, $id)
     {
         $agenda = Agenda::find( $id );
-        $cursos = Curso::all();
+        $cursos = Curso::where('visible', '=', '1')->get();
         return view('administrador.website.agenda.editar', compact('agenda', 'cursos'));
     }
 
     public function agenda_index()
     {
-        $agendas = Agenda::all();
+        $agendas = Agenda::where('visible', '=', '1')->get();
         return view('administrador.website.agenda.index', compact('agendas'));
     }
 
@@ -474,18 +494,16 @@ class AdministradorController extends Controller
 
     public function agenda_novo()
     {
-        $count = Curso::count();
+        $count = Curso::where('visible', '=', '1')->get()->count();
         if($count > 0){
-            $cursos = Curso::all();
+            $cursos = Curso::where('visible', '=', '1')->get();
             return view('administrador.website.agenda.novo', compact('cursos'));
         }else{
             Session::flash('message' , 'Necessário inserir "Cursos" para poder cadastrar uma Agenda!'); //<--FLASH MESSAGE
             Session::flash('alert-class', 'alert-danger');
             return redirect(route('administrador.agenda.index'));
         }
-
     }
-
 
     //banners
     public function banner_editar(Request $request, $id)
@@ -496,7 +514,7 @@ class AdministradorController extends Controller
 
     public function banner_index()
     {
-        $banners = Banner::all();
+        $banners = Banner::where('visible', '=', '1')->get();
         return view('administrador.website.banner.index', compact('banners'));
     }
 
@@ -578,7 +596,7 @@ class AdministradorController extends Controller
 
     public function acesso_restrito_index()
     {
-        $acessos = MaterialRestrito::all();
+        $acessos = MaterialRestrito::where('visible', '=', '1')->get();
         return view('administrador.website.acesso_restrito.index', compact('acessos'));
     }
 

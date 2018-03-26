@@ -32,6 +32,8 @@ class InadimplenciaController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $inadimplencia = Inadimplencia::find($id);
+        $inadimplencia->delete();
+        return;
     }
 }

@@ -38,13 +38,12 @@ class WebsiteController extends Controller
                     "email" => $request->email];
 
         Contato::create( $request->all() );
-
-        Mail::send('emails.contato', $data, function ($message) {
-            $message->from('alberto@metrocoletivo.com.br', 'Contato Site');
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('Contato Site');
-            $message->to('contato@ecolebrasil.com')->subject('Contato Site');
-            $message->cc('admin@ecolebrasil.com')->subject('Contato Site');
-            $message->cc('vandressa@esrelooking.com ')->subject('Contato Site');
+        Mail::send('emails.contato', $data, function ($message) use ($data) {
+            $message->from('alberto@metrocoletivo.com.br', 'Contato Site '.$data['contato']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Contato Site '.$data['contato']);
+            $message->to('contato@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
+            $message->cc('admin@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
+            $message->cc('vandressa@esrelooking.com ')->subject('Contato Site '.$data['contato']);
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -59,12 +58,12 @@ class WebsiteController extends Controller
 
         NewsLetter::create( $request->all() );
 
-        Mail::send('emails.newsletter', $data, function ($message) {
-            $message->from('alberto@metrocoletivo.com.br', 'NewsLetter');
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('NewsLetter');
-            $message->to('contato@ecolebrasil.com')->subject('NewsLetter');
-            $message->cc('admin@ecolebrasil.com')->subject('NewsLetter');
-            $message->cc('vandressa@esrelooking.com ')->subject('NewsLetter');
+        Mail::send('emails.newsletter', $data, function ($message)  use ($data) {
+            $message->from('alberto@metrocoletivo.com.br', 'NewsLetter '.$data['contato']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('NewsLetter '.$data['contato']);
+            $message->to('contato@ecolebrasil.com')->subject('NewsLetter '.$data['contato']);
+            $message->cc('admin@ecolebrasil.com')->subject('NewsLetter '.$data['contato']);
+            $message->cc('vandressa@esrelooking.com ')->subject('NewsLetter '.$data['contato']);
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -78,15 +77,12 @@ class WebsiteController extends Controller
                     "telefone" => $request->telefone,
                     "cidade_curso" => $request->cidade_curso,
                     "email" => $request->email];
-
-        // Contato::create( $request->all() );
-
-        Mail::send('emails.inscricao', $data, function ($message) {
-            $message->from('alberto@metrocoletivo.com.br', 'Inscrição Ecole Brasil');
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil');
-            $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil');
-            $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil');
-            $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil');
+        Mail::send('emails.inscricao', $data, function ($message) use ($data) {
+            $message->from('alberto@metrocoletivo.com.br', 'Inscrição Ecole Brasil '.$data['contato']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['contato']);
+            $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato']);
+            $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato']);
+            $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['contato']);
         });
 
         Session::flash('message' , 'Inscrição realizada. Entraremos em contato o mais breve possível!'); //<--FLASH MESSAGE
@@ -97,55 +93,55 @@ class WebsiteController extends Controller
     public function regulariza_inadimplencia(Request $request, $id)
     {
         $inadimplencia = Inadimplencia::find($id);
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.regularizacao', compact('inadimplencia', 'cursos_menu', 'formacoes'));
     }
 
     public function inscricao()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
-        return view('website.inscricao', compact('cursos_menu','formacoes'));
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
+        $curso = null;
+        return view('website.inscricao', compact('cursos_menu','formacoes', 'curso'));
     }
 
     public function home()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
-        $agendas = Agenda::orderBy('data_inicio', 'asc')->get(); //Agenda::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
+        $agendas = Agenda::where('visible', '=', '1')->orderBy('data_inicio', 'asc')->get();
         $banners = Banner::where('ativo', '=', 1)->get();
         $cursos = Curso::where('pagina_inicial', '=', '1')->get();
-        $depoimentos = Depoimento::orderBy('created_at', 'asc')->take(3)->get();
-        // $agendas = Agenda::all();
+        $depoimentos = Depoimento::where('visible', '=', '1')->orderBy('created_at', 'asc')->take(3)->get();
     	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu', 'depoimentos'));
     }
 
     public function escola()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.escola', compact('cursos_menu','formacoes'));
     }
 
     public function eshop()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.eshop', compact('cursos_menu','formacoes'));
     }
 
     public function manifesto()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.manifesto', compact('cursos_menu','formacoes'));
     }
 
     public function equipe()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.equipe', compact('cursos_menu','formacoes'));
     }
 
@@ -153,24 +149,24 @@ class WebsiteController extends Controller
     {
         $this->middleware('guest')->except('logout');
         Auth::logout();
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
     	return view('website.restrito', compact('cursos_menu','formacoes'));
     }
 
     public function certificacao()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
     	return view('website.certificacao', compact('cursos_menu','formacoes'));
     }
 
     public function cursos_lista(Request $request)
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         $formacao_id = $request->query('formacao_id');
-        $cursos = Curso::all();
+        $cursos = Curso::where('visible', '=', '1')->get();
         if($formacao_id != null){
             $cursos = Curso::where('formacao_id', '=', $formacao_id)->get();
         }
@@ -179,32 +175,32 @@ class WebsiteController extends Controller
 
     public function sou_ecole()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
     	return view('website.sou_ecole', compact('cursos_menu','formacoes'));
     }
 
     public function contato()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
     	return view('website.contato', compact('cursos_menu','formacoes'));
     }
 
     public function cursos(Request $request, $id)
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         $curso = Curso::find( $id );
     	return view('website.cursos', compact('cursos_menu','formacoes', 'curso'));
     }
 
     public function depoimentos()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
-        $depoimentos = Depoimento::all();
-        $depoimentosVideo = Depoimento::where('video', '<>', '""')->where('video', '<>', '0')->get();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
+        $depoimentos = Depoimento::where('visible', '=', '1')->get();
+        $depoimentosVideo = Depoimento::where('visible', '=', '1')->where('video', '<>', '""')->where('video', '<>', '0')->get();
     	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo'));
     }
 
@@ -212,52 +208,53 @@ class WebsiteController extends Controller
     {
         $agendasMonths = array();
         for ($i=1; $i < 13; $i++) {
-            $agendasMonths[$i] = Agenda::whereMonth('data_inicio', '=', $i)
-                                                     ->where('data_inicio', '>=', date('Y-m-d').' 00:00:00')
-                                                     ->orderBy('data_inicio', 'asc')
-                                                     ->get();
+            $agendasMonths[$i] = Agenda::where('visible', '=', '1')
+                                         ->whereMonth('data_inicio', '=', $i)
+                                         ->where('data_inicio', '>=', date('Y-m-d').' 00:00:00')
+                                         ->orderBy('data_inicio', 'asc')
+                                         ->get();
         }
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.agenda', compact('cursos_menu','agendasMonths', 'formacoes'));
     }
 
     public function faq()
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.faq', compact('cursos_menu','formacoes'));
     }
 
     public function imprensa()
     {
         $imprensas = Imprensa::all();
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.imprensa', compact('cursos_menu','formacoes', 'imprensas'));
     }
 
     public function blog()
     {
         $blogs = Blog::all();
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.blog', compact('cursos_menu','formacoes', 'blogs'));
     }
 
     public function blog_post($id)
     {
         $blog = Blog::find($id);
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.blog_post', compact('cursos_menu','formacoes', 'blog'));
     }
 
     public function materia($id)
     {
         $imprensa = Imprensa::find($id);
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.materia', compact('cursos_menu','formacoes', 'imprensa'));
     }
 
@@ -267,20 +264,20 @@ class WebsiteController extends Controller
         $curso = null;
         if(array_key_exists('agenda_id', $querys)){
             $agenda = Agenda::find($querys['agenda_id']);
-            $curso = $agenda->curso();
+            $curso = $agenda->curso;
         }
 
         if(array_key_exists('curso_id', $querys)){
             $curso = Curso::find($querys['curso_id']);
         }
 
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.inscricao', compact('cursos_menu','formacoes', 'curso'));
 
         //TA ASSIM PORQUE O E-REDE AINDA NAO TA FUNFANDO
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         $agenda_id = $request->query('agenda_id');
         $curso_id = $request->query('curso_id');
         $agendas = null;
@@ -310,25 +307,28 @@ class WebsiteController extends Controller
             if(($querys['nome'] != '') || ($querys['cidade'] != '')){
                 if(($querys['nome'] != '') && ($querys['cidade'] != '')){
                     $consultoras = Consultora::where('nome', 'like', '%'.$querys['nome'].'%')
+                                               ->where('visible', '=', '1')
                                                ->orWhere('cidade', 'like', '%'.$querys['cidade'].'%')
                                                ->orderBy('created_at', 'asc')->get();
                 }else{
                     if(($querys['nome'] != '')){
                         $consultoras = Consultora::where('nome', 'like', '%'.$querys['nome'].'%')
+                                               ->where('visible', '=', '1')
                                                ->orderBy('created_at', 'asc')->get();
                     }else{
                         $consultoras = Consultora::where('cidade', 'like', '%'.$querys['cidade'].'%')
+                                               ->where('visible', '=', '1')
                                                ->orderBy('created_at', 'asc')->get();
                     }
                 }
             }else{
-                $consultoras = Consultora::orderBy('created_at', 'asc')->get();
+                $consultoras = Consultora::where('visible', '=', '1')->orderBy('created_at', 'asc')->get();
             }
         }else{
-            $consultoras = Consultora::orderBy('created_at', 'asc')->get();
+            $consultoras = Consultora::where('visible', '=', '1')->orderBy('created_at', 'asc')->get();
         }
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.consultoras', compact('consultoras', 'formacoes', 'cursos_menu'));
     }
 
@@ -336,24 +336,24 @@ class WebsiteController extends Controller
     {
         $this->middleware('guest')->except('logout');
         Auth::logout();
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.ead', compact('formacoes', 'cursos_menu'));
     }
 
     public function ebook(Request $request)
     {
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
-        $ebooks = Ebook::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
+        $ebooks = Ebook::where('visible', '=', '1')->get();
         return view('website.ebook', compact('formacoes', 'cursos_menu', 'ebooks'));
     }
 
     public function ebook_pagamento(Request $request, $id)
     {
         $ebook = Ebook::find( $id );
-        $formacoes = Formacao::all();
-        $cursos_menu = Curso::all();
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
         return view('website.pagamento_ebook', compact('formacoes', 'cursos_menu', 'ebook'));
     }
 

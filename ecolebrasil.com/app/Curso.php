@@ -10,7 +10,7 @@ use App\Modulo;
 class Curso extends Model
 {
 
-	protected $fillable = [	'nome', 
+	protected $fillable = [	'nome',
 							'formacao_id',
 							'link_video',
 							'background_img',
@@ -46,14 +46,9 @@ class Curso extends Model
     	return $this->belongsToMany('App\Aluno');
     }
 
-    // public function modulos()
-    // {
-    // 	return $this->hasMany('App\Modulo');
-    // }
-
     public function formacao()
     {
-    	return $this->belongsTo('App\Formacao', 'formacao_id', 'id');
+    	return $this->belongsTo('App\Formacao', 'formacao_id', 'id')->where('visible', '=', '1');
     }
 
 	public function getOpennedAttribute()
@@ -69,6 +64,6 @@ class Curso extends Model
 
 	public function agendas()
 	{
-		return $this->hasMany('App\Agenda', 'curso_id', 'id');
+		return $this->hasMany('App\Agenda', 'curso_id', 'id')->where('visible', '=', '1');
 	}
 }

@@ -24,8 +24,12 @@ class Agenda extends Model
 
     public function curso()
     {
-    	// return $this->belongsTo('App\Curso','curso_id', 'id');
         return $this->belongsTo('App\Curso', 'curso_id', 'id');
+    }
+
+    public function getLabelComboAttribute()
+    {
+        return $this->curso->nome.' - '.$this->cidade.' - '.$this->datas.' / '.$this->monthRes;
     }
 
     public function modulos()
@@ -33,6 +37,14 @@ class Agenda extends Model
      return $this->hasMany('App\Modulo')->orderBy('data_inicio', 'asc');
     }
 
+    public function getModeloLabelAttribute()
+    {
+        if($this->modelo == 'D'){
+            return 'À Distância';
+        }else{
+            return 'Presencial';
+        }
+    }
 
     public function getFormatedDateAttribute()
     {

@@ -25,8 +25,8 @@ class ExercicioController extends Controller
     public function delete(Request $request, $id)
     {
          $exercicio = Exercicio::find($id);
-         $exercicio->comentarios()->delete();
-         $exercicio->delete();
+         $exercicio->visible = '0';
+         $exercicio->save();
          return;
     }
 }

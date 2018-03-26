@@ -25,19 +25,13 @@
 			<input id="link_video" name="link_video" type="text" class="col-xs-12 col-sm-6" />
 		</div>
 	</div>
-{{-- 					<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo do Curso (PDF) </label>
-		@component('components.upfile', ['nameId' => 'arquivo', 'src' => ''])
-		    ...
-		@endcomponent
-	</div> --}}
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Curso</label>
 		<div class="col-sm-6">
 			<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
-						<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->datas }}</option>
+						<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 					@endforeach
 			</select>
 		</div>

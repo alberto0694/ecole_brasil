@@ -40,9 +40,9 @@
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
 						@if($material->modulo->agenda->id == $agenda->id)
-							<option selected value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option selected value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 						@else
-							<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 						@endif
 
 					@endforeach

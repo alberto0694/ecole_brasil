@@ -8,7 +8,8 @@ use App\User;
 use App\Agenda;
 use App\Modulo;
 use App\MaterialRestrito;
-use Auth;
+use \Auth;
+use \Session;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -22,19 +23,26 @@ class AlunoController extends Controller
     public function getAluno()
     {
         $userId = Auth::user()->id;
-        return Aluno::where('user_id', '=', $userId)->get()->first();
+        return Aluno::where('user_id', '=', $userId)
+                      ->where('visible', '=', '1')
+                      ->get()->first();
     }
 
     public function acesso_restrito()
     {
         $aluno = $this->getAluno();
-        $acessos_restritos = MaterialRestrito::all();
+        $acessos_restritos = MaterialRestrito::where('visible', '=', '1')->get();
         return view('aluno.acesso_restrito', compact('aluno', 'acessos_restritos'));
     }
 
     public function dashboard()
     {
         $aluno = $this->getAluno();
+        if($aluno == null){
+            Auth::logout();
+            Session::flash('message' , 'Login ou senha incorretos!'); //<--FLASH MESSAGE
+            return redirect(url()->previous());
+        }
         return view('aluno.dashboard', compact('aluno'));
     }
 
@@ -141,6 +149,9 @@ class AlunoController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $aluno = Aluno::find($id);
+        $aluno->visible = '0';
+        $aluno->save();
+        return;
     }
 }

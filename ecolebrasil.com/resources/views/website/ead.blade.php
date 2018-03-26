@@ -22,33 +22,33 @@
           <h4 align="center" class="title-pink-begin-text">Acesso EAD</h4>
           <ul style="padding-left: 0px;">
               <li>
-                  <div class="input-append newsletter-box ">
-											<form method="POST" action="{{ route('login') }}">
-											    {{ csrf_field() }}
-											    <fieldset>
-									                <div class="form-group">
-									                  {{-- <label class="control-label">Como nos conhece</label> --}}
-									                  <input required id="email" name="email" type="text" class="full form-control" placeholder="E-mail" />
-									                </div>
-									                <i class="ace-icon fa fa-user"></i>
-									                <div class="form-group">
-									                  {{-- <label class="control-label">Como nos conhece</label> --}}
-									                  <input required id="password" name="password" type="password" class="full form-control" placeholder="Senha" />
-									                </div>
-									                <i class="ace-icon fa fa-lock"></i>
-                                                    @if(Session::has('message'))
-                                                        <div style="color:red" class="alert {{Session::get('alert-class')}}">
-                                                        <strong>Aviso!</strong>
-                                                            {{ Session::get('message') }}
-                                                        </div>
-                                                    @endif
-											        <div class="space"></div>
-						                              <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
-						                                <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/entrar.png') }}">
-						                              </button>
-											        <div class="space-4"></div>
-											    </fieldset>
-											</form>
+                <div class="input-append newsletter-box ">
+				<form method="POST" action="{{ route('login') }}">
+				    {{ csrf_field() }}
+				    <fieldset>
+		                <div class="form-group">
+		                  {{-- <label class="control-label">Como nos conhece</label> --}}
+		                  <input required id="email" name="email" type="text" class="full form-control" placeholder="E-mail" />
+		                </div>
+		                <i class="ace-icon fa fa-user"></i>
+		                <div class="form-group">
+		                  {{-- <label class="control-label">Como nos conhece</label> --}}
+		                  <input required id="password" name="password" type="password" class="full form-control" placeholder="Senha" />
+		                </div>
+		                <i class="ace-icon fa fa-lock"></i>
+                        @if(Session::has('message'))
+                            <div style="color:red" class="alert {{Session::get('alert-class')}}">
+                            <strong>Aviso!</strong>
+                                {{ Session::get('message') }}
+                            </div>
+                        @endif
+				        <div class="space"></div>
+                          <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+                            <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/entrar.png') }}">
+                          </button>
+				        <div class="space-4"></div>
+				    </fieldset>
+				</form>
                   </div>
               </li>
           </ul>

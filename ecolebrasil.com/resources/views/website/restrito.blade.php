@@ -27,7 +27,12 @@
 				                  <input required id="password" name="password" type="password" class="full form-control" placeholder="Senha" />
 				                </div>
 				                <i class="ace-icon fa fa-lock"></i>
-
+				                @if(Session::has('message'))
+		                            <div style="color:red" class="alert {{Session::get('alert-class')}}">
+		                            <strong>Aviso!</strong>
+		                                {{ Session::get('message') }}
+		                            </div>
+	                        	@endif
 						        <div class="space"></div>
 	                              <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
 	                                <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/entrar.png') }}">

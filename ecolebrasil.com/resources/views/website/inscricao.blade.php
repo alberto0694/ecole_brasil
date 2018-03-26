@@ -52,8 +52,12 @@
 		                  <input required name="email" type="text" class="full form-control " placeholder="E-mail">
 		                </div>
 		                <div class="form-group">
-		                	<label class="control-label">Curso de Interesse</label>
-		                  <input required name="cidade_curso" type="text" class="full form-control " placeholder="Curso de interesse" value="{{ $curso->nome }}">
+		                  <label class="control-label">Curso de Interesse</label>
+		                  @if($curso != null)
+		                  	<input required name="cidade_curso" type="text" class="full form-control " placeholder="Curso de interesse" value="{{ $curso->nome }}">
+		                  @else
+		                  	<input required name="cidade_curso" type="text" class="full form-control " placeholder="Curso de interesse">
+		                  @endif
 		                </div>
                         <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
                         	<img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">

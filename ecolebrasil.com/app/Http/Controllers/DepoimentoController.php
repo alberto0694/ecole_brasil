@@ -17,7 +17,7 @@ class DepoimentoController extends Controller
 
     public function update(Request $request, $id)
     {
-        $depoimento = Depoimento::find( $id );   
+        $depoimento = Depoimento::find( $id );
         $request = Controller::saveBase64($request, 'avatar', 'depoimentos', $depoimento->avatar);
         $depoimento->update( $request->all() );
 
@@ -29,6 +29,9 @@ class DepoimentoController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $depoimento = Depoimento::find($id);
+        $depoimento->visible = '0';
+        $depoimento->save();
+        return;
     }
 }

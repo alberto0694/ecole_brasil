@@ -93,7 +93,7 @@ jQuery(function($){
 								  success: function(){
 										$.alert({
 										    title: 'Sucesso!',
-										    content: 'Professor alterado com sucesso!',
+										    content: 'Administrador alterado com sucesso!',
 										    buttons:{
 										    	ok:function(){
 										    		window.location.href = "{{ route('administrador.professor.index') }}";

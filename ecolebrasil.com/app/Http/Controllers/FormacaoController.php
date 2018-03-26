@@ -9,7 +9,7 @@ class FormacaoController extends Controller
 {
     public function create(Request $request)
     {
-        $formacao = Formacao::create($request->all()); 
+        $formacao = Formacao::create($request->all());
         return;
     }
 
@@ -23,6 +23,14 @@ class FormacaoController extends Controller
     public function delete(Request $request, $id)
     {
         $formacao = Formacao::find( $id );
-        //destroy
+        if($formacao){
+            $cursos = $formacao->cursos;
+            foreach ($cursos as $curso) {
+                $curso->visible = '0';
+                $curso->save();
+            }
+        }
+        $formacao->visible = '0';
+        $formacao->save();
     }
 }

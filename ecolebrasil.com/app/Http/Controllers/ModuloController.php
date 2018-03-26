@@ -17,7 +17,6 @@ class ModuloController extends Controller
     public function update(Request $request, $id)
     {
         $request = Controller::formatDate( $request, 'data_inicio' );
-        // dd($request);
         $modulo = Modulo::find( $id );
         $modulo->update( $request->all() );
         return;
@@ -25,37 +24,35 @@ class ModuloController extends Controller
 
     public function delete(Request $request, $id)
     {
-         $modulo = Modulo::find($id);
+        $modulo = Modulo::find($id);
 
-         $videos = $modulo->videos();
-         $materiais = $modulo->materiais();
-         $exercicios = $modulo->exercicios();
-         $aulas = $modulo->aulas();
+        $videos = $modulo->videos;
+        $materiais = $modulo->materiais;
+        $exercicios = $modulo->exercicios;
+        $aulas = $modulo->aulas;
 
-         foreach ($videos as $value) {
-             $value->comentarios()->delete();
-         }
+        foreach ($videos as $value) {
+            $value->visible = '0';
+            $value->save();
+        }
 
-         foreach ($materiais as $value) {
-             $value->comentarios()->delete();
-         }
+        foreach ($materiais as $value) {
+            $value->visible = '0';
+            $value->save();
+        }
 
-         foreach ($exercicios as $value) {
-             $value->comentarios()->delete();
-         }
+        foreach ($exercicios as $value) {
+            $value->visible = '0';
+            $value->save();
+        }
 
-         foreach ($aulas as $value) {
-             $value->comentarios()->delete();
-         }
-
-
-         $videos->delete();
-         // $materiais->delete();
-         // $exercicios->delete();
-         // $aulas->delete();
-
-         // $modulo->delete();
-         return;
+        foreach ($aulas as $value) {
+            $value->visible = '0';
+            $value->save();
+        }
+        $modulo->visible = '0';
+        $modulo->save();
+        return;
     }
 
 }

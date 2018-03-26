@@ -22,9 +22,9 @@ class VideoController extends Controller
 
     public function delete(Request $request, $id)
     {
-         $video = Video::find($id);
-         $video->comentarios()->delete();
-         $video->delete();
-         return;
+        $video = Video::find($id);
+        $video->visible = '0';
+        $video->save();
+        return;
     }
 }

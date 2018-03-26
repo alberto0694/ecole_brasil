@@ -26,14 +26,6 @@
 			<input value="{{ $video->link_video }}" id="link_video" name="link_video" type="text" class="col-xs-12 col-sm-6" />
 		</div>
 	</div>
-{{-- 					<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo (PDF) </label>
-		@component('components.upfile', ['nameId' => 'ementa', 'src' => ''])
-			<a id='dwnldLnk' href="{{ $video->arquivo }}" download='{{ $video->arquivo }}' style="display:none;" />
-		    <a href="#" onclick="downloadPDF();" title='{{ $video->arquivo }}'>Baixar Arquivo</a>
-		@endcomponent
-	</div> --}}
-
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Curso</label>
 		<div class="col-sm-6">
@@ -41,9 +33,9 @@
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
 						@if($video->modulo->agenda->id == $agenda->id)
-							<option selected value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option selected value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 						@else
-							<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }}</option>
+							<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 						@endif
 
 					@endforeach

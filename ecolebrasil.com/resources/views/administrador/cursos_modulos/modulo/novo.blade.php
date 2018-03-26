@@ -27,7 +27,7 @@
 		<div class="col-sm-6">
 			<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 				@foreach($agendas as $agenda)
-					<option value="{{ $agenda->id }}">{{ $agenda->curso->nome }} - {{ $agenda->cidade }} - {{ $agenda->datas }} / {{ $agenda->monthRes }}</option>
+					<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 				@endforeach
 			</select>
 		</div>

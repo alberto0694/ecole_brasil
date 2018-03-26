@@ -24,6 +24,10 @@ class BannerController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $banner = Banner::find($id);
+        $banner->visible = '0';
+        $banner->ativo = '0';
+        $banner->save();
+        return;
     }
 }

@@ -41,6 +41,9 @@ class CursoController extends Controller
     public function delete(Request $request, $id)
     {
         $curso = Curso::find( $id );
+        $curso->visible = '0';
+        $curso->save();
+        return;
     }
 
 

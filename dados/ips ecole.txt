@@ -20,6 +20,14 @@ https://www.ovh.com/managerv3/login.pl
 Voici le login : cj36993-ovh
 et mot de passe : 161101
 
+dns antigos
+
+ip: 213.186.33.19
+
+ns 1: dns111.ovh.net.
+ns 2: ns111.ovh.net.
+
+
 madimusel
 
 /** Nom de la base de données de WordPress. */

@@ -11,7 +11,7 @@ class Formacao extends Model
 
     public function cursos()
     {
-    	return $this->hasMany('App\Curso', 'formacao_id', 'id');
+    	return $this->hasMany('App\Curso', 'formacao_id', 'id')->where('visible', '=', '1');
     }
 
     public function addCurso(Curso $curso)

@@ -59,11 +59,11 @@
 
 	<div class="form-group">
 		<div class="row">
-		    <div class="col-md-4">
+		    <div class="col-md-5">
 		    	<label>Agendas/Cursos disponiveis</label>
 		        <select name="cursos[]" class="multiselect form-control" size="8" multiple="multiple" data-right="#multiselect_to_1" data-right-all="#right_All_1" data-right-selected="#right_Selected_1" data-left-all="#left_All_1" data-left-selected="#left_Selected_1">
 					@foreach($agendas as $agenda)
-						 <option value="{{ $agenda->id }}">{{ $agenda->descricao.' - '.$agenda->curso->nome }}</option>
+						 <option style="font-size:9pt" value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 					@endforeach
 		        </select>
 		    </div>
@@ -75,9 +75,9 @@
 		        <button type="button" id="left_All_1" class="btn btn-block"><i class="glyphicon glyphicon-backward"></i></button>
 		    </div>
 
-		    <div class="col-md-4">
+		    <div class="col-md-5">
 		    	<label>Agendas/Cursos para este Aluno</label>
-		        <select name="agendas_alunos[]" id="multiselect_to_1" class="form-control" size="8" multiple="multiple"></select>
+		        <select style="font-size:9pt" name="agendas_alunos[]" id="multiselect_to_1" class="form-control" size="8" multiple="multiple"></select>
 		    </div>
 		</div>
 	</div>

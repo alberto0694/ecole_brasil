@@ -109,6 +109,42 @@ class AgendaController extends Controller
 
     public function delete(Request $request, $id)
     {
-        //
+        $agenda = Agenda::find($id);
+        if($agenda){
+            $modulos = $agenda->modulos;
+            foreach ($modulos as $modulo) {
+
+                $videos = $modulo->videos;
+                $materiais = $modulo->materiais;
+                $exercicios = $modulo->exercicios;
+                $aulas = $modulo->aulas;
+
+                foreach ($videos as $value) {
+                    $value->visible = '0';
+                    $value->save();
+                }
+
+                foreach ($materiais as $value) {
+                    $value->visible = '0';
+                    $value->save();
+                }
+
+                foreach ($exercicios as $value) {
+                    $value->visible = '0';
+                    $value->save();
+                }
+
+                foreach ($aulas as $value) {
+                    $value->visible = '0';
+                    $value->save();
+                }
+                $modulo->visible = '0';
+                $modulo->save();
+            }
+            $agenda->visible = '0';
+            $agenda->save();
+        }
+        return;
+
     }
 }

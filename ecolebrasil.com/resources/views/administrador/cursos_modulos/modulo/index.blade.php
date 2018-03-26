@@ -22,7 +22,6 @@
 						<tr>
 							<th class="center">
 								<label class="pos-rel">
-									{{-- <input type="checkbox" class="ace" /> --}}
 									<span class="lbl"></span>
 								</label>
 							</th>
@@ -39,7 +38,6 @@
 						<tr>
 							<td class="center">
 								<label class="pos-rel">
-									{{-- <input type="checkbox" class="ace" /> --}}
 									<span class="lbl"></span>
 								</label>
 							</td>
@@ -47,7 +45,7 @@
 							<td>
 								<a href="#">{{ $modulo->titulo }}</a>
 							</td>
-							<td>{{ $modulo->curso->nome }}</td>
+							<td>{{ $modulo->agenda->labelCombo }}</td>
 							<td>
 								@if($modulo->openned)
 									<span class="label label-sm label-success">Aberto</span>
@@ -102,44 +100,44 @@
 </div>
 @endsection
 @section('last-body')
-		<script src="{{asset('assets/js/jquery.dataTables.min.js') }}"></script>
-		<script src="{{asset('assets/js/jquery.dataTables.bootstrap.min.js') }}"></script>
-		<script src="{{asset('assets/js/dataTables.buttons.min.js') }}"></script>
-		<script src="{{asset('assets/js/buttons.flash.min.js') }}"></script>
-		<script src="{{asset('assets/js/buttons.html5.min.js') }}"></script>
-		<script src="{{asset('assets/js/buttons.print.min.js') }}"></script>
-		<script src="{{asset('assets/js/buttons.colVis.min.js') }}"></script>
-		<script src="{{asset('assets/js/dataTables.select.min.js') }}"></script>
-		<script type="text/javascript">
-			@foreach($modulos as $modulo)
-				function deletar_{{$modulo->id}}(){
-					$.confirm({
-						title: 'Atenção!',
-						content: 'Deseja realmente deletar este regisro?',
-					    buttons: {
-					        Sim: (helloButton) => {
-					            $.ajax({
-								  headers: {
-								    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-								  },
-					              type: "DELETE",
-					              url: "{{ route('modulo.delete', $modulo->id) }}",
-					              data: {},
-					              success: function(data, status, request){
-					              		document.location.reload();
-					              }
-					            });
-					        },
-					        Nao:{
-					        	text:"Não"
-					        }
-					    }
-					});
-				}
-			@endforeach
-			jQuery(function($) {
-				$('#dynamic-table').DataTable();
-			});
-		</script>
+<script src="{{asset('assets/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{asset('assets/js/jquery.dataTables.bootstrap.min.js') }}"></script>
+<script src="{{asset('assets/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{asset('assets/js/buttons.flash.min.js') }}"></script>
+<script src="{{asset('assets/js/buttons.html5.min.js') }}"></script>
+<script src="{{asset('assets/js/buttons.print.min.js') }}"></script>
+<script src="{{asset('assets/js/buttons.colVis.min.js') }}"></script>
+<script src="{{asset('assets/js/dataTables.select.min.js') }}"></script>
+<script type="text/javascript">
+@foreach($modulos as $modulo)
+	function deletar_{{$modulo->id}}(){
+		$.confirm({
+			title: 'Atenção!',
+			content: 'Deseja realmente deletar este regisro?',
+		    buttons: {
+		        Sim: (helloButton) => {
+		            $.ajax({
+					  headers: {
+					    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					  },
+		              type: "DELETE",
+		              url: "{{ route('modulo.delete', $modulo->id) }}",
+		              data: {},
+		              success: function(data, status, request){
+		              		document.location.reload();
+		              }
+		            });
+		        },
+		        Nao:{
+		        	text:"Não"
+		        }
+		    }
+		});
+	}
+@endforeach
+jQuery(function($) {
+	$('#dynamic-table').DataTable();
+});
+</script>
 
 @endsection
