@@ -24,13 +24,13 @@
 	<div class="container" style="margin: 0; width: 100%; ">
 			<?php $x = 0; ?>
 			<?php $j = 0; ?>
-			@foreach($agendasMonths as $agendas)				
+			@foreach($agendasMonths as $agendas)
 				<?php $j++; ?>
-				@if($agendas->count() > 0)						
+				@if($agendas->count() > 0)
 						<?php $i = 0; $x++; ?>
 						<div class="row" style="height: 40px; <?php if($x % 2 == 0){ echo 'background-color: #eaeaea;'; }?>">
 							<h3 style="position: absolute; right: 49%">{{ Config::get('constants.meses')[$j - 1] }}</h3>
-						</div>						
+						</div>
 						@foreach($agendas as $agenda)
 							@if($i % 3 == 0)
 								<div class="row" style="padding-top: 20px; padding-bottom: 20px; padding-left: 60px; padding-right: 60px; <?php if($x % 2 == 0){ echo 'background-color: #eaeaea;'; }?>">

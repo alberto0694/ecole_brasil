@@ -260,6 +260,7 @@ class WebsiteController extends Controller
 
     public function compra_agenda(Request $request)
     {
+        // return;
         $querys = $request->query();
         $curso = null;
         if(array_key_exists('agenda_id', $querys)){

@@ -354,7 +354,7 @@ Route::post('/newsletter_post', 'WebsiteController@sendNewsletter')->name('email
 Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
 
 //ROTAS DE PAGAMENTOS
-Route::post('/pagamento', 'PagamentoController@doPayment')->name('pagamento');
+Route::get('/pagamento', 'PagamentoController@doPayment')->name('pagamento');
 Route::post('/pagamento/inadimplencia/{id}', 'InadimplenciaController@update_pagamento')->name('pagamento.inadimplencia');
 Route::post('/compra_agenda', 'AgendaController@buyAgenda')->name('pagamento.agenda');
 Route::post('/ebook_email', 'WebsiteController@ebook_email')->name('ebook.email');
