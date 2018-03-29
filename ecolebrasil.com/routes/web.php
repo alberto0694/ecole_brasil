@@ -336,7 +336,7 @@ Route::get('/br/certification/see/cnpc/14', 'WebsiteController@certificacao')->n
 Route::get('/sou_ecole', 'WebsiteController@sou_ecole')->name('sou_ecole');
 Route::get('/contato', 'WebsiteController@contato')->name('contato');
 Route::get('/inscrição', 'WebsiteController@inscricao')->name('inscricao');
-Route::get('/agenda', 'WebsiteController@agenda')->name('agenda');
+Route::get('/br/agenda', 'WebsiteController@agenda')->name('agenda');
 Route::get('/ecole/cursos/{id}', 'WebsiteController@cursos')->name('cursos');
 Route::get('/br/deposing', 'WebsiteController@depoimentos')->name('depoimentos');
 Route::get('/br/school/see/faq/20', 'WebsiteController@faq')->name('faq');
