@@ -54,6 +54,10 @@
     background-position: center;
 }
 
+iframe{
+  border: none;
+}
+
 </style>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -135,7 +139,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               @endforeach
           </ul>
         </li>
-        <li><a href="{{route('blog')}}">BLOG</a></li>
+        <li class="hidden-md hidden-lg"><a href="{{route('ead.login')}}">EAD</a></li>
+        <li class="hidden-md hidden-lg"><a href="{{route('agenda')}}">AGENDA</a></li>
+        <li><a href="http://blog.ecolebrasil.com">BLOG</a></li>
         <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
         <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>
         <li><a href="{{route('restrito')}}"  target="_blank">EX-ALUNAS</a></li>

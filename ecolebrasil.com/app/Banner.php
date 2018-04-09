@@ -27,17 +27,12 @@ class Banner extends Model
 
 	public function getItemAttribute()
 	{
-		if( (strpos($this->midia, 'png') != false) ||
-			(strpos($this->midia, 'jpg') != false) ||
-			(strpos($this->midia, 'jpeg')!= false) ||
-			(strpos($this->midia, 'bmp') != false)  ){
-
+		if( (strpos($this->midia, 'png') != false) || (strpos($this->midia, 'jpg') != false) || (strpos($this->midia, 'jpeg')!= false) || (strpos($this->midia, 'bmp') != false)  ){
 			return '<a target="_blank" href="'.$this->link_url.'"><img src="'.asset($this->midia).'" alt="" style="width: 100%; display: block;"></a>';
 		}else{
-			return
-			'<video style="background-color:rgba(239, 64, 96, 1); display:block; margin: 0 auto;" autoplay loop muted="false" id="myVideo">
-				<source src="'.asset($this->midia).'">
-			</video>';
+			return '<video id="bannerVideo" style="background-color:rgba(239, 64, 96, 1); display:block; heigth:100%; margin: 0 auto; width: 100%">
+						<source src="'.asset($this->midia).'">
+					</video>';
 		}
 
 	}

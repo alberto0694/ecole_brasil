@@ -57,6 +57,8 @@
 	opacity: 1;
 	background: none;
 	display: table;
+	bottom: 200px;
+	top:50px;
 }
 
 .inside-above-video{
@@ -93,6 +95,10 @@
 <script>
 $(window).on('load', function(){
 	$("video").prop('muted', true);
+	var vid = document.getElementById("bannerVideo");
+	vid.autoplay = true;
+	vid.load();
+	vid.play();
 });
 // Pause and play the video, and change the button text
 function myFunction() {
@@ -113,39 +119,46 @@ function myFunction() {
 <div class="row" style="margin: 0; padding: 0">
 	 <div class="col-md-12" style="margin: 0; padding: 0">
 		<div id="carousel-index-ecole" class="carousel slide background-ecole-pink" data-ride="carousel">
-			<?php 	$i = 0;
-					$class = "active";
+			<?php
+				$i = 0;
+				$class = "active";
 			?>
-		  <div class="carousel-inner">
-		  	@foreach($banners as $banner)
-			    @if($i > 0)
-			    	<?php $class = ""; ?>
-			    @endif
-			    <?php $i++; ?>
-			    <div class="item <?php echo $class; ?>">
-				    @if($banner->ativo == 1)
-				    	{!!$banner->item!!}
-				    	<div class="overload-video"></div>
-				    	<div class="above-video">
-						 	<div class="inside-above-video col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="margin-top: 80px;">
-								<h3 style="text-align: center; color: white; padding: 2px; width: 100%">
-									<a target="_blank" href="{{ route('cursos', 3) }}"><img style="width: 100%; display: block" src="{{ asset('images/logo-ecole-load.png') }}"></a>
-									<a target="_blank" style="color:white; text-decoration: none; font-weight: bold" href="{{ route('cursos', 3) }}">FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM</a>
-								</h3>
-								<div class="col-md-12" style="margin-top: 20px;">
-									<h3 style="text-align: center; background: white; padding: 5px; width: 100%">
-										<a target="_blank" class="no-text-decoration gray-dark-color titulo-padrao" style="text-decoration:none; font-weight: bold" href="{{ route('compra.agenda', ['curso_id' => 3]) }}">Faça sua inscrição</a>
-									</h3>
-								</div>
-						 	</div>
-				    	</div>
+		  	<div class="carousel-inner">
+			  	@foreach($banners as $banner)
+				    @if($i > 0)
+				    	<?php $class = ""; ?>
 				    @endif
-			    </div>
-			  @endforeach
+				    <?php $i++; ?>
+				    <div class="item <?php echo $class; ?>">
+					    @if($banner->ativo == 1)
+					    	{!!$banner->item!!}
+					    	<div class="overload-video"></div>
+					    	<div class="above-video">
+							 	<div class="inside-above-video col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="margin-top: 80px;">
+									<h3 style="text-align: center; color: white; padding: 2px; width: 100%">
+										<a target="_blank" href="{{ route('cursos', 3) }}">
+											<img style="width: 100%; display: block" src="{{ asset('images/logo-ecole-load.png') }}">
+										</a>
+										<a target="_blank" style="color:white; text-decoration: none; font-weight: bold" href="{{ route('cursos', 3) }}">
+											FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM
+										</a>
+									</h3>
+									<div class="col-md-12" style="margin-top: 20px;">
+										<h3 style="text-align: center; background: white; padding: 5px; width: 100%">
+											<a target="_blank" class="no-text-decoration gray-dark-color titulo-padrao" style="text-decoration:none; font-weight: bold" href="{{ route('compra.agenda', ['curso_id' => 3]) }}">
+												Faça sua inscrição
+											</a>
+										</h3>
+									</div>
+							 	</div>
+					    	</div>
+					    @endif
+				    </div>
+				 @endforeach
 				<div class="content">
-				  <button id="myBtn" onclick="myFunction()"><i class="fas fa-volume-up"></i></button>
+				  	<button id="myBtn" onclick="myFunction()"><i class="fas fa-volume-up"></i></button>
 				</div>
-		  </div>
+		  	</div>
 
 		  @if($i > 1)
 			  <a class="left carousel-control" href="#carousel-index-ecole" data-slide="prev">

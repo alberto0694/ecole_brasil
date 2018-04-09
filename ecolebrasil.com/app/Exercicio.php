@@ -37,7 +37,7 @@ class Exercicio extends Model
     public function getPaintDownloadAttribute()
     {
     	$path_parts = pathinfo(asset($this->arquivo));
-    	if(array_key_exists("extension", $path_parts)){
+    	if(array_key_exists("extension", $path_parts) && (asset($this->arquivo) != 'http://ecolebrasil.com/')){
     		return '<a style="color:white" href="'.asset($this->arquivo).'" target="_blank"><button class="btn btn-pink">Download Exercício</button></a>';
     	}
     	return '';

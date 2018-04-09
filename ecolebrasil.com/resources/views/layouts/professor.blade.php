@@ -38,6 +38,9 @@
     background: rgb(93, 14, 14);
 }
 
+iframe{
+  border: none;
+}
 
 .table-header {
     background-color: rgb(93, 14, 14);

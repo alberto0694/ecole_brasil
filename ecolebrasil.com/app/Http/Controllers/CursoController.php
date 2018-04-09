@@ -22,7 +22,6 @@ class CursoController extends Controller
         $request = Controller::saveBase64($request, 'card', 'cursos');
         $request = Controller::saveBase64($request, 'background_img', 'cursos');
         $request = Controller::saveBase64($request, 'ementa', 'cursos');
-
         $curso = Curso::create( $request->all() );
         return;
     }
@@ -33,7 +32,6 @@ class CursoController extends Controller
         $request = Controller::saveBase64($request, 'card', 'cursos', $curso->card);
         $request = Controller::saveBase64($request, 'background_img', 'cursos', $curso->background_img);
         $request = Controller::saveBase64($request, 'ementa', 'cursos', $curso->ementa);
-        // dd($request);
         $curso->update( $request->all() );
         return;
     }
@@ -42,6 +40,11 @@ class CursoController extends Controller
     {
         $curso = Curso::find( $id );
         $curso->visible = '0';
+        $agendas = $curso->agendas;
+        foreach ($agendas as $agenda){
+            $agenda->visible = '0';
+            $agenda->save();
+        }
         $curso->save();
         return;
     }

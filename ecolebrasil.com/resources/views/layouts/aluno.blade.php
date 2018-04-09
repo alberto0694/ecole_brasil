@@ -7,7 +7,6 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TQX54FN');</script>
-    <!-- End Google Tag Manager -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>Ecole EAD</title>
@@ -18,13 +17,7 @@
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/font-awesome/4.5.0/css/font-awesome.min.css') }}" />
-
-    <!-- page specific plugin styles -->
-
-    <!-- text fonts -->
     <link rel="stylesheet" href="{{ asset('assets/css/fonts.googleapis.com.css') }}" />
-
-    <!-- ace styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/ace.min.css') }}" class="ace-main-stylesheet" id="main-ace-style" />
     <link rel="stylesheet" href="{{ asset('assets/css/ace-skins.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/ace-rtl.min.css') }}" />
@@ -34,14 +27,18 @@
 </head>
 <style type="text/css">
     .box-comment{
-            max-height: 400px;
-            overflow-x: hidden;
-            border: 1px solid;
-            border-radius: 3px;
-            color:rgb(193, 193, 193);
-            padding: 3px;
-            width: 100%;
-            height: auto;
+        max-height: 400px;
+        overflow-x: hidden;
+        border: 1px solid;
+        border-radius: 3px;
+        color:rgb(193, 193, 193);
+        padding: 3px;
+        width: 100%;
+        height: auto;
+    }
+
+    iframe{
+      border: none;
     }
 
     .navbar {
