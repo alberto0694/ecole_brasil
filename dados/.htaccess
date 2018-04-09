@@ -1,0 +1,8 @@
+RewriteEngine on 
+RewriteCond %{HTTP_HOST} ^(www.)?ecolebrasil.com$ 
+RewriteCond %{REQUEST_URI} !^ecolebrasil.com/public/ 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)$ ecolebrasil.com/public/$1 
+RewriteCond %{HTTP_HOST} ^(www.)?ecolebrasil.com$ 
+RewriteRule ^(/)?$ ecolebrasil.com/public/index.php [L] 

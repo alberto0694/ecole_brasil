@@ -331,7 +331,9 @@ Route::get('/adm/agenda/editar/{id}', 'AdministradorController@agenda_editar')->
 Route::get('/', 'WebsiteController@home')->name('index');
 Route::get('/br/school/see/a-escola/16', 'WebsiteController@escola')->name('escola');
 Route::get('/br/access', 'WebsiteController@restrito')->name('restrito');
-Route::get('/blog', 'WebsiteController@blog')->name('blog');
+Route::get('/blog', function(){
+	return redirect('http://blog.ecolebrasil.com');
+})->name('blog');
 Route::get('/br/certification/see/cnpc/14', 'WebsiteController@certificacao')->name('certificacao');
 Route::get('/sou_ecole', 'WebsiteController@sou_ecole')->name('sou_ecole');
 Route::get('/contato', 'WebsiteController@contato')->name('contato');

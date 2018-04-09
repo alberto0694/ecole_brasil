@@ -42,6 +42,10 @@
     margin-bottom: 1px;
 }
 
+iframe{
+  border: none;
+}
+
 .ace-nav>li.light-blue>a:focus, .ace-nav>li.light-blue>a:hover, .ace-nav>li.open.light-blue>a {
     background-color: rgb(212, 101, 147);}
 
