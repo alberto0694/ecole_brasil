@@ -17,21 +17,30 @@
 <body style="font-family: Arial, sans-serif; font-size:13px; color: #444444; min-height: 200px;" bgcolor="#E4E6E9" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
 	<div class="header">
 		<div>
-			<img src="{{asset('images/manifesto-email.png')}}">
+			<img style="width: 100%; display: block;" src="{{asset('images/manifesto-email.png')}}">
 		</div>
 	</div>
 	<div class="row">
-		<img style="width: 20%; margin: 0 auto; display: block; margin-top: 50px " class="img-contato" src="{{asset('images/logo-ecole.png')}}">
-		<h4 align="center">Você se inscreveu em um de nossos cursos.</h4>
+		<img style="width: 20%; margin: 0 auto; display: block; margin-top: 50px " class="img-contato" src="{{asset($card_curso)}}">
+		<h4 align="center">Você se inscreveu em {{ $nome_curso }}.</h4>
 		<h4 align="center">Acesse o link abaixo para ter acesso ao nosso conteúdo.</h4>
 		<h4 align="center">Ecole Brasil</h4>
+		<h3 align="center"><b>Suas credenciais:</b></h3>
+		<h3 align="center">Login: {{ $login }}</h3>
+		<h3  align="center">Senha: {{ $password }}</h3>
 	</div>
 	<div class="row">
 	<hr style="margin-top: 50px">
 		<h4 style="text-align: center; margin-top: -50px">
-			<a href="{{route('ead.login')}}">
-			  <img style="width: 150px; margin: 0 auto; display: block;" src="{{asset('images/entrar.png')}}">
-			</a>
+			@if($modelo == 'D')
+				<a href="{{route('ead.login')}}">
+				  <img style="width: 150px; margin: 0 auto; display: block;" src="{{asset('images/entrar.png')}}">
+				</a>
+			@else
+				<a href="{{route('restrito')}}">
+				  <img style="width: 150px; margin: 0 auto; display: block;" src="{{asset('images/entrar.png')}}">
+				</a>
+			@endif
 		</h4>
 	</div>
 </body>

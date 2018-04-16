@@ -102,9 +102,10 @@
   </div>
   <hr>
   <div class="row" style="margin: 5px; margin-top: 20px">
-      @if($inadimplencia->canPay)
+      @if(!$inadimplencia->canPay)
         @if($inadimplencia->pago == 'S')
           <h3 align="center">Pendência se encontra quitada!</h3><br>
+          <h3 align="center">Verifique em seu email: {{ $inadimplencia->email }}</h3><br>
         @else
           <h3 align="center">Prazo de pagamento espirado, solicite a geração de uma nova cobrança!</h3><br>
         @endif

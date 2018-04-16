@@ -1,5 +1,13 @@
 @extends('layouts.aluno')
 @section('content')
+<ol class="breadcrumb">
+  <li>
+  	<a href="{{ route('aluno.dashboard') }}">Página Inicial</a>
+  </li>
+  <li>
+  	<a href="{{ route('aluno.modulo', $modulo->id) }}">{{ $modulo->titulo }}</a>
+  </li>
+</ol>
 <div class="col-sm-12">
 	<div class="tabbable">
 		<ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab4">

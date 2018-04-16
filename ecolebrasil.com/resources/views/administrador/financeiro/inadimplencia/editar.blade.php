@@ -38,7 +38,7 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Restrigir pagamento até a data de vencimento:</label>
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Restringir pagamento até a data de vencimento:</label>
 		<div class="col-sm-6">
 			<select id="pagar_data" name="pagar_data" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					@if($inadimplencia->pagar_data == 'S')
@@ -102,13 +102,14 @@
 				<select id="max_parcelas" name="max_parcelas" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					<?php $array = array(2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9, 10=>10); ?>
 					@foreach($array as $num)
+						{{$inadimplencia->max_parcelas}}
 						@if($num == $inadimplencia->max_parcelas)
-							<option selected="selected" value="{{$num}}">{{ $num }}x</option>
+							<option selected value="{{$num}}">{{ $num }}x</option>
 						@else
 							<option value="{{$num}}">{{ $num }}x</option>
 						@endif
 					@endforeach
-					<option value="0" style="display: none"></option>
+					{{-- <option value="0" style="display: none"></option> --}}
 				</select>
 			</div>
 		</div>
@@ -164,7 +165,10 @@
 <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
 <script type="text/javascript">
 jQuery(function($){
-	$("#max_parcelas").val("0");
+	@if($inadimplencia->transacao != 4 && $inadimplencia->transacao != 39)
+	@else
+		$("#max_parcelas").val("0");
+	@endif
 
 	$("#transacao").change(function(){
 		if( ($(this).val() != '04') && ($(this).val() != '39')){

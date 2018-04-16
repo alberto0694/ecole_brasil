@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Restrigir pagamento até a data de vencimento:</label>
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Restringir pagamento até a data de vencimento:</label>
 		<div class="col-sm-6">
 			<select id="pagar_data" name="pagar_data" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					<option selected="" value="S">Sim</option>

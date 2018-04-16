@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Inadimplencia;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use \Mail;
 
 class InadimplenciaController extends Controller
 {
@@ -27,6 +28,20 @@ class InadimplenciaController extends Controller
     {
         $inadimplencia = Inadimplencia::find($id);
         $inadimplencia->update(['pago' => 'S']);
+        $data = [   "nome_completo" => $inadimplencia->nome,
+                    "email" => $inadimplencia->email,
+                    "valor" => $inadimplencia->valor,
+                    "descricao" => $inadimplencia->razao_pagamento];
+
+        Mail::send('emails.inadimplencia', $data, function ($message) use ($data) {
+            $message->from('contato@ecolebrasil.com', 'Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->to($data['email'])->subject('Ecole Brasil - Quitação de pendências');
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->cc('contato@ecolebrasil.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->cc('admin@ecolebrasil.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->cc('vandressa@esrelooking.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->cc('financeiro@esrelooking.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
+        });
         return;
     }
 

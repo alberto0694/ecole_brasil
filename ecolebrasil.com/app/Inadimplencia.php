@@ -21,10 +21,16 @@ class Inadimplencia extends Model
 	public function getCanPayAttribute()
 	{
 	    $date = Carbon::parse($this->vencimento);
-	    $payInDate = ($this->pagar_data == 'S');
-	    $isLate = ($date < Carbon::now()) && $payInDate;
-	    $isPaied = $this->pago == 'S';
-	    // dd(!$isPaied);
-	    return (!$isLate || !$payInDate) && !$isPaied;
+	    if(($this->pago == 'S')){
+	    	return false;
+	    }else{
+		    if(($date >= Carbon::now()->toDateString()) && ($this->pagar_data == 'S')){
+		    	return true;
+		    }else if(($this->pagar_data == 'N')){
+		    	return true;
+		    }else{
+		    	return false;
+		    }
+	    }
 	}
 }

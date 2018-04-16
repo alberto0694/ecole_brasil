@@ -16,8 +16,10 @@ class Curso extends Model
 							'background_img',
 							'card',
 							'ementa',
+							'slug',
 							'ministrantes',
 							'modelo',
+							'contrato_curso',
 							'conteudo',
 							'carga_horaria',
 							'apresentacao',
@@ -25,6 +27,11 @@ class Curso extends Model
 							'informacoes',
 							'pagina_inicial',
 							'material'];
+
+	public function getRouteKeyName()
+	{
+	    return 'slug';
+	}
 
     public function getCardBase64Attribute()
     {
@@ -64,6 +71,6 @@ class Curso extends Model
 
 	public function agendas()
 	{
-		return $this->hasMany('App\Agenda', 'curso_id', 'id')->where('visible', '=', '1');
+		return $this->hasMany('App\Agenda', 'curso_id', 'id')->where('visible', '=', '1')->where('data_inicio', '>', Carbon::today()->toDateString());
 	}
 }

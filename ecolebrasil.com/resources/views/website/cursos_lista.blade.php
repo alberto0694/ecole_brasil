@@ -20,7 +20,7 @@
 		@if($cursos->count() > 0)
 			@foreach($cursos as $curso)
 				<div class="col-md-6 col-xs-12" style="margin-top: 50px">
-					<a href="{{ route('cursos', $curso->id) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($curso->card) }}">
+					<a href="{{ route('cursos', $curso->slug) }}"><img style=" margin: 0 auto; display: block; width: 65%; " src="{{ asset($curso->card) }}">
 					</a>
 					<div class="row">
 						<div class="col-md-6 col-xs-6 col-md-offset-3 col-xs-offset-3">

@@ -64,7 +64,7 @@ class AlunoController extends Controller
         $aluno = $this->getAluno();
         $modulo = Modulo::find($id);
         $aulas = $modulo->aulas;
-        return view('aluno.modulos.aulas.index', compact('aulas', 'aluno'));
+        return view('aluno.modulos.aulas.index', compact('aulas', 'aluno', 'modulo'));
     }
 
     public function exercicios(Request $request, $id)
@@ -72,7 +72,7 @@ class AlunoController extends Controller
         $aluno = $this->getAluno();
         $modulo = Modulo::find($id);
         $exercicios = $modulo->exercicios;
-        return view('aluno.modulos.exercicios.index', compact('exercicios', 'aluno'));
+        return view('aluno.modulos.exercicios.index', compact('exercicios', 'aluno', 'modulo'));
     }
 
     public function materiais(Request $request, $id)
@@ -80,7 +80,7 @@ class AlunoController extends Controller
         $aluno = $this->getAluno();
         $modulo = Modulo::find($id);
         $materiais = $modulo->materiais;
-        return view('aluno.modulos.materiais.index', compact('materiais', 'aluno'));
+        return view('aluno.modulos.materiais.index', compact('materiais', 'aluno', 'modulo'));
     }
 
     public function videos(Request $request, $id)
@@ -88,7 +88,7 @@ class AlunoController extends Controller
         $aluno = $this->getAluno();
         $modulo = Modulo::find($id);
         $videos = $modulo->videos;
-        return view('aluno.modulos.videos.index', compact('videos', 'aluno'));
+        return view('aluno.modulos.videos.index', compact('videos', 'aluno', 'modulo'));
     }
 
     public function create(Request $request)

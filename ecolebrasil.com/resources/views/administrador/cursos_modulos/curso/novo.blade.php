@@ -71,18 +71,23 @@
 	</div>
 	<hr>
 	<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Arquivo do Curso (PDF) </label>
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Ementa do Curso (PDF) </label>
 		@component('components.upfile', ['nameId' => 'ementa', 'src' => ''])
 		@endcomponent
 	</div>
 	<hr>
+	<div class="form-group">
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Contrato (PDF) </label>
+		@component('components.upfile', ['nameId' => 'contrato_curso', 'src' => ''])
+		@endcomponent
+	</div>
 	<div class="form-group" >
 		<div class="col-sm-9">
-				<h4 class="header clearfix">
-					Conteúdos Abordados
-				</h4>
+			<h4 class="header clearfix">
+				Conteúdos Abordados
+			</h4>
 
-				<textarea id="conteudo" name="conteudo" class="col-xs-12 col-sm-6"></textarea>
+			<textarea id="conteudo" name="conteudo" class="col-xs-12 col-sm-6"></textarea>
 		</div>
 	</div>
 	<hr>
@@ -149,7 +154,6 @@ jQuery(function($){
 		submitHandler: function(form) {
 			let arr = [
 				{ element:$("input[name=nome]"), type:'text' },
-				{ element:$("input[name=link_video]"), type:'text' },
 				{ element:$("input[name=background_img]"), type:'file' },
 				{ element:$("#pagina_inicial"), type:'select' },
 				{ element:$("input[name=carga_horaria]"), type:'text' },
@@ -161,7 +165,8 @@ jQuery(function($){
 				{ element:$("#apresentacao"), type:'textarea' },
 				{ element:$("#informacoes"), type:'textarea' },
 				{ element:$("#objetivos"), type:'textarea' },
-				{ element:$("#ementa"), type:'textarea' }];
+				{ element:$("#contrato_curso"), type:'file' },
+				{ element:$("#ementa"), type:'file' }];
 			let response = validateFields(arr);
 			if(response.status){
 				normalizeVideo("input[name=link_video]");

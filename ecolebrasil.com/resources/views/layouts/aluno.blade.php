@@ -14,6 +14,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="theme-color" content="#ef4060" />
+    <link rel="shortcut icon" href="{{ asset('images/ecole-logo-depoimento.png') }}" type="image/x-icon">
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/font-awesome/4.5.0/css/font-awesome.min.css') }}" />
@@ -229,7 +230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="#" class="navbar-brand">
+            <a href="{{ route('aluno.dashboard') }}" class="navbar-brand">
                 @if($aluno)
                     <small> Ecole Brasil, <small style="font-size:11pt">Bem vindo(a) {{ $aluno->nome }}</small> </small>
                 @endif

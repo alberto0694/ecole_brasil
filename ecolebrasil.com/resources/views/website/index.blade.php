@@ -64,6 +64,7 @@
 .inside-above-video{
 	display: table-cell;
 	vertical-align: middle;
+	margin-top: 80px;
 }
 
 @media screen and (max-width: 768px) {
@@ -88,6 +89,10 @@
 
 	.carousel-inner .item{
 		height: 300px;
+	}
+
+	.inside-above-video{
+		margin-top: -50px;
 	}
 
 }
@@ -134,7 +139,7 @@ function myFunction() {
 					    	{!!$banner->item!!}
 					    	<div class="overload-video"></div>
 					    	<div class="above-video">
-							 	<div class="inside-above-video col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="margin-top: 80px;">
+							 	<div class="inside-above-video col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="">
 									<h3 style="text-align: center; color: white; padding: 2px; width: 100%">
 										<a target="_blank" href="{{ route('cursos', 3) }}">
 											<img style="width: 100%; display: block" src="{{ asset('images/logo-ecole-load.png') }}">

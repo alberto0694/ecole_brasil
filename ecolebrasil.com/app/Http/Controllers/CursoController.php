@@ -22,7 +22,10 @@ class CursoController extends Controller
         $request = Controller::saveBase64($request, 'card', 'cursos');
         $request = Controller::saveBase64($request, 'background_img', 'cursos');
         $request = Controller::saveBase64($request, 'ementa', 'cursos');
+        $request = Controller::saveBase64($request, 'contrato_curso', 'cursos');
         $curso = Curso::create( $request->all() );
+        $curso->slug = $this->criar_slug($request->input('nome'));
+        $curso->save();
         return;
     }
 
@@ -32,7 +35,10 @@ class CursoController extends Controller
         $request = Controller::saveBase64($request, 'card', 'cursos', $curso->card);
         $request = Controller::saveBase64($request, 'background_img', 'cursos', $curso->background_img);
         $request = Controller::saveBase64($request, 'ementa', 'cursos', $curso->ementa);
+        $request = Controller::saveBase64($request, 'contrato_curso', 'cursos');
         $curso->update( $request->all() );
+        $curso->slug = $this->criar_slug($request->input('nome'));
+        $curso->save();
         return;
     }
 
@@ -49,5 +55,10 @@ class CursoController extends Controller
         return;
     }
 
+    public function criar_slug($titulo){
+      $procurar =   ['ã','â','ê','é','í','õ','ô','ú',' ','ó'];
+      $substituir = ['a','a','e','e','i','o','o','u','-','o'];
+      return str_replace($procurar,$substituir,mb_strtolower($titulo));
+    }
 
 }

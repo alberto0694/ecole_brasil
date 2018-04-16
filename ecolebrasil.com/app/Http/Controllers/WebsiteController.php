@@ -39,7 +39,8 @@ class WebsiteController extends Controller
 
         Contato::create( $request->all() );
         Mail::send('emails.contato', $data, function ($message) use ($data) {
-            $message->from('alberto@metrocoletivo.com.br', 'Contato Site '.$data['contato']);
+            $message->replyTo($data['email'], 'Ecole Brasil');
+            $message->from('contato@ecolebrasil.com', 'Contato Site '.$data['contato']);
             $message->cc('alberto.pimentel.94@gmail.com')->subject('Contato Site '.$data['contato']);
             $message->to('contato@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
             $message->cc('admin@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
@@ -59,11 +60,11 @@ class WebsiteController extends Controller
         NewsLetter::create( $request->all() );
 
         Mail::send('emails.newsletter', $data, function ($message)  use ($data) {
-            $message->from('alberto@metrocoletivo.com.br', 'NewsLetter '.$data['contato']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('NewsLetter '.$data['contato']);
-            $message->to('contato@ecolebrasil.com')->subject('NewsLetter '.$data['contato']);
-            $message->cc('admin@ecolebrasil.com')->subject('NewsLetter '.$data['contato']);
-            $message->cc('vandressa@esrelooking.com ')->subject('NewsLetter '.$data['contato']);
+            $message->from('contato@ecolebrasil.com', 'NewsLetter '.$data['contato']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
+            $message->to('contato@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
+            $message->cc('admin@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
+            $message->cc('vandressa@esrelooking.com ')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -73,16 +74,18 @@ class WebsiteController extends Controller
 
     public function sendInscricao(Request $request)
     {
-        $data = [   "contato" => $request->contato,
+        $data = [
+                    "contato" => $request->contato,
                     "telefone" => $request->telefone,
                     "cidade_curso" => $request->cidade_curso,
-                    "email" => $request->email];
+                    "email" => $request->email
+                ];
         Mail::send('emails.inscricao', $data, function ($message) use ($data) {
-            $message->from('alberto@metrocoletivo.com.br', 'Inscrição Ecole Brasil '.$data['contato']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['contato']);
-            $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato']);
-            $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato']);
-            $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['contato']);
+            $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['contato']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
+            $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
+            $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
+            $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
         });
 
         Session::flash('message' , 'Inscrição realizada. Entraremos em contato o mais breve possível!'); //<--FLASH MESSAGE
@@ -187,11 +190,11 @@ class WebsiteController extends Controller
     	return view('website.contato', compact('cursos_menu','formacoes'));
     }
 
-    public function cursos(Request $request, $id)
+    public function cursos(Request $request, $slug)
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-        $curso = Curso::find( $id );
+        $curso = Curso::where('slug', '=', $slug )->first();
     	return view('website.cursos', compact('cursos_menu','formacoes', 'curso'));
     }
 
@@ -272,9 +275,9 @@ class WebsiteController extends Controller
             $curso = Curso::find($querys['curso_id']);
         }
 
-        $formacoes = Formacao::where('visible', '=', '1')->get();
-        $cursos_menu = Curso::where('visible', '=', '1')->get();
-        return view('website.inscricao', compact('cursos_menu','formacoes', 'curso'));
+        // $formacoes = Formacao::where('visible', '=', '1')->get();
+        // $cursos_menu = Curso::where('visible', '=', '1')->get();
+        // return view('website.inscricao', compact('cursos_menu','formacoes', 'curso'));
 
         //TA ASSIM PORQUE O E-REDE AINDA NAO TA FUNFANDO
         $formacoes = Formacao::where('visible', '=', '1')->get();
@@ -284,11 +287,11 @@ class WebsiteController extends Controller
         $agendas = null;
         if($agenda_id){
             $agendas = Agenda::where('id', '=', $agenda_id)->where('data_inicio', '>', Carbon::today()->toDateString())->get();
-            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));
+            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
         }
         if($curso_id){
             $agendas = Curso::find($curso_id)->agendas;
-            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas'));
+            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
         }
     }
 
@@ -366,7 +369,7 @@ class WebsiteController extends Controller
         Contato::create( $request->all() );
 
         Mail::send('emails.ebook', $data, function ($message) use ($request) {
-            $message->from('alberto@metrocoletivo.com.br', 'Contato Ecole');
+            $message->from('contato@ecolebrasil.com', 'Contato Ecole');
             $message->to($request['email']);
         });
 

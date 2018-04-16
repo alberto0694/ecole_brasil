@@ -1,8 +1,12 @@
 @extends('layouts.administrador')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="{{ route('administrador.aluno.visao', ['modulo_id' => $modulo->id]) }}">Página Inicial</a></li>
-  <li><a href="{{ route('administrador.aluno.get.visao', ['modulo_id' => $modulo->id]) }}">{{ $modulo->titulo }}</a></li>
+  <li>
+  	<a href="{{ route('administrador.aluno.visao', ['modulo_id' => $modulo->id]) }}">Página Inicial</a>
+  </li>
+  <li>
+  	<a href="{{ route('administrador.aluno.get.visao', ['modulo_id' => $modulo->id]) }}">{{ $modulo->titulo }}</a>
+  </li>
 </ol>
 <div class="col-sm-12">
 	<div class="tabbable">

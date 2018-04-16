@@ -12,8 +12,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+    <meta name="theme-color" content="#ef4060" />
+    <link rel="shortcut icon" href="{{ asset('images/ecole-logo-depoimento.png') }}" type="image/x-icon">
     <title>Ecole Supérieure de Relooking</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -23,7 +23,6 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Facebook Pixel Code -->
     <script src="{{ asset('js/helpers.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.lazy.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.lazy.plugins.min.js') }}"></script>
@@ -104,7 +103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                           <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
                           <ul style=" padding: 0; margin-top: 10px">
                               @foreach($formacao->cursos as $curso)
-                                <a class="gray-dark-color" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
+                                <a class="gray-dark-color" href="{{ route('cursos', $curso->slug) }}">{{$curso->nome}}</a><br>
                                 <br>
                               @endforeach
                           </ul>

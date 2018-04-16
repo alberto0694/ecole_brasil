@@ -107,12 +107,12 @@
                       <input required  maxlength="100" name="sobrenome_aluno" id="sobrenome_aluno" type="text"  class="form-control" placeholder="Informe o sobrenome aluno"  />
                     </div>
                   </div>
-                  <div class="row" style="padding-left: 15px; ">
+{{--                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
                       <label class="control-label" for="form-field-1"> Data de Nascimento </label>
                         <input required id="nascimento" name="nascimento" type="text" class="form-control date-picker"  />
                     </div>
-                  </div>
+                  </div> --}}
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
                       <label class="control-label">Email</label>
@@ -121,7 +121,7 @@
                   </div>
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
-                      <a target="_blank" href="{{ asset('files/contrato.pdf') }}">Ler termos do contrato.</a><br>
+                      <a target="_blank" href="{{ asset($curso->contrato_curso) }}">Ler termos do contrato.</a><br>
                       <input style="width: auto; float: left; margin-top: -8px" name="acordo_contrato" id="acordo_contrato" class="form-control" type="checkbox">
                       &nbsp;&nbsp;Concordo com os termos apresentados
                     </div>
