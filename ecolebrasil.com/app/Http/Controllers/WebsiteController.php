@@ -40,7 +40,7 @@ class WebsiteController extends Controller
         Contato::create( $request->all() );
         Mail::send('emails.contato', $data, function ($message) use ($data) {
             $message->replyTo($data['email'], 'Ecole Brasil');
-            $message->from('contato@ecolebrasil.com', 'Contato Site '.$data['contato']);
+            $message->from('contatosite@ecolebrasil.com', 'Contato Site '.$data['contato']);
             $message->cc('alberto.pimentel.94@gmail.com')->subject('Contato Site '.$data['contato']);
             $message->to('contato@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
             $message->cc('admin@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
@@ -60,7 +60,7 @@ class WebsiteController extends Controller
         NewsLetter::create( $request->all() );
 
         Mail::send('emails.newsletter', $data, function ($message)  use ($data) {
-            $message->from('contato@ecolebrasil.com', 'NewsLetter '.$data['contato']);
+            $message->from('contatosite@ecolebrasil.com', 'NewsLetter '.$data['contato']);
             $message->cc('alberto.pimentel.94@gmail.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
             $message->to('contato@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
             $message->cc('admin@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
@@ -80,8 +80,9 @@ class WebsiteController extends Controller
                     "cidade_curso" => $request->cidade_curso,
                     "email" => $request->email
                 ];
+
         Mail::send('emails.inscricao', $data, function ($message) use ($data) {
-            $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['contato']);
+            $message->from('contatosite@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['contato']);
             $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
             $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
             $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
@@ -369,7 +370,7 @@ class WebsiteController extends Controller
         Contato::create( $request->all() );
 
         Mail::send('emails.ebook', $data, function ($message) use ($request) {
-            $message->from('contato@ecolebrasil.com', 'Contato Ecole');
+            $message->from('contatosite@ecolebrasil.com', 'Contato Ecole');
             $message->to($request['email']);
         });
 
