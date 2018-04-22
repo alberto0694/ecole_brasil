@@ -130,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
                   <ul style=" padding: 0; margin-top: 10px">
                       @foreach($formacao->cursos as $curso)
-                        <a class="gray-dark-color" href="{{ route('cursos', $curso->id) }}">{{$curso->nome}}</a><br>
+                        <a class="gray-dark-color" href="{{ route('cursos', $curso->slug) }}">{{$curso->nome}}</a><br>
                         <br>
                       @endforeach
                   </ul>

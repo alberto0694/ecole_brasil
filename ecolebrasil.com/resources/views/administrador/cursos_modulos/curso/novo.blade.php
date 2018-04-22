@@ -75,7 +75,6 @@
 		@component('components.upfile', ['nameId' => 'ementa', 'src' => ''])
 		@endcomponent
 	</div>
-	<hr>
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Contrato (PDF) </label>
 		@component('components.upfile', ['nameId' => 'contrato_curso', 'src' => ''])
@@ -164,9 +163,7 @@ jQuery(function($){
 				{ element:$("#material"), type:'textarea' },
 				{ element:$("#apresentacao"), type:'textarea' },
 				{ element:$("#informacoes"), type:'textarea' },
-				{ element:$("#objetivos"), type:'textarea' },
-				{ element:$("#contrato_curso"), type:'file' },
-				{ element:$("#ementa"), type:'file' }];
+				{ element:$("#objetivos"), type:'textarea' }];
 			let response = validateFields(arr);
 			if(response.status){
 				normalizeVideo("input[name=link_video]");
