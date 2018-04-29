@@ -43,37 +43,52 @@ class AgendaController extends Controller
 
         //INSERÇÃO DO ALUNO E VINCULO COM AGENDA
         if($aluno == null){
-            $request = Controller::formatDate( $request, 'nascimento' );
+            // $request = Controller::formatDate( $request, 'nascimento' );
             $aluno = Aluno::create([
                     'nome' => $request['nome_aluno'],
                     'sobrenome' => $request['sobrenome_aluno'],
-                    'nascimento' => $request['nascimento'],
                     'user_id' => $user->id
-                ]);
+            ]);
         }
 
         $aluno->avatar = asset('images/avatar3.png');
+        $aluno->visible = '1';
         $aluno->save();
 
         $agenda = Agenda::find( $request['agenda_id'] );
         $aluno->addAgenda( $agenda );
-        $data = [   "nome" => $request->nome,
+        $data = [   "nome" => $request->nome_aluno,
                     "nome_aluno" => $aluno->nome,
+                    "sobrenome" => $aluno->sobrenome,
                     "login" => $request->email,
+                    "portador" => $request->nome_cartao,
                     "nome_curso" => $agenda->curso->nome,
+                    "data_inicio" => $agenda->formatedDate,
+                    "cidade" => $agenda->cidade,
+                    "agenda_valor" => $agenda->valor,
+                    "parcelas" => $request->num_parcelas,
                     "card_curso" => asset($agenda->curso->card),
                     "modelo" => $agenda->curso->modelo,
-                    "password" => $request->password
+                    "password" => $request->password,
+                    "email" => $request['email']
                 ];
 
 
-        Mail::send('emails.aluno', $data, function ($message) use ($request, $data)  {
+        Mail::send('emails.aluno', $data, function ($message) use ($request, $data){
             $message->from('contatosite@ecolebrasil.com', 'Ecole Supériere de Relooking');
             $message->to($request['email'])->subject('Bem-vindo à Ecole - '.$data['nome_curso']);
-            $message->cc('contato@ecolebrasil.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
-            $message->cc('alberto.pimentel.94@gmail.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
-            $message->cc('admin@ecolebrasil.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
-            $message->cc('vandressa@esrelooking.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
+            // $message->cc('contato@ecolebrasil.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
+            // $message->cc('alberto.pimentel.94@gmail.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
+            // $message->cc('admin@ecolebrasil.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
+            // $message->cc('vandressa@esrelooking.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
+        });
+
+        Mail::send('emails.inscricao', $data, function ($message) use ($request, $data) {
+            $message->from('contatosite@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['nome']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->to('nome@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
         });
 
         return response()->json(['status' => 'success'], 200);

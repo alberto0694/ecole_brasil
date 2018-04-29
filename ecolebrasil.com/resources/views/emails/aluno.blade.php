@@ -23,6 +23,8 @@
 	<div class="row">
 		<img style="width: 20%; margin: 0 auto; display: block; margin-top: 50px " class="img-contato" src="{{asset($card_curso)}}">
 		<h4 align="center">Você se inscreveu em {{ $nome_curso }}.</h4>
+		<h4 align="center">Cidade: {{ $cidade }}.</h4>
+		<h4 align="center">Início: {{ $data_inicio }}.</h4>
 		<h4 align="center">Acesse o link abaixo para ter acesso ao nosso conteúdo.</h4>
 		<h4 align="center">Ecole Brasil</h4>
 		<h3 align="center"><b>Suas credenciais:</b></h3>

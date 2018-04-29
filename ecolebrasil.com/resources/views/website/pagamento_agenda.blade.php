@@ -97,13 +97,13 @@
                   </div>
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
-                      <label class="control-label">Nome</label>
+                      <label class="control-label">Nome do Aluno</label>
                       <input required  maxlength="100" name="nome_aluno" id="nome_aluno" type="text"  class="form-control" placeholder="Informe o nome do aluno"  />
                     </div>
                   </div>
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
-                      <label class="control-label">Sobrenome</label>
+                      <label class="control-label">Sobrenome do Aluno</label>
                       <input required  maxlength="100" name="sobrenome_aluno" id="sobrenome_aluno" type="text"  class="form-control" placeholder="Informe o sobrenome aluno"  />
                     </div>
                   </div>
@@ -173,7 +173,7 @@
                   </div>
                   <div class="row" style="padding-left: 15px; margin-top: 10px">
                     <div class="form-group">
-                      <label class="control-label">Nome Completo</label>
+                      <label class="control-label">Nome Completo do Titular do cartão</label>
                       <input required name="nome_cartao" id="nome_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o nome completo do titular do cartão"  />
                     </div>
                   </div>
@@ -276,36 +276,42 @@
 <script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
 <script type="text/javascript" charset="utf-8">
 function  getAgenda(){
-          $.ajax({
-            type: "GET",
-            url: '{{ route('agenda.parcelas') }}',
-            data: { agenda_id : $("#agenda_id").val() },
-            success: function(data){
-                var jsonArr = JSON.parse( data );
-                $("#valor_curso").val(jsonArr[0].valor);
-                $('#valor_curso').priceFormat({
-                    prefix: '',
-                    thousandsSeparator: '',
-                    clearOnEmpty: false
-                });
-                $("#transacao").val(jsonArr[0].transacao);
-                $("#modelo").val(jsonArr[0].modelo);
+  $.ajax({
+    type: "GET",
+    url: '{{ route('agenda.parcelas') }}',
+    data: { agenda_id : $("#agenda_id").val() },
+    success: function(data){
+        var jsonArr = JSON.parse( data );
+        $("#valor_curso").val(jsonArr[0].valor);
+        $('#valor_curso').priceFormat({
+            prefix: 'R$: ',
+            thousandsSeparator: '',
+            clearOnEmpty: false
+        });
+        $("#transacao").val(jsonArr[0].transacao);
+        $("#modelo").val(jsonArr[0].modelo);
 
-                $('#num_parcelas').find('option').remove();
-                let max = parseInt(jsonArr[0].max_parcelas);
-                if(max > 1){
-                  $(".parcelas-class").show();
-                  $('#num_parcelas').append('<option value="0">1 (Á vista) </option>')
-                  for(var i = 2; i <= max; i++){
-                      $('#num_parcelas').append('<option value="'+ i +'">'+ i +' </option>');
-                  }
-                  $('#num_parcelas').val("0");
-                }else{
-                  $('#num_parcelas').append('<option selected value="0">0</option>');
-                  $(".parcelas-class").hide();
-                }
-            }
-          });
+        $('#num_parcelas').find('option').remove();
+        let max = parseInt(jsonArr[0].max_parcelas);
+        if(max > 1){
+          $(".parcelas-class").show();
+          $('#num_parcelas').append('<option value="0">1 (Á vista) </option>')
+          for(var i = 2; i <= max; i++){
+              $('#num_parcelas').append('<option value="'+ i +'">'+ i +' </option>');
+          }
+          $('#num_parcelas').val("0");
+        }else{
+          $('#num_parcelas').append('<option selected value="0">0</option>');
+          $(".parcelas-class").hide();
+        }
+
+        if($('#num_parcelas').val() == '0'){
+          $('#transacao').val('04');
+        }else{
+          $('#transacao').val('08');
+        }
+    }
+  });
 }
 $(window).on('load',function(){
     getAgenda();
@@ -313,7 +319,15 @@ $(window).on('load',function(){
 
 $(document).ready(function () {
     $("#agenda_id").change(function(){
-          getAgenda();
+      getAgenda();
+    });
+
+    $("#num_parcelas").change(function(){
+      if($(this).val() == '0'){
+        $('#transacao').val('04');
+      }else{
+        $('#transacao').val('08');
+      }
     });
 
     $("#comprar_curso").click(function(){
@@ -343,6 +357,7 @@ $(document).ready(function () {
               },
               contentLoaded: function(data, status, request){
                   var self = this;
+                  self.setContent('<div class="col-md-10 col-md-offset-1" style="color:#ed3656;"><label style="text-align: center; width: 100%"><b>Pagamento Efetuado!</b></label><br><label style="text-align: center; width: 100%"><b>Gerando seu acesso aguarde...</b></label><br></div>');
                   if(request != null){
                       if(request.responseJSON != null){ //SUCESSO
                           if(request.responseJSON.codret != null){ //SUCESSO
@@ -359,12 +374,7 @@ $(document).ready(function () {
                                               status_pay = true;
                                               self.setContent('<div class="col-md-10 col-md-offset-1" style="color:#ed3656;"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Bem vindo à Ecole!</label><br><label style="text-align: center; width: 100%">Enviamos às informações para o seguinte endereço de email:</label><br><label style="text-align: center; font-size:15pt; width: 100%"><b>'+$("#email").val()+'</b></label><br></div>');
                                           }else{
-                                              //FAZER REQUISIÇÃO DE EXTORNO
-                                              if(request.responseJSON.status == 'user_exists'){
-                                                //BOTAR MENSAGEM DE QUE ESTE E-MAIL JÁ ESTÁ SENDO UTILIZADO
-                                              }else{
-                                                self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
-                                              }
+                                              self.setContent('<div class="col-md-10 col-md-offset-1" style="color:rgb(169, 0, 31);"><label style="text-align: center; font-size:15pt; width: 100%"><b>Erro ao tentar efetuar o pagamento! Tente mais tarde.</b></label><br><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole-error.png') }}"></div>');
                                           }
                                       }
                                     });
