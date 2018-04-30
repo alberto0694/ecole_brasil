@@ -77,16 +77,12 @@ class AgendaController extends Controller
         Mail::send('emails.aluno', $data, function ($message) use ($request, $data){
             $message->from('contatosite@ecolebrasil.com', 'Ecole Supériere de Relooking');
             $message->to($request['email'])->subject('Bem-vindo à Ecole - '.$data['nome_curso']);
-            // $message->cc('contato@ecolebrasil.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
-            // $message->cc('alberto.pimentel.94@gmail.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
-            // $message->cc('admin@ecolebrasil.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
-            // $message->cc('vandressa@esrelooking.com', 'Inscrição de curso ('.$data['nome_curso'].'): '.$data['nome']);
         });
 
         Mail::send('emails.inscricao', $data, function ($message) use ($request, $data) {
             $message->from('contatosite@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['nome']);
             $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->to('nome@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
             $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
             $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
         });
