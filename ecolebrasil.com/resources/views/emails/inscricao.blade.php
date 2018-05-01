@@ -102,6 +102,15 @@
     <table class="header-row" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="header-row-td" width="378" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">Interesse de inscrição Recebida!</td></tr></tbody></table>
     <div style="font-family: Arial, sans-serif; line-height: 20px; color: #444444; font-size: 13px;">
       <b style="color: #777777;">Aluno: {{$nome_aluno}} {{$sobrenome}}</b><br>
+      <b style="color: #777777;">Nascimento: {{$nascimento}}</b><br>
+      <b style="color: #777777;">Estado Civil: {{$estado_civil}}</b><br>
+      <b style="color: #777777;">Telefone: {{$telefone}}</b><br>
+      <b style="color: #777777;">CPF: {{ $cpf }}</b><br>
+      <b style="color: #777777;">RG: {{ $rg }}</b><br>
+      <b style="color: #777777;">Rua: {{ $endereco_rua }}, {{ $endereco_numero }}</b><br>
+      <b style="color: #777777;">Bairro: {{ $endereco_bairro}}, {{ $endereco_cidade }}</b><br>
+      <b style="color: #777777;">Estado: {{ $endereco_estado }}</b><br>
+      <b style="color: #777777;">CEP: {{ $endereco_cep }}</b><br>
       <b style="color: #777777;">Titular do cartão: {{$portador}}</b><br>
       <b style="color: #777777;">Valor total pago: {{$agenda_valor}}</b><br>
       @if($parcelas == '0')
@@ -112,7 +121,7 @@
       <b style="color: #777777;">Email: {{$email}} </b><br>
       <b style="color: #777777;">Curso inscrito: {{$nome_curso}} </b><br>
       <b style="color: #777777;">Data início: {{$data_inicio}} </b><br>
-      <b style="color: #777777;">Cidade: {{$cidade}} </b><br>
+      <b style="color: #777777;">Cidade do curso: {{$cidade}} </b><br>
       <br>
     </div>
   </td></tr></tbody></table>

@@ -2,13 +2,6 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TQX54FN');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,33 +10,13 @@
     <title>Ecole Supérieure de Relooking</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{{ asset('js/helpers.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.lazy.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.lazy.plugins.min.js') }}"></script>
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '272382903251531');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-     <img height="1" width="1"
-    src="https://www.facebook.com/tr?id=272382903251531&ev=PageView
-    &noscript=1"/>
-    </noscript>
-    <!-- End Facebook Pixel Code -->
 </head>
 <style type="text/css">
 
@@ -212,7 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <ul>
                           <li>
                               <div class="input-append newsletter-box ">
-                                    <form style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.newsletter') }}">
+                                    <form id="form-news" style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.newsletter') }}">
                                       {{ csrf_field() }}
                                           <div class="form-group">
                                             <input required name="contato" type="text" class="full form-control " placeholder="Seu nome">
@@ -220,7 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                           <div class="form-group">
                                             <input required name="email" type="email" class="full form-control " placeholder="E-mail">
                                           </div>
-                                          <button style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+                                          <button id="btn-news" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
                                             <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">
                                           </button>
                                     </form>
@@ -249,6 +222,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
       });
   });
+
+  $( "#form-news" ).submit(function( event ) {
+    $("#btn-news").attr('disabled', 'disabled');
+  });
+
+
 </script>
 </body>
 </html>

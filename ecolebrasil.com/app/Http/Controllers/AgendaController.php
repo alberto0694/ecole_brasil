@@ -42,8 +42,9 @@ class AgendaController extends Controller
         }
 
         //INSERÇÃO DO ALUNO E VINCULO COM AGENDA
+        $nascimento_data = $request['nascimento'];
         if($aluno == null){
-            // $request = Controller::formatDate( $request, 'nascimento' );
+            $request = Controller::formatDate( $request, 'nascimento' );
             $aluno = Aluno::create([
                     'nome' => $request['nome_aluno'],
                     'sobrenome' => $request['sobrenome_aluno'],
@@ -70,13 +71,29 @@ class AgendaController extends Controller
                     "card_curso" => asset($agenda->curso->card),
                     "modelo" => $agenda->curso->modelo,
                     "password" => $request->password,
-                    "email" => $request['email']
+                    "email" => $request['email'],
+                    "nascimento" => $nascimento_data,
+                    "cpf" => $request->cpf,
+                    "rg" => $request->rg,
+                    "endereco_rua" => $request->endereco_rua,
+                    "endereco_numero" => $request->endereco_numero,
+                    "endereco_bairro" => $request->endereco_bairro,
+                    "endereco_cidade" => $request->endereco_cidade,
+                    "endereco_estado" => $request->endereco_estado,
+                    "endereco_cep" => $request->endereco_cep,
+                    "estado_civil" => $request->estado_civil,
+                    "telefone" => $request->telefone
                 ];
 
 
         Mail::send('emails.aluno', $data, function ($message) use ($request, $data){
             $message->from('contatosite@ecolebrasil.com', 'Ecole Supériere de Relooking');
-            $message->to($request['email'])->subject('Bem-vindo à Ecole - '.$data['nome_curso']);
+            $message->to($request['email'])->subject('Bem-vindo à Ecole '.$data['nome'].' - '.$data['nome_curso']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->cc('contato@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->cc('admin@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->cc('vandressa@esrelooking.com ')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            $message->attach(asset($agenda->curso->contrato_curso), ['as' => 'Contrato curso']);
         });
 
         Mail::send('emails.inscricao', $data, function ($message) use ($request, $data) {

@@ -107,16 +107,81 @@
                       <input required  maxlength="100" name="sobrenome_aluno" id="sobrenome_aluno" type="text"  class="form-control" placeholder="Informe o sobrenome aluno"  />
                     </div>
                   </div>
-{{--                   <div class="row" style="padding-left: 15px; ">
+                  <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
-                      <label class="control-label" for="form-field-1"> Data de Nascimento </label>
+                      <label class="control-label" for="form-field-1"> Data de Nascimento (DD/MM/AAAA) </label>
                         <input required id="nascimento" name="nascimento" type="text" class="form-control date-picker"  />
                     </div>
-                  </div> --}}
+                  </div>
+                  <div class="row" style="padding-left: 0px; ">
+                    <div class="col-md-12">
+                      <label class="control-label">Endereco</label>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                        <input required name="endereco_cep" id="endereco_cep" type="number"  class="form-control" placeholder="CEP"  />
+                      </div>
+                    </div>
+                    <div class="col-md-9 col-xs-12">
+                      <div class="form-group">
+                        <input required name="endereco_rua" id="endereco_rua" type="text"  class="form-control" placeholder="Rua"  />
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                      <div class="form-group">
+                        <input required name="endereco_numero" id="endereco_numero" type="text"  class="form-control" placeholder="Número"  />
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-xs-12">
+                      <div class="form-group">
+                        <input required name="endereco_bairro" id="endereco_bairro" type="text"  class="form-control" placeholder="Bairro"  />
+                      </div>
+                    </div>
+                    <div class="col-md-5 col-xs-12">
+                      <div class="form-group">
+                        <input required name="endereco_cidade" id="endereco_cidade" type="text"  class="form-control" placeholder="Cidade"  />
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                      <div class="form-group">
+                        <input required name="endereco_estado" id="endereco_estado" type="text"  class="form-control" placeholder="Estado"  />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">CPF</label>
+                      <input required  maxlength="11" name="cpf" id="cpf" type="number"  class="form-control" placeholder="CPF do aluno"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">R.G.</label>
+                      <input required  maxlength="19" name="rg" id="rg" type="text"  class="form-control" placeholder="RG do aluno"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Estado Civil</label>
+                      <input required name="estado_civil" id="estado_civil" type="text"  class="form-control" placeholder="Estado civil do aluno"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Nome da Mãe</label>
+                      <input required name="nome_mae" id="nome_mae" type="text"  class="form-control" placeholder="Nome da mãe do aluno"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Telefone</label>
+                      <input required name="telefone" id="telefone" type="text"  class="form-control" placeholder="Telefone do aluno"  />
+                    </div>
+                  </div>
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
                       <label class="control-label">Email</label>
-                      <input required maxlength="100" name="email" id="email" type="email"  class="form-control" placeholder="Informe um e-mail para receber os acessos" />
+                      <input required maxlength="100" name="email" id="email" type="email"  class="form-control" placeholder="Informe um e-mail para receber os acessos e criar seu login" />
                     </div>
                   </div>
                   <div class="row" style="padding-left: 15px; ">
