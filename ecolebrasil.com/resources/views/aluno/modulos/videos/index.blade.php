@@ -124,7 +124,7 @@
 				});
     		});
 
-        	setInterval(function(){
+        setInterval(function(){
 				if($("input[name=last_time_{{$video->id}}]").val() === ''){
     				$("input[name=last_time_{{$video->id}}]").val('2018-01-01 00:00:00');
     			}

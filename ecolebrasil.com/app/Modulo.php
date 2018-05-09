@@ -21,22 +21,22 @@ class Modulo extends Model
 
 	public function aulas()
 	{
-		return $this->hasMany('App\Aula', 'modulo_id', 'id');
+		return $this->hasMany('App\Aula', 'modulo_id', 'id')->where('visible', '=', '1');;
 	}
 
 	public function videos()
 	{
-		return $this->hasMany('App\Video', 'modulo_id', 'id');
+		return $this->hasMany('App\Video', 'modulo_id', 'id')->where('visible', '=', '1');
 	}
 
 	public function materiais()
 	{
-		return $this->hasMany('App\Material', 'modulo_id', 'id');
+		return $this->hasMany('App\Material', 'modulo_id', 'id')->where('visible', '=', '1');
 	}
 
 	public function exercicios()
 	{
-		return $this->hasMany('App\Exercicio', 'modulo_id', 'id');
+		return $this->hasMany('App\Exercicio', 'modulo_id', 'id')->where('visible', '=', '1');
 	}
 
 	public function getCursoAttribute()

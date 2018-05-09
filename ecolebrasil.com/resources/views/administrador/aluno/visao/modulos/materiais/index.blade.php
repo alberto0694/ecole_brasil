@@ -116,34 +116,8 @@
 			            });
             		});
 
-	            	setInterval(function(){
-			            $.ajax({
-			              type: "GET",
-			              url: '{{ route('material.get.comentario') }}',
-			              data: {
-		              		last:$("input[name=last_time_{{$material->id}}]").val(),
-		              		user_id:{{ $administrador->user_id }},
-		              		material_id:{{ $material->id }}
-			              },
-			              success: function(data, status, request){
-		              		if(request.responseJSON.items.length > 0){
-			              		request.responseJSON.items.forEach(function(item, index){
-			              			if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0)
-			              			{
-				              			$("#box-comment_{{ $i }}").append(item.toString());
-				              			$("input[name=last_time_{{$material->id}}").val(request.responseJSON.last_time);
-				              		}
-			              		});
-								var objDiv = document.getElementById("box-comment_{{ $i }}");
-								objDiv.scrollTop = objDiv.scrollHeight;
-								$(".sem-comentario_{{ $i }}").html('');
-		              		}
-			              }
-			            });
-				    }, 2500);
-	            @endforeach
+
+	      @endforeach
             });
-
-
 	</script>
 @endsection

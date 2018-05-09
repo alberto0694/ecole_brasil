@@ -124,34 +124,34 @@
 				});
     		});
 
-        	setInterval(function(){
-				if($("input[name=last_time_{{$aula->id}}]").val() === ''){
-    				$("input[name=last_time_{{$aula->id}}]").val('2018-01-01 00:00:00');
-    			}
+     //    setInterval(function(){
+					// if($("input[name=last_time_{{$aula->id}}]").val() === ''){
+	    // 				$("input[name=last_time_{{$aula->id}}]").val('2018-01-01 00:00:00');
+	    // 			}
 
-				$.ajax({
-					type: "GET",
-					url: '{{ route('aula.get.comentario') }}',
-					data: {
-						last:$("input[name=last_time_{{$aula->id}}]").val(),
-						user_id:{{ $aluno->user_id }},
-						aula_id:{{ $aula->id }}
-					},
-					success: function(data, status, request){
-						if(request.responseJSON.items.length > 0){
-							request.responseJSON.items.forEach(function(item, index){
-								if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0){
-									$("#box-comment_{{ $i }}").append(item.toString());
-									$("input[name=last_time_{{$aula->id}}").val(request.responseJSON.last_time);
-								}
-							});
-							var objDiv = document.getElementById("box-comment_{{ $i }}");
-							objDiv.scrollTop = objDiv.scrollHeight;
-							$(".sem-comentario_{{ $i }}").html('');
-						}
-					}
-				});
-		    }, 2500);
+					// $.ajax({
+					// 	type: "GET",
+					// 	url: '{{ route('aula.get.comentario') }}',
+					// 	data: {
+					// 		last:$("input[name=last_time_{{$aula->id}}]").val(),
+					// 		user_id:{{ $aluno->user_id }},
+					// 		aula_id:{{ $aula->id }}
+					// 	},
+					// 	success: function(data, status, request){
+					// 		if(request.responseJSON.items.length > 0){
+					// 			request.responseJSON.items.forEach(function(item, index){
+					// 				if(document.getElementById("box-comment_{{ $i }}").innerHTML.indexOf(item.toString()) < 0){
+					// 					$("#box-comment_{{ $i }}").append(item.toString());
+					// 					$("input[name=last_time_{{$aula->id}}").val(request.responseJSON.last_time);
+					// 				}
+					// 			});
+					// 			var objDiv = document.getElementById("box-comment_{{ $i }}");
+					// 			objDiv.scrollTop = objDiv.scrollHeight;
+					// 			$(".sem-comentario_{{ $i }}").html('');
+					// 		}
+					// 	}
+					// });
+		   //  }, 2500);
 		@endforeach
     });
 </script>

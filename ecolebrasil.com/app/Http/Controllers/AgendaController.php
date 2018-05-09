@@ -86,7 +86,7 @@ class AgendaController extends Controller
                 ];
 
 
-        Mail::send('emails.aluno', $data, function ($message) use ($request, $data){
+        Mail::send('emails.aluno', $data, function ($message) use ($request, $data, $agenda){
             $message->from('contatosite@ecolebrasil.com', 'Ecole Supériere de Relooking');
             $message->to($request['email'])->subject('Bem-vindo à Ecole '.$data['nome'].' - '.$data['nome_curso']);
             $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);

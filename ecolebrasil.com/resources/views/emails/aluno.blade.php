@@ -21,15 +21,26 @@
 		</div>
 	</div>
 	<div class="row">
-		<img style="width: 20%; margin: 0 auto; display: block; margin-top: 50px " class="img-contato" src="{{asset($card_curso)}}">
-		<h4 align="center">Você se inscreveu em {{ $nome_curso }}.</h4>
-		<h4 align="center">Cidade: {{ $cidade }}.</h4>
-		<h4 align="center">Início: {{ $data_inicio }}.</h4>
-		<h4 align="center">Acesse o link abaixo para ter acesso ao nosso conteúdo.</h4>
-		<h4 align="center">Ecole Brasil</h4>
-		<h3 align="center"><b>Suas credenciais:</b></h3>
-		<h3 align="center">Login: {{ $login }}</h3>
-		<h3  align="center">Senha: {{ $password }}</h3>
+		<h3 align="center" style="color: gray">
+			A Ecole Superieure de Relooking lhe dá as boas-vindas e deseja que o aprendizado do curso que você irá realizar contribua para qualificar a sua formação, sua atuação profissional e a sua satisfação com o trabalho. Acreditamos no <b>#serparavestir</b> e pra gente é uma honra formar profissionais que levam essa missão a diante.
+		</h3>
+
+		<h3 align="center" style="color: gray">Na semana antecede o início do curso criaremos um grupo no whats app no qual serão informados local, materiais necessários e facilidades próximas do local. Qualquer dúvida é só falar com a gente pelo nosso <b>WhatsApp 51 991660914.</b>
+		</h3>
+		<div class="row">
+			<img style="width: 20%; margin: 0 auto; display: block; margin-top: 50px " class="img-contato" src="{{asset($card_curso)}}">
+			<h4 align="center">Você se inscreveu em {{ $nome_curso }}.</h4>
+			<h4 align="center">Cidade: {{ $cidade }}.</h4>
+			<h4 align="center">Início: {{ $data_inicio }}.</h4>
+			<h4 align="center">Acesse o link abaixo para ter acesso ao nosso conteúdo.</h4>
+			<h4 align="center">Ecole Brasil</h4>
+			<h3 align="center"><b>Suas credenciais:</b></h3>
+			<h3 align="center">Login: {{ $login }}</h3>
+			<h3  align="center">Senha: {{ $password }}</h3>
+		</div>
+		<h1 align="center"  style="color: gray">
+			Que o curso seja especial para você!
+		</h3>
 	</div>
 	<div class="row">
 	<hr style="margin-top: 50px">
