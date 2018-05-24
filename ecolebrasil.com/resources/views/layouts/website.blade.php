@@ -2,6 +2,15 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118987320-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-118987320-1');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -116,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="http://blog.ecolebrasil.com">BLOG</a></li>
         <li><a href="{{route('depoimentos')}}">DEPOIMENTOS</a></li>
         <li><a href="{{route('consultoras')}}">CONSULTORAS</a></li>
-        <li><a href="{{route('restrito')}}"  target="_blank">EX-ALUNAS</a></li>
+        <li><a href="{{route('restrito')}}"  target="_blank">ACESSO RESTRITO</a></li>
         <li><a href="{{route('contato')}}">CONTATO</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

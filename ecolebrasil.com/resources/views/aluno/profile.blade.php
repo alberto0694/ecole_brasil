@@ -93,6 +93,11 @@
 <script type="text/javascript">
 $(window).load(function(){
 	$('.multiselect').multiselect();
+
+	if($("#email").val() == "alunoconsultor\@ecolebrasil.com"){
+		$("input").attr("disabled", "disabled");
+		$("button").hide();
+	}
 });
 jQuery(function($){
 
