@@ -160,7 +160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="col-lg-3 col-md-3 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                     <ul>
-                        <li class="title-footer">  ECOLE SUPÉRIEURE DE RELLOKING  </li>
+                        <li class="title-footer">  ECOLE SUPÉRIEURE DE RELOOKING  </li>
                         <li style="margin-top:10px" class="title-footer">  BRASIL  </li>
                         <li class="body-footer-li">  Rua Xavier Ferreira, 131  </li>
                         <li class="body-footer-li">  CEP: 90540-160</li>
@@ -235,8 +235,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   $( "#form-news" ).submit(function( event ) {
     $("#btn-news").attr('disabled', 'disabled');
   });
-
-
 </script>
 </body>
 </html>
