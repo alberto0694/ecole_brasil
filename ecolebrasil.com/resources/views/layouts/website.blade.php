@@ -2,6 +2,20 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 817901863;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/817901863/?guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118987320-1"></script>
     <script>
@@ -10,7 +24,7 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-118987320-1');
-    </script>
+    </script>    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,10 +55,6 @@ iframe{
 
 </style>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQX54FN"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -81,23 +91,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="container">
                 <div class="row raleway">
                   @foreach($formacoes as $formacao)
-                        <div class="col-md-2" style="min-height: 160px;">
-                          <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
-                          <ul style=" padding: 0; margin-top: 10px">
-                              @foreach($formacao->cursos as $curso)
-                                <a class="gray-dark-color" href="{{ route('cursos', $curso->slug) }}">{{$curso->nome}}</a><br>
-                                <br>
-                              @endforeach
-                          </ul>
-                        </div>
+                    <div class="col-md-2" style="min-height: 160px;">
+                      <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
+                      <ul style=" padding: 0; margin-top: 10px">
+                          @foreach($formacao->cursos as $curso)
+                            <a class="gray-dark-color" href="{{ route('cursos', $curso->slug) }}">{{$curso->nome}}</a><br>
+                            <br>
+                          @endforeach
+                      </ul>
+                    </div>
                   @endforeach
-                        <div class="col-md-2" style="min-height: 160px;">
-                          <h6 class="gray-dark-color title-cursos bold"></h6>
-                          <ul style=" padding: 0; margin-top: 10px">
-                                <a style="margin-bottom: 10px" href="{{route('ead.login')}}">Acesso EAD</a><br><br>
-                                <a href="{{route('agenda')}}">Agenda</a>
-                          </ul>
-                        </div>
+                  <div class="col-md-2" style="min-height: 160px;">
+                    <h6 class="gray-dark-color title-cursos bold"></h6>
+                    <ul style=" padding: 0; margin-top: 10px">
+                          <a style="margin-bottom: 10px" href="{{route('ead.login')}}">Acesso EAD</a><br><br>
+                          <a href="{{route('agenda')}}">Agenda</a>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </li>
@@ -108,16 +118,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CURSOS <span class="caret"></span></a>
           <ul class="dropdown-menu" style="margin-top: 10px">
             @foreach($formacoes as $formacao)
-                <div class="row" style="background: #dddcdc; padding: 20px; opacity: .8">
-                  <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
-                  <ul style=" padding: 0; margin-top: 10px">
-                      @foreach($formacao->cursos as $curso)
-                        <a class="gray-dark-color" href="{{ route('cursos', $curso->slug) }}">{{$curso->nome}}</a><br>
-                        <br>
-                      @endforeach
-                  </ul>
-                </div>
-              @endforeach
+              <div class="row" style="background: #dddcdc; padding: 20px; opacity: .8">
+                <h6 class="gray-dark-color title-cursos bold">{{ $formacao->nome }}</h6>
+                <ul style=" padding: 0; margin-top: 10px">
+                  @foreach($formacao->cursos as $curso)
+                    <a class="gray-dark-color" href="{{ route('cursos', $curso->slug) }}">{{$curso->nome}}</a><br><br>
+                  @endforeach
+                </ul>
+              </div>
+            @endforeach
           </ul>
         </li>
         <li class="hidden-md hidden-lg"><a href="{{route('ead.login')}}">EAD</a></li>
@@ -138,11 +147,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="loading-background">
   <div id="loading-admin-application-only">
     <div class="row">
-          <li class="hidden-xs hidden-sm">
-              <a style="display: block; margin: 0 auto;" href="{{route('index')}}">
-                  <img src="{{asset('images/logo-ecole-load.png')}}" style="display: block; margin: 0 auto;">
-              </a>
-          </li>
+        <li class="hidden-xs hidden-sm">
+            <a style="display: block; margin: 0 auto;" href="{{route('index')}}">
+                <img src="{{asset('images/logo-ecole-load.png')}}" style="display: block; margin: 0 auto;">
+            </a>
+        </li>
     </div>
   </div>
 </div>
@@ -194,19 +203,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <ul>
                           <li>
                               <div class="input-append newsletter-box ">
-                                    <form id="form-news" style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.newsletter') }}">
-                                      {{ csrf_field() }}
-                                          <div class="form-group">
-                                            <input required name="contato" type="text" class="full form-control " placeholder="Seu nome">
-                                          </div>
-                                          <div class="form-group">
-                                            <input required name="email" type="email" class="full form-control " placeholder="E-mail">
-                                          </div>
-                                          <button id="btn-news" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
-                                            <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">
-                                          </button>
-                                    </form>
-
+                                <form id="form-news" style="margin-left: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.newsletter') }}">
+                                  {{ csrf_field() }}
+                                      <div class="form-group">
+                                        <input required name="contato" type="text" class="full form-control " placeholder="Seu nome">
+                                      </div>
+                                      <div class="form-group">
+                                        <input required name="email" type="email" class="full form-control " placeholder="E-mail">
+                                      </div>
+                                      <button id="btn-news" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+                                        <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar.png') }}">
+                                      </button>
+                                </form>
                               </div>
                           </li>
                       </ul>

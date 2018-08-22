@@ -174,31 +174,35 @@
 				<h4 align="center">Você se inscreveu em {{ $nome_curso }}.</h4>
 				<h4 align="center">Cidade: {{ $cidade }}.</h4>
 				<h4 align="center">Início: {{ $data_inicio }}.</h4>
-				<h4 align="center">Acesse o link abaixo para ter acesso ao nosso conteúdo.</h4>
-				<h4 align="center">Ecole Brasil</h4>
-				<h3 align="center"><b>Suas credenciais:</b></h3>
-				<h3 align="center">Login: {{ $login }}</h3>
-				<h3  align="center">Senha: {{ $password }}</h3>
-			</div>
-			<h1 align="center"  style="color: gray">
-				Que o curso seja especial para você!
-			</h3>
-		</div>
+			
+				@if($modelo == 'D' || $consultoria == 3)
+					<h4 align="center">Acesse o link abaixo para ter acesso ao nosso conteúdo.</h4>
+					<h4 align="center">Ecole Brasil</h4>
+					<h3 align="center"><b>Suas credenciais:</b></h3>
+					<h3 align="center">Login: {{ $login }}</h3>
+					<h3  align="center">Senha: {{ $password }}</h3>
+				@endif
 
-		<div class="row">
-		<hr style="margin-top: 50px">
-			<h4 style="text-align: center; margin-top: -50px">
-				@if($modelo == 'D')
-					<a href="{{route('ead.login')}}">
-					  <img style="width: 150px; margin: 0 auto; display: block;" src="{{asset('images/entrar.png')}}">
-					</a>
-				@else
+		</div>
+		<h1 align="center"  style="color: gray">
+			Que o curso seja especial para você!
+		</h3>
+	</div>
+	<div class="row">
+	<hr style="margin-top: 50px">
+		<h4 style="text-align: center; margin-top: -50px">
+			@if($modelo == 'D')
+				<a href="{{route('ead.login')}}">
+				  <img style="width: 150px; margin: 0 auto; display: block;" src="{{asset('images/entrar.png')}}">
+				</a>
+			@else
+				@if($consultoria == 3)
 					<a href="{{route('restrito')}}">
 					  <img style="width: 150px; margin: 0 auto; display: block;" src="{{asset('images/entrar.png')}}">
 					</a>
 				@endif
-			</h4>
-		</div>
+			@endif
+		</h4>
 	</div>
  </body>
  </html>

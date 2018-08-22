@@ -104,7 +104,8 @@
       <b style="color: #777777;">Contato: {{$contato}} </b><br>
       <b style="color: #777777;">Email: {{$email}} </b><br>
       <b style="color: #777777;">Telefone: {{$telefone}} </b><br>
-      <b style="color: #777777;">Cidade/Estado: {{$cidade}} </b><br>
+      <b style="color: #777777;">Cidade/Estado: {{$curso}} </b><br>
+      <b style="color: #777777;">Curso(s): {{$cidade_curso}} </b><br>
       <b style="color: #777777;">Cidades de interesse para fazer o curso: {{$cidade_curso}} </b><br>
       <b style="color: #777777;">Como conheceu a Ecole: {{$ecole}} </b><br>
       <b style="color: #777777;">Mensagem: {{$mensagem}} </b><br>

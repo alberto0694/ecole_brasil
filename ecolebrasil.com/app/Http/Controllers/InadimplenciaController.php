@@ -41,6 +41,7 @@ class InadimplenciaController extends Controller
             $message->cc('admin@ecolebrasil.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
             $message->cc('vandressa@esrelooking.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
             $message->cc('financeiro@esrelooking.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->cc('financeiro@ecolebrasil.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
         });
         return;
     }

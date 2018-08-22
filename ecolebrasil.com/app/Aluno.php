@@ -24,9 +24,9 @@ class Aluno extends Model
 
   public function getHasRestritoAttribute()
   {
-  		$agendas = $this->agendas();
-  		foreach ($agendas as $value) {
-  			if($value->modelo == 'P'){
+  		$agendas = $this->agendas;
+  		foreach ($agendas as $agenda) {
+  			if($agenda->curso->id == 3){
   				return true;
   			}
   		}
@@ -53,7 +53,7 @@ class Aluno extends Model
 
 	public function getIdadeAttribute()
 	{
-		if(($this->nascimento != '0000-00-00 00:00:00')  && ($this->nascimento != null)){
+		if(($this->nascimento != '0000-00-00 00:00:00')  && ($this->nascimento)){
       $birth = Carbon::parse($this->nascimento);
   	  return Carbon::now()->diffInYears( $birth );
     }else{
@@ -64,7 +64,7 @@ class Aluno extends Model
 	public function getFnascimentoAttribute()
 	{
     // dd($this->nascimento);
-		if(($this->nascimento != '0000-00-00 00:00:00') && ($this->nascimento != null)){
+		if(($this->nascimento != '0000-00-00 00:00:00') && ($this->nascimento)){
       return Carbon::parse($this->nascimento)->format('d/m/Y');
     }
     return '';

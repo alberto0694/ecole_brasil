@@ -34,6 +34,7 @@ class WebsiteController extends Controller
                     "cidade" => $request->cidade,
                     "cidade_curso" => $request->cidade_curso,
                     "ecole" => $request->ecole,
+                    "curso" => $request->curso,
                     "mensagem" => $request->mensagem,
                     "email" => $request->email];
 

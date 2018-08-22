@@ -18,8 +18,4 @@ class Depoimento extends Model
     	return file_get_contents(public_path().'/'.$this->avatar);
     }
     
-    // public function getVideoBase64Attribute()
-    // {
-    // 	return file_get_contents(public_path().'/'.$this->video);
-    // }
 }

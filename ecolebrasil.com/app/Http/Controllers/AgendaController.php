@@ -58,33 +58,34 @@ class AgendaController extends Controller
 
         $agenda = Agenda::find( $request['agenda_id'] );
         $aluno->addAgenda( $agenda );
-        $data = [   "nome" => $request->nome_aluno,
-                    "nome_aluno" => $aluno->nome,
-                    "sobrenome" => $aluno->sobrenome,
-                    "login" => $request->email,
-                    "portador" => $request->nome_cartao,
-                    "nome_curso" => $agenda->curso->nome,
-                    "data_inicio" => $agenda->formatedDate,
-                    "cidade" => $agenda->cidade,
-                    "agenda_valor" => $agenda->valor,
-                    "parcelas" => $request->num_parcelas,
-                    "card_curso" => asset($agenda->curso->card),
-                    "modelo" => $agenda->curso->modelo,
-                    "password" => $request->password,
-                    "email" => $request['email'],
-                    "nascimento" => $nascimento_data,
-                    "cpf" => $request->cpf,
-                    "rg" => $request->rg,
-                    "endereco_rua" => $request->endereco_rua,
-                    "endereco_numero" => $request->endereco_numero,
-                    "endereco_bairro" => $request->endereco_bairro,
-                    "endereco_cidade" => $request->endereco_cidade,
-                    "endereco_estado" => $request->endereco_estado,
-                    "endereco_cep" => $request->endereco_cep,
-                    "estado_civil" => $request->estado_civil,
-                    "telefone" => $request->telefone
-                ];
-
+        $data =  [   
+                "nome" => $request->nome_aluno,
+                "nome_aluno" => $aluno->nome,
+                "sobrenome" => $aluno->sobrenome,
+                "login" => $request->email,
+                "portador" => $request->nome_cartao,
+                "nome_curso" => $agenda->curso->nome,
+                "data_inicio" => $agenda->formatedDate,
+                "cidade" => $agenda->cidade,
+                "agenda_valor" => $agenda->valor,
+                "parcelas" => $request->num_parcelas,
+                "card_curso" => asset($agenda->curso->card),
+                "modelo" => $agenda->modelo,
+                "password" => $request->password,
+                "email" => $request['email'],
+                "nascimento" => $nascimento_data,
+                "cpf" => $request->cpf,
+                "rg" => $request->rg,
+                "endereco_rua" => $request->endereco_rua,
+                "endereco_numero" => $request->endereco_numero,
+                "endereco_bairro" => $request->endereco_bairro,
+                "endereco_cidade" => $request->endereco_cidade,
+                "endereco_estado" => $request->endereco_estado,
+                "endereco_cep" => $request->endereco_cep,
+                "estado_civil" => $request->estado_civil,
+                "telefone" => $request->telefone,
+                "consultoria" => $agenda->curso->id
+        ];
 
         Mail::send('emails.aluno', $data, function ($message) use ($request, $data, $agenda){
             $message->from('contatosite@ecolebrasil.com', 'Ecole Supériere de Relooking');
@@ -183,5 +184,10 @@ class AgendaController extends Controller
         }
         return;
 
+    }
+
+    public function getParamsFromRequest($request)
+    {
+        
     }
 }

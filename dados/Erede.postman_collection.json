@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "2692bacc-e7cb-5191-37bd-b8231b6dbf5e",
+		"name": "Erede",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Authorized",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ano\":2021,\r\n  \"conftxn\":\"S\",\r\n  \"cvc2\":414,\r\n  \"filiacao\":74450930,\r\n  \"mes\":12,\r\n  \"nrcartao\":\"4984425478490296\",\r\n  \"numpedido\":1,\r\n  \"parcelas\":0,\r\n  \"portador\":\"Alberto Pimentel Antunes\",\r\n  \"total\":1.00,\r\n  \"transacao\":4\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP",
+					"protocol": "https",
+					"host": [
+						"kyadevelopers",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"erede",
+						"services",
+						"ServicesController"
+					],
+					"query": [
+						{
+							"key": "servicename",
+							"value": "Komerci$GetAuthorizedSP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VOid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"total\":5.00,\r\n\"filiacao\":74450930,\r\n        \"numautor\": \"935544\",\r\n        \"numcv\": 249205532,\r\n\"usr\":\"alberto.pimentel\",\r\n\"pwd\":\"Ecolebrasil3070\"\r\n}"
+				},
+				"url": {
+					"raw": "https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$VoidTransactionSP",
+					"protocol": "https",
+					"host": [
+						"kyadevelopers",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"erede",
+						"services",
+						"ServicesController"
+					],
+					"query": [
+						{
+							"key": "servicename",
+							"value": "Komerci$VoidTransactionSP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"filiacao\":74450930,\n\"data_inicial\":\"20180329\",\n\"data_final\":\"20180509\",\n\"tipo_trx\":\"\",\n\"status_trx\":\"\",\n\"usr\":\"alberto.pimentel\",\n\"pwd\":\"Ecolebrasil3070\"\n}"
+				},
+				"url": {
+					"raw": "https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$CouncilReportSP",
+					"protocol": "https",
+					"host": [
+						"kyadevelopers",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"erede",
+						"services",
+						"ServicesController"
+					],
+					"query": [
+						{
+							"key": "servicename",
+							"value": "Komerci$CouncilReportSP"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

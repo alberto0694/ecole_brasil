@@ -95,7 +95,7 @@
 		 			<h5 align="center" class="title-pink-begin-text">Professora</h5>
 		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Professora da Ecole, consultora de Imagem Pessoal e Profissional, Administradora de Empresas por formação, Marcela tem na valorização às pessoas, autoconhecimento, e no empoderamento sua maior motivação para dar aulas. Enxerga na metodologia da Ecole a ferramenta que buscava para criar insights agregadores, aguçar percepções  que fazem a diferença na vida dos seus alunos.</p>
 		 		</div>
-		 		<div class="col-md-3 col-md-offset-1">
+{{-- 		 		<div class="col-md-3 col-md-offset-1">
 		 			<div class="cs-item-frame"">
 						<div class="item-inside" style="background-image: url({{ asset('images/luiza-bem.png') }})"></div>
 					</div>
@@ -103,7 +103,7 @@
 		 			<h5 align="center" class="title-pink-begin-text">Atendimento</h5>
 		 			<p style="text-align: justify; margin-bottom: 30px" class="gray-text"><i>"Modas desaparecem, mas o estilo é eterno" Yves- Saint Laurent. </i></p>
 		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Luiza de Bem é graduada em Psicologia pela PUC-RS e Consultora de Imagem pela Ecole. Ela acredita que a vestimenta é nosso melhor cartão de visita e quando descobrimos nossa essência, as escolhas fazem mais sentido. Como uma boa curiosa, está constantemente atualizando-se das tendências de mercado, e é com essa intensidade e otimismo que atende nossas alunas!</p>
-		 		</div>
+		 		</div> --}}
 		 		<div class="col-md-3 col-md-offset-1">
 		 			<div class="cs-item-frame"">
 						<div class="item-inside" style="background-image: url({{ asset('images/kelly-possebon.png') }})"></div>

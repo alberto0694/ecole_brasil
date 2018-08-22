@@ -9,8 +9,8 @@ class YoutubeController extends Controller
 {
     public function youtube()
     {
-			$authServiceObject = new AuthService();
-			$authUrl = $authServiceObject->getLoginUrl;
+		$authServiceObject = new AuthService();
+		$authUrl = $authServiceObject->getLoginUrl;
     }
 
 }

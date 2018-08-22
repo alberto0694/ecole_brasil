@@ -60,13 +60,18 @@ Tem alguma dúvida ou gostaria de saber mais sobre a escola e os cursos? Entre e
 			                  <input required name="cidade" type="text" class="full form-control ">
 			                </div>
 			                <div class="form-group">
+			                  <label class="control-label">Como nos conheceu</label>
+			                  <input required name="ecole" type="text" class="full form-control ">
+			                </div>
+			                <div class="form-group">
 			                	<label class="control-label">Cidade(s) que desejaria fazer um curso</label>
 			                  <input required name="cidade_curso" type="text" class="full form-control " >
 			                </div>
 			                <div class="form-group">
-			                  <label class="control-label">Como nos conheceu</label>
-			                  <input required name="ecole" type="text" class="full form-control ">
-			                </div>
+			                  <label class="control-label">Cursos de interesse</label>
+			                  <textarea required="" style="color:black"  name="curso" class="full form-control " rows="4">
+			                  </textarea>
+			                </div>			                
 			                <div class="form-group">
 			                  <label class="control-label">Deixe sua mensagem ou dúvida</label>
 			                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4">

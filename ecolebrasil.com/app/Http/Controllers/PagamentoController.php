@@ -22,7 +22,7 @@ class PagamentoController extends Controller
       }
 
   		$client = new Client();
-  		$url = 'https://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP';
+  		$url = 'http://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP';
   		$data = [
   			'timeout' => 30,
 		    'headers' => [

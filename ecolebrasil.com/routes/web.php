@@ -106,6 +106,7 @@ Route::put('/banner/update/{id}', 'BannerController@update')->name('banner.updat
 Route::delete('/banner/delete/{id}', 'BannerController@delete')->name('banner.delete');
 
 
+
 //================ ALUNOS VIEWS ======================
 Route::get('/alunos/dashboard', 'AlunoController@dashboard')->name('aluno.dashboard');
 Route::get('/alunos/acesso_restrito', 'AlunoController@acesso_restrito')->name('aluno.acesso_restrito');
@@ -331,9 +332,6 @@ Route::get('/adm/agenda/editar/{id}', 'AdministradorController@agenda_editar')->
 Route::get('/', 'WebsiteController@home')->name('index');
 Route::get('/br/school/see/a-escola/16', 'WebsiteController@escola')->name('escola');
 Route::get('/br/access', 'WebsiteController@restrito')->name('restrito');
-Route::get('/blog', function(){
-	return redirect('http://blog.ecolebrasil.com');
-})->name('blog');
 Route::get('/br/certification/see/cnpc/14', 'WebsiteController@certificacao')->name('certificacao');
 Route::get('/sou_ecole', 'WebsiteController@sou_ecole')->name('sou_ecole');
 Route::get('/contato', 'WebsiteController@contato')->name('contato');
@@ -351,9 +349,11 @@ Route::get('/br/consultants', 'WebsiteController@consultoras')->name('consultora
 Route::get('/ebooks', 'WebsiteController@ebook')->name('ebook');
 Route::get('/ebook_pagamento/{id}', 'WebsiteController@ebook_pagamento')->name('ebook_pagamento');
 Route::get('/eshop', 'WebsiteController@eshop')->name('eshop');
-Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
-Route::post('/newsletter_post', 'WebsiteController@sendNewsletter')->name('email.newsletter');
-Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
+Route::get('/manifesto', 'WebsiteController@manifesto')->name('manifesto');
+Route::get('/equipe', 'WebsiteController@equipe')->name('equipe');
+Route::get('/blog', function(){
+	return redirect('http://blog.ecolebrasil.com');
+})->name('blog');
 
 //ROTAS DE PAGAMENTOS
 Route::post('/pagamento', 'PagamentoController@doPayment')->name('pagamento');
@@ -362,5 +362,7 @@ Route::post('/compra_agenda', 'AgendaController@buyAgenda')->name('pagamento.age
 Route::post('/ebook_email', 'WebsiteController@ebook_email')->name('ebook.email');
 Route::get('/regularizacao/{id}', 'WebsiteController@regulariza_inadimplencia')->name('regulariza.inadimplencia');
 
-Route::get('/manifesto', 'WebsiteController@manifesto')->name('manifesto');
-Route::get('/equipe', 'WebsiteController@equipe')->name('equipe');
+//envio de emails
+Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
+Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
+Route::post('/newsletter_post', 'WebsiteController@sendNewsletter')->name('email.newsletter');

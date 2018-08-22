@@ -71,6 +71,9 @@ class Curso extends Model
 
 	public function agendas()
 	{
-		return $this->hasMany('App\Agenda', 'curso_id', 'id')->where('visible', '=', '1')->where('data_inicio', '>', Carbon::today()->toDateString());
+		$date = Carbon::today()->toDateString();
+		return $this->hasMany('App\Agenda', 'curso_id', 'id')
+					->where('visible', '=', '1')
+					->where('data_inicio', '>', $date);
 	}
 }

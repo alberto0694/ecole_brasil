@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 817901863;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/817901863/?guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>Ecole EAD</title>
@@ -210,10 +224,6 @@
 
 </style>
 <body class="no-skin">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQX54FN"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <div id="navbar" class="navbar navbar-default ace-save-state">
     <div class="navbar-container ace-save-state" id="navbar-container">
         <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
@@ -306,13 +316,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </li>
                     @endif
                 @endforeach
-                <li class="">
-                    <a href="{{ route('aluno.acesso_restrito') }}">
-                        <i class="menu-icon fa fa-tachometer"></i>
-                        <span class="menu-text">Material Restrito</span>
-                    </a>
-                    <b class="arrow"></b>
-                </li>
+
+                @if($aluno->hasRestrito)
+                    <li class="">
+                        <a href="{{ route('aluno.acesso_restrito') }}">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text">Material Restrito</span>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                @endif
             </ul><!-- /.nav-list -->
 
             <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
