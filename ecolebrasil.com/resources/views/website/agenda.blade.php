@@ -36,7 +36,8 @@
 								<div class="row" style="padding-top: 20px; padding-bottom: 20px; padding-left: 60px; padding-right: 60px; <?php if($x % 2 == 0){ echo 'background-color: #eaeaea;'; }?>">
 							@endif
 								<div class="col-md-4" style="display: inline-block; margin-bottom: 10px;">
-									<a class="clickable" href="{{ route('compra.agenda', ['agenda_id' => $agenda->id]) }}">
+									{{-- href="{{ route('compra.agenda', ['agenda_id' => $agenda->id]) }}" --}}
+									<a class="clickable" href="{{ route('cursos', $agenda->curso->slug) }}">
 										<div style="text-align: center"  class="col-md-2 col-xs-6 hidden-xs hidden-sm">
 											<div class="row">
 												<label class="desc-agenda bold" style="font-size: 14pt">{{$agenda->monthRes}}</label>
