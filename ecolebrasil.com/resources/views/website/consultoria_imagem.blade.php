@@ -497,7 +497,7 @@
 	<div class="box-inscricao">
 		<h2>INSCREVA-SE AGORA NA FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM</h2>
 		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">5% à vista</label></p>
-		<h6>* Não sem requisitos</h6>
+		<h6>* Não tem pré-requisitos</h6>
 		<h6>**Entrada via transferência bancária + boletos</h6>
 	</div>
 	<a style="color: white" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><button class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button></a>
@@ -531,7 +531,7 @@
 		<div class="col-md-4 col-porque-ecole">
 			<img class="image-porque-ecole" src="{{asset('images/certificacao.png')}}">
 			<h5>CERTIFICAÇÃO <br>INTERNACIONAL</h5>
-			<span>Primeira e única escola francesa de Consultoria de Imagem no Brasil e que oferece certificação para o profissional atuar em nível profissional.</span>
+			<span>Primeira e única escola francesa de consultoria de imagem no Brasil e que oferece certificação internacional.</span>
 		</div>
 
 		<div class="col-md-4 col-porque-ecole">
@@ -591,7 +591,7 @@
 	<div class="box-inscricao">
 		<h2>FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM DA ECOLE, INSCREVA-SE AGORA</h2>
 		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">5% à vista</label></p>
-		<h6>* Não sem requisitos</h6>
+		<h6>* Não tem pré-requisitos</h6>
 		<h6>**Entrada via transferência bancária + boletos</h6>
 	</div>
 	<a style="color: white" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><button class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button></a>
