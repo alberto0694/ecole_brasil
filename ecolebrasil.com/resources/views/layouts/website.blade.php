@@ -24,7 +24,7 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-118987320-1');
-    </script>    
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,6 +84,7 @@ iframe{
               <li><a class="gray-text-ecole" href="https://ecolesuperieurerelooking.com/" target="_blank">Paris</a></li><br>
           </ul>
         </li>
+        <li><a href="{{route('agenda')}}">AGENDA</a></li>
         <li class="dropdown hidden-sm hidden-xs" >
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">CURSOS <span class="caret"></span></a>
           <ul class="dropdown-menu" style="max-width: 800px; padding-top:10px; margin-left: -160px;">
@@ -194,6 +195,7 @@ iframe{
                       <h5 style="color:white">Fique por dentro de tudo</h5>
                       <a target="_blank" href="https://www.facebook.com/ecolebrasil/"><i style="font-size: 21pt" class="fab fa-facebook"></i></a>
                       <a target="_blank" href="https://www.instagram.com/ecolebrasil/"><i style="font-size: 21pt; margin-left: 15px" class="fab fa-instagram"></i></a>
+                      <a target="_blank" href="https://www.youtube.com/c/ecolebrasil"><i style="font-size: 21pt; margin-left: 15px" class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 @if ( !(\Route::current()->getName() == 'contato') )
@@ -225,9 +227,11 @@ iframe{
   </div>
 </footer>
 <script type="text/javascript">
-  $(document).ready(function(){
-      $('textarea').val('');
-  });
+  @if(empty($curso_contato))
+    $(document).ready(function(){
+        $('textarea').val('');
+    });
+  @endif
   $(window).on('load', function(){
       $(".content-web-site").fadeIn(1000);
       $("#loading-background").hide();

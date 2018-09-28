@@ -70,8 +70,11 @@ Tem alguma dúvida ou gostaria de saber mais sobre a escola e os cursos? Entre e
 			                <div class="form-group">
 			                  <label class="control-label">Cursos de interesse</label>
 			                  <textarea required="" style="color:black"  name="curso" class="full form-control " rows="4">
+			                  	@if(!empty($curso_contato))
+			                  		{!!$curso_contato->nome!!}
+			                  	@endif
 			                  </textarea>
-			                </div>			                
+			                </div>
 			                <div class="form-group">
 			                  <label class="control-label">Deixe sua mensagem ou dúvida</label>
 			                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4">

@@ -185,11 +185,17 @@ class WebsiteController extends Controller
     	return view('website.sou_ecole', compact('cursos_menu','formacoes'));
     }
 
-    public function contato()
+    public function contato(Request $request)
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-    	return view('website.contato', compact('cursos_menu','formacoes'));
+        $curso_id = $request->query('curso_id');
+        if($curso_id){
+            $curso_contato = Curso::find($curso_id);
+            return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+        }else{
+        	return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+        }
     }
 
     public function cursos(Request $request, $slug)
@@ -197,7 +203,27 @@ class WebsiteController extends Controller
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
         $curso = Curso::where('slug', '=', $slug )->first();
-    	return view('website.cursos', compact('cursos_menu','formacoes', 'curso'));
+
+        if($slug == 'consultoria-e-coaching-de-imagem'){
+            $depoimentos = Depoimento::where('visible', '=', '1')->get();
+            $agendas = $curso->agendas()->orderBy('data_inicio', 'asc')->get();
+            $indice = 0;
+            $x = 0;
+            $i = 0;
+            $agendas_view = array();
+            foreach ($agendas as $agenda_curso) {
+                if($indice % 3 == 0){
+                    $x = 0;
+                    $i++;
+                }
+                $agendas_view[$i][$x] = $agenda_curso;
+                $x++;
+                $indice++;
+            }
+            return view('website.consultoria_imagem', compact('cursos_menu','formacoes', 'curso', 'depoimentos', 'agendas_view'));
+        }else{
+            return view('website.cursos', compact('cursos_menu','formacoes', 'curso'));
+        }
     }
 
     public function depoimentos()
@@ -280,7 +306,12 @@ class WebsiteController extends Controller
         // $formacoes = Formacao::where('visible', '=', '1')->get();
         // $cursos_menu = Curso::where('visible', '=', '1')->get();
         // return view('website.inscricao', compact('cursos_menu','formacoes', 'curso'));
-
+        $sem_cartao = false;
+        foreach ($curso->agendas as $agenda_curso) {
+            if($agenda_curso->valor == 0){
+                $sem_cartao = true;
+            }
+        }
         //TA ASSIM PORQUE O E-REDE AINDA NAO TA FUNFANDO
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
@@ -289,11 +320,21 @@ class WebsiteController extends Controller
         $agendas = null;
         if($agenda_id){
             $agendas = Agenda::where('id', '=', $agenda_id)->where('data_inicio', '>', Carbon::today()->toDateString())->get();
-            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
+            if(!$sem_cartao){
+                return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
+            }else{
+                $curso_contato = $curso;
+                return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+            }
         }
         if($curso_id){
             $agendas = Curso::find($curso_id)->agendas;
-            return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
+            if(!$sem_cartao){
+                return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
+            }else{
+                $curso_contato = $curso;
+                return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+            }
         }
     }
 

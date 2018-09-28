@@ -141,10 +141,10 @@ function myFunction() {
 					    	<div class="above-video">
 							 	<div class="inside-above-video col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="">
 									<h3 style="text-align: center; color: white; padding: 2px; width: 100%">
-										<a target="_blank" href="{{ route('cursos', 3) }}">
+										<a target="_blank" href="{{ route('cursos', 'consultoria-e-coaching-de-imagem') }}">
 											<img style="width: 100%; display: block" src="{{ asset('images/logo-ecole-load.png') }}">
 										</a>
-										<a target="_blank" style="color:white; text-decoration: none; font-weight: bold" href="{{ route('cursos', 3) }}">
+										<a target="_blank" style="color:white; text-decoration: none; font-weight: bold" href="{{ route('cursos', 'consultoria-e-coaching-de-imagem') }}">
 											FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM
 										</a>
 									</h3>

@@ -69,7 +69,7 @@
 		<div class="col-md-11 col-md-offset-0 col-xs-10 col-xs-offset-1">
 			<h4 class="title-pink-begin-text upper-case">BASE DOS CONTEÚDOS ABORDADOS</h4>
 			<p class="gray-text paragrado-padrao">{!! $curso->conteudo !!}</p>
-		</div>		
+		</div>
 		<div class="col-md-11 col-md-offset-0 col-xs-10 col-xs-offset-1">
 			{{-- <h4 class="title-pink-begin-text">MAIS INFORMAÇÕES</h4> --}}
 			<h3 style="text-align: center; background: white; padding: 5px; width: 100%">
@@ -78,7 +78,7 @@
 			<h3 style="text-align: center; padding: 5px; width: 100%; background: rgba(239, 64, 96, 1); color:white">
 				<a class="no-text-decoration titulo-padrao" style="width: 100%; display: block; color:white; text-decoration:none; font-weight: bold" href="{{ route('contato') }}">Fale com a gente</a>
 			</h3>
-		</div>		
+		</div>
 	</div>
 </div>
 <div class="row">

@@ -56,6 +56,11 @@ class Agenda extends Model
          return Carbon::parse($this->data_inicio)->month;
     }
 
+    public function getDayMonthAttribute()
+    {
+         return Carbon::parse($this->data_inicio)->day . '/' . Carbon::parse($this->data_inicio)->month;
+    }
+
     public function getLogoAttribute()
     {
         return \Config::get('constants.meses_logo')[$this->indexMonth - 1];
