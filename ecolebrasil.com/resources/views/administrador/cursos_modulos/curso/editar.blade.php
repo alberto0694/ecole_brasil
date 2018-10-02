@@ -20,6 +20,28 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Título da Página </label>
+
+			<div class="col-sm-6">
+				<input value="{{ $curso->title }}" id="title" name="title" type="text" class="col-xs-12 col-sm-6" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Descrição da Página </label>
+
+			<div class="col-sm-6">
+				<input value="{{ $curso->description }}" id="description" name="description" type="text" class="col-xs-12 col-sm-6" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Slug </label>
+
+			<div class="col-sm-6">
+				<input value="{{ $curso->slug }}" id="slug" name="slug" type="text" class="col-xs-12 col-sm-6" />
+			</div>
+		</div>
+
+		<div class="form-group">
 			<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Link de Vídeo </label>
 
 			<div class="col-sm-6">

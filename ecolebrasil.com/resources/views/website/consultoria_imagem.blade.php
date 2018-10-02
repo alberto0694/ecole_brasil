@@ -97,7 +97,8 @@
 		margin: 0 auto;
 	}
 
-	.description-agenda, .description-agenda-first{
+	.description-agenda,
+	.description-agenda-first{
 		max-width: 90%;
 		min-height: 90%;
 		margin: 0 auto;
@@ -272,6 +273,41 @@
 		width: 250px;
 	}
 
+	.icones-pagamento{
+		font-size: 100pt;
+		display: block;
+		margin: 0 auto;
+		max-width: 150px;
+		cursor: pointer;
+	}
+
+	.container-modal{
+		width: 100%;
+	}
+
+	.container-modal h4{
+		text-align: center;
+	}
+
+	.container-modal input,
+	.container-modal textarea,
+	.container-modal form,
+	#form-contato{
+		display: block;
+		width: 100%;
+	}
+
+	#form-contato{
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.container-modal .form-horizontal,
+	.container-modal .form-group {
+	    margin-right: 0px;
+	    margin-left: 0px;
+	}
+
 
 @media screen and (max-width: 800px) {
 	.right-formacao{
@@ -422,7 +458,7 @@
 				<img src="{{ asset($curso->card) }}" style="width: 50%; display: block; margin: 0 auto">
 			@endif
 
-			<a style="color: white" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><button class="button-ecole" style="background: #1bd641">QUERO ME INSCREVER</button><a>
+			<a style="color: white"  data-toggle="modal" data-target="#modal-pagamento" ><button class="button-ecole" style="background: #1bd641">QUERO ME INSCREVER</button><a>
 			<h5 class="duvidas-whats">Ou tirar dúvidas pelo</h5>
 			{{-- <button class="button-ecole"><a href="https://wa.me/5551991660914?text=sua%20mensagem">WHATSAPP (51) 991660914</a></button> --}}
 			<a style="color: white; text-decoration: none;" target="_blank" href="https://wa.me/5551991660914"><button class="button-ecole">WHATSAPP (51) 991660914</button></a>
@@ -464,7 +500,9 @@
 
 		<div class="row">
 			<h5 class="nao-achou-cidade">Não achou na sua cidade?</h5>
-			<a style="color: white" href="{{ route('contato', ['curso_id' => $curso->id]) }}"><button class="button-ecole-red">QUERO ESSE CURSO NA MINHA CIDADE</button></a>
+			{{-- <a style="color: white" href="{{ route('contato', ['curso_id' => $curso->id]) }}"> --}}
+				<a style="color: white" href="{{ route('contato', ['curso_id' => $curso->id]) }}"><button class="button-ecole-red">QUERO ESSE CURSO NA MINHA CIDADE</button></a>
+			{{-- </a> --}}
 		</div>
 
 	</div>
@@ -496,18 +534,18 @@
 <div class="row inscricao-top">
 	<div class="box-inscricao">
 		<h2>INSCREVA-SE AGORA NA FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM</h2>
-		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">5% à vista</label></p>
+		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">à vista com 5% de desconto</label></p>
 		<h6>* Não tem pré-requisitos</h6>
-		<h6>**Entrada via transferência bancária + boletos</h6>
+		<h6>**Em até 8x (Entrada + 7 parcelas no boleto) ou no cartão de crédito em até 6x</h6>
 	</div>
-	<a style="color: white" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><button class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button></a>
+	<a style="color: white"  data-toggle="modal" data-target="#modal-pagamento" ><button class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button></a>
 </div>
 <div class="row row-ebook">
 	<div class="col-md-6 col-ebook-coaching">
 		<div class="col-md-7 col-md-offset-4 hidden-xs hidden-sm" style="margin-top: 100px; ">
 			<h2>QUER SER UMA CONSULTORA DE IMAGEM DE SUCESSO?</h2>
 			<p>Preparamos um ebook gratuito que abordará os principais temas sobre o mercado de consultoria e coaching de imagem.</p>
-			<buton class="button-ecole-ebook">BAIXE O EBOOK GRÁTIS</button>
+			<buton data-toggle="modal" data-target="#modal-ebook"  class="button-ecole-ebook">BAIXE O EBOOK GRÁTIS</button>
 		</div>
 	</div>
 	<div class="col-md-6">
@@ -590,11 +628,140 @@
 <div class="row inscricao-top">
 	<div class="box-inscricao">
 		<h2>FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM DA ECOLE, INSCREVA-SE AGORA</h2>
-		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">5% à vista</label></p>
+		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">à vista com 5% de desconto</label></p>
 		<h6>* Não tem pré-requisitos</h6>
-		<h6>**Entrada via transferência bancária + boletos</h6>
+		<h6>**Em até 8x (Entrada + 7 parcelas no boleto) ou no cartão de crédito em até 6x</h6>
 	</div>
-	<a style="color: white" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><button class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button></a>
+	{{-- <a style="color: white" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"> --}}
+		<button  data-toggle="modal" data-target="#modal-pagamento" class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button>
+	{{-- </a> --}}
 </div>
-
 @endsection
+<div id="modal-ebook" class="modal fade" role="dialog" style="margin-right: -16px">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Receba seu Ebook grátis!</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+        	<div class="container-modal">
+				<!-- Formulário -->
+				<style>body {background-color: transparent !important; } </style>
+				   <link rel='stylesheet' href='https://blob.llimages.com/machine-files/all-css/form-ll.css'>
+				   <form action="https://leadlovers.com/Pages/Index/205214" method="post" >
+				   <input style="max-width: 550px;" id="id" name="id" type="hidden" value="205214" />
+				   <input style="max-width: 550px;" id="pid" name="pid" type="hidden" value="7559514" />
+				   <input style="max-width: 550px;" id="list_id" name="list_id" type="hidden" value="205214" />
+				   <input style="max-width: 550px;" id="provider" name="provider" type="hidden" value="leadlovers" />
+				   <label for="name">Nome:</label>
+				   <input style="max-width: 550px;" class="form-control form-ll" id="name" name="name" placeholder="Informe o seu nome" type="text"  />
+				   <label for="email">E-mail:</label>
+				   <input style="max-width: 550px;" class="form-control form-ll" id="email" name="email" placeholder="E-mail" type="text" />
+				   <button class="btn btn-danger" style="padding: 10px 40px; margin:15px 0 5px;  " type="submit">Receber o ebook</button>
+				   <input style="max-width: 550px;" type="hidden" id="source" name="source" value="" />
+				   <img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />
+				</form>
+        	</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+@section('content-js')
+<script type="text/javascript">
+	$(window).on('load', function(){
+		$(".boleto-bancario").click(function(){
+			$(".container-escolha-pagamento").slideUp("slow", () => {
+				$(".container-formulario-pagamento").slideDown("slow");
+			});
+		});
+		$('#modal-pagamento').on('shown.bs.modal', function () {
+			$(".container-escolha-pagamento").show();
+			$(".container-formulario-pagamento").hide();
+		})
+	});
+</script>
+@endsection
+</script>
+<div id="modal-pagamento" class="modal fade" role="dialog" style="margin-right: -16px">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Forma de pagamento</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+        	<div class="container-modal container-escolha-pagamento">
+        		<div class="col-md-6">
+        			<a target="_blank" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><span class="icones-pagamento"><i class="far fa-credit-card"></i></span></a>
+        			<h4>Cartão de Crédito</h4>
+        		</div>
+        		<div class="col-md-6">
+        			<a class="boleto-bancario"><span class="icones-pagamento"><i class="fas fa-barcode"></i></span></a>
+        			<h4>Boleto Bancário</h4>
+        		</div>
+        	</div>
+        	<div class="container-modal container-formulario-pagamento" style="display: none">
+        		<div class="col-md-12">
+                <ul style="padding-left:0px; color:gray">
+                    <li>
+                    	<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÂO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">
+                    		{{ csrf_field() }}
+			                <div class="form-group">
+			                  <label class="control-label">Seu nome completo</label>
+			                  <input required name="contato" type="text" class="full form-control ">
+			                </div>
+			                <div class="form-group">
+			                  <label class="control-label">Telefone ou Celular</label>
+			                  <input required name="telefone" type="text" class="full form-control ">
+			                </div>
+			                <div class="form-group">
+			                  <label class="control-label">E-mail</label>
+			                  <input required name="email" type="email" class="full form-control ">
+			                </div>
+			                <div class="form-group">
+			                  <label class="control-label">Cidade e Estado</label>
+			                  <input required name="cidade" type="text" class="full form-control ">
+			                </div>
+{{-- 			                <div class="form-group">
+			                  <label class="control-label">Como nos conheceu</label>
+			                  <input required name="ecole" type="text" class="full form-control ">
+			                </div> --}}
+			                <div class="form-group">
+			                	<label class="control-label">Cidade(s) que desejaria fazer o curso</label>
+			                  <input required name="cidade_curso" type="text" class="full form-control " >
+			                </div>
+{{-- 			                <div class="form-group"  style="display: none">
+			                  <label class="control-label">Deixe sua mensagem ou dúvida</label>
+			                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4">
+			                  	FORMULÁRIO
+			                  </textarea>
+			                </div> --}}
+                        <button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+                          <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">
+                        </button>
+	                    </form>
+                    </li>
+                </ul>
+		</div>
+        	</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

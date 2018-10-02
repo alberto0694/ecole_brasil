@@ -330,27 +330,150 @@ Route::get('/adm/agenda/editar/{id}', 'AdministradorController@agenda_editar')->
 
 // =================== WEB SITE ================================
 Route::get('/', 'WebsiteController@home')->name('index');
-Route::get('/br/school/see/a-escola/16', 'WebsiteController@escola')->name('escola');
-Route::get('/br/access', 'WebsiteController@restrito')->name('restrito');
-Route::get('/br/certification/see/cnpc/14', 'WebsiteController@certificacao')->name('certificacao');
+
+Route::get('/ecole-superieure-relooking', 'WebsiteController@escola')->name('escola');
+Route::get('/br/school/see/a-escola/16', function(){
+	return redirect(route('escola'));
+});
+
+Route::get('/duvidas-frequentes', 'WebsiteController@faq')->name('faq');
+Route::get('/br/school/see/faq/20', function(){
+	return redirect(route('faq'));
+});
+
+Route::get('/equipe-ecole', 'WebsiteController@equipe')->name('equipe');
+Route::get('/equipe', function(){
+	return redirect(route('equipe'));
+});
+
+Route::get('/manifesto-ecole', 'WebsiteController@manifesto')->name('manifesto');
+Route::get('/manifesto', function(){
+	return redirect(route('manifesto'));
+});
+
+Route::get('/certificacao-consultoria-imagem', 'WebsiteController@certificacao')->name('certificacao');
+Route::get('/br/certification/see/cnpc/14', function(){
+	return redirect(route('certificacao'));
+});
+
+Route::get('/depoimentos', 'WebsiteController@depoimentos')->name('depoimentos');
+Route::get('/br/deposing', function(){
+	return redirect(route('depoimentos'));
+});
+
+Route::get('/consultoras-ecole', 'WebsiteController@consultoras')->name('consultoras');
+Route::get('/br/consultants', function(){
+	return redirect(route('consultoras'));
+});
+
+Route::get('/acesso-restrito', 'WebsiteController@restrito')->name('restrito');
+Route::get('/br/access', function(){
+	return redirect(route('restrito'));
+});
+
+
+//redirects dos cursos
+Route::get('/ecole/cursos/morfopsicologia', function(){
+	return redirect('/formacao-morfopsicologia');
+});
+
+Route::get('/ecole/cursos/consultoria-e-coaching-de-imagem', function(){
+	return redirect('/formacao-coaching-consultor-imagem');
+});
+
+Route::get('/ecole/cursos/bastidores-de-moda-em-paris', function(){
+	return redirect('/curso-moda-em-paris');
+});
+
+Route::get('/ecole/cursos/acessorios', function(){
+	return redirect('/curso-acessorios-joias-bijuterias');
+});
+
+Route::get('/ecole/cursos/budget', function(){
+	return redirect('/curso-budget');
+});
+
+Route::get('/ecole/cursos/visagismo', function(){
+	return redirect('/curso-visagismo');
+});
+
+Route::get('/ecole/cursos/perfil-profissional', function(){
+	return redirect('/curso-gestao-de-negocios');
+});
+
+Route::get('/ecole/cursos/produ%C3%A7ao-de-moda', function(){
+	return redirect('/curso-producao-moda');
+});
+
+Route::get('/ecole/cursos/personal-organizer', function(){
+	return redirect('/curso-personal-organizer');
+});
+
+Route::get('/ecole/cursos/tecidos', function(){
+	return redirect('/curso-tecidos-ecole');
+});
+
+Route::get('/ecole/cursos/cores', function(){
+	return redirect('/curso-cores-ecole');
+});
+
+Route::get('/ecole/cursos/bolsas-e-sapatos', function(){
+	return redirect('/curso-bolsas-sapatos-ecole');
+});
+
+Route::get('/ecole/cursos/morfopsicologia', function(){
+	return redirect('/formacao-morfopsicologia');
+});
+
+Route::get('/ecole/cursos/morfopsicologia', function(){
+	return redirect('/formacao-morfopsicologia');
+});
+
+Route::get('/ecole/cursos/morfopsicologia', function(){
+	return redirect('/formacao-morfopsicologia');
+});
+
+Route::get('/ecole/cursos/forma%C3%A7ao-de-pre%C3%A7o', function(){
+	return redirect('/curso-formacao-preco');
+});
+
+Route::get('/ecole/cursos/negocios-de-estilo', function(){
+	return redirect('/cursos-negocios-de-estilo');
+});
+
+Route::get('/ecole/cursos/genero-e-imagem:-impacto-social-e-reflexos-no-seu-atendimento', function(){
+	return redirect('/curso-genero-imagem');
+});
+
+Route::get('/ecole/cursos/psicologia-da-autoimagem', function(){
+	return redirect('/curso-auto-imagem');
+});
+
+Route::get('/ecole/cursos/consultoria-masculina', function(){
+	return redirect('/curso-consultoria-imagem-masculina');
+});
+
+Route::get('/ecole/cursos/metamorfose', function(){
+	return redirect('/curso-metarmofose');
+});
+
+Route::get('/ecole/cursos/personal-shopper', function(){
+	return redirect('/curso-personal-shopper');
+});
+
+
 Route::get('/sou_ecole', 'WebsiteController@sou_ecole')->name('sou_ecole');
-Route::get('/contato', 'WebsiteController@contato')->name('contato');
 Route::get('/inscrição', 'WebsiteController@inscricao')->name('inscricao');
 Route::get('/br/agenda', 'WebsiteController@agenda')->name('agenda');
-Route::get('/ecole/cursos/{id}', 'WebsiteController@cursos')->name('cursos');
-Route::get('/br/deposing', 'WebsiteController@depoimentos')->name('depoimentos');
-Route::get('/br/school/see/faq/20', 'WebsiteController@faq')->name('faq');
 Route::get('/br/press', 'WebsiteController@imprensa')->name('imprensa');
 Route::get('/agenda/aluno', 'WebsiteController@compra_agenda')->name('compra.agenda'); //Agenda
 Route::get('/cursos/listagem', 'WebsiteController@cursos_lista')->name('cursos.lista'); //Agenda
 Route::get('/imprensa/materia/{id}', 'WebsiteController@materia')->name('materia');
 Route::get('/blog/post/{id}', 'WebsiteController@blog_post')->name('post_blog');
-Route::get('/br/consultants', 'WebsiteController@consultoras')->name('consultoras');
 Route::get('/ebooks', 'WebsiteController@ebook')->name('ebook');
 Route::get('/ebook_pagamento/{id}', 'WebsiteController@ebook_pagamento')->name('ebook_pagamento');
 Route::get('/eshop', 'WebsiteController@eshop')->name('eshop');
-Route::get('/manifesto', 'WebsiteController@manifesto')->name('manifesto');
-Route::get('/equipe', 'WebsiteController@equipe')->name('equipe');
+Route::get('/contato', 'WebsiteController@contato')->name('contato');
 Route::get('/blog', function(){
 	return redirect('http://blog.ecolebrasil.com');
 })->name('blog');
@@ -366,3 +489,5 @@ Route::get('/regularizacao/{id}', 'WebsiteController@regulariza_inadimplencia')-
 Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
 Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
 Route::post('/newsletter_post', 'WebsiteController@sendNewsletter')->name('email.newsletter');
+
+Route::get('/{id}', 'WebsiteController@cursos')->name('cursos');

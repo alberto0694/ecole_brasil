@@ -29,7 +29,7 @@
 		<div class="col-md-6">
       <h4 class="title-pink-begin-text">ENTRE EM CONTATO</h4>
       <p class="gray-text" style="margin-bottom: 20px">
-Tem alguma dúvida ou gostaria de saber mais sobre a escola e os cursos? Entre em contato conosco preenchendo o formulário ao lado!
+			Tem alguma dúvida ou gostaria de saber mais sobre a escola e os cursos? Entre em contato conosco preenchendo o formulário ao lado!
       </p>
       <p class="gray-text" style="margin-bottom: 20px">Você também pode enviar um email para <b style="font-size: 13pt">contato@ecolebrasil.com</b></p>
       <p class="gray-text" style="margin-bottom: 20px">Entrar em contato pelo telefone <b style="font-size: 13pt">+55 51 3237.2800</b></p>

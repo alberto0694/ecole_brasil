@@ -24,7 +24,7 @@ class CursoController extends Controller
         $request = Controller::saveBase64($request, 'ementa', 'cursos');
         $request = Controller::saveBase64($request, 'contrato_curso', 'cursos');
         $curso = Curso::create( $request->all() );
-        $curso->slug = $this->criar_slug($request->input('nome'));
+        // $curso->slug = $this->criar_slug($request->input('nome'));
         $curso->save();
         return;
     }
@@ -37,7 +37,7 @@ class CursoController extends Controller
         $request = Controller::saveBase64($request, 'ementa', 'cursos', $curso->ementa);
         $request = Controller::saveBase64($request, 'contrato_curso', 'cursos');
         $curso->update( $request->all() );
-        $curso->slug = $this->criar_slug($request->input('nome'));
+        // $curso->slug = $this->criar_slug($request->input('nome'));
         $curso->save();
         return;
     }

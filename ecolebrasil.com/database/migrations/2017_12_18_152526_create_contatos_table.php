@@ -15,14 +15,14 @@ class CreateContatosTable extends Migration
     {
         Schema::create('contatos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('contato');
-            $table->string('telefone');
-            $table->string('cidade');
-            $table->string('cidade_curso');
-            $table->string('ecole');
-            $table->string('mensagem');
-            $table->string('email');
-            $table->timestamps();           
+            $table->string('contato')->nullable();
+            $table->string('telefone')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('cidade_curso')->nullable();
+            $table->string('ecole')->nullable();
+            $table->string('mensagem')->nullable();
+            $table->string('email')->nullable();
+            $table->timestamps();
         });
     }
 

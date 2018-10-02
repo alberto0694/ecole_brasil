@@ -39,13 +39,14 @@ class WebsiteController extends Controller
                     "email" => $request->email];
 
         Contato::create( $request->all() );
-        Mail::send('emails.contato', $data, function ($message) use ($data) {
+        $add_subject = $request->query('subject') ? $request->query('subject')." " : '';
+        Mail::send('emails.contato', $data, function ($message) use ($data, $add_subject) {
             $message->replyTo($data['email'], 'Ecole Brasil');
-            $message->from('contatosite@ecolebrasil.com', 'Contato Site '.$data['contato']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('Contato Site '.$data['contato']);
-            $message->to('contato@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
-            $message->cc('admin@ecolebrasil.com')->subject('Contato Site '.$data['contato']);
-            $message->cc('vandressa@esrelooking.com ')->subject('Contato Site '.$data['contato']);
+            $message->from('contatosite@ecolebrasil.com', $add_subject.'Contato Site '.$data['contato']);
+            $message->to('contato@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
+            $message->cc('admin@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
+            $message->cc('vandressa@esrelooking.com')->subject($add_subject.'Contato Site '.$data['contato']);
+            // $message->cc('alberto.pimentel.94@gmail.com')->subject($add_subject.'Contato Site '.$data['contato']);
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -62,7 +63,6 @@ class WebsiteController extends Controller
 
         Mail::send('emails.newsletter', $data, function ($message)  use ($data) {
             $message->from('contatosite@ecolebrasil.com', 'NewsLetter '.$data['contato']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
             $message->to('contato@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
             $message->cc('admin@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
             $message->cc('vandressa@esrelooking.com ')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
@@ -119,14 +119,18 @@ class WebsiteController extends Controller
         $banners = Banner::where('ativo', '=', 1)->get();
         $cursos = Curso::where('pagina_inicial', '=', '1')->get();
         $depoimentos = Depoimento::where('visible', '=', '1')->orderBy('created_at', 'asc')->take(3)->get();
-    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu', 'depoimentos'));
+        $title = 'Formação de Consultoria e Coaching de Imagem - Ecole Brasil';
+        $description = 'Cursos e formações relacionados a imagem pessoal, psicologia e empreendedorismo, presencial e a distância, com certificação internacional.';
+    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu', 'depoimentos', 'title', 'description'));
     }
 
     public function escola()
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-        return view('website.escola', compact('cursos_menu','formacoes'));
+        $title = 'Escola de Imagem - Ecole Supérieure de Relooking';
+        $description = 'A Ecole Supérieure de Relooking é uma escola especialista em cursos e formações relacionados a imagem pessoal, psicologia e empreendedorismo.';
+        return view('website.escola', compact('cursos_menu','formacoes', 'title', 'description'));
     }
 
     public function eshop()
@@ -140,6 +144,8 @@ class WebsiteController extends Controller
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
+        $title = 'Manifesto - Ecole Supérieure de Relooking';
+        $description = 'Não é roupa, é a pessoa. Não é sobre saber o que vestir, é sobre sentir. Ser. Não é só a cor, é o que ela representa para a alma. Leia nosso manifesto!';
         return view('website.manifesto', compact('cursos_menu','formacoes'));
     }
 
@@ -147,7 +153,9 @@ class WebsiteController extends Controller
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-        return view('website.equipe', compact('cursos_menu','formacoes'));
+        $title = 'Conheça a Equipe - Ecole Supérieure de Relooking';
+        $description = 'A Ecole Supérieure de Relooking é uma escola formada por uma equipe altamente qualificada e comprometida. Conheça-nos!';
+        return view('website.equipe', compact('cursos_menu','formacoes', 'title', 'description'));
     }
 
     public function restrito()
@@ -156,14 +164,18 @@ class WebsiteController extends Controller
         Auth::logout();
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-    	return view('website.restrito', compact('cursos_menu','formacoes'));
+        $title = 'Acesso Restrito - Ecole Brasil';
+        $description = 'Este espaço é totalmente dedicado aos alunos da Ecole Supérieure de Relooking. Solicite o seu login e senha conosco para entrar.';
+    	return view('website.restrito', compact('cursos_menu','formacoes', 'title', 'description'));
     }
 
     public function certificacao()
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-    	return view('website.certificacao', compact('cursos_menu','formacoes'));
+        $title = 'Certificação Internacional em Consultoria de Imagem - Ecole';
+        $description = 'A origem da nossa formação e metodologia estão na França, onde a Escola está certificada em alto nível. Saiba mais sobre nossas certificações!';
+    	return view('website.certificacao', compact('cursos_menu','formacoes', 'title', 'description'));
     }
 
     public function cursos_lista(Request $request)
@@ -190,11 +202,13 @@ class WebsiteController extends Controller
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
         $curso_id = $request->query('curso_id');
+        $title = 'Entre em contato com a Ecole Brasil';
+        $description = 'Caso você tenha alguma dúvida sobre nossa escola e/ou cursos que oferecemos, entre em contato agora mesmo!';
         if($curso_id){
             $curso_contato = Curso::find($curso_id);
-            return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+            return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'title', 'description'));
         }else{
-        	return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+        	return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'title', 'description'));
         }
     }
 
@@ -203,8 +217,9 @@ class WebsiteController extends Controller
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
         $curso = Curso::where('slug', '=', $slug )->first();
-
-        if($slug == 'consultoria-e-coaching-de-imagem'){
+        $title = $curso->title;
+        $description = $curso->description;
+        if($curso->id == 3){
             $depoimentos = Depoimento::where('visible', '=', '1')->get();
             $agendas = $curso->agendas()->orderBy('data_inicio', 'asc')->get();
             $indice = 0;
@@ -220,9 +235,9 @@ class WebsiteController extends Controller
                 $x++;
                 $indice++;
             }
-            return view('website.consultoria_imagem', compact('cursos_menu','formacoes', 'curso', 'depoimentos', 'agendas_view'));
+            return view('website.consultoria_imagem', compact('cursos_menu','formacoes', 'curso', 'depoimentos', 'agendas_view', 'title', 'description'));
         }else{
-            return view('website.cursos', compact('cursos_menu','formacoes', 'curso'));
+            return view('website.cursos', compact('cursos_menu','formacoes', 'curso', 'title', 'description'));
         }
     }
 
@@ -232,7 +247,9 @@ class WebsiteController extends Controller
         $cursos_menu = Curso::where('visible', '=', '1')->get();
         $depoimentos = Depoimento::where('visible', '=', '1')->get();
         $depoimentosVideo = Depoimento::where('visible', '=', '1')->where('video', '<>', '""')->where('video', '<>', '0')->get();
-    	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo'));
+        $title = 'Depoimentos sobre nossa Consultoria de Imagem - Ecole Brasil';
+        $description = 'Quem fez, aprova! Leia agora os depoimentos que nossos alunos deixaram após a realização dos cursos em nossa escola. Saiba mais!';
+    	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo', 'title', 'depoimentos'));
     }
 
     public function agenda()
@@ -254,7 +271,9 @@ class WebsiteController extends Controller
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-        return view('website.faq', compact('cursos_menu','formacoes'));
+        $title = 'Dúvidas Frequentes sobre Consultoria de Imagem - Ecole Brasil';
+        $description = 'Caso você tenha alguma dúvida sobre Consultoria de Imagem ou em algum de nossos cursos e informações, acesse esta página agora mesmo!';
+        return view('website.faq', compact('cursos_menu','formacoes', 'title', 'description'));
     }
 
     public function imprensa()
@@ -376,7 +395,9 @@ class WebsiteController extends Controller
         }
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-        return view('website.consultoras', compact('consultoras', 'formacoes', 'cursos_menu'));
+        $title = 'Conheças nossas Consultoras em Moda - Ecole Brasil';
+        $description = 'Conheça o time de Consultoras da Ecole Supérieure de Relooking. Somos formadas por uma equipe de Consultoras altamente qualificadas. Saiba mais!';
+        return view('website.consultoras', compact('consultoras', 'formacoes', 'cursos_menu', 'title', 'description'));
     }
 
     public function ead(Request $request)

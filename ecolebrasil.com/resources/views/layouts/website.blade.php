@@ -2,35 +2,29 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <script type="text/javascript">
-    /* <![CDATA[ */
-    var google_conversion_id = 817901863;
-    var google_custom_params = window.google_tag_params;
-    var google_remarketing_only = true;
-    /* ]]> */
-    </script>
-    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-    </script>
-    <noscript>
-    <div style="display:inline;">
-    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/817901863/?guid=ON&amp;script=0"/>
-    </div>
-    </noscript>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118987320-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6MZRCZ');</script>
+<!-- End Google Tag Manager -->
 
-      gtag('config', 'UA-118987320-1');
-    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ef4060" />
+    @if(!empty($description))
+      <meta name="description" content="{{$description}}">
+    @else
+      <meta name="description" content="">
+    @endif
     <link rel="shortcut icon" href="{{ asset('images/ecole-logo-depoimento.png') }}" type="image/x-icon">
-    <title>Ecole Supérieure de Relooking</title>
+    @if(!empty($title))
+      <title>{{$title}}</title>
+    @else
+       <title>Ecole Brasil</title>
+    @endif
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -55,6 +49,11 @@ iframe{
 
 </style>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6MZRCZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -248,5 +247,6 @@ iframe{
     $("#btn-news").attr('disabled', 'disabled');
   });
 </script>
+@yield('content-js')
 </body>
 </html>

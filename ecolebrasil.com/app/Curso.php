@@ -17,6 +17,8 @@ class Curso extends Model
 							'card',
 							'ementa',
 							'slug',
+							'title',
+							'description',
 							'ministrantes',
 							'modelo',
 							'contrato_curso',
