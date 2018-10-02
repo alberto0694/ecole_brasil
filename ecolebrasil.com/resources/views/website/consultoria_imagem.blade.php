@@ -553,7 +553,7 @@
 		<div class="col-md-7 col-md-offset-4 hidden-md hidden-lg ebook-mobile">
 			<h2>QUER SER UMA CONSULTORA DE IMAGEM DE SUCESSO?</h2>
 			<p>Preparamos um ebook gratuito que abordará os principais temas sobre o mercado de consultoria e coaching de imagem.</p>
-			<buton class="button-ecole-ebook">BAIXE O EBOOK GRÁTIS</button>
+			<buton data-toggle="modal" data-target="#modal-ebook" class="button-ecole-ebook">BAIXE O EBOOK GRÁTIS</button>
 		</div>
 	</div>
 </div>
