@@ -146,7 +146,7 @@ class WebsiteController extends Controller
         $cursos_menu = Curso::where('visible', '=', '1')->get();
         $title = 'Manifesto - Ecole Supérieure de Relooking';
         $description = 'Não é roupa, é a pessoa. Não é sobre saber o que vestir, é sobre sentir. Ser. Não é só a cor, é o que ela representa para a alma. Leia nosso manifesto!';
-        return view('website.manifesto', compact('cursos_menu','formacoes'));
+        return view('website.manifesto', compact('cursos_menu','formacoes', 'title', 'description'));
     }
 
     public function equipe()
@@ -249,7 +249,7 @@ class WebsiteController extends Controller
         $depoimentosVideo = Depoimento::where('visible', '=', '1')->where('video', '<>', '""')->where('video', '<>', '0')->get();
         $title = 'Depoimentos sobre nossa Consultoria de Imagem - Ecole Brasil';
         $description = 'Quem fez, aprova! Leia agora os depoimentos que nossos alunos deixaram após a realização dos cursos em nossa escola. Saiba mais!';
-    	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo', 'title', 'depoimentos'));
+    	return view('website.depoimentos', compact('cursos_menu','formacoes', 'depoimentos', 'depoimentosVideo', 'title', 'depoimentos', 'description'));
     }
 
     public function agenda()

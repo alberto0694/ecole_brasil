@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "07a5d810-2359-4a9c-89b8-5393c1a778b6",
+		"name": "Pagar.me",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Transaction Cartão de Crédito",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"api_key\": \"ak_live_0kFS2YtKOjVA5WOYV1Khk9D9Fm3UU1\",\r\n    \"amount\": 100,\r\n    \"installments\": 1,\r\n    \"card_number\": \"49844254784902916\",\r\n    \"card_cvv\": \"414\",\r\n    \"card_expiration_date\": \"1221\",\r\n    \"card_holder_name\": \"Alberto Pimentel Antunes\",\r\n    \"customer\": {\r\n      \"external_id\": \"#3311\",\r\n      \"name\": \"Alberto Pimentel Antunes\",\r\n      \"type\": \"individual\",\r\n      \"country\": \"br\",\r\n      \"email\": \"mopheus@nabucodonozor.com\",\r\n      \"documents\": [\r\n        {\r\n          \"type\": \"cpf\",\r\n          \"number\": \"05544749990\"\r\n        }\r\n      ],\r\n      \"phone_numbers\": [\"+5511999998888\"]\r\n    },\r\n    \"billing\": {\r\n      \"name\": \"Trinity Moss\",\r\n      \"address\": {\r\n        \"country\": \"br\",\r\n        \"state\": \"sp\",\r\n        \"city\": \"Cotia\",\r\n        \"street\": \"Rua Matrix\",\r\n        \"street_number\": \"9999\",\r\n        \"zipcode\": \"06714360\"\r\n      }\r\n    },\r\n    \"items\": [\r\n      {\r\n        \"id\": \"r123\",\r\n        \"title\": \"Red pill\",\r\n        \"unit_price\": 10,\r\n        \"quantity\": 1,\r\n        \"tangible\": false\r\n      }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://api.pagar.me/1/transactions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pagar",
+						"me"
+					],
+					"path": [
+						"1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Estorno",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"api_key\": \"ak_live_0kFS2YtKOjVA5WOYV1Khk9D9Fm3UU1\"\n}"
+				},
+				"url": {
+					"raw": "https://api.pagar.me/1/transactions/57975110/refund",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pagar",
+						"me"
+					],
+					"path": [
+						"1",
+						"transactions",
+						"57975110",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Boleto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 2100, \r\n    \"api_key\": \"ak_live_0kFS2YtKOjVA5WOYV1Khk9D9Fm3UU1\",\r\n    \"payment_method\": \"boleto\",\r\n    \"customer\":{\r\n        \"type\": \"individual\",\r\n        \"country\": \"br\",\r\n        \"name\": \"Alberto Pimentel Antunes\",\r\n        \"documents\": [{\r\n            \"type\": \"cpf\",\r\n            \"number\": \"05544749990\"\r\n        }]\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://api.pagar.me/1/transactions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pagar",
+						"me"
+					],
+					"path": [
+						"1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

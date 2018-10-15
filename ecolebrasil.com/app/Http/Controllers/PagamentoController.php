@@ -12,17 +12,29 @@ class PagamentoController extends Controller
 {
     public function doPayment(Request $request)
     {
-      $valor = null;
-      if($request->agenda_id){
-    	   $valor = Agenda::find($request->agenda_id)->valor;
-      }
+        $valor = null;
+        $id = "";
+        $title = "";
+        if($request->agenda_id){
+            $agenda = Agenda::find($request->agenda_id);
+            $valor = $agenda->valor;
+            $id = "agenda#".$request->agenda_id;
+            $title = $agenda->curso->nome;
+        }
 
-      if($request->inadimplencia_id){
-        $valor = Inadimplencia::find($request->inadimplencia_id)->valor;
-      }
+        if($request->inadimplencia_id){
+            $inadimplencia = Inadimplencia::find($request->inadimplencia_id);
+            $valor = $inadimplencia->valor;
+            $id = "inadimplencia#".$inadimplencia->id;
+            $title = $inadimplencia->razao_pagamento;
+        }
 
+        $valor = str_replace(",", "", (String)$valor);
+        $valor = str_replace(".", "", (String)$valor);
+
+        $valor =100;
   		$client = new Client();
-  		$url = 'http://kyadevelopers.com.br/api/erede/services/ServicesController?servicename=Komerci$GetAuthorizedSP';
+  		$url = 'https://api.pagar.me/1/transactions';
   		$data = [
   			'timeout' => 30,
 		    'headers' => [
@@ -33,20 +45,51 @@ class PagamentoController extends Controller
               'Content-Type' => 'application/json'
 		    ],
 		    'json' => [
-               'ano' => (int)($request->ano),
-               'conftxn' => "S",
-               'cvc2' => (int)($request->cvc2),
-               'filiacao' => 74450930,
-               'mes' => (int)($request->mes),
-               'nrcartao' => (String)($request->nrcartao),
-               'numpedido' => 1,
-               'parcelas' => (int)($request->parcelas),
-               'portador' => (String)($request->portador),
-               'total' => (float)($valor),
-               'transacao' => (int)($request->transacao)
+                "api_key" => "ak_live_0kFS2YtKOjVA5WOYV1Khk9D9Fm3UU1",
+                "amount" => (int)$valor,
+                "installments" => (int)($request->parcelas),
+                "card_number" => (String)($request->nrcartao),
+                "card_cvv" => (String)($request->cvc2),
+                "card_expiration_date" => (String)($request->mes).(String)($request->ano),
+                "card_holder_name" => (String)($request->portador),
+                "customer" => [
+                  "external_id" => $id,
+                  "name" => (String)($request->portador),
+                  "type" => "individual",
+                  "country" => "br",
+                  "email" => (String)($request->email),
+                  "documents" => [
+                    0 => [
+                      "type" => "cpf",
+                      "number" => (String)($request->cpf_titular)
+                    ]
+                  ],
+                  "phone_numbers" => ["+55".(String)($request->telefone)]
+                ],
+                "billing" => [
+                  "name" => (String)($request->portador),
+                  "address" => [
+                    "country" => "br",
+                    "state" => (String)($request->estado),
+                    "city" => (String)($request->cidade),
+                    "street" => (String)($request->rua),
+                    "street_number" => (String)($request->numero),
+                    "zipcode" => (String)($request->cep)
+                  ]
+                ],
+                "items" => [
+                  0 => [
+                    "id" => $id,
+                    "title" => $title,
+                    "unit_price" => (int)$valor,
+                    "quantity" => 1,
+                    "tangible" => false
+                  ]
+                ]
+
 		    ],
   		];
-      // dd($data);
+
   		$response_client = $client->request('POST', $url, $data);
   		$json_response = json_decode($response_client->getBody()->getContents());
   		$response = response()->json($json_response, 200);

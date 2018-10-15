@@ -41,6 +41,10 @@
     border-radius: 15px;
 }
 
+.header-page-content{
+  background-image: url('{{ asset('images/inscricao.png')  }}');
+}
+
 @media screen and (max-width: 768px) {
 
     .stepwizard {
@@ -49,9 +53,6 @@
         position: relative;
     }
 }
-  .header-page-content{
-    background-image: url('{{ asset('images/inscricao.png')  }}');
-  }
 </style>
  <div class="row" style="margin: 0; padding: 0">
   <div class="col-md-12 header-page-content" style=""></div>
@@ -143,8 +144,39 @@
                       </div>
                     </div>
                     <div class="col-md-12 col-xs-12">
+                      <div class="row" style="padding-left: 15px">
+                        <label class="control-label">Estado</label>
+                      </div>
                       <div class="form-group">
-                        <input required name="endereco_estado" id="endereco_estado" type="text"  class="form-control" placeholder="Estado"  />
+                        <select required name="endereco_estado" id="endereco_estado" name="estado" class="form-control" >
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="se">Sergipe</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="to">Tocantins</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -241,6 +273,12 @@
                       <label class="control-label">Nome Completo do Titular do cartão</label>
                       <label class="control-label"><h6>(OBS: O nome precisa ser escrito sem abreviações)</h6></label>
                       <input required name="nome_cartao" id="nome_cartao" maxlength="100" type="text"  class="form-control" placeholder="Informe o nome completo do titular do cartão"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">CPF do Titular do cartão</label>
+                      <input required  maxlength="11" name="cpf_titular" id="cpf_titular" type="number"  class="form-control" placeholder="CPF do Titular do cartão"  />
                     </div>
                   </div>
                   <div class="row" style="padding-left: 15px; margin-bottom: 10px">
@@ -354,27 +392,20 @@ function  getAgenda(){
             thousandsSeparator: '',
             clearOnEmpty: false
         });
-        $("#transacao").val(jsonArr[0].transacao);
         $("#modelo").val(jsonArr[0].modelo);
 
         $('#num_parcelas').find('option').remove();
         let max = parseInt(jsonArr[0].max_parcelas);
         if(max > 1){
           $(".parcelas-class").show();
-          $('#num_parcelas').append('<option value="0">1 (Á vista) </option>')
+          $('#num_parcelas').append('<option value="1">1 (Á vista) </option>')
           for(var i = 2; i <= max; i++){
               $('#num_parcelas').append('<option value="'+ i +'">'+ i +' </option>');
           }
           $('#num_parcelas').val("0");
         }else{
-          $('#num_parcelas').append('<option selected value="0">0</option>');
+          $('#num_parcelas').append('<option selected value="1">1</option>');
           $(".parcelas-class").hide();
-        }
-
-        if($('#num_parcelas').val() == '0'){
-          $('#transacao').val('04');
-        }else{
-          $('#transacao').val('08');
         }
     }
   });
@@ -386,14 +417,6 @@ $(window).on('load',function(){
 $(document).ready(function () {
     $("#agenda_id").change(function(){
       getAgenda();
-    });
-
-    $("#num_parcelas").change(function(){
-      if($(this).val() == '0'){
-        $('#transacao').val('04');
-      }else{
-        $('#transacao').val('08');
-      }
     });
 
     $("#comprar_curso").click(function(){
@@ -417,7 +440,14 @@ $(document).ready(function () {
                           parcelas:$("#num_parcelas").val(),
                           portador:$("#nome_cartao").val(),
                           agenda_id:$("#agenda_id").val(),
-                          transacao:$("#transacao").val()
+                          cpf_titular:$("#cpf_titular").val(),
+                          email: $("#email").val(),
+                          telefone: $("#telefone").val(),
+                          cep: $("#endereco_cep").val(),
+                          rua: $("#endereco_rua").val(),
+                          cidade: $("#endereco_cidade").val(),
+                          estado: $("#endereco_estado").val(),
+                          numero: $("#endereco_numero").val()
                       }
                   }).done(function (response) {});
               },
@@ -473,22 +503,6 @@ $(document).ready(function () {
                   }
               }
           });
-
-          //   //retorno de sucesso
-          //   // {
-          //   //     "confmsgret": "CONFIRMACAO COM SUCESSO",
-          //   //     "codret": 0,
-          //   //     "numsqn": 5010978,
-          //   //     "data": "20180107",
-          //   //     "numautent": 93390,
-          //   //     "msgret": "Autorizado+com+sucesso",
-          //   //     "numautor": "885044",
-          //   //     "origembin": "BR",
-          //   //     "numcv": 5010978,
-          //   //     "numpedido": 1
-          //   // }
-          //   }
-          // });
     });
 
     $('.date-picker').datepicker({
@@ -568,6 +582,5 @@ $(document).ready(function () {
   });
   $('div.setup-panel div a.btn-primary').trigger('click');
 });
-
 </script>
 @endsection

@@ -355,6 +355,10 @@
 		width: 100%;
 	}
 
+	.margin-modal{
+		margin-right: 15px;
+	}
+
 }
 
 @media screen and (max-width: 380px) {
@@ -639,37 +643,72 @@
 @endsection
 <div id="modal-ebook" class="modal fade" role="dialog" style="margin-right: -16px">
   <div class="modal-dialog">
+  	<style type="text/css">
+  		.container-ebook input{
+  			max-width: 90%;
+  			display: block;
+  			margin: 0 auto;
+		    margin-top: 15px;
+		    display: block;
+		    min-height: 50px;
+		    padding: 10px;
+		    color: black;
+  		}
 
+  		.button-close-ebook{
+			background: none;
+			border: none;
+			position: absolute;
+			float: right;
+			right: 10px;
+			font-size: 15pt;
+			font-weight: 700;
+  		}
+
+  		.img-ebook{
+  			display: block;
+  			margin: 0 auto;
+  			max-width: 100%;
+  		}
+
+  		.container-ebook, .modal-ebbok, .modal-content-ebook{
+  			background: #666666;
+  			color: white;
+  		}
+
+  		.modal-content.modal-content-ebook{
+  			box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+  			background-color: #fff0;
+  		}
+
+  		.descricao-ebook{
+		    max-width: 350px;
+		    margin: 0 auto;
+		    text-align: center;
+  		}
+  	</style>
     <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Receba seu Ebook grátis!</h4>
-      </div>
-      <div class="modal-body">
+    <div class="modal-content modal-content-ebook margin-modal">
+      <div class="modal-body modal-ebbok">
         <div class="row">
-        	<div class="container-modal">
-				<!-- Formulário -->
-				<style>body {background-color: transparent !important; } </style>
-				   <link rel='stylesheet' href='https://blob.llimages.com/machine-files/all-css/form-ll.css'>
-				   <form action="https://leadlovers.com/Pages/Index/205214" method="post" >
-				   <input style="max-width: 550px;" id="id" name="id" type="hidden" value="205214" />
-				   <input style="max-width: 550px;" id="pid" name="pid" type="hidden" value="7559514" />
-				   <input style="max-width: 550px;" id="list_id" name="list_id" type="hidden" value="205214" />
-				   <input style="max-width: 550px;" id="provider" name="provider" type="hidden" value="leadlovers" />
-				   <label for="name">Nome:</label>
-				   <input style="max-width: 550px;" class="form-control form-ll" id="name" name="name" placeholder="Informe o seu nome" type="text"  />
-				   <label for="email">E-mail:</label>
-				   <input style="max-width: 550px;" class="form-control form-ll" id="email" name="email" placeholder="E-mail" type="text" />
-				   <button class="btn btn-danger" style="padding: 10px 40px; margin:15px 0 5px;  " type="submit">Receber o ebook</button>
-				   <input style="max-width: 550px;" type="hidden" id="source" name="source" value="" />
-				   <img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />
+        	<div class="container-modal container-ebook">
+					<button type="button" class="button-close-ebook" data-dismiss="modal">X</button>
+					<img class="img-ebook" src="{{asset('images/pop-up-captura-ecole.jpg')}}">
+					<p class="descricao-ebook">Cadastre-se abaixo e receba direto no seu e-mail o link do ebook grátis.</p>
+				    <link rel='stylesheet' href='https://blob.llimages.com/machine-files/all-css/form-ll.css'>
+				    <form action="https://leadlovers.com/Pages/Index/205214" method="post" >
+				    <input id="id" name="id" type="hidden" value="205214" />
+				    <input id="pid" name="pid" type="hidden" value="7559514" />
+				    <input id="list_id" name="list_id" type="hidden" value="205214" />
+				    <input id="provider" name="provider" type="hidden" value="leadlovers" />
+				    <input id="name" name="name" placeholder="Nome" type="text"  />
+				    <input id="email" name="email" placeholder="E-mail" type="text" />
+				    <button class="button-ecole" style="background: #1bd641; box-shadow: 0px 7px 5px 0px #545454;" type="submit">Receber o ebook</button>
+				    <input type="hidden" id="source" name="source" value="" />
+				    <img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />
 				</form>
         	</div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
       </div>
     </div>
 
@@ -695,7 +734,7 @@
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content margin-modal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Forma de pagamento</h4>
@@ -714,48 +753,48 @@
         	</div>
         	<div class="container-modal container-formulario-pagamento" style="display: none">
         		<div class="col-md-12">
-                <ul style="padding-left:0px; color:gray">
-                    <li>
-                    	<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÂO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">
-                    		{{ csrf_field() }}
-			                <div class="form-group">
-			                  <label class="control-label">Seu nome completo</label>
-			                  <input required name="contato" type="text" class="full form-control ">
-			                </div>
-			                <div class="form-group">
-			                  <label class="control-label">Telefone ou Celular</label>
-			                  <input required name="telefone" type="text" class="full form-control ">
-			                </div>
-			                <div class="form-group">
-			                  <label class="control-label">E-mail</label>
-			                  <input required name="email" type="email" class="full form-control ">
-			                </div>
-			                <div class="form-group">
-			                  <label class="control-label">Cidade e Estado</label>
-			                  <input required name="cidade" type="text" class="full form-control ">
-			                </div>
-{{-- 			                <div class="form-group">
-			                  <label class="control-label">Como nos conheceu</label>
-			                  <input required name="ecole" type="text" class="full form-control ">
-			                </div> --}}
-			                <div class="form-group">
-			                	<label class="control-label">Cidade(s) que desejaria fazer o curso</label>
-			                  <input required name="cidade_curso" type="text" class="full form-control " >
-			                </div>
-{{-- 			                <div class="form-group"  style="display: none">
-			                  <label class="control-label">Deixe sua mensagem ou dúvida</label>
-			                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4">
-			                  	FORMULÁRIO
-			                  </textarea>
-			                </div> --}}
-                        <button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
-                          <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">
-                        </button>
-	                    </form>
-                    </li>
-                </ul>
-		</div>
-        	</div>
+	                <ul style="padding-left:0px; color:gray">
+	                    <li>
+	                    	<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÂO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">
+	                    		{{ csrf_field() }}
+				                <div class="form-group">
+				                  <label class="control-label">Seu nome completo</label>
+				                  <input required name="contato" type="text" class="full form-control ">
+				                </div>
+				                <div class="form-group">
+				                  <label class="control-label">Telefone ou Celular</label>
+				                  <input required name="telefone" type="text" class="full form-control ">
+				                </div>
+				                <div class="form-group">
+				                  <label class="control-label">E-mail</label>
+				                  <input required name="email" type="email" class="full form-control ">
+				                </div>
+				                <div class="form-group">
+				                  <label class="control-label">Cidade e Estado</label>
+				                  <input required name="cidade" type="text" class="full form-control ">
+				                </div>
+	{{-- 			                <div class="form-group">
+				                  <label class="control-label">Como nos conheceu</label>
+				                  <input required name="ecole" type="text" class="full form-control ">
+				                </div> --}}
+				                <div class="form-group">
+				                	<label class="control-label">Cidade(s) que desejaria fazer o curso</label>
+				                  <input required name="cidade_curso" type="text" class="full form-control " >
+				                </div>
+	{{-- 			                <div class="form-group"  style="display: none">
+				                  <label class="control-label">Deixe sua mensagem ou dúvida</label>
+				                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4">
+				                  	FORMULÁRIO
+				                  </textarea>
+				                </div> --}}
+	                        <button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+	                          <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">
+	                        </button>
+		                    </form>
+	                    </li>
+	                </ul>
+        		</div>
+			</div>
         </div>
       </div>
       <div class="modal-footer">
