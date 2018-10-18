@@ -302,6 +302,10 @@
 		margin: 0 auto;
 	}
 
+	#carousel-depoimentos .carousel-inner{
+    	min-height: 600px;
+	}
+
 	.container-modal .form-horizontal,
 	.container-modal .form-group {
 	    margin-right: 0px;
@@ -324,6 +328,11 @@
 		width: 90%;
 		margin: 0 auto;
 		margin-top: 50px;
+	}
+
+	.carousel-inner {
+	    padding-left: 30px;
+	    padding-right: 30px;
 	}
 
 	iframe{
@@ -464,8 +473,7 @@
 
 			<a style="color: white"  data-toggle="modal" data-target="#modal-pagamento" ><button class="button-ecole" style="background: #1bd641">QUERO ME INSCREVER</button><a>
 			<h5 class="duvidas-whats">Ou tirar dúvidas pelo</h5>
-			{{-- <button class="button-ecole"><a href="https://wa.me/5551991660914?text=sua%20mensagem">WHATSAPP (51) 991660914</a></button> --}}
-			<a style="color: white; text-decoration: none;" target="_blank" href="https://wa.me/5551991660914"><button class="button-ecole">WHATSAPP (51) 991660914</button></a>
+			<button class="button-ecole"><a style="color: white; text-decoration: none;" href="https://wa.me/5551991660914">WHATSAPP (51) 991660914</a></button>
 		</div>
 	</div>
 </div>
@@ -505,7 +513,7 @@
 		<div class="row">
 			<h5 class="nao-achou-cidade">Não achou na sua cidade?</h5>
 			{{-- <a style="color: white" href="{{ route('contato', ['curso_id' => $curso->id]) }}"> --}}
-				<a style="color: white" href="{{ route('contato', ['curso_id' => $curso->id]) }}"><button class="button-ecole-red">QUERO ESSE CURSO NA MINHA CIDADE</button></a>
+				<button class="button-ecole-red"><a style="color: white" href="{{ route('contato', ['curso_id' => $curso->id]) }}">QUERO ESSE CURSO NA MINHA CIDADE</a></button>
 			{{-- </a> --}}
 		</div>
 
@@ -588,7 +596,7 @@
 		<h3>MAIS DE 10 MIL ALUNOS FORMADOS</h3>
 	</div>
 	<div class="col-md-8 col-md-offset-2">
-		<div id="carousel-depoimentos" class="carousel slide" data-ride="carousel">
+		<div id="carousel-depoimentos" class="carousel slide" data-ride="carousel" >
 
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner">
@@ -689,14 +697,15 @@
   	</style>
     <!-- Modal content-->
     <div class="modal-content modal-content-ebook margin-modal">
-      <div class="modal-body modal-ebbok">
+    	<form action="https://leadlovers.com/Pages/Index/205214" method="post" >
+      {{-- <div class="modal-body modal-ebbok">
         <div class="row">
         	<div class="container-modal container-ebook">
 					<button type="button" class="button-close-ebook" data-dismiss="modal">X</button>
 					<img class="img-ebook" src="{{asset('images/pop-up-captura-ecole.jpg')}}">
 					<p class="descricao-ebook">Cadastre-se abaixo e receba direto no seu e-mail o link do ebook grátis.</p>
 				    <link rel='stylesheet' href='https://blob.llimages.com/machine-files/all-css/form-ll.css'>
-				    <form action="https://leadlovers.com/Pages/Index/205214" method="post" >
+
 				    <input id="id" name="id" type="hidden" value="205214" />
 				    <input id="pid" name="pid" type="hidden" value="7559514" />
 				    <input id="list_id" name="list_id" type="hidden" value="205214" />
@@ -706,10 +715,11 @@
 				    <button class="button-ecole" style="background: #1bd641; box-shadow: 0px 7px 5px 0px #545454;" type="submit">Receber o ebook</button>
 				    <input type="hidden" id="source" name="source" value="" />
 				    <img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />
-				</form>
+
         	</div>
         </div>
-      </div>
+      </div> --}}
+      </form>
     </div>
 
   </div>
@@ -725,7 +735,86 @@
 		$('#modal-pagamento').on('shown.bs.modal', function () {
 			$(".container-escolha-pagamento").show();
 			$(".container-formulario-pagamento").hide();
-		})
+		});
+
+		$("#modal-ebook .modal-content form").append('<div class="modal-body modal-ebbok">' +
+        '<div class="row">' +
+        	'<div class="container-modal container-ebook">' +
+				'<button type="button" class="button-close-ebook" data-dismiss="modal">X</button>' +
+				'<img class="img-ebook" src="{{asset('images/pop-up-captura-ecole.jpg')}}">' +
+				'<p class="descricao-ebook">Cadastre-se abaixo e receba direto no seu e-mail o link do ebook grátis.</p>' +
+			    '<link rel=stylesheet" href="https://blob.llimages.com/machine-files/all-css/form-ll.css>' +
+				'<form action="https://leadlovers.com/Pages/Index/205214" method="post" >' +
+				    '<input id="id" name="id" type="hidden" value="205214" />' +
+				    '<input id="pid" name="pid" type="hidden" value="7559514" />' +
+				    '<input id="list_id" name="list_id" type="hidden" value="205214" />' +
+				    '<input id="provider" name="provider" type="hidden" value="leadlovers" />' +
+				    '<input id="name" name="name" placeholder="Nome" type="text"  />' +
+				    '<input id="email" name="email" placeholder="E-mail" type="text" />' +
+				    '<button class="button-ecole" style="background: #1bd641; box-shadow: 0px 7px 5px 0px #545454;" type="submit">Receber o ebook</button>' +
+				    '<input type="hidden" id="source" name="source" value="" />' +
+				    '<img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />' +
+				'</form>' +
+        	'</div>' +
+        '</div>' +
+      '</div>');
+
+		$("#modal-pagamento .modal-content").append(
+		'<div class="modal-header">' +
+        	'<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+        '<h4 class="modal-title">Forma de pagamento</h4>' +
+      '</div>' +
+      '<div class="modal-body">' +
+        '<div class="row">' +
+        	'<div class="container-modal container-escolha-pagamento">' +
+        		'<div class="col-md-6">' +
+        			'<a href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><span class="icones-pagamento"><i class="far fa-credit-card"></i></span></a>' +
+        			'<h4>Cartão de Crédito</h4>' +
+        		'</div>' +
+        		'<div class="col-md-6">' +
+        			'<a class="boleto-bancario"><span class="icones-pagamento"><i class="fas fa-barcode"></i></span></a>' +
+        			'<h4>Boleto Bancário</h4>' +
+        		'</div>' +
+        	'</div>' +
+        	'<div class="container-modal container-formulario-pagamento" style="display: none">' +
+        		'<div class="col-md-12">' +
+	                '<ul style="padding-left:0px; color:gray">' +
+	                    '<li>' +
+	                    	'<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÂO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">' +
+	                    		'{{ csrf_field() }}' +
+				                '<div class="form-group">' +
+				                  '<label class="control-label">Seu nome completo</label>' +
+				                  '<input required name="contato" type="text" class="full form-control ">' +
+				                '</div>' +
+				                '<div class="form-group">' +
+				                  '<label class="control-label">Telefone ou Celular</label>' +
+				                  '<input required name="telefone" type="text" class="full form-control ">' +
+				                '</div>' +
+				                '<div class="form-group">' +
+				                  '<label class="control-label">E-mail</label>' +
+				                  '<input required name="email" type="email" class="full form-control ">' +
+				                '</div>' +
+				                '<div class="form-group">' +
+				                  '<label class="control-label">Cidade e Estado</label>' +
+				                  '<input required name="cidade" type="text" class="full form-control ">' +
+				                '</div>' +
+				                '<div class="form-group">' +
+				                	'<label class="control-label">Cidade(s) que desejaria fazer o curso</label>' +
+				                  '<input required name="cidade_curso" type="text" class="full form-control " >' +
+				                '</div>' +
+		                        '<button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">' +
+		                          '<img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">' +
+		                        '</button>' +
+		                    '</form>' +
+	                    '</li>' +
+	                '</ul>' +
+        		'</div>' +
+			'</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="modal-footer">' +
+        '<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>' +
+      '</div>');
 	});
 </script>
 @endsection
@@ -735,7 +824,7 @@
 
     <!-- Modal content-->
     <div class="modal-content margin-modal">
-      <div class="modal-header">
+      {{-- <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Forma de pagamento</h4>
       </div>
@@ -743,7 +832,7 @@
         <div class="row">
         	<div class="container-modal container-escolha-pagamento">
         		<div class="col-md-6">
-        			<a target="_blank" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><span class="icones-pagamento"><i class="far fa-credit-card"></i></span></a>
+        			<a href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><span class="icones-pagamento"><i class="far fa-credit-card"></i></span></a>
         			<h4>Cartão de Crédito</h4>
         		</div>
         		<div class="col-md-6">
@@ -773,23 +862,13 @@
 				                  <label class="control-label">Cidade e Estado</label>
 				                  <input required name="cidade" type="text" class="full form-control ">
 				                </div>
-	{{-- 			                <div class="form-group">
-				                  <label class="control-label">Como nos conheceu</label>
-				                  <input required name="ecole" type="text" class="full form-control ">
-				                </div> --}}
 				                <div class="form-group">
 				                	<label class="control-label">Cidade(s) que desejaria fazer o curso</label>
 				                  <input required name="cidade_curso" type="text" class="full form-control " >
 				                </div>
-	{{-- 			                <div class="form-group"  style="display: none">
-				                  <label class="control-label">Deixe sua mensagem ou dúvida</label>
-				                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4">
-				                  	FORMULÁRIO
-				                  </textarea>
-				                </div> --}}
-	                        <button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
-	                          <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">
-	                        </button>
+		                        <button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+		                          <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">
+		                        </button>
 		                    </form>
 	                    </li>
 	                </ul>
@@ -799,7 +878,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-      </div>
+      </div> --}}
     </div>
 
   </div>

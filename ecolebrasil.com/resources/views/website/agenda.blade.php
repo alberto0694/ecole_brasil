@@ -2,6 +2,8 @@
 <style type="text/css">
 	.desc-agenda{
 		color:rgba(239, 64, 96, 1);
+		text-align: center;
+		display: block;
 	}
 	.bold{
 		font-weight: bold;

@@ -124,7 +124,7 @@
                           <div class="col-md-12" style="padding: 0">
                               <select class="col-md-3 form-control" name="num_parcelas" id="num_parcelas">
                                 <?php $array = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10); ?>
-                                <option value="00" > Á vista </option>
+                                <option value="1" > Á vista </option>
                                 @foreach($array as $item)
                                   @if($inadimplencia->max_parcelas >= $item)
                                     <option value="{{ $item }}" > {{ $item }}x </option>
@@ -136,7 +136,7 @@
                       </div>
                   </div>
               @else
-                <input type="hidden" name="num_parcelas" id="num_parcelas" value="00">
+                <input type="hidden" name="num_parcelas" id="num_parcelas" value="1">
               @endif
                 <div class="row" style="padding-left: 15px; margin-top: 10px">
                   <div class="form-group">
@@ -205,6 +205,18 @@
                           <option value="to">Tocantins</option>
                       </select>
                     </div>
+                  </div>
+                </div>
+                <div class="row" style="padding-left: 15px; ">
+                  <div class="form-group">
+                    <label class="control-label">Telefone</label>
+                    <input required maxlength="9" name="telefone" id="telefone" type="text"  class="form-control" placeholder="Telefone do aluno"  />
+                  </div>
+                </div>
+                <div class="row" style="padding-left: 15px; ">
+                  <div class="form-group">
+                    <label class="control-label">Código de Área do Telefone</label>
+                    <input required maxlength="2" name="telefone_area" id="telefone_area" type="text"  class="form-control" placeholder="Código de área do telefone"  />
                   </div>
                 </div>
                 <div class="row" style="padding-left: 15px; ">
@@ -303,13 +315,6 @@ $(document).ready(function () {
         thousandsSeparator: '',
         clearOnEmpty: false
     });
-    $("#num_parcelas").change(function(){
-      if( ($(this).val() > 0)){
-        $("#transacao").val('{{ $inadimplencia->transacao }}');
-      }else{
-        $("#transacao").val('04');
-      }
-    });
     $("#comprar_curso").click(function(){
           $.dialog({
               title: '',
@@ -337,7 +342,8 @@ $(document).ready(function () {
                           rua: $("#endereco_rua").val(),
                           cidade: $("#endereco_cidade").val(),
                           estado: $("#endereco_estado").val(),
-                          numero: $("#endereco_numero").val()
+                          numero: $("#endereco_numero").val(),
+                          telefone_area: $("#telefone_area").val()
                       }
                   }).done(function (response) {});
               },
@@ -345,8 +351,8 @@ $(document).ready(function () {
                   var self = this;
                   if(request != null){
                       if(request.responseJSON != null){ //SUCESSO
-                          if(request.responseJSON.codret != null){ //SUCESSO
-                              if(request.responseJSON.codret == 0){ //SUCESSO
+                          if(request.responseJSON.status != null){ //SUCESSO
+                              if(request.responseJSON.status == "paid"){ //SUCESSO
                                   $.ajax({
                                       type: "POST",
                                       url:  '{{ route('pagamento.inadimplencia', $inadimplencia->id) }}',

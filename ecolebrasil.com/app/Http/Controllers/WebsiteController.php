@@ -27,6 +27,47 @@ use App\NewsLetter;
 class WebsiteController extends Controller
 {
 
+    public function compress_image($source_url, $destination_url, $quality) {
+
+        $info = getimagesize($source_url);
+
+        if ($info['mime'] == 'image/jpeg')
+            $image = imagecreatefromjpeg($source_url);
+        elseif ($info['mime'] == 'image/gif')
+            $image = imagecreatefromgif($source_url);
+        elseif ($info['mime'] == 'image/png')
+            $image = imagecreatefrompng($source_url);
+
+        imagejpeg($image, $destination_url, $quality);
+        return $destination_url;
+    }
+
+    public function getDirContents($dir, &$results = array()){
+        $files = scandir($dir);
+
+        foreach($files as $key => $value){
+            $path = realpath($dir.DIRECTORY_SEPARATOR.$value);
+            if(!is_dir($path)) {
+                $results[] = $path;
+            } else if($value != "." && $value != "..") {
+                getDirContents($path, $results);
+                $results[] = $path;
+            }
+        }
+
+        return $results;
+    }
+
+    public function otimizar_imagens()
+    {
+
+        $dirs = $this->getDirContents(asset('images'));
+        foreach ($dirs as $key) {
+            echo $key.'<br>';
+            //$this->compress_image($key, $key, 70);
+        }
+    }
+
     public function sendContato(Request $request)
     {
         $data = [   "contato" => $request->contato,

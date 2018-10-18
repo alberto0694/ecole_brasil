@@ -489,5 +489,6 @@ Route::get('/regularizacao/{id}', 'WebsiteController@regulariza_inadimplencia')-
 Route::post('/inscricao_post', 'WebsiteController@sendInscricao')->name('email.inscricao');
 Route::post('/contato_post', 'WebsiteController@sendContato')->name('email.contato');
 Route::post('/newsletter_post', 'WebsiteController@sendNewsletter')->name('email.newsletter');
+Route::get('/otimizar_imagens', 'WebsiteController@otimizar_imagens');
 
 Route::get('/{id}', 'WebsiteController@cursos')->name('cursos');

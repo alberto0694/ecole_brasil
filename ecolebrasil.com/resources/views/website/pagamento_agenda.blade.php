@@ -54,12 +54,6 @@
     }
 }
 </style>
- <div class="row" style="margin: 0; padding: 0">
-  <div class="col-md-12 header-page-content" style=""></div>
-  <div class="col-md-12 header-page">
-    <p class="gray-dark-color">INSCRIÇÃO</p>
-  </div>
- </div>
   <div class="row" style="margin: 5px; margin-top: 20px">
     <div class="container">
       @if($agendas->count() > 0)
@@ -87,9 +81,20 @@
                           </div>
 
                           <div class="col-md-12" style="padding: 0">
+                              <input required disabled maxlength="100" name="nome_aluno" id="nome_aluno" type="text"  class="form-control" placeholder="Informe o nome do aluno" value="{{ $curso->nome }}"  />
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; margin-bottom: 10px">
+                      <div class="form-group">
+                          <div class="row" style="padding-left: 15px">
+                            <label class="control-label">Cidade</label>
+                          </div>
+
+                          <div class="col-md-12" style="padding: 0">
                               <select class="col-md-3 form-control" name="agenda_id" id="agenda_id">
                                   @foreach($agendas as $agenda)
-                                    <option value="{{$agenda->id}}">{{$agenda->curso->nome}} - {{ $agenda->cidade }} - {{ $agenda->formatedDate }}</option>
+                                    <option value="{{$agenda->id}}">{{ $agenda->cidade }} - {{ $agenda->formatedDate }}</option>
                                   @endforeach
                               </select>
 
@@ -207,7 +212,13 @@
                   <div class="row" style="padding-left: 15px; ">
                     <div class="form-group">
                       <label class="control-label">Telefone</label>
-                      <input required name="telefone" id="telefone" type="text"  class="form-control" placeholder="Telefone do aluno"  />
+                      <input required maxlength="9" name="telefone" id="telefone" type="text"  class="form-control" placeholder="Telefone do aluno"  />
+                    </div>
+                  </div>
+                  <div class="row" style="padding-left: 15px; ">
+                    <div class="form-group">
+                      <label class="control-label">Código de Área do Telefone</label>
+                      <input required maxlength="2" name="telefone_area" id="telefone_area" type="text"  class="form-control" placeholder="Código de área do telefone"  />
                     </div>
                   </div>
                   <div class="row" style="padding-left: 15px; ">
@@ -447,7 +458,8 @@ $(document).ready(function () {
                           rua: $("#endereco_rua").val(),
                           cidade: $("#endereco_cidade").val(),
                           estado: $("#endereco_estado").val(),
-                          numero: $("#endereco_numero").val()
+                          numero: $("#endereco_numero").val(),
+                          telefone_area: $("#telefone_area").val()
                       }
                   }).done(function (response) {});
               },
@@ -456,8 +468,8 @@ $(document).ready(function () {
                   self.setContent('<div class="col-md-10 col-md-offset-1" style="color:#ed3656;"><label style="text-align: center; width: 100%"><b>Pagamento Efetuado!</b></label><br><label style="text-align: center; width: 100%"><b>Gerando seu acesso aguarde...</b></label><br></div>');
                   if(request != null){
                       if(request.responseJSON != null){ //SUCESSO
-                          if(request.responseJSON.codret != null){ //SUCESSO
-                              if(request.responseJSON.codret == 0){ //SUCESSO
+                          if(request.responseJSON.status != null){ //SUCESSO
+                              if(request.responseJSON.status == "paid"){ //SUCESSO
                                     $.ajax({
                                       type: "POST",
                                       headers: {
