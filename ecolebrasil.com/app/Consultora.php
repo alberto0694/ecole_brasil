@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Consultora extends Model
 {
-    protected $fillable = ['nome', 'cidade', 'avatar','site'];
+    protected $fillable = ['nome', 'cidade', 'avatar','site', 'whatsapp'];
 }

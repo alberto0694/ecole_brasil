@@ -1,4 +1,4 @@
-pedir contrato para o "li e aceito"
+﻿pedir contrato para o "li e aceito"
 
 na hora do cadastro do video consegues dizer se queres somente o video, o depoimento ou os dois.
 
@@ -19,3 +19,7 @@ pedir as informações dos alunos que ela ja tem pra eu inserir na plataforma
  Unica coisa que percebi que nao foi feito é que  Na home quando apessoa clica em Faça sua inscrição - colocar a parte já pronta como o faça sua inscrição dos cursos
 
  Outra duvida - posso eu mesma colocar os cards dos cursos ne?
+
+	
+Usuário: ecole378
+Senha: bSgzM116x1

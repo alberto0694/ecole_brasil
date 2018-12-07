@@ -14,7 +14,10 @@ class Aluno extends Model
 							'avatar',
 							'user_id',
 							'descricao_html',
-							'profissao'
+							'profissao',
+              'liberado',
+              'meio_pagamento',
+              'reference_id'
 						];
 
   public function agendas()

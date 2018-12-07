@@ -15,9 +15,15 @@ class PagamentoController extends Controller
         $valor = null;
         $id = "";
         $title = "";
+        $meio = $request->exists('meio_pagamento') ? $request->query('meio_pagamento') : 'credit_card';
         if($request->agenda_id){
             $agenda = Agenda::find($request->agenda_id);
-            $valor = $agenda->valor;
+            if($meio == 'credit_card'){
+                $valor = floor($agenda->valor);
+                $valor = (String)$valor."00";
+            }else{
+                $valor = $agenda->valorComDesconto;
+            }
             $id = "agenda#".$request->agenda_id;
             $title = $agenda->curso->nome;
         }
@@ -25,6 +31,8 @@ class PagamentoController extends Controller
         if($request->inadimplencia_id){
             $inadimplencia = Inadimplencia::find($request->inadimplencia_id);
             $valor = $inadimplencia->valor;
+            $valor = floor($valor);
+            $valor = (String)$valor."00";
             $id = "inadimplencia#".$inadimplencia->id;
             $title = $inadimplencia->razao_pagamento;
         }
@@ -32,11 +40,10 @@ class PagamentoController extends Controller
         $valor = str_replace(",", "", (String)$valor);
         $valor = str_replace(".", "", (String)$valor);
 
-
     		$client = new Client();
     		$url = 'https://api.pagar.me/1/transactions';
     		$data = [
-    			'timeout' => 30,
+    		'timeout' => 30,
   		    'headers' => [
                 'Access-Control-Allow-Methods' => 'GET, POST, OPTIONS',
                 'Access-Control-Allow-Origin' => '*',
@@ -50,6 +57,7 @@ class PagamentoController extends Controller
                   "installments" => (int)($request->parcelas),
                   "card_number" => (String)($request->nrcartao),
                   "card_cvv" => (String)($request->cvc2),
+                  "payment_method" => $meio,
                   "card_expiration_date" => (String)($request->mes).(String)($request->ano),
                   "card_holder_name" => (String)($request->portador),
                   "customer" => [

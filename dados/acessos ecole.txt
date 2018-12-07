@@ -1,0 +1,41 @@
+﻿acessos
+
+http://br356.teste.website/~ecole378
+
+108.167.188.23
+ecole378
+bSgzM116x1
+
+
+ecolebrasil.com/admin-login
+Login: admin
+Senha: admin
+
+ftp.cluster010.ovh.net
+user: formacao
+pass: Sophie2015
+ 
+Gerenciamento da Hospedagem:
+https://www.ovh.com/managerv3/login.pl
+Voici le login : cj36993-ovh
+et mot de passe : Esr271551
+
+dns antigos
+
+ip: 213.186.33.19
+
+ns 1: dns111.ovh.net.
+ns 2: ns111.ovh.net.
+
+
+madimusel
+
+/** Nom de la base de données de WordPress. */
+define('DB_NAME', 'formacao2011');
+
+/** Utilisateur de la base de données MySQL. */
+define('DB_USER', 'formacao2011');
+
+/** Mot de passe de la base de données MySQL. */
+define('DB_PASSWORD', '6S3EMDF4');
+

@@ -40,7 +40,7 @@ class User extends Authenticatable
     {
         if($this->permission == 'PF'){
             return Professor::where('user_id', '=', $this->id)->get()->first()->avatar;
-        }else if($this->permission == 'AL'){
+        }else if($this->permission == 'AL' || $this->permission == 'AR'){
             return Aluno::where('user_id', '=', $this->id)->get()->first()->avatar;
         }else{
             return Administrador::where('user_id', '=', $this->id)->get()->first()->avatar;

@@ -20,11 +20,20 @@ class Agenda extends Model
                             'transacao',
                             'modelo',
     						'curso_id',
+                            'valorComDesconto',
     						'avatar'];
+
+    protected $appends = array('valorComDesconto');
 
     public function curso()
     {
         return $this->belongsTo('App\Curso', 'curso_id', 'id');
+    }
+
+
+    public function getValorComDescontoAttribute()
+    {
+        return (String)(floor($this->valor * .95)).".00";
     }
 
     public function getLabelComboAttribute()
@@ -34,7 +43,7 @@ class Agenda extends Model
 
     public function modulos()
     {
-     return $this->hasMany('App\Modulo')->orderBy('data_inicio', 'asc');
+     return $this->hasMany('App\Modulo')->where('visible', '=', '1')->orderBy('data_inicio', 'asc');
     }
 
     public function getModeloLabelAttribute()
@@ -49,6 +58,11 @@ class Agenda extends Model
     public function getFormatedDateAttribute()
     {
         return Carbon::parse($this->data_inicio)->format('d/m/Y');
+    }
+
+    public function getYearAttribute()
+    {
+        return Carbon::parse($this->data_inicio)->format('y');
     }
 
     public function getIndexMonthAttribute()
@@ -68,6 +82,6 @@ class Agenda extends Model
 
     public function getMonthResAttribute()
     {
-        return \Config::get('constants.meses_res')[$this->indexMonth - 1];
+        return \Config::get('constants.meses_res')[$this->indexMonth - 1].'/'.$this->year;
     }
 }

@@ -112,14 +112,9 @@
       <b style="color: #777777;">Bairro: {{ $endereco_bairro}}, {{ $endereco_cidade }}</b><br>
       <b style="color: #777777;">Estado: {{ $endereco_estado }}</b><br>
       <b style="color: #777777;">CEP: {{ $endereco_cep }}</b><br>
-      <b style="color: #777777;">Meio de pagamento: Cartão de Crédito</b><br>
-      <b style="color: #777777;">Titular do cartão: {{$portador}}</b><br>
+      <b style="color: #777777;">Meio de pagamento: Boleto Bancário pelo pagar.me</b><br>
       <b style="color: #777777;">Valor total pago: {{$agenda_valor}}</b><br>
-      @if($parcelas == '0')
-				<b style="color: #777777;">Pagamento: À vista</b><br>
-      @else
-      	<b style="color: #777777;">Pagamento: Parcelado em {{ $parcelas }} vezes</b><br>
-      @endif
+	  <b style="color: #777777;">Pagamento: À vista</b><br>
       <b style="color: #777777;">Email: {{$email}} </b><br>
       <b style="color: #777777;">Curso inscrito: {{$nome_curso}} </b><br>
       <b style="color: #777777;">Data início: {{$data_inicio}} </b><br>
@@ -176,9 +171,11 @@
 				<h4 align="center">Você se inscreveu em {{ $nome_curso }}.</h4>
 				<h4 align="center">Cidade: {{ $cidade }}.</h4>
 				<h4 align="center">Início: {{ $data_inicio }}.</h4>
+				<h4 align="center">Link para o boleto: {{ $link_boleto }}.</h4>
 
 				@if($modelo == 'D' || $consultoria == 3)
 					<h4 align="center">Acesse o link abaixo para ter acesso ao nosso conteúdo.</h4>
+					<h6 align="center">O acesso será liberado após a identificação do pagamento.</h6>
 					<h4 align="center">Ecole Brasil</h4>
 					<h3 align="center"><b>Suas credenciais:</b></h3>
 					<h3 align="center">Login: {{ $login }}</h3>

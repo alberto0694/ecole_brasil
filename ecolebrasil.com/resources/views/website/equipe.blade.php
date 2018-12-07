@@ -95,15 +95,6 @@
 		 			<h5 align="center" class="title-pink-begin-text">Professora</h5>
 		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Professora da Ecole, consultora de Imagem Pessoal e Profissional, Administradora de Empresas por formação, Marcela tem na valorização às pessoas, autoconhecimento, e no empoderamento sua maior motivação para dar aulas. Enxerga na metodologia da Ecole a ferramenta que buscava para criar insights agregadores, aguçar percepções  que fazem a diferença na vida dos seus alunos.</p>
 		 		</div>
-{{-- 		 		<div class="col-md-3 col-md-offset-1">
-		 			<div class="cs-item-frame"">
-						<div class="item-inside" style="background-image: url({{ asset('images/luiza-bem.png') }})"></div>
-					</div>
-		 			<h5 align="center" class="gray-dark-color">Luiza de Bem</h5>
-		 			<h5 align="center" class="title-pink-begin-text">Atendimento</h5>
-		 			<p style="text-align: justify; margin-bottom: 30px" class="gray-text"><i>"Modas desaparecem, mas o estilo é eterno" Yves- Saint Laurent. </i></p>
-		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Luiza de Bem é graduada em Psicologia pela PUC-RS e Consultora de Imagem pela Ecole. Ela acredita que a vestimenta é nosso melhor cartão de visita e quando descobrimos nossa essência, as escolhas fazem mais sentido. Como uma boa curiosa, está constantemente atualizando-se das tendências de mercado, e é com essa intensidade e otimismo que atende nossas alunas!</p>
-		 		</div> --}}
 		 		<div class="col-md-3 col-md-offset-1">
 		 			<div class="cs-item-frame"">
 						<div class="item-inside" style="background-image: url({{ asset('images/kelly-possebon.png') }})"></div>
@@ -113,19 +104,15 @@
 		 			<p style="text-align: justify; margin-bottom: 30px" class="gray-text"><i>“Quando temos segurança em nossa imagem, impactamos de forma positiva, transformando nossas chances de sucesso”</i></p>
 		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Apesar de ter crescido em meio a tecidos e costureiras da confecção de sua mãe, e vez ou outra bancar a consultora de estilo das amigas, a Kelly acabou mesmo no MBA em Mercado de Capitais. É gestora financeira da Ecole desde 2014. Entre suas demais atividades está a Mulher Capital, criada com objetivo de impactar o mundo atual, empoderando mulheres através da educação financeira.</p>
 		 		</div>
- 			</div>
- 			<div class="row margin-top">
-{{-- 		 		<div class="col-md-3 col-md-offset-1">
+		 		<div class="col-md-3 col-md-offset-1">
 		 			<div class="cs-item-frame"">
-						<div class="item-inside" style="background-image: url({{ asset('images/patricia-chiela.png') }})"></div>
+						<div class="item-inside" style="background-image: url({{ asset('images/roberta-selistre.jpg') }})"></div>
 					</div>
-		 			<h5 align="center" class="gray-dark-color">Patrícia Chiela</h5>
-		 			<h5 align="center" class="title-pink-begin-text">Publicitária</h5>
-		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Publicitaria de formação, pós graduada em Comunicação com o Mercado, Marketing e Marketing Digital, Patrícia Chiela possui experiência multidisciplinar de mais de 12 anos no mercado da comunicação. Após trabalhar na estratégia de diversas empresas nacionais e internacionais, hoje está a frente da sua consultoria, Patrícia Chiela Estratégia de Negócio, atendendo marcas em novos negócios, reposicionamento de mercado e branding, tendo foco no empreendedorismo. Na Ecole, usa toda essa expertise para ministrar os cursos relacionados a marketing, mercado e negócios. </p>
-		 		</div> --}}
-
+		 			<h5 align="center" class="gray-dark-color">Roberta Selistre</h5>
+		 			<h5 align="center" class="title-pink-begin-text">Coordenadora</h5>
+		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Apaixonada por comunicação, planejamento  e comportamento Roberta é coordenadora na Escola desde Fev 2018. Há mais de 15 anos atuando na área de comunicação e marketing, especializada em clientes do segmento feminino, viu na Ecole Brasil a oportunidade de colocar seu trabalho em prática no segmento que mais gosta: moda e comportamento e ainda poder estar a frente da divulgação do propósito #SERPARAVESTIR. </p>
+		 		</div>
  			</div>
-
  		</div>
  </div>
  <br><br><br>

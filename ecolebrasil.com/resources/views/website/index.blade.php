@@ -141,10 +141,10 @@ function myFunction() {
 					    	<div class="above-video">
 							 	<div class="inside-above-video col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="">
 									<h3 style="text-align: center; color: white; padding: 2px; width: 100%">
-										<a target="_blank" href="{{ route('cursos', 'consultoria-e-coaching-de-imagem') }}">
+										<a target="_blank" href="{{ route('cursos', $curso->slug) }}">
 											<img style="width: 100%; display: block" src="{{ asset('images/logo-ecole-load.png') }}">
 										</a>
-										<a target="_blank" style="color:white; text-decoration: none; font-weight: bold" href="{{ route('cursos', 'consultoria-e-coaching-de-imagem') }}">
+										<a target="_blank" style="color:white; text-decoration: none; font-weight: bold" href="{{ route('cursos', $curso->slug) }}">
 											FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM
 										</a>
 									</h3>
@@ -312,4 +312,54 @@ function myFunction() {
 		<p class="gray-text-ecole" style="text-align: center; font-size: 14pt">Quer saber mais? Entre em contato com a gente, vamos adorar falar com você.</p>
 	</div>
 </div>
+
 @endsection
+
+<style type="text/css">
+	.background-ebook{
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		background: #ffffffc7;
+		position: fixed;
+	}
+
+	.background-ebook h2{
+		text-align: center;
+		margin-top: 100px;
+		color: rgba(239, 64, 96, 1);
+	    padding: 10px;
+	}
+
+	.background-ebook img{
+	    display: block;
+	    margin: 0 auto;
+	    max-width: 350px;
+	    margin-top: 10px;
+	}
+
+	.background-ebook h1{
+	    position: absolute;
+	    right: 50px;
+	    top: 10px;
+	    cursor: pointer;
+	}
+
+	@media screen and (max-width: 768px) {
+		.background-ebook img{
+			width: 50%;
+		}
+	}
+</style>
+<script type="text/javascript">
+	function closeEbook(){
+		$(".background-ebook").hide();
+	}
+</script>
+@if($request->exists('target'))
+	<div class="background-ebook" >
+		<h1 onclick="closeEbook()">X</h1>
+		<h2>Parabéns, você recebeu seu ebook!</h2>
+		<img class="ebook-livro" src="{{ asset('images/ebook-livro.png') }}">
+	</div>
+@endif

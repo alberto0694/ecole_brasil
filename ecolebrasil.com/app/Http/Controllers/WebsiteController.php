@@ -83,11 +83,11 @@ class WebsiteController extends Controller
         $add_subject = $request->query('subject') ? $request->query('subject')." " : '';
         Mail::send('emails.contato', $data, function ($message) use ($data, $add_subject) {
             $message->replyTo($data['email'], 'Ecole Brasil');
-            $message->from('contatosite@ecolebrasil.com', $add_subject.'Contato Site '.$data['contato']);
+            $message->from('contato@ecolebrasil.com', $add_subject.'Contato Site '.$data['contato']);
             $message->to('contato@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
             $message->cc('admin@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
             $message->cc('vandressa@esrelooking.com')->subject($add_subject.'Contato Site '.$data['contato']);
-            // $message->cc('alberto.pimentel.94@gmail.com')->subject($add_subject.'Contato Site '.$data['contato']);
+            $message->cc('alberto.pimentel.94@gmail.com')->subject($add_subject.'Contato Site '.$data['contato']);
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -103,7 +103,7 @@ class WebsiteController extends Controller
         NewsLetter::create( $request->all() );
 
         Mail::send('emails.newsletter', $data, function ($message)  use ($data) {
-            $message->from('contatosite@ecolebrasil.com', 'NewsLetter '.$data['contato']);
+            $message->from('contato@ecolebrasil.com', 'NewsLetter '.$data['contato']);
             $message->to('contato@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
             $message->cc('admin@ecolebrasil.com')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
             $message->cc('vandressa@esrelooking.com ')->subject('NewsLetter '.$data['contato'])->replyTo($data['email'], 'Ecole Brasil - Receba nossas novidades!');
@@ -124,7 +124,7 @@ class WebsiteController extends Controller
                 ];
 
         Mail::send('emails.inscricao', $data, function ($message) use ($data) {
-            $message->from('contatosite@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['contato']);
+            $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['contato']);
             $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
             $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
             $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
@@ -152,7 +152,7 @@ class WebsiteController extends Controller
         return view('website.inscricao', compact('cursos_menu','formacoes', 'curso'));
     }
 
-    public function home()
+    public function home(Request $request)
     {
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
@@ -162,7 +162,8 @@ class WebsiteController extends Controller
         $depoimentos = Depoimento::where('visible', '=', '1')->orderBy('created_at', 'asc')->take(3)->get();
         $title = 'Formação de Consultoria e Coaching de Imagem - Ecole Brasil';
         $description = 'Cursos e formações relacionados a imagem pessoal, psicologia e empreendedorismo, presencial e a distância, com certificação internacional.';
-    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu', 'depoimentos', 'title', 'description'));
+        $curso = Curso::find(3);
+    	return view('website.index', compact('formacoes', 'agendas', 'banners', 'cursos', 'cursos_menu', 'depoimentos', 'title', 'description', 'request', 'curso'));
     }
 
     public function escola()
@@ -295,17 +296,21 @@ class WebsiteController extends Controller
 
     public function agenda()
     {
-        $agendasMonths = array();
-        for ($i=1; $i < 13; $i++) {
-            $agendasMonths[$i] = Agenda::where('visible', '=', '1')
-                                         ->whereMonth('data_inicio', '=', $i)
-                                         ->where('data_inicio', '>=', date('Y-m-d').' 00:00:00')
-                                         ->orderBy('data_inicio', 'asc')
-                                         ->get();
+        $agendasYears = array();
+        for ($x=2018; $x < 2025; $x++){
+            for ($i=1; $i < 13; $i++) {
+                $agendasYears[$x][$i] = Agenda::where('visible', '=', '1')
+                                            ->whereYear('data_inicio', '=', $x)
+                                            ->whereMonth('data_inicio', '=', $i)
+                                            ->where('data_inicio', '>=', date('Y-m-d').' 00:00:00')
+                                            ->orderBy('data_inicio', 'asc')
+                                            ->get();
+            }
         }
+        // dd($agendasYears);
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-        return view('website.agenda', compact('cursos_menu','agendasMonths', 'formacoes'));
+        return view('website.agenda', compact('cursos_menu','agendasYears', 'formacoes'));
     }
 
     public function faq()
@@ -373,6 +378,8 @@ class WebsiteController extends Controller
             }
         }
         //TA ASSIM PORQUE O E-REDE AINDA NAO TA FUNFANDO
+        $meio_pagamento = $request->exists('meio_pagamento') ? $request->query('meio_pagamento') : 'credit_card';
+
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
         $agenda_id = $request->query('agenda_id');
@@ -381,19 +388,19 @@ class WebsiteController extends Controller
         if($agenda_id){
             $agendas = Agenda::where('id', '=', $agenda_id)->where('data_inicio', '>', Carbon::today()->toDateString())->get();
             if(!$sem_cartao){
-                return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
+                return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso', 'request', 'meio_pagamento'));
             }else{
                 $curso_contato = $curso;
-                return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+                return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'request', 'meio_pagamento'));
             }
         }
         if($curso_id){
             $agendas = Curso::find($curso_id)->agendas;
             if(!$sem_cartao){
-                return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso'));
+                return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso', 'request', 'meio_pagamento'));
             }else{
                 $curso_contato = $curso;
-                return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato'));
+                return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'request', 'meio_pagamento'));
             }
         }
     }
@@ -474,7 +481,7 @@ class WebsiteController extends Controller
         Contato::create( $request->all() );
 
         Mail::send('emails.ebook', $data, function ($message) use ($request) {
-            $message->from('contatosite@ecolebrasil.com', 'Contato Ecole');
+            $message->from('contato@ecolebrasil.com', 'Contato Ecole');
             $message->to($request['email']);
         });
 

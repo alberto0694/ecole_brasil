@@ -27,6 +27,7 @@ class AgendaController extends Controller
             if($request['modelo'] == 'P'){
                 $permission = 'AR';
             }
+
             $user = User::create([
                 'name' => $request['nome_aluno'],
                 'email' => $request['email'],
@@ -43,12 +44,22 @@ class AgendaController extends Controller
 
         //INSERÇÃO DO ALUNO E VINCULO COM AGENDA
         $nascimento_data = $request['nascimento'];
+        $liberado = $request['meio_pagamento'] == 'credit_card' ? 1 : 0;
         if($aluno == null){
             $request = Controller::formatDate( $request, 'nascimento' );
             $aluno = Aluno::create([
                     'nome' => $request['nome_aluno'],
+                    'reference_id' => $request['reference_id'],
+                    'meio_pagamento' => $request['meio_pagamento'],
                     'sobrenome' => $request['sobrenome_aluno'],
-                    'user_id' => $user->id
+                    'user_id' => $user->id,
+                    'liberado' => $liberado
+            ]);
+        }else{
+            $aluno->update([
+                'reference_id' => $request['reference_id'],
+                'meio_pagamento' => $request['meio_pagamento'],
+                'liberado' => $liberado
             ]);
         }
 
@@ -57,21 +68,25 @@ class AgendaController extends Controller
         $aluno->save();
 
         $agenda = Agenda::find( $request['agenda_id'] );
+        $valor = $request['meio_pagamento'] == 'credit_card' ? $agenda->valor : $agenda->valorComDesconto;
         $aluno->addAgenda( $agenda );
-        $data =  [   
+        $data =  [
                 "nome" => $request->nome_aluno,
+                "link_boleto" => $request->boleto_url,
                 "nome_aluno" => $aluno->nome,
                 "sobrenome" => $aluno->sobrenome,
                 "login" => $request->email,
+                "cod_area" => $request->telefone_area,
                 "portador" => $request->nome_cartao,
                 "nome_curso" => $agenda->curso->nome,
                 "data_inicio" => $agenda->formatedDate,
                 "cidade" => $agenda->cidade,
-                "agenda_valor" => $agenda->valor,
+                "agenda_valor" => $valor,
                 "parcelas" => $request->num_parcelas,
                 "card_curso" => asset($agenda->curso->card),
                 "modelo" => $agenda->modelo,
                 "password" => $request->password,
+                "nome_mae" => $request->nome_mae,
                 "email" => $request['email'],
                 "nascimento" => $nascimento_data,
                 "cpf" => $request->cpf,
@@ -87,25 +102,47 @@ class AgendaController extends Controller
                 "consultoria" => $agenda->curso->id
         ];
 
-        Mail::send('emails.aluno', $data, function ($message) use ($request, $data, $agenda){
-            $message->from('contatosite@ecolebrasil.com', 'Ecole Supériere de Relooking');
-            $message->to($request['email'])->subject('Bem-vindo à Ecole '.$data['nome'].' - '.$data['nome_curso']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->cc('contato@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->cc('admin@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->cc('vandressa@esrelooking.com ')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->attach(asset($agenda->curso->contrato_curso), ['as' => 'Contrato curso']);
-        });
+        if($request->meio_pagamento == 'boleto'){
+            Mail::send('emails.aluno_boleto', $data, function ($message) use ($request, $data, $agenda){
+                $message->from('contato@ecolebrasil.com', 'Ecole Supériere de Relooking');
+                $message->to($request['email'])->subject('Bem-vindo à Ecole '.$data['nome'].' - '.$data['nome_curso']);
+                $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('contato@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('admin@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('vandressa@esrelooking.com ')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->attach(asset($agenda->curso->contrato_curso), ['as' => 'Contrato curso']);
+            });
 
-        Mail::send('emails.inscricao', $data, function ($message) use ($request, $data) {
-            $message->from('contatosite@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['nome']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->cc('financeiro@esrelooking.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->cc('financeiro@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-            $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
-        });
+            Mail::send('emails.inscricao_boleto', $data, function ($message) use ($request, $data) {
+                $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['nome']);
+                $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('financeiro@esrelooking.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('financeiro@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            });
+        }else{
+            Mail::send('emails.aluno', $data, function ($message) use ($request, $data, $agenda){
+                $message->from('contato@ecolebrasil.com', 'Ecole Supériere de Relooking');
+                $message->to($request['email'])->subject('Bem-vindo à Ecole '.$data['nome'].' - '.$data['nome_curso']);
+                $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('contato@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('admin@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('vandressa@esrelooking.com ')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->attach(asset($agenda->curso->contrato_curso), ['as' => 'Contrato curso']);
+            });
+
+            Mail::send('emails.inscricao', $data, function ($message) use ($request, $data) {
+                $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['nome']);
+                $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('financeiro@esrelooking.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('financeiro@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+            });
+        }
 
         return response()->json(['status' => 'success'], 200);
     }
@@ -113,14 +150,15 @@ class AgendaController extends Controller
     public function agenda_modulos(Request $request)
     {
         $querys = $request->query();
-        $modulos = Modulo::where('agenda_id', '=', $querys["agenda_id"])->orderBy('data_inicio', 'asc')->get()->toJson();
+        $modulos = Modulo::where('agenda_id', '=', $querys["agenda_id"])->where('visible', '=', '1')->orderBy('data_inicio', 'asc')->get()->toJson();
         return response()->json($modulos, 200);
     }
 
     public function agenda_parcelas(Request $request)
     {
         $querys = $request->query();
-        $agenda = Agenda::where('id', '=', $querys["agenda_id"])->get()->toJson();
+        $agenda = Agenda::find($querys["agenda_id"]);//Agenda::where('id', '=', $querys["agenda_id"])->get()->toJson();
+        // dd($agenda);
         return response()->json($agenda, 200);
     }
 
@@ -188,6 +226,6 @@ class AgendaController extends Controller
 
     public function getParamsFromRequest($request)
     {
-        
+
     }
 }

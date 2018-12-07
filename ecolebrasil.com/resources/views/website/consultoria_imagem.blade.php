@@ -695,49 +695,7 @@
 		    text-align: center;
   		}
   	</style>
-    <!-- Modal content-->
-    <div class="modal-content modal-content-ebook margin-modal">
-    	<form action="https://leadlovers.com/Pages/Index/205214" method="post" >
-      {{-- <div class="modal-body modal-ebbok">
-        <div class="row">
-        	<div class="container-modal container-ebook">
-					<button type="button" class="button-close-ebook" data-dismiss="modal">X</button>
-					<img class="img-ebook" src="{{asset('images/pop-up-captura-ecole.jpg')}}">
-					<p class="descricao-ebook">Cadastre-se abaixo e receba direto no seu e-mail o link do ebook grátis.</p>
-				    <link rel='stylesheet' href='https://blob.llimages.com/machine-files/all-css/form-ll.css'>
-
-				    <input id="id" name="id" type="hidden" value="205214" />
-				    <input id="pid" name="pid" type="hidden" value="7559514" />
-				    <input id="list_id" name="list_id" type="hidden" value="205214" />
-				    <input id="provider" name="provider" type="hidden" value="leadlovers" />
-				    <input id="name" name="name" placeholder="Nome" type="text"  />
-				    <input id="email" name="email" placeholder="E-mail" type="text" />
-				    <button class="button-ecole" style="background: #1bd641; box-shadow: 0px 7px 5px 0px #545454;" type="submit">Receber o ebook</button>
-				    <input type="hidden" id="source" name="source" value="" />
-				    <img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />
-
-        	</div>
-        </div>
-      </div> --}}
-      </form>
-    </div>
-
-  </div>
-</div>
-@section('content-js')
-<script type="text/javascript">
-	$(window).on('load', function(){
-		$(".boleto-bancario").click(function(){
-			$(".container-escolha-pagamento").slideUp("slow", () => {
-				$(".container-formulario-pagamento").slideDown("slow");
-			});
-		});
-		$('#modal-pagamento').on('shown.bs.modal', function () {
-			$(".container-escolha-pagamento").show();
-			$(".container-formulario-pagamento").hide();
-		});
-
-		$("#modal-ebook .modal-content form").append('<div class="modal-body modal-ebbok">' +
+  	{{-- 		$("#modal-ebook .modal-content form").append('<div class="modal-body modal-ebbok">' +
         '<div class="row">' +
         	'<div class="container-modal container-ebook">' +
 				'<button type="button" class="button-close-ebook" data-dismiss="modal">X</button>' +
@@ -757,7 +715,58 @@
 				'</form>' +
         	'</div>' +
         '</div>' +
-      '</div>');
+      '</div>'); --}}
+    <!-- Modal content-->
+    <div class="modal-content modal-content-ebook margin-modal">
+
+
+      <div class="modal-body modal-ebbok">
+        <div class="row">
+        	<div class="container-modal container-ebook" style="display: none">
+{{-- <!-- Formulário -->
+<style>body {background-color: transparent !important; } </style>
+   <link rel='stylesheet' href='https://blob.llimages.com/machine-files/all-css/form-ll.css'>
+   <form action="https://leadlovers.com/Pages/Index/205214" method="post" >
+   <input id="id" name="id" type="hidden" value="205214" />
+   <input id="pid" name="pid" type="hidden" value="7559514" />
+   <input id="list_id" name="list_id" type="hidden" value="205214" />
+   <input id="provider" name="provider" type="hidden" value="leadlovers" />
+   <label for="name">Nome:</label>
+   <input class="form-control form-ll" id="name" name="name" placeholder="Informe o seu nome" type="text"  />
+   <label for="email">E-mail:</label>
+   <input class="form-control form-ll" id="email" name="email" placeholder="E-mail" type="text" />
+   <button class="btn btn-danger" style="padding: 10px 40px; margin:15px 0 5px;  " type="submit">Receber o ebook</button>
+   <input type="hidden" id="source" name="source" value="" />
+   <img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />
+</form> --}}
+
+					<button type="button" class="button-close-ebook" data-dismiss="modal">X</button>
+					<img class="img-ebook" src="{{asset('images/pop-up-captura-ecole.jpg')}}">
+					<p class="descricao-ebook">Cadastre-se abaixo e receba direto no seu e-mail o link do ebook grátis.</p>
+				    <link rel='stylesheet' href='https://blob.llimages.com/machine-files/all-css/form-ll.css'>
+    				<form action="https://leadlovers.com/Pages/Index/205214" method="post" >
+				    <input id="id" name="id" type="hidden" value="205214" />
+				    <input id="pid" name="pid" type="hidden" value="7559514" />
+				    <input id="list_id" name="list_id" type="hidden" value="205214" />
+				    <input id="provider" name="provider" type="hidden" value="leadlovers" />
+				    <input id="name" name="name" placeholder="Nome" type="text"  />
+				    <input id="email" name="email" placeholder="E-mail" type="text" />
+				    <button class="button-ecole" style="background: #1bd641; box-shadow: 0px 7px 5px 0px #545454;" type="submit">Receber o ebook</button>
+				    <input type="hidden" id="source" name="source" value="" />
+				    <img src="https://llimages.com/redirect/redirect.aspx?A=V&p=7559514&m=205214" style="display: none;" />
+      				</form>
+        	</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+@section('content-js')
+<script type="text/javascript">
+	$(window).on('load', function(){
+
+		$(".container-modal.container-ebook").show();
 
 		$("#modal-pagamento .modal-content").append(
 		'<div class="modal-header">' +
@@ -766,12 +775,16 @@
       '</div>' +
       '<div class="modal-body">' +
         '<div class="row">' +
-        	'<div class="container-modal container-escolha-pagamento">' +
-        		'<div class="col-md-6">' +
-        			'<a href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"><span class="icones-pagamento"><i class="far fa-credit-card"></i></span></a>' +
+        	'<div class="container-modal col-md-12 container-escolha-pagamento">' +
+        		'<div class="col-md-4">' +
+        			'<a href="{{ route('compra.agenda', ['curso_id' => $curso->id, 'meio_pagamento' => 'credit_card']) }}"><span class="icones-pagamento"><i class="far fa-credit-card"></i></span></a>' +
         			'<h4>Cartão de Crédito</h4>' +
         		'</div>' +
-        		'<div class="col-md-6">' +
+        		'<div class="col-md-4">' +
+        			'<a href="{{ route('compra.agenda', ['curso_id' => $curso->id, 'meio_pagamento' => 'boleto']) }}" class="boleto-bancario-avista"><span class="icones-pagamento"><i class="fas fa-barcode"></i></span></a>' +
+        			'<h4>Boleto Bancário à  vista, com 5% de desconto</h4>' +
+        		'</div>' +
+        		'<div class="col-md-4">' +
         			'<a class="boleto-bancario"><span class="icones-pagamento"><i class="fas fa-barcode"></i></span></a>' +
         			'<h4>Boleto Bancário</h4>' +
         		'</div>' +
@@ -780,7 +793,7 @@
         		'<div class="col-md-12">' +
 	                '<ul style="padding-left:0px; color:gray">' +
 	                    '<li>' +
-	                    	'<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÂO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">' +
+	                    	'<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÃO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">' +
 	                    		'{{ csrf_field() }}' +
 				                '<div class="form-group">' +
 				                  '<label class="control-label">Seu nome completo</label>' +
@@ -815,6 +828,17 @@
       '<div class="modal-footer">' +
         '<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>' +
       '</div>');
+
+		$(".boleto-bancario").click(function(){
+			$(".container-escolha-pagamento").slideUp("slow", () => {
+				$(".container-formulario-pagamento").slideDown("slow");
+			});
+		});
+
+		$('#modal-pagamento').on('shown.bs.modal', function () {
+			$(".container-escolha-pagamento").show();
+			$(".container-formulario-pagamento").hide();
+		});
 	});
 </script>
 @endsection
@@ -844,7 +868,7 @@
         		<div class="col-md-12">
 	                <ul style="padding-left:0px; color:gray">
 	                    <li>
-	                    	<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÂO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">
+	                    	<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÃO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">
 	                    		{{ csrf_field() }}
 				                <div class="form-group">
 				                  <label class="control-label">Seu nome completo</label>
