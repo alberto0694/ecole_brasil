@@ -27,6 +27,47 @@ use App\NewsLetter;
 class WebsiteController extends Controller
 {
 
+    public function compra_nao_finalizada(Request $request)
+    {
+        NewsLetter::create(['email' => '$request->2', 'contato' => '$2']);
+
+        // $description = '';
+        // if($request->agenda_id){
+        //     $agenda = Agenda::find($request->agenda_id);
+        //     $description = $agenda->labelCombo;
+        // }else{
+        //     $description = $request->curso . ' - '. $request->agenda_text;
+        // }
+
+        // $data = array(
+        //   'nome_aluno' => $request->nome_aluno,
+        //   'sobrenome_aluno' => $request->sobrenome_aluno,
+        //   'description' => $description,
+        //   'cpf' => $request->cpf,
+        //   'email' => $request->email,
+        //   'nascimento' => $request->nascimento,
+        //   'telefone' => $request->telefone,
+        //   'cep' => $request->cep,
+        //   'rua' => $request->rua,
+        //   'cidade' => $request->cidade,
+        //   'estado' => $request->estado,
+        //   'numero' => $request->numero,
+        //   'estado_civil' => $request->estado_civil,
+        //   'nome_mae' => $request->nome_mae,
+        //   'telefone_area' => $request->telefone_area
+        // );
+
+
+        // Mail::send('emails.compra_nao_finalizada', $data, function ($message) use ($data, $description) {
+        //     $message->from('contato@ecolebrasil.com', 'Compra Não finalizada. Curso: '.$description);
+        //     // $message->to('contato@ecolebrasil.com')->subject('Compra Não finalizada. Curso: '.$description);
+        //     // $message->cc('admin@ecolebrasil.com')->subject('Compra Não finalizada. Curso: '.$description);
+        //     // $message->cc('vandressa@esrelooking.com')->subject('Compra Não finalizada. Curso: '.$description);
+        //     $message->to('alberto.pimentel.94@gmail.com')->subject('Compra Não finalizada. Curso: '.$description);
+        // });
+        return response()->json(['status' => 'success'], 200);
+    }
+
     public function compress_image($source_url, $destination_url, $quality) {
 
         $info = getimagesize($source_url);
@@ -87,7 +128,7 @@ class WebsiteController extends Controller
             $message->to('contato@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
             $message->cc('admin@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
             $message->cc('vandressa@esrelooking.com')->subject($add_subject.'Contato Site '.$data['contato']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject($add_subject.'Contato Site '.$data['contato']);
+            // $message->cc('alberto.pimentel.94@gmail.com')->subject($add_subject.'Contato Site '.$data['contato']);
         });
 
         Session::flash('message' , 'Contato enviado com sucesso!'); //<--FLASH MESSAGE
@@ -125,7 +166,7 @@ class WebsiteController extends Controller
 
         Mail::send('emails.inscricao', $data, function ($message) use ($data) {
             $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['contato']);
-            $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
+            // $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
             $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
             $message->cc('admin@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);
             $message->cc('vandressa@esrelooking.com ')->subject('Inscrição Ecole Brasil '.$data['contato'])->replyTo($data['email']);

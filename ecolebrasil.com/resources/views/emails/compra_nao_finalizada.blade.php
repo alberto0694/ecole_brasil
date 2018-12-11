@@ -99,13 +99,19 @@
 
 <table class="table-row" width="450" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
   <table class="table-col" align="left" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="table-col-td" width="378" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; width: 378px;" valign="top" align="left">
-    <table class="header-row" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="header-row-td" width="378" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">Quitação de pendência.</td></tr></tbody></table>
+    <table class="header-row" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="header-row-td" width="378" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">Compra não finalizada: {{$description}}</td></tr></tbody></table>
     <div style="font-family: Arial, sans-serif; line-height: 20px; color: #444444; font-size: 13px;">
-      <b style="color: #777777;">Nome Completo: {{$nome_completo}} </b><br>
+      <b style="color: #777777;">Nome Completo: {{$nome_aluno.' '.$sobrenome_aluno}} </b><br>
       <b style="color: #777777;">Email: {{$email}} </b><br>
-      <b style="color: #777777;">Valor: {{$valor}} </b><br>
-      <b style="color: #777777;">Parcelado em: {{$parcelas}} </b><br>
-      <b style="color: #777777;">Descrição: {!!$descricao!!} </b><br>
+      <b style="color: #777777;">Telefone: {{$telefone_area.' '.$telefone}} </b><br>
+      <b style="color: #777777;">Nascimento: {{$nascimento}} </b><br>
+      <b style="color: #777777;">Nome da Mãe: {{$nome_mae}} </b><br>
+      <b style="color: #777777;">Estado Civil: {{$estado_civil}} </b><br>
+      <b style="color: #777777;">Cep: {{$cep}} </b><br>
+      <b style="color: #777777;">Rua: {{$rua}} </b><br>
+      <b style="color: #777777;">Número: {{$numero}} </b><br>
+      <b style="color: #777777;">Cidade: {{$cidade}} </b><br>
+      <b style="color: #777777;">Estado: {{$estado}} </b><br>
       <br>
     </div>
   </td></tr></tbody></table>

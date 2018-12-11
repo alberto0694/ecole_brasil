@@ -106,7 +106,7 @@ class AgendaController extends Controller
             Mail::send('emails.aluno_boleto', $data, function ($message) use ($request, $data, $agenda){
                 $message->from('contato@ecolebrasil.com', 'Ecole Supériere de Relooking');
                 $message->to($request['email'])->subject('Bem-vindo à Ecole '.$data['nome'].' - '.$data['nome_curso']);
-                $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                // $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('contato@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('admin@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('vandressa@esrelooking.com ')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
@@ -115,7 +115,7 @@ class AgendaController extends Controller
 
             Mail::send('emails.inscricao_boleto', $data, function ($message) use ($request, $data) {
                 $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['nome']);
-                $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                // $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('financeiro@esrelooking.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('financeiro@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
@@ -126,7 +126,7 @@ class AgendaController extends Controller
             Mail::send('emails.aluno', $data, function ($message) use ($request, $data, $agenda){
                 $message->from('contato@ecolebrasil.com', 'Ecole Supériere de Relooking');
                 $message->to($request['email'])->subject('Bem-vindo à Ecole '.$data['nome'].' - '.$data['nome_curso']);
-                $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                // $message->cc('alberto.pimentel.94@gmail.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('contato@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('admin@ecolebrasil.com')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('vandressa@esrelooking.com ')->subject('Recibo de inscrição - Ecole Brasil '.$data['nome'])->replyTo($data['email']);
@@ -135,7 +135,7 @@ class AgendaController extends Controller
 
             Mail::send('emails.inscricao', $data, function ($message) use ($request, $data) {
                 $message->from('contato@ecolebrasil.com', 'Inscrição Ecole Brasil '.$data['nome']);
-                $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
+                // $message->cc('alberto.pimentel.94@gmail.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('financeiro@esrelooking.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->cc('financeiro@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);
                 $message->to('contato@ecolebrasil.com')->subject('Inscrição Ecole Brasil '.$data['nome'])->replyTo($data['email']);

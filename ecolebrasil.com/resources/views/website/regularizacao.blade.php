@@ -358,7 +358,8 @@ $(document).ready(function () {
                                       url:  '{{ route('pagamento.inadimplencia', $inadimplencia->id) }}',
                                       headers: {
                                           'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                                      }
+                                      },
+                                      data: { parcelas: $("#num_parcelas").val() }
                                   }).done(function (response) {});
                                   self.setContent('<div class="col-md-10 col-md-offset-1" style="color:#ed3656;"><img style="width: 30%; display: block; margin: 0 auto" src="{{ asset('/images/logo-ecole.png') }}"><label style="text-align: center; width: 100%">Ecole Brasil!</label><br><label style="text-align: center; width: 100%">Muito obrigado, esta pendência foi quitada!</label><br><label style="text-align: center; font-size:15pt; width: 100%"><b></b></label><br></div>');
                               }else{

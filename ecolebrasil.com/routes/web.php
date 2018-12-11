@@ -10,6 +10,11 @@ Route::get('/redirect', 'HomeController@redirect')->name('redirect.permission');
 
 // ================ CRUDS ==============
 
+//aluno compra
+Route::post('/aluno_compra/create', 'AlunoCompraController@create')->name('aluno_compra.create');
+Route::put('/aluno_compra/update/{id}', 'AlunoCompraController@update')->name('aluno_compra.update');
+Route::delete('/aluno_compra/delete/{id}', 'AlunoCompraController@delete')->name('aluno_compra.delete');
+
 //formacao
 Route::post('/formacao/create', 'FormacaoController@create')->name('formacao.create');
 Route::put('/formacao/update/{id}', 'FormacaoController@update')->name('formacao.update');
@@ -483,6 +488,7 @@ Route::post('/pagamento', 'PagamentoController@doPayment')->name('pagamento');
 Route::post('/pagamento/inadimplencia/{id}', 'InadimplenciaController@update_pagamento')->name('pagamento.inadimplencia');
 Route::post('/compra_agenda', 'AgendaController@buyAgenda')->name('pagamento.agenda');
 Route::post('/ebook_email', 'WebsiteController@ebook_email')->name('ebook.email');
+Route::post('/compra_nao_finalizada', 'WebsiteController@compra_nao_finalizada')->name('site.compra_nao_finalizada');
 Route::get('/regularizacao/{id}', 'WebsiteController@regulariza_inadimplencia')->name('regulariza.inadimplencia');
 
 //envio de emails

@@ -448,6 +448,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/jquery-price-format/jquery.priceformat.min.js') }}"></script>
 <script type="text/javascript" charset="utf-8">
+var status_pay = false;
 function  getAgenda(){
   $.ajax({
     type: "GET",
@@ -485,9 +486,51 @@ function  getAgenda(){
     }
   });
 }
+
+
+
+$(window).bind('onbeforeunload', function (){
+  if( !status_pay && (($("#email").val() != '') || ($("#telefone").val() != '')) ) {
+      $.ajax({
+        async: false,
+        type: "POST",
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        },
+        url: '{{ route('site.compra_nao_finalizada') }}',
+        // url: 'http://localhost:81/index.php',
+        data: {
+            nome_aluno: $("#nome_aluno").val(),
+            sobrenome_aluno: $('#sobrenome_aluno').val(),
+            agenda_id:$("#agenda_id").val(),
+            agenda_text: $("#agenda_id option:selected").text(),
+            curso: $("#nome_curso").val(),
+            cpf:$("#cpf").val(),
+            email: $("#email").val(),
+            nascimento: $("#nascimento").val(),
+            telefone: $("#telefone").val(),
+            cep: $("#endereco_cep").val(),
+            rua: $("#endereco_rua").val(),
+            cidade: $("#endereco_cidade").val(),
+            estado: $("#endereco_estado").val(),
+            numero: $("#endereco_numero").val(),
+            estado_civil: $("#estado_civil").val(),
+            nome_mae: $("#nome_mae").val(),
+            telefone_area: $("#telefone_area").val()
+        }
+      }).done(function(data) {
+          console.log('complete');
+      });;
+  }
+  // e.preventDefault(); //per the standard
+  // e.returnValue = '1'; //required for Chrome
+});
+
 $(window).on('load',function(){
     getAgenda();
 });
+
+// $( window ).unload(compra_nao_finalizada());
 
 $(document).ready(function () {
     $("#agenda_id").change(function(){
@@ -495,7 +538,7 @@ $(document).ready(function () {
     });
 
     $("#comprar_curso_boleto").click(function(){
-          var status_pay = false;
+
           $.dialog({
               title: '',
               columnClass: 'col-md-6 col-md-offset-3',
@@ -515,7 +558,7 @@ $(document).ready(function () {
                           parcelas:$("#num_parcelas").val(),
                           portador:$("#nome_pagante").val(),
                           agenda_id:$("#agenda_id").val(),
-                          cpf_titular:$("#cpf").val(),
+                          cpf_titular:$("#cpf_titular").val(),
                           email: $("#email").val(),
                           telefone: $("#telefone").val(),
                           cep: $("#endereco_cep").val(),
