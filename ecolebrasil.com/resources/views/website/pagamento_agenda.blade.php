@@ -414,6 +414,12 @@
                             <input required name="nome_pagante" id="nome_pagante" maxlength="100" type="text"  class="form-control" placeholder="Informe o nome completo do pagante"  />
                           </div>
                         </div>
+                        <div class="row" style="padding-left: 15px; ">
+                          <div class="form-group">
+                            <label class="control-label">CPF</label>
+                            <input required  maxlength="11" name="cpf_boleto" id="cpf_boleto" type="number"  class="form-control" placeholder="CPF do Titular"  />
+                          </div>
+                        </div>
                         <button class="btn btn-success btn-lg pull-right" type="button" id="comprar_curso_boleto">Gerar boleto</button>
                       </div>
                     </div>
@@ -558,7 +564,7 @@ $(document).ready(function () {
                           parcelas:$("#num_parcelas").val(),
                           portador:$("#nome_pagante").val(),
                           agenda_id:$("#agenda_id").val(),
-                          cpf_titular:$("#cpf_titular").val(),
+                          cpf_titular:$("#cpf_boleto").val(),
                           email: $("#email").val(),
                           telefone: $("#telefone").val(),
                           cep: $("#endereco_cep").val(),

@@ -546,9 +546,9 @@
 <div class="row inscricao-top">
 	<div class="box-inscricao">
 		<h2>INSCREVA-SE AGORA NA FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM</h2>
-		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">à vista com 5% de desconto</label></p>
+		<p>por apenas <label class="inscricao-destaque">12x de 517,50  no cartão de credito </label> ou <label class="inscricao-destaque">à vista com 10% de desconto </label> ou <label class="inscricao-destaque">entrada de R$ 900 + 11 parcelas no boleto</label></p>
 		<h6>* Não tem pré-requisitos</h6>
-		<h6>**Em até 8x (Entrada + 7 parcelas no boleto) ou no cartão de crédito em até 6x</h6>
+		<h6></h6>
 	</div>
 	<a style="color: white"  data-toggle="modal" data-target="#modal-pagamento" ><button class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button></a>
 </div>
@@ -640,9 +640,8 @@
 <div class="row inscricao-top">
 	<div class="box-inscricao">
 		<h2>FORMAÇÃO DE CONSULTORIA E COACHING DE IMAGEM DA ECOLE, INSCREVA-SE AGORA</h2>
-		<p>por apenas <label class="inscricao-destaque">6X de R$ 900,00</label> ou <label class="inscricao-destaque">à vista com 5% de desconto</label></p>
+		<p>por apenas <label class="inscricao-destaque">12x de 517,50  no cartão de credito </label> ou <label class="inscricao-destaque">à vista com 10% de desconto </label> ou <label class="inscricao-destaque">entrada de R$ 900 + 11 parcelas no boleto</label></p>
 		<h6>* Não tem pré-requisitos</h6>
-		<h6>**Em até 8x (Entrada + 7 parcelas no boleto) ou no cartão de crédito em até 6x</h6>
 	</div>
 	{{-- <a style="color: white" href="{{ route('compra.agenda', ['curso_id' => $curso->id]) }}"> --}}
 		<button  data-toggle="modal" data-target="#modal-pagamento" class="button-ecole-box-insicricao" style="background: #1bd641">QUERO ME INSCREVER</button>

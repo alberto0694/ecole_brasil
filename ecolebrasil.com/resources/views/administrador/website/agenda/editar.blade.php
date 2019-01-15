@@ -150,6 +150,8 @@
 					<option value="8">8x</option>
 					<option value="9">9x</option>
 					<option value="10">10x</option>
+					<option value="11">11x</option>
+					<option value="12">12x</option>
 				</select>
 			</div>
 		</div>
