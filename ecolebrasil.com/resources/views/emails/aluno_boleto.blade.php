@@ -25,7 +25,7 @@
 			A Ecole Superieure de Relooking lhe dá as boas-vindas e deseja que o aprendizado do curso que você irá realizar contribua para qualificar a sua formação, sua atuação profissional e a sua satisfação com o trabalho. Acreditamos no <b>#serparavestir</b> e pra gente é uma honra formar profissionais que levam essa missão a diante.
 		</h3>
 
-		<h3 align="center" style="color: gray">Na semana antecede o início do curso criaremos um grupo no whats app no qual serão informados local, materiais necessários e facilidades próximas do local. Qualquer dúvida é só falar com a gente pelo nosso <b>WhatsApp 51 991660914.</b>
+		<h3 align="center" style="color: gray">Na semana antecede o início do curso criaremos um grupo no whats app no qual serão informados local, materiais necessários e facilidades próximas do local. Qualquer dúvida é só falar com a gente pelo nosso <b>WhatsApp 51 989535234.</b>
 		</h3>
 		<div class="row">
 			<img style="width: 20%; margin: 0 auto; display: block; margin-top: 50px " class="img-contato" src="{{asset($card_curso)}}">

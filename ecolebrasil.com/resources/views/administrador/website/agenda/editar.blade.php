@@ -123,7 +123,7 @@
 			<div class="col-sm-6">
 				<select id="max_parcelas" name="max_parcelas" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					<option value="0" style="display: none"></option>
-					<?php $array = array(2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9, 10=>10); ?>
+					<?php $array = array(2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9, 10=>10, 11=>11, 12=>12); ?>
 					@foreach($array as $num)
 						@if($num == $agenda->max_parcelas)
 							<option selected value="{{$num}}">{{ $num }}x</option>

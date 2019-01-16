@@ -473,7 +473,7 @@
 
 			<a style="color: white"  data-toggle="modal" data-target="#modal-pagamento" ><button class="button-ecole" style="background: #1bd641">QUERO ME INSCREVER</button><a>
 			<h5 class="duvidas-whats">Ou tirar dúvidas pelo</h5>
-			<button class="button-ecole"><a style="color: white; text-decoration: none;" href="https://wa.me/5551991660914">WHATSAPP (51) 991660914</a></button>
+			<button class="button-ecole"><a style="color: white; text-decoration: none;" href="https://wa.me/5551989535234">WHATSAPP (51) 989535234</a></button>
 		</div>
 	</div>
 </div>

@@ -33,7 +33,7 @@
       </p>
       <p class="gray-text" style="margin-bottom: 20px">Você também pode enviar um email para <b style="font-size: 13pt">contato@ecolebrasil.com</b></p>
       <p class="gray-text" style="margin-bottom: 20px">Entrar em contato pelo telefone <b style="font-size: 13pt">+55 51 3237.2800</b></p>
-      <p class="gray-text" style="margin-bottom: 20px">Ou entrar em contato pelo whatsapp <b style="font-size: 13pt">+55 51 99166.0914</b></p>
+      <p class="gray-text" style="margin-bottom: 20px">Ou entrar em contato pelo whatsapp <b style="font-size: 13pt">+55 51 98953.5234</b></p>
       <p>	<a target="_blank" href="https://www.facebook.com/ecolebrasil/"><i style="font-size: 21pt" class="fab fa-facebook"></i></a>
           <a target="_blank" href="https://www.instagram.com/ecolebrasil/"><i style="font-size: 21pt; margin-left: 15px" class="fab fa-instagram"></i></a>
      </p>

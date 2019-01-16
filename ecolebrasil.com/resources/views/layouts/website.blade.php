@@ -177,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="body-footer-li">  contato@ecolebrasil.com  </li>
                         <li class="body-footer-li">  Fones:  </li>
                         <li class="body-footer-li">  +55 51 3237.2800  </li>
-                        <li class="body-footer-li">  +55 51 99166.0914 </li>
+                        <li class="body-footer-li">  +55 51 98953.5234 </li>
 
                         <li style="margin-top:10px" class="title-footer">  FRANCE  </li>
                         <li class="body-footer-li">  131 Boulevard  </li>
