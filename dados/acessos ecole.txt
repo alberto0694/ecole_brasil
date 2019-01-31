@@ -39,3 +39,8 @@ define('DB_USER', 'formacao2011');
 /** Mot de passe de la base de données MySQL. */
 define('DB_PASSWORD', '6S3EMDF4');
 
+blog ecole brasil
+
+admin
+t6$qSYqrG5Nr4k8I@m8DQp2*
+
