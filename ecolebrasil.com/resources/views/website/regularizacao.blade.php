@@ -123,7 +123,7 @@
                           </div>
                           <div class="col-md-12" style="padding: 0">
                               <select class="col-md-3 form-control" name="num_parcelas" id="num_parcelas">
-                                <?php $array = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10); ?>
+                                <?php $array = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, 11 => 11, 12 => 12); ?>
                                 <option value="1" > Á vista </option>
                                 @foreach($array as $item)
                                   @if($inadimplencia->max_parcelas >= $item)

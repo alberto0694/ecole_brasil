@@ -53,6 +53,7 @@ class PagamentoController extends Controller
   		    ],
   		    'json' => [
                   "api_key" => "ak_live_0kFS2YtKOjVA5WOYV1Khk9D9Fm3UU1",
+                  //"api_key" => "ak_test_gABGBr3Sxy3u1hXON9CpS8nsBk3neT",
                   "amount" => (int)$valor,
                   "installments" => (int)($request->parcelas),
                   "card_number" => (String)($request->nrcartao),
