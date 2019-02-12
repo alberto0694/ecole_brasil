@@ -14,6 +14,10 @@ Senha: admin
 ftp.cluster010.ovh.net
 user: formacao
 pass: Sophie2015
+
+acesso jivo chat box
+alberto.pimentel.94@gmail.com
+9zP%*PzYn
  
 Gerenciamento da Hospedagem:
 https://www.ovh.com/managerv3/login.pl
