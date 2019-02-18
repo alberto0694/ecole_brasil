@@ -16,6 +16,8 @@ class PagamentoController extends Controller
         $id = "";
         $title = "";
         $meio = $request->exists('meio_pagamento') ? $request->query('meio_pagamento') : 'credit_card';
+        $document = strlen($request->cpf_titular) == 14 ? "cnpj" : "cpf";
+        $typeCustomer = strlen($request->cpf_titular) == 14 ? "corporation" : "individual";
         if($request->agenda_id){
             $agenda = Agenda::find($request->agenda_id);
             if($meio == 'credit_card'){
@@ -64,12 +66,12 @@ class PagamentoController extends Controller
                   "customer" => [
                     "external_id" => $id,
                     "name" => (String)($request->portador),
-                    "type" => "individual",
+                    "type" => $typeCustomer,
                     "country" => "br",
                     "email" => (String)($request->email),
                     "documents" => [
                       0 => [
-                        "type" => "cpf",
+                        "type" => $document,
                         "number" => (String)($request->cpf_titular)
                       ]
                     ],
@@ -98,7 +100,6 @@ class PagamentoController extends Controller
 
   		    ],
     		];
-
     		$response_client = $client->request('POST', $url, $data);
     		$json_response = json_decode($response_client->getBody()->getContents());
     		$response = response()->json($json_response, 200);

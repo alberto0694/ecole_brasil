@@ -221,8 +221,8 @@
                 </div>
                 <div class="row" style="padding-left: 15px; ">
                   <div class="form-group">
-                    <label class="control-label">CPF do Titular do cartão</label>
-                    <input required  maxlength="11" name="cpf_titular" id="cpf_titular" type="number"  class="form-control" placeholder="CPF do Titular do cartão"  />
+                    <label class="control-label">CPF ou CNPJ do Titular do cartão</label>
+                    <input required  maxlength="14" name="cpf_titular" id="cpf_titular" type="number"  class="form-control" placeholder="CPF ou CNPJ do Titular do cartão"  />
                   </div>
                 </div>
                 <div class="row" style="padding-left: 15px; margin-bottom: 10px">

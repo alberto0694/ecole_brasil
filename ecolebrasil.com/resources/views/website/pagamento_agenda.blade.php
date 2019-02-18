@@ -324,8 +324,8 @@
                         </div>
                         <div class="row" style="padding-left: 15px; ">
                           <div class="form-group">
-                            <label class="control-label">CPF do Titular do cartão</label>
-                            <input required  maxlength="11" name="cpf_titular" id="cpf_titular" type="number"  class="form-control" placeholder="CPF do Titular do cartão"  />
+                            <label class="control-label">CPF ou CNPJ do Titular do cartão</label>
+                            <input required  maxlength="14" name="cpf_titular" id="cpf_titular" type="number"  class="form-control" placeholder="CPF ou CNPJ do Titular do cartão"  />
                           </div>
                         </div>
                         <div class="row" style="padding-left: 15px; margin-bottom: 10px">
@@ -416,8 +416,8 @@
                         </div>
                         <div class="row" style="padding-left: 15px; ">
                           <div class="form-group">
-                            <label class="control-label">CPF</label>
-                            <input required  maxlength="11" name="cpf_boleto" id="cpf_boleto" type="number"  class="form-control" placeholder="CPF do Titular"  />
+                            <label class="control-label">CPF ou CNPJ</label>
+                            <input required  maxlength="14" name="cpf_boleto" id="cpf_boleto" type="number"  class="form-control" placeholder="CPF do Titular"  />
                           </div>
                         </div>
                         <button class="btn btn-success btn-lg pull-right" type="button" id="comprar_curso_boleto">Gerar boleto</button>
@@ -539,6 +539,7 @@ $(window).on('load',function(){
 // $( window ).unload(compra_nao_finalizada());
 
 $(document).ready(function () {
+
     $("#agenda_id").change(function(){
       getAgenda();
     });
