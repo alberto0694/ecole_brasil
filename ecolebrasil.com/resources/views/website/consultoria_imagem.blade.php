@@ -452,7 +452,7 @@
 				<div class="container apresentacao-curso">
 					<img src="{{ asset('images/horario.png') }}">
 					<h4 class="title-info">Horário</h4>
-					<span>Presencial</span>
+					<span>Presencial, das 9h às 18h</span>
 				</div>
 			</div>
 
@@ -781,7 +781,7 @@
         		'</div>' +
         		'<div class="col-md-4">' +
         			'<a href="{{ route('compra.agenda', ['curso_id' => $curso->id, 'meio_pagamento' => 'boleto']) }}" class="boleto-bancario-avista"><span class="icones-pagamento"><i class="fas fa-barcode"></i></span></a>' +
-        			'<h4>Boleto Bancário à  vista, com 5% de desconto</h4>' +
+        			'<h4>Boleto Bancário à  vista, com 10% de desconto</h4>' +
         		'</div>' +
         		'<div class="col-md-4">' +
         			'<a class="boleto-bancario"><span class="icones-pagamento"><i class="fas fa-barcode"></i></span></a>' +
