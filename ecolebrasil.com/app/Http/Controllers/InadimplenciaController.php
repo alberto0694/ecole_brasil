@@ -35,7 +35,7 @@ class InadimplenciaController extends Controller
                     "descricao" => $inadimplencia->razao_pagamento];
 
         Mail::send('emails.inadimplencia', $data, function ($message) use ($data) {
-            $message->from('contato@ecolebrasil.com', 'Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->from('contato@ecolebrasil.com', 'Pagamento Curso Link '.$data['nome_completo']);
             $message->to($data['email'])->subject('Ecole Brasil - Quitação de pendências');
             // $message->cc('alberto.pimentel.94@gmail.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
             $message->cc('contato@ecolebrasil.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);

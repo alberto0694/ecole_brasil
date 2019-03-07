@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Slug </label>
+			<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Slug/Link SEO </label>
 
 			<div class="col-sm-6">
 				<input value="{{ $curso->slug }}" id="slug" name="slug" type="text" class="col-xs-12 col-sm-6" />

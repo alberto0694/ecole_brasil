@@ -452,7 +452,7 @@
 				<div class="container apresentacao-curso">
 					<img src="{{ asset('images/horario.png') }}">
 					<h4 class="title-info">Horário</h4>
-					<span>Presencial, das 9h às 18h</span>
+					<span>Segunda à sábado, das 9h às 18h</span>
 				</div>
 			</div>
 

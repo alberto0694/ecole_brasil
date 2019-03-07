@@ -33,7 +33,7 @@ class Agenda extends Model
 
     public function getValorComDescontoAttribute()
     {
-        return (String)(floor($this->valor * .95)).".00";
+        return (String)(floor($this->valor * .90)).".00";
     }
 
     public function getLabelComboAttribute()
