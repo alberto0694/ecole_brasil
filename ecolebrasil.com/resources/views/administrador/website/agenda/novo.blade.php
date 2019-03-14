@@ -42,6 +42,16 @@
 		</div>
 	</div>
 	<div class="form-group">
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Videoconferência </label>
+
+		<div class="col-sm-6">
+			<select id="videoconferencia" name="videoconferencia" class="col-xs-12 col-sm-6" id="form-field-select-3">
+				<option selected value="S">Sim</option>
+				<option value="N">Não</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Ministrantes </label>
 
 		<div class="col-sm-6">

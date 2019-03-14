@@ -31,7 +31,9 @@
 			<select id="agenda_id" name="agenda_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
 					<option selected >Escolha um Curso</option>
 					@foreach($agendas as $agenda)
-						<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
+						@if($agenda->videoconferencia == 'S')
+							<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
+						@endif
 					@endforeach
 			</select>
 		</div>

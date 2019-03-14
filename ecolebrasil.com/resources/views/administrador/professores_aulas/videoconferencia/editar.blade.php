@@ -35,7 +35,9 @@
 						@if($video->modulo->agenda->id == $agenda->id)
 							<option selected value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
 						@else
-							<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
+							@if($agenda->videoconferencia == 'S')
+								<option value="{{ $agenda->id }}">{{ $agenda->labelCombo }}</option>
+							@endif
 						@endif
 
 					@endforeach

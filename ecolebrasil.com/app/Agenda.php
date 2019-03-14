@@ -21,7 +21,8 @@ class Agenda extends Model
                             'modelo',
     						'curso_id',
                             'valorComDesconto',
-    						'avatar'];
+    						'avatar',
+                            'videoconferencia'];
 
     protected $appends = array('valorComDesconto');
 

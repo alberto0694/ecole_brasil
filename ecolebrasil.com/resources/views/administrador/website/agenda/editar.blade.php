@@ -40,10 +40,25 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Descricão </label>
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Turma </label>
 
 		<div class="col-sm-6">
 			<input value="{{ $agenda->descricao }}" id="descricao" name="descricao" type="text" class="col-xs-12 col-sm-6" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Videoconferência </label>
+
+		<div class="col-sm-6">
+			<select id="videoconferencia" name="videoconferencia" class="col-xs-12 col-sm-6" id="form-field-select-3">
+				@if($agenda->videoconferencia == 'S')
+					<option selected value="S">Sim</option>
+					<option value="N">Não</option>
+				@else
+					<option value="S">Sim</option>
+					<option selected value="N">Não</option>
+				@endif
+			</select>
 		</div>
 	</div>
 	<div class="form-group">
