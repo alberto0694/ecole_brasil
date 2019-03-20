@@ -35,14 +35,14 @@ class InadimplenciaController extends Controller
                     "descricao" => $inadimplencia->razao_pagamento];
 
         Mail::send('emails.inadimplencia', $data, function ($message) use ($data) {
-            $message->from('contato@ecolebrasil.com', 'Pagamento Curso Link '.$data['nome_completo']);
-            $message->to($data['email'])->subject('Ecole Brasil - Quitação de pendências');
+            $message->from('contato@ecolebrasil.com', 'Link especial para pagamento. '.$data['nome_completo']);
+            $message->to($data['email'])->subject('Ecole Brasil - Link especial para pagamento.');
             // $message->cc('alberto.pimentel.94@gmail.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
-            $message->cc('contato@ecolebrasil.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
-            $message->cc('admin@ecolebrasil.com')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
-            $message->cc('vandressa@esrelooking.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
-            $message->cc('financeiro@esrelooking.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
-            $message->cc('financeiro@ecolebrasil.com ')->subject('Pagamento de Inadimplencia '.$data['nome_completo']);
+            $message->cc('contato@ecolebrasil.com')->subject('Link especial para pagamento. '.$data['nome_completo']);
+            $message->cc('admin@ecolebrasil.com')->subject('Link especial para pagamento. '.$data['nome_completo']);
+            $message->cc('vandressa@esrelooking.com ')->subject('Link especial para pagamento. '.$data['nome_completo']);
+            $message->cc('financeiro@esrelooking.com ')->subject('Link especial para pagamento. '.$data['nome_completo']);
+            $message->cc('financeiro@ecolebrasil.com ')->subject('Link especial para pagamento. '.$data['nome_completo']);
         });
         return;
     }

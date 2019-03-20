@@ -13,7 +13,7 @@
 		<div class="col-md-12">
 			Módulo<br>
 			<select id="modulo_id" name="modulo_id" class="col-xs-12 col-sm-6" id="form-field-select-3">
-				<option selected="" ">Escolha um Módulo</option>
+				<option selected="">Escolha um Módulo</option>
 			</select>
 		</div>
 		<br>

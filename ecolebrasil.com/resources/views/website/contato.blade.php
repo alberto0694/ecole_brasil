@@ -41,7 +41,7 @@
 		<div class="col-md-5" style="margin-left: 30px">
                 <ul style="padding-left:0px; color:gray">
                     <li>
-                    	<form id="form-contato" style="margin-left: 15px; margin-right: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato') }}">
+                    	<form id="form-contato" style="margin-left: 15px; margin-right: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', , ['curso_id' => app('request')->input('curso_id')]) }}">
                     		{{ csrf_field() }}
 			                <div class="form-group">
 			                  <label class="control-label">Contato</label>
