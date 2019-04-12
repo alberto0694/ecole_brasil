@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="col-md-6" style="text-align:center; margin-top: 10px;">
-				<a href="{{ route('aluno.videos', $modulo->id) }}">
+				<a href="{{ route('administrador.aluno.videos', $modulo->id) }}">
 					<i style="font-size: 40pt" class="menu-icon fa fa-video-camera"></i>
 					<h3>VIDEOCONFERÊNCIAS</h3>
 				</a>
