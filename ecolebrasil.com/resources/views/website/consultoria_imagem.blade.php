@@ -792,7 +792,7 @@
         		'<div class="col-md-12">' +
 	                '<ul style="padding-left:0px; color:gray">' +
 	                    '<li>' +
-	                    	'<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÃO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">' +
+	                    	'<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'Intenção de pagamento em boleto | Curso de consultoria e coaching de imagem']) }}">' +
 	                    		'{{ csrf_field() }}' +
 				                '<div class="form-group">' +
 				                  '<label class="control-label">Seu nome completo</label>' +
@@ -867,7 +867,7 @@
         		<div class="col-md-12">
 	                <ul style="padding-left:0px; color:gray">
 	                    <li>
-	                    	<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'INTENÇÃO DE PAGAMENTO EM BOLETO | CURSO CONSULTORIA E COACHING DE IMAGEM']) }}">
+	                    	<form id="form-contato" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['subject' => 'Intenção de pagamento em boleto | Curso de consultoria e coaching de imagem']) }}">
 	                    		{{ csrf_field() }}
 				                <div class="form-group">
 				                  <label class="control-label">Seu nome completo</label>

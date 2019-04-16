@@ -41,7 +41,7 @@
 		<div class="col-md-5" style="margin-left: 30px">
                 <ul style="padding-left:0px; color:gray">
                     <li>
-                    	<form id="form-contato" style="margin-left: 15px; margin-right: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', , ['curso_id' => app('request')->input('curso_id')]) }}">
+                    	<form id="form-contato" style="margin-left: 15px; margin-right: 15px" class="form-horizontal" role="form" method="POST" action="{{ route('email.contato', ['curso_id' => app('request')->input('curso_id')]) }}">
                     		{{ csrf_field() }}
 			                <div class="form-group">
 			                  <label class="control-label">Contato</label>
@@ -71,7 +71,7 @@
 			                  <label class="control-label">Cursos de interesse</label>
 			                  <textarea required="" style="color:black"  name="curso" class="full form-control " rows="4">
 			                  	@if(!empty($curso_contato))
-			                  		{!!$curso_contato->nome!!}
+			                  		{{$curso_contato->nome}}
 			                  	@endif
 			                  </textarea>
 			                </div>
@@ -80,9 +80,12 @@
 			                  <textarea required="" style="color:black"  name="mensagem" class="full form-control " rows="4">
 			                  </textarea>
 			                </div>
-                        <button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
-                          <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">
-                        </button>
+	                        <button id="btn-contato" style="max-width:85px; display: block; margin: 0 auto; background: none; border: none;">
+	                          <img style="max-width:85px; display: block; margin: 0 auto; " src="{{ asset('images/enviar_cinza.png') }}">
+	                        </button>
+	                        @if(!empty($curso_contato))
+	                        	<input type="hidden" name="curso_cidade" value="true">
+	                        @endif
 	                    </form>
                     </li>
                 </ul>

@@ -102,10 +102,10 @@
     <table class="header-row" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="header-row-td" width="378" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">Contato Recebido!</td></tr></tbody></table>
     <div style="font-family: Arial, sans-serif; line-height: 20px; color: #444444; font-size: 13px;">
       <b style="color: #777777;">Contato: {{$contato}} </b><br>
-      <b style="color: #777777;">Email: {{$email}} </b><br>
       <b style="color: #777777;">Telefone: {{$telefone}} </b><br>
-      <b style="color: #777777;">Cidade/Estado: {{$curso}} </b><br>
-      <b style="color: #777777;">Curso(s): {{$cidade_curso}} </b><br>
+      <b style="color: #777777;">Email: {{$email}} </b><br>
+      <b style="color: #777777;">Cidade/Estado: {{$cidade_curso}} </b><br>
+      <b style="color: #777777;">Curso(s): {{$curso}} </b><br>
       <b style="color: #777777;">Cidades de interesse para fazer o curso: {{$cidade_curso}} </b><br>
       <b style="color: #777777;">Como conheceu a Ecole: {{$ecole}} </b><br>
       <b style="color: #777777;">Mensagem: {{$mensagem}} </b><br>
@@ -113,7 +113,7 @@
     </div>
   </td></tr></tbody></table>
 </td></tr></tbody></table>
-    
+
 <table class="table-space" height="12" style="height: 12px; font-size: 0px; line-height: 0; width: 450px; background-color: #ffffff;" width="450" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="table-space-td" valign="middle" height="12" style="height: 12px; width: 450px; background-color: #ffffff;" width="450" bgcolor="#FFFFFF" align="left">&nbsp;</td></tr></tbody></table>
 <table class="table-space" height="12" style="height: 12px; font-size: 0px; line-height: 0; width: 450px; background-color: #ffffff;" width="450" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="table-space-td" valign="middle" height="12" style="height: 12px; width: 450px; padding-left: 16px; padding-right: 16px; background-color: #ffffff;" width="450" bgcolor="#FFFFFF" align="center">&nbsp;<table bgcolor="#E8E8E8" height="0" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td bgcolor="#E8E8E8" height="1" width="100%" style="height: 1px; font-size:0;" valign="top" align="left">&nbsp;</td></tr></tbody></table></td></tr></tbody></table>
 <table class="table-space" height="16" style="height: 16px; font-size: 0px; line-height: 0; width: 450px; background-color: #ffffff;" width="450" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="table-space-td" valign="middle" height="16" style="height: 16px; width: 450px; background-color: #ffffff;" width="450" bgcolor="#FFFFFF" align="left">&nbsp;</td></tr></tbody></table>
