@@ -111,23 +111,34 @@ class WebsiteController extends Controller
 
     public function sendContato(Request $request)
     {
-        $data = [   "contato" => $request->contato,
+        $data = [
+                    "contato" => $request->contato,
                     "telefone" => $request->telefone,
                     "cidade" => $request->cidade,
                     "cidade_curso" => $request->cidade_curso,
                     "ecole" => $request->ecole,
                     "curso" => $request->curso,
                     "mensagem" => $request->mensagem,
-                    "email" => $request->email];
+                    "email" => $request->email
+                ];
 
         Contato::create( $request->all() );
-        $add_subject = $request->query('subject') ? $request->query('subject')." " : '';
+
+        $add_subject = $request->query('subject') ? $request->query('subject')." | " : '';
+        $add_subject = $add_subject.$data['contato'];
+        if($request->curso_cidade){
+            $add_subject = 'Quero este curso em minha cidade | '.$add_subject;
+        }else{
+            $add_subject = 'Contato Site | '.$add_subject;
+        }
+
+
         Mail::send('emails.contato', $data, function ($message) use ($data, $add_subject) {
             $message->replyTo($data['email'], 'Ecole Brasil');
-            $message->from('contato@ecolebrasil.com', $add_subject.'Contato Site '.$data['contato']);
-            $message->to('contato@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
-            $message->cc('admin@ecolebrasil.com')->subject($add_subject.'Contato Site '.$data['contato']);
-            $message->cc('vandressa@esrelooking.com')->subject($add_subject.'Contato Site '.$data['contato']);
+            $message->from('contato@ecolebrasil.com', $add_subject);
+            $message->to('contato@ecolebrasil.com')->subject($add_subject);
+            $message->cc('admin@ecolebrasil.com')->subject($add_subject);
+            $message->cc('vandressa@esrelooking.com')->subject($add_subject);
             // $message->cc('alberto.pimentel.94@gmail.com')->subject($add_subject.'Contato Site '.$data['contato']);
         });
 
@@ -278,21 +289,6 @@ class WebsiteController extends Controller
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
     	return view('website.sou_ecole', compact('cursos_menu','formacoes'));
-    }
-
-    public function contato(Request $request)
-    {
-        $formacoes = Formacao::where('visible', '=', '1')->get();
-        $cursos_menu = Curso::where('visible', '=', '1')->get();
-        $curso_id = $request->query('curso_id');
-        $title = 'Entre em contato com a Ecole Brasil';
-        $description = 'Caso você tenha alguma dúvida sobre nossa escola e/ou cursos que oferecemos, entre em contato agora mesmo!';
-        if($curso_id){
-            $curso_contato = Curso::find($curso_id);
-            return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'title', 'description'));
-        }else{
-        	return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'title', 'description'));
-        }
     }
 
     public function cursos(Request $request, $slug)
@@ -527,6 +523,21 @@ class WebsiteController extends Controller
         });
 
         return view('website.pagamento_ebook', compact('formacoes', 'cursos_menu', 'ebook'));
+    }
+
+    public function contato(Request $request)
+    {
+        $formacoes = Formacao::where('visible', '=', '1')->get();
+        $cursos_menu = Curso::where('visible', '=', '1')->get();
+        $curso_id = $request->query('curso_id');
+        $title = 'Entre em contato com a Ecole Brasil';
+        $description = 'Caso você tenha alguma dúvida sobre nossa escola e/ou cursos que oferecemos, entre em contato agora mesmo!';
+        if($curso_id){
+            $curso_contato = Curso::find($curso_id);
+            return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'title', 'description'));
+        }else{
+            return view('website.contato', compact('cursos_menu','formacoes', 'curso_contato', 'title', 'description'));
+        }
     }
 
 

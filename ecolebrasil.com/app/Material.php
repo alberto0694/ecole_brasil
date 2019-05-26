@@ -39,7 +39,7 @@ class Material extends Model
     {
 
         $path_parts = pathinfo(asset($this->arquivo));
-    	if(array_key_exists("extension", $path_parts) && (asset($this->arquivo) != 'http://ecolebrasil.com/')){
+    	if(array_key_exists("extension", $path_parts) && (asset($this->arquivo) != 'https://ecolebrasil.com/')){
     		return '<a style="color:white" href="'.asset($this->arquivo).'" target="_blank"><button class="btn btn-pink">Download Conteúdo</button></a>';
     	}
     	return '';
