@@ -95,7 +95,7 @@
 		 			<h5 align="center" class="title-pink-begin-text">Professora</h5>
 		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Professora da Ecole, consultora de Imagem Pessoal e Profissional, Administradora de Empresas por formação, Marcela tem na valorização às pessoas, autoconhecimento, e no empoderamento sua maior motivação para dar aulas. Enxerga na metodologia da Ecole a ferramenta que buscava para criar insights agregadores, aguçar percepções  que fazem a diferença na vida dos seus alunos.</p>
 		 		</div>
-		 		<div class="col-md-3 col-md-offset-1">
+{{-- 		 		<div class="col-md-3 col-md-offset-1">
 		 			<div class="cs-item-frame"">
 						<div class="item-inside" style="background-image: url({{ asset('images/kelly-possebon.png') }})"></div>
 					</div>
@@ -103,7 +103,7 @@
 		 			<h5 align="center" class="title-pink-begin-text">Financeiro</h5>
 		 			<p style="text-align: justify; margin-bottom: 30px" class="gray-text"><i>“Quando temos segurança em nossa imagem, impactamos de forma positiva, transformando nossas chances de sucesso”</i></p>
 		 			<p style="text-align: justify;" class="gray-text paragrado-padrao">Apesar de ter crescido em meio a tecidos e costureiras da confecção de sua mãe, e vez ou outra bancar a consultora de estilo das amigas, a Kelly acabou mesmo no MBA em Mercado de Capitais. É gestora financeira da Ecole desde 2014. Entre suas demais atividades está a Mulher Capital, criada com objetivo de impactar o mundo atual, empoderando mulheres através da educação financeira.</p>
-		 		</div>
+		 		</div> --}}
 		 		<div class="col-md-3 col-md-offset-1">
 		 			<div class="cs-item-frame"">
 						<div class="item-inside" style="background-image: url({{ asset('images/roberta-selistre.jpg') }})"></div>
