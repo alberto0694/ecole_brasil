@@ -11,6 +11,21 @@
 <form id="editar-agenda" class="form-horizontal" role="form" style="margin-left: 20px">
 	{{ csrf_field() }}
 	<input name="_method" type="hidden" value="PUT">
+  <div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Turma fixa </label>
+
+    <div class="col-sm-6">
+      <select id="fixos" name="fixos" class="col-xs-12 col-sm-6" id="form-field-select-3">
+        @if($agenda->fixo == 'N')
+          <option value="S">Sim</option>
+          <option selected value="N">Não</option>
+        @else
+          <option selected value="S">Sim</option>
+          <option value="N">Não</option>
+        @endif
+      </select>
+    </div>
+  </div>
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Datas </label>
 
@@ -71,7 +86,11 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Data de Início </label>
 		<div class="col-sm-6">
-			<input value="{{ $agenda->formatedDate }}" id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />
+      @if($agenda->data_inicio){
+    		 <input value="{{ $agenda->formatedDate }}" id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />
+      @else
+         <input id="data_inicio" name="data_inicio" type="text" class="col-xs-12 col-sm-6 date-picker"  />
+      @endif
 		</div>
 	</div>
 	<div class="form-group">
@@ -230,8 +249,8 @@ jQuery(function($){
 				{ element:$("input[name=carga_horaria]"), type:'text' },
 				{ element:$("input[name=descricao]"), type:'text' },
 				{ element:$("input[name=valor]"), type:'text' },
-				{ element:$("input[name=datas]"), type:'text' },
-				{ element:$("input[name=data_inicio]"), type:'text' },
+				// { element:$("input[name=datas]"), type:'text' },
+				// { element:$("input[name=data_inicio]"), type:'text' },
 				{ element:$("input[name=cidade]"), type:'text' },
 				{ element:$("#modelo"), type:'select' },
 				{ element:$("#transacao"), type:'select' },

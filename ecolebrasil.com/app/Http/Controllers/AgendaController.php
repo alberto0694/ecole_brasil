@@ -165,7 +165,9 @@ class AgendaController extends Controller
     public function create(Request $request)
     {
         $request = Controller::saveBase64($request, 'avatar', 'agendas');
-        $request = Controller::formatDate( $request, 'data_inicio' );
+        if($request->data_inicio){
+            $request = Controller::formatDate( $request, 'data_inicio' );
+        }
         $agenda = Agenda::create( $request->all() );
         if($agenda->max_parcelas <= 1){
             $agenda->transacao = 4;
@@ -178,7 +180,9 @@ class AgendaController extends Controller
     {
         $agenda = Agenda::find( $id );
         $request = Controller::saveBase64($request, 'avatar', 'agendas', $agenda->avatar);
-        $request = Controller::formatDate( $request, 'data_inicio' );
+        if($request->data_inicio){
+            $request = Controller::formatDate( $request, 'data_inicio' );
+        }
         $agenda->update( $request->all() );
         return;
     }

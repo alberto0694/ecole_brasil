@@ -10,6 +10,16 @@
 
 <form id="nova-agenda" class="form-horizontal" role="form" style="margin-left: 20px">
 	{{ csrf_field() }}
+  <div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Turma fixa </label>
+
+    <div class="col-sm-6">
+      <select id="fixos" name="fixos" class="col-xs-12 col-sm-6" id="form-field-select-3">
+        <option value="S">Sim</option>
+        <option selected value="N">Não</option>
+      </select>
+    </div>
+  </div>
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Datas </label>
 
@@ -41,16 +51,16 @@
 			<input id="descricao" name="descricao" type="text" class="col-xs-12 col-sm-6" />
 		</div>
 	</div>
-	<div class="form-group">
-		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Videoconferência </label>
+  <div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Videoconferência </label>
 
-		<div class="col-sm-6">
-			<select id="videoconferencia" name="videoconferencia" class="col-xs-12 col-sm-6" id="form-field-select-3">
-				<option selected value="S">Sim</option>
-				<option value="N">Não</option>
-			</select>
-		</div>
-	</div>
+    <div class="col-sm-6">
+      <select id="videoconferencia" name="videoconferencia" class="col-xs-12 col-sm-6" id="form-field-select-3">
+        <option selected value="S">Sim</option>
+        <option value="N">Não</option>
+      </select>
+    </div>
+  </div>
 	<div class="form-group">
 		<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Ministrantes </label>
 
@@ -168,8 +178,8 @@ jQuery(function($){
 				{ element:$("input[name=carga_horaria]"), type:'text' },
 				{ element:$("input[name=descricao]"), type:'text' },
 				{ element:$("input[name=valor]"), type:'text' },
-				{ element:$("input[name=datas]"), type:'text' },
-				{ element:$("input[name=data_inicio]"), type:'text' },
+				// { element:$("input[name=datas]"), type:'text' },
+				// { element:$("input[name=data_inicio]"), type:'text' },
 				{ element:$("input[name=cidade]"), type:'text' },
 				{ element:$("#modelo"), type:'select' },
 				{ element:$("#transacao"), type:'select' },

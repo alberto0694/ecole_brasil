@@ -68,7 +68,7 @@ class Curso extends Model
 
 	public function getFormatedDateAttribute()
 	{
-		return Carbon::parse($this->data_inicio)->format('d/m/Y');
+        return Carbon::parse($this->data_inicio)->format('d/m/Y');
 	}
 
 	public function agendas()
@@ -76,6 +76,7 @@ class Curso extends Model
 		$date = Carbon::today()->toDateString();
 		return $this->hasMany('App\Agenda', 'curso_id', 'id')
 					->where('visible', '=', '1')
-					->where('data_inicio', '>', $date);
+					->where('data_inicio', '>', $date)
+                    ->orWhere('fixo', 'S');
 	}
 }

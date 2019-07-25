@@ -27,6 +27,44 @@
 	<h3 align="center" class="title-pink-begin-text" style="margin-right: 42px">AGENDA</h3>
 </div>
 <div class="margin-top row padding-bottom">
+  @if($agendas_fixas->count() > 0)
+    <div class="container" style="margin: 0; width: 100%; ">
+      <div class="row" style="height: 40px; background-color: #eaeaea">
+        {{-- <h3 style="position: absolute; right: 49%">{{ Config::get('constants.meses')[$j - 1] }}</h3> --}}
+        <h3 style="text-align: center">Início Imediato</h3>
+      </div>
+      <div class="row" style="padding-top: 20px; padding-bottom: 20px; padding-left: 60px; padding-right: 60px;  background-color: #eaeaea;">
+        @foreach($agendas_fixas as $agenda)
+            <div class="col-md-4" style="display: inline-block; margin-bottom: 10px;">
+              <a class="clickable" href="{{ route('cursos', $agenda->curso->slug) }}">
+                <div style="text-align: center"  class="col-md-2 col-xs-6 hidden-xs hidden-sm">
+                  <div class="row">
+                    {{-- <label class="desc-agenda bold" style="font-size: 14pt">{{$agenda->monthRes}}</label> --}}
+                  </div>
+                  {{-- <hr style="margin:0; margin-bottom: 4px; border-top: 1px solid rgba(239, 64, 96, 1);"> --}}
+                  <div class="row" style="text-align: center">
+                    {{-- <label class="desc-agenda bold">{{ $agenda->datas }}</label> --}}
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                  <img style="width: 60%; margin: 0 auto; display: block;" src="{{asset($agenda->curso->card)}}">
+                </div>
+                <div class="col-md-6 hidden-xs hidden-sm" style="padding: 0">
+                  <p class="upper-case bold gray-dark-color">{{ $agenda->cidade }}</p>
+                  <p class="desc-agenda bold gray-dark-color" style="    text-align: left;">{{ $agenda->curso->nome }}</p>
+                  <p class="desc-agenda-prof">{{ $agenda->ministrantes }}</p>
+                </div>
+                <div class="col-xs-12 hidden-md hidden-lg" style="padding: 0; margin-top: 10px; text-align: center">
+                  <p class="upper-case bold gray-dark-color">{{ $agenda->cidade }}</p>
+                  <p class="desc-agenda bold gray-dark-color">{{ $agenda->curso->nome }}</p>
+                  <p class="desc-agenda-prof">{{ $agenda->ministrantes }}</p>
+                </div>
+              </a>
+            </div>
+        @endforeach
+      </div>
+    </div>
+  @endif
 	<div class="container" style="margin: 0; width: 100%; ">
 			@foreach($agendasYears as $agendasMonths)
 				<?php $x = 0; ?>

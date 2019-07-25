@@ -20,6 +20,7 @@ class Agenda extends Model
                             'transacao',
                             'modelo',
     						'curso_id',
+                            'fixo',
                             'valorComDesconto',
     						'avatar',
                             'videoconferencia'];
@@ -58,7 +59,11 @@ class Agenda extends Model
 
     public function getFormatedDateAttribute()
     {
-        return Carbon::parse($this->data_inicio)->format('d/m/Y');
+        if($this->data_inicio){
+            return Carbon::parse($this->data_inicio)->format('d/m/Y');
+        }else{
+            return 'Início imediato';
+        }
     }
 
     public function getYearAttribute()

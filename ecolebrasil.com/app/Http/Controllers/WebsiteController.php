@@ -340,14 +340,15 @@ class WebsiteController extends Controller
                                             ->whereYear('data_inicio', '=', $x)
                                             ->whereMonth('data_inicio', '=', $i)
                                             ->where('data_inicio', '>=', date('Y-m-d').' 00:00:00')
+                                            ->where('fixo', '=', 'N')
                                             ->orderBy('data_inicio', 'asc')
                                             ->get();
             }
         }
-        // dd($agendasYears);
+        $agendas_fixas  = Agenda::where('fixo', '=', 'S')->get();
         $formacoes = Formacao::where('visible', '=', '1')->get();
         $cursos_menu = Curso::where('visible', '=', '1')->get();
-        return view('website.agenda', compact('cursos_menu','agendasYears', 'formacoes'));
+        return view('website.agenda', compact('cursos_menu','agendasYears', 'formacoes', 'agendas_fixas'));
     }
 
     public function faq()
@@ -423,7 +424,7 @@ class WebsiteController extends Controller
         $curso_id = $request->query('curso_id');
         $agendas = null;
         if($agenda_id){
-            $agendas = Agenda::where('id', '=', $agenda_id)->where('data_inicio', '>', Carbon::today()->toDateString())->get();
+            $agendas = Agenda::where('id', '=', $agenda_id)->where('data_inicio', '>', Carbon::today()->toDateString())->orWhere('fixo', '=', 'S')->get();
             if(!$sem_cartao){
                 return view('website.pagamento_agenda', compact('cursos_menu','formacoes', 'agendas', 'curso', 'request', 'meio_pagamento'));
             }else{
